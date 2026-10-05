@@ -1,0 +1,74 @@
+{
+  "allowed_vocabulary_size": 151613,
+  "calibration": {
+    "batch_size": 16,
+    "probe_displacement_norm": 1.131370784570859,
+    "probe_squared_residual": 1.279999852180481,
+    "rho_penalty_at_probe": {
+      "1.0": 0.6399999260902405,
+      "10.0": 6.399999260902405,
+      "100.0": 63.99999260902405
+    },
+    "seed_embedding_norm": 7.4078826904296875,
+    "task_gradient_norm": 121.27237701416016,
+    "task_loss_at_seed": 7.186592102050781
+  },
+  "config": {
+    "data": {
+      "dataset_name": "fancyzhx/ag_news",
+      "seed": 20261002,
+      "train_size": 256,
+      "validation_size": 512
+    },
+    "model": {
+      "device": "cuda:0",
+      "dtype": "bfloat16",
+      "local_files_only": true,
+      "local_snapshot_path": "/home/xiaoyuto/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "name_or_path": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+    },
+    "prompt": {
+      "enable_thinking": false,
+      "label_names": {
+        "A": "World",
+        "B": "Sports",
+        "C": "Business",
+        "D": "Sci/Tech"
+      },
+      "seed_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+      "system_prompt": "You are a careful news topic classifier. Follow the supplied label mapping and response format exactly."
+    }
+  },
+  "created_at_utc": "2026-10-05T09:49:19.696092+00:00",
+  "environment": {
+    "cuda_device_name": "NVIDIA H100 80GB HBM3",
+    "device": "cuda:0",
+    "python_version": "3.10.12",
+    "torch_version": "2.11.0+cu128",
+    "transformers_version": "5.5.4"
+  },
+  "excluded_vocabulary_size": 323,
+  "hyperparameters": {
+    "e_steps": 3,
+    "evaluation_batch_size": 32,
+    "learning_rate": 0.005,
+    "outer_iterations": 30,
+    "projection_chunk_size": 16384,
+    "rho": 1.0,
+    "train_batch_size": 16,
+    "validation_frequency": 5
+  },
+  "initial_parity": {
+    "answer_positions_identical": true,
+    "examples_checked": 8,
+    "maximum_absolute_label_score_difference": 0.0,
+    "mean_absolute_label_score_difference": 0.0,
+    "prediction_agreement": 1.0
+  },
+  "official_test_examples_present": false,
+  "seed": 20261002,
+  "slot_token_count": 25,
+  "train_size": 256,
+  "validation_size": 512
+}

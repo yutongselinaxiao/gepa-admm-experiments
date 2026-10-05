@@ -1,0 +1,10 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 9821.84it/s]
+CHECKPOINT iteration=0 discrete_acc=0.3008 discrete_loss=9.3413 soft_loss=9.3413 r=0.0000 s=0.0000 changed=0 roundtrip=True
+CHECKPOINT iteration=5 discrete_acc=0.3008 discrete_loss=9.3413 soft_loss=1.9519 r=3.0750 s=0.0000 changed=0 roundtrip=True
+CHECKPOINT iteration=10 discrete_acc=0.3008 discrete_loss=9.3413 soft_loss=2.3145 r=3.9183 s=0.0000 changed=0 roundtrip=True
+CHECKPOINT iteration=15 discrete_acc=0.3008 discrete_loss=9.3413 soft_loss=1.7880 r=5.5958 s=0.0000 changed=0 roundtrip=True
+CHECKPOINT iteration=20 discrete_acc=0.3008 discrete_loss=9.3413 soft_loss=3.2280 r=6.5247 s=0.0000 changed=0 roundtrip=True
+CHECKPOINT iteration=25 discrete_acc=0.3320 discrete_loss=7.7603 soft_loss=2.0072 r=8.5162 s=2.4872 changed=1 roundtrip=True
+CHECKPOINT iteration=30 discrete_acc=0.2891 discrete_loss=9.7843 soft_loss=2.1180 r=10.0287 s=1.1615 changed=1 roundtrip=True
+DONE rho=1.0 best_iteration=25 best_accuracy=0.3320
+WROTE artifacts/det_original_admm_rho1/admm_result.json

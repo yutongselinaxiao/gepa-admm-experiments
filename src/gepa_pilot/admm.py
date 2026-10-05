@@ -247,3 +247,101 @@ def calibration_record(
 
 def hyperparameters_dict(config: ADMMHyperparameters) -> dict[str, Any]:
     return asdict(config)
+
+
+@dataclass
+class ADMMState:
+    """Iterates of one fixed-length ADMM run over the slot of `reference_instruction`."""
+
+    reference_instruction: str
+    initial_ids: torch.Tensor
+    e: torch.Tensor
+    z: torch.Tensor
+    u: torch.Tensor
+    optimizer: torch.optim.Optimizer
+    forward_calls: int = 0
+    backward_calls: int = 0
+
+
+class ADMMRefiner:
+    """Scaled ADMM over one instruction slot: Adam E-steps, nearest-token Z-step, dual update.
+
+    The slot length is the token length of whichever instruction initializes the
+    state, so any GEPA candidate can serve as the starting point.
+    """
+
+    def __init__(
+        self,
+        evaluator: CommonEvaluator,
+        hyperparameters: ADMMHyperparameters,
+        allowed_token_ids: torch.Tensor,
+    ) -> None:
+        hyperparameters.validate()
+        self.evaluator = evaluator
+        self.hp = hyperparameters
+        self.allowed_token_ids = allowed_token_ids
+        self.embedding_weight = evaluator.model.get_input_embeddings().weight
+
+    def slot_ids(self, instruction: str, reference_article: str) -> torch.Tensor:
+        encoding = self.evaluator.prompt_builder.encode(reference_article, instruction)
+        if not encoding.compositional:
+            raise ValueError("Instruction does not tokenize compositionally inside the prompt.")
+        return torch.tensor(encoding.slot_ids, dtype=torch.long, device=self.evaluator.device)
+
+    def init_state(self, instruction: str, initial_ids: torch.Tensor) -> ADMMState:
+        e = (
+            self.embedding_weight.index_select(0, initial_ids)
+            .detach()
+            .float()
+            .clone()
+            .requires_grad_(True)
+        )
+        return ADMMState(
+            reference_instruction=instruction,
+            initial_ids=initial_ids.clone(),
+            e=e,
+            z=initial_ids.clone(),
+            u=torch.zeros_like(e),
+            optimizer=torch.optim.Adam([e], lr=self.hp.learning_rate),
+        )
+
+    def step(self, state: ADMMState, batch: Sequence[NewsExample]) -> tuple[float, torch.Tensor]:
+        """One outer iteration. Returns the last E-step task loss and the previous z."""
+        targets = gold_indices(batch, self.evaluator.labels, self.evaluator.device)
+        ez_current = self.embedding_weight.index_select(0, state.z).detach().float()
+        last_task_loss = math.nan
+        for _ in range(self.hp.e_steps):
+            state.optimizer.zero_grad(set_to_none=True)
+            scores = self.evaluator.score_slot_embeddings(
+                batch, state.reference_instruction, state.e
+            )
+            task_loss = F.cross_entropy(scores.float(), targets)
+            penalty = 0.5 * self.hp.rho * (state.e - ez_current + state.u).square().sum()
+            (task_loss + penalty).backward()
+            state.optimizer.step()
+            state.forward_calls += 1
+            state.backward_calls += 1
+            last_task_loss = float(task_loss.detach())
+
+        previous_z = state.z.clone()
+        with torch.no_grad():
+            state.z = nearest_embedding_token_ids(
+                state.e.detach() + state.u,
+                self.embedding_weight,
+                self.allowed_token_ids,
+                chunk_size=self.hp.projection_chunk_size,
+            )
+            ez_new = self.embedding_weight.index_select(0, state.z).detach().float()
+            state.u = state.u + state.e.detach() - ez_new
+        return last_task_loss, previous_z
+
+    def discrete_loss(
+        self, state: ADMMState, ids: torch.Tensor, examples: Sequence[NewsExample]
+    ) -> float:
+        """Mean label cross-entropy of explicit slot IDs, scored in one forward batch."""
+        scores = self.evaluator.score_fixed_slot_ids(
+            examples, state.reference_instruction, ids
+        )
+        state.forward_calls += 1
+        targets = gold_indices(examples, self.evaluator.labels, torch.device("cpu"))
+        return float(F.cross_entropy(scores.detach().float().cpu(), targets))

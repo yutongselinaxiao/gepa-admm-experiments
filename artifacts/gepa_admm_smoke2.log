@@ -1,0 +1,12 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 8425.29it/s]
+Iteration 0: Base program full valset score: 0.3046875 over 512 / 512 examples
+Iteration 1: Selected program 0 score: 0.3046875
+ADMM proposal 0: no_token_change, changed_tokens=0, 18.0s
+Iteration 1: Proposed new text for instruction: Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.
+Iteration 1: New subsample score 4.0 is not better than old score 4.0, skipping
+Iteration 2: Selected program 0 score: 0.3046875
+ADMM proposal 1: no_selection_improvement, changed_tokens=0, 6.0s
+Iteration 2: Proposed new text for instruction: Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.
+Iteration 2: New subsample score 2.0 is not better than old score 2.0, skipping
+DONE proposals=2, accepted=0, best_val_accuracy=0.3047
+WROTE artifacts/gepa_admm_smoke2/gepa_result.json

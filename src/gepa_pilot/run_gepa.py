@@ -15,6 +15,13 @@ import transformers
 import gepa
 from gepa import optimize
 
+from .admm import (
+    ADMMHyperparameters,
+    ADMMRefiner,
+    build_allowed_token_ids,
+    hyperparameters_dict,
+)
+from .admm_proposer import ADMMProposer
 from .config import PilotConfig
 from .data import NewsExample, load_examples_json
 from .evaluator import CommonEvaluator, EvaluationSummary
@@ -106,6 +113,13 @@ def main() -> None:
     parser.add_argument("--evaluation-batch-size", type=int, default=32)
     parser.add_argument("--reflection-max-new-tokens", type=int, default=192)
     parser.add_argument("--skip-posthoc-audit", action="store_true")
+    parser.add_argument("--proposer", choices=("reflective", "admm"), default="reflective")
+    parser.add_argument("--admm-rho", type=float, default=1.0)
+    parser.add_argument("--admm-learning-rate", type=float, default=0.005)
+    parser.add_argument("--admm-outer-iterations", type=int, default=10)
+    parser.add_argument("--admm-e-steps", type=int, default=3)
+    parser.add_argument("--admm-train-batch-size", type=int, default=16)
+    parser.add_argument("--admm-selection-batch-size", type=int, default=32)
     args = parser.parse_args()
 
     if args.proposals < 1 or args.reflection_minibatch_size < 1:
@@ -137,13 +151,42 @@ def main() -> None:
     adapter = AGNewsGEPAAdapter(
         evaluator, evaluation_batch_size=args.evaluation_batch_size
     )
-    reflector = LocalQwenReflectionLM(
-        evaluator.model,
-        evaluator.tokenizer,
-        device=config.model.device,
-        seed=config.data.seed + 1000,
-        max_new_tokens=args.reflection_max_new_tokens,
-    )
+    reflector: LocalQwenReflectionLM | None = None
+    admm_proposer: ADMMProposer | None = None
+    if args.proposer == "reflective":
+        reflector = LocalQwenReflectionLM(
+            evaluator.model,
+            evaluator.tokenizer,
+            device=config.model.device,
+            seed=config.data.seed + 1000,
+            max_new_tokens=args.reflection_max_new_tokens,
+        )
+        proposal_kwargs: dict[str, Any] = {
+            "reflection_lm": reflector,
+            "reflection_prompt_template": REFLECTION_PROMPT_TEMPLATE,
+        }
+    else:
+        admm_hp = ADMMHyperparameters(
+            rho=args.admm_rho,
+            learning_rate=args.admm_learning_rate,
+            outer_iterations=args.admm_outer_iterations,
+            e_steps=args.admm_e_steps,
+            train_batch_size=args.admm_train_batch_size,
+            evaluation_batch_size=args.evaluation_batch_size,
+        )
+        embedding_rows = evaluator.model.get_input_embeddings().weight.shape[0]
+        admm_proposer = ADMMProposer(
+            ADMMRefiner(
+                evaluator,
+                admm_hp,
+                build_allowed_token_ids(evaluator.tokenizer, embedding_rows),
+            ),
+            train,
+            selection_batch_size=args.admm_selection_batch_size,
+            seed=config.data.seed + 2000,
+            log_path=run_dir / "admm_proposals.jsonl",
+        )
+        proposal_kwargs = {"custom_candidate_proposer": admm_proposer}
     tracker = ObservationTracker(run_dir / "callback_events.jsonl")
     stoppers = [
         ProposalCountStopper(tracker, args.proposals),
@@ -174,8 +217,20 @@ def main() -> None:
         "evaluation_batch_size": args.evaluation_batch_size,
         "use_merge": False,
         "frontier_type": "instance",
-        "reflection_model": "same frozen local Qwen checkpoint as task model",
+        "proposer": args.proposer,
+        "reflection_model": (
+            "same frozen local Qwen checkpoint as task model"
+            if args.proposer == "reflective"
+            else None
+        ),
     }
+    if admm_proposer is not None:
+        manifest["admm"] = {
+            **hyperparameters_dict(admm_proposer.refiner.hp),
+            "selection_batch_size": args.admm_selection_batch_size,
+            "seed": admm_proposer.seed,
+            "allowed_vocabulary_size": len(admm_proposer.refiner.allowed_token_ids),
+        }
     (run_dir / "run_manifest.json").write_text(
         json.dumps(manifest, indent=2, sort_keys=True), encoding="utf-8"
     )
@@ -186,8 +241,7 @@ def main() -> None:
         trainset=ExampleDataLoader(train),
         valset=ExampleDataLoader(validation),
         adapter=adapter,
-        reflection_lm=reflector,
-        reflection_prompt_template=REFLECTION_PROMPT_TEMPLATE,
+        **proposal_kwargs,
         candidate_selection_strategy="pareto",
         frontier_type="instance",
         skip_perfect_score=True,
@@ -296,7 +350,8 @@ def main() -> None:
         "total_metric_calls": result.total_metric_calls,
         "num_full_validation_evaluations": result.num_full_val_evals,
         "adapter_counters": adapter.counters(),
-        "reflection": reflector.manifest(),
+        "reflection": reflector.manifest() if reflector is not None else None,
+        "admm_proposer": admm_proposer.manifest() if admm_proposer is not None else None,
         "tracker": tracker_snapshot,
         "candidate_table": candidate_table,
         "audit_by_instruction": audit_cache,

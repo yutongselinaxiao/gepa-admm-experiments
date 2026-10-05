@@ -1,0 +1,10 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 7620.53it/s]
+CHECKPOINT iteration=0 discrete_acc=0.3047 discrete_loss=9.2584 soft_loss=9.2584 r=0.0000 s=0.0000 changed=0 roundtrip=True
+CHECKPOINT iteration=5 discrete_acc=0.3047 discrete_loss=9.2584 soft_loss=1.8739 r=3.6644 s=0.0000 changed=0 roundtrip=True
+CHECKPOINT iteration=10 discrete_acc=0.3047 discrete_loss=9.2584 soft_loss=2.3279 r=3.5797 s=0.0000 changed=0 roundtrip=True
+CHECKPOINT iteration=15 discrete_acc=0.3125 discrete_loss=8.8763 soft_loss=1.8598 r=6.1463 s=1.2433 changed=1 roundtrip=True
+CHECKPOINT iteration=20 discrete_acc=0.3047 discrete_loss=9.2584 soft_loss=2.6866 r=6.6740 s=0.0000 changed=0 roundtrip=True
+CHECKPOINT iteration=25 discrete_acc=0.3047 discrete_loss=9.2584 soft_loss=2.7101 r=8.3175 s=0.0000 changed=0 roundtrip=True
+CHECKPOINT iteration=30 discrete_acc=0.2949 discrete_loss=12.3961 soft_loss=1.8283 r=10.1085 s=2.3929 changed=1 roundtrip=True
+DONE rho=1.0 best_iteration=15 best_accuracy=0.3125
+WROTE artifacts/parity_refactor_admm_rho1/admm_result.json

@@ -12,19 +12,17 @@ from pathlib import Path
 from typing import Any
 
 import torch
-import torch.nn.functional as F
 import transformers
 
 from .admm import (
     ADMMHyperparameters,
+    ADMMRefiner,
     build_allowed_token_ids,
     calibration_record,
     decode_and_check_slot,
     evaluate_discrete_slot,
     evaluate_soft_slot,
-    gold_indices,
     hyperparameters_dict,
-    nearest_embedding_token_ids,
 )
 from .config import PilotConfig
 from .data import load_examples_json
@@ -161,15 +159,11 @@ def main() -> None:
         print(json.dumps(calibration, indent=2, sort_keys=True))
         return
 
-    e = seed_embeddings.clone().requires_grad_(True)
-    z = seed_ids.clone()
-    u = torch.zeros_like(e)
-    optimizer = torch.optim.Adam([e], lr=hp.learning_rate)
+    refiner = ADMMRefiner(evaluator, hp, allowed_ids)
+    state = refiner.init_state(instruction, seed_ids)
     generator = torch.Generator(device="cpu").manual_seed(seed)
     permutation = torch.randperm(len(train), generator=generator).tolist()
     batch_cursor = 0
-    forward_calls = 0
-    backward_calls = 0
     checkpoints: list[dict[str, Any]] = []
     started = time.perf_counter()
 
@@ -183,7 +177,7 @@ def main() -> None:
         return [train[index] for index in indices]
 
     def checkpoint(iteration: int, train_loss: float | None, previous_z: torch.Tensor) -> None:
-        nonlocal forward_calls
+        e, z, u = state.e, state.z, state.u
         continuous = evaluate_soft_slot(
             evaluator,
             validation,
@@ -198,7 +192,7 @@ def main() -> None:
             z,
             batch_size=hp.evaluation_batch_size,
         )
-        forward_calls += 2 * math.ceil(len(validation) / hp.evaluation_batch_size)
+        state.forward_calls += 2 * math.ceil(len(validation) / hp.evaluation_batch_size)
         ez = embedding_weight.index_select(0, z).detach().float()
         previous_ez = embedding_weight.index_select(0, previous_z).detach().float()
         primal = e.detach() - ez
@@ -211,7 +205,7 @@ def main() -> None:
                 roundtrip["reconstructed_instruction"],
                 batch_size=hp.evaluation_batch_size,
             )
-            forward_calls += math.ceil(len(validation) / hp.evaluation_batch_size)
+            state.forward_calls += math.ceil(len(validation) / hp.evaluation_batch_size)
             reconstructed = {
                 "accuracy": reconstructed_summary.accuracy,
                 "mean_loss": reconstructed_summary.mean_loss,
@@ -229,8 +223,8 @@ def main() -> None:
             "slot_token_ids": z.detach().cpu().tolist(),
             "roundtrip": roundtrip,
             "reconstructed_text_validation": reconstructed,
-            "forward_calls_so_far": forward_calls,
-            "backward_calls_so_far": backward_calls,
+            "forward_calls_so_far": state.forward_calls,
+            "backward_calls_so_far": state.backward_calls,
         }
         checkpoints.append(record)
         torch.save(
@@ -239,7 +233,7 @@ def main() -> None:
                 "e": e.detach().cpu(),
                 "z": z.detach().cpu(),
                 "u": u.detach().cpu(),
-                "optimizer": optimizer.state_dict(),
+                "optimizer": state.optimizer.state_dict(),
                 "diagnostics": record,
             },
             run_dir / f"checkpoint_{iteration:03d}.pt",
@@ -255,33 +249,9 @@ def main() -> None:
             f"roundtrip={roundtrip['roundtrip_exact']}"
         )
 
-    checkpoint(0, None, z.clone())
+    checkpoint(0, None, state.z.clone())
     for iteration in range(1, hp.outer_iterations + 1):
-        batch = next_batch()
-        targets = gold_indices(batch, evaluator.labels, evaluator.device)
-        ez_current = embedding_weight.index_select(0, z).detach().float()
-        last_task_loss = math.nan
-        for _ in range(hp.e_steps):
-            optimizer.zero_grad(set_to_none=True)
-            scores = evaluator.score_slot_embeddings(batch, instruction, e)
-            task_loss = F.cross_entropy(scores.float(), targets)
-            penalty = 0.5 * hp.rho * (e - ez_current + u).square().sum()
-            (task_loss + penalty).backward()
-            optimizer.step()
-            forward_calls += 1
-            backward_calls += 1
-            last_task_loss = float(task_loss.detach())
-
-        previous_z = z.clone()
-        with torch.no_grad():
-            z = nearest_embedding_token_ids(
-                e.detach() + u,
-                embedding_weight,
-                allowed_ids,
-                chunk_size=hp.projection_chunk_size,
-            )
-            ez_new = embedding_weight.index_select(0, z).detach().float()
-            u = u + e.detach() - ez_new
+        last_task_loss, previous_z = refiner.step(state, next_batch())
         if iteration % hp.validation_frequency == 0 or iteration == hp.outer_iterations:
             checkpoint(iteration, last_task_loss, previous_z)
 
@@ -295,8 +265,8 @@ def main() -> None:
         "slot_token_count": len(seed_ids),
         "seed_slot_token_ids": seed_ids.detach().cpu().tolist(),
         "allowed_vocabulary_size": len(allowed_ids),
-        "forward_calls": forward_calls,
-        "backward_calls": backward_calls,
+        "forward_calls": state.forward_calls,
+        "backward_calls": state.backward_calls,
         "checkpoints": checkpoints,
         "best_checkpoint": best,
         "selection_rule": "highest discrete validation accuracy; mean loss tie-breaker",
