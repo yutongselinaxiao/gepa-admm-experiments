@@ -1,0 +1,5 @@
+run,rho,best_iteration,best_discrete_accuracy,best_discrete_mean_loss,continuous_accuracy_at_best,continuous_mean_loss_at_best,primal_residual_norm_at_best,dual_residual_norm_at_best,changed_token_count,roundtrip_exact,forward_calls,backward_calls,wall_time_seconds,selected_instruction
+rho1,1.0,20,0.326171875,8.10860538482666,0.255859375,7.114242076873779,6.741894245147705,1.9143717288970947,2,True,314,90,61.054415587335825,"Carefully determine the article's main topic from the label mapping, ignores incidental details
+ and output only the corresponding capital letter."
+rho10,10.0,0,0.3046875,9.258448600769043,0.3046875,9.258448600769043,0.0,0.0,0,True,314,90,61.40893475385383,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+rho100,100.0,0,0.3046875,9.258448600769043,0.3046875,9.258448600769043,0.0,0.0,0,True,314,90,61.21333263302222,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."

@@ -1,0 +1,48 @@
+[
+  {
+    "i": 0,
+    "selected_program_candidate": 0,
+    "subsample_ids": [
+      "official-train:94384:train",
+      "official-train:23294:train",
+      "official-train:93147:train",
+      "official-train:49966:train"
+    ],
+    "n_tasks": 1,
+    "tasks": [
+      {
+        "parent_idx": 0,
+        "subsample_ids": [
+          "official-train:94384:train",
+          "official-train:23294:train",
+          "official-train:93147:train",
+          "official-train:49966:train"
+        ],
+        "subsample_scores": [
+          0.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "new_subsample_scores": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "subsample_scores": [
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "new_subsample_scores": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  }
+]

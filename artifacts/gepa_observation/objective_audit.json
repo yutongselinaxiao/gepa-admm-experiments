@@ -1,0 +1,1011 @@
+{
+  "best_accuracy_and_lowest_loss_agree": false,
+  "best_accuracy_candidate_id": "proposal_11",
+  "candidate_count": 12,
+  "candidates": [
+    {
+      "candidate_id": "seed",
+      "gepa_statuses": [
+        "seed"
+      ],
+      "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+      "per_class_accuracy": {
+        "A": 0.984375,
+        "B": 0.0703125,
+        "C": 0.015625,
+        "D": 0.1484375
+      },
+      "per_class_mean_loss": {
+        "A": 0.07969934707398668,
+        "B": 12.012844390468672,
+        "C": 15.869291294366121,
+        "D": 9.071957378669453
+      },
+      "proposal_numbers": [],
+      "slot_token_count": null,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.3046875,
+      "validation_mean_loss": 9.258448102644559
+    },
+    {
+      "candidate_id": "proposal_1",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring any incidental details, then output the corresponding capital letter.",
+      "per_class_accuracy": {
+        "A": 0.890625,
+        "B": 0.15625,
+        "C": 0.015625,
+        "D": 0.3046875
+      },
+      "per_class_mean_loss": {
+        "A": 0.6791084267316817,
+        "B": 6.3340307658695565,
+        "C": 11.663913912139833,
+        "D": 4.473126732409241
+      },
+      "proposal_numbers": [
+        1
+      ],
+      "slot_token_count": 33,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.341796875,
+      "validation_mean_loss": 5.787544959287579
+    },
+    {
+      "candidate_id": "proposal_2",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary theme rather than incidental details, and output the corresponding capital letter.",
+      "per_class_accuracy": {
+        "A": 0.90625,
+        "B": 0.2265625,
+        "C": 0.015625,
+        "D": 0.2265625
+      },
+      "per_class_mean_loss": {
+        "A": 0.6819394381093398,
+        "B": 6.619514573299966,
+        "C": 12.527647230774164,
+        "D": 5.438396542261273
+      },
+      "proposal_numbers": [
+        2
+      ],
+      "slot_token_count": 31,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.34375,
+      "validation_mean_loss": 6.316874446111187
+    },
+    {
+      "candidate_id": "proposal_3",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the primary topic, focusing on the main subject and context, and select the corresponding capital letter from the label mapping, ignoring any incidental details or keywords.",
+      "per_class_accuracy": {
+        "A": 0.9296875,
+        "B": 0.0625,
+        "C": 0.015625,
+        "D": 0.21875
+      },
+      "per_class_mean_loss": {
+        "A": 0.18816783626036593,
+        "B": 8.3788984138491,
+        "C": 12.745066531933844,
+        "D": 5.653324483545447
+      },
+      "proposal_numbers": [
+        3
+      ],
+      "slot_token_count": 37,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.306640625,
+      "validation_mean_loss": 6.741364316397191
+    },
+    {
+      "candidate_id": "proposal_4",
+      "gepa_statuses": [
+        "rejected",
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the central topic, focusing on the primary subject and context, while ignoring incidental details. Use the label mapping to determine the correct capital letter.",
+      "per_class_accuracy": {
+        "A": 0.953125,
+        "B": 0.078125,
+        "C": 0.015625,
+        "D": 0.1484375
+      },
+      "per_class_mean_loss": {
+        "A": 0.1753247032538719,
+        "B": 7.788391873707042,
+        "C": 12.690245739184316,
+        "D": 6.080142987218949
+      },
+      "proposal_numbers": [
+        4,
+        6
+      ],
+      "slot_token_count": 35,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.298828125,
+      "validation_mean_loss": 6.683526325841045
+    },
+    {
+      "candidate_id": "proposal_5",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the primary topic, focusing on the main event or subject, and select the corresponding capital letter from the label mapping, ignoring any incidental details or unrelated information.",
+      "per_class_accuracy": {
+        "A": 0.96875,
+        "B": 0.0625,
+        "C": 0.015625,
+        "D": 0.140625
+      },
+      "per_class_mean_loss": {
+        "A": 0.047498107010169544,
+        "B": 9.537173867418915,
+        "C": 14.398028703406453,
+        "D": 7.489425738495694
+      },
+      "proposal_numbers": [
+        5
+      ],
+      "slot_token_count": 38,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.296875,
+      "validation_mean_loss": 7.868031604082811
+    },
+    {
+      "candidate_id": "proposal_7",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the primary subject, prioritizing context and overarching theme over incidental details, and select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.984375,
+        "B": 0.0546875,
+        "C": 0.015625,
+        "D": 0.0859375
+      },
+      "per_class_mean_loss": {
+        "A": 0.03077217258204351,
+        "B": 11.057304938556626,
+        "C": 14.747937516279308,
+        "D": 8.771430710251707
+      },
+      "proposal_numbers": [
+        7
+      ],
+      "slot_token_count": 32,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.28515625,
+      "validation_mean_loss": 8.651861334417424
+    },
+    {
+      "candidate_id": "proposal_8",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the central topic, prioritize relevant information, and select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.9765625,
+        "B": 0.0546875,
+        "C": 0.015625,
+        "D": 0.140625
+      },
+      "per_class_mean_loss": {
+        "A": 0.049042787342368444,
+        "B": 10.34729317453457,
+        "C": 14.147401154972613,
+        "D": 7.040242782635275
+      },
+      "proposal_numbers": [
+        8
+      ],
+      "slot_token_count": 26,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.296875,
+      "validation_mean_loss": 7.8959949748712095
+    },
+    {
+      "candidate_id": "proposal_9",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output the corresponding capital letter.",
+      "per_class_accuracy": {
+        "A": 0.8984375,
+        "B": 0.1484375,
+        "C": 0.015625,
+        "D": 0.2578125
+      },
+      "per_class_mean_loss": {
+        "A": 0.5360141668776812,
+        "B": 6.829453784152122,
+        "C": 11.898732228204608,
+        "D": 4.969694029686025
+      },
+      "proposal_numbers": [
+        9
+      ],
+      "slot_token_count": 32,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.330078125,
+      "validation_mean_loss": 6.058473552230111
+    },
+    {
+      "candidate_id": "proposal_10",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the primary subject, focusing on the main event or theme, and select the corresponding capital letter from the label mapping, ignoring any incidental details or specific entities.",
+      "per_class_accuracy": {
+        "A": 0.9921875,
+        "B": 0.0546875,
+        "C": 0.015625,
+        "D": 0.0859375
+      },
+      "per_class_mean_loss": {
+        "A": 0.02458213699645828,
+        "B": 10.993204512866214,
+        "C": 14.832035765051842,
+        "D": 8.443578850019303
+      },
+      "proposal_numbers": [
+        10
+      ],
+      "slot_token_count": 38,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.287109375,
+      "validation_mean_loss": 8.573350316233455
+    },
+    {
+      "candidate_id": "proposal_11",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully identify the article's central theme from the label mapping, focusing on the primary subject matter and ignoring any incidental details, and output only the corresponding capital letter.",
+      "per_class_accuracy": {
+        "A": 0.90625,
+        "B": 0.140625,
+        "C": 0.015625,
+        "D": 0.359375
+      },
+      "per_class_mean_loss": {
+        "A": 0.5083153564718367,
+        "B": 6.72331037967524,
+        "C": 12.506200468167663,
+        "D": 4.543353022995291
+      },
+      "proposal_numbers": [
+        11
+      ],
+      "slot_token_count": 33,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.35546875,
+      "validation_mean_loss": 6.070294806827508
+    },
+    {
+      "candidate_id": "proposal_12",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully identify the article's central theme from the label mapping, focusing on the primary subject matter and ignoring any incidental details, and output the corresponding capital letter.",
+      "per_class_accuracy": {
+        "A": 0.8828125,
+        "B": 0.09375,
+        "C": 0.015625,
+        "D": 0.390625
+      },
+      "per_class_mean_loss": {
+        "A": 0.5912291667457314,
+        "B": 7.277900044573304,
+        "C": 11.918514981400222,
+        "D": 3.9134593585800275
+      },
+      "proposal_numbers": [
+        12
+      ],
+      "slot_token_count": 32,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.345703125,
+      "validation_mean_loss": 5.925275887824821
+    }
+  ],
+  "decision_gate": "treat_label_loss_as_diagnostic_due_to_top_candidate_mismatch",
+  "lowest_loss_candidate_id": "proposal_1",
+  "pairwise_comparison_count": 66,
+  "pearson_loss_vs_accuracy": -0.8159751774709461,
+  "ranking_disagreement_count": 12,
+  "ranking_disagreements": [
+    {
+      "higher_accuracy": 0.35546875,
+      "higher_accuracy_candidate_id": "proposal_11",
+      "higher_accuracy_only_correct_count": 16,
+      "higher_loss": 6.070294806827508,
+      "lower_accuracy": 0.330078125,
+      "lower_loss": 6.058473552230111,
+      "lower_loss_candidate_id": "proposal_9",
+      "lower_loss_only_correct_count": 3,
+      "representative_examples": [
+        {
+          "article_excerpt": "Linux cluster companies attract new funds Venture capitalists are lavishing money on the fashionable Linux supercomputing concept--but smaller firms face much larger rivals.",
+          "example_id": "official-train:82172:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.330818772315979,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.787112236022949,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Hitachi Joins Intel In Hard Drive Standard Hitachi Global Storage Technologies Inc. and Intel Corp. have joined in supporting an interface technology proposed for compact hard-disk drives used in portable music players, handheld computers a",
+          "example_id": "official-train:25427:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.6804019808769226,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.566751718521118,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "WS-I tackles Web services attachments The Web Services Interoperability Organization (WS-I) on Tuesday is releasing three profiles intended to make it easier to send attachments using Web services technologies.",
+          "example_id": "official-train:8698:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.5551494359970093,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.534269332885742,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "White saves Sooners MANHATTAN, Kan. -- Jason White threw for four touchdowns, two each to Travis Wilson and Mark Clayton, and No. 2 Oklahoma overcame its own mistakes to beat Kansas State, 31-21, yesterday.",
+          "example_id": "official-train:62674:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.023272933438420296,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 1.7014367580413818,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Action Game 'Halo 2' Sold Early on eBay (AP) AP - Advance copies of the aliens-versus-space marines video game \"Halo 2\" have already fetched as much as  #36;265 on Internet auction site eBay, days before the official launch.",
+          "example_id": "official-train:83489:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.17232657968997955,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 1.7084904909133911,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3046875,
+      "higher_accuracy_candidate_id": "seed",
+      "higher_accuracy_only_correct_count": 13,
+      "higher_loss": 9.258448102644559,
+      "lower_accuracy": 0.28515625,
+      "lower_loss": 8.651861334417424,
+      "lower_loss_candidate_id": "proposal_7",
+      "lower_loss_only_correct_count": 3,
+      "representative_examples": [
+        {
+          "article_excerpt": "Switches Drive Down Prices For 10-Gbps Ethernet Falling prices for 10-Gbps Ethernet switches may spur a new round of network upgrades by businesses looking to provide more speed for bandwidth-hungry applications.",
+          "example_id": "official-train:41889:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.027257123962044716,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 8.000412940979004,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Lieber goes to the Phillies Jon Lieber agreed to a deal with the Philadelphia Phillies, Al Leiter returned to the Florida Marlins, and Woody Williams went back to the San Diego Padres as major league teams moved quickly to grab starting pit",
+          "example_id": "official-train:110970:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.2521369457244873,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 4.759183883666992,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "End the steroid guilt by (players) association You know who you are. The ones who choose the right path. The ones who perform at a competitive disadvantage. The ones who refuse to alter your bodies with performance-enhancing drugs.",
+          "example_id": "official-train:35376:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.4328639805316925,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 4.821404457092285,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Trojan targets UK online bank accounts Virus writers have created a new Trojan horse capable of helping crooks to break into the accounts of British internet banking customers.",
+          "example_id": "official-train:88926:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.1602363884449005,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.511067867279053,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Spyware Could Bungle XP SP2 Update Though Microsoft #39;s new security update package is all about protecting systems from worms, viruses and spyware, it can #39;t do much about what #39;s already on computersand that could pose a problem.",
+          "example_id": "official-train:18006:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.030641140416264534,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.813079833984375,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3046875,
+      "higher_accuracy_candidate_id": "seed",
+      "higher_accuracy_only_correct_count": 12,
+      "higher_loss": 9.258448102644559,
+      "lower_accuracy": 0.287109375,
+      "lower_loss": 8.573350316233455,
+      "lower_loss_candidate_id": "proposal_10",
+      "lower_loss_only_correct_count": 3,
+      "representative_examples": [
+        {
+          "article_excerpt": "Lieber goes to the Phillies Jon Lieber agreed to a deal with the Philadelphia Phillies, Al Leiter returned to the Florida Marlins, and Woody Williams went back to the San Diego Padres as major league teams moved quickly to grab starting pit",
+          "example_id": "official-train:110970:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.2521369457244873,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 7.750433444976807,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Switches Drive Down Prices For 10-Gbps Ethernet Falling prices for 10-Gbps Ethernet switches may spur a new round of network upgrades by businesses looking to provide more speed for bandwidth-hungry applications.",
+          "example_id": "official-train:41889:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.027257123962044716,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 7.000949859619141,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "End the steroid guilt by (players) association You know who you are. The ones who choose the right path. The ones who perform at a competitive disadvantage. The ones who refuse to alter your bodies with performance-enhancing drugs.",
+          "example_id": "official-train:35376:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.4328639805316925,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 4.636715888977051,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Microsoft posts critical configuration patch Microsoft released a  quot;critical quot; fix on Thursday for a security issue left unresolved by the Windows XP Service Pack 2. The configuration change closed a hole in the Windows firewall set",
+          "example_id": "official-train:118518:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.0633997768163681,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.5338025093078613,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Vitual Flowers \\\\This is cool.\\\\Hotornot just added a new feature to send a \"virtual flower\".  For \\$2 (or so)\\you can send a flower to a girl who you haven't yet met.\\\\I love it!  Awesome!\\\\\\(16:44:01) metameta8080: dude, what a waste of m",
+          "example_id": "official-train:119669:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.10021014511585236,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.048760414123535,
+          "lower_loss_candidate_prediction": "B"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.35546875,
+      "higher_accuracy_candidate_id": "proposal_11",
+      "higher_accuracy_only_correct_count": 12,
+      "higher_loss": 6.070294806827508,
+      "lower_accuracy": 0.341796875,
+      "lower_loss": 5.787544959287579,
+      "lower_loss_candidate_id": "proposal_1",
+      "lower_loss_only_correct_count": 5,
+      "representative_examples": [
+        {
+          "article_excerpt": "Sharon seeks to expand coalition Israeli Prime Minister Ariel Sharon said today he planned to replace his minority government with a broad coalition to push through his Gaza withdrawal plan and promised not to launch attacks on Palestinians",
+          "example_id": "official-train:107457:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.6335543990135193,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.9317874908447266,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "White saves Sooners MANHATTAN, Kan. -- Jason White threw for four touchdowns, two each to Travis Wilson and Mark Clayton, and No. 2 Oklahoma overcame its own mistakes to beat Kansas State, 31-21, yesterday.",
+          "example_id": "official-train:62674:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.023272933438420296,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 2.126953601837158,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "FDA Plans to Tag Certain Medicines to Prevent Fraud The Food and Drug Administration (FDA), in conjunction with several major drug companies, is working on an initiative that would involve fitting medicine bottles with tiny antennas to prev",
+          "example_id": "official-train:92688:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.3138008713722229,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.3563153743743896,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Hitachi Joins Intel In Hard Drive Standard Hitachi Global Storage Technologies Inc. and Intel Corp. have joined in supporting an interface technology proposed for compact hard-disk drives used in portable music players, handheld computers a",
+          "example_id": "official-train:25427:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.6804019808769226,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.2695024013519287,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Hosted SAP service targets midmarket SAP is rolling out a hosted service it hopes will appeal to midsize customers that can rent the software for as little as \\$325 per user per month while avoiding the complexity of in-house installations.",
+          "example_id": "official-train:75033:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.48585018515586853,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 1.9360848665237427,
+          "lower_loss_candidate_prediction": "B"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.34375,
+      "higher_accuracy_candidate_id": "proposal_2",
+      "higher_accuracy_only_correct_count": 14,
+      "higher_loss": 6.316874446111187,
+      "lower_accuracy": 0.330078125,
+      "lower_loss": 6.058473552230111,
+      "lower_loss_candidate_id": "proposal_9",
+      "lower_loss_only_correct_count": 7,
+      "representative_examples": [
+        {
+          "article_excerpt": "Golf doesn #39;t need a buddy system Let me get this straight. We lost the Ryder Cup because we didn #39;t hug enough? We lost because we didn #39;t laugh enough? We lost because there wasn #39;t enough charisma among the American players, ",
+          "example_id": "official-train:34585:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.2519588768482208,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 2.1269705295562744,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Shevchenko is European footballer of the year PARIS (AFP) - AC Milan #39;s Ukrainian striker Andriy Shevchenko was yesterday named European footballer of the year for 2004. The 28 year-old becomes the third Ukrainian to win the award after ",
+          "example_id": "official-train:115208:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.7587807178497314,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 2.366821050643921,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "China Bans a New Computer Video Game SHANGHAI, China Dec 9, 2004 - China has banned a new computer game for referring to Taiwan and other regions claimed by China as separate countries.",
+          "example_id": "official-train:111020:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.1603892296552658,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 1.5019644498825073,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "White saves Sooners MANHATTAN, Kan. -- Jason White threw for four touchdowns, two each to Travis Wilson and Mark Clayton, and No. 2 Oklahoma overcame its own mistakes to beat Kansas State, 31-21, yesterday.",
+          "example_id": "official-train:62674:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.3868829309940338,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 1.7014367580413818,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "UPDATE 1-Lewis fires spectacular 62 to take Funai lead JL Lewis produced a dazzling 10-under-par 62 to grab a two-shot lead after the opening round of the \\$4.2 million Funai Classic at the Walt Disney Resort on Thursday.",
+          "example_id": "official-train:68230:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.20264683663845062,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 1.5044130086898804,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.35546875,
+      "higher_accuracy_candidate_id": "proposal_11",
+      "higher_accuracy_only_correct_count": 11,
+      "higher_loss": 6.070294806827508,
+      "lower_accuracy": 0.345703125,
+      "lower_loss": 5.925275887824821,
+      "lower_loss_candidate_id": "proposal_12",
+      "lower_loss_only_correct_count": 6,
+      "representative_examples": [
+        {
+          "article_excerpt": "White saves Sooners MANHATTAN, Kan. -- Jason White threw for four touchdowns, two each to Travis Wilson and Mark Clayton, and No. 2 Oklahoma overcame its own mistakes to beat Kansas State, 31-21, yesterday.",
+          "example_id": "official-train:62674:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.023272933438420296,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 1.313785195350647,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "End the steroid guilt by (players) association You know who you are. The ones who choose the right path. The ones who perform at a competitive disadvantage. The ones who refuse to alter your bodies with performance-enhancing drugs.",
+          "example_id": "official-train:35376:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.12911781668663025,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 1.326595425605774,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Americans early risers, but get rude awakening BLOOMFIELD TOWNSHIP, Mich. -- Whatever magic they had found in the morning dew yesterday, they lost in the afternoon shadows at Oakland Hills Country Club. And so a heralded US Ryder Cup team f",
+          "example_id": "official-train:32336:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.16023212671279907,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 1.3134584426879883,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Fergie to get United seat? Malcolm Glazer is set to offer Sir Alex Ferguson a more powerful role at Old Trafford in return for the Scots support of the American tycoons planned takeover at Manchester United.",
+          "example_id": "official-train:52919:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.07913164049386978,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 0.9769609570503235,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "No Sign of Nuke Work at Suspect Iran Site-Diplomats (Reuters) Reuters - The analysis of soil samples taken by\\U.N. inspectors at Lavizan, a site in Tehran that U.S.\\officials suspect may be linked to an atomic weapons program,\\shows no sign",
+          "example_id": "official-train:42310:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.10027764737606049,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 0.9743584394454956,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3046875,
+      "higher_accuracy_candidate_id": "seed",
+      "higher_accuracy_only_correct_count": 12,
+      "higher_loss": 9.258448102644559,
+      "lower_accuracy": 0.296875,
+      "lower_loss": 7.868031604082811,
+      "lower_loss_candidate_id": "proposal_5",
+      "lower_loss_only_correct_count": 8,
+      "representative_examples": [
+        {
+          "article_excerpt": "Switches Drive Down Prices For 10-Gbps Ethernet Falling prices for 10-Gbps Ethernet switches may spur a new round of network upgrades by businesses looking to provide more speed for bandwidth-hungry applications.",
+          "example_id": "official-train:41889:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.027257123962044716,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 8.750186920166016,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Steroid Raises Pneumonia Risk in RA Patients Rheumatoid arthritis sufferers who take a commonly prescribed steroid known as prednisone run a significantly higher risk of catching pneumonia than people on biologic medications.",
+          "example_id": "official-train:66142:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.252031147480011,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.006815433502197,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Lieber goes to the Phillies Jon Lieber agreed to a deal with the Philadelphia Phillies, Al Leiter returned to the Florida Marlins, and Woody Williams went back to the San Diego Padres as major league teams moved quickly to grab starting pit",
+          "example_id": "official-train:110970:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.2521369457244873,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 5.006748676300049,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Trojan targets UK online bank accounts Virus writers have created a new Trojan horse capable of helping crooks to break into the accounts of British internet banking customers.",
+          "example_id": "official-train:88926:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.1602363884449005,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.264164447784424,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "End the steroid guilt by (players) association You know who you are. The ones who choose the right path. The ones who perform at a competitive disadvantage. The ones who refuse to alter your bodies with performance-enhancing drugs.",
+          "example_id": "official-train:35376:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.4328639805316925,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 3.9704947471618652,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3046875,
+      "higher_accuracy_candidate_id": "seed",
+      "higher_accuracy_only_correct_count": 12,
+      "higher_loss": 9.258448102644559,
+      "lower_accuracy": 0.296875,
+      "lower_loss": 7.8959949748712095,
+      "lower_loss_candidate_id": "proposal_8",
+      "lower_loss_only_correct_count": 8,
+      "representative_examples": [
+        {
+          "article_excerpt": "Switches Drive Down Prices For 10-Gbps Ethernet Falling prices for 10-Gbps Ethernet switches may spur a new round of network upgrades by businesses looking to provide more speed for bandwidth-hungry applications.",
+          "example_id": "official-train:41889:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.027257123962044716,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.007633686065674,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Briefly: TI touts combo chip with VoIP, Wi-Fi roundup Plus: ContextWeb nabs \\$3 million...Macromedia taps into AIM...Hewlett-Packard packages services for blades.",
+          "example_id": "official-train:34045:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.25251615047454834,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.041074275970459,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "End the steroid guilt by (players) association You know who you are. The ones who choose the right path. The ones who perform at a competitive disadvantage. The ones who refuse to alter your bodies with performance-enhancing drugs.",
+          "example_id": "official-train:35376:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.4328639805316925,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 4.079090118408203,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Lieber goes to the Phillies Jon Lieber agreed to a deal with the Philadelphia Phillies, Al Leiter returned to the Florida Marlins, and Woody Williams went back to the San Diego Padres as major league teams moved quickly to grab starting pit",
+          "example_id": "official-train:110970:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.2521369457244873,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 2.81341290473938,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Kerry defends Vietnam record, challenges Bush (AFP) AFP - Democratic Senator John Kerry accused President George W. Bush of using a front group to do the \"dirty work\" of attacking his Vietnam War record.",
+          "example_id": "official-train:4735:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.015063110738992691,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.153228282928467,
+          "lower_loss_candidate_prediction": "B"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.306640625,
+      "higher_accuracy_candidate_id": "proposal_3",
+      "higher_accuracy_only_correct_count": 13,
+      "higher_loss": 6.741364316397191,
+      "lower_accuracy": 0.298828125,
+      "lower_loss": 6.683526325841045,
+      "lower_loss_candidate_id": "proposal_4",
+      "lower_loss_only_correct_count": 9,
+      "representative_examples": [
+        {
+          "article_excerpt": "FDA Plans to Tag Certain Medicines to Prevent Fraud The Food and Drug Administration (FDA), in conjunction with several major drug companies, is working on an initiative that would involve fitting medicine bottles with tiny antennas to prev",
+          "example_id": "official-train:92688:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.5928608179092407,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.755104064941406,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Sony Launches MP3 Walkmans to Counter IPod Sony Corp 6758.T launched its first MP3-compatible flash memory digital music players under the Walkman name on Monday in the latest bid to reclaim the lead in a market it has lost to Apple Compute",
+          "example_id": "official-train:71571:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.16243861615657806,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.008217811584473,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Movie industry sues more than 100 people for helping with online &lt;b&gt;...&lt;/b&gt; LOS ANGELES Hollywood is trying to stamp out computer networks that let people swap movies online. Movie studios filed copyright infringement lawsuits t",
+          "example_id": "official-train:115948:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.005238378420472145,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.288045883178711,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "RIM Incorporates QWERTY Keyboard In Small Mobile Devices It #39;s now possible to enjoy all the benefits of a full featured QWERTY keyboard in a small wireless device, thanks to Research In Motion #39;s (RIM) new patent-pending SureType key",
+          "example_id": "official-train:32522:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.03834892436861992,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.8126606941223145,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Seiko Epson unveils latest mini robot helicopter Japanese company Seiko Epson says it has developed a mini helicopter that is the lightest of its kind and can be used for lifesaving and surveillance. ",
+          "example_id": "official-train:3333:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.11727184057235718,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.7279818058013916,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3046875,
+      "higher_accuracy_candidate_id": "seed",
+      "higher_accuracy_only_correct_count": 12,
+      "higher_loss": 9.258448102644559,
+      "lower_accuracy": 0.298828125,
+      "lower_loss": 6.683526325841045,
+      "lower_loss_candidate_id": "proposal_4",
+      "lower_loss_only_correct_count": 9,
+      "representative_examples": [
+        {
+          "article_excerpt": "Kerry defends Vietnam record, challenges Bush (AFP) AFP - Democratic Senator John Kerry accused President George W. Bush of using a front group to do the \"dirty work\" of attacking his Vietnam War record.",
+          "example_id": "official-train:4735:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.015063110738992691,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 5.5337300300598145,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "India ; Criminal and killer Veerappan finally exterminated India News, Dharmapuri (Tamil Nadu), Oct 19 (IANS) Veerappan, India #39;s most wanted and most elusive brigand who murdered with impunity, was finally shot dead in his jungle hideou",
+          "example_id": "official-train:64776:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.0005660838796757162,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.536290168762207,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Movie industry sues more than 100 people for helping with online &lt;b&gt;...&lt;/b&gt; LOS ANGELES Hollywood is trying to stamp out computer networks that let people swap movies online. Movie studios filed copyright infringement lawsuits t",
+          "example_id": "official-train:115948:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.47412535548210144,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.288045883178711,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Trojan targets UK online bank accounts Virus writers have created a new Trojan horse capable of helping crooks to break into the accounts of British internet banking customers.",
+          "example_id": "official-train:88926:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.1602363884449005,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.350454807281494,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Lieber goes to the Phillies Jon Lieber agreed to a deal with the Philadelphia Phillies, Al Leiter returned to the Florida Marlins, and Woody Williams went back to the San Diego Padres as major league teams moved quickly to grab starting pit",
+          "example_id": "official-train:110970:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.2521369457244873,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 2.127439260482788,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.345703125,
+      "higher_accuracy_candidate_id": "proposal_12",
+      "higher_accuracy_only_correct_count": 14,
+      "higher_loss": 5.925275887824821,
+      "lower_accuracy": 0.341796875,
+      "lower_loss": 5.787544959287579,
+      "lower_loss_candidate_id": "proposal_1",
+      "lower_loss_only_correct_count": 12,
+      "representative_examples": [
+        {
+          "article_excerpt": "FDA Plans to Tag Certain Medicines to Prevent Fraud The Food and Drug Administration (FDA), in conjunction with several major drug companies, is working on an initiative that would involve fitting medicine bottles with tiny antennas to prev",
+          "example_id": "official-train:92688:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.16970711946487427,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.3563153743743896,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Star-Power Surge for Satellite Radio (washingtonpost.com) washingtonpost.com - Shock jock Howard Stern's decision to jump ship from traditional radio gives a boost to the emerging technology of blasting tunes, news and other staples of AM a",
+          "example_id": "official-train:53197:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.5515952110290527,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.353928804397583,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "CELL Prototype Announced By Sony, Toshiba, and IBM In two joint press releases, Sony Corporation, Sony Computer Entertainment Inc., Toshiba, and IBM, have today announced the creation of the prototype CELL processor, which is currently bein",
+          "example_id": "official-train:104064:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.2310686707496643,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 1.8927414417266846,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Hosted SAP service targets midmarket SAP is rolling out a hosted service it hopes will appeal to midsize customers that can rent the software for as little as \\$325 per user per month while avoiding the complexity of in-house installations.",
+          "example_id": "official-train:75033:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.2823108732700348,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 1.9360848665237427,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "WS-I tackles Web services attachments The Web Services Interoperability Organization (WS-I) on Tuesday is releasing three profiles intended to make it easier to send attachments using Web services technologies.",
+          "example_id": "official-train:8698:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.4078924357891083,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 1.888556718826294,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.34375,
+      "higher_accuracy_candidate_id": "proposal_2",
+      "higher_accuracy_only_correct_count": 14,
+      "higher_loss": 6.316874446111187,
+      "lower_accuracy": 0.341796875,
+      "lower_loss": 5.787544959287579,
+      "lower_loss_candidate_id": "proposal_1",
+      "lower_loss_only_correct_count": 13,
+      "representative_examples": [
+        {
+          "article_excerpt": "Golf doesn #39;t need a buddy system Let me get this straight. We lost the Ryder Cup because we didn #39;t hug enough? We lost because we didn #39;t laugh enough? We lost because there wasn #39;t enough charisma among the American players, ",
+          "example_id": "official-train:34585:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.2519588768482208,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 2.812011957168579,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Shevchenko is European footballer of the year PARIS (AFP) - AC Milan #39;s Ukrainian striker Andriy Shevchenko was yesterday named European footballer of the year for 2004. The 28 year-old becomes the third Ukrainian to win the award after ",
+          "example_id": "official-train:115208:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.7587807178497314,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 3.288780927658081,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Sharon seeks to expand coalition Israeli Prime Minister Ariel Sharon said today he planned to replace his minority government with a broad coalition to push through his Gaza withdrawal plan and promised not to launch attacks on Palestinians",
+          "example_id": "official-train:107457:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.5515158176422119,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.9317874908447266,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "White saves Sooners MANHATTAN, Kan. -- Jason White threw for four touchdowns, two each to Travis Wilson and Mark Clayton, and No. 2 Oklahoma overcame its own mistakes to beat Kansas State, 31-21, yesterday.",
+          "example_id": "official-train:62674:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.3868829309940338,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 2.126953601837158,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "UPDATE 1-Lewis fires spectacular 62 to take Funai lead JL Lewis produced a dazzling 10-under-par 62 to grab a two-shot lead after the opening round of the \\$4.2 million Funai Classic at the Walt Disney Resort on Thursday.",
+          "example_id": "official-train:68230:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.20264683663845062,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 1.7017736434936523,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    }
+  ],
+  "spearman_loss_rank_vs_accuracy_rank": -0.7880922768806395
+}

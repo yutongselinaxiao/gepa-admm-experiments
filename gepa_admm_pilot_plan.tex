@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\setlist[itemize]{leftmargin=1.35em,itemsep=0.25em,topsep=0.3em}
+\setlist[enumerate]{leftmargin=1.5em,itemsep=0.25em,topsep=0.3em}
+\newcommand{\E}{\mathcal E}
+\newcommand{\D}{\mathcal D}
+\newcommand{\V}{\mathcal V}
+\newcommand{\acc}{\operatorname{Acc}}
+\newcommand{\CE}{\operatorname{CE}}
+\newcommand{\argmin}{\operatorname*{arg\,min}}
+\newcommand{\argmax}{\operatorname*{arg\,max}}
+\title{Implementation Plan: One-Component GEPA and ADMM Prompt Pilot}
+\author{}
+\date{October 2026}
+\begin{document}
+\maketitle
+\vspace{-2.3em}
+
+\section{Goal and scope}
+The pilot asks three sequential questions: (i) which failures do GEPA's textual revisions fix; (ii) does a differentiable objective agree with discrete-prompt performance on the resulting candidate pool; and (iii) does ADMM's continuous improvement survive projection to token IDs?  Here ``one component'' means one editable instruction slot at the \emph{input embedding layer}. All model weights, the label mapping, the remainder of the prompt, and the answer position are fixed. Optimizing one internal transformer block would be a different problem.
+
+This is a diagnostic run. GEPA may edit a variable-length natural-language instruction, whereas the minimal ADMM formulation has a fixed number of token positions. Their initial scores therefore do not constitute a controlled algorithm comparison. A length-matched study can follow after the interface and projection are understood.
+
+\section{Task, model, and data}
+\begin{itemize}
+  \item \textbf{Task:} four-way AG News topic classification, with labels World, Sports, Business, and Sci/Tech. Use the mapping $A\mapsto\text{World}$, $B\mapsto\text{Sports}$, $C\mapsto\text{Business}$, $D\mapsto\text{Sci/Tech}$ throughout.
+  \item \textbf{Task model:} frozen \texttt{Qwen/Qwen3-1.7B}, using the same checkpoint, tokenizer revision, chat template, and non-thinking setting in both arms. Load it once for inference and once for differentiable input-embedding evaluation, or share one frozen instance if memory permits.
+  \item \textbf{Splits:} stratified samples of 256 training and 128 validation examples from the dataset's training split; select 256 untouched examples from its official test split. Fix and save the sampled example IDs and random seed. Use no test examples for prompt selection or objective changes.
+  \item \textbf{Prompt template:} a fixed label mapping and response rule; one editable instruction slot; the article; then the assistant answer prefix. Keep the slot's location constant. Start with a short, grammatical seed instruction.
+  \item \textbf{Evaluation rule:} inspect the logits of $A,B,C,D$ at the designated answer position and predict the highest-scoring label. Confirm that each label is represented as intended in context. If any label is multi-token, replace single-logit scoring with whole-label sequence scoring. Separately record a short unconstrained generation to diagnose format behavior; it does not change the primary score.
+\end{itemize}
+The dataset and model choices are a practical starting point, not part of the proposed method. The AG News card specifies four classes and train/test splits; Qwen's model card documents the non-thinking chat-template setting [3,4].
+
+\section{Shared evaluation and logging layer}
+Implement one evaluator used by both GEPA and ADMM. Its input is a discrete instruction and a list of examples; its output is a record per example containing the example ID, gold label, four label logits, predicted label, correctness, optional raw generation, prompt token count, and an error tag (correct or gold-class $\rightarrow$ predicted-class confusion). Save a validation summary with accuracy, per-class accuracy, confusion matrix, and mean label loss.
+
+\paragraph{Sanity gate.} Evaluate the seed and three manually written alternatives before optimizing. Assert that: (a) the answer-position index is identical between logit extraction and the embedding-injection path; (b) the gold-label log-probability is computed at that position; (c) the GEPA score agrees with the evaluator's predicted label; and (d) all methods receive identical fixed text and examples. Record model/tokenizer revisions, generation settings, seed, data IDs, and numerical precision in a run manifest.
+
+\section{Stage I: GEPA observation pass}
+GEPA evolves one named text component, \texttt{instruction}. Build a custom adapter implementing the documented \texttt{evaluate} and \texttt{make\_reflective\_dataset} methods [1]. Each reflective record should expose the article, current instruction, predicted class, gold class, score, and a concise diagnostic such as ``Business predicted for a technology product launch.'' Avoid inserting hints that reveal test examples.
+
+Use the seed instruction, a reflection minibatch of approximately 4--8 examples, and a capped budget of roughly 12--20 textual proposals. Evaluate proposed candidates on the fixed validation split as the implementation budget permits. Disable merge for this one-component pilot. Select a reflection model that is available for the run; log its identity and cost separately from task-model calls. Use GEPA callbacks to capture selected parents, raw reflection proposals, rejected and accepted candidates, validation scores by example, and changes to the frontier [1,2]. Do not retain only the winning instruction: disagreement analysis needs the unsuccessful proposals as well.
+
+\paragraph{Stage-I output.} Write a candidate table with candidate ID, parent ID, text, token length, validation accuracy, mean loss, per-example score vector, errors fixed relative to its parent, and new errors introduced. GEPA's frontier represents coverage of validation instances in the usual instance-based setting; it is not automatically a Pareto frontier of accuracy against prompt length [2].
+
+\section{Stage II: objective audit before ADMM}
+Let $x_i$ be an article, $y_i\in\{A,B,C,D\}$ its label, $M$ the frozen task model, and $s_c(e,x_i)$ the answer-position score for class $c$ when the editable prompt slot has input embeddings $e$. The initial continuous objective is
+\begin{equation}
+F_{\D}(e)=\frac{1}{|\D|}\sum_{(x_i,y_i)\in\D}
+  -\log\frac{\exp s_{y_i}(e,x_i)}
+  {\sum_{c\in\{A,B,C,D\}}\exp s_c(e,x_i)}.
+\label{eq:loss}
+\end{equation}
+For a GEPA text candidate $p$, tokenize the actual formatted input and compute its discrete loss $F_{\D}(E(p))$ using precisely the same answer-position convention. Candidate length may vary in this audit. Compare validation accuracy, loss, per-class loss, and individual errors across all GEPA candidates. Record pairwise ranking disagreements: cases where one candidate has lower loss but worse accuracy. Inspect the examples responsible instead of relying only on a single correlation coefficient.
+
+\paragraph{Decision gate.} Keep Equation~\eqref{eq:loss} unchanged for the first ADMM run. If it fails to order candidates plausibly, note the mismatch and treat the ADMM outcome as a diagnostic of this surrogate. Design any revised objective using training/validation evidence, not the untouched test set.
+
+\section{Stage III: minimal fixed-length ADMM}
+Let $z=(z_1,\ldots,z_m)\in\V_{\mathrm{allowed}}^m$ be the editable token IDs, $E(z)\in\mathbb R^{m\times d}$ their \emph{input} embedding rows, $e\in\mathbb R^{m\times d}$ a free continuous slot, and $u\in\mathbb R^{m\times d}$ the scaled dual variable. Choose a grammatical seed whose tokenized editable slot is about 24--32 tokens, then set $m$ to that \emph{exact} token count and initialize $z^0$ from it. Exclude special and control tokens from $\V_{\mathrm{allowed}}$. The pilot problem is
+\begin{equation}
+\min_{e,z}\ F_{\D_{\mathrm{train}}}(e)
+\quad\text{subject to}\quad e=E(z),\qquad z\in\V_{\mathrm{allowed}}^m.
+\label{eq:constrained}
+\end{equation}
+A fixed slot avoids defining padding, masks, and end-of-instruction behavior in the first experiment. It is intentionally narrower than GEPA's variable-length text search.
+
+The scaled ADMM steps are
+\begin{align}
+e^{k+1}&\approx\argmin_e\ F_{\mathcal B_k}(e)
+  +\frac{\rho}{2}\|e-E(z^k)+u^k\|_F^2,\label{eq:e-step}\\
+z^{k+1}&\in\argmin_{z\in\V_{\mathrm{allowed}}^m}
+  \|e^{k+1}+u^k-E(z)\|_F^2,\label{eq:z-step}\\
+u^{k+1}&=u^k+e^{k+1}-E(z^{k+1}).\label{eq:u-step}
+\end{align}
+With no additional discrete regularizer, Equation~\eqref{eq:z-step} decomposes into independent nearest-embedding lookup at each position. The $e$-step is nonconvex and solved approximately with a few Adam steps while all model parameters remain frozen; these updates are an experimental procedure rather than a global convergence guarantee.
+
+\paragraph{Configuration.} Start with 30--50 outer iterations, 3--5 $e$-steps per iteration, and batches of approximately 16--32 training examples. Run validation on the \emph{discrete} $z$ every five outer iterations. Set $e^0=E(z^0)$ and $u^0=0$. Preselect a small log-spaced $\rho$ grid after checking the relative magnitude of the task loss and quadratic term near the seed. Report all attempted values; defer online penalty adaptation to a separate experiment. Use a fixed optimizer seed and select the final $z$ by validation accuracy, with validation loss as a prespecified tie-breaker.
+
+\paragraph{Injection and projection checks.} Inject $e$ using the model's input-embedding path at the editable slot, preserving the embeddings of all fixed tokens and the attention mask. Confirm that this path yields the same logits as the ordinary token-ID path when $e=E(z)$. Decode projected $z$, reconstruct the full formatted text prompt, and re-tokenize it. A round-trip mismatch means the nominal token sequence and evaluated text differ; log the mismatch and do not silently treat the decoded text as satisfying Equation~\eqref{eq:constrained}. This issue can arise at subword boundaries. Keep both ID-level and reconstructed-text evaluations if needed to locate it.
+
+\section{Checkpoint schema and diagnostics}
+For every ADMM checkpoint save the following, along with $z^k$ and decoded text:
+\begin{equation}
+F_{\D_{\mathrm{val}}}(e^k),\qquad
+F_{\D_{\mathrm{val}}}(E(z^k)),\qquad
+\acc_{\D_{\mathrm{val}}}(z^k),\qquad
+r^k=e^k-E(z^k),\qquad
+s^k=\rho\bigl(E(z^k)-E(z^{k-1})\bigr).
+\label{eq:diagnostics}
+\end{equation}
+Also record train loss, $\|r^k\|_F$, $\|s^k\|_F$, number of changed token IDs, tokenizer round-trip status, per-class accuracy, and task-model forward/backward calls. Compute the continuous validation loss directly through the soft prompt, and the projected loss through actual token IDs; these are different forward passes.
+
+\begin{center}
+\begin{tabular}{p{0.31\linewidth}p{0.58\linewidth}}
+\toprule
+Observation & Likely next investigation\\
+\midrule
+$F(e^k)$ falls, $F(E(z^k))$ does not & Discrete projection or feasibility is the bottleneck. Inspect token identities, round-trip validity, and the residual.\\
+$F(E(z^k))$ falls, accuracy does not & The label-loss surrogate may misrank task outcomes; inspect GEPA disagreement cases.\\
+Neither loss improves & Check embedding injection, step size, minibatch variance, and $\rho$ scale.\\
+Loss and accuracy improve, but prompts are unnatural & Test semantic restrictions or GEPA-proposed candidate sets in a later run.\\
+\bottomrule
+\end{tabular}
+\end{center}
+Continuous-to-discrete mismatch is a real concern in prompt optimization [5], so the first two losses and the actual discrete accuracy are the main plots.
+
+\section{Comparison, baselines, and deliverables}
+Evaluate four stored prompts on the untouched test subset: the seed; GEPA's selected instruction; ADMM's best-validation discrete prompt; and a simple direct token-coordinate-search baseline with the same fixed slot and a reported model-call budget. Include a no-feedback GEPA ablation only if the initial logs suggest feedback is central and budget remains. Report accuracy, per-class results, mean label loss, prompt length, forward/backward calls, reflection-model calls, and wall time. Do not imply a fair winner from unequal prompt spaces or different compute budgets.
+
+\paragraph{Concrete deliverables.}
+\begin{enumerate}
+\item A reproducible run manifest and a common per-example evaluation table.
+\item A GEPA candidate and error-transition table, including rejected proposals.
+\item A scatter plot of discrete loss versus validation accuracy for GEPA candidates, with examples of ranking disagreements.
+\item ADMM curves for continuous loss, projected loss, discrete accuracy, and $\|r^k\|_F$; a table of token changes and round-trip checks.
+\item A short decision memo identifying whether the second run should change the loss, projection, or penalty strategy.
+\end{enumerate}
+
+\section{Implementation order}
+\begin{enumerate}
+\item \textbf{Harness:} dataset split, model load, prompt builder, answer-position verifier, evaluator, and parity check between ordinary token inputs and injected seed embeddings.
+\item \textbf{GEPA adapter:} score and reflective records, callbacks, bounded observation run, and candidate export.
+\item \textbf{Objective audit:} compute the label loss for every candidate; inspect rankings and example-level disagreement.
+\item \textbf{ADMM loop:} continuous update, allowed-token nearest lookup, dual update, checkpointing, and tokenizer round-trip checks.
+\item \textbf{Analysis:} plots, test-set evaluation of preselected prompts, and the next-run decision.
+\end{enumerate}
+
+\section*{References and implementation documentation}
+\begin{enumerate}[label={[\arabic*]},leftmargin=2.3em]
+\item GEPA, \emph{Creating Adapters}: \url{https://gepa-ai.github.io/gepa/guides/adapters/}.
+\item GEPA, \emph{Core optimize API}: \url{https://gepa-ai.github.io/gepa/api/core/optimize/}.\\ Callbacks: \url{https://gepa-ai.github.io/gepa/guides/callbacks/}.
+\item Hugging Face, \emph{AG News dataset card}: \url{https://huggingface.co/datasets/fancyzhx/ag_news}.
+\item Qwen, \emph{Qwen3-1.7B model card}: \url{https://huggingface.co/Qwen/Qwen3-1.7B}.
+\item Khashabi et al., \emph{Prompt Waywardness: The Curious Case of Discretized Interpretation of Continuous Prompts}, NAACL 2022: \url{https://aclanthology.org/2022.naacl-main.266/}.
+\end{enumerate}
+\end{document}

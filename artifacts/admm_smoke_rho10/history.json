@@ -1,0 +1,312 @@
+[
+  {
+    "backward_calls_so_far": 0,
+    "changed_token_count_from_previous": 0,
+    "changed_token_count_from_seed": 0,
+    "continuous_validation": {
+      "accuracy": 0.3046875,
+      "confusion_matrix": {
+        "A": {
+          "A": 126,
+          "B": 0,
+          "C": 0,
+          "D": 2
+        },
+        "B": {
+          "A": 117,
+          "B": 9,
+          "C": 0,
+          "D": 2
+        },
+        "C": {
+          "A": 108,
+          "B": 0,
+          "C": 2,
+          "D": 18
+        },
+        "D": {
+          "A": 109,
+          "B": 0,
+          "C": 0,
+          "D": 19
+        }
+      },
+      "mean_loss": 9.258448600769043,
+      "per_class_accuracy": {
+        "A": 0.984375,
+        "B": 0.0703125,
+        "C": 0.015625,
+        "D": 0.1484375
+      },
+      "per_class_mean_loss": {
+        "A": 0.07969934493303299,
+        "B": 12.01284408569336,
+        "C": 15.869291305541992,
+        "D": 9.0719575881958
+      }
+    },
+    "discrete_validation": {
+      "accuracy": 0.3046875,
+      "confusion_matrix": {
+        "A": {
+          "A": 126,
+          "B": 0,
+          "C": 0,
+          "D": 2
+        },
+        "B": {
+          "A": 117,
+          "B": 9,
+          "C": 0,
+          "D": 2
+        },
+        "C": {
+          "A": 108,
+          "B": 0,
+          "C": 2,
+          "D": 18
+        },
+        "D": {
+          "A": 109,
+          "B": 0,
+          "C": 0,
+          "D": 19
+        }
+      },
+      "mean_loss": 9.258448600769043,
+      "per_class_accuracy": {
+        "A": 0.984375,
+        "B": 0.0703125,
+        "C": 0.015625,
+        "D": 0.1484375
+      },
+      "per_class_mean_loss": {
+        "A": 0.07969934493303299,
+        "B": 12.01284408569336,
+        "C": 15.869291305541992,
+        "D": 9.0719575881958
+      }
+    },
+    "dual_residual_norm": 0.0,
+    "forward_calls_so_far": 32,
+    "iteration": 0,
+    "primal_residual_norm": 0.0,
+    "reconstructed_text_validation": null,
+    "roundtrip": {
+      "decoded_slot_text": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.\n",
+      "reconstructed_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+      "reconstruction_error": null,
+      "retokenized_slot_ids": [
+        31999,
+        3641,
+        8253,
+        279,
+        4549,
+        594,
+        1887,
+        8544,
+        504,
+        279,
+        2383,
+        12731,
+        11,
+        10034,
+        83216,
+        3565,
+        11,
+        323,
+        2550,
+        1172,
+        279,
+        12159,
+        6722,
+        6524,
+        624
+      ],
+      "roundtrip_exact": true
+    },
+    "slot_token_ids": [
+      31999,
+      3641,
+      8253,
+      279,
+      4549,
+      594,
+      1887,
+      8544,
+      504,
+      279,
+      2383,
+      12731,
+      11,
+      10034,
+      83216,
+      3565,
+      11,
+      323,
+      2550,
+      1172,
+      279,
+      12159,
+      6722,
+      6524,
+      624
+    ],
+    "train_soft_task_loss": null
+  },
+  {
+    "backward_calls_so_far": 4,
+    "changed_token_count_from_previous": 0,
+    "changed_token_count_from_seed": 0,
+    "continuous_validation": {
+      "accuracy": 0.326171875,
+      "confusion_matrix": {
+        "A": {
+          "A": 94,
+          "B": 0,
+          "C": 0,
+          "D": 34
+        },
+        "B": {
+          "A": 93,
+          "B": 6,
+          "C": 0,
+          "D": 29
+        },
+        "C": {
+          "A": 73,
+          "B": 0,
+          "C": 6,
+          "D": 49
+        },
+        "D": {
+          "A": 66,
+          "B": 1,
+          "C": 0,
+          "D": 61
+        }
+      },
+      "mean_loss": 3.2490859031677246,
+      "per_class_accuracy": {
+        "A": 0.734375,
+        "B": 0.046875,
+        "C": 0.046875,
+        "D": 0.4765625
+      },
+      "per_class_mean_loss": {
+        "A": 0.7084082365036011,
+        "B": 4.859158515930176,
+        "C": 6.211698055267334,
+        "D": 1.2170782089233398
+      }
+    },
+    "discrete_validation": {
+      "accuracy": 0.3046875,
+      "confusion_matrix": {
+        "A": {
+          "A": 126,
+          "B": 0,
+          "C": 0,
+          "D": 2
+        },
+        "B": {
+          "A": 117,
+          "B": 9,
+          "C": 0,
+          "D": 2
+        },
+        "C": {
+          "A": 108,
+          "B": 0,
+          "C": 2,
+          "D": 18
+        },
+        "D": {
+          "A": 109,
+          "B": 0,
+          "C": 0,
+          "D": 19
+        }
+      },
+      "mean_loss": 9.258448600769043,
+      "per_class_accuracy": {
+        "A": 0.984375,
+        "B": 0.0703125,
+        "C": 0.015625,
+        "D": 0.1484375
+      },
+      "per_class_mean_loss": {
+        "A": 0.07969934493303299,
+        "B": 12.01284408569336,
+        "C": 15.869291305541992,
+        "D": 9.0719575881958
+      }
+    },
+    "dual_residual_norm": 0.0,
+    "forward_calls_so_far": 68,
+    "iteration": 2,
+    "primal_residual_norm": 1.7585124969482422,
+    "reconstructed_text_validation": null,
+    "roundtrip": {
+      "decoded_slot_text": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.\n",
+      "reconstructed_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+      "reconstruction_error": null,
+      "retokenized_slot_ids": [
+        31999,
+        3641,
+        8253,
+        279,
+        4549,
+        594,
+        1887,
+        8544,
+        504,
+        279,
+        2383,
+        12731,
+        11,
+        10034,
+        83216,
+        3565,
+        11,
+        323,
+        2550,
+        1172,
+        279,
+        12159,
+        6722,
+        6524,
+        624
+      ],
+      "roundtrip_exact": true
+    },
+    "slot_token_ids": [
+      31999,
+      3641,
+      8253,
+      279,
+      4549,
+      594,
+      1887,
+      8544,
+      504,
+      279,
+      2383,
+      12731,
+      11,
+      10034,
+      83216,
+      3565,
+      11,
+      323,
+      2550,
+      1172,
+      279,
+      12159,
+      6722,
+      6524,
+      624
+    ],
+    "train_soft_task_loss": 6.417415618896484
+  }
+]

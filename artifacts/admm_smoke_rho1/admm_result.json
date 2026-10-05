@@ -1,0 +1,689 @@
+{
+  "allowed_vocabulary_size": 151613,
+  "backward_calls": 4,
+  "best_checkpoint": {
+    "backward_calls_so_far": 0,
+    "changed_token_count_from_previous": 0,
+    "changed_token_count_from_seed": 0,
+    "continuous_validation": {
+      "accuracy": 0.3046875,
+      "confusion_matrix": {
+        "A": {
+          "A": 126,
+          "B": 0,
+          "C": 0,
+          "D": 2
+        },
+        "B": {
+          "A": 117,
+          "B": 9,
+          "C": 0,
+          "D": 2
+        },
+        "C": {
+          "A": 108,
+          "B": 0,
+          "C": 2,
+          "D": 18
+        },
+        "D": {
+          "A": 109,
+          "B": 0,
+          "C": 0,
+          "D": 19
+        }
+      },
+      "mean_loss": 9.258448600769043,
+      "per_class_accuracy": {
+        "A": 0.984375,
+        "B": 0.0703125,
+        "C": 0.015625,
+        "D": 0.1484375
+      },
+      "per_class_mean_loss": {
+        "A": 0.07969934493303299,
+        "B": 12.01284408569336,
+        "C": 15.869291305541992,
+        "D": 9.0719575881958
+      }
+    },
+    "discrete_validation": {
+      "accuracy": 0.3046875,
+      "confusion_matrix": {
+        "A": {
+          "A": 126,
+          "B": 0,
+          "C": 0,
+          "D": 2
+        },
+        "B": {
+          "A": 117,
+          "B": 9,
+          "C": 0,
+          "D": 2
+        },
+        "C": {
+          "A": 108,
+          "B": 0,
+          "C": 2,
+          "D": 18
+        },
+        "D": {
+          "A": 109,
+          "B": 0,
+          "C": 0,
+          "D": 19
+        }
+      },
+      "mean_loss": 9.258448600769043,
+      "per_class_accuracy": {
+        "A": 0.984375,
+        "B": 0.0703125,
+        "C": 0.015625,
+        "D": 0.1484375
+      },
+      "per_class_mean_loss": {
+        "A": 0.07969934493303299,
+        "B": 12.01284408569336,
+        "C": 15.869291305541992,
+        "D": 9.0719575881958
+      }
+    },
+    "dual_residual_norm": 0.0,
+    "forward_calls_so_far": 32,
+    "iteration": 0,
+    "primal_residual_norm": 0.0,
+    "reconstructed_text_validation": null,
+    "roundtrip": {
+      "decoded_slot_text": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.\n",
+      "reconstructed_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+      "reconstruction_error": null,
+      "retokenized_slot_ids": [
+        31999,
+        3641,
+        8253,
+        279,
+        4549,
+        594,
+        1887,
+        8544,
+        504,
+        279,
+        2383,
+        12731,
+        11,
+        10034,
+        83216,
+        3565,
+        11,
+        323,
+        2550,
+        1172,
+        279,
+        12159,
+        6722,
+        6524,
+        624
+      ],
+      "roundtrip_exact": true
+    },
+    "slot_token_ids": [
+      31999,
+      3641,
+      8253,
+      279,
+      4549,
+      594,
+      1887,
+      8544,
+      504,
+      279,
+      2383,
+      12731,
+      11,
+      10034,
+      83216,
+      3565,
+      11,
+      323,
+      2550,
+      1172,
+      279,
+      12159,
+      6722,
+      6524,
+      624
+    ],
+    "train_soft_task_loss": null
+  },
+  "calibration": {
+    "batch_size": 8,
+    "probe_displacement_norm": 1.131370784570859,
+    "probe_squared_residual": 1.279999852180481,
+    "rho_penalty_at_probe": {
+      "0.1": 0.06399999260902405,
+      "1.0": 0.6399999260902405,
+      "10.0": 6.399999260902405
+    },
+    "seed_embedding_norm": 7.4078826904296875,
+    "task_gradient_norm": 131.8831787109375,
+    "task_loss_at_seed": 5.819190979003906
+  },
+  "checkpoints": [
+    {
+      "backward_calls_so_far": 0,
+      "changed_token_count_from_previous": 0,
+      "changed_token_count_from_seed": 0,
+      "continuous_validation": {
+        "accuracy": 0.3046875,
+        "confusion_matrix": {
+          "A": {
+            "A": 126,
+            "B": 0,
+            "C": 0,
+            "D": 2
+          },
+          "B": {
+            "A": 117,
+            "B": 9,
+            "C": 0,
+            "D": 2
+          },
+          "C": {
+            "A": 108,
+            "B": 0,
+            "C": 2,
+            "D": 18
+          },
+          "D": {
+            "A": 109,
+            "B": 0,
+            "C": 0,
+            "D": 19
+          }
+        },
+        "mean_loss": 9.258448600769043,
+        "per_class_accuracy": {
+          "A": 0.984375,
+          "B": 0.0703125,
+          "C": 0.015625,
+          "D": 0.1484375
+        },
+        "per_class_mean_loss": {
+          "A": 0.07969934493303299,
+          "B": 12.01284408569336,
+          "C": 15.869291305541992,
+          "D": 9.0719575881958
+        }
+      },
+      "discrete_validation": {
+        "accuracy": 0.3046875,
+        "confusion_matrix": {
+          "A": {
+            "A": 126,
+            "B": 0,
+            "C": 0,
+            "D": 2
+          },
+          "B": {
+            "A": 117,
+            "B": 9,
+            "C": 0,
+            "D": 2
+          },
+          "C": {
+            "A": 108,
+            "B": 0,
+            "C": 2,
+            "D": 18
+          },
+          "D": {
+            "A": 109,
+            "B": 0,
+            "C": 0,
+            "D": 19
+          }
+        },
+        "mean_loss": 9.258448600769043,
+        "per_class_accuracy": {
+          "A": 0.984375,
+          "B": 0.0703125,
+          "C": 0.015625,
+          "D": 0.1484375
+        },
+        "per_class_mean_loss": {
+          "A": 0.07969934493303299,
+          "B": 12.01284408569336,
+          "C": 15.869291305541992,
+          "D": 9.0719575881958
+        }
+      },
+      "dual_residual_norm": 0.0,
+      "forward_calls_so_far": 32,
+      "iteration": 0,
+      "primal_residual_norm": 0.0,
+      "reconstructed_text_validation": null,
+      "roundtrip": {
+        "decoded_slot_text": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.\n",
+        "reconstructed_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+        "reconstruction_error": null,
+        "retokenized_slot_ids": [
+          31999,
+          3641,
+          8253,
+          279,
+          4549,
+          594,
+          1887,
+          8544,
+          504,
+          279,
+          2383,
+          12731,
+          11,
+          10034,
+          83216,
+          3565,
+          11,
+          323,
+          2550,
+          1172,
+          279,
+          12159,
+          6722,
+          6524,
+          624
+        ],
+        "roundtrip_exact": true
+      },
+      "slot_token_ids": [
+        31999,
+        3641,
+        8253,
+        279,
+        4549,
+        594,
+        1887,
+        8544,
+        504,
+        279,
+        2383,
+        12731,
+        11,
+        10034,
+        83216,
+        3565,
+        11,
+        323,
+        2550,
+        1172,
+        279,
+        12159,
+        6722,
+        6524,
+        624
+      ],
+      "train_soft_task_loss": null
+    },
+    {
+      "backward_calls_so_far": 2,
+      "changed_token_count_from_previous": 0,
+      "changed_token_count_from_seed": 0,
+      "continuous_validation": {
+        "accuracy": 0.337890625,
+        "confusion_matrix": {
+          "A": {
+            "A": 96,
+            "B": 2,
+            "C": 0,
+            "D": 30
+          },
+          "B": {
+            "A": 72,
+            "B": 18,
+            "C": 0,
+            "D": 38
+          },
+          "C": {
+            "A": 61,
+            "B": 12,
+            "C": 5,
+            "D": 50
+          },
+          "D": {
+            "A": 61,
+            "B": 12,
+            "C": 1,
+            "D": 54
+          }
+        },
+        "mean_loss": 4.581601619720459,
+        "per_class_accuracy": {
+          "A": 0.75,
+          "B": 0.140625,
+          "C": 0.0390625,
+          "D": 0.421875
+        },
+        "per_class_mean_loss": {
+          "A": 1.3942371606826782,
+          "B": 4.87339448928833,
+          "C": 9.825230598449707,
+          "D": 2.2335450649261475
+        }
+      },
+      "discrete_validation": {
+        "accuracy": 0.3046875,
+        "confusion_matrix": {
+          "A": {
+            "A": 126,
+            "B": 0,
+            "C": 0,
+            "D": 2
+          },
+          "B": {
+            "A": 117,
+            "B": 9,
+            "C": 0,
+            "D": 2
+          },
+          "C": {
+            "A": 108,
+            "B": 0,
+            "C": 2,
+            "D": 18
+          },
+          "D": {
+            "A": 109,
+            "B": 0,
+            "C": 0,
+            "D": 19
+          }
+        },
+        "mean_loss": 9.258448600769043,
+        "per_class_accuracy": {
+          "A": 0.984375,
+          "B": 0.0703125,
+          "C": 0.015625,
+          "D": 0.1484375
+        },
+        "per_class_mean_loss": {
+          "A": 0.07969934493303299,
+          "B": 12.01284408569336,
+          "C": 15.869291305541992,
+          "D": 9.0719575881958
+        }
+      },
+      "dual_residual_norm": 0.0,
+      "forward_calls_so_far": 66,
+      "iteration": 1,
+      "primal_residual_norm": 1.714481234550476,
+      "reconstructed_text_validation": null,
+      "roundtrip": {
+        "decoded_slot_text": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.\n",
+        "reconstructed_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+        "reconstruction_error": null,
+        "retokenized_slot_ids": [
+          31999,
+          3641,
+          8253,
+          279,
+          4549,
+          594,
+          1887,
+          8544,
+          504,
+          279,
+          2383,
+          12731,
+          11,
+          10034,
+          83216,
+          3565,
+          11,
+          323,
+          2550,
+          1172,
+          279,
+          12159,
+          6722,
+          6524,
+          624
+        ],
+        "roundtrip_exact": true
+      },
+      "slot_token_ids": [
+        31999,
+        3641,
+        8253,
+        279,
+        4549,
+        594,
+        1887,
+        8544,
+        504,
+        279,
+        2383,
+        12731,
+        11,
+        10034,
+        83216,
+        3565,
+        11,
+        323,
+        2550,
+        1172,
+        279,
+        12159,
+        6722,
+        6524,
+        624
+      ],
+      "train_soft_task_loss": 14.031256675720215
+    },
+    {
+      "backward_calls_so_far": 4,
+      "changed_token_count_from_previous": 0,
+      "changed_token_count_from_seed": 0,
+      "continuous_validation": {
+        "accuracy": 0.359375,
+        "confusion_matrix": {
+          "A": {
+            "A": 27,
+            "B": 8,
+            "C": 8,
+            "D": 85
+          },
+          "B": {
+            "A": 21,
+            "B": 34,
+            "C": 13,
+            "D": 60
+          },
+          "C": {
+            "A": 7,
+            "B": 12,
+            "C": 55,
+            "D": 54
+          },
+          "D": {
+            "A": 5,
+            "B": 21,
+            "C": 34,
+            "D": 68
+          }
+        },
+        "mean_loss": 2.0150420665740967,
+        "per_class_accuracy": {
+          "A": 0.2109375,
+          "B": 0.265625,
+          "C": 0.4296875,
+          "D": 0.53125
+        },
+        "per_class_mean_loss": {
+          "A": 2.858506441116333,
+          "B": 1.8273193836212158,
+          "C": 2.140561103820801,
+          "D": 1.2337812185287476
+        }
+      },
+      "discrete_validation": {
+        "accuracy": 0.3046875,
+        "confusion_matrix": {
+          "A": {
+            "A": 126,
+            "B": 0,
+            "C": 0,
+            "D": 2
+          },
+          "B": {
+            "A": 117,
+            "B": 9,
+            "C": 0,
+            "D": 2
+          },
+          "C": {
+            "A": 108,
+            "B": 0,
+            "C": 2,
+            "D": 18
+          },
+          "D": {
+            "A": 109,
+            "B": 0,
+            "C": 0,
+            "D": 19
+          }
+        },
+        "mean_loss": 9.258448600769043,
+        "per_class_accuracy": {
+          "A": 0.984375,
+          "B": 0.0703125,
+          "C": 0.015625,
+          "D": 0.1484375
+        },
+        "per_class_mean_loss": {
+          "A": 0.07969934493303299,
+          "B": 12.01284408569336,
+          "C": 15.869291305541992,
+          "D": 9.0719575881958
+        }
+      },
+      "dual_residual_norm": 0.0,
+      "forward_calls_so_far": 100,
+      "iteration": 2,
+      "primal_residual_norm": 2.4810502529144287,
+      "reconstructed_text_validation": null,
+      "roundtrip": {
+        "decoded_slot_text": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.\n",
+        "reconstructed_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+        "reconstruction_error": null,
+        "retokenized_slot_ids": [
+          31999,
+          3641,
+          8253,
+          279,
+          4549,
+          594,
+          1887,
+          8544,
+          504,
+          279,
+          2383,
+          12731,
+          11,
+          10034,
+          83216,
+          3565,
+          11,
+          323,
+          2550,
+          1172,
+          279,
+          12159,
+          6722,
+          6524,
+          624
+        ],
+        "roundtrip_exact": true
+      },
+      "slot_token_ids": [
+        31999,
+        3641,
+        8253,
+        279,
+        4549,
+        594,
+        1887,
+        8544,
+        504,
+        279,
+        2383,
+        12731,
+        11,
+        10034,
+        83216,
+        3565,
+        11,
+        323,
+        2550,
+        1172,
+        279,
+        12159,
+        6722,
+        6524,
+        624
+      ],
+      "train_soft_task_loss": 6.5431318283081055
+    }
+  ],
+  "forward_calls": 100,
+  "hyperparameters": {
+    "e_steps": 2,
+    "evaluation_batch_size": 32,
+    "learning_rate": 0.005,
+    "outer_iterations": 2,
+    "projection_chunk_size": 16384,
+    "rho": 1.0,
+    "train_batch_size": 8,
+    "validation_frequency": 1
+  },
+  "initial_parity": {
+    "answer_positions_identical": true,
+    "examples_checked": 8,
+    "maximum_absolute_label_score_difference": 0.0,
+    "mean_absolute_label_score_difference": 0.0,
+    "prediction_agreement": 1.0
+  },
+  "objective_interpretation": "Label loss is diagnostic because the GEPA audit found accuracy/loss ranking disagreements.",
+  "official_test_examples_present": false,
+  "optimization_wall_time_seconds": 20.511956308037043,
+  "seed_slot_token_ids": [
+    31999,
+    3641,
+    8253,
+    279,
+    4549,
+    594,
+    1887,
+    8544,
+    504,
+    279,
+    2383,
+    12731,
+    11,
+    10034,
+    83216,
+    3565,
+    11,
+    323,
+    2550,
+    1172,
+    279,
+    12159,
+    6722,
+    6524,
+    624
+  ],
+  "selection_rule": "highest discrete validation accuracy; mean loss tie-breaker",
+  "slot_token_count": 25
+}

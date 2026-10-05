@@ -1,0 +1,59 @@
+{
+  "accepted_proposal_count": 4,
+  "all_proposals_tokenizer_compositional": true,
+  "gepa_selected": {
+    "candidate_idx": 3,
+    "instruction": "Carefully analyze the article to determine the primary subject and context, focusing on the main event or issue, and ignore incidental details. Select the corresponding capital letter from the label mapping.",
+    "is_seed": false,
+    "validation_accuracy": 0.3671875,
+    "validation_mean_loss": 6.486268453709625
+  },
+  "interpretation": "GEPA-selected and post-hoc-audit-best are reported separately. The post-hoc audit is exploratory and does not retroactively change GEPA acceptance.",
+  "posthoc_audit_best": {
+    "accuracy_gain_over_seed": 0.0625,
+    "errors_fixed_vs_parent": 40,
+    "gepa_statuses": [
+      "accepted"
+    ],
+    "instruction": "Carefully analyze the article to determine the primary subject and context, focusing on the main event or issue, and ignore incidental details. Select the corresponding capital letter from the label mapping.",
+    "mean_loss_change_from_seed": -2.7721796489349337,
+    "new_errors_vs_parent": 15,
+    "per_class_accuracy": {
+      "A": 0.796875,
+      "B": 0.0546875,
+      "C": 0.0234375,
+      "D": 0.59375
+    },
+    "prediction_counts": {
+      "A": 319,
+      "B": 8,
+      "C": 4,
+      "D": 181
+    },
+    "proposal_numbers": [
+      8
+    ],
+    "validation_accuracy": 0.3671875,
+    "validation_mean_loss": 6.486268453709625
+  },
+  "proposal_count": 12,
+  "rejected_proposal_count": 8,
+  "seed": {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+    "per_class_accuracy": {
+      "A": 0.984375,
+      "B": 0.0703125,
+      "C": 0.015625,
+      "D": 0.1484375
+    },
+    "prediction_counts": {
+      "A": 460,
+      "B": 9,
+      "C": 2,
+      "D": 41
+    },
+    "validation_accuracy": 0.3046875,
+    "validation_mean_loss": 9.258448102644559
+  },
+  "unique_proposal_text_count": 11
+}

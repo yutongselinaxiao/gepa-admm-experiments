@@ -1,0 +1,11 @@
+Iteration 0: Base program full valset score: 0.3046875 over 512 / 512 examples
+Iteration 1: Selected program 0 score: 0.3046875
+Iteration 1: Proposed new text for instruction: ## New Instruction
+
+You are to determine the main topic of an article based on a predefined label mapping. The task requires you to:
+
+1. **Identify the main topic** of the article, ignoring any incidental details or specific entities mentioned.
+2. **Ignore incidental details** such as names of people, places, or specific events that are not central to the article's theme.
+3. **Output only the corresponding capital letter** from the label mapping, which includes categories like "A" (World), "B" (Science/Technology), "C" (Sports), "D" (Politics), and others.
+4
+Iteration 1: New subsample score 2.0 is not better than old score 3.0, skipping

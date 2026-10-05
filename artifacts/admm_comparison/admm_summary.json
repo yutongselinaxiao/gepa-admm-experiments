@@ -1,0 +1,100 @@
+{
+  "diagnosis": "The continuous relaxation improves substantially, but projection usually returns the seed. The low-rho run crosses token boundaries with a modest discrete gain and a large primal residual, so projection/feasibility is the dominant bottleneck.",
+  "official_test_unused_in_all_runs": true,
+  "runs": [
+    {
+      "backward_calls": 90,
+      "best_discrete_accuracy": 0.326171875,
+      "best_discrete_mean_loss": 8.10860538482666,
+      "best_iteration": 20,
+      "changed_token_count": 2,
+      "continuous_accuracy_at_best": 0.255859375,
+      "continuous_mean_loss_at_best": 7.114242076873779,
+      "dual_residual_norm_at_best": 1.9143717288970947,
+      "forward_calls": 314,
+      "official_test_examples_present": false,
+      "primal_residual_norm_at_best": 6.741894245147705,
+      "rho": 1.0,
+      "roundtrip_exact": true,
+      "run": "rho1",
+      "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignores incidental details\n and output only the corresponding capital letter.",
+      "token_changes": [
+        {
+          "position": 13,
+          "seed_token_id": 10034,
+          "seed_token_text": " ignore",
+          "selected_token_id": 48278,
+          "selected_token_text": " ignores"
+        },
+        {
+          "position": 16,
+          "seed_token_id": 11,
+          "seed_token_text": ",",
+          "selected_token_id": 198,
+          "selected_token_text": "\n"
+        }
+      ],
+      "wall_time_seconds": 61.054415587335825
+    },
+    {
+      "backward_calls": 90,
+      "best_discrete_accuracy": 0.3046875,
+      "best_discrete_mean_loss": 9.258448600769043,
+      "best_iteration": 0,
+      "changed_token_count": 0,
+      "continuous_accuracy_at_best": 0.3046875,
+      "continuous_mean_loss_at_best": 9.258448600769043,
+      "dual_residual_norm_at_best": 0.0,
+      "forward_calls": 314,
+      "official_test_examples_present": false,
+      "primal_residual_norm_at_best": 0.0,
+      "rho": 10.0,
+      "roundtrip_exact": true,
+      "run": "rho10",
+      "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+      "token_changes": [],
+      "wall_time_seconds": 61.40893475385383
+    },
+    {
+      "backward_calls": 90,
+      "best_discrete_accuracy": 0.3046875,
+      "best_discrete_mean_loss": 9.258448600769043,
+      "best_iteration": 0,
+      "changed_token_count": 0,
+      "continuous_accuracy_at_best": 0.3046875,
+      "continuous_mean_loss_at_best": 9.258448600769043,
+      "dual_residual_norm_at_best": 0.0,
+      "forward_calls": 314,
+      "official_test_examples_present": false,
+      "primal_residual_norm_at_best": 0.0,
+      "rho": 100.0,
+      "roundtrip_exact": true,
+      "run": "rho100",
+      "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+      "token_changes": [],
+      "wall_time_seconds": 61.21333263302222
+    }
+  ],
+  "selected_discrete_accuracy": 0.326171875,
+  "selected_discrete_mean_loss": 8.10860538482666,
+  "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignores incidental details\n and output only the corresponding capital letter.",
+  "selected_iteration": 20,
+  "selected_rho": 1.0,
+  "selected_run": "rho1",
+  "selected_token_changes": [
+    {
+      "position": 13,
+      "seed_token_id": 10034,
+      "seed_token_text": " ignore",
+      "selected_token_id": 48278,
+      "selected_token_text": " ignores"
+    },
+    {
+      "position": 16,
+      "seed_token_id": 11,
+      "seed_token_text": ",",
+      "selected_token_id": 198,
+      "selected_token_text": "\n"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "example_id": "sanity-world-1",
+    "article": "Diplomats from the two countries met at the United Nations to negotiate a ceasefire and an exchange of prisoners.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "sanity-world-2",
+    "article": "The foreign ministry announced new talks with neighboring states over the disputed border.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "sanity-sports-1",
+    "article": "The underdogs won the championship after scoring twice in the final minutes of the match.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "sanity-sports-2",
+    "article": "The tennis player advanced to the tournament semifinal with a straight-sets victory.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "sanity-business-1",
+    "article": "Shares rose after the retailer reported higher quarterly revenue and increased its annual profit forecast.",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "sanity-business-2",
+    "article": "The central bank raised interest rates as investors assessed inflation and the outlook for the economy.",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "sanity-scitech-1",
+    "article": "Researchers unveiled a new battery material that charges faster and retains more capacity after repeated use.",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "sanity-scitech-2",
+    "article": "The software company released a security update that fixes a vulnerability in its mobile operating system.",
+    "gold_label": "D"
+  }
+]

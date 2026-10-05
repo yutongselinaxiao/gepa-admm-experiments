@@ -1,0 +1,1467 @@
+{
+  "best_accuracy_and_lowest_loss_agree": false,
+  "best_accuracy_candidate_id": "proposal_8",
+  "candidate_count": 12,
+  "candidates": [
+    {
+      "candidate_id": "seed",
+      "gepa_statuses": [
+        "seed"
+      ],
+      "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+      "per_class_accuracy": {
+        "A": 0.984375,
+        "B": 0.0703125,
+        "C": 0.015625,
+        "D": 0.1484375
+      },
+      "per_class_mean_loss": {
+        "A": 0.07969934707398668,
+        "B": 12.012844390468672,
+        "C": 15.869291294366121,
+        "D": 9.071957378669453
+      },
+      "proposal_numbers": [],
+      "slot_token_count": null,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.3046875,
+      "validation_mean_loss": 9.258448102644559
+    },
+    {
+      "candidate_id": "proposal_1",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the primary topic, ignoring any incidental details, and select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.953125,
+        "B": 0.046875,
+        "C": 0.015625,
+        "D": 0.203125
+      },
+      "per_class_mean_loss": {
+        "A": 0.19063348522060047,
+        "B": 11.704270023852583,
+        "C": 15.144729318096992,
+        "D": 6.733569758542224
+      },
+      "proposal_numbers": [
+        1
+      ],
+      "slot_token_count": 27,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.3046875,
+      "validation_mean_loss": 8.443300646428101
+    },
+    {
+      "candidate_id": "proposal_2",
+      "gepa_statuses": [
+        "accepted"
+      ],
+      "instruction": "Carefully identify the article's central topic by focusing on the primary subject and context, ignoring incidental details, and select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.8046875,
+        "B": 0.0546875,
+        "C": 0.015625,
+        "D": 0.515625
+      },
+      "per_class_mean_loss": {
+        "A": 1.064668367193475,
+        "B": 8.249686951588956,
+        "C": 12.048106901347637,
+        "D": 3.196451979699746
+      },
+      "proposal_numbers": [
+        2
+      ],
+      "slot_token_count": 32,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.34765625,
+      "validation_mean_loss": 6.1397285499574545
+    },
+    {
+      "candidate_id": "proposal_3",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully identify the article's central theme by focusing on the primary subject and context, prioritizing the main event or issue, and ignoring incidental details. Select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.8203125,
+        "B": 0.0546875,
+        "C": 0.0234375,
+        "D": 0.5
+      },
+      "per_class_mean_loss": {
+        "A": 0.9195291415474327,
+        "B": 9.044908962765476,
+        "C": 12.42993537010625,
+        "D": 3.406532668839507
+      },
+      "proposal_numbers": [
+        3
+      ],
+      "slot_token_count": 40,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.349609375,
+      "validation_mean_loss": 6.450226535814667
+    },
+    {
+      "candidate_id": "proposal_4",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the central topic, focusing on the main subject and context, and select the corresponding capital letter from the label mapping, ignoring any incidental details or keywords.",
+      "per_class_accuracy": {
+        "A": 0.9375,
+        "B": 0.0625,
+        "C": 0.015625,
+        "D": 0.265625
+      },
+      "per_class_mean_loss": {
+        "A": 0.1947106524081536,
+        "B": 8.673461613654808,
+        "C": 13.139482642523944,
+        "D": 5.717206313863169
+      },
+      "proposal_numbers": [
+        4
+      ],
+      "slot_token_count": 37,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.3203125,
+      "validation_mean_loss": 6.931215305612519
+    },
+    {
+      "candidate_id": "proposal_5",
+      "gepa_statuses": [
+        "accepted",
+        "rejected"
+      ],
+      "instruction": "Carefully identify the article's central theme by focusing on the primary subject and context, prioritizing the main event or issue, and ignoring incidental details, then select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.90625,
+        "B": 0.0546875,
+        "C": 0.015625,
+        "D": 0.296875
+      },
+      "per_class_mean_loss": {
+        "A": 0.37154147341027755,
+        "B": 10.979104401310853,
+        "C": 13.74884998891499,
+        "D": 5.706110239387598
+      },
+      "proposal_numbers": [
+        5,
+        6
+      ],
+      "slot_token_count": 41,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.318359375,
+      "validation_mean_loss": 7.701401525755929
+    },
+    {
+      "candidate_id": "proposal_7",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter.",
+      "per_class_accuracy": {
+        "A": 0.921875,
+        "B": 0.234375,
+        "C": 0.015625,
+        "D": 0.171875
+      },
+      "per_class_mean_loss": {
+        "A": 0.46198642780785487,
+        "B": 6.194149869763123,
+        "C": 12.23215769790113,
+        "D": 5.853872183564363
+      },
+      "proposal_numbers": [
+        7
+      ],
+      "slot_token_count": 33,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.3359375,
+      "validation_mean_loss": 6.185541544759118
+    },
+    {
+      "candidate_id": "proposal_8",
+      "gepa_statuses": [
+        "accepted"
+      ],
+      "instruction": "Carefully analyze the article to determine the primary subject and context, focusing on the main event or issue, and ignore incidental details. Select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.796875,
+        "B": 0.0546875,
+        "C": 0.0234375,
+        "D": 0.59375
+      },
+      "per_class_mean_loss": {
+        "A": 1.1150046721694806,
+        "B": 9.290358464815508,
+        "C": 12.607283027217818,
+        "D": 2.9324276506356908
+      },
+      "proposal_numbers": [
+        8
+      ],
+      "slot_token_count": 36,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.3671875,
+      "validation_mean_loss": 6.486268453709625
+    },
+    {
+      "candidate_id": "proposal_9",
+      "gepa_statuses": [
+        "accepted"
+      ],
+      "instruction": "Carefully identify the article's central topic by focusing on the primary subject and context, prioritizing the main event or issue, and ignoring incidental details, then select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.921875,
+        "B": 0.046875,
+        "C": 0.015625,
+        "D": 0.21875
+      },
+      "per_class_mean_loss": {
+        "A": 0.22793917892000065,
+        "B": 10.318321198225018,
+        "C": 13.51179899647832,
+        "D": 6.1829491445698
+      },
+      "proposal_numbers": [
+        9
+      ],
+      "slot_token_count": 41,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.30078125,
+      "validation_mean_loss": 7.560252129548284
+    },
+    {
+      "candidate_id": "proposal_10",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully identify the article's central topic by focusing on the primary subject and context, prioritizing the main event or issue, and select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.7265625,
+        "B": 0.0546875,
+        "C": 0.015625,
+        "D": 0.59375
+      },
+      "per_class_mean_loss": {
+        "A": 1.3269627422622121,
+        "B": 8.140891753986011,
+        "C": 11.692025981843472,
+        "D": 2.359281638922716
+      },
+      "proposal_numbers": [
+        10
+      ],
+      "slot_token_count": 36,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.34765625,
+      "validation_mean_loss": 5.8797905292536035
+    },
+    {
+      "candidate_id": "proposal_11",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully identify the article's central topic by focusing on the primary subject and context, distinguishing it from incidental details and keywords, and select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.6796875,
+        "B": 0.0625,
+        "C": 0.0234375,
+        "D": 0.5234375
+      },
+      "per_class_mean_loss": {
+        "A": 1.280202624706947,
+        "B": 6.283132133888888,
+        "C": 10.035924224182963,
+        "D": 2.669390374973908
+      },
+      "proposal_numbers": [
+        11
+      ],
+      "slot_token_count": 36,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.322265625,
+      "validation_mean_loss": 5.067162339438177
+    },
+    {
+      "candidate_id": "proposal_12",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the primary subject and context, focusing on the main event or issue, and ignore any incidental details. Select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.84375,
+        "B": 0.046875,
+        "C": 0.0234375,
+        "D": 0.5390625
+      },
+      "per_class_mean_loss": {
+        "A": 0.7758645886328013,
+        "B": 9.605335155267767,
+        "C": 12.820442106774863,
+        "D": 3.1178776039849727
+      },
+      "proposal_numbers": [
+        12
+      ],
+      "slot_token_count": 37,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.36328125,
+      "validation_mean_loss": 6.5798798636651
+    }
+  ],
+  "decision_gate": "treat_label_loss_as_diagnostic_due_to_top_candidate_mismatch",
+  "lowest_loss_candidate_id": "proposal_11",
+  "pairwise_comparison_count": 66,
+  "pearson_loss_vs_accuracy": -0.617363040982357,
+  "ranking_disagreement_count": 20,
+  "ranking_disagreements": [
+    {
+      "higher_accuracy": 0.3671875,
+      "higher_accuracy_candidate_id": "proposal_8",
+      "higher_accuracy_only_correct_count": 35,
+      "higher_loss": 6.486268453709625,
+      "lower_accuracy": 0.322265625,
+      "lower_loss": 5.067162339438177,
+      "lower_loss_candidate_id": "proposal_11",
+      "lower_loss_only_correct_count": 12,
+      "representative_examples": [
+        {
+          "article_excerpt": "Defence minister sees damage to Chicoutimi, meets with British LONDON - Defence Minister Bill Graham was tight-lipped after meeting with his British counterpart to discuss last week #39;s fire on board HMCS Chicoutimi.",
+          "example_id": "official-train:57501:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.062014784663915634,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 7.250992298126221,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Yushchenko: Ukraine Events Are Like Fall of Soviets  VIENNA (Reuters) - Ukrainian opposition leader Viktor  Yushchenko, speaking after doctors said he was poisoned with  dioxin, on Sunday likened his country's upheaval over a rigged  electi",
+          "example_id": "official-train:113610:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.38750144839286804,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 6.51257848739624,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Tech investors see sunnier days ahead Optimism that the embattled technology sector was ripe for a recovery sent stocks modestly higher yesterday, despite a new revenue warning from semiconductor company Broadcom Inc.",
+          "example_id": "official-train:26712:validation",
+          "gold_label": "C",
+          "higher_accuracy_candidate_loss": 0.001932302606292069,
+          "higher_accuracy_candidate_prediction": "C",
+          "lower_loss_candidate_loss": 4.516481399536133,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Halo 2: Playing to the Bitter End Bungie's follow-up to its wildly successful shooter provides hours of fun, provided you're not too irritated by the ending or the long wait for a match on Xbox Live. By Lore Sjberg.",
+          "example_id": "official-train:93463:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.3491557836532593,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.8339450359344482,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Militants Free Relative of Iraqi Minister-Jazeera  DUBAI (Reuters) - Militants who had kidnapped two relatives  of Iraqi Defense Minister Hazim al-Shalaan have released one of  them, Al Jazeera television reported Friday.",
+          "example_id": "official-train:11951:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.03811807185411453,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.2889626026153564,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.36328125,
+      "higher_accuracy_candidate_id": "proposal_12",
+      "higher_accuracy_only_correct_count": 34,
+      "higher_loss": 6.5798798636651,
+      "lower_accuracy": 0.322265625,
+      "lower_loss": 5.067162339438177,
+      "lower_loss_candidate_id": "proposal_11",
+      "lower_loss_only_correct_count": 13,
+      "representative_examples": [
+        {
+          "article_excerpt": "Defence minister sees damage to Chicoutimi, meets with British LONDON - Defence Minister Bill Graham was tight-lipped after meeting with his British counterpart to discuss last week #39;s fire on board HMCS Chicoutimi.",
+          "example_id": "official-train:57501:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.20148272812366486,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 7.250992298126221,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Yushchenko: Ukraine Events Are Like Fall of Soviets  VIENNA (Reuters) - Ukrainian opposition leader Viktor  Yushchenko, speaking after doctors said he was poisoned with  dioxin, on Sunday likened his country's upheaval over a rigged  electi",
+          "example_id": "official-train:113610:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.0621633417904377,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 6.51257848739624,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Tech investors see sunnier days ahead Optimism that the embattled technology sector was ripe for a recovery sent stocks modestly higher yesterday, despite a new revenue warning from semiconductor company Broadcom Inc.",
+          "example_id": "official-train:26712:validation",
+          "gold_label": "C",
+          "higher_accuracy_candidate_loss": 0.006736780982464552,
+          "higher_accuracy_candidate_prediction": "C",
+          "lower_loss_candidate_loss": 4.516481399536133,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Halo 2: Playing to the Bitter End Bungie's follow-up to its wildly successful shooter provides hours of fun, provided you're not too irritated by the ending or the long wait for a match on Xbox Live. By Lore Sjberg.",
+          "example_id": "official-train:93463:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.4561387896537781,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.8339450359344482,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Militants Free Relative of Iraqi Minister-Jazeera  DUBAI (Reuters) - Militants who had kidnapped two relatives  of Iraqi Defense Minister Hazim al-Shalaan have released one of  them, Al Jazeera television reported Friday.",
+          "example_id": "official-train:11951:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.014200118370354176,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.2889626026153564,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3671875,
+      "higher_accuracy_candidate_id": "proposal_8",
+      "higher_accuracy_only_correct_count": 55,
+      "higher_loss": 6.486268453709625,
+      "lower_accuracy": 0.3359375,
+      "lower_loss": 6.185541544759118,
+      "lower_loss_candidate_id": "proposal_7",
+      "lower_loss_only_correct_count": 39,
+      "representative_examples": [
+        {
+          "article_excerpt": "New Star Wars RTS Coming? November 10, 2004 - Could it be? Another bit of videogame goodness graced by the Star Wars universe? It looks that way, as LucasArts President Jim Ward told Reuters that a new Star Wars RTS title for the PC is on t",
+          "example_id": "official-train:87091:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.018305879086256027,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 10.750096321105957,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "NASA Celebrates Life of Astronaut Gordon Cooper By PAM EASTON    HOUSTON (AP) -- Mercury program astronaut Gordon Cooper was remembered Friday by NASA officials and fellow space pioneers as \"not too bad of a pilot, but a heck of a good astr",
+          "example_id": "official-train:62277:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.06270516663789749,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 10.750022888183594,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "YAHOO! and OMD Reveal Study Depicting Life Without the Internet Yahoo! Inc. (Nasdaq:YHOO - News), a leading global Internet company, and OMD, the world #39;s leading media agency*, today unveiled the findings of an Internet Deprivation Stud",
+          "example_id": "official-train:40281:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.0036703855730593204,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 8.750592231750488,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "SCO caps legal costs, boosts Linux licence revenues The SCO Group is working on a deal with its lawyers to cap the costs of its legal battle over Linux although it claims to be  quot;well positioned quot; to pursue its current litigation th",
+          "example_id": "official-train:16136:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.03950822725892067,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 7.755664825439453,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "FireFox as a Security Risk Compared to IE? A not-so anonymous Anonymous Coward asks:  quot;The administrator at my work gave me the following reason for not using Mozilla. What do you think?",
+          "example_id": "official-train:102681:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.003650906728580594,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 7.257422924041748,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.349609375,
+      "higher_accuracy_candidate_id": "proposal_3",
+      "higher_accuracy_only_correct_count": 26,
+      "higher_loss": 6.450226535814667,
+      "lower_accuracy": 0.322265625,
+      "lower_loss": 5.067162339438177,
+      "lower_loss_candidate_id": "proposal_11",
+      "lower_loss_only_correct_count": 12,
+      "representative_examples": [
+        {
+          "article_excerpt": "Zimbabwe Ruling Party Picks Woman as Mugabe Deputy Zimbabwean President Robert Mugabe #39;s ruling ZANU-PF confirmed the first woman to become his deputy on Saturday, putting her on course to succeed Mugabe when he eventually retires in 200",
+          "example_id": "official-train:95405:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.07889679819345474,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 5.006762504577637,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Tech investors see sunnier days ahead Optimism that the embattled technology sector was ripe for a recovery sent stocks modestly higher yesterday, despite a new revenue warning from semiconductor company Broadcom Inc.",
+          "example_id": "official-train:26712:validation",
+          "gold_label": "C",
+          "higher_accuracy_candidate_loss": 0.39240700006484985,
+          "higher_accuracy_candidate_prediction": "C",
+          "lower_loss_candidate_loss": 4.516481399536133,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Militants Free Relative of Iraqi Minister-Jazeera  DUBAI (Reuters) - Militants who had kidnapped two relatives  of Iraqi Defense Minister Hazim al-Shalaan have released one of  them, Al Jazeera television reported Friday.",
+          "example_id": "official-train:11951:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.20152482390403748,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.2889626026153564,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Newspapers report Blair may call election earlier than expected? &lt;b&gt;...&lt;/b&gt; Prime Minister Tony Blair may call general elections in February 2005 instead of in May, as had been widely expected, two newspapers reported Sunday.",
+          "example_id": "official-train:78468:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.0013434203574433923,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.0506184101104736,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Natl Geographic Film Fest Gives Voice to Unsung Cultures This week the National Geographic All Roads Film Festival showcases indigenous filmmakers. Among the films, an Iranian documentary set in a public restroom, where women remove their v",
+          "example_id": "official-train:77492:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.049017954617738724,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.813100814819336,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.36328125,
+      "higher_accuracy_candidate_id": "proposal_12",
+      "higher_accuracy_only_correct_count": 48,
+      "higher_loss": 6.5798798636651,
+      "lower_accuracy": 0.3359375,
+      "lower_loss": 6.185541544759118,
+      "lower_loss_candidate_id": "proposal_7",
+      "lower_loss_only_correct_count": 34,
+      "representative_examples": [
+        {
+          "article_excerpt": "New Star Wars RTS Coming? November 10, 2004 - Could it be? Another bit of videogame goodness graced by the Star Wars universe? It looks that way, as LucasArts President Jim Ward told Reuters that a new Star Wars RTS title for the PC is on t",
+          "example_id": "official-train:87091:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.08387324213981628,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 10.750096321105957,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "YAHOO! and OMD Reveal Study Depicting Life Without the Internet Yahoo! Inc. (Nasdaq:YHOO - News), a leading global Internet company, and OMD, the world #39;s leading media agency*, today unveiled the findings of an Internet Deprivation Stud",
+          "example_id": "official-train:40281:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.019659897312521935,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 8.750592231750488,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "SCO caps legal costs, boosts Linux licence revenues The SCO Group is working on a deal with its lawyers to cap the costs of its legal battle over Linux although it claims to be  quot;well positioned quot; to pursue its current litigation th",
+          "example_id": "official-train:16136:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.12864571809768677,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 7.755664825439453,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Star-Power Surge for Satellite Radio (washingtonpost.com) washingtonpost.com - Shock jock Howard Stern's decision to jump ship from traditional radio gives a boost to the emerging technology of blasting tunes, news and other staples of AM a",
+          "example_id": "official-train:53197:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.03215347230434418,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 7.001173973083496,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "FireFox as a Security Risk Compared to IE? A not-so anonymous Anonymous Coward asks:  quot;The administrator at my work gave me the following reason for not using Mozilla. What do you think?",
+          "example_id": "official-train:102681:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.3896614611148834,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 7.257422924041748,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.34765625,
+      "higher_accuracy_candidate_id": "proposal_2",
+      "higher_accuracy_only_correct_count": 23,
+      "higher_loss": 6.1397285499574545,
+      "lower_accuracy": 0.322265625,
+      "lower_loss": 5.067162339438177,
+      "lower_loss_candidate_id": "proposal_11",
+      "lower_loss_only_correct_count": 10,
+      "representative_examples": [
+        {
+          "article_excerpt": "Newspapers report Blair may call election earlier than expected? &lt;b&gt;...&lt;/b&gt; Prime Minister Tony Blair may call general elections in February 2005 instead of in May, as had been widely expected, two newspapers reported Sunday.",
+          "example_id": "official-train:78468:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.266425222158432,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.0506184101104736,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Blair Fears Climate Change Disaster, Challenges U.S.  LONDON (Reuters) - Britain's Tony Blair pledged on Tuesday  to force international action on global warming, despite the  reluctance of big powers like the United States.",
+          "example_id": "official-train:27385:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.20265229046344757,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.6004583835601807,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Natl Geographic Film Fest Gives Voice to Unsung Cultures This week the National Geographic All Roads Film Festival showcases indigenous filmmakers. Among the films, an Iranian documentary set in a public restroom, where women remove their v",
+          "example_id": "official-train:77492:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.5773646831512451,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.813100814819336,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "The Region: Wrong, yet winning On the anniversary of September 11, a curious paradox about the United States is evident: the sharp contrast between its policies #39; brilliant success in the Middle East and its strategies #39; abject failur",
+          "example_id": "official-train:19996:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.1610073298215866,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.3549673557281494,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Blair undecided on Iraq troop movement British Prime Minister Tony Blair says his Government has made no decision on whether to send 650 troops in Iraq to relieve US forces in potentially more dangerous parts of the country.",
+          "example_id": "official-train:66173:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.3890611231327057,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.579599618911743,
+          "lower_loss_candidate_prediction": "B"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.34765625,
+      "higher_accuracy_candidate_id": "proposal_10",
+      "higher_accuracy_only_correct_count": 23,
+      "higher_loss": 5.8797905292536035,
+      "lower_accuracy": 0.322265625,
+      "lower_loss": 5.067162339438177,
+      "lower_loss_candidate_id": "proposal_11",
+      "lower_loss_only_correct_count": 10,
+      "representative_examples": [
+        {
+          "article_excerpt": "Natl Geographic Film Fest Gives Voice to Unsung Cultures This week the National Geographic All Roads Film Festival showcases indigenous filmmakers. Among the films, an Iranian documentary set in a public restroom, where women remove their v",
+          "example_id": "official-train:77492:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.05045822635293007,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.813100814819336,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Newspapers report Blair may call election earlier than expected? &lt;b&gt;...&lt;/b&gt; Prime Minister Tony Blair may call general elections in February 2005 instead of in May, as had been widely expected, two newspapers reported Sunday.",
+          "example_id": "official-train:78468:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.7123959064483643,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.0506184101104736,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Blair undecided on Iraq troop movement British Prime Minister Tony Blair says his Government has made no decision on whether to send 650 troops in Iraq to relieve US forces in potentially more dangerous parts of the country.",
+          "example_id": "official-train:66173:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.31469205021858215,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.579599618911743,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Fatah Party Chooses Abbas As Its Candidate (AP) AP - The ruling Fatah party chose Mahmoud Abbas as its candidate to replace Yasser Arafat as head of the Palestinian Authority in Jan. 9 elections, a Palestinian official said. Abbas, 69, Araf",
+          "example_id": "official-train:99393:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.10086819529533386,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.3603479862213135,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Samsung Shows 5-Megapixel Camera Phone Device will capture high-resolution still images and video--and it still makes phone calls. Samsung Electronics will begin selling a cell phone that includes a 5-megapixel digital camera, the company s",
+          "example_id": "official-train:67684:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.08186861127614975,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.136803388595581,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3671875,
+      "higher_accuracy_candidate_id": "proposal_8",
+      "higher_accuracy_only_correct_count": 20,
+      "higher_loss": 6.486268453709625,
+      "lower_accuracy": 0.34765625,
+      "lower_loss": 6.1397285499574545,
+      "lower_loss_candidate_id": "proposal_2",
+      "lower_loss_only_correct_count": 10,
+      "representative_examples": [
+        {
+          "article_excerpt": "Tech investors see sunnier days ahead Optimism that the embattled technology sector was ripe for a recovery sent stocks modestly higher yesterday, despite a new revenue warning from semiconductor company Broadcom Inc.",
+          "example_id": "official-train:26712:validation",
+          "gold_label": "C",
+          "higher_accuracy_candidate_loss": 0.001932302606292069,
+          "higher_accuracy_candidate_prediction": "C",
+          "lower_loss_candidate_loss": 8.50070858001709,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Halo 2: Playing to the Bitter End Bungie's follow-up to its wildly successful shooter provides hours of fun, provided you're not too irritated by the ending or the long wait for a match on Xbox Live. By Lore Sjberg.",
+          "example_id": "official-train:93463:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.3491557836532593,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.0086894035339355,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Yushchenko: Ukraine Events Are Like Fall of Soviets  VIENNA (Reuters) - Ukrainian opposition leader Viktor  Yushchenko, speaking after doctors said he was poisoned with  dioxin, on Sunday likened his country's upheaval over a rigged  electi",
+          "example_id": "official-train:113610:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.38750144839286804,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 4.020053863525391,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Defence minister sees damage to Chicoutimi, meets with British LONDON - Defence Minister Bill Graham was tight-lipped after meeting with his British counterpart to discuss last week #39;s fire on board HMCS Chicoutimi.",
+          "example_id": "official-train:57501:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.062014784663915634,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.5301027297973633,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Macromedia Targets eBay Users (Article Central) Macromedia announced on Monday that it is offering a customized version of Macromedia Contribute 3 that simplifies online store creation and customization for eBay sellers.",
+          "example_id": "official-train:79419:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.1527913510799408,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.4969265460968018,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3671875,
+      "higher_accuracy_candidate_id": "proposal_8",
+      "higher_accuracy_only_correct_count": 19,
+      "higher_loss": 6.486268453709625,
+      "lower_accuracy": 0.34765625,
+      "lower_loss": 5.8797905292536035,
+      "lower_loss_candidate_id": "proposal_10",
+      "lower_loss_only_correct_count": 9,
+      "representative_examples": [
+        {
+          "article_excerpt": "Defence minister sees damage to Chicoutimi, meets with British LONDON - Defence Minister Bill Graham was tight-lipped after meeting with his British counterpart to discuss last week #39;s fire on board HMCS Chicoutimi.",
+          "example_id": "official-train:57501:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.062014784663915634,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 7.750511646270752,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Tech investors see sunnier days ahead Optimism that the embattled technology sector was ripe for a recovery sent stocks modestly higher yesterday, despite a new revenue warning from semiconductor company Broadcom Inc.",
+          "example_id": "official-train:26712:validation",
+          "gold_label": "C",
+          "higher_accuracy_candidate_loss": 0.001932302606292069,
+          "higher_accuracy_candidate_prediction": "C",
+          "lower_loss_candidate_loss": 3.0488388538360596,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Halo 2: Playing to the Bitter End Bungie's follow-up to its wildly successful shooter provides hours of fun, provided you're not too irritated by the ending or the long wait for a match on Xbox Live. By Lore Sjberg.",
+          "example_id": "official-train:93463:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.3491557836532593,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.0024821758270264,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Israeli officer charged over slain Gaza girl JERUSALEM - Israel has charged an army captain who was accused of riddling a Palestinian girl #39;s body with bullets after she was already dead.",
+          "example_id": "official-train:99052:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.314475953578949,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.8152689933776855,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Macromedia Targets eBay Users (Article Central) Macromedia announced on Monday that it is offering a customized version of Macromedia Contribute 3 that simplifies online store creation and customization for eBay sellers.",
+          "example_id": "official-train:79419:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.1527913510799408,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.4664382934570312,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3671875,
+      "higher_accuracy_candidate_id": "proposal_8",
+      "higher_accuracy_only_correct_count": 16,
+      "higher_loss": 6.486268453709625,
+      "lower_accuracy": 0.349609375,
+      "lower_loss": 6.450226535814667,
+      "lower_loss_candidate_id": "proposal_3",
+      "lower_loss_only_correct_count": 7,
+      "representative_examples": [
+        {
+          "article_excerpt": "Apple disables iTunes plug-in com November 2, 2004, 4:35 PM PT. With the latest version of iTunes, Apple has disabled an add-on program that let people transfer songs off of their iPod.",
+          "example_id": "official-train:80187:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.48557397723197937,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.255956649780273,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Macromedia Targets eBay Users (Article Central) Macromedia announced on Monday that it is offering a customized version of Macromedia Contribute 3 that simplifies online store creation and customization for eBay sellers.",
+          "example_id": "official-train:79419:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.1527913510799408,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.765346050262451,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Netflix Connects with TiVo (NewsFactor) NewsFactor - Netflix (Nasdaq: NFLX) and TiVo (Nasdaq: TIVO) have agreed to collaborate on delivering movies via the Internet, developing technology and working with Hollywood studios to secure content",
+          "example_id": "official-train:46866:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.011859976686537266,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.0490236282348633,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Yushchenko: Ukraine Events Are Like Fall of Soviets  VIENNA (Reuters) - Ukrainian opposition leader Viktor  Yushchenko, speaking after doctors said he was poisoned with  dioxin, on Sunday likened his country's upheaval over a rigged  electi",
+          "example_id": "official-train:113610:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.38750144839286804,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.050034284591675,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Halo 2: Playing to the Bitter End Bungie's follow-up to its wildly successful shooter provides hours of fun, provided you're not too irritated by the ending or the long wait for a match on Xbox Live. By Lore Sjberg.",
+          "example_id": "official-train:93463:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.3491557836532593,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.9633560180664062,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.318359375,
+      "higher_accuracy_candidate_id": "proposal_5",
+      "higher_accuracy_only_correct_count": 11,
+      "higher_loss": 7.701401525755929,
+      "lower_accuracy": 0.30078125,
+      "lower_loss": 7.560252129548284,
+      "lower_loss_candidate_id": "proposal_9",
+      "lower_loss_only_correct_count": 2,
+      "representative_examples": [
+        {
+          "article_excerpt": "FDA Plans to Tag Certain Medicines to Prevent Fraud The Food and Drug Administration (FDA), in conjunction with several major drug companies, is working on an initiative that would involve fitting medicine bottles with tiny antennas to prev",
+          "example_id": "official-train:92688:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.4750589430332184,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.504177093505859,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Icelandic Tin Bath Could Give Earthquake Warnings (Reuters) Reuters - A tin bath on the cliffs of northern\\Iceland, where locals take a dip to treat skin complaints,\\could help scientists give an early warning of big earthquakes\\and save th",
+          "example_id": "official-train:58804:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.25250235199928284,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.350857973098755,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "FireFox as a Security Risk Compared to IE? A not-so anonymous Anonymous Coward asks:  quot;The administrator at my work gave me the following reason for not using Mozilla. What do you think?",
+          "example_id": "official-train:102681:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.48301443457603455,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.3563244342803955,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Infineon Executives Guilty of DRAM Price-Fixing Court documents say Dell, Gateway, and other major PC vendors were affected.",
+          "example_id": "official-train:107623:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.2536888122558594,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 1.911355972290039,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "China Bans a New Computer Video Game SHANGHAI, China Dec 9, 2004 - China has banned a new computer game for referring to Taiwan and other regions claimed by China as separate countries.",
+          "example_id": "official-train:111020:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.47412240505218506,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 1.5019718408584595,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.36328125,
+      "higher_accuracy_candidate_id": "proposal_12",
+      "higher_accuracy_only_correct_count": 19,
+      "higher_loss": 6.5798798636651,
+      "lower_accuracy": 0.34765625,
+      "lower_loss": 6.1397285499574545,
+      "lower_loss_candidate_id": "proposal_2",
+      "lower_loss_only_correct_count": 11,
+      "representative_examples": [
+        {
+          "article_excerpt": "Tech investors see sunnier days ahead Optimism that the embattled technology sector was ripe for a recovery sent stocks modestly higher yesterday, despite a new revenue warning from semiconductor company Broadcom Inc.",
+          "example_id": "official-train:26712:validation",
+          "gold_label": "C",
+          "higher_accuracy_candidate_loss": 0.006736780982464552,
+          "higher_accuracy_candidate_prediction": "C",
+          "lower_loss_candidate_loss": 8.50070858001709,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Halo 2: Playing to the Bitter End Bungie's follow-up to its wildly successful shooter provides hours of fun, provided you're not too irritated by the ending or the long wait for a match on Xbox Live. By Lore Sjberg.",
+          "example_id": "official-train:93463:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.4561387896537781,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.0086894035339355,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Yushchenko: Ukraine Events Are Like Fall of Soviets  VIENNA (Reuters) - Ukrainian opposition leader Viktor  Yushchenko, speaking after doctors said he was poisoned with  dioxin, on Sunday likened his country's upheaval over a rigged  electi",
+          "example_id": "official-train:113610:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.0621633417904377,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 4.020053863525391,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Defence minister sees damage to Chicoutimi, meets with British LONDON - Defence Minister Bill Graham was tight-lipped after meeting with his British counterpart to discuss last week #39;s fire on board HMCS Chicoutimi.",
+          "example_id": "official-train:57501:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.20148272812366486,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.5301027297973633,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Iran nuke talks launched Three European powers and Iran have begun talks on a long-term agreement on nuclear, economic and security cooperation with both sides seeking to build trust amid continuing suspicion over Tehran #39;s atomic progra",
+          "example_id": "official-train:114687:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.6933802366256714,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.5303080081939697,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.36328125,
+      "higher_accuracy_candidate_id": "proposal_12",
+      "higher_accuracy_only_correct_count": 21,
+      "higher_loss": 6.5798798636651,
+      "lower_accuracy": 0.34765625,
+      "lower_loss": 5.8797905292536035,
+      "lower_loss_candidate_id": "proposal_10",
+      "lower_loss_only_correct_count": 13,
+      "representative_examples": [
+        {
+          "article_excerpt": "Defence minister sees damage to Chicoutimi, meets with British LONDON - Defence Minister Bill Graham was tight-lipped after meeting with his British counterpart to discuss last week #39;s fire on board HMCS Chicoutimi.",
+          "example_id": "official-train:57501:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.20148272812366486,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 7.750511646270752,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Iran nuke talks launched Three European powers and Iran have begun talks on a long-term agreement on nuclear, economic and security cooperation with both sides seeking to build trust amid continuing suspicion over Tehran #39;s atomic progra",
+          "example_id": "official-train:114687:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.6933802366256714,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 5.753450870513916,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Tech investors see sunnier days ahead Optimism that the embattled technology sector was ripe for a recovery sent stocks modestly higher yesterday, despite a new revenue warning from semiconductor company Broadcom Inc.",
+          "example_id": "official-train:26712:validation",
+          "gold_label": "C",
+          "higher_accuracy_candidate_loss": 0.006736780982464552,
+          "higher_accuracy_candidate_prediction": "C",
+          "lower_loss_candidate_loss": 3.0488388538360596,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Israeli officer charged over slain Gaza girl JERUSALEM - Israel has charged an army captain who was accused of riddling a Palestinian girl #39;s body with bullets after she was already dead.",
+          "example_id": "official-train:99052:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.014336089603602886,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.8152689933776855,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Halo 2: Playing to the Bitter End Bungie's follow-up to its wildly successful shooter provides hours of fun, provided you're not too irritated by the ending or the long wait for a match on Xbox Live. By Lore Sjberg.",
+          "example_id": "official-train:93463:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.4561387896537781,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.0024821758270264,
+          "lower_loss_candidate_prediction": "B"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.349609375,
+      "higher_accuracy_candidate_id": "proposal_3",
+      "higher_accuracy_only_correct_count": 43,
+      "higher_loss": 6.450226535814667,
+      "lower_accuracy": 0.3359375,
+      "lower_loss": 6.185541544759118,
+      "lower_loss_candidate_id": "proposal_7",
+      "lower_loss_only_correct_count": 36,
+      "representative_examples": [
+        {
+          "article_excerpt": "YAHOO! and OMD Reveal Study Depicting Life Without the Internet Yahoo! Inc. (Nasdaq:YHOO - News), a leading global Internet company, and OMD, the world #39;s leading media agency*, today unveiled the findings of an Internet Deprivation Stud",
+          "example_id": "official-train:40281:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.04312380030751228,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 8.750592231750488,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "SCO caps legal costs, boosts Linux licence revenues The SCO Group is working on a deal with its lawyers to cap the costs of its legal battle over Linux although it claims to be  quot;well positioned quot; to pursue its current litigation th",
+          "example_id": "official-train:16136:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.3196210265159607,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 7.755664825439453,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "FireFox as a Security Risk Compared to IE? A not-so anonymous Anonymous Coward asks:  quot;The administrator at my work gave me the following reason for not using Mozilla. What do you think?",
+          "example_id": "official-train:102681:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.0039020839612931013,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 7.257422924041748,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Star-Power Surge for Satellite Radio (washingtonpost.com) washingtonpost.com - Shock jock Howard Stern's decision to jump ship from traditional radio gives a boost to the emerging technology of blasting tunes, news and other staples of AM a",
+          "example_id": "official-train:53197:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.1316782534122467,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 7.001173973083496,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Web Data Transfer to Handsets Made Easier (AP) AP - Have you ever gone online to get driving directions, only to leave the printout behind? Have you made movie plans, but forgot to jot down the show times? Or do you simply need an easy way ",
+          "example_id": "official-train:23955:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.3490992784500122,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.774391174316406,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.36328125,
+      "higher_accuracy_candidate_id": "proposal_12",
+      "higher_accuracy_only_correct_count": 14,
+      "higher_loss": 6.5798798636651,
+      "lower_accuracy": 0.349609375,
+      "lower_loss": 6.450226535814667,
+      "lower_loss_candidate_id": "proposal_3",
+      "lower_loss_only_correct_count": 7,
+      "representative_examples": [
+        {
+          "article_excerpt": "Nokia adds RFID to latest handsets Nokia has introduced its Near Field Communication (NFC) shell system which incorporates Radio Frequency Identification technology.",
+          "example_id": "official-train:79814:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.4757172465324402,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.252007961273193,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Macromedia Targets eBay Users (Article Central) Macromedia announced on Monday that it is offering a customized version of Macromedia Contribute 3 that simplifies online store creation and customization for eBay sellers.",
+          "example_id": "official-train:79419:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.5244489312171936,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.765346050262451,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Netflix Connects with TiVo (NewsFactor) NewsFactor - Netflix (Nasdaq: NFLX) and TiVo (Nasdaq: TIVO) have agreed to collaborate on delivering movies via the Internet, developing technology and working with Hollywood studios to secure content",
+          "example_id": "official-train:46866:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.05173184722661972,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.0490236282348633,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Yushchenko: Ukraine Events Are Like Fall of Soviets  VIENNA (Reuters) - Ukrainian opposition leader Viktor  Yushchenko, speaking after doctors said he was poisoned with  dioxin, on Sunday likened his country's upheaval over a rigged  electi",
+          "example_id": "official-train:113610:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.0621633417904377,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.050034284591675,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Halo 2: Playing to the Bitter End Bungie's follow-up to its wildly successful shooter provides hours of fun, provided you're not too irritated by the ending or the long wait for a match on Xbox Live. By Lore Sjberg.",
+          "example_id": "official-train:93463:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.4561387896537781,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.9633560180664062,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3359375,
+      "higher_accuracy_candidate_id": "proposal_7",
+      "higher_accuracy_only_correct_count": 53,
+      "higher_loss": 6.185541544759118,
+      "lower_accuracy": 0.322265625,
+      "lower_loss": 5.067162339438177,
+      "lower_loss_candidate_id": "proposal_11",
+      "lower_loss_only_correct_count": 46,
+      "representative_examples": [
+        {
+          "article_excerpt": "White saves Sooners MANHATTAN, Kan. -- Jason White threw for four touchdowns, two each to Travis Wilson and Mark Clayton, and No. 2 Oklahoma overcame its own mistakes to beat Kansas State, 31-21, yesterday.",
+          "example_id": "official-train:62674:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.0011713793501257896,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 9.750080108642578,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Golf doesn #39;t need a buddy system Let me get this straight. We lost the Ryder Cup because we didn #39;t hug enough? We lost because we didn #39;t laugh enough? We lost because there wasn #39;t enough charisma among the American players, ",
+          "example_id": "official-train:34585:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.07896025478839874,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 9.750094413757324,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Preliminary pact reached on Iran nukes TEHRAN, Iran - Iran and European nations reached a preliminary agreement about Iran #39;s nuclear program at talks hoped to avoid a UN showdown, but all countries involved still must approve it, Iran #",
+          "example_id": "official-train:83779:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.33032387495040894,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 8.000371932983398,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Lieber goes to the Phillies Jon Lieber agreed to a deal with the Philadelphia Phillies, Al Leiter returned to the Florida Marlins, and Woody Williams went back to the San Diego Padres as major league teams moved quickly to grab starting pit",
+          "example_id": "official-train:110970:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.0019292092183604836,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 7.250716209411621,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Defence minister sees damage to Chicoutimi, meets with British LONDON - Defence Minister Bill Graham was tight-lipped after meeting with his British counterpart to discuss last week #39;s fire on board HMCS Chicoutimi.",
+          "example_id": "official-train:57501:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.046379074454307556,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 7.250992298126221,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3046875,
+      "higher_accuracy_candidate_id": "seed",
+      "higher_accuracy_only_correct_count": 13,
+      "higher_loss": 9.258448102644559,
+      "lower_accuracy": 0.30078125,
+      "lower_loss": 7.560252129548284,
+      "lower_loss_candidate_id": "proposal_9",
+      "lower_loss_only_correct_count": 11,
+      "representative_examples": [
+        {
+          "article_excerpt": "Lieber goes to the Phillies Jon Lieber agreed to a deal with the Philadelphia Phillies, Al Leiter returned to the Florida Marlins, and Woody Williams went back to the San Diego Padres as major league teams moved quickly to grab starting pit",
+          "example_id": "official-train:110970:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.2521369457244873,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 8.750162124633789,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "End the steroid guilt by (players) association You know who you are. The ones who choose the right path. The ones who perform at a competitive disadvantage. The ones who refuse to alter your bodies with performance-enhancing drugs.",
+          "example_id": "official-train:35376:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.4328639805316925,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 6.789180278778076,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Kerry defends Vietnam record, challenges Bush (AFP) AFP - Democratic Senator John Kerry accused President George W. Bush of using a front group to do the \"dirty work\" of attacking his Vietnam War record.",
+          "example_id": "official-train:4735:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.015063110738992691,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 5.284887313842773,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "India ; Criminal and killer Veerappan finally exterminated India News, Dharmapuri (Tamil Nadu), Oct 19 (IANS) Veerappan, India #39;s most wanted and most elusive brigand who murdered with impunity, was finally shot dead in his jungle hideou",
+          "example_id": "official-train:64776:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.0005660838796757162,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 5.006921291351318,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Sharon seeks to expand coalition Israeli Prime Minister Ariel Sharon said today he planned to replace his minority government with a broad coalition to push through his Gaza withdrawal plan and promised not to launch attacks on Palestinians",
+          "example_id": "official-train:107457:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 2.5152843591058627e-05,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 4.2648797035217285,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3046875,
+      "higher_accuracy_candidate_id": "proposal_1",
+      "higher_accuracy_only_correct_count": 10,
+      "higher_loss": 8.443300646428101,
+      "lower_accuracy": 0.30078125,
+      "lower_loss": 7.560252129548284,
+      "lower_loss_candidate_id": "proposal_9",
+      "lower_loss_only_correct_count": 8,
+      "representative_examples": [
+        {
+          "article_excerpt": "Sharon seeks to expand coalition Israeli Prime Minister Ariel Sharon said today he planned to replace his minority government with a broad coalition to push through his Gaza withdrawal plan and promised not to launch attacks on Palestinians",
+          "example_id": "official-train:107457:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.20238067209720612,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 4.2648797035217285,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Burt Rutan: Building  #39;Tomorrowland #39; One Launch at a Time MOJAVE, California -- Nobody can claim that Burt Rutan, the innovative aerospace designer, doesn #39;t have his head in the cloudsand his eyes focused on the stars.",
+          "example_id": "official-train:61554:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.49273476004600525,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.2871294021606445,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Red Hat hit by security-update email scam Red Hat is warning users that an email purporting to be a security update may contain malicious code. The email - which began appearing last Friday - uses a securityredhat.",
+          "example_id": "official-train:71460:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.07929496467113495,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.8125030994415283,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Preliminary pact reached on Iran nukes TEHRAN, Iran - Iran and European nations reached a preliminary agreement about Iran #39;s nuclear program at talks hoped to avoid a UN showdown, but all countries involved still must approve it, Iran #",
+          "example_id": "official-train:83779:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.0052368370816111565,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.1269547939300537,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Defence minister sees damage to Chicoutimi, meets with British LONDON - Defence Minister Bill Graham was tight-lipped after meeting with his British counterpart to discuss last week #39;s fire on board HMCS Chicoutimi.",
+          "example_id": "official-train:57501:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.00862846802920103,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.126986265182495,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.349609375,
+      "higher_accuracy_candidate_id": "proposal_3",
+      "higher_accuracy_only_correct_count": 11,
+      "higher_loss": 6.450226535814667,
+      "lower_accuracy": 0.34765625,
+      "lower_loss": 6.1397285499574545,
+      "lower_loss_candidate_id": "proposal_2",
+      "lower_loss_only_correct_count": 10,
+      "representative_examples": [
+        {
+          "article_excerpt": "Tech investors see sunnier days ahead Optimism that the embattled technology sector was ripe for a recovery sent stocks modestly higher yesterday, despite a new revenue warning from semiconductor company Broadcom Inc.",
+          "example_id": "official-train:26712:validation",
+          "gold_label": "C",
+          "higher_accuracy_candidate_loss": 0.39240700006484985,
+          "higher_accuracy_candidate_prediction": "C",
+          "lower_loss_candidate_loss": 8.50070858001709,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Militants Free Relative of Iraqi Minister-Jazeera  DUBAI (Reuters) - Militants who had kidnapped two relatives  of Iraqi Defense Minister Hazim al-Shalaan have released one of  them, Al Jazeera television reported Friday.",
+          "example_id": "official-train:11951:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.20152482390403748,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.3504621982574463,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Britain #39;s Blair refuses to apologize for Iraq British Prime Minister Tony Blair has admitted evidence about Saddam Hussein having weapons of mass destruction was wrong, but insists it was the correct decision to remove Saddam Hussein.",
+          "example_id": "official-train:43187:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.0649668499827385,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.139437675476074,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Zimbabwe Ruling Party Picks Woman as Mugabe Deputy Zimbabwean President Robert Mugabe #39;s ruling ZANU-PF confirmed the first woman to become his deputy on Saturday, putting her on course to succeed Mugabe when he eventually retires in 200",
+          "example_id": "official-train:95405:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.07889679819345474,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 1.9102404117584229,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Slobodan Milosevic's Trial Resumes (AP) AP - The defense of Slobodan Milosevic resumed Tuesday, even as an appeals panel of the U.N. war crimes tribunal considered the former Yugoslav president's request to fire his court-appointed lawyer a",
+          "example_id": "official-train:59003:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.2015179991722107,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 1.7021667957305908,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.349609375,
+      "higher_accuracy_candidate_id": "proposal_3",
+      "higher_accuracy_only_correct_count": 14,
+      "higher_loss": 6.450226535814667,
+      "lower_accuracy": 0.34765625,
+      "lower_loss": 5.8797905292536035,
+      "lower_loss_candidate_id": "proposal_10",
+      "lower_loss_only_correct_count": 13,
+      "representative_examples": [
+        {
+          "article_excerpt": "Zimbabwe Ruling Party Picks Woman as Mugabe Deputy Zimbabwean President Robert Mugabe #39;s ruling ZANU-PF confirmed the first woman to become his deputy on Saturday, putting her on course to succeed Mugabe when he eventually retires in 200",
+          "example_id": "official-train:95405:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.07889679819345474,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.529759407043457,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Israeli officer charged over slain Gaza girl JERUSALEM - Israel has charged an army captain who was accused of riddling a Palestinian girl #39;s body with bullets after she was already dead.",
+          "example_id": "official-train:99052:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.0493348129093647,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.8152689933776855,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Tech investors see sunnier days ahead Optimism that the embattled technology sector was ripe for a recovery sent stocks modestly higher yesterday, despite a new revenue warning from semiconductor company Broadcom Inc.",
+          "example_id": "official-train:26712:validation",
+          "gold_label": "C",
+          "higher_accuracy_candidate_loss": 0.39240700006484985,
+          "higher_accuracy_candidate_prediction": "C",
+          "lower_loss_candidate_loss": 3.0488388538360596,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Pakistan hunts kidnappers #39; leader Pakistan has vowed to track down the leader of a kidnap group in South Waziristan after one of two Chinese hostages died in a rescue attempt.",
+          "example_id": "official-train:61233:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.005245256703346968,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.127021551132202,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Montoya Wins Brazilian Grand Prix Juan Pablo Montoya won in his final race for Williams-BMW on Sunday, beating future McLaren teammate Kimi Raikkonen to capture the Brazilian Grand Prix.",
+          "example_id": "official-train:70687:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 5.8410845667822286e-05,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 1.9102331399917603,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    }
+  ],
+  "spearman_loss_rank_vs_accuracy_rank": -0.5964948999491283
+}

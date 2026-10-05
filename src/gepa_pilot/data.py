@@ -1,0 +1,100 @@
+from __future__ import annotations
+
+import json
+import random
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any, Iterable, Sequence
+
+
+LABEL_TO_CLASS_ID = {"A": 0, "B": 1, "C": 2, "D": 3}
+CLASS_ID_TO_LABEL = {value: key for key, value in LABEL_TO_CLASS_ID.items()}
+
+
+@dataclass(frozen=True)
+class NewsExample:
+    example_id: str
+    article: str
+    gold_label: str
+
+    def __post_init__(self) -> None:
+        if self.gold_label not in LABEL_TO_CLASS_ID:
+            raise ValueError(f"Unsupported gold label: {self.gold_label!r}")
+        if not self.article.strip():
+            raise ValueError("Article text must not be empty.")
+
+
+def load_examples_json(path: str | Path) -> list[NewsExample]:
+    with Path(path).open("r", encoding="utf-8") as handle:
+        rows: list[dict[str, Any]] = json.load(handle)
+    return [NewsExample(**row) for row in rows]
+
+
+def stratified_split_indices(
+    labels: Sequence[int], train_size: int, validation_size: int, seed: int
+) -> tuple[list[int], list[int]]:
+    if train_size % 4 != 0 or validation_size % 4 != 0:
+        raise ValueError("Stratified AG News sample sizes must be divisible by four.")
+    train_per_class = train_size // 4
+    validation_per_class = validation_size // 4
+    rng = random.Random(seed)
+    train_indices: list[int] = []
+    validation_indices: list[int] = []
+    for class_id in range(4):
+        candidates = [index for index, label in enumerate(labels) if int(label) == class_id]
+        rng.shuffle(candidates)
+        required = train_per_class + validation_per_class
+        if len(candidates) < required:
+            raise ValueError(f"Not enough examples for class {class_id}.")
+        train_indices.extend(candidates[:train_per_class])
+        validation_indices.extend(candidates[train_per_class:required])
+    rng.shuffle(train_indices)
+    rng.shuffle(validation_indices)
+    return train_indices, validation_indices
+
+
+def load_ag_news_development_splits(
+    dataset_name: str,
+    train_size: int,
+    validation_size: int,
+    seed: int,
+) -> tuple[list[NewsExample], list[NewsExample]]:
+    """Load only the official training split and create disjoint stratified splits."""
+    from datasets import load_dataset
+
+    dataset = load_dataset(dataset_name, split="train")
+    labels = list(dataset["label"])
+    train_indices, validation_indices = stratified_split_indices(
+        labels, train_size, validation_size, seed
+    )
+
+    def convert(indices: Iterable[int], split_name: str) -> list[NewsExample]:
+        return [
+            NewsExample(
+                example_id=f"official-train:{index}:{split_name}",
+                article=str(dataset[index]["text"]),
+                gold_label=CLASS_ID_TO_LABEL[int(dataset[index]["label"])],
+            )
+            for index in indices
+        ]
+
+    return convert(train_indices, "train"), convert(validation_indices, "validation")
+
+
+def load_ag_news_test_split(dataset_name: str, *, allow_test: bool = False) -> list[NewsExample]:
+    """Load the official test split only after an explicit final-evaluation opt-in."""
+    if not allow_test:
+        raise PermissionError(
+            "The official test split is locked. Pass allow_test=True only for final evaluation."
+        )
+    from datasets import load_dataset
+
+    dataset = load_dataset(dataset_name, split="test")
+    return [
+        NewsExample(
+            example_id=f"official-test:{index}",
+            article=str(row["text"]),
+            gold_label=CLASS_ID_TO_LABEL[int(row["label"])],
+        )
+        for index, row in enumerate(dataset)
+    ]

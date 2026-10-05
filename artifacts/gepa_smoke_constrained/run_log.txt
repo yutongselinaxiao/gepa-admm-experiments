@@ -1,0 +1,4 @@
+Iteration 0: Base program full valset score: 0.3046875 over 512 / 512 examples
+Iteration 1: Selected program 0 score: 0.3046875
+Iteration 1: Proposed new text for instruction: Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring any incidental details, and output only the corresponding capital letter.
+Iteration 1: New subsample score 3.0 is not better than old score 3.0, skipping

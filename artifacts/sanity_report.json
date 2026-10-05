@@ -1,0 +1,824 @@
+{
+  "config": {
+    "data": {
+      "dataset_name": "fancyzhx/ag_news",
+      "seed": 20261002,
+      "train_size": 256,
+      "validation_size": 512
+    },
+    "manual_instructions": [
+      "Determine the article's central subject, map it to the listed categories, and answer with only A, B, C, or D.",
+      "Focus on the primary event rather than incidental names or organizations. Return exactly one label letter.",
+      "Decide whether the article is mainly about world affairs, sports, business, or science and technology, then output its mapped letter only."
+    ],
+    "model": {
+      "device": "cuda:0",
+      "dtype": "bfloat16",
+      "local_files_only": true,
+      "local_snapshot_path": "/home/xiaoyuto/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "name_or_path": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+    },
+    "prompt": {
+      "enable_thinking": false,
+      "label_names": {
+        "A": "World",
+        "B": "Sports",
+        "C": "Business",
+        "D": "Sci/Tech"
+      },
+      "seed_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+      "system_prompt": "You are a careful news topic classifier. Follow the supplied label mapping and response format exactly."
+    }
+  },
+  "model_gates": {
+    "batch_consistency": {
+      "maximum_absolute_label_score_difference": 1.5,
+      "prediction_agreement": 1.0,
+      "tolerance": 0.05
+    },
+    "deterministic_repeated_evaluation": true,
+    "device": "cuda:0",
+    "diagnostic_generations": {
+      "sanity-sports-1": "A",
+      "sanity-sports-2": "A",
+      "sanity-world-1": "A",
+      "sanity-world-2": "A"
+    },
+    "dtype": "bfloat16",
+    "instruction_results": {
+      "manual_1": {
+        "accuracy": 0.625,
+        "confusion_matrix": {
+          "A": {
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "D": 0
+          },
+          "B": {
+            "A": 1,
+            "B": 1,
+            "C": 0,
+            "D": 0
+          },
+          "C": {
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "D": 0
+          },
+          "D": {
+            "A": 0,
+            "B": 0,
+            "C": 0,
+            "D": 2
+          }
+        },
+        "instruction": "Determine the article's central subject, map it to the listed categories, and answer with only A, B, C, or D.",
+        "mean_loss": 2.880314101697877,
+        "per_class_accuracy": {
+          "A": 1.0,
+          "B": 0.5,
+          "C": 0.0,
+          "D": 1.0
+        },
+        "records": [
+          {
+            "answer_position": 135,
+            "correct": true,
+            "error_tag": "correct",
+            "example_id": "sanity-world-1",
+            "gold_label": "A",
+            "gold_log_probability": -0.5839682221412659,
+            "label_scores": {
+              "A": 50.5,
+              "B": 46.25,
+              "C": 41.0,
+              "D": 50.25
+            },
+            "loss": 0.5839682221412659,
+            "predicted_label": "A",
+            "prompt_token_count": 136,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 126,
+            "correct": true,
+            "error_tag": "correct",
+            "example_id": "sanity-world-2",
+            "gold_label": "A",
+            "gold_log_probability": -0.06561992317438126,
+            "label_scores": {
+              "A": 49.5,
+              "B": 46.75,
+              "C": 42.25,
+              "D": 43.75
+            },
+            "loss": 0.06561992317438126,
+            "predicted_label": "A",
+            "prompt_token_count": 127,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 129,
+            "correct": true,
+            "error_tag": "correct",
+            "example_id": "sanity-sports-1",
+            "gold_label": "B",
+            "gold_log_probability": -0.5803756713867188,
+            "label_scores": {
+              "A": 50.0,
+              "B": 50.25,
+              "C": 43.5,
+              "D": 45.25
+            },
+            "loss": 0.5803756713867188,
+            "predicted_label": "B",
+            "prompt_token_count": 130,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 128,
+            "correct": false,
+            "error_tag": "B->A",
+            "example_id": "sanity-sports-2",
+            "gold_label": "B",
+            "gold_log_probability": -5.007002353668213,
+            "label_scores": {
+              "A": 51.5,
+              "B": 46.5,
+              "C": 41.0,
+              "D": 43.25
+            },
+            "loss": 5.007002353668213,
+            "predicted_label": "A",
+            "prompt_token_count": 129,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 128,
+            "correct": false,
+            "error_tag": "C->A",
+            "example_id": "sanity-business-1",
+            "gold_label": "C",
+            "gold_log_probability": -7.604395389556885,
+            "label_scores": {
+              "A": 49.5,
+              "B": 47.25,
+              "C": 42.0,
+              "D": 44.0
+            },
+            "loss": 7.604395389556885,
+            "predicted_label": "A",
+            "prompt_token_count": 129,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 129,
+            "correct": false,
+            "error_tag": "C->A",
+            "example_id": "sanity-business-2",
+            "gold_label": "C",
+            "gold_log_probability": -9.0154390335083,
+            "label_scores": {
+              "A": 51.5,
+              "B": 47.25,
+              "C": 42.5,
+              "D": 44.75
+            },
+            "loss": 9.0154390335083,
+            "predicted_label": "A",
+            "prompt_token_count": 130,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 129,
+            "correct": true,
+            "error_tag": "correct",
+            "example_id": "sanity-scitech-1",
+            "gold_label": "D",
+            "gold_log_probability": -0.021727504208683968,
+            "label_scores": {
+              "A": 41.0,
+              "B": 43.75,
+              "C": 41.75,
+              "D": 47.75
+            },
+            "loss": 0.021727504208683968,
+            "predicted_label": "D",
+            "prompt_token_count": 130,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 129,
+            "correct": true,
+            "error_tag": "correct",
+            "example_id": "sanity-scitech-2",
+            "gold_label": "D",
+            "gold_log_probability": -0.16398471593856812,
+            "label_scores": {
+              "A": 40.25,
+              "B": 43.75,
+              "C": 42.5,
+              "D": 45.75
+            },
+            "loss": 0.16398471593856812,
+            "predicted_label": "D",
+            "prompt_token_count": 130,
+            "raw_generation": null
+          }
+        ]
+      },
+      "manual_2": {
+        "accuracy": 0.5,
+        "confusion_matrix": {
+          "A": {
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "D": 0
+          },
+          "B": {
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "D": 0
+          },
+          "C": {
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "D": 0
+          },
+          "D": {
+            "A": 0,
+            "B": 0,
+            "C": 0,
+            "D": 2
+          }
+        },
+        "instruction": "Focus on the primary event rather than incidental names or organizations. Return exactly one label letter.",
+        "mean_loss": 6.032448273292174,
+        "per_class_accuracy": {
+          "A": 1.0,
+          "B": 0.0,
+          "C": 0.0,
+          "D": 1.0
+        },
+        "records": [
+          {
+            "answer_position": 125,
+            "correct": true,
+            "error_tag": "correct",
+            "example_id": "sanity-world-1",
+            "gold_label": "A",
+            "gold_log_probability": -0.00020466140995267779,
+            "label_scores": {
+              "A": 59.0,
+              "B": 45.25,
+              "C": 42.5,
+              "D": 50.5
+            },
+            "loss": 0.00020466140995267779,
+            "predicted_label": "A",
+            "prompt_token_count": 126,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 116,
+            "correct": true,
+            "error_tag": "correct",
+            "example_id": "sanity-world-2",
+            "gold_label": "A",
+            "gold_log_probability": -1.1920928244535389e-07,
+            "label_scores": {
+              "A": 59.75,
+              "B": 43.5,
+              "C": 41.0,
+              "D": 42.25
+            },
+            "loss": 1.1920928244535389e-07,
+            "predicted_label": "A",
+            "prompt_token_count": 117,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 119,
+            "correct": false,
+            "error_tag": "B->A",
+            "example_id": "sanity-sports-1",
+            "gold_label": "B",
+            "gold_log_probability": -8.000338554382324,
+            "label_scores": {
+              "A": 58.0,
+              "B": 50.0,
+              "C": 44.0,
+              "D": 45.0
+            },
+            "loss": 8.000338554382324,
+            "predicted_label": "A",
+            "prompt_token_count": 120,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 118,
+            "correct": false,
+            "error_tag": "B->A",
+            "example_id": "sanity-sports-2",
+            "gold_label": "B",
+            "gold_log_probability": -9.500075340270996,
+            "label_scores": {
+              "A": 57.75,
+              "B": 48.25,
+              "C": 42.0,
+              "D": 42.5
+            },
+            "loss": 9.500075340270996,
+            "predicted_label": "A",
+            "prompt_token_count": 119,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 118,
+            "correct": false,
+            "error_tag": "C->A",
+            "example_id": "sanity-business-1",
+            "gold_label": "C",
+            "gold_log_probability": -13.504081726074219,
+            "label_scores": {
+              "A": 57.5,
+              "B": 52.0,
+              "C": 44.0,
+              "D": 44.25
+            },
+            "loss": 13.504081726074219,
+            "predicted_label": "A",
+            "prompt_token_count": 119,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 119,
+            "correct": false,
+            "error_tag": "C->A",
+            "example_id": "sanity-business-2",
+            "gold_label": "C",
+            "gold_log_probability": -17.25,
+            "label_scores": {
+              "A": 60.25,
+              "B": 46.0,
+              "C": 43.0,
+              "D": 45.5
+            },
+            "loss": 17.25,
+            "predicted_label": "A",
+            "prompt_token_count": 120,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 119,
+            "correct": true,
+            "error_tag": "correct",
+            "example_id": "sanity-scitech-1",
+            "gold_label": "D",
+            "gold_log_probability": -0.004165900871157646,
+            "label_scores": {
+              "A": 50.25,
+              "B": 46.25,
+              "C": 44.5,
+              "D": 55.75
+            },
+            "loss": 0.004165900871157646,
+            "predicted_label": "D",
+            "prompt_token_count": 120,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 119,
+            "correct": true,
+            "error_tag": "correct",
+            "example_id": "sanity-scitech-2",
+            "gold_label": "D",
+            "gold_log_probability": -0.0007198841194622219,
+            "label_scores": {
+              "A": 48.5,
+              "B": 48.25,
+              "C": 47.5,
+              "D": 56.5
+            },
+            "loss": 0.0007198841194622219,
+            "predicted_label": "D",
+            "prompt_token_count": 120,
+            "raw_generation": null
+          }
+        ]
+      },
+      "manual_3": {
+        "accuracy": 0.25,
+        "confusion_matrix": {
+          "A": {
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "D": 0
+          },
+          "B": {
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "D": 0
+          },
+          "C": {
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "D": 0
+          },
+          "D": {
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "D": 0
+          }
+        },
+        "instruction": "Decide whether the article is mainly about world affairs, sports, business, or science and technology, then output its mapped letter only.",
+        "mean_loss": 9.693625882267945,
+        "per_class_accuracy": {
+          "A": 1.0,
+          "B": 0.0,
+          "C": 0.0,
+          "D": 0.0
+        },
+        "records": [
+          {
+            "answer_position": 134,
+            "correct": true,
+            "error_tag": "correct",
+            "example_id": "sanity-world-1",
+            "gold_label": "A",
+            "gold_log_probability": -3.576278118089249e-07,
+            "label_scores": {
+              "A": 62.25,
+              "B": 42.5,
+              "C": 40.5,
+              "D": 47.5
+            },
+            "loss": 3.576278118089249e-07,
+            "predicted_label": "A",
+            "prompt_token_count": 135,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 125,
+            "correct": true,
+            "error_tag": "correct",
+            "example_id": "sanity-world-2",
+            "gold_label": "A",
+            "gold_log_probability": 0.0,
+            "label_scores": {
+              "A": 61.5,
+              "B": 40.0,
+              "C": 38.25,
+              "D": 40.75
+            },
+            "loss": -0.0,
+            "predicted_label": "A",
+            "prompt_token_count": 126,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 128,
+            "correct": false,
+            "error_tag": "B->A",
+            "example_id": "sanity-sports-1",
+            "gold_label": "B",
+            "gold_log_probability": -14.000000953674316,
+            "label_scores": {
+              "A": 60.5,
+              "B": 46.5,
+              "C": 41.25,
+              "D": 44.25
+            },
+            "loss": 14.000000953674316,
+            "predicted_label": "A",
+            "prompt_token_count": 129,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 127,
+            "correct": false,
+            "error_tag": "B->A",
+            "example_id": "sanity-sports-2",
+            "gold_label": "B",
+            "gold_log_probability": -17.75,
+            "label_scores": {
+              "A": 61.75,
+              "B": 44.0,
+              "C": 40.5,
+              "D": 43.5
+            },
+            "loss": 17.75,
+            "predicted_label": "A",
+            "prompt_token_count": 128,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 127,
+            "correct": false,
+            "error_tag": "C->A",
+            "example_id": "sanity-business-1",
+            "gold_label": "C",
+            "gold_log_probability": -16.25,
+            "label_scores": {
+              "A": 60.5,
+              "B": 45.5,
+              "C": 44.25,
+              "D": 44.75
+            },
+            "loss": 16.25,
+            "predicted_label": "A",
+            "prompt_token_count": 128,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 128,
+            "correct": false,
+            "error_tag": "C->A",
+            "example_id": "sanity-business-2",
+            "gold_label": "C",
+            "gold_log_probability": -20.25,
+            "label_scores": {
+              "A": 61.75,
+              "B": 43.25,
+              "C": 41.5,
+              "D": 43.5
+            },
+            "loss": 20.25,
+            "predicted_label": "A",
+            "prompt_token_count": 129,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 128,
+            "correct": false,
+            "error_tag": "D->A",
+            "example_id": "sanity-scitech-1",
+            "gold_label": "D",
+            "gold_log_probability": -6.002475738525391,
+            "label_scores": {
+              "A": 59.5,
+              "B": 43.5,
+              "C": 42.25,
+              "D": 53.5
+            },
+            "loss": 6.002475738525391,
+            "predicted_label": "A",
+            "prompt_token_count": 129,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 128,
+            "correct": false,
+            "error_tag": "D->A",
+            "example_id": "sanity-scitech-2",
+            "gold_label": "D",
+            "gold_log_probability": -3.29653000831604,
+            "label_scores": {
+              "A": 53.5,
+              "B": 45.0,
+              "C": 48.75,
+              "D": 50.25
+            },
+            "loss": 3.29653000831604,
+            "predicted_label": "A",
+            "prompt_token_count": 129,
+            "raw_generation": null
+          }
+        ]
+      },
+      "seed": {
+        "accuracy": 0.375,
+        "confusion_matrix": {
+          "A": {
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "D": 0
+          },
+          "B": {
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "D": 0
+          },
+          "C": {
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "D": 0
+          },
+          "D": {
+            "A": 1,
+            "B": 0,
+            "C": 0,
+            "D": 1
+          }
+        },
+        "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+        "mean_loss": 5.876820847300792,
+        "per_class_accuracy": {
+          "A": 1.0,
+          "B": 0.0,
+          "C": 0.0,
+          "D": 0.5
+        },
+        "records": [
+          {
+            "answer_position": 132,
+            "correct": true,
+            "error_tag": "correct",
+            "example_id": "sanity-world-1",
+            "gold_label": "A",
+            "gold_log_probability": -7.986990567587782e-06,
+            "label_scores": {
+              "A": 61.75,
+              "B": 45.25,
+              "C": 42.75,
+              "D": 50.0
+            },
+            "loss": 7.986990567587782e-06,
+            "predicted_label": "A",
+            "prompt_token_count": 133,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 123,
+            "correct": true,
+            "error_tag": "correct",
+            "example_id": "sanity-world-2",
+            "gold_label": "A",
+            "gold_log_probability": 0.0,
+            "label_scores": {
+              "A": 62.25,
+              "B": 45.0,
+              "C": 42.25,
+              "D": 44.75
+            },
+            "loss": -0.0,
+            "predicted_label": "A",
+            "prompt_token_count": 124,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 126,
+            "correct": false,
+            "error_tag": "B->A",
+            "example_id": "sanity-sports-1",
+            "gold_label": "B",
+            "gold_log_probability": -5.504154205322266,
+            "label_scores": {
+              "A": 58.0,
+              "B": 52.5,
+              "C": 44.5,
+              "D": 48.5
+            },
+            "loss": 5.504154205322266,
+            "predicted_label": "A",
+            "prompt_token_count": 127,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 125,
+            "correct": false,
+            "error_tag": "B->A",
+            "example_id": "sanity-sports-2",
+            "gold_label": "B",
+            "gold_log_probability": -12.250004768371582,
+            "label_scores": {
+              "A": 60.25,
+              "B": 48.0,
+              "C": 42.5,
+              "D": 45.75
+            },
+            "loss": 12.250004768371582,
+            "predicted_label": "A",
+            "prompt_token_count": 126,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 125,
+            "correct": false,
+            "error_tag": "C->A",
+            "example_id": "sanity-business-1",
+            "gold_label": "C",
+            "gold_log_probability": -12.750227928161621,
+            "label_scores": {
+              "A": 58.75,
+              "B": 50.25,
+              "C": 46.0,
+              "D": 48.0
+            },
+            "loss": 12.750227928161621,
+            "predicted_label": "A",
+            "prompt_token_count": 126,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 126,
+            "correct": false,
+            "error_tag": "C->A",
+            "example_id": "sanity-business-2",
+            "gold_label": "C",
+            "gold_log_probability": -15.750022888183594,
+            "label_scores": {
+              "A": 60.25,
+              "B": 48.75,
+              "C": 44.5,
+              "D": 49.0
+            },
+            "loss": 15.750022888183594,
+            "predicted_label": "A",
+            "prompt_token_count": 127,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 126,
+            "correct": true,
+            "error_tag": "correct",
+            "example_id": "sanity-scitech-1",
+            "gold_label": "D",
+            "gold_log_probability": -0.000977157847955823,
+            "label_scores": {
+              "A": 50.0,
+              "B": 51.0,
+              "C": 46.25,
+              "D": 58.25
+            },
+            "loss": 0.000977157847955823,
+            "predicted_label": "D",
+            "prompt_token_count": 127,
+            "raw_generation": null
+          },
+          {
+            "answer_position": 126,
+            "correct": false,
+            "error_tag": "D->A",
+            "example_id": "sanity-scitech-2",
+            "gold_label": "D",
+            "gold_log_probability": -0.7591718435287476,
+            "label_scores": {
+              "A": 54.25,
+              "B": 52.25,
+              "C": 47.5,
+              "D": 54.25
+            },
+            "loss": 0.7591718435287476,
+            "predicted_label": "A",
+            "prompt_token_count": 127,
+            "raw_generation": null
+          }
+        ]
+      }
+    },
+    "parity": {
+      "answer_positions_identical": true,
+      "examples_checked": 8,
+      "maximum_absolute_label_score_difference": 0.0,
+      "mean_absolute_label_score_difference": 0.0,
+      "prediction_agreement": 1.0
+    },
+    "parity_tolerance": 0.01,
+    "soft_slot_gradient": {
+      "all_gradient_values_finite": true,
+      "examples_checked": 2,
+      "gradient_norm": 0.0009041887242347002,
+      "loss": 3.993495283793891e-06,
+      "model_parameters_trainable": 0,
+      "slot_token_count": 25
+    }
+  },
+  "tokenizer_gates": {
+    "all_labels_single_token": true,
+    "examples_checked": 8,
+    "full_roundtrip_exact": true,
+    "label_token_ids": {
+      "A": [
+        32
+      ],
+      "B": [
+        33
+      ],
+      "C": [
+        34
+      ],
+      "D": [
+        35
+      ]
+    },
+    "prompt_boundary_compositional": true,
+    "seed_slot_token_count": 25,
+    "slot_ids_independent_of_article": true,
+    "slot_roundtrip_exact": true,
+    "test_split_locked": true
+  }
+}

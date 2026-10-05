@@ -1,0 +1,4 @@
+run,directory,reflection_minibatch_size,proposal_count,accepted_proposal_count,gepa_selected_accuracy,gepa_selected_mean_loss,posthoc_best_accuracy,posthoc_best_mean_loss,posthoc_best_was_accepted,ranking_disagreements,pairwise_comparisons,pearson_loss_vs_accuracy,spearman_loss_rank_vs_accuracy_rank,optimization_wall_time_seconds,gepa_metric_calls,official_test_examples_present
+mb4,artifacts/gepa_observation,4,12,0,0.3046875,9.258448102644559,0.35546875,6.070294806827508,False,12,66,-0.8159751774709461,-0.7880922768806395,89.3241845248267,608,False
+mb8,artifacts/gepa_confirmation_mb8,8,12,4,0.3671875,6.486268453709625,0.3671875,6.486268453709625,True,20,66,-0.617363040982357,-0.5964948999491283,132.49220108008012,2752,False
+mb16,artifacts/gepa_confirmation_mb16,16,12,6,0.33984375,6.923133825896382,0.33984375,6.923133825896382,True,23,78,-0.20818126872599724,-0.41333432132039993,145.58842798881233,3968,False

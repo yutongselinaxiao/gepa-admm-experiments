@@ -1,0 +1,554 @@
+[
+  {
+    "i": 0,
+    "selected_program_candidate": 0,
+    "subsample_ids": [
+      "official-train:94384:train",
+      "official-train:23294:train",
+      "official-train:93147:train",
+      "official-train:49966:train"
+    ],
+    "n_tasks": 1,
+    "tasks": [
+      {
+        "parent_idx": 0,
+        "subsample_ids": [
+          "official-train:94384:train",
+          "official-train:23294:train",
+          "official-train:93147:train",
+          "official-train:49966:train"
+        ],
+        "subsample_scores": [
+          0.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "new_subsample_scores": [
+          0.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "subsample_scores": [
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "new_subsample_scores": [
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "i": 1,
+    "selected_program_candidate": 0,
+    "subsample_ids": [
+      "official-train:35897:train",
+      "official-train:8322:train",
+      "official-train:119798:train",
+      "official-train:90793:train"
+    ],
+    "n_tasks": 1,
+    "tasks": [
+      {
+        "parent_idx": 0,
+        "subsample_ids": [
+          "official-train:35897:train",
+          "official-train:8322:train",
+          "official-train:119798:train",
+          "official-train:90793:train"
+        ],
+        "subsample_scores": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "new_subsample_scores": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "subsample_scores": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "new_subsample_scores": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "i": 2,
+    "selected_program_candidate": 0,
+    "subsample_ids": [
+      "official-train:13207:train",
+      "official-train:37114:train",
+      "official-train:17613:train",
+      "official-train:35638:train"
+    ],
+    "n_tasks": 1,
+    "tasks": [
+      {
+        "parent_idx": 0,
+        "subsample_ids": [
+          "official-train:13207:train",
+          "official-train:37114:train",
+          "official-train:17613:train",
+          "official-train:35638:train"
+        ],
+        "subsample_scores": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "new_subsample_scores": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "subsample_scores": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "new_subsample_scores": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "i": 3,
+    "selected_program_candidate": 0,
+    "subsample_ids": [
+      "official-train:117669:train",
+      "official-train:79703:train",
+      "official-train:32565:train",
+      "official-train:87334:train"
+    ],
+    "n_tasks": 1,
+    "tasks": [
+      {
+        "parent_idx": 0,
+        "subsample_ids": [
+          "official-train:117669:train",
+          "official-train:79703:train",
+          "official-train:32565:train",
+          "official-train:87334:train"
+        ],
+        "subsample_scores": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "new_subsample_scores": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "subsample_scores": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "new_subsample_scores": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "i": 4,
+    "selected_program_candidate": 0,
+    "subsample_ids": [
+      "official-train:22719:train",
+      "official-train:59478:train",
+      "official-train:86975:train",
+      "official-train:10308:train"
+    ],
+    "n_tasks": 1,
+    "tasks": [
+      {
+        "parent_idx": 0,
+        "subsample_ids": [
+          "official-train:22719:train",
+          "official-train:59478:train",
+          "official-train:86975:train",
+          "official-train:10308:train"
+        ],
+        "subsample_scores": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "new_subsample_scores": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "subsample_scores": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "new_subsample_scores": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "i": 5,
+    "selected_program_candidate": 0,
+    "subsample_ids": [
+      "official-train:11410:train",
+      "official-train:75371:train",
+      "official-train:53246:train",
+      "official-train:119707:train"
+    ],
+    "n_tasks": 1,
+    "tasks": [
+      {
+        "parent_idx": 0,
+        "subsample_ids": [
+          "official-train:11410:train",
+          "official-train:75371:train",
+          "official-train:53246:train",
+          "official-train:119707:train"
+        ],
+        "subsample_scores": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "new_subsample_scores": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "subsample_scores": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "new_subsample_scores": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "i": 6,
+    "selected_program_candidate": 0,
+    "subsample_ids": [
+      "official-train:87427:train",
+      "official-train:1382:train",
+      "official-train:116787:train",
+      "official-train:59014:train"
+    ],
+    "n_tasks": 1,
+    "tasks": [
+      {
+        "parent_idx": 0,
+        "subsample_ids": [
+          "official-train:87427:train",
+          "official-train:1382:train",
+          "official-train:116787:train",
+          "official-train:59014:train"
+        ],
+        "subsample_scores": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "new_subsample_scores": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "subsample_scores": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "new_subsample_scores": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "i": 7,
+    "selected_program_candidate": 0,
+    "subsample_ids": [
+      "official-train:51683:train",
+      "official-train:80073:train",
+      "official-train:55374:train",
+      "official-train:21660:train"
+    ],
+    "n_tasks": 1,
+    "tasks": [
+      {
+        "parent_idx": 0,
+        "subsample_ids": [
+          "official-train:51683:train",
+          "official-train:80073:train",
+          "official-train:55374:train",
+          "official-train:21660:train"
+        ],
+        "subsample_scores": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "new_subsample_scores": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      }
+    ],
+    "subsample_scores": [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "new_subsample_scores": [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ]
+  },
+  {
+    "i": 8,
+    "selected_program_candidate": 0,
+    "subsample_ids": [
+      "official-train:101445:train",
+      "official-train:44950:train",
+      "official-train:66302:train",
+      "official-train:43973:train"
+    ],
+    "n_tasks": 1,
+    "tasks": [
+      {
+        "parent_idx": 0,
+        "subsample_ids": [
+          "official-train:101445:train",
+          "official-train:44950:train",
+          "official-train:66302:train",
+          "official-train:43973:train"
+        ],
+        "subsample_scores": [
+          1.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "new_subsample_scores": [
+          1.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      }
+    ],
+    "subsample_scores": [
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "new_subsample_scores": [
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ]
+  },
+  {
+    "i": 9,
+    "selected_program_candidate": 0,
+    "subsample_ids": [
+      "official-train:86978:train",
+      "official-train:103961:train",
+      "official-train:56580:train",
+      "official-train:70207:train"
+    ],
+    "n_tasks": 1,
+    "tasks": [
+      {
+        "parent_idx": 0,
+        "subsample_ids": [
+          "official-train:86978:train",
+          "official-train:103961:train",
+          "official-train:56580:train",
+          "official-train:70207:train"
+        ],
+        "subsample_scores": [
+          1.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "new_subsample_scores": [
+          1.0,
+          0.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "subsample_scores": [
+      1.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "new_subsample_scores": [
+      1.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "i": 10,
+    "selected_program_candidate": 0,
+    "subsample_ids": [
+      "official-train:54784:train",
+      "official-train:116007:train",
+      "official-train:119827:train",
+      "official-train:108567:train"
+    ],
+    "n_tasks": 1,
+    "tasks": [
+      {
+        "parent_idx": 0,
+        "subsample_ids": [
+          "official-train:54784:train",
+          "official-train:116007:train",
+          "official-train:119827:train",
+          "official-train:108567:train"
+        ],
+        "subsample_scores": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "new_subsample_scores": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "subsample_scores": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "new_subsample_scores": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "i": 11,
+    "selected_program_candidate": 0,
+    "subsample_ids": [
+      "official-train:61586:train",
+      "official-train:41704:train",
+      "official-train:117255:train",
+      "official-train:48028:train"
+    ],
+    "n_tasks": 1,
+    "tasks": [
+      {
+        "parent_idx": 0,
+        "subsample_ids": [
+          "official-train:61586:train",
+          "official-train:41704:train",
+          "official-train:117255:train",
+          "official-train:48028:train"
+        ],
+        "subsample_scores": [
+          1.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "new_subsample_scores": [
+          0.0,
+          1.0,
+          1.0,
+          0.0
+        ]
+      }
+    ],
+    "subsample_scores": [
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "new_subsample_scores": [
+      0.0,
+      1.0,
+      1.0,
+      0.0
+    ]
+  }
+]

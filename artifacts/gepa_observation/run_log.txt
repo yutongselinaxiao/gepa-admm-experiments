@@ -1,0 +1,37 @@
+Iteration 0: Base program full valset score: 0.3046875 over 512 / 512 examples
+Iteration 1: Selected program 0 score: 0.3046875
+Iteration 1: Proposed new text for instruction: Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring any incidental details, then output the corresponding capital letter.
+Iteration 1: New subsample score 3.0 is not better than old score 3.0, skipping
+Iteration 2: Selected program 0 score: 0.3046875
+Iteration 2: Proposed new text for instruction: Carefully identify the article's central topic based on the label mapping, focusing on the primary theme rather than incidental details, and output the corresponding capital letter.
+Iteration 2: New subsample score 1.0 is not better than old score 1.0, skipping
+Iteration 3: Selected program 0 score: 0.3046875
+Iteration 3: Proposed new text for instruction: Carefully analyze the article to identify the primary topic, focusing on the main subject and context, and select the corresponding capital letter from the label mapping, ignoring any incidental details or keywords.
+Iteration 3: New subsample score 0.0 is not better than old score 0.0, skipping
+Iteration 4: Selected program 0 score: 0.3046875
+Iteration 4: Proposed new text for instruction: Carefully analyze the article to identify the central topic, focusing on the primary subject and context, while ignoring incidental details. Use the label mapping to determine the correct capital letter.
+Iteration 4: New subsample score 2.0 is not better than old score 2.0, skipping
+Iteration 5: Selected program 0 score: 0.3046875
+Iteration 5: Proposed new text for instruction: Carefully analyze the article to identify the primary topic, focusing on the main event or subject, and select the corresponding capital letter from the label mapping, ignoring any incidental details or unrelated information.
+Iteration 5: New subsample score 0.0 is not better than old score 0.0, skipping
+Iteration 6: Selected program 0 score: 0.3046875
+Iteration 6: Proposed new text for instruction: Carefully analyze the article to identify the central topic, focusing on the primary subject and context, while ignoring incidental details. Use the label mapping to determine the correct capital letter.
+Iteration 6: New subsample score 0.0 is not better than old score 0.0, skipping
+Iteration 7: Selected program 0 score: 0.3046875
+Iteration 7: Proposed new text for instruction: Carefully analyze the article to identify the primary subject, prioritizing context and overarching theme over incidental details, and select the corresponding capital letter from the label mapping.
+Iteration 7: New subsample score 1.0 is not better than old score 1.0, skipping
+Iteration 8: Selected program 0 score: 0.3046875
+Iteration 8: Proposed new text for instruction: Carefully analyze the article to identify the central topic, prioritize relevant information, and select the corresponding capital letter from the label mapping.
+Iteration 8: New subsample score 1.0 is not better than old score 1.0, skipping
+Iteration 9: Selected program 0 score: 0.3046875
+Iteration 9: Proposed new text for instruction: Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output the corresponding capital letter.
+Iteration 9: New subsample score 2.0 is not better than old score 2.0, skipping
+Iteration 10: Selected program 0 score: 0.3046875
+Iteration 10: Proposed new text for instruction: Carefully analyze the article to identify the primary subject, focusing on the main event or theme, and select the corresponding capital letter from the label mapping, ignoring any incidental details or specific entities.
+Iteration 10: New subsample score 3.0 is not better than old score 3.0, skipping
+Iteration 11: Selected program 0 score: 0.3046875
+Iteration 11: Proposed new text for instruction: Carefully identify the article's central theme from the label mapping, focusing on the primary subject matter and ignoring any incidental details, and output only the corresponding capital letter.
+Iteration 11: New subsample score 1.0 is not better than old score 1.0, skipping
+Iteration 12: Selected program 0 score: 0.3046875
+Iteration 12: Proposed new text for instruction: Carefully identify the article's central theme from the label mapping, focusing on the primary subject matter and ignoring any incidental details, and output the corresponding capital letter.
+Iteration 12: New subsample score 2.0 is not better than old score 2.0, skipping

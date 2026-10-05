@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+artifacts/**/gepa_state.bin
+artifacts/**/*.pt

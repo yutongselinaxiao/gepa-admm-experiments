@@ -1,0 +1,1662 @@
+{
+  "best_accuracy_and_lowest_loss_agree": false,
+  "best_accuracy_candidate_id": "proposal_9",
+  "candidate_count": 13,
+  "candidates": [
+    {
+      "candidate_id": "seed",
+      "gepa_statuses": [
+        "seed"
+      ],
+      "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+      "per_class_accuracy": {
+        "A": 0.984375,
+        "B": 0.0703125,
+        "C": 0.015625,
+        "D": 0.1484375
+      },
+      "per_class_mean_loss": {
+        "A": 0.07969934707398668,
+        "B": 12.012844390468672,
+        "C": 15.869291294366121,
+        "D": 9.071957378669453
+      },
+      "proposal_numbers": [],
+      "slot_token_count": null,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.3046875,
+      "validation_mean_loss": 9.258448102644559
+    },
+    {
+      "candidate_id": "proposal_1",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the primary topic, focusing on the main event or subject, and select the corresponding capital letter from the label mapping, ignoring any incidental details or keywords.",
+      "per_class_accuracy": {
+        "A": 0.9609375,
+        "B": 0.0625,
+        "C": 0.015625,
+        "D": 0.1484375
+      },
+      "per_class_mean_loss": {
+        "A": 0.0608228108976786,
+        "B": 9.677501793780834,
+        "C": 14.284569702111185,
+        "D": 7.137905682484742
+      },
+      "proposal_numbers": [
+        1
+      ],
+      "slot_token_count": 37,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.296875,
+      "validation_mean_loss": 7.790199997318609
+    },
+    {
+      "candidate_id": "proposal_2",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the central topic, prioritize relevant information, and select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.9765625,
+        "B": 0.0546875,
+        "C": 0.015625,
+        "D": 0.140625
+      },
+      "per_class_mean_loss": {
+        "A": 0.049042787342368444,
+        "B": 10.34729317453457,
+        "C": 14.147401154972613,
+        "D": 7.040242782635275
+      },
+      "proposal_numbers": [
+        2
+      ],
+      "slot_token_count": 26,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.296875,
+      "validation_mean_loss": 7.8959949748712095
+    },
+    {
+      "candidate_id": "proposal_3",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the primary topic, focusing on the main subject and context, and select the corresponding capital letter from the label mapping. Ignore any incidental details or unrelated information.",
+      "per_class_accuracy": {
+        "A": 0.9453125,
+        "B": 0.078125,
+        "C": 0.015625,
+        "D": 0.2421875
+      },
+      "per_class_mean_loss": {
+        "A": 0.1775998117654844,
+        "B": 7.577415637666917,
+        "C": 11.867879283614457,
+        "D": 5.155391962965133
+      },
+      "proposal_numbers": [
+        3
+      ],
+      "slot_token_count": 38,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.3203125,
+      "validation_mean_loss": 6.194571674002997
+    },
+    {
+      "candidate_id": "proposal_4",
+      "gepa_statuses": [
+        "accepted"
+      ],
+      "instruction": "Carefully analyze the article to identify the central topic, prioritize the main subject over incidental details, and select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.8984375,
+        "B": 0.1015625,
+        "C": 0.015625,
+        "D": 0.203125
+      },
+      "per_class_mean_loss": {
+        "A": 0.3676600799903864,
+        "B": 7.256934909441041,
+        "C": 12.208861562074162,
+        "D": 5.532655652283836
+      },
+      "proposal_numbers": [
+        4
+      ],
+      "slot_token_count": 30,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.3046875,
+      "validation_mean_loss": 6.341528050947357
+    },
+    {
+      "candidate_id": "proposal_5",
+      "gepa_statuses": [
+        "accepted"
+      ],
+      "instruction": "Carefully analyze the article to identify the primary subject, prioritize the main topic over incidental details, and select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.953125,
+        "B": 0.0703125,
+        "C": 0.015625,
+        "D": 0.1640625
+      },
+      "per_class_mean_loss": {
+        "A": 0.16733273039429908,
+        "B": 8.618078890263817,
+        "C": 13.197286405134946,
+        "D": 6.596594818213276
+      },
+      "proposal_numbers": [
+        5
+      ],
+      "slot_token_count": 30,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.30078125,
+      "validation_mean_loss": 7.1448232110015875
+    },
+    {
+      "candidate_id": "proposal_6",
+      "gepa_statuses": [
+        "accepted"
+      ],
+      "instruction": "Carefully analyze the article to identify the central topic, focusing on the primary subject and context, and select the corresponding capital letter from the label mapping, ignoring any incidental details or entities.",
+      "per_class_accuracy": {
+        "A": 0.9375,
+        "B": 0.0625,
+        "C": 0.0234375,
+        "D": 0.234375
+      },
+      "per_class_mean_loss": {
+        "A": 0.21963348179501058,
+        "B": 9.11609027778806,
+        "C": 13.376815135707147,
+        "D": 6.164979573496313
+      },
+      "proposal_numbers": [
+        6
+      ],
+      "slot_token_count": 37,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.314453125,
+      "validation_mean_loss": 7.219379617196635
+    },
+    {
+      "candidate_id": "proposal_7",
+      "gepa_statuses": [
+        "accepted"
+      ],
+      "instruction": "Carefully analyze the article to determine the primary subject, prioritize the main topic over incidental details, and select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.9296875,
+        "B": 0.0703125,
+        "C": 0.015625,
+        "D": 0.1953125
+      },
+      "per_class_mean_loss": {
+        "A": 0.21138893272798742,
+        "B": 8.191439598929719,
+        "C": 12.725137406261638,
+        "D": 6.328013807938234
+      },
+      "proposal_numbers": [
+        7
+      ],
+      "slot_token_count": 30,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.302734375,
+      "validation_mean_loss": 6.863994936464394
+    },
+    {
+      "candidate_id": "proposal_8",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the primary subject, prioritize the main topic over secondary information, and select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.9296875,
+        "B": 0.0546875,
+        "C": 0.015625,
+        "D": 0.203125
+      },
+      "per_class_mean_loss": {
+        "A": 0.21948197403492248,
+        "B": 9.292024878784638,
+        "C": 13.784164605807746,
+        "D": 6.392316014478958
+      },
+      "proposal_numbers": [
+        8
+      ],
+      "slot_token_count": 30,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.30078125,
+      "validation_mean_loss": 7.421996868276566
+    },
+    {
+      "candidate_id": "proposal_9",
+      "gepa_statuses": [
+        "accepted"
+      ],
+      "instruction": "Carefully analyze the article to identify the primary subject, focus on the main event or theme, and select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.875,
+        "B": 0.0546875,
+        "C": 0.015625,
+        "D": 0.4140625
+      },
+      "per_class_mean_loss": {
+        "A": 0.3808401042723505,
+        "B": 9.919382518165094,
+        "C": 13.36578068882227,
+        "D": 4.026531992325814
+      },
+      "proposal_numbers": [
+        9
+      ],
+      "slot_token_count": 30,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.33984375,
+      "validation_mean_loss": 6.923133825896382
+    },
+    {
+      "candidate_id": "proposal_10",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the main topic, prioritize the central subject over incidental details, and select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.90625,
+        "B": 0.1015625,
+        "C": 0.0078125,
+        "D": 0.1953125
+      },
+      "per_class_mean_loss": {
+        "A": 0.31696469395364524,
+        "B": 7.64473853027448,
+        "C": 12.300727221183479,
+        "D": 5.717530748861918
+      },
+      "proposal_numbers": [
+        10
+      ],
+      "slot_token_count": 30,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.302734375,
+      "validation_mean_loss": 6.494990298568381
+    },
+    {
+      "candidate_id": "proposal_11",
+      "gepa_statuses": [
+        "rejected"
+      ],
+      "instruction": "Carefully analyze the article to identify the central topic, focusing on the primary subject and context, while ignoring incidental details. Use the label mapping to determine the correct capital letter.",
+      "per_class_accuracy": {
+        "A": 0.953125,
+        "B": 0.078125,
+        "C": 0.015625,
+        "D": 0.1484375
+      },
+      "per_class_mean_loss": {
+        "A": 0.1753247032538719,
+        "B": 7.788391873707042,
+        "C": 12.690245739184316,
+        "D": 6.080142987218949
+      },
+      "proposal_numbers": [
+        11
+      ],
+      "slot_token_count": 35,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.298828125,
+      "validation_mean_loss": 6.683526325841045
+    },
+    {
+      "candidate_id": "proposal_12",
+      "gepa_statuses": [
+        "accepted"
+      ],
+      "instruction": "Carefully analyze the article to identify the primary topic, prioritize the main subject over incidental details, and select the corresponding capital letter from the label mapping.",
+      "per_class_accuracy": {
+        "A": 0.84375,
+        "B": 0.1171875,
+        "C": 0.0078125,
+        "D": 0.25
+      },
+      "per_class_mean_loss": {
+        "A": 0.6629809739521055,
+        "B": 6.041249276226154,
+        "C": 11.460967641323805,
+        "D": 4.408053874678828
+      },
+      "proposal_numbers": [
+        12
+      ],
+      "slot_token_count": 30,
+      "tokenizer_compositional": true,
+      "validation_accuracy": 0.3046875,
+      "validation_mean_loss": 5.643312941545223
+    }
+  ],
+  "decision_gate": "treat_label_loss_as_diagnostic_due_to_top_candidate_mismatch",
+  "lowest_loss_candidate_id": "proposal_12",
+  "pairwise_comparison_count": 78,
+  "pearson_loss_vs_accuracy": -0.20818126872599724,
+  "ranking_disagreement_count": 23,
+  "ranking_disagreements": [
+    {
+      "higher_accuracy": 0.33984375,
+      "higher_accuracy_candidate_id": "proposal_9",
+      "higher_accuracy_only_correct_count": 34,
+      "higher_loss": 6.923133825896382,
+      "lower_accuracy": 0.298828125,
+      "lower_loss": 6.683526325841045,
+      "lower_loss_candidate_id": "proposal_11",
+      "lower_loss_only_correct_count": 13,
+      "representative_examples": [
+        {
+          "article_excerpt": "Natl Geographic Film Fest Gives Voice to Unsung Cultures This week the National Geographic All Roads Film Festival showcases indigenous filmmakers. Among the films, an Iranian documentary set in a public restroom, where women remove their v",
+          "example_id": "official-train:77492:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.07976474612951279,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 8.7501859664917,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Netflix Connects with TiVo (NewsFactor) NewsFactor - Netflix (Nasdaq: NFLX) and TiVo (Nasdaq: TIVO) have agreed to collaborate on delivering movies via the Internet, developing technology and working with Hollywood studios to secure content",
+          "example_id": "official-train:46866:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.02522348240017891,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.756410598754883,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Hitachi Joins Intel In Hard Drive Standard Hitachi Global Storage Technologies Inc. and Intel Corp. have joined in supporting an interface technology proposed for compact hard-disk drives used in portable music players, handheld computers a",
+          "example_id": "official-train:25427:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.1619492471218109,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.256020545959473,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Samsung Shows 5-Megapixel Camera Phone Device will capture high-resolution still images and video--and it still makes phone calls. Samsung Electronics will begin selling a cell phone that includes a 5-megapixel digital camera, the company s",
+          "example_id": "official-train:67684:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.2551587224006653,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.256007194519043,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "FDA Plans to Tag Certain Medicines to Prevent Fraud The Food and Drug Administration (FDA), in conjunction with several major drug companies, is working on an initiative that would involve fitting medicine bottles with tiny antennas to prev",
+          "example_id": "official-train:92688:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.0008201810996979475,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.755104064941406,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.33984375,
+      "higher_accuracy_candidate_id": "proposal_9",
+      "higher_accuracy_only_correct_count": 30,
+      "higher_loss": 6.923133825896382,
+      "lower_accuracy": 0.302734375,
+      "lower_loss": 6.863994936464394,
+      "lower_loss_candidate_id": "proposal_7",
+      "lower_loss_only_correct_count": 11,
+      "representative_examples": [
+        {
+          "article_excerpt": "Samsung Shows 5-Megapixel Camera Phone Device will capture high-resolution still images and video--and it still makes phone calls. Samsung Electronics will begin selling a cell phone that includes a 5-megapixel digital camera, the company s",
+          "example_id": "official-train:67684:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.2551587224006653,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 10.00016975402832,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Siemens adds Flash-OFDM to broadband wireless family German engineering and manufacturing company Siemens will add more broadband technology to its growing portfolio of new high-speed wireless systems slated for delivery early next year.",
+          "example_id": "official-train:57096:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.038817230612039566,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 7.252238750457764,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Icelandic Tin Bath Could Give Earthquake Warnings (Reuters) Reuters - A tin bath on the cliffs of northern\\Iceland, where locals take a dip to treat skin complaints,\\could help scientists give an early warning of big earthquakes\\and save th",
+          "example_id": "official-train:58804:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.16101494431495667,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.752342700958252,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "FDA Plans to Tag Certain Medicines to Prevent Fraud The Food and Drug Administration (FDA), in conjunction with several major drug companies, is working on an initiative that would involve fitting medicine bottles with tiny antennas to prev",
+          "example_id": "official-train:92688:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.0008201810996979475,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.515650749206543,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "CELL Prototype Announced By Sony, Toshiba, and IBM In two joint press releases, Sony Corporation, Sony Computer Entertainment Inc., Toshiba, and IBM, have today announced the creation of the prototype CELL processor, which is currently bein",
+          "example_id": "official-train:104064:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.08222354203462601,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.266221046447754,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.33984375,
+      "higher_accuracy_candidate_id": "proposal_9",
+      "higher_accuracy_only_correct_count": 31,
+      "higher_loss": 6.923133825896382,
+      "lower_accuracy": 0.302734375,
+      "lower_loss": 6.494990298568381,
+      "lower_loss_candidate_id": "proposal_10",
+      "lower_loss_only_correct_count": 12,
+      "representative_examples": [
+        {
+          "article_excerpt": "Samsung Shows 5-Megapixel Camera Phone Device will capture high-resolution still images and video--and it still makes phone calls. Samsung Electronics will begin selling a cell phone that includes a 5-megapixel digital camera, the company s",
+          "example_id": "official-train:67684:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.2551587224006653,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.75435733795166,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Vitual Flowers \\\\This is cool.\\\\Hotornot just added a new feature to send a \"virtual flower\".  For \\$2 (or so)\\you can send a flower to a girl who you haven't yet met.\\\\I love it!  Awesome!\\\\\\(16:44:01) metameta8080: dude, what a waste of m",
+          "example_id": "official-train:119669:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.3133043646812439,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.251931667327881,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Natl Geographic Film Fest Gives Voice to Unsung Cultures This week the National Geographic All Roads Film Festival showcases indigenous filmmakers. Among the films, an Iranian documentary set in a public restroom, where women remove their v",
+          "example_id": "official-train:77492:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.07976474612951279,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.75327730178833,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Icelandic Tin Bath Could Give Earthquake Warnings (Reuters) Reuters - A tin bath on the cliffs of northern\\Iceland, where locals take a dip to treat skin complaints,\\could help scientists give an early warning of big earthquakes\\and save th",
+          "example_id": "official-train:58804:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.16101494431495667,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.257162570953369,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Siemens adds Flash-OFDM to broadband wireless family German engineering and manufacturing company Siemens will add more broadband technology to its growing portfolio of new high-speed wireless systems slated for delivery early next year.",
+          "example_id": "official-train:57096:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.038817230612039566,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.01542854309082,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.33984375,
+      "higher_accuracy_candidate_id": "proposal_9",
+      "higher_accuracy_only_correct_count": 31,
+      "higher_loss": 6.923133825896382,
+      "lower_accuracy": 0.3046875,
+      "lower_loss": 6.341528050947357,
+      "lower_loss_candidate_id": "proposal_4",
+      "lower_loss_only_correct_count": 13,
+      "representative_examples": [
+        {
+          "article_excerpt": "Siemens adds Flash-OFDM to broadband wireless family German engineering and manufacturing company Siemens will add more broadband technology to its growing portfolio of new high-speed wireless systems slated for delivery early next year.",
+          "example_id": "official-train:57096:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.038817230612039566,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.759945869445801,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Vitual Flowers \\\\This is cool.\\\\Hotornot just added a new feature to send a \"virtual flower\".  For \\$2 (or so)\\you can send a flower to a girl who you haven't yet met.\\\\I love it!  Awesome!\\\\\\(16:44:01) metameta8080: dude, what a waste of m",
+          "example_id": "official-train:119669:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.3133043646812439,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.255236625671387,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Natl Geographic Film Fest Gives Voice to Unsung Cultures This week the National Geographic All Roads Film Festival showcases indigenous filmmakers. Among the films, an Iranian documentary set in a public restroom, where women remove their v",
+          "example_id": "official-train:77492:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.07976474612951279,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.7587761878967285,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Samsung Shows 5-Megapixel Camera Phone Device will capture high-resolution still images and video--and it still makes phone calls. Samsung Electronics will begin selling a cell phone that includes a 5-megapixel digital camera, the company s",
+          "example_id": "official-train:67684:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.2551587224006653,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.77269172668457,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Icelandic Tin Bath Could Give Earthquake Warnings (Reuters) Reuters - A tin bath on the cliffs of northern\\Iceland, where locals take a dip to treat skin complaints,\\could help scientists give an early warning of big earthquakes\\and save th",
+          "example_id": "official-train:58804:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.16101494431495667,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.268194675445557,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.33984375,
+      "higher_accuracy_candidate_id": "proposal_9",
+      "higher_accuracy_only_correct_count": 32,
+      "higher_loss": 6.923133825896382,
+      "lower_accuracy": 0.3046875,
+      "lower_loss": 5.643312941545223,
+      "lower_loss_candidate_id": "proposal_12",
+      "lower_loss_only_correct_count": 14,
+      "representative_examples": [
+        {
+          "article_excerpt": "NVidia Will Supply Graphics Chip for New PlayStation PlayStation 3 graphics chip will also be available for Sony digital consumer products.",
+          "example_id": "official-train:110757:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.03287908062338829,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.266122341156006,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "FDA Plans to Tag Certain Medicines to Prevent Fraud The Food and Drug Administration (FDA), in conjunction with several major drug companies, is working on an initiative that would involve fitting medicine bottles with tiny antennas to prev",
+          "example_id": "official-train:92688:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.0008201810996979475,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.0205912590026855,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Vitual Flowers \\\\This is cool.\\\\Hotornot just added a new feature to send a \"virtual flower\".  For \\$2 (or so)\\you can send a flower to a girl who you haven't yet met.\\\\I love it!  Awesome!\\\\\\(16:44:01) metameta8080: dude, what a waste of m",
+          "example_id": "official-train:119669:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.3133043646812439,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.26416540145874,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Web Data Transfer to Handsets Made Easier (AP) AP - Have you ever gone online to get driving directions, only to leave the printout behind? Have you made movie plans, but forgot to jot down the show times? Or do you simply need an easy way ",
+          "example_id": "official-train:23955:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.23274751007556915,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.778386116027832,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Samsung Shows 5-Megapixel Camera Phone Device will capture high-resolution still images and video--and it still makes phone calls. Samsung Electronics will begin selling a cell phone that includes a 5-megapixel digital camera, the company s",
+          "example_id": "official-train:67684:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.2551587224006653,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.5770158767700195,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.33984375,
+      "higher_accuracy_candidate_id": "proposal_9",
+      "higher_accuracy_only_correct_count": 22,
+      "higher_loss": 6.923133825896382,
+      "lower_accuracy": 0.3203125,
+      "lower_loss": 6.194571674002997,
+      "lower_loss_candidate_id": "proposal_3",
+      "lower_loss_only_correct_count": 12,
+      "representative_examples": [
+        {
+          "article_excerpt": "Samsung Shows 5-Megapixel Camera Phone Device will capture high-resolution still images and video--and it still makes phone calls. Samsung Electronics will begin selling a cell phone that includes a 5-megapixel digital camera, the company s",
+          "example_id": "official-train:67684:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.2551587224006653,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 7.750988006591797,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Switches Drive Down Prices For 10-Gbps Ethernet Falling prices for 10-Gbps Ethernet switches may spur a new round of network upgrades by businesses looking to provide more speed for bandwidth-hungry applications.",
+          "example_id": "official-train:41889:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.08191528916358948,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 7.25087308883667,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Hitachi Joins Intel In Hard Drive Standard Hitachi Global Storage Technologies Inc. and Intel Corp. have joined in supporting an interface technology proposed for compact hard-disk drives used in portable music players, handheld computers a",
+          "example_id": "official-train:25427:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.1619492471218109,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 7.001131534576416,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Natl Geographic Film Fest Gives Voice to Unsung Cultures This week the National Geographic All Roads Film Festival showcases indigenous filmmakers. Among the films, an Iranian documentary set in a public restroom, where women remove their v",
+          "example_id": "official-train:77492:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.07976474612951279,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.753518104553223,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "China Bans a New Computer Video Game SHANGHAI, China Dec 9, 2004 - China has banned a new computer game for referring to Taiwan and other regions claimed by China as separate countries.",
+          "example_id": "official-train:111020:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.002493607811629772,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.511091709136963,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3203125,
+      "higher_accuracy_candidate_id": "proposal_3",
+      "higher_accuracy_only_correct_count": 24,
+      "higher_loss": 6.194571674002997,
+      "lower_accuracy": 0.3046875,
+      "lower_loss": 5.643312941545223,
+      "lower_loss_candidate_id": "proposal_12",
+      "lower_loss_only_correct_count": 16,
+      "representative_examples": [
+        {
+          "article_excerpt": "NVidia Will Supply Graphics Chip for New PlayStation PlayStation 3 graphics chip will also be available for Sony digital consumer products.",
+          "example_id": "official-train:110757:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.6699185967445374,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.266122341156006,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Defence minister sees damage to Chicoutimi, meets with British LONDON - Defence Minister Bill Graham was tight-lipped after meeting with his British counterpart to discuss last week #39;s fire on board HMCS Chicoutimi.",
+          "example_id": "official-train:57501:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.2522912919521332,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.773951768875122,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Peru Detains Siege Leader, to Storm Police Post &lt;p&gt;&lt;/p&gt;&lt;p&gt; By Jude Webber and Tania Mellado&lt;/p&gt;&lt;p&gt; LIMA, Peru (Reuters) - Peruvian authorities detained aformer army major who led a three-day uprising in a south",
+          "example_id": "official-train:97636:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.6691787838935852,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.992720603942871,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Briefly: TI touts combo chip with VoIP, Wi-Fi roundup Plus: ContextWeb nabs \\$3 million...Macromedia taps into AIM...Hewlett-Packard packages services for blades.",
+          "example_id": "official-train:34045:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.2563330829143524,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.2889349460601807,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Who Next? Ukraine's Opposition Leader Fears Murder  KIEV (Reuters) - Ukraine's main opposition leader and  presidential hopeful Viktor Yushchenko on Tuesday warned  politicians their lives could be in danger from a murderous  leadership ben",
+          "example_id": "official-train:34490:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.019577955827116966,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.0504512786865234,
+          "lower_loss_candidate_prediction": "B"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.314453125,
+      "higher_accuracy_candidate_id": "proposal_6",
+      "higher_accuracy_only_correct_count": 15,
+      "higher_loss": 7.219379617196635,
+      "lower_accuracy": 0.298828125,
+      "lower_loss": 6.683526325841045,
+      "lower_loss_candidate_id": "proposal_11",
+      "lower_loss_only_correct_count": 7,
+      "representative_examples": [
+        {
+          "article_excerpt": "FDA Plans to Tag Certain Medicines to Prevent Fraud The Food and Drug Administration (FDA), in conjunction with several major drug companies, is working on an initiative that would involve fitting medicine bottles with tiny antennas to prev",
+          "example_id": "official-train:92688:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.02129756659269333,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.755104064941406,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Movie industry sues more than 100 people for helping with online &lt;b&gt;...&lt;/b&gt; LOS ANGELES Hollywood is trying to stamp out computer networks that let people swap movies online. Movie studios filed copyright infringement lawsuits t",
+          "example_id": "official-train:115948:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.06197624281048775,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.288045883178711,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "RIM Incorporates QWERTY Keyboard In Small Mobile Devices It #39;s now possible to enjoy all the benefits of a full featured QWERTY keyboard in a small wireless device, thanks to Research In Motion #39;s (RIM) new patent-pending SureType key",
+          "example_id": "official-train:32522:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.048978112637996674,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.8126606941223145,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Seiko Epson unveils latest mini robot helicopter Japanese company Seiko Epson says it has developed a mini helicopter that is the lightest of its kind and can be used for lifesaving and surveillance. ",
+          "example_id": "official-train:3333:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.08412358164787292,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.7279818058013916,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Action Game 'Halo 2' Sold Early on eBay (AP) AP - Advance copies of the aliens-versus-space marines video game \"Halo 2\" have already fetched as much as  #36;265 on Internet auction site eBay, days before the official launch.",
+          "example_id": "official-train:83489:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.47443458437919617,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.8143041133880615,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.314453125,
+      "higher_accuracy_candidate_id": "proposal_6",
+      "higher_accuracy_only_correct_count": 13,
+      "higher_loss": 7.219379617196635,
+      "lower_accuracy": 0.30078125,
+      "lower_loss": 7.1448232110015875,
+      "lower_loss_candidate_id": "proposal_5",
+      "lower_loss_only_correct_count": 6,
+      "representative_examples": [
+        {
+          "article_excerpt": "Action Game 'Halo 2' Sold Early on eBay (AP) AP - Advance copies of the aliens-versus-space marines video game \"Halo 2\" have already fetched as much as  #36;265 on Internet auction site eBay, days before the official launch.",
+          "example_id": "official-train:83489:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.47443458437919617,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 8.500211715698242,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Tech investors see sunnier days ahead Optimism that the embattled technology sector was ripe for a recovery sent stocks modestly higher yesterday, despite a new revenue warning from semiconductor company Broadcom Inc.",
+          "example_id": "official-train:26712:validation",
+          "gold_label": "C",
+          "higher_accuracy_candidate_loss": 0.2327832132577896,
+          "higher_accuracy_candidate_prediction": "C",
+          "lower_loss_candidate_loss": 7.057217121124268,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "FDA Plans to Tag Certain Medicines to Prevent Fraud The Food and Drug Administration (FDA), in conjunction with several major drug companies, is working on an initiative that would involve fitting medicine bottles with tiny antennas to prev",
+          "example_id": "official-train:92688:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.02129756659269333,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.02567195892334,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Burt Rutan: Building  #39;Tomorrowland #39; One Launch at a Time MOJAVE, California -- Nobody can claim that Burt Rutan, the innovative aerospace designer, doesn #39;t have his head in the cloudsand his eyes focused on the stars.",
+          "example_id": "official-train:61554:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.4078291058540344,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.4105918407440186,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Teck Cominco to Appeal U.S. Pollution Ruling (Reuters) Reuters - Canadian miner Teck\\Cominco Ltd. will appeal a U.S. judge's refusal to dismiss a\\case over cross-border pollution of a lake on the Columbia\\River, a spokesman said on Tuesday.",
+          "example_id": "official-train:86049:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.5046713948249817,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.1699092388153076,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.314453125,
+      "higher_accuracy_candidate_id": "proposal_6",
+      "higher_accuracy_only_correct_count": 15,
+      "higher_loss": 7.219379617196635,
+      "lower_accuracy": 0.302734375,
+      "lower_loss": 6.863994936464394,
+      "lower_loss_candidate_id": "proposal_7",
+      "lower_loss_only_correct_count": 9,
+      "representative_examples": [
+        {
+          "article_excerpt": "FDA Plans to Tag Certain Medicines to Prevent Fraud The Food and Drug Administration (FDA), in conjunction with several major drug companies, is working on an initiative that would involve fitting medicine bottles with tiny antennas to prev",
+          "example_id": "official-train:92688:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.02129756659269333,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.515650749206543,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Tech investors see sunnier days ahead Optimism that the embattled technology sector was ripe for a recovery sent stocks modestly higher yesterday, despite a new revenue warning from semiconductor company Broadcom Inc.",
+          "example_id": "official-train:26712:validation",
+          "gold_label": "C",
+          "higher_accuracy_candidate_loss": 0.2327832132577896,
+          "higher_accuracy_candidate_prediction": "C",
+          "lower_loss_candidate_loss": 6.3164801597595215,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Action Game 'Halo 2' Sold Early on eBay (AP) AP - Advance copies of the aliens-versus-space marines video game \"Halo 2\" have already fetched as much as  #36;265 on Internet auction site eBay, days before the official launch.",
+          "example_id": "official-train:83489:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.47443458437919617,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.501561164855957,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Burt Rutan: Building  #39;Tomorrowland #39; One Launch at a Time MOJAVE, California -- Nobody can claim that Burt Rutan, the innovative aerospace designer, doesn #39;t have his head in the cloudsand his eyes focused on the stars.",
+          "example_id": "official-train:61554:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.4078291058540344,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.850477457046509,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Seiko Epson unveils latest mini robot helicopter Japanese company Seiko Epson says it has developed a mini helicopter that is the lightest of its kind and can be used for lifesaving and surveillance. ",
+          "example_id": "official-train:3333:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.08412358164787292,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.2401034832000732,
+          "lower_loss_candidate_prediction": "B"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.314453125,
+      "higher_accuracy_candidate_id": "proposal_6",
+      "higher_accuracy_only_correct_count": 15,
+      "higher_loss": 7.219379617196635,
+      "lower_accuracy": 0.302734375,
+      "lower_loss": 6.494990298568381,
+      "lower_loss_candidate_id": "proposal_10",
+      "lower_loss_only_correct_count": 9,
+      "representative_examples": [
+        {
+          "article_excerpt": "Action Game 'Halo 2' Sold Early on eBay (AP) AP - Advance copies of the aliens-versus-space marines video game \"Halo 2\" have already fetched as much as  #36;265 on Internet auction site eBay, days before the official launch.",
+          "example_id": "official-train:83489:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.47443458437919617,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 7.750437259674072,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Tech investors see sunnier days ahead Optimism that the embattled technology sector was ripe for a recovery sent stocks modestly higher yesterday, despite a new revenue warning from semiconductor company Broadcom Inc.",
+          "example_id": "official-train:26712:validation",
+          "gold_label": "C",
+          "higher_accuracy_candidate_loss": 0.2327832132577896,
+          "higher_accuracy_candidate_prediction": "C",
+          "lower_loss_candidate_loss": 5.535574913024902,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Burt Rutan: Building  #39;Tomorrowland #39; One Launch at a Time MOJAVE, California -- Nobody can claim that Burt Rutan, the innovative aerospace designer, doesn #39;t have his head in the cloudsand his eyes focused on the stars.",
+          "example_id": "official-train:61554:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.4078291058540344,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.777287006378174,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Briefly: TI touts combo chip with VoIP, Wi-Fi roundup Plus: ContextWeb nabs \\$3 million...Macromedia taps into AIM...Hewlett-Packard packages services for blades.",
+          "example_id": "official-train:34045:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.5811008214950562,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.532169818878174,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "FDA Plans to Tag Certain Medicines to Prevent Fraud The Food and Drug Administration (FDA), in conjunction with several major drug companies, is working on an initiative that would involve fitting medicine bottles with tiny antennas to prev",
+          "example_id": "official-train:92688:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.02129756659269333,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.8138511180877686,
+          "lower_loss_candidate_prediction": "B"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.314453125,
+      "higher_accuracy_candidate_id": "proposal_6",
+      "higher_accuracy_only_correct_count": 16,
+      "higher_loss": 7.219379617196635,
+      "lower_accuracy": 0.3046875,
+      "lower_loss": 6.341528050947357,
+      "lower_loss_candidate_id": "proposal_4",
+      "lower_loss_only_correct_count": 11,
+      "representative_examples": [
+        {
+          "article_excerpt": "Tech investors see sunnier days ahead Optimism that the embattled technology sector was ripe for a recovery sent stocks modestly higher yesterday, despite a new revenue warning from semiconductor company Broadcom Inc.",
+          "example_id": "official-train:26712:validation",
+          "gold_label": "C",
+          "higher_accuracy_candidate_loss": 0.2327832132577896,
+          "higher_accuracy_candidate_prediction": "C",
+          "lower_loss_candidate_loss": 6.034021854400635,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Action Game 'Halo 2' Sold Early on eBay (AP) AP - Advance copies of the aliens-versus-space marines video game \"Halo 2\" have already fetched as much as  #36;265 on Internet auction site eBay, days before the official launch.",
+          "example_id": "official-train:83489:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.47443458437919617,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.251956462860107,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "FDA Plans to Tag Certain Medicines to Prevent Fraud The Food and Drug Administration (FDA), in conjunction with several major drug companies, is working on an initiative that would involve fitting medicine bottles with tiny antennas to prev",
+          "example_id": "official-train:92688:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.02129756659269333,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.3847222328186035,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Briefly: TI touts combo chip with VoIP, Wi-Fi roundup Plus: ContextWeb nabs \\$3 million...Macromedia taps into AIM...Hewlett-Packard packages services for blades.",
+          "example_id": "official-train:34045:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.5811008214950562,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.7747342586517334,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Burt Rutan: Building  #39;Tomorrowland #39; One Launch at a Time MOJAVE, California -- Nobody can claim that Burt Rutan, the innovative aerospace designer, doesn #39;t have his head in the cloudsand his eyes focused on the stars.",
+          "example_id": "official-train:61554:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.4078291058540344,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.296391248703003,
+          "lower_loss_candidate_prediction": "B"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.314453125,
+      "higher_accuracy_candidate_id": "proposal_6",
+      "higher_accuracy_only_correct_count": 23,
+      "higher_loss": 7.219379617196635,
+      "lower_accuracy": 0.3046875,
+      "lower_loss": 5.643312941545223,
+      "lower_loss_candidate_id": "proposal_12",
+      "lower_loss_only_correct_count": 18,
+      "representative_examples": [
+        {
+          "article_excerpt": "Tech investors see sunnier days ahead Optimism that the embattled technology sector was ripe for a recovery sent stocks modestly higher yesterday, despite a new revenue warning from semiconductor company Broadcom Inc.",
+          "example_id": "official-train:26712:validation",
+          "gold_label": "C",
+          "higher_accuracy_candidate_loss": 0.2327832132577896,
+          "higher_accuracy_candidate_prediction": "C",
+          "lower_loss_candidate_loss": 5.580230712890625,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Action Game 'Halo 2' Sold Early on eBay (AP) AP - Advance copies of the aliens-versus-space marines video game \"Halo 2\" have already fetched as much as  #36;265 on Internet auction site eBay, days before the official launch.",
+          "example_id": "official-train:83489:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.47443458437919617,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.75881814956665,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "FDA Plans to Tag Certain Medicines to Prevent Fraud The Food and Drug Administration (FDA), in conjunction with several major drug companies, is working on an initiative that would involve fitting medicine bottles with tiny antennas to prev",
+          "example_id": "official-train:92688:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.02129756659269333,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.0205912590026855,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Defence minister sees damage to Chicoutimi, meets with British LONDON - Defence Minister Bill Graham was tight-lipped after meeting with his British counterpart to discuss last week #39;s fire on board HMCS Chicoutimi.",
+          "example_id": "official-train:57501:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.003192092990502715,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.773951768875122,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Who Next? Ukraine's Opposition Leader Fears Murder  KIEV (Reuters) - Ukraine's main opposition leader and  presidential hopeful Viktor Yushchenko on Tuesday warned  politicians their lives could be in danger from a murderous  leadership ben",
+          "example_id": "official-train:34490:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.0002548369811847806,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.0504512786865234,
+          "lower_loss_candidate_prediction": "B"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3046875,
+      "higher_accuracy_candidate_id": "seed",
+      "higher_accuracy_only_correct_count": 14,
+      "higher_loss": 9.258448102644559,
+      "lower_accuracy": 0.296875,
+      "lower_loss": 7.790199997318609,
+      "lower_loss_candidate_id": "proposal_1",
+      "lower_loss_only_correct_count": 10,
+      "representative_examples": [
+        {
+          "article_excerpt": "Switches Drive Down Prices For 10-Gbps Ethernet Falling prices for 10-Gbps Ethernet switches may spur a new round of network upgrades by businesses looking to provide more speed for bandwidth-hungry applications.",
+          "example_id": "official-train:41889:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.027257123962044716,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.5015788078308105,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Lieber goes to the Phillies Jon Lieber agreed to a deal with the Philadelphia Phillies, Al Leiter returned to the Florida Marlins, and Woody Williams went back to the San Diego Padres as major league teams moved quickly to grab starting pit",
+          "example_id": "official-train:110970:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.2521369457244873,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 4.264192581176758,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "End the steroid guilt by (players) association You know who you are. The ones who choose the right path. The ones who perform at a competitive disadvantage. The ones who refuse to alter your bodies with performance-enhancing drugs.",
+          "example_id": "official-train:35376:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.4328639805316925,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 3.8475561141967773,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Vitual Flowers \\\\This is cool.\\\\Hotornot just added a new feature to send a \"virtual flower\".  For \\$2 (or so)\\you can send a flower to a girl who you haven't yet met.\\\\I love it!  Awesome!\\\\\\(16:44:01) metameta8080: dude, what a waste of m",
+          "example_id": "official-train:119669:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.10021014511585236,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.2880587577819824,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Briefly: TI touts combo chip with VoIP, Wi-Fi roundup Plus: ContextWeb nabs \\$3 million...Macromedia taps into AIM...Hewlett-Packard packages services for blades.",
+          "example_id": "official-train:34045:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.25251615047454834,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.3539834022521973,
+          "lower_loss_candidate_prediction": "B"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3046875,
+      "higher_accuracy_candidate_id": "seed",
+      "higher_accuracy_only_correct_count": 12,
+      "higher_loss": 9.258448102644559,
+      "lower_accuracy": 0.296875,
+      "lower_loss": 7.8959949748712095,
+      "lower_loss_candidate_id": "proposal_2",
+      "lower_loss_only_correct_count": 8,
+      "representative_examples": [
+        {
+          "article_excerpt": "Switches Drive Down Prices For 10-Gbps Ethernet Falling prices for 10-Gbps Ethernet switches may spur a new round of network upgrades by businesses looking to provide more speed for bandwidth-hungry applications.",
+          "example_id": "official-train:41889:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.027257123962044716,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.007633686065674,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Briefly: TI touts combo chip with VoIP, Wi-Fi roundup Plus: ContextWeb nabs \\$3 million...Macromedia taps into AIM...Hewlett-Packard packages services for blades.",
+          "example_id": "official-train:34045:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.25251615047454834,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.041074275970459,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "End the steroid guilt by (players) association You know who you are. The ones who choose the right path. The ones who perform at a competitive disadvantage. The ones who refuse to alter your bodies with performance-enhancing drugs.",
+          "example_id": "official-train:35376:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.4328639805316925,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 4.079090118408203,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Lieber goes to the Phillies Jon Lieber agreed to a deal with the Philadelphia Phillies, Al Leiter returned to the Florida Marlins, and Woody Williams went back to the San Diego Padres as major league teams moved quickly to grab starting pit",
+          "example_id": "official-train:110970:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.2521369457244873,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 2.81341290473938,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Kerry defends Vietnam record, challenges Bush (AFP) AFP - Democratic Senator John Kerry accused President George W. Bush of using a front group to do the \"dirty work\" of attacking his Vietnam War record.",
+          "example_id": "official-train:4735:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.015063110738992691,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 2.153228282928467,
+          "lower_loss_candidate_prediction": "B"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3046875,
+      "higher_accuracy_candidate_id": "seed",
+      "higher_accuracy_only_correct_count": 12,
+      "higher_loss": 9.258448102644559,
+      "lower_accuracy": 0.298828125,
+      "lower_loss": 6.683526325841045,
+      "lower_loss_candidate_id": "proposal_11",
+      "lower_loss_only_correct_count": 9,
+      "representative_examples": [
+        {
+          "article_excerpt": "Kerry defends Vietnam record, challenges Bush (AFP) AFP - Democratic Senator John Kerry accused President George W. Bush of using a front group to do the \"dirty work\" of attacking his Vietnam War record.",
+          "example_id": "official-train:4735:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.015063110738992691,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 5.5337300300598145,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "India ; Criminal and killer Veerappan finally exterminated India News, Dharmapuri (Tamil Nadu), Oct 19 (IANS) Veerappan, India #39;s most wanted and most elusive brigand who murdered with impunity, was finally shot dead in his jungle hideou",
+          "example_id": "official-train:64776:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.0005660838796757162,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 3.536290168762207,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Movie industry sues more than 100 people for helping with online &lt;b&gt;...&lt;/b&gt; LOS ANGELES Hollywood is trying to stamp out computer networks that let people swap movies online. Movie studios filed copyright infringement lawsuits t",
+          "example_id": "official-train:115948:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.47412535548210144,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.288045883178711,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Trojan targets UK online bank accounts Virus writers have created a new Trojan horse capable of helping crooks to break into the accounts of British internet banking customers.",
+          "example_id": "official-train:88926:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.1602363884449005,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.350454807281494,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Lieber goes to the Phillies Jon Lieber agreed to a deal with the Philadelphia Phillies, Al Leiter returned to the Florida Marlins, and Woody Williams went back to the San Diego Padres as major league teams moved quickly to grab starting pit",
+          "example_id": "official-train:110970:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.2521369457244873,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 2.127439260482788,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3046875,
+      "higher_accuracy_candidate_id": "seed",
+      "higher_accuracy_only_correct_count": 13,
+      "higher_loss": 9.258448102644559,
+      "lower_accuracy": 0.30078125,
+      "lower_loss": 7.1448232110015875,
+      "lower_loss_candidate_id": "proposal_5",
+      "lower_loss_only_correct_count": 11,
+      "representative_examples": [
+        {
+          "article_excerpt": "Kerry defends Vietnam record, challenges Bush (AFP) AFP - Democratic Senator John Kerry accused President George W. Bush of using a front group to do the \"dirty work\" of attacking his Vietnam War record.",
+          "example_id": "official-train:4735:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.015063110738992691,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 4.781679153442383,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Switches Drive Down Prices For 10-Gbps Ethernet Falling prices for 10-Gbps Ethernet switches may spur a new round of network upgrades by businesses looking to provide more speed for bandwidth-hungry applications.",
+          "example_id": "official-train:41889:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.027257123962044716,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.513517379760742,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "India ; Criminal and killer Veerappan finally exterminated India News, Dharmapuri (Tamil Nadu), Oct 19 (IANS) Veerappan, India #39;s most wanted and most elusive brigand who murdered with impunity, was finally shot dead in his jungle hideou",
+          "example_id": "official-train:64776:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.0005660838796757162,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 4.023310661315918,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Vitual Flowers \\\\This is cool.\\\\Hotornot just added a new feature to send a \"virtual flower\".  For \\$2 (or so)\\you can send a flower to a girl who you haven't yet met.\\\\I love it!  Awesome!\\\\\\(16:44:01) metameta8080: dude, what a waste of m",
+          "example_id": "official-train:119669:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.10021014511585236,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.018217086791992,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Bhopal survivors still short on medical treatment and compo The failure of the Indian Government and an American corporation to tackle the after-effects of one of the worst industrial accidents in history has left a legacy of continuing pol",
+          "example_id": "official-train:104169:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.6931774616241455,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 4.511951446533203,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3046875,
+      "higher_accuracy_candidate_id": "seed",
+      "higher_accuracy_only_correct_count": 13,
+      "higher_loss": 9.258448102644559,
+      "lower_accuracy": 0.30078125,
+      "lower_loss": 7.421996868276566,
+      "lower_loss_candidate_id": "proposal_8",
+      "lower_loss_only_correct_count": 11,
+      "representative_examples": [
+        {
+          "article_excerpt": "Lieber goes to the Phillies Jon Lieber agreed to a deal with the Philadelphia Phillies, Al Leiter returned to the Florida Marlins, and Woody Williams went back to the San Diego Padres as major league teams moved quickly to grab starting pit",
+          "example_id": "official-train:110970:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.2521369457244873,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 5.504141330718994,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Bhopal survivors still short on medical treatment and compo The failure of the Indian Government and an American corporation to tackle the after-effects of one of the worst industrial accidents in history has left a legacy of continuing pol",
+          "example_id": "official-train:104169:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.6931774616241455,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 5.753439426422119,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Kerry defends Vietnam record, challenges Bush (AFP) AFP - Democratic Senator John Kerry accused President George W. Bush of using a front group to do the \"dirty work\" of attacking his Vietnam War record.",
+          "example_id": "official-train:4735:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.015063110738992691,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 4.399272918701172,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "End the steroid guilt by (players) association You know who you are. The ones who choose the right path. The ones who perform at a competitive disadvantage. The ones who refuse to alter your bodies with performance-enhancing drugs.",
+          "example_id": "official-train:35376:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.4328639805316925,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 4.761078834533691,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Switches Drive Down Prices For 10-Gbps Ethernet Falling prices for 10-Gbps Ethernet switches may spur a new round of network upgrades by businesses looking to provide more speed for bandwidth-hungry applications.",
+          "example_id": "official-train:41889:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.027257123962044716,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 4.019641876220703,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.302734375,
+      "higher_accuracy_candidate_id": "proposal_7",
+      "higher_accuracy_only_correct_count": 11,
+      "higher_loss": 6.863994936464394,
+      "lower_accuracy": 0.298828125,
+      "lower_loss": 6.683526325841045,
+      "lower_loss_candidate_id": "proposal_11",
+      "lower_loss_only_correct_count": 9,
+      "representative_examples": [
+        {
+          "article_excerpt": "Diplomats: Iran Uranium Dispute Resolved (AP) AP - Iran and European negotiators have apparently salvaged a deal committing Tehran to freezing all parts of a program that can make nuclear-weapons grade uranium, diplomats said Friday.",
+          "example_id": "official-train:102063:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.16069939732551575,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 4.5113091468811035,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "RIM Incorporates QWERTY Keyboard In Small Mobile Devices It #39;s now possible to enjoy all the benefits of a full featured QWERTY keyboard in a small wireless device, thanks to Research In Motion #39;s (RIM) new patent-pending SureType key",
+          "example_id": "official-train:32522:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.2073565423488617,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.8126606941223145,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Everything You Need to Know About Microsoft #39;s OS Update The service pack is notable mostly for a variety of new security features, including fixes to many known problems, a new version of the Windows Firewall that is turned on by defaul",
+          "example_id": "official-train:11804:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.4888738989830017,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.816920757293701,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Trojan targets UK online bank accounts Virus writers have created a new Trojan horse capable of helping crooks to break into the accounts of British internet banking customers.",
+          "example_id": "official-train:88926:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.12718231976032257,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.350454807281494,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "DVD/HD-DVD Combo Developed December 08, 2004 - Memory-Tech Corp. and Toshiba have announced that they have developed a dual-layer disc that can store both standard DVD and HD-DVD formats, on different layers.",
+          "example_id": "official-train:110678:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.06284444034099579,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.127742290496826,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3046875,
+      "higher_accuracy_candidate_id": "seed",
+      "higher_accuracy_only_correct_count": 16,
+      "higher_loss": 9.258448102644559,
+      "lower_accuracy": 0.302734375,
+      "lower_loss": 6.863994936464394,
+      "lower_loss_candidate_id": "proposal_7",
+      "lower_loss_only_correct_count": 15,
+      "representative_examples": [
+        {
+          "article_excerpt": "Kerry defends Vietnam record, challenges Bush (AFP) AFP - Democratic Senator John Kerry accused President George W. Bush of using a front group to do the \"dirty work\" of attacking his Vietnam War record.",
+          "example_id": "official-train:4735:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.015063110738992691,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 6.759782314300537,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Vitual Flowers \\\\This is cool.\\\\Hotornot just added a new feature to send a \"virtual flower\".  For \\$2 (or so)\\you can send a flower to a girl who you haven't yet met.\\\\I love it!  Awesome!\\\\\\(16:44:01) metameta8080: dude, what a waste of m",
+          "example_id": "official-train:119669:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.10021014511585236,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 5.0067973136901855,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "India ; Criminal and killer Veerappan finally exterminated India News, Dharmapuri (Tamil Nadu), Oct 19 (IANS) Veerappan, India #39;s most wanted and most elusive brigand who murdered with impunity, was finally shot dead in his jungle hideou",
+          "example_id": "official-train:64776:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.0005660838796757162,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 4.516251087188721,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Bhopal survivors still short on medical treatment and compo The failure of the Indian Government and an American corporation to tackle the after-effects of one of the worst industrial accidents in history has left a legacy of continuing pol",
+          "example_id": "official-train:104169:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.6931774616241455,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 4.7593207359313965,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Lieber goes to the Phillies Jon Lieber agreed to a deal with the Philadelphia Phillies, Al Leiter returned to the Florida Marlins, and Woody Williams went back to the San Diego Padres as major league teams moved quickly to grab starting pit",
+          "example_id": "official-train:110970:validation",
+          "gold_label": "B",
+          "higher_accuracy_candidate_loss": 0.2521369457244873,
+          "higher_accuracy_candidate_prediction": "B",
+          "lower_loss_candidate_loss": 4.264190673828125,
+          "lower_loss_candidate_prediction": "D"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.3046875,
+      "higher_accuracy_candidate_id": "seed",
+      "higher_accuracy_only_correct_count": 19,
+      "higher_loss": 9.258448102644559,
+      "lower_accuracy": 0.302734375,
+      "lower_loss": 6.494990298568381,
+      "lower_loss_candidate_id": "proposal_10",
+      "lower_loss_only_correct_count": 18,
+      "representative_examples": [
+        {
+          "article_excerpt": "Kerry defends Vietnam record, challenges Bush (AFP) AFP - Democratic Senator John Kerry accused President George W. Bush of using a front group to do the \"dirty work\" of attacking his Vietnam War record.",
+          "example_id": "official-train:4735:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.015063110738992691,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 8.261312484741211,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "Vitual Flowers \\\\This is cool.\\\\Hotornot just added a new feature to send a \"virtual flower\".  For \\$2 (or so)\\you can send a flower to a girl who you haven't yet met.\\\\I love it!  Awesome!\\\\\\(16:44:01) metameta8080: dude, what a waste of m",
+          "example_id": "official-train:119669:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.10021014511585236,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 6.251931667327881,
+          "lower_loss_candidate_prediction": "B"
+        },
+        {
+          "article_excerpt": "India ; Criminal and killer Veerappan finally exterminated India News, Dharmapuri (Tamil Nadu), Oct 19 (IANS) Veerappan, India #39;s most wanted and most elusive brigand who murdered with impunity, was finally shot dead in his jungle hideou",
+          "example_id": "official-train:64776:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.0005660838796757162,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 5.758411407470703,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Bhopal survivors still short on medical treatment and compo The failure of the Indian Government and an American corporation to tackle the after-effects of one of the worst industrial accidents in history has left a legacy of continuing pol",
+          "example_id": "official-train:104169:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.6931774616241455,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 6.252840518951416,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Briefly: TI touts combo chip with VoIP, Wi-Fi roundup Plus: ContextWeb nabs \\$3 million...Macromedia taps into AIM...Hewlett-Packard packages services for blades.",
+          "example_id": "official-train:34045:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.25251615047454834,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 3.532169818878174,
+          "lower_loss_candidate_prediction": "B"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.30078125,
+      "higher_accuracy_candidate_id": "proposal_5",
+      "higher_accuracy_only_correct_count": 7,
+      "higher_loss": 7.1448232110015875,
+      "lower_accuracy": 0.298828125,
+      "lower_loss": 6.683526325841045,
+      "lower_loss_candidate_id": "proposal_11",
+      "lower_loss_only_correct_count": 6,
+      "representative_examples": [
+        {
+          "article_excerpt": "Diplomats: Iran Uranium Dispute Resolved (AP) AP - Iran and European negotiators have apparently salvaged a deal committing Tehran to freezing all parts of a program that can make nuclear-weapons grade uranium, diplomats said Friday.",
+          "example_id": "official-train:102063:validation",
+          "gold_label": "A",
+          "higher_accuracy_candidate_loss": 0.12703828513622284,
+          "higher_accuracy_candidate_prediction": "A",
+          "lower_loss_candidate_loss": 4.5113091468811035,
+          "lower_loss_candidate_prediction": "D"
+        },
+        {
+          "article_excerpt": "Everything You Need to Know About Microsoft #39;s OS Update The service pack is notable mostly for a variety of new security features, including fixes to many known problems, a new version of the Windows Firewall that is turned on by defaul",
+          "example_id": "official-train:11804:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.5893128514289856,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.816920757293701,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "DVD/HD-DVD Combo Developed December 08, 2004 - Memory-Tech Corp. and Toshiba have announced that they have developed a dual-layer disc that can store both standard DVD and HD-DVD formats, on different layers.",
+          "example_id": "official-train:110678:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.0387408584356308,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.127742290496826,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "&lt;cite&gt;Reg&lt;/cite&gt; Readers hail NTL abusive message &lt;strong&gt;Letters&lt;/strong&gt; Not so keen on 'spam-free' email plans",
+          "example_id": "official-train:42280:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.167586088180542,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 1.7162989377975464,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Zafi Slows, But Experts Urge Vigilance The Zafi.d worm seems to have done its worst, security experts said Friday, but they urged users to remain on guard through the holidays for more seasonal shenanigans.",
+          "example_id": "official-train:119314:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.4928234815597534,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 1.5201177597045898,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    },
+    {
+      "higher_accuracy": 0.30078125,
+      "higher_accuracy_candidate_id": "proposal_8",
+      "higher_accuracy_only_correct_count": 10,
+      "higher_loss": 7.421996868276566,
+      "lower_accuracy": 0.298828125,
+      "lower_loss": 6.683526325841045,
+      "lower_loss_candidate_id": "proposal_11",
+      "lower_loss_only_correct_count": 9,
+      "representative_examples": [
+        {
+          "article_excerpt": "Seiko Epson unveils latest mini robot helicopter Japanese company Seiko Epson says it has developed a mini helicopter that is the lightest of its kind and can be used for lifesaving and surveillance. ",
+          "example_id": "official-train:3333:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.18034225702285767,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.7279818058013916,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Trojan targets UK online bank accounts Virus writers have created a new Trojan horse capable of helping crooks to break into the accounts of British internet banking customers.",
+          "example_id": "official-train:88926:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.16034038364887238,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.350454807281494,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "DVD/HD-DVD Combo Developed December 08, 2004 - Memory-Tech Corp. and Toshiba have announced that they have developed a dual-layer disc that can store both standard DVD and HD-DVD formats, on different layers.",
+          "example_id": "official-train:110678:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.2021760791540146,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.127742290496826,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "Red Hat hit by security-update email scam Red Hat is warning users that an email purporting to be a security update may contain malicious code. The email - which began appearing last Friday - uses a securityredhat.",
+          "example_id": "official-train:71460:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.4794839024543762,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 2.1532607078552246,
+          "lower_loss_candidate_prediction": "A"
+        },
+        {
+          "article_excerpt": "&lt;cite&gt;Reg&lt;/cite&gt; Readers hail NTL abusive message &lt;strong&gt;Letters&lt;/strong&gt; Not so keen on 'spam-free' email plans",
+          "example_id": "official-train:42280:validation",
+          "gold_label": "D",
+          "higher_accuracy_candidate_loss": 0.20570793747901917,
+          "higher_accuracy_candidate_prediction": "D",
+          "lower_loss_candidate_loss": 1.7162989377975464,
+          "lower_loss_candidate_prediction": "A"
+        }
+      ]
+    }
+  ],
+  "spearman_loss_rank_vs_accuracy_rank": -0.41333432132039993
+}
