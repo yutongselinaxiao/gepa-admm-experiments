@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import platform
+import subprocess
 import time
 from dataclasses import asdict
 from datetime import datetime, timezone
@@ -11,6 +12,7 @@ from typing import Any
 
 import torch
 import transformers
+import gepa
 from gepa import optimize
 
 from .config import PilotConfig
@@ -74,6 +76,23 @@ def _summary_cache_entry(summary: EvaluationSummary) -> dict[str, Any]:
             record.example_id: record.predicted_label for record in summary.records
         },
     }
+
+
+def _gepa_source() -> dict[str, Any]:
+    """Record which GEPA code ran: the installed wheel or the editable fork commit."""
+    source = Path(gepa.__file__).resolve().parent
+    try:
+        commit = subprocess.run(
+            ["git", "-C", str(source), "rev-parse", "HEAD"],
+            capture_output=True, text=True, check=True,
+        ).stdout.strip()
+        dirty = bool(subprocess.run(
+            ["git", "-C", str(source), "status", "--porcelain", "--", "."],
+            capture_output=True, text=True, check=True,
+        ).stdout.strip())
+    except (OSError, subprocess.CalledProcessError):
+        commit, dirty = None, None
+    return {"gepa_source": str(source), "gepa_git_commit": commit, "gepa_git_dirty": dirty}
 
 
 def main() -> None:
@@ -143,6 +162,7 @@ def main() -> None:
             "torch_version": torch.__version__,
             "transformers_version": transformers.__version__,
             "gepa_version": "0.1.4",
+            **_gepa_source(),
             "device": config.model.device,
             "cuda_device_name": torch.cuda.get_device_name(torch.device(config.model.device)),
         },
