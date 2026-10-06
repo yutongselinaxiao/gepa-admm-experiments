@@ -31,6 +31,32 @@ from .admm import ADMMRefiner, decode_and_check_slot
 from .data import NewsExample
 
 
+def heldout_split(
+    trainset: Sequence[NewsExample], excluded: set[str], selection_batch_size: int, seed: int
+) -> tuple[list[NewsExample], list[NewsExample], torch.Generator]:
+    """Shuffle the training examples outside GEPA's minibatch into a held-out selection
+    batch and the remainder. Returns the generator so callers can keep drawing from it."""
+    generator = torch.Generator(device="cpu").manual_seed(seed)
+    pool = [example for example in trainset if example.example_id not in excluded]
+    order = torch.randperm(len(pool), generator=generator).tolist()
+    selection = [pool[index] for index in order[:selection_batch_size]]
+    training = [pool[index] for index in order[selection_batch_size:]]
+    return selection, training, generator
+
+
+def excluded_minibatch_ids(
+    ids_by_article: Mapping[str, list[str]], records: Sequence[Mapping[str, Any]]
+) -> set[str]:
+    """Training IDs of GEPA's reflection minibatch, recovered from the reflective records."""
+    excluded: set[str] = set()
+    for record in records:
+        matches = ids_by_article.get(record["article"])
+        if not matches:
+            raise KeyError("Reflective record article does not match any training example.")
+        excluded.update(matches)
+    return excluded
+
+
 class ADMMProposer:
     def __init__(
         self,
@@ -63,13 +89,7 @@ class ADMMProposer:
         self.heldout_decisions: dict[str, bool] = {}
 
     def _excluded_ids(self, records: Sequence[Mapping[str, Any]]) -> set[str]:
-        excluded: set[str] = set()
-        for record in records:
-            matches = self._ids_by_article.get(record["article"])
-            if not matches:
-                raise KeyError("Reflective record article does not match any training example.")
-            excluded.update(matches)
-        return excluded
+        return excluded_minibatch_ids(self._ids_by_article, records)
 
     def __call__(
         self,
@@ -85,11 +105,9 @@ class ADMMProposer:
         parent = candidate["instruction"]
         excluded = self._excluded_ids(reflective_dataset["instruction"])
 
-        generator = torch.Generator(device="cpu").manual_seed(self.seed + call_index)
-        pool = [example for example in self.trainset if example.example_id not in excluded]
-        order = torch.randperm(len(pool), generator=generator).tolist()
-        selection = [pool[index] for index in order[: self.selection_batch_size]]
-        training = [pool[index] for index in order[self.selection_batch_size :]]
+        selection, training, generator = heldout_split(
+            self.trainset, excluded, self.selection_batch_size, self.seed + call_index
+        )
 
         record: dict[str, Any] = {
             "call_index": call_index,
@@ -233,8 +251,10 @@ class ADMMProposer:
 
 
 class ADMMHeldOutAcceptance:
-    """GEPA acceptance criterion that judges ADMM children on the proposer's held-out batch.
+    """GEPA acceptance criterion that judges children on a held-out batch.
 
+    `proposer` is anything with a `heldout_decisions` dict mapping child text to a verdict:
+    an ADMMProposer, or a HeldOutJudgedReflectionLM for reflective GEPA.
     A child proposed by ADMM is accepted if, on the held-out selection batch (disjoint
     from GEPA's minibatch and from ADMM's training batches), its loss is below the
     parent's and its accuracy is at least the parent's. Any other proposal falls back
@@ -295,4 +315,79 @@ class PolishingReflectionLM:
             "call_index": self.polisher.call_count - 1,
         }
         proposal.new_texts["instruction"] = polished
+        return proposal, self
+
+
+class HeldOutJudgedReflectionLM:
+    """Reflective GEPA with the same held-out acceptance test the ADMM proposer uses.
+
+    The default reflector proposes the child unchanged. Parent and child are then scored
+    on a held-out batch drawn exactly as in ADMMProposer (training examples outside GEPA's
+    minibatch, same seed per call). The verdict, child loss < parent loss and child
+    accuracy >= parent accuracy, is read by ADMMHeldOutAcceptance.
+    """
+
+    def __init__(
+        self,
+        inner: Any,
+        evaluator: Any,
+        trainset: Sequence[NewsExample],
+        *,
+        selection_batch_size: int,
+        seed: int,
+        log_path: str | Path,
+    ) -> None:
+        self.inner = inner
+        self.evaluator = evaluator
+        self.trainset = list(trainset)
+        self.selection_batch_size = selection_batch_size
+        self.seed = seed
+        self.log_path = Path(log_path)
+        self._ids_by_article: dict[str, list[str]] = defaultdict(list)
+        for example in self.trainset:
+            self._ids_by_article[example.article].append(example.example_id)
+        self.heldout_decisions: dict[str, bool] = {}
+        self.call_count = 0
+
+    def reflect(
+        self,
+        candidate: dict[str, str],
+        reflective_dataset: Mapping[str, Sequence[Mapping[str, Any]]],
+        components_to_update: list[str],
+    ) -> tuple[Any, "HeldOutJudgedReflectionLM"]:
+        proposal, next_inner = self.inner.reflect(candidate, reflective_dataset, components_to_update)
+        self.inner = next_inner
+        child = proposal.new_texts.get("instruction")
+        if child is None:
+            return proposal, self
+        call_index = self.call_count
+        self.call_count += 1
+        excluded = excluded_minibatch_ids(self._ids_by_article, reflective_dataset["instruction"])
+        selection, _, _ = heldout_split(
+            self.trainset, excluded, self.selection_batch_size, self.seed + call_index
+        )
+        parent_summary = self.evaluator.evaluate(
+            selection, candidate["instruction"], batch_size=len(selection)
+        )
+        child_summary = self.evaluator.evaluate(selection, child, batch_size=len(selection))
+        accept = (
+            child_summary.mean_loss < parent_summary.mean_loss
+            and child_summary.accuracy >= parent_summary.accuracy
+        )
+        self.heldout_decisions[child] = accept
+        record = {
+            "call_index": call_index,
+            "parent_instruction": candidate["instruction"],
+            "child_instruction": child,
+            "excluded_minibatch_ids": sorted(excluded),
+            "selection_ids": [example.example_id for example in selection],
+            "parent_selection_loss": parent_summary.mean_loss,
+            "parent_selection_accuracy": parent_summary.accuracy,
+            "child_selection_loss": child_summary.mean_loss,
+            "child_selection_accuracy": child_summary.accuracy,
+            "heldout_accept": accept,
+        }
+        proposal.metadata["heldout_judge"] = record
+        with self.log_path.open("a", encoding="utf-8") as handle:
+            handle.write(json.dumps(record, sort_keys=True) + "\n")
         return proposal, self

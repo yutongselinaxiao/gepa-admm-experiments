@@ -22,7 +22,12 @@ from .admm import (
     build_allowed_token_ids,
     hyperparameters_dict,
 )
-from .admm_proposer import ADMMHeldOutAcceptance, ADMMProposer, PolishingReflectionLM
+from .admm_proposer import (
+    ADMMHeldOutAcceptance,
+    ADMMProposer,
+    HeldOutJudgedReflectionLM,
+    PolishingReflectionLM,
+)
 from .config import PilotConfig
 from .data import NewsExample, load_examples_json, split_selection_report
 from .evaluator import CommonEvaluator, EvaluationSummary
@@ -143,6 +148,12 @@ def main() -> None:
     parser.add_argument("--admm-train-batch-size", type=int, default=16)
     parser.add_argument("--admm-selection-batch-size", type=int, default=32)
     parser.add_argument(
+        "--reflection-acceptance",
+        choices=("minibatch", "heldout"),
+        default="minibatch",
+        help="heldout: reflective children are judged by the same held-out test as ADMM children.",
+    )
+    parser.add_argument(
         "--admm-acceptance",
         choices=("minibatch", "heldout"),
         default="minibatch",
@@ -186,6 +197,7 @@ def main() -> None:
         evaluator, evaluation_batch_size=args.evaluation_batch_size
     )
     reflector: LocalQwenReflectionLM | None = None
+    heldout_judge: HeldOutJudgedReflectionLM | None = None
     admm_proposer: ADMMProposer | None = None
     if args.proposer in ("reflective", "reflect_polish"):
         reflector = LocalQwenReflectionLM(
@@ -199,6 +211,16 @@ def main() -> None:
             "reflection_lm": reflector,
             "reflection_prompt_template": REFLECTION_PROMPT_TEMPLATE,
         }
+        if args.proposer == "reflective" and args.reflection_acceptance == "heldout":
+            heldout_judge = HeldOutJudgedReflectionLM(
+                StatelessReflectionLM(reflector, REFLECTION_PROMPT_TEMPLATE),
+                evaluator,
+                train,
+                selection_batch_size=args.admm_selection_batch_size,
+                seed=optimization_seed + 2000,
+                log_path=run_dir / "heldout_judgements.jsonl",
+            )
+            proposal_kwargs = {"reflection_strategy": heldout_judge}
     if args.proposer in ("admm", "reflect_polish"):
         admm_hp = ADMMHyperparameters(
             rho=args.admm_rho,
@@ -236,6 +258,8 @@ def main() -> None:
     acceptance_criterion: Any = "strict_improvement"
     if admm_proposer is not None and args.admm_acceptance == "heldout":
         acceptance_criterion = ADMMHeldOutAcceptance(admm_proposer)
+    if heldout_judge is not None:
+        acceptance_criterion = ADMMHeldOutAcceptance(heldout_judge)
     tracker = ObservationTracker(run_dir / "callback_events.jsonl")
     stoppers = [
         ProposalCountStopper(tracker, args.proposals),
@@ -271,6 +295,7 @@ def main() -> None:
         "frontier_type": "instance",
         "proposer": args.proposer,
         "run_seed": args.run_seed,
+        "reflection_acceptance": args.reflection_acceptance,
         "optimization_seed": optimization_seed,
         "reflection_model": (
             "same frozen local Qwen checkpoint as task model"

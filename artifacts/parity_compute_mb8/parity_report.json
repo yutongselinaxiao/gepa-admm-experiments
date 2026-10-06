@@ -1,0 +1,36 @@
+{
+  "event_count": [
+    81,
+    81
+  ],
+  "max_abs_label_score_difference": 0.0,
+  "parity": true,
+  "per_example_output_files": [
+    574,
+    574
+  ],
+  "per_example_output_files_byte_identical": 574,
+  "selected_candidate": {
+    "candidate_idx": 3,
+    "instruction": "Carefully analyze the article to determine the primary subject and context, focusing on the main event or issue, and ignore incidental details. Select the corresponding capital letter from the label mapping.",
+    "validation_accuracy": 0.3671875,
+    "validation_mean_loss": 6.486268453709625
+  },
+  "selected_reference": {
+    "candidate_idx": 3,
+    "instruction": "Carefully analyze the article to determine the primary subject and context, focusing on the main event or issue, and ignore incidental details. Select the corresponding capital letter from the label mapping.",
+    "validation_accuracy": 0.3671875,
+    "validation_mean_loss": 6.486268453709625
+  },
+  "tier1_seed_scores_identical": true,
+  "tier2_first_divergent_proposal": null,
+  "tier2_proposal_texts_identical": true,
+  "tier3_decisions_identical": true,
+  "tier3_selected_identical": true,
+  "tier3_valset_scores_identical": true,
+  "tier4_candidate_audit_identical": true,
+  "tier4_event_stream_identical": true,
+  "tier4_gepa_state_identical": true,
+  "tier4_per_example_outputs_identical": true,
+  "tier4_reflection_calls_identical": true
+}
