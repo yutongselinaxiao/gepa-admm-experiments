@@ -1,0 +1,41 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully choose the article\u2019s main topic from the label mapping, without adding details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully choose the article's main topic from the label mapping, ignoring other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully choose the article's main topic from the label mapping, ignoring other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully fill in the sentence completion with from the label mapping, ignoring other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully fill in the sentence completion with from the label mapping, considering other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully choose the article's main topic from the label mapping, ignoring other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully fill in the sentence completion with from the label mapping. Suppose other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully fill in the sentence completion with from the label mapping. Suppose other details, and Output ONLY the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully fill in the sentence completion with from the label mapping, considering other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore semantic details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully choose the article's main topic from the label mapping, ignore semantic details, and output only the corresponding capital letter."
+  }
+]

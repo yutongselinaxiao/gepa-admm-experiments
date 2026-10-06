@@ -15,11 +15,22 @@ The official test splits have **not** been used.
 
 ## 1. Headline
 
-**Main finding.** The best variant is beam-search ADMM: ADMM as GEPA's
-proposer, with a fluency-constrained beam-search projection and held-out
-acceptance. It beats reflective GEPA on both tasks, including reflective
-baselines matched for compute and for acceptance. The advantage is
-consistent but modest, and borderline-significant at matched compute.
+**Main finding (revised after Phase 6, §5.13).** The best variant is GEPA
+with a beam-search ADMM proposer: ADMM replaces reflection as GEPA's proposer,
+with a fluency-constrained beam-search projection and held-out acceptance.
+
+Its advantage depends on a detail of the acceptance test. Originally ADMM
+picked its best iterate on the 32-example held-out batch S and was then
+accepted on **the same S**, while reflection's held-out judge never chose
+anything on its batch. With a fair, **independent** acceptance batch S′:
+- **Emotion:** the advantage holds. +1.64 pp over the strongest matched
+  reflective baseline (p = 0.03) and +2.11 over reflective GEPA (p = 0.008).
+- **AG News:** the advantage disappears. It ties the matched baseline exactly
+  (35.70 vs. 35.70). The earlier +2.6 pp lead came, at least partly, from the
+  easier acceptance.
+
+So, on current evidence, ADMM is **at least as good as** compute- and
+acceptance-matched reflection, and better on one of two tasks.
 
 Accuracy is measured on the 256-example **report half** of validation, which
 no selection step sees. Each cell is the mean ± sd over 10 seeds.
@@ -30,7 +41,8 @@ no selection step sees. Each cell is the mean ± sd over 10 seeds.
 | Reflective GEPA | reflection model (GEPA default) | minibatch (8) | 12 | 34.57 ± 2.45 | 35.73 ± 0.36 |
 | Strongest matched reflective baseline | reflection model | held-out (32) | 30 | 35.70 ± 1.71 | 36.20 ± 0.65 |
 | GEPA + top-p ADMM proposer | ADMM proposer (replaces reflection), top-p projection | held-out (32) | 12 | 36.88 ± 2.23 | 36.09 ± 0.22 |
-| **GEPA + beam ADMM proposer (λ = 0.3)** | ADMM proposer (replaces reflection), beam-search projection | held-out (32) | 12 | **38.32 ± 3.00** | **37.32 ± 1.69** |
+| **GEPA + beam ADMM proposer (λ = 0.3), independent acceptance (fair)** | ADMM proposer (replaces reflection), beam-search projection | held-out on S′ (32) | 12 | **35.70 ± 3.71** | **37.84 ± 1.98** |
+| GEPA + beam ADMM proposer (λ = 0.3), acceptance on S (used twice) | ADMM proposer (replaces reflection), beam-search projection | held-out on S (32) | 12 | 38.32 ± 3.00 | 37.32 ± 1.69 |
 | GEPA + beam ADMM proposer + per-class reward constraints | ADMM proposer (replaces reflection), beam projection, class-weighted loss | held-out (32) | 12 | 37.38 ± 2.37 | 37.21 ± 2.28 |
 
 **The ADMM rows are GEPA with ADMM as its proposer** (`--proposer admm`). GEPA
@@ -41,6 +53,21 @@ ran outside GEPA from the seed alone (§4.2, §5.2). Reflect-then-polish (reflec
 in this table. It was a 3-seed AG News exploration (§5.8: 34.77 ± 1.35) and
 didn't beat reflection alone. The matched baseline row gives reflection the
 same held-out acceptance rule as the ADMM rows, plus 2.5× the proposals.
+
+**Fair comparisons** (independent acceptance batch S′):
+
+| Comparison | Difference | Welch p | Mann–Whitney p | Bootstrap 95% CI |
+|---|---:|---:|---:|---|
+| AG News: beam ADMM (S′) − matched baseline (30 proposals, held-out) | +0.00 | 1.000 | 0.820 | [−2.4, +2.3] |
+| AG News: beam ADMM (S′) − reflective (40 proposals, ≈ wall-time match) | +0.12 | 0.941 | 0.518 | [−2.9, +2.9] |
+| AG News: beam ADMM (S′) − reflective (12 proposals) | +1.13 | 0.433 | 0.307 | [−1.5, +3.7] |
+| Emotion: beam ADMM (S′) − matched baseline | **+1.64** | **0.030** | 0.046 | [+0.4, +2.9] |
+| Emotion: beam ADMM (S′) − reflective (12 proposals) | **+2.11** | **0.008** | 0.003 | [+1.0, +3.3] |
+| AG News: beam ADMM (S′) − beam ADMM (S twice) | −2.62 | 0.101 | 0.088 | [−5.5, +0.2] |
+| Emotion: beam ADMM (S′) − beam ADMM (S twice) | +0.52 | 0.536 | 0.667 | [−1.0, +2.1] |
+
+**Earlier comparisons** (ADMM accepted on the same S that chose its iterate;
+kept for the record, superseded by the table above):
 
 | Comparison | Difference | Welch p | Mann–Whitney p | Bootstrap 95% CI |
 |---|---:|---:|---:|---|
@@ -53,11 +80,12 @@ same held-out acceptance rule as the ADMM rows, plus 2.5× the proposals.
 | Emotion: beam ADMM − top-p ADMM | +1.22 | 0.049 | 0.113 | [+0.3, +2.3] |
 
 **What this does and doesn't establish**
-- **Established:** a consistent advantage of +1 to +4 pp across every
-  reflective configuration tried, on two tasks.
-- **Not established:** a confirmed claim. About 6 ADMM variants were tried
-  before settling on beam λ = 0.3, the matched-compute p-values are 0.03–0.08,
-  and the locked test sets are unused.
+- **Established:** under fair acceptance, the beam ADMM proposer matches
+  compute- and acceptance-matched reflective GEPA on AG News, and beats it on
+  emotion (+1.6 pp, p = 0.03).
+- **Not established:** a general advantage. The AG News lead didn't survive
+  the fair acceptance test; about 7 ADMM variants were tried in total; and the
+  locked test sets are unused.
 - **Prompt quality:** the selected prompts are mostly fluent, with
   occasional slips (examples in §5.10).
 
@@ -678,8 +706,55 @@ artifacts are. Numbers are report-half accuracy unless stated.
 
 ---
 
+### 5.13 E12 — Phase 6: independent acceptance batch (fairness fix)
+- **Problem:** in every held-out ADMM arm, the 32-example batch S was used
+  twice. First the proposer picked the best of up to 20 projected iterates on
+  S; then the acceptance verdict compared that pick with the parent on the same
+  S. Reflection's held-out judge only accepts or rejects one child, so ADMM had
+  an easier test: a best-of-k choice on S, then a test on S. GEPA's default
+  minibatch rule has the mirror-image issue for reflection, which writes the
+  child after reading the very 8 examples that then judge it.
+- **Fix:** `--admm-acceptance-batch-size 32`. The verdict uses a separate batch
+  S′, disjoint from GEPA's minibatch, from S and from ADMM's training batches,
+  with the same rule as reflection's held-out judge (lower loss, accuracy at
+  least the parent's). Code: the `acceptance` block in `ADMMProposer.__call__`
+  ([`admm_proposer.py`](src/gepa_pilot/admm_proposer.py)).
+- **Setup:** beam ADMM (λ = 0.3), otherwise identical to the headline arm.
+  10 seeds on each task, run in a detached `tmux` session
+  ([`scripts/run_phase6_independent_acceptance.sh`](scripts/run_phase6_independent_acceptance.sh)).
+- **Result:**
+
+  | Task | Acceptance on S (old) | Acceptance on S′ (fair) | Matched reflective baseline | Fair version − matched baseline |
+  |---|---:|---:|---:|---:|
+  | AG News | 38.32 ± 3.00 | 35.70 ± 3.71 | 35.70 ± 1.71 | +0.00 (p = 1.0) |
+  | Emotion | 37.32 ± 1.69 | 37.84 ± 1.98 | 36.20 ± 0.65 | +1.64 (p = 0.03) |
+
+  - Per-seed results, AG News (S′): 42.6, 37.5, 36.7, 34.4, 37.1, 35.5, 33.2,
+    37.5, 28.1, 34.4. One seed ended below the seed instruction (30.86).
+  - **How often S′ disagreed with S** (proposals that produced a child):
+    - AG News: S′ rejected 15 children that S would have accepted, and
+      accepted 14 that S would have rejected. Accepted children per run stayed
+      similar (10.0 vs. 9.2), but the mix changed.
+    - Emotion: S′ rejected 37 of the 69 children that S would have accepted.
+      Fewer were accepted (5.9 vs. 8.8 per run), yet accuracy rose slightly.
+- **Shows:**
+  - The acceptance asymmetry was real. On emotion, the old rule was mostly
+    admitting noise.
+  - The AG News advantage reported earlier can't be claimed. With fair
+    acceptance, ADMM and matched reflection are indistinguishable there. The
+    −2.6 pp change between the two ADMM versions (p = 0.10) is also within the
+    range of seed noise, so the AG News effect may have been inflated rather
+    than created by the asymmetry.
+  - The emotion advantage is robust to the fix.
+- **Artifacts:** [`artifacts/phase6_independent_acceptance/`](artifacts/phase6_independent_acceptance/),
+  [`artifacts/classification_results/summary.json`](artifacts/classification_results/summary.json).
+
 ## 6. Limitations
 
+- **Acceptance fairness.** Every ADMM arm except Phase 6 accepted children on
+  the same held-out batch that chose them (§5.13). Their comparisons with
+  reflection (E4, E7–E11) are therefore somewhat favorable to ADMM. Only the
+  Phase 6 numbers are fully fair.
 - **Test sets unused.** All results are validation report-half numbers.
   About 6 ADMM variants were tried before settling on beam λ = 0.3, so the
   matched-compute p-values (0.03–0.08) are suggestive. The planned

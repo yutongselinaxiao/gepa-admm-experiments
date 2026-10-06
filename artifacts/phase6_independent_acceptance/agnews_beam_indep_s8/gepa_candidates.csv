@@ -1,0 +1,36 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,1,accepted,False,0.296875,8.15383490198855,25,True,15,19,"Carefully determine for article's main topic
+- label mapping, ignore incidental details, and output only the corresponding capital letter."
+2,1,2,accepted,False,0.279296875,8.565900631460211,25,True,6,15,"Carefully determine the article's main topic
+### label mapping
+ ignore incidental details, and output only the main topic sentence."
+3,2,,rejected,False,0.27734375,6.452633747947736,25,True,15,16,"Carefully determine the article's main topic
+### Label mapping
+The article details, and output only the main topic sentence."
+4,0,3,accepted,False,0.341796875,7.7030875389320865,25,True,32,13,"Carefully choose the article's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+5,2,4,accepted,True,0.31640625,4.510473679007147,25,True,68,49,"Carefully determine the article's main topic
+### label mapping
+Health Conditions  
+  - relating to the main topic sentence."
+6,1,,rejected,False,0.28515625,7.780422687698333,25,True,13,19,"Carefully determine the article's main topic.
+- label mapping, ignore incidental details, and determine if the corresponding capital letter."
+7,4,5,accepted,True,0.31640625,4.510473679007147,25,True,0,0,"Carefully determine the article's main topic
+### label mapping
+Health Conditions  
+  - relating to the main topic sentence."
+8,1,6,accepted,False,0.326171875,4.472628405641763,25,True,78,63,"Carefully determine the article's main topic
+### Label mapping
+Label (name, and output as the corresponding numeric value)"
+9,5,7,accepted,False,0.333984375,4.078546885567453,25,True,24,15,"Carefully determine the article's main topic
+### label mapping
+health Conditions  
+  - relating to the main topic sentence."
+10,1,8,accepted,False,0.3203125,6.996438317080781,25,True,14,2,"Carefully determine for article's main topic
+- label mapping, ignore incidental details, and output as the corresponding capital letter."
+11,5,,rejected,False,0.330078125,4.13722013746216,25,True,31,24,"Carefully determine the article's main topic
+### label mapping
+Health Conditions
+  - relating to the main topic sentence."
+12,7,9,accepted,False,0.283203125,3.502917153274281,25,True,21,47,"Carefully determine the article's main topic
+### label mapping
+health Conditions and  - relating to the main topic being."

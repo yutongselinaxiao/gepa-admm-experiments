@@ -1,0 +1,13 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,1,accepted,False,0.35546875,6.882521120160819,25,True,39,13,"Carefully choose the article’s main topic from the label mapping, without adding details, and output only the corresponding capital letter."
+2,0,2,accepted,False,0.314453125,8.47880486332903,25,True,11,6,"Carefully determine the article's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+3,2,3,accepted,False,0.349609375,7.6506167103562746,25,True,25,7,"Carefully choose the article's main topic from the label mapping, ignoring other details, and output only the corresponding capital letter."
+4,3,4,accepted,False,0.349609375,7.6506167103562746,25,True,0,0,"Carefully choose the article's main topic from the label mapping, ignoring other details, and output only the corresponding capital letter."
+5,4,5,accepted,False,0.33984375,7.162480526477971,25,True,18,23,"Carefully fill in the sentence completion with from the label mapping, ignoring other details, and output only the corresponding capital letter."
+6,5,6,accepted,False,0.333984375,6.392384227062524,25,True,41,44,"Carefully fill in the sentence completion with from the label mapping, considering other details, and output only the corresponding capital letter."
+7,4,7,accepted,False,0.349609375,7.6506167103562746,25,True,0,0,"Carefully choose the article's main topic from the label mapping, ignoring other details, and output only the corresponding capital letter."
+8,5,8,accepted,False,0.353515625,5.731424700119661,25,True,40,33,"Carefully fill in the sentence completion with from the label mapping. Suppose other details, and output only the corresponding capital letter."
+9,8,9,accepted,True,0.375,5.445724419557409,25,True,24,13,"Carefully fill in the sentence completion with from the label mapping. Suppose other details, and Output ONLY the corresponding capital letter."
+10,6,10,accepted,False,0.333984375,6.392384227062524,25,True,0,0,"Carefully fill in the sentence completion with from the label mapping, considering other details, and output only the corresponding capital letter."
+11,0,11,accepted,False,0.33984375,7.907342479403276,25,True,27,9,"Carefully determine the article's main topic from the label mapping, ignore semantic details, and output only the corresponding capital letter."
+12,11,12,accepted,False,0.361328125,7.529949894669547,25,True,19,8,"Carefully choose the article's main topic from the label mapping, ignore semantic details, and output only the corresponding capital letter."

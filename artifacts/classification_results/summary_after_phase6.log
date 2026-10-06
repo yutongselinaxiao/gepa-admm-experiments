@@ -1,0 +1,44 @@
+agnews/p1_reflective                       n= 3  36.07 ± 3.63 improved  3/3  accepted  3.3 wall  128s bwd    0 seed 30.86
+agnews/p1_admm_euclid_rho0.3_minibatch     n= 3  32.55 ± 3.54 improved  2/3  accepted  1.3 wall  155s bwd  720 seed 30.86
+agnews/p1_admm_euclid_rho1_minibatch       n= 3  32.55 ± 2.35 improved  2/3  accepted  1.7 wall  144s bwd  720 seed 30.86
+agnews/p1_admm_euclid_rho0.3_heldout       n= 3  35.42 ± 4.56 improved  2/3  accepted 10.0 wall  156s bwd  720 seed 30.86
+agnews/p1_admm_euclid_rho1_heldout         n= 3  34.11 ± 1.37 improved  3/3  accepted  9.3 wall  153s bwd  720 seed 30.86
+agnews/reflective_p12                      n=10  34.57 ± 2.45 improved  9/10 accepted  2.5 wall  110s bwd    0 seed 30.86
+agnews/reflect_polish                      n= 3  34.77 ± 1.35 improved  3/3  accepted  3.3 wall  437s bwd  720 seed 30.86
+agnews/admm_topp                           n=10  36.88 ± 2.23 improved 10/10 accepted  9.6 wall  261s bwd  720 seed 30.86
+agnews/admm_beam_lam0.3                    n=10  38.32 ± 3.00 improved 10/10 accepted  9.2 wall  267s bwd  720 seed 30.86
+agnews/admm_beam_lam1.0                    n= 3  35.42 ± 7.76 improved  2/3  accepted  9.0 wall  269s bwd  720 seed 30.86
+agnews/reflective_p30                      n=10  35.16 ± 1.24 improved 10/10 accepted  6.2 wall  193s bwd    0 seed 30.86
+agnews/reflective_p40                      n=10  35.59 ± 3.23 improved 10/10 accepted  8.4 wall  225s bwd    0 seed 30.86
+agnews/reflective_heldout_p12              n=10  34.96 ± 1.98 improved 10/10 accepted  5.5 wall  131s bwd    0 seed 30.86
+agnews/reflective_heldout_p30              n=10  35.70 ± 1.71 improved 10/10 accepted 12.5 wall  208s bwd    0 seed 30.86
+agnews/admm_beam_lam0.3_indep_accept       n=10  35.70 ± 3.71 improved  9/10 accepted 10.0 wall  272s bwd  720 seed 30.86
+agnews/admm_beam_lam0.3_duals              n=10  37.38 ± 2.37 improved 10/10 accepted 10.1 wall  279s bwd  720 seed 30.86
+emotion/reflective_p12                     n=10  35.73 ± 0.36 improved  0/10 accepted  2.0 wall  104s bwd    0 seed 35.94
+emotion/reflective_heldout_p30             n=10  36.20 ± 0.65 improved  4/10 accepted  6.1 wall  184s bwd    0 seed 35.94
+emotion/admm_topp                          n=10  36.09 ± 0.22 improved  4/10 accepted  6.8 wall  248s bwd  720 seed 35.94
+emotion/admm_beam_lam0.3                   n=10  37.32 ± 1.69 improved  6/10 accepted  8.8 wall  262s bwd  720 seed 35.94
+emotion/admm_beam_lam0.3_indep_accept      n=10  37.84 ± 1.98 improved  6/10 accepted  5.9 wall  263s bwd  720 seed 35.94
+emotion/admm_beam_lam0.3_duals             n=10  37.21 ± 2.28 improved  7/10 accepted  8.3 wall  275s bwd  720 seed 35.94
+agnews/admm_beam_lam0.3 vs agnews/reflective_p12                         +3.75  welch p=0.0070  MW p=0.0090  CI [+1.52, +6.09]
+agnews/admm_beam_lam0.3 vs agnews/reflective_p30                         +3.16  welch p=0.0095  MW p=0.0064  CI [+1.33, +5.16]
+agnews/admm_beam_lam0.3 vs agnews/reflective_p40                         +2.73  welch p=0.0655  MW p=0.0207  CI [+0.08, +5.27]
+agnews/admm_beam_lam0.3 vs agnews/reflective_heldout_p12                 +3.36  welch p=0.0095  MW p=0.0099  CI [+1.29, +5.55]
+agnews/admm_beam_lam0.3 vs agnews/reflective_heldout_p30                 +2.62  welch p=0.0307  MW p=0.0338  CI [+0.62, +4.73]
+agnews/admm_beam_lam0.3 vs agnews/admm_topp                              +1.45  welch p=0.2388  MW p=0.3058  CI [-0.70, +3.71]
+agnews/admm_topp vs agnews/reflective_p12                                +2.30  welch p=0.0415  MW p=0.0489  CI [+0.39, +4.30]
+agnews/admm_beam_lam0.3_duals vs agnews/admm_beam_lam0.3                 -0.94  welch p=0.4489  MW p=0.5693  CI [-3.20, +1.21]
+agnews/admm_beam_lam0.3_indep_accept vs agnews/admm_beam_lam0.3          -2.62  welch p=0.1007  MW p=0.0877  CI [-5.47, +0.16]
+agnews/admm_beam_lam0.3_indep_accept vs agnews/reflective_heldout_p30    +0.00  welch p=1.0000  MW p=0.8200  CI [-2.42, +2.30]
+agnews/admm_beam_lam0.3_indep_accept vs agnews/reflective_p40            +0.12  welch p=0.9408  MW p=0.5183  CI [-2.93, +2.89]
+agnews/admm_beam_lam0.3_indep_accept vs agnews/reflective_p12            +1.13  welch p=0.4327  MW p=0.3066  CI [-1.48, +3.71]
+emotion/admm_beam_lam0.3 vs emotion/reflective_p12                       +1.59  welch p=0.0161  MW p=0.0033  CI [+0.62, +2.66]
+emotion/admm_beam_lam0.3 vs emotion/reflective_heldout_p30               +1.12  welch p=0.0753  MW p=0.1272  CI [+0.10, +2.21]
+emotion/admm_topp vs emotion/reflective_p12                              +0.36  welch p=0.0163  MW p=0.0113  CI [+0.13, +0.62]
+emotion/admm_topp vs emotion/reflective_heldout_p30                      -0.10  welch p=0.6403  MW p=0.9677  CI [-0.52, +0.29]
+emotion/admm_beam_lam0.3 vs emotion/admm_topp                            +1.22  welch p=0.0486  MW p=0.1134  CI [+0.29, +2.27]
+emotion/admm_beam_lam0.3_duals vs emotion/admm_beam_lam0.3               -0.10  welch p=0.9090  MW p=1.0000  CI [-1.77, +1.56]
+emotion/admm_beam_lam0.3_indep_accept vs emotion/admm_beam_lam0.3        +0.52  welch p=0.5357  MW p=0.6671  CI [-1.02, +2.06]
+emotion/admm_beam_lam0.3_indep_accept vs emotion/reflective_heldout_p30  +1.64  welch p=0.0304  MW p=0.0462  CI [+0.44, +2.89]
+emotion/admm_beam_lam0.3_indep_accept vs emotion/reflective_p12          +2.11  welch p=0.0083  MW p=0.0033  CI [+0.99, +3.33]
+WROTE artifacts/classification_results/summary.json

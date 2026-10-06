@@ -1,0 +1,16 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,1,accepted,False,0.32421875,8.166195849366858,25,True,19,9,"Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+2,0,2,accepted,False,0.32421875,8.166195849366858,25,True,19,9,"Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+3,0,3,accepted,True,0.34765625,5.967157112802489,25,True,62,40,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the topic identifier letter."
+4,2,4,accepted,False,0.32421875,8.166195849366858,25,True,0,0,"Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+5,0,5,accepted,False,0.322265625,7.9276726233759085,25,True,16,7,"Carefully determine the article's main topic from the label mapping, ignore label details, and output only the corresponding capital letter."
+6,5,6,accepted,False,0.322265625,7.9276726233759085,25,True,0,0,"Carefully determine the article's main topic from the label mapping, ignore label details, and output only the corresponding capital letter."
+7,3,7,accepted,False,0.349609375,4.889577078510998,25,True,38,37,"Carefully determine the article's main topic from the label mapping provided, assigning details, and output only the topic identifier letter.
+"
+8,3,8,accepted,False,0.326171875,5.425234341260641,25,True,17,28,"Carefully determine the article's main topic from the given text, ignore incidental details, and output only the topic identifier letter."
+9,7,,rejected,False,0.341796875,4.811047076051818,25,True,30,34,"Carefully determine the article's main topic. The label mapping provided, assign details, and output only the topic identifier letter.
+"
+10,7,9,accepted,False,0.349609375,4.889577078510998,25,True,0,0,"Carefully determine the article's main topic from the label mapping provided, assigning details, and output only the topic identifier letter.
+"
+11,3,,rejected,False,0.34375,5.824785151097012,25,True,15,17,"Carefully determine the article's main topic from the following mapping, ignore incidental details, and output only the topic identifier letter."
+12,0,,rejected,False,0.322265625,6.361078393652389,25,True,52,43,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and provide the integer corresponding capital letter."

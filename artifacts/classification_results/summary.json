@@ -1316,6 +1316,142 @@
         }
       ]
     },
+    "agnews/admm_beam_lam0.3_indep_accept": {
+      "task": "agnews",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 35.703125,
+      "sd": 3.7112801376905873,
+      "scores": [
+        42.578125,
+        37.5,
+        36.71875,
+        34.375,
+        37.109375,
+        35.546875,
+        33.203125,
+        37.5,
+        28.125,
+        34.375
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 9,
+      "mean_accepted": 10,
+      "mean_wall_time_seconds": 271.5434853119776,
+      "mean_admm_backward_calls": 720,
+      "runs": [
+        {
+          "run": "artifacts/phase6_independent_acceptance/agnews_beam_indep_s0",
+          "report_accuracy": 42.578125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully choose a subject and main topic from the label mapping, ignore other details, and output only the corresponding capital letter.",
+          "accepted": 9,
+          "proposals": 12,
+          "wall_time_seconds": 268.79255736479536,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/agnews_beam_indep_s1",
+          "report_accuracy": 37.5,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping (ignore formatting details, and output only the corresponding capital letter.",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 270.96592962322757,
+          "metric_calls": 1984,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/agnews_beam_indep_s2",
+          "report_accuracy": 36.71875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully fill in the sentence completion with from the label mapping. Suppose other details, and Output ONLY the corresponding capital letter.",
+          "accepted": 12,
+          "proposals": 12,
+          "wall_time_seconds": 272.1942874281667,
+          "metric_calls": 2752,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/agnews_beam_indep_s3",
+          "report_accuracy": 34.375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully choose the article's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 11,
+          "proposals": 12,
+          "wall_time_seconds": 267.56998716201633,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/agnews_beam_indep_s4",
+          "report_accuracy": 37.109375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Usefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding label name.",
+          "accepted": 11,
+          "proposals": 12,
+          "wall_time_seconds": 272.57497812621295,
+          "metric_calls": 2752,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/agnews_beam_indep_s5",
+          "report_accuracy": 35.546875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main subject from the following mapping, ignore formatting details, and output only the corresponding capital letter.\n",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 277.5077701099217,
+          "metric_calls": 2752,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/agnews_beam_indep_s6",
+          "report_accuracy": 33.203125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignore linguistic details, and output only the corresponding capital letter.",
+          "accepted": 11,
+          "proposals": 12,
+          "wall_time_seconds": 276.5577795309946,
+          "metric_calls": 3008,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/agnews_beam_indep_s7",
+          "report_accuracy": 37.5,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine a appropriate, main topic for the label mapping, ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 11,
+          "proposals": 12,
+          "wall_time_seconds": 269.8205611500889,
+          "metric_calls": 2240,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/agnews_beam_indep_s8",
+          "report_accuracy": 28.125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic\n### label mapping\nHealth Conditions  \n  - relating to the main topic sentence.",
+          "accepted": 9,
+          "proposals": 12,
+          "wall_time_seconds": 272.2355539370328,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/agnews_beam_indep_s9",
+          "report_accuracy": 34.375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the topic identifier letter.",
+          "accepted": 9,
+          "proposals": 12,
+          "wall_time_seconds": 267.2154486873187,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        }
+      ]
+    },
     "agnews/admm_beam_lam0.3_duals": {
       "task": "agnews",
       "protocol": "split",
@@ -1996,6 +2132,142 @@
         }
       ]
     },
+    "emotion/admm_beam_lam0.3_indep_accept": {
+      "task": "emotion",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 37.838541666666664,
+      "sd": 1.9834642060190146,
+      "scores": [
+        37.76041666666667,
+        37.76041666666667,
+        35.9375,
+        38.02083333333333,
+        35.9375,
+        35.9375,
+        41.14583333333333,
+        39.32291666666667,
+        35.9375,
+        40.625
+      ],
+      "seed_instruction_report_accuracy": 35.9375,
+      "improved_over_seed": 6,
+      "mean_accepted": 5.9,
+      "mean_wall_time_seconds": 263.15478909276425,
+      "mean_admm_backward_calls": 720,
+      "runs": [
+        {
+          "run": "artifacts/phase6_independent_acceptance/emotion_beam_indep_s0",
+          "report_accuracy": 37.76041666666667,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully extract the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding label letter.",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 269.7970534833148,
+          "metric_calls": 2880,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/emotion_beam_indep_s1",
+          "report_accuracy": 37.76041666666667,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully examine the main element the writer expresses from the label mapping, ignore other details, and output only the corresponding capital letter.\n",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 267.0073848566972,
+          "metric_calls": 2880,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/emotion_beam_indep_s2",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 258.3911400148645,
+          "metric_calls": 2112,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/emotion_beam_indep_s3",
+          "report_accuracy": 38.02083333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "I would determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 8,
+          "proposals": 12,
+          "wall_time_seconds": 266.0093655437231,
+          "metric_calls": 2112,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/emotion_beam_indep_s4",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 5,
+          "proposals": 12,
+          "wall_time_seconds": 254.75404354277998,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/emotion_beam_indep_s5",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 2,
+          "proposals": 12,
+          "wall_time_seconds": 258.108683380764,
+          "metric_calls": 960,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/emotion_beam_indep_s6",
+          "report_accuracy": 41.14583333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the person expresses from the label mapping, ignore the details, and output only the corresponding emotion letter.",
+          "accepted": 8,
+          "proposals": 12,
+          "wall_time_seconds": 265.1231870437041,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/emotion_beam_indep_s7",
+          "report_accuracy": 39.32291666666667,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the person expresses from the label mapping, ignore incidental details, and output only the corresponding emotion word.",
+          "accepted": 8,
+          "proposals": 12,
+          "wall_time_seconds": 264.59514441667125,
+          "metric_calls": 3264,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/emotion_beam_indep_s8",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 3,
+          "proposals": 12,
+          "wall_time_seconds": 258.4246406368911,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase6_independent_acceptance/emotion_beam_indep_s9",
+          "report_accuracy": 40.625,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the person expresses from the label mapping, ignore incidental details, and output only the corresponding label letter.",
+          "accepted": 4,
+          "proposals": 12,
+          "wall_time_seconds": 269.33724800823256,
+          "metric_calls": 2112,
+          "admm_backward_calls": 720
+        }
+      ]
+    },
     "emotion/admm_beam_lam0.3_duals": {
       "task": "emotion",
       "protocol": "split",
@@ -2206,6 +2478,42 @@
         1.2109375
       ]
     },
+    "agnews/admm_beam_lam0.3_indep_accept vs agnews/admm_beam_lam0.3": {
+      "difference": -2.6171875,
+      "welch_p": 0.10071578761662,
+      "mann_whitney_p": 0.08765163113198096,
+      "bootstrap_ci95": [
+        -5.46875,
+        0.15625
+      ]
+    },
+    "agnews/admm_beam_lam0.3_indep_accept vs agnews/reflective_heldout_p30": {
+      "difference": 0.0,
+      "welch_p": 1.0,
+      "mann_whitney_p": 0.8199961749457841,
+      "bootstrap_ci95": [
+        -2.421875,
+        2.3046875
+      ]
+    },
+    "agnews/admm_beam_lam0.3_indep_accept vs agnews/reflective_p40": {
+      "difference": 0.1171875,
+      "welch_p": 0.9407965476117671,
+      "mann_whitney_p": 0.5183128210164184,
+      "bootstrap_ci95": [
+        -2.9296875,
+        2.890625
+      ]
+    },
+    "agnews/admm_beam_lam0.3_indep_accept vs agnews/reflective_p12": {
+      "difference": 1.1328125,
+      "welch_p": 0.43270519076762526,
+      "mann_whitney_p": 0.3065784952080737,
+      "bootstrap_ci95": [
+        -1.484375,
+        3.7109375
+      ]
+    },
     "emotion/admm_beam_lam0.3 vs emotion/reflective_p12": {
       "difference": 1.5885416666666643,
       "welch_p": 0.01605027189426398,
@@ -2258,6 +2566,33 @@
       "bootstrap_ci95": [
         -1.7708333333333357,
         1.5625
+      ]
+    },
+    "emotion/admm_beam_lam0.3_indep_accept vs emotion/admm_beam_lam0.3": {
+      "difference": 0.5208333333333357,
+      "welch_p": 0.5357288657633383,
+      "mann_whitney_p": 0.6671484876398701,
+      "bootstrap_ci95": [
+        -1.015624999999993,
+        2.0572916666666643
+      ]
+    },
+    "emotion/admm_beam_lam0.3_indep_accept vs emotion/reflective_heldout_p30": {
+      "difference": 1.640624999999993,
+      "welch_p": 0.030425013349736872,
+      "mann_whitney_p": 0.04615894988287698,
+      "bootstrap_ci95": [
+        0.4427083333333286,
+        2.890625
+      ]
+    },
+    "emotion/admm_beam_lam0.3_indep_accept vs emotion/reflective_p12": {
+      "difference": 2.109375,
+      "welch_p": 0.00834590729565198,
+      "mann_whitney_p": 0.0032808363264789898,
+      "bootstrap_ci95": [
+        0.9895833333333286,
+        3.3333333333333357
       ]
     }
   }

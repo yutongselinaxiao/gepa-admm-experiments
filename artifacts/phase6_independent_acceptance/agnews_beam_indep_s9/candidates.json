@@ -1,0 +1,32 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the topic identifier letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore label details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore label details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping provided, assigning details, and output only the topic identifier letter.\n"
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the given text, ignore incidental details, and output only the topic identifier letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping provided, assigning details, and output only the topic identifier letter.\n"
+  }
+]

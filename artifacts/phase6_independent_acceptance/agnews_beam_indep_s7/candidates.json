@@ -1,0 +1,38 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine a article's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore the details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping and ignore incidental details, and output only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully identify the article's main topic from the label mapping and ignore incidental details, and output only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully determine a appropriate, main topic for the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+  }
+]

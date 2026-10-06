@@ -1,0 +1,32 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine for article's main topic\n- label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic\n### label mapping\n ignore incidental details, and output only the main topic sentence."
+  },
+  {
+    "instruction": "Carefully choose the article's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic\n### label mapping\nHealth Conditions  \n  - relating to the main topic sentence."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic\n### label mapping\nHealth Conditions  \n  - relating to the main topic sentence."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic\n### Label mapping\nLabel (name, and output as the corresponding numeric value)"
+  },
+  {
+    "instruction": "Carefully determine the article's main topic\n### label mapping\nhealth Conditions  \n  - relating to the main topic sentence."
+  },
+  {
+    "instruction": "Carefully determine for article's main topic\n- label mapping, ignore incidental details, and output as the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic\n### label mapping\nhealth Conditions and  - relating to the main topic being."
+  }
+]
