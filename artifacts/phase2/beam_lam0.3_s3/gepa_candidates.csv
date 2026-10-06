@@ -1,0 +1,13 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,1,accepted,False,0.29296875,8.877786405103258,25,True,1,7,"Carefully determine the article's main subject from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+2,1,2,accepted,False,0.318359375,7.567956993718292,25,True,20,7,"Carefully determine the article's main subject. The label mapping, consider the details, and output only the corresponding capital letter."
+3,1,3,accepted,False,0.29296875,8.877786405103258,25,True,0,0,"Carefully determine the article's main subject from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+4,0,4,accepted,False,0.32421875,8.166195849366858,25,True,19,9,"Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+5,4,5,accepted,False,0.330078125,7.789465108798091,25,True,6,3,"Carefully identify the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+6,5,6,accepted,False,0.349609375,6.966957357110724,25,True,15,5,"Carefully identify the article's main topic from the label mapping, without other details, and output only the corresponding capital letter."
+7,2,7,accepted,False,0.318359375,7.567956993718292,25,True,0,0,"Carefully determine the article's main subject. The label mapping, consider the details, and output only the corresponding capital letter."
+8,6,,rejected,False,0.388671875,6.685601607536723,25,True,61,41,"Which language identify the word ""main topic from the label mapping, without other details, and output only the corresponding capital letter."
+9,3,8,accepted,False,0.349609375,6.760518472367925,25,True,51,22,"Carefully determine the article's main subject from the label mapping, ignore linguistic details, and output only the corresponding capital letter."
+10,8,9,accepted,False,0.349609375,6.27272707548588,25,True,11,11,"Carefully determine the article's main subject from the label mapping, ignoring linguistic details, and output only the corresponding capital letter."
+11,6,,rejected,False,0.328125,6.468592428193469,25,True,19,30,"Carefully identify the article's main topic. Label label mapping, without other details, and output only the corresponding capital letter."
+12,6,10,accepted,True,0.375,6.461157264514231,25,True,27,14,"Carefully identify the article's main topic from the label mapping, without other details.  Output only the corresponding capital letter."
