@@ -29,13 +29,15 @@ no selection step sees. Each cell is the mean ± sd over 10 seeds.
 | Seed instruction | — (no optimization) | — | — | 30.86 | 35.94 |
 | Reflective GEPA | reflection model (GEPA default) | minibatch (8) | 12 | 34.57 ± 2.45 | 35.73 ± 0.36 |
 | Strongest matched reflective baseline | reflection model | held-out (32) | 30 | 35.70 ± 1.71 | 36.20 ± 0.65 |
-| Top-p ADMM | **ADMM only**, top-p projection | held-out (32) | 12 | 36.88 ± 2.23 | 36.09 ± 0.22 |
-| **Beam ADMM (λ = 0.3)** | **ADMM only**, beam-search projection | held-out (32) | 12 | **38.32 ± 3.00** | **37.32 ± 1.69** |
-| Beam ADMM + per-class reward constraints | **ADMM only**, beam projection, class-weighted loss | held-out (32) | 12 | 37.38 ± 2.37 | 37.21 ± 2.28 |
+| GEPA + top-p ADMM proposer | ADMM proposer (replaces reflection), top-p projection | held-out (32) | 12 | 36.88 ± 2.23 | 36.09 ± 0.22 |
+| **GEPA + beam ADMM proposer (λ = 0.3)** | ADMM proposer (replaces reflection), beam-search projection | held-out (32) | 12 | **38.32 ± 3.00** | **37.32 ± 1.69** |
+| GEPA + beam ADMM proposer + per-class reward constraints | ADMM proposer (replaces reflection), beam projection, class-weighted loss | held-out (32) | 12 | 37.38 ± 2.37 | 37.21 ± 2.28 |
 
-**ADMM rows replace GEPA's proposer entirely** (`--proposer admm`). They never
-call the reflection model; each child comes from ADMM refining the parent GEPA
-selected. Reflect-then-polish (reflection followed by an ADMM polish) is *not*
+**The ADMM rows are GEPA with ADMM as its proposer** (`--proposer admm`). GEPA
+still selects parents, runs acceptance and keeps the candidate pool; ADMM
+replaces only the reflection step and never calls the reflection model. This
+is different from **standalone ADMM**, the pilot's Stage III runs, where ADMM
+ran outside GEPA from the seed alone (§4.2, §5.2). Reflect-then-polish (reflection followed by an ADMM polish) is *not*
 in this table. It was a 3-seed AG News exploration (§5.8: 34.77 ± 1.35) and
 didn't beat reflection alone. The matched baseline row gives reflection the
 same held-out acceptance rule as the ADMM rows, plus 2.5× the proposals.
@@ -515,7 +517,7 @@ artifacts are. Numbers are report-half accuracy unless stated.
 - **Setup:** all with `--selection-split`:
   - reflective (10 seeds);
   - reflect-then-polish (F3; top-p projection, ρ = 0.1, p = 0.99; 3 seeds);
-  - ADMM alone with top-p projection and held-out acceptance (10 seeds).
+  - GEPA with the top-p ADMM proposer and held-out acceptance (10 seeds).
 - **Calibration first:** top-p projection at ρ = 0.3 never moved a token. At
   ρ = 0.1, p = 0.99 it produced English edits ("choose", "state only",
   "category capital letter").
@@ -637,7 +639,7 @@ artifacts are. Numbers are report-half accuracy unless stated.
     ("label map", "retrieve"); 6 of 10 seeds end on the seed instruction itself.
 - **Shows:**
   - Same direction as AG News, smaller effect.
-  - **The beam search matters more here than on AG News.** Top-p ADMM alone is
+  - **The beam search matters more here than on AG News.** The top-p ADMM proposer is
     no better than the matched reflective baseline; the multi-word beam edits
     provide the gain. On AG News beam beat top-p by +1.45 (p = 0.24). The same
     direction on both tasks suggests the joint (beam) projection adds value
