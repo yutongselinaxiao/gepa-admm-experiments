@@ -1,0 +1,23 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,1,accepted,False,0.337890625,8.48406604944699,25,True,26,9,"Carefully determine the topic of the following text and label it with the corresponding label, and output only the corresponding capital letter."
+2,1,2,accepted,False,0.31640625,6.535749531845206,25,True,14,25,"Carefully determine the topic of the following text and label it with the corresponding label from the label mapping.
+
+### Label Mapping"
+3,2,3,accepted,False,0.31640625,6.535749531845206,25,True,0,0,"Carefully determine the topic of the following text and label it with the corresponding label from the label mapping.
+
+### Label Mapping"
+4,0,4,accepted,False,0.3125,7.821291794096343,25,True,16,12,"Carefully determine the topic's main idea from the label mapping and the incidental details, and output only the corresponding capital letter."
+5,4,5,accepted,False,0.302734375,7.295433492400632,25,True,27,32,Carefully determine the topic's main idea from the following text and then incidental details. Please output only the corresponding capital letter.
+6,1,6,accepted,True,0.3671875,7.981215569731293,25,True,36,21,"Carefully determine the topic of the following text and label it with the corresponding label, and output only the corresponding label letter."
+7,5,7,accepted,False,0.369140625,6.323930531407126,25,True,80,46,Carefully determine the topic's main idea from the following text and then select the most appropriate label from the corresponding capital letter.
+8,6,,rejected,False,0.30859375,7.167690366032522,25,True,20,50,"Carefully determine the topic of the following text and label it with the corresponding label from the label mapping.
+
+### Label mapping"
+9,6,8,accepted,False,0.30859375,7.167690366032522,25,True,20,50,"Carefully determine the topic of the following text and label it with the corresponding label from the label mapping.
+
+### Label mapping"
+10,7,,rejected,False,0.322265625,6.056503972448109,25,True,32,56,Carefully determine the topic's main idea from the following text and then select the most appropriate label from the corresponding label mapping.
+11,6,9,accepted,True,0.3671875,7.981215569731293,25,True,0,0,"Carefully determine the topic of the following text and label it with the corresponding label, and output only the corresponding label letter."
+12,9,10,accepted,False,0.30859375,7.167690366032522,25,True,20,50,"Carefully determine the topic of the following text and label it with the corresponding label from the label mapping.
+
+### Label mapping"

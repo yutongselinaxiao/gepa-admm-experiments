@@ -1,0 +1,35 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the topic of the following text and label it with the corresponding label, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the topic of the following text and label it with the corresponding label from the label mapping.\n\n### Label Mapping"
+  },
+  {
+    "instruction": "Carefully determine the topic of the following text and label it with the corresponding label from the label mapping.\n\n### Label Mapping"
+  },
+  {
+    "instruction": "Carefully determine the topic's main idea from the label mapping and the incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the topic's main idea from the following text and then incidental details. Please output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the topic of the following text and label it with the corresponding label, and output only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully determine the topic's main idea from the following text and then select the most appropriate label from the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the topic of the following text and label it with the corresponding label from the label mapping.\n\n### Label mapping"
+  },
+  {
+    "instruction": "Carefully determine the topic of the following text and label it with the corresponding label, and output only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully determine the topic of the following text and label it with the corresponding label from the label mapping.\n\n### Label mapping"
+  }
+]

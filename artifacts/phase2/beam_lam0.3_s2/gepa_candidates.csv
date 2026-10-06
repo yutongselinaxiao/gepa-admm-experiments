@@ -1,0 +1,13 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,,rejected,False,0.287109375,7.898805029484695,25,True,7,16,"Carefully determine the article's main topic from the text provided, ignore incidental details, and output only the corresponding capital letter."
+2,0,1,accepted,False,0.3515625,6.722489213456523,25,True,93,69,"Carefully determine a subject, main topic from the label mapping, ignore incidental details, and output only the corresponding topic letter."
+3,1,,rejected,False,0.35546875,4.851519332248138,25,True,48,46,"Carefully determine the subject, main topic and the label mapping, ignore incidental details, and output only the corresponding topic letter."
+4,1,,rejected,False,0.349609375,5.164137712854133,25,True,13,14,"Carefully determine a subject, main topic from the label mapping, and incidental details, and output only the corresponding topic letter."
+5,1,,rejected,False,0.35546875,4.851519332248138,25,True,48,46,"Carefully determine the subject, main topic and the label mapping, ignore incidental details, and output only the corresponding topic letter."
+6,1,,rejected,False,0.287109375,6.287411703948411,25,True,66,99,"Carefully determine a subject, main topic from the label mapping, ignore incidental details, and then rewrite the corresponding topic sentence."
+7,1,2,accepted,False,0.349609375,5.164137712854133,25,True,13,14,"Carefully determine a subject, main topic from the label mapping, and incidental details, and output only the corresponding topic letter."
+8,1,,rejected,False,0.349609375,5.164137712854133,25,True,13,14,"Carefully determine a subject, main topic from the label mapping, and incidental details, and output only the corresponding topic letter."
+9,1,,rejected,False,0.37109375,3.7451103237670686,25,True,86,76,"Carefully determine a topic, topic label from the label mapping, and incidental details, content, only a corresponding topic letter."
+10,2,3,accepted,False,0.322265625,3.962740917923074,25,True,85,99,"Carefully determine a subject, main topic from the text provided, and incidental details, and output only the corresponding topic letter."
+11,3,4,accepted,True,0.41015625,3.904038914973085,25,True,94,49,"Carefully determine a subject for news topic from the text provided, and classify it, and output only the corresponding topic letter."
+12,0,5,accepted,False,0.314453125,8.47880486332903,25,True,11,6,"Carefully determine the article's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."

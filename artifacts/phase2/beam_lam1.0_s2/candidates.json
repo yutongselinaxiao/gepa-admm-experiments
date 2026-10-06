@@ -1,0 +1,35 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Please classify this news article's main topic into one of the following categories:\n\n- [ ] World\n- [ ] Business"
+  },
+  {
+    "instruction": "Please classify this news article's main topic into one of the following categories:\n\n- [ ] World\n- [ ] Business"
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping and return the label, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping and return the label, and output only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping and return the label as the output only.\n\n### Label mapping"
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping and return the label, and output only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping and return the label, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic and select the appropriate label from the list. The labels are:\n\n- Climate Change"
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping and return the label, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Please classify this news article's main topic into one of the following categories:\n\n- [ ] World\n- [ ] Business"
+  }
+]

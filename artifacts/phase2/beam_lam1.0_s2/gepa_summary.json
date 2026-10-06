@@ -1,0 +1,63 @@
+{
+  "accepted_proposal_count": 10,
+  "all_proposals_tokenizer_compositional": true,
+  "gepa_selected": {
+    "candidate_idx": 1,
+    "instruction": "Please classify this news article's main topic into one of the following categories:\n\n- [ ] World\n- [ ] Business",
+    "is_seed": false,
+    "validation_accuracy": 0.40234375,
+    "validation_mean_loss": 5.918418081939404
+  },
+  "interpretation": "GEPA-selected and post-hoc-audit-best are reported separately. The post-hoc audit is exploratory and does not retroactively change GEPA acceptance.",
+  "posthoc_audit_best": {
+    "accuracy_gain_over_seed": 0.09765625,
+    "errors_fixed_vs_parent": 81,
+    "gepa_statuses": [
+      "accepted",
+      "accepted",
+      "accepted"
+    ],
+    "instruction": "Please classify this news article's main topic into one of the following categories:\n\n- [ ] World\n- [ ] Business",
+    "mean_loss_change_from_seed": -3.3400300207051554,
+    "new_errors_vs_parent": 31,
+    "per_class_accuracy": {
+      "A": 0.8984375,
+      "B": 0.0390625,
+      "C": 0.6328125,
+      "D": 0.0390625
+    },
+    "prediction_counts": {
+      "A": 335,
+      "B": 5,
+      "C": 164,
+      "D": 8
+    },
+    "proposal_numbers": [
+      1,
+      2,
+      11
+    ],
+    "validation_accuracy": 0.40234375,
+    "validation_mean_loss": 5.918418081939404
+  },
+  "proposal_count": 12,
+  "rejected_proposal_count": 2,
+  "seed": {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+    "per_class_accuracy": {
+      "A": 0.984375,
+      "B": 0.0703125,
+      "C": 0.015625,
+      "D": 0.1484375
+    },
+    "prediction_counts": {
+      "A": 460,
+      "B": 9,
+      "C": 2,
+      "D": 41
+    },
+    "validation_accuracy": 0.3046875,
+    "validation_mean_loss": 9.258448102644559
+  },
+  "unique_proposal_text_count": 6
+}

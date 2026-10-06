@@ -1,0 +1,31 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,1,accepted,True,0.29296875,4.484051702825174,25,True,29,35,"Carefully determine the article's main topic from the label mapping and respond with the label and the summary sentence.
+
+Label mapping:"
+2,1,2,accepted,False,0.2734375,3.800001359342952,25,True,77,87,"Carefully determine the article's main topic. The label mapping and respond with the label and the summary sentence.
+
+Label mapping:"
+3,0,,rejected,False,0.296875,7.13927507425146,25,True,13,17,"Carefully determine the article's main topic from the text provided, considering incidental details, and output only the corresponding capital letter."
+4,1,,rejected,False,0.294921875,4.282880443921266,25,True,18,17,"Carefully determine the article's main topic from the given text and respond with the label and the summary sentence.
+
+Label mapping:"
+5,2,3,accepted,False,0.26953125,2.949147961868201,25,True,72,74,"Please classify the news article's main topic. The label mapping and respond with the label and the summary sentence.
+
+Label mapping:"
+6,0,4,accepted,False,0.3046875,7.190475095257341,25,True,11,11,"Carefully determine the article's main topic from the given text, ignoring incidental details, and output only the corresponding capital letter."
+7,3,5,accepted,False,0.26953125,2.949147961868201,25,True,0,0,"Please classify the news article's main topic. The label mapping and respond with the label and the summary sentence.
+
+Label mapping:"
+8,1,,rejected,False,0.2890625,4.241114146864193,25,True,26,28,"Carefully determine the article's main topic from the text, and respond with the label and the summary sentence.
+
+Label mapping:"
+9,1,,rejected,False,0.2890625,4.241114146864193,25,True,26,28,"Carefully determine the article's main topic from the text, and respond with the label and the summary sentence.
+
+Label mapping:"
+10,2,6,accepted,False,0.287109375,3.45246318900114,25,True,73,66,"Please classify the the article's main topic. The label mapping and respond with the label and the summary sentence.
+
+Label mapping:"
+11,6,,rejected,False,0.26953125,2.949147961868201,25,True,11,20,"Please classify the news article's main topic. The label mapping and respond with the label and the summary sentence.
+
+Label mapping:"
+12,4,7,accepted,False,0.2734375,7.926959938113827,25,True,7,23,"Carefully determine the article's main topic from the given text, ignoring irrelevant details, and output only the corresponding category label."

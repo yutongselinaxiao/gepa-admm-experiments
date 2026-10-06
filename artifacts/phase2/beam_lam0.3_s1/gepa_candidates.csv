@@ -1,0 +1,13 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,1,accepted,False,0.341796875,7.7030875389320865,25,True,32,13,"Carefully choose the article's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+2,1,2,accepted,False,0.3828125,7.122635143495327,25,True,30,9,"Carefully choose a topic's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+3,2,3,accepted,False,0.3828125,7.122635143495327,25,True,0,0,"Carefully choose a topic's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+4,0,4,accepted,False,0.33203125,8.0706640498911,25,True,24,10,"Carefully choose the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+5,1,5,accepted,True,0.390625,6.972867630959583,25,True,35,10,"Carefully choose the article topic main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+6,3,6,accepted,False,0.3828125,7.122635143495327,25,True,0,0,"Carefully choose a topic's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+7,1,,rejected,False,0.375,7.197322754016058,25,True,29,12,"Carefully choose a subject's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+8,1,7,accepted,False,0.349609375,7.6506167103562746,25,True,7,3,"Carefully choose the article's main topic from the label mapping, ignoring other details, and output only the corresponding capital letter."
+9,6,8,accepted,False,0.3828125,7.122635143495327,25,True,0,0,"Carefully choose a topic's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+10,7,9,accepted,False,0.349609375,7.6506167103562746,25,True,0,0,"Carefully choose the article's main topic from the label mapping, ignoring other details, and output only the corresponding capital letter."
+11,9,,rejected,False,0.357421875,5.062631682651686,25,True,32,28,"Pleasefully expand the article's description section from the label mapping, ignoring other details, and output only the corresponding category number."
+12,8,,rejected,False,0.388671875,6.727905940481824,25,True,15,12,"Carefully choose a topic's main topic from the label mapping, ignoring incidental details, and reply with the corresponding capital letter."
