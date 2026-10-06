@@ -482,9 +482,13 @@ artifacts are. Numbers are report-half accuracy unless stated.
     are far apart: nearest-neighbor distance 1.37 against a token norm of
     1.58. Random moves of radius 5 never change a token; at radius 10–15 the
     replacements are sensible variants (`output` → ` Output`, `输出`).
-  - **The garbage comes from the gradient.** ADMM's edits favor low-norm,
-    rarely trained "glitch" tokens: median norm percentile 19.7, against
-    27–56 for random-displacement replacements.
+  - **The garbage comes from the gradient.** Random moves land on sensible
+    tokens, but the task gradient pushes the target toward whatever token
+    changes the prediction. *Correction:* an earlier version attributed this to
+    low-norm "glitch" tokens. Fluent top-p and beam edits use similarly
+    low-norm tokens, so norm doesn't separate garbage from fluent edits. The
+    LM's NLL of the inserted token does: median 21.9 nats for Euclidean edits,
+    9.3 for top-p, 5.9 for beam (§5.14).
   - **Other distances don't help:** cosine, whitened and all-but-the-top
     projections were no better, and some were worse.
   - **Bug found and fixed:** 6 Qwen control tokens (`<tool_call>`, `<think>`,
@@ -523,8 +527,9 @@ artifacts are. Numbers are report-half accuracy unless stated.
 - **Shows:** a perplexity filter applied *after* the search would remove
   almost all of Euclidean ADMM's gains. Fluency has to shape the search
   itself, which motivated the top-p and beam projections.
-- **Note:** this was a one-off analysis script, not committed; the numbers are
-  from the logs in `artifacts/phase1*`.
+- **Note:** first measured with a one-off script; now reproduced by
+  [`fluency_analysis.py`](src/gepa_pilot/fluency_analysis.py) and extended to
+  all projections (§5.14).
 
 ### <a name="56-e6--the-validation-split-and-best-of-k-bias"></a>5.7 E6 — the validation split and best-of-k bias
 - **Problem:** GEPA selected *and* we scored on the same 512 examples. Picking
@@ -748,6 +753,61 @@ artifacts are. Numbers are report-half accuracy unless stated.
   - The emotion advantage is robust to the fix.
 - **Artifacts:** [`artifacts/phase6_independent_acceptance/`](artifacts/phase6_independent_acceptance/),
   [`artifacts/classification_results/summary.json`](artifacts/classification_results/summary.json).
+
+### 5.14 E13 — fluency analysis: what the perplexity constraint buys
+- **Purpose:** show what a perplexity filter, or a fluency-constrained
+  projection, does to ADMM's edits and to the final prompts.
+- **Setup:**
+  - Measured with [`fluency_analysis.py`](src/gepa_pilot/fluency_analysis.py)
+    on both tasks.
+  - **Prompts:** the per-token perplexity of every selected prompt in every
+    arm.
+  - **Edits:** for every ADMM proposal that produced a child, the NLL of the
+    most surprising inserted token ("edit NLL") and the validation change.
+  - Figures from [`make_figures.py`](src/gepa_pilot/make_figures.py); prompt
+    examples from [`prompt_gallery.py`](src/gepa_pilot/prompt_gallery.py).
+- **Result (AG News):**
+
+  | Projection | Fluency constraint | Median edit NLL | Helpful edits kept by a 12-nat filter | Median perplexity of selected prompts |
+  |---|---|---:|---:|---:|
+  | Euclidean | none | 21.9 nats | 3 of 66 | 146–724 (seed: 72) |
+  | Top-p (p = 0.99) | hard, per token | 9.3 | 71 of 74 | 288 |
+  | Beam, λ = 0.3 | soft NLL penalty | 5.9 | 149 of 149 | 66–74 |
+  | Beam, λ = 1.0 | strong NLL penalty | 2.4 | 11 of 11 | 10 |
+  | *Reflective GEPA* | *(language model writes)* | — | — | *25–37* |
+
+  On emotion, top-p and beam edits have median NLL 6.5 and 2.9; every helpful
+  edit passes the filter.
+- **Shows:**
+  - **A post-hoc filter doesn't rescue Euclidean ADMM.** Its gains come almost
+    entirely from disfluent tokens (`资本` +10.6 pp, `משכנתא` +10.0 pp), so
+    filtering keeps 3 of 66 helpful edits.
+  - **Constraining fluency *during* the search works.** Top-p and beam find
+    gains of similar size (up to +8.4 and +8.8 pp) among fluent edits.
+  - **Top-p's prompts still drift.** Each token is plausible, but swaps
+    accumulate into odd text ("the job's right topic", "the part's temporal
+    topic"), and selected prompts reach a perplexity of 288. Beam's whole-slot
+    penalty keeps prompts at the seed's level (66–74).
+  - **Too much fluency weight is its own failure.** λ = 1.0 makes the LM write
+    its own instruction (perplexity 2–13), including one that lists checkbox
+    categories and drops the output format.
+  - **Fluent is not the same as meaningful.** Perplexity measures local
+    plausibility, not whether the instruction still says the right thing.
+- **Figures:**
+
+  ![Filter keep rate](artifacts/figures/fig3_filter_keep_rate.png)
+
+  ![Edit fluency vs gain](artifacts/figures/fig5_fluency_vs_gain.png)
+
+  ![Accuracy vs perplexity](artifacts/figures/fig6_accuracy_vs_perplexity.png)
+
+  *Figure 6. Each point is one run's final prompt; the star is the seed
+  instruction. On emotion, many runs end exactly on the seed (counts in the
+  annotation), so their points coincide with it. Euclidean points are the six
+  Phase 1 held-out runs, re-scored on the report half.*
+- **Examples:** the seed prompt next to every arm's best and median improved
+  prompt, and the top edits per projection with their filter verdicts, are in
+  [`artifacts/prompt_examples/README.md`](artifacts/prompt_examples/README.md).
 
 ## 6. Limitations
 

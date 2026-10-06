@@ -33,6 +33,12 @@ the segment from e to E(z).
   usual residual-based reasoning ("small residual, small damage") gives no
   guarantee here: with these gradient norms, a residual would have to be tiny.
 
+![Lipschitz bound vs actual gap](../figures/fig1_gap_vs_bound.png)
+
+*Figure 1. Each pair of points is one saved iterate: the Lipschitz bound
+(squares) against the actual loss change from projection (circles), on a log
+scale. One iterate with a gap of −0.24 is plotted at |gap|.*
+
 ## 2. Tokens are far apart; ADMM's projection targets are farther still
 
 | Quantity | Median | 10th–90th percentile |
@@ -62,21 +68,40 @@ Reading:
   original word: `output` → `Output` / `输出`, `label` → `\tlabel`. So
   Euclidean projection itself is fairly well behaved semantically.
 
+![Random displacement](../figures/fig2_random_displacement.png)
+
+*Figure 2. Seed-instruction embeddings displaced in random directions (200
+samples per radius), then projected to the nearest allowed token. The shaded
+band is where ADMM's actual projection targets sit (median distance per
+iterate, 3–10).*
+
 ## 3. ADMM's garbage tokens come from the gradient, not from the geometry
 
-Across the 117 edits the proposer made inside GEPA:
-- 73% of the new tokens are ASCII.
-- The new tokens' median **embedding-norm percentile is 19.7**, and 24 of 117
-  sit below the 10th percentile. By contrast, the replacements from random
-  displacement have a median percentile of 27–56.
+Random moves land on sensible variants (§2), yet the Euclidean ADMM proposer's
+edits are mostly unreadable: CJK characters, code identifiers, emoji. The
+difference is the **direction**: the task gradient pushes e + u toward tokens
+that change the model's prediction, whatever they look like. Gradient-based
+discrete prompt search such as GCG produces the same kind of adversarial
+tokens.
 
-So the task gradient deliberately steers toward **low-norm, rarely trained
-tokens**: CJK characters, code identifiers, emoji. This matches the known
-phenomenon of under-trained "glitch" tokens, which have unusually small
-embeddings and unpredictable effects (Land & Bartolo, 2024, "Fishing for
-Magikarp"). Gradient-based discrete prompt search such as GCG finds the same
-kind of adversarial tokens. **The garbage is optimization exploiting the model,
-not a failure of Euclidean geometry.**
+**Correction (fluency analysis, below):** an earlier version of this section
+attributed the garbage to *low-norm*, under-trained "glitch" tokens. The
+Euclidean edits' new tokens do sit low in the norm distribution (median 20th
+percentile; 24 of 117 below the 10th). But the **fluent** edits from the top-p
+and beam projections sit nearly as low (median 27th and 24th percentile), so
+embedding norm does **not** distinguish garbage from fluent edits in this
+vocabulary; ordinary English words also have below-median norms. What *does*
+separate them is the LM's NLL of the inserted token in context: a median of
+21.9 nats for Euclidean edits, against 9.3 for top-p and 5.9 for beam (AG
+News). See [`../fluency_analysis/`](../fluency_analysis/) and
+[`../prompt_examples/README.md`](../prompt_examples/README.md).
+
+![Filter keep rate](../figures/fig3_filter_keep_rate.png)
+
+*Figure 3. For each projection, the share of ADMM edits whose most surprising
+inserted token stays under a given NLL threshold, i.e. what a post-hoc
+perplexity filter at that threshold would keep. At 12 nats it keeps about 10%
+of Euclidean edits and nearly all top-p and beam edits.*
 
 ## 4. Changing the distance used for projection doesn't help
 
@@ -97,6 +122,11 @@ The same 18 projection targets e + u were projected under each distance:
 - The problem is *where e + u sits*, far off the token manifold and in an
   exploitative direction, not how distance is measured.
 
+![Alternative projections](../figures/fig4_alternative_projections.png)
+
+*Figure 4. The same 18 projection targets e + u, projected under each
+distance.*
+
 ## 5. Bug found: control tokens leaked into the allowed vocabulary
 
 The whitened projection selected `<tool_call>`. Qwen3 registers 12 control
@@ -113,8 +143,10 @@ tokens**, so no earlier result changes.
 1. To get sensible tokens, **constrain where the iterate goes**, rather than
    changing the distance used for projection: a context top-p candidate set, a
    perplexity term in the Z-step, or a larger or adaptive ρ that keeps e near
-   real tokens. A blocklist of under-trained low-norm tokens is a cheap first
-   step.
+   real tokens. (A norm-based blocklist would not work: fluent edits also
+   use low-norm tokens. Constraining NLL does.) The top-p and beam projections
+   that were built afterwards confirm this: see Figure 3 and
+   [`CLASSIFICATION_RESULTS.md`](../../CLASSIFICATION_RESULTS.md) §5.8–5.9.
 2. **Lowering cross-entropy doesn't raise accuracy here**, even for the
    continuous soft prompt. In the pilot's ρ=1 run, the soft prompt reached
    validation loss 1.6 (seed: 9.26) while its accuracy stayed at 25.6–33.2%
