@@ -1,0 +1,59 @@
+{
+  "accepted_proposal_count": 5,
+  "all_proposals_tokenizer_compositional": true,
+  "gepa_selected": {
+    "candidate_idx": 4,
+    "instruction": "Carefully identify the article's central theme from the label mapping, focusing on the primary subject matter and ignoring any incidental details, and output only the corresponding capital letter.",
+    "is_seed": false,
+    "validation_accuracy": 0.35546875,
+    "validation_mean_loss": 6.070294806827508
+  },
+  "interpretation": "GEPA-selected and post-hoc-audit-best are reported separately. The post-hoc audit is exploratory and does not retroactively change GEPA acceptance.",
+  "posthoc_audit_best": {
+    "accuracy_gain_over_seed": 0.05078125,
+    "errors_fixed_vs_parent": 37,
+    "gepa_statuses": [
+      "accepted"
+    ],
+    "instruction": "Carefully identify the article's central theme from the label mapping, focusing on the primary subject matter and ignoring any incidental details, and output only the corresponding capital letter.",
+    "mean_loss_change_from_seed": -3.1881532958170506,
+    "new_errors_vs_parent": 11,
+    "per_class_accuracy": {
+      "A": 0.90625,
+      "B": 0.140625,
+      "C": 0.015625,
+      "D": 0.359375
+    },
+    "prediction_counts": {
+      "A": 372,
+      "B": 38,
+      "C": 2,
+      "D": 100
+    },
+    "proposal_numbers": [
+      27
+    ],
+    "validation_accuracy": 0.35546875,
+    "validation_mean_loss": 6.070294806827508
+  },
+  "proposal_count": 30,
+  "rejected_proposal_count": 25,
+  "seed": {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+    "per_class_accuracy": {
+      "A": 0.984375,
+      "B": 0.0703125,
+      "C": 0.015625,
+      "D": 0.1484375
+    },
+    "prediction_counts": {
+      "A": 460,
+      "B": 9,
+      "C": 2,
+      "D": 41
+    },
+    "validation_accuracy": 0.3046875,
+    "validation_mean_loss": 9.258448102644559
+  },
+  "unique_proposal_text_count": 19
+}

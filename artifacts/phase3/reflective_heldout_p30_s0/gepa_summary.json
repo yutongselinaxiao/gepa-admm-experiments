@@ -1,0 +1,59 @@
+{
+  "accepted_proposal_count": 15,
+  "all_proposals_tokenizer_compositional": true,
+  "gepa_selected": {
+    "candidate_idx": 15,
+    "instruction": "Carefully identify the article's central theme from the label mapping, focusing on the primary subject and ignoring incidental details, and output only the corresponding capital letter.",
+    "is_seed": false,
+    "validation_accuracy": 0.34765625,
+    "validation_mean_loss": 6.785885052000823
+  },
+  "interpretation": "GEPA-selected and post-hoc-audit-best are reported separately. The post-hoc audit is exploratory and does not retroactively change GEPA acceptance.",
+  "posthoc_audit_best": {
+    "accuracy_gain_over_seed": 0.046875,
+    "errors_fixed_vs_parent": 15,
+    "gepa_statuses": [
+      "rejected"
+    ],
+    "instruction": "Carefully analyze the article to determine its primary subject and context, focusing on relevance and significance, and select the corresponding capital letter from the label mapping.",
+    "mean_loss_change_from_seed": -2.4424826963763397,
+    "new_errors_vs_parent": 14,
+    "per_class_accuracy": {
+      "A": 0.7890625,
+      "B": 0.0546875,
+      "C": 0.015625,
+      "D": 0.546875
+    },
+    "prediction_counts": {
+      "A": 325,
+      "B": 10,
+      "C": 2,
+      "D": 175
+    },
+    "proposal_numbers": [
+      30
+    ],
+    "validation_accuracy": 0.3515625,
+    "validation_mean_loss": 6.815965406268219
+  },
+  "proposal_count": 30,
+  "rejected_proposal_count": 15,
+  "seed": {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+    "per_class_accuracy": {
+      "A": 0.984375,
+      "B": 0.0703125,
+      "C": 0.015625,
+      "D": 0.1484375
+    },
+    "prediction_counts": {
+      "A": 460,
+      "B": 9,
+      "C": 2,
+      "D": 41
+    },
+    "validation_accuracy": 0.3046875,
+    "validation_mean_loss": 9.258448102644559
+  },
+  "unique_proposal_text_count": 20
+}

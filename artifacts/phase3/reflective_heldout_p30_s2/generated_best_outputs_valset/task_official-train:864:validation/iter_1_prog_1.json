@@ -1,0 +1,1 @@
+"ClassificationOutput(example_id='official-train:864:validation', predicted_label='D', gold_label='D', label_scores={'A': 47.75, 'B': 47.75, 'C': 41.75, 'D': 52.25}, loss=0.022001704201102257, correct=True, prompt_token_count=184)"

@@ -1,0 +1,57 @@
+{
+  "config": {
+    "data": {
+      "dataset_name": "fancyzhx/ag_news",
+      "seed": 20261002,
+      "train_size": 256,
+      "validation_size": 512
+    },
+    "model": {
+      "device": "cuda:0",
+      "dtype": "bfloat16",
+      "local_files_only": true,
+      "local_snapshot_path": "/home/xiaoyuto/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "name_or_path": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+    },
+    "prompt": {
+      "enable_thinking": false,
+      "label_names": {
+        "A": "World",
+        "B": "Sports",
+        "C": "Business",
+        "D": "Sci/Tech"
+      },
+      "seed_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+      "system_prompt": "You are a careful news topic classifier. Follow the supplied label mapping and response format exactly."
+    }
+  },
+  "created_at_utc": "2026-10-06T05:47:57.700972+00:00",
+  "environment": {
+    "cuda_device_name": "NVIDIA H100 80GB HBM3",
+    "device": "cuda:0",
+    "gepa_git_commit": "8b0ce6cd99a234f6b74daf37558a2ac0ce18f975",
+    "gepa_git_dirty": false,
+    "gepa_source": "/home/xiaoyuto/gepa/third_party/gepa/src/gepa",
+    "gepa_version": "0.1.4",
+    "python_version": "3.10.12",
+    "torch_version": "2.11.0+cu128",
+    "transformers_version": "5.5.4"
+  },
+  "evaluation_batch_size": 32,
+  "frontier_type": "instance",
+  "gepa_valset_size": 256,
+  "official_test_examples_present": false,
+  "optimization_seed": 20361002,
+  "proposal_cap": 30,
+  "proposer": "reflective",
+  "reflection_acceptance": "heldout",
+  "reflection_minibatch_size": 8,
+  "reflection_model": "same frozen local Qwen checkpoint as task model",
+  "report_set_size": 256,
+  "run_seed": 1,
+  "selection_split": true,
+  "train_size": 256,
+  "use_merge": false,
+  "validation_size": 512
+}
