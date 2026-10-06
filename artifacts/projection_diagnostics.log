@@ -1,0 +1,27 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 8279.93it/s]
+ITERATE artifacts/admm_rho1 it=5 gap=6.850 bound=653.7 r=3.66
+ITERATE artifacts/admm_rho1 it=10 gap=6.455 bound=755.7 r=3.58
+ITERATE artifacts/admm_rho1 it=15 gap=6.411 bound=1809.8 r=6.02
+ITERATE artifacts/admm_rho1 it=20 gap=-0.243 bound=5622.0 r=6.74
+ITERATE artifacts/admm_rho1 it=25 gap=6.750 bound=7708.3 r=8.22
+ITERATE artifacts/admm_rho1 it=30 gap=5.669 bound=4174.6 r=10.23
+ITERATE artifacts/repeat_original_admm_rho1 it=5 gap=6.850 bound=653.7 r=3.66
+ITERATE artifacts/repeat_original_admm_rho1 it=10 gap=6.455 bound=755.7 r=3.58
+ITERATE artifacts/repeat_original_admm_rho1 it=15 gap=5.079 bound=1563.2 r=6.01
+ITERATE artifacts/repeat_original_admm_rho1 it=20 gap=6.248 bound=10995.6 r=6.68
+ITERATE artifacts/repeat_original_admm_rho1 it=25 gap=2.325 bound=3820.6 r=8.58
+ITERATE artifacts/repeat_original_admm_rho1 it=30 gap=6.922 bound=6340.8 r=9.82
+ITERATE artifacts/parity_refactor_admm_rho1 it=5 gap=6.850 bound=653.7 r=3.66
+ITERATE artifacts/parity_refactor_admm_rho1 it=10 gap=6.455 bound=755.7 r=3.58
+ITERATE artifacts/parity_refactor_admm_rho1 it=15 gap=6.521 bound=1265.9 r=6.15
+ITERATE artifacts/parity_refactor_admm_rho1 it=20 gap=5.943 bound=2711.0 r=6.67
+ITERATE artifacts/parity_refactor_admm_rho1 it=25 gap=6.289 bound=2548.4 r=8.32
+ITERATE artifacts/parity_refactor_admm_rho1 it=30 gap=11.921 bound=2456.0 r=10.11
+HUB radius=1.0 kept=1.000 distinct=0
+HUB radius=3.0 kept=1.000 distinct=0
+HUB radius=5.0 kept=1.000 distinct=0
+HUB radius=7.5 kept=0.995 distinct=19
+HUB radius=10.0 kept=0.947 distinct=185
+HUB radius=15.0 kept=0.487 distinct=2187
+HUB radius=20.0 kept=0.168 distinct=3927
+WROTE artifacts/projection_diagnostics/report.json

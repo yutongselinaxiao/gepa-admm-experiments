@@ -21,7 +21,7 @@ from .admm import (
     build_allowed_token_ids,
     hyperparameters_dict,
 )
-from .admm_proposer import ADMMProposer
+from .admm_proposer import ADMMHeldOutAcceptance, ADMMProposer
 from .config import PilotConfig
 from .data import NewsExample, load_examples_json
 from .evaluator import CommonEvaluator, EvaluationSummary
@@ -126,6 +126,12 @@ def main() -> None:
     parser.add_argument("--admm-e-steps", type=int, default=3)
     parser.add_argument("--admm-train-batch-size", type=int, default=16)
     parser.add_argument("--admm-selection-batch-size", type=int, default=32)
+    parser.add_argument(
+        "--admm-acceptance",
+        choices=("minibatch", "heldout"),
+        default="minibatch",
+        help="heldout: accept ADMM children by the proposer's held-out batch, not GEPA's minibatch.",
+    )
     args = parser.parse_args()
 
     if args.proposals < 1 or args.reflection_minibatch_size < 1:
@@ -194,6 +200,9 @@ def main() -> None:
             log_path=run_dir / "admm_proposals.jsonl",
         )
         proposal_kwargs = {"custom_candidate_proposer": admm_proposer}
+    acceptance_criterion: Any = "strict_improvement"
+    if admm_proposer is not None and args.admm_acceptance == "heldout":
+        acceptance_criterion = ADMMHeldOutAcceptance(admm_proposer)
     tracker = ObservationTracker(run_dir / "callback_events.jsonl")
     stoppers = [
         ProposalCountStopper(tracker, args.proposals),
@@ -237,6 +246,7 @@ def main() -> None:
         manifest["admm"] = {
             **hyperparameters_dict(admm_proposer.refiner.hp),
             "selection_batch_size": args.admm_selection_batch_size,
+            "acceptance": args.admm_acceptance,
             "seed": admm_proposer.seed,
             "allowed_vocabulary_size": len(admm_proposer.refiner.allowed_token_ids),
         }
@@ -266,7 +276,7 @@ def main() -> None:
         seed=optimization_seed,
         raise_on_exception=True,
         val_evaluation_policy="full_eval",
-        acceptance_criterion="strict_improvement",
+        acceptance_criterion=acceptance_criterion,
     )
     optimization_seconds = time.perf_counter() - started
 

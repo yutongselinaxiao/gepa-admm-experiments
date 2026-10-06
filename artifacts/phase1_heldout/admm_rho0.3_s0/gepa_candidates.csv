@@ -1,0 +1,13 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,1,accepted,False,0.31640625,8.46144377611368,25,True,12,6,"Carefully determine the article's main topic from the	label mapping, ignore incidental details, and output only the corresponding capital letter."
+2,1,,rejected,False,0.318359375,7.602798650982923,25,True,9,8,"Carefully determine the article's main topic from the	label mapping, ignore incidental details, and output only rumpe corresponding capital letter."
+3,1,2,accepted,False,0.31640625,8.46144377611368,25,True,0,0,"Carefully determine the article's main topic from the	label mapping, ignore incidental details, and output only the corresponding capital letter."
+4,0,3,accepted,False,0.291015625,5.355477224794798,25,True,16,23,"Carefully determine the article's main topic from2 label mapping, ignore incidental details, and output only the corresponding capital vowel."
+5,2,4,accepted,False,0.298828125,7.674284000605173,25,True,2,11,"Carefully determine the article's main topic from the:semicolon mapping, ignore incidentalDetails, and output only the corresponding capital letter."
+6,4,5,accepted,False,0.298828125,7.674284000605173,25,True,0,0,"Carefully determine the article's main topic from the:semicolon mapping, ignore incidentalDetails, and output only the corresponding capital letter."
+7,3,6,accepted,False,0.291015625,5.355477224794798,25,True,0,0,"Carefully determine the article's main topic from2 label mapping, ignore incidental details, and output only the corresponding capital vowel."
+8,6,7,accepted,False,0.291015625,5.355477224794798,25,True,0,0,"Carefully determine the article's main topic from2 label mapping, ignore incidental details, and output only the corresponding capital vowel."
+9,0,8,accepted,False,0.318359375,7.599015172900222,25,True,21,14,"Carefully determine it article's main topic from the label mapping, ignore incidental details, and output onlyEl corresponding capital letter."
+10,5,,rejected,False,0.30078125,6.855126542829661,25,True,8,7,"Carefully determine는 article's main topic from the:semicolon mapping, ignore incidentalDetails, and output only the corresponding capital letter."
+11,8,9,accepted,True,0.32421875,7.318768770489335,25,True,18,15,"Carefully determine it article's main topic from the label mapping, ignore incidental details, and output onlyEl correspondingText letter."
+12,8,,rejected,False,0.3125,6.47148990849912,25,True,14,17,"Carefully determine it article's main topic from, label mapping, ignore incidental details, and output onlyEl corresponding capital letter."

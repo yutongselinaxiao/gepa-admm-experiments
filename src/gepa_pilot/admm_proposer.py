@@ -59,6 +59,8 @@ class ADMMProposer:
         self.forward_calls = 0
         self.backward_calls = 0
         self.outcomes: dict[str, int] = defaultdict(int)
+        # Child text -> held-out verdict (accuracy >= parent; loss < parent is required to propose).
+        self.heldout_decisions: dict[str, bool] = {}
 
     def _excluded_ids(self, records: Sequence[Mapping[str, Any]]) -> set[str]:
         excluded: set[str] = set()
@@ -110,7 +112,9 @@ class ADMMProposer:
 
         state = self.refiner.init_state(parent, parent_ids)
         record["parent_slot_ids"] = parent_ids.cpu().tolist()
-        record["parent_selection_loss"] = self.refiner.discrete_loss(state, parent_ids, selection)
+        record["parent_selection_loss"], record["parent_selection_accuracy"] = (
+            self.refiner.discrete_metrics(state, parent_ids, selection)
+        )
 
         cursor, training_order = 0, list(range(len(training)))
         batch_size = self.refiner.hp.train_batch_size
@@ -139,9 +143,12 @@ class ADMMProposer:
                     "text": roundtrip["reconstructed_instruction"],
                     "roundtrip_exact": roundtrip["roundtrip_exact"],
                     "selection_loss": None,
+                    "selection_accuracy": None,
                 }
                 if roundtrip["roundtrip_exact"] and roundtrip["reconstruction_error"] is None:
-                    entry["selection_loss"] = self.refiner.discrete_loss(state, state.z, selection)
+                    entry["selection_loss"], entry["selection_accuracy"] = (
+                        self.refiner.discrete_metrics(state, state.z, selection)
+                    )
                 scored[ids] = entry
                 row["new_projection"] = entry
             iterations.append(row)
@@ -167,6 +174,10 @@ class ADMMProposer:
         valid = improving
         best = min(valid, key=lambda entry: (entry["selection_loss"], entry["iteration"]))
         record["chosen"] = best
+        record["heldout_accept"] = (
+            best["selection_accuracy"] >= record["parent_selection_accuracy"]
+        )
+        self.heldout_decisions[best["text"]] = record["heldout_accept"]
         return self._finish(record, best["text"], "proposed", started)
 
     def _finish(
@@ -208,3 +219,32 @@ class ADMMProposer:
             "seed": self.seed,
             "log_path": str(self.log_path),
         }
+
+
+class ADMMHeldOutAcceptance:
+    """GEPA acceptance criterion that judges ADMM children on the proposer's held-out batch.
+
+    A child proposed by ADMM is accepted if, on the held-out selection batch (disjoint
+    from GEPA's minibatch and from ADMM's training batches), its loss is below the
+    parent's and its accuracy is at least the parent's. Any other proposal falls back
+    to GEPA's default strict improvement on the minibatch.
+    """
+
+    def __init__(self, proposer: ADMMProposer) -> None:
+        self.proposer = proposer
+
+    def _verdict(self, proposal: Any) -> bool | None:
+        return self.proposer.heldout_decisions.get(proposal.candidate.get("instruction"))
+
+    def should_accept(self, proposal: Any, state: Any) -> bool:
+        verdict = self._verdict(proposal)
+        if verdict is not None:
+            return verdict
+        return sum(proposal.subsample_scores_after or []) > sum(
+            proposal.subsample_scores_before or []
+        )
+
+    def reject_reason(self, proposal: Any, state: Any) -> str:
+        if self._verdict(proposal) is False:
+            return "ADMM child lowered held-out accuracy relative to its parent"
+        return "New subsample score not better than parent (minibatch strict improvement)"

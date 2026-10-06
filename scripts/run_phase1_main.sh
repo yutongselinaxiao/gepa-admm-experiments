@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Phase 1 main comparison: GEPA reflective vs. GEPA with the ADMM proposer.
 # 12 proposals, reflection minibatch 8, 3 run seeds per arm, one job per GPU.
+# NOTE: ran on GPUs 0-7 on 2026-10-05; future launchers use GPUs 4-7 only.
 # Reflective seed 0 is the pilot run artifacts/gepa_confirmation_mb8.
 set -u
 cd "$(dirname "$0")/.."

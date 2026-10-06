@@ -1,0 +1,2611 @@
+{
+  "allowed_tag_like_tokens": [
+    "<?>",
+    "<()>",
+    "<?>>",
+    "<unk>",
+    "<s>",
+    "</s>",
+    "<tool_call>",
+    "</tool_call>",
+    "<tool_response>",
+    "</tool_response>",
+    "<think>",
+    "</think>"
+  ],
+  "allowed_vocabulary": 151613,
+  "ascii_vocabulary": 94332,
+  "batch_size": 32,
+  "iterates": [
+    {
+      "discrete_accuracy": 0.25,
+      "discrete_loss": 8.748340606689453,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 99.17569732666016,
+      "gradient_norm_at_e": 32.44693374633789,
+      "iteration": 5,
+      "lipschitz_bound": 653.6541016737501,
+      "primal_residual": 3.6643669605255127,
+      "projection_gap": 6.849565148353577,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "whitened": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        }
+      },
+      "run": "artifacts/admm_rho1",
+      "segment_lipschitz": 178.3811798095703,
+      "soft_loss": 1.8987754583358765,
+      "target_to_token_distance_max": 3.4876456260681152,
+      "target_to_token_distance_median": 3.0075762271881104
+    },
+    {
+      "discrete_accuracy": 0.25,
+      "discrete_loss": 8.748340606689453,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 99.17569732666016,
+      "gradient_norm_at_e": 75.88420867919922,
+      "iteration": 10,
+      "lipschitz_bound": 755.6565609553509,
+      "primal_residual": 3.5797088146209717,
+      "projection_gap": 6.454810857772827,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 20,
+              "projected": "\u72af\u7f6a",
+              "seed": " the"
+            }
+          ],
+          "loss": 8.220539093017578
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "whitened": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        }
+      },
+      "run": "artifacts/admm_rho1",
+      "segment_lipschitz": 211.09442138671875,
+      "soft_loss": 2.293529748916626,
+      "target_to_token_distance_max": 8.241690635681152,
+      "target_to_token_distance_median": 4.459110736846924
+    },
+    {
+      "discrete_accuracy": 0.25,
+      "discrete_loss": 8.748340606689453,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 99.17569732666016,
+      "gradient_norm_at_e": 26.26592254638672,
+      "iteration": 15,
+      "lipschitz_bound": 1809.8357544602623,
+      "primal_residual": 6.020738124847412,
+      "projection_gap": 6.411472797393799,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 20,
+              "projected": "\u72af\u7f6a",
+              "seed": " the"
+            }
+          ],
+          "loss": 8.220539093017578
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "whitened": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.5,
+          "changed_from_seed": 2,
+          "changed_tokens": [
+            {
+              "position": 5,
+              "projected": "\ufffds",
+              "seed": "'s"
+            },
+            {
+              "position": 8,
+              "projected": "<tool_call>",
+              "seed": " from"
+            }
+          ],
+          "loss": 11.104466438293457
+        }
+      },
+      "run": "artifacts/admm_rho1",
+      "segment_lipschitz": 300.6003112792969,
+      "soft_loss": 2.3368678092956543,
+      "target_to_token_distance_max": 11.415980339050293,
+      "target_to_token_distance_median": 4.174540042877197
+    },
+    {
+      "discrete_accuracy": 0.28125,
+      "discrete_loss": 7.209147930145264,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 105.71695709228516,
+      "gradient_norm_at_e": 154.20555114746094,
+      "iteration": 20,
+      "lipschitz_bound": 5622.00652069581,
+      "primal_residual": 6.741894245147705,
+      "projection_gap": -0.24280738830566406,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 1.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 13,
+              "projected": " ignores",
+              "seed": " ignore"
+            }
+          ],
+          "loss": 7.373688697814941
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 1.0,
+          "changed_from_seed": 3,
+          "changed_tokens": [
+            {
+              "position": 9,
+              "projected": " ",
+              "seed": " the"
+            },
+            {
+              "position": 13,
+              "projected": " ignores",
+              "seed": " ignore"
+            },
+            {
+              "position": 16,
+              "projected": "\n",
+              "seed": ","
+            }
+          ],
+          "loss": 7.394658088684082
+        },
+        "euclidean": {
+          "accuracy": 0.28125,
+          "ascii_fraction_of_changes": 1.0,
+          "changed_from_seed": 2,
+          "changed_tokens": [
+            {
+              "position": 13,
+              "projected": " ignores",
+              "seed": " ignore"
+            },
+            {
+              "position": 16,
+              "projected": "\n",
+              "seed": ","
+            }
+          ],
+          "loss": 7.209147930145264
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.28125,
+          "ascii_fraction_of_changes": 1.0,
+          "changed_from_seed": 2,
+          "changed_tokens": [
+            {
+              "position": 13,
+              "projected": " ignores",
+              "seed": " ignore"
+            },
+            {
+              "position": 16,
+              "projected": "\n",
+              "seed": ","
+            }
+          ],
+          "loss": 7.209147930145264
+        },
+        "whitened": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.3333333333333333,
+          "changed_from_seed": 3,
+          "changed_tokens": [
+            {
+              "position": 5,
+              "projected": "\ufffds",
+              "seed": "'s"
+            },
+            {
+              "position": 8,
+              "projected": "\ufffd",
+              "seed": " from"
+            },
+            {
+              "position": 9,
+              "projected": "</tool_call>",
+              "seed": " the"
+            }
+          ],
+          "loss": 9.726901054382324
+        }
+      },
+      "run": "artifacts/admm_rho1",
+      "segment_lipschitz": 833.8912353515625,
+      "soft_loss": 7.451955318450928,
+      "target_to_token_distance_max": 12.288705825805664,
+      "target_to_token_distance_median": 6.717062473297119
+    },
+    {
+      "discrete_accuracy": 0.25,
+      "discrete_loss": 8.748340606689453,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 99.17569732666016,
+      "gradient_norm_at_e": 34.70889663696289,
+      "iteration": 25,
+      "lipschitz_bound": 7708.320797530469,
+      "primal_residual": 8.219285011291504,
+      "projection_gap": 6.750385761260986,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "whitened": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.5,
+          "changed_from_seed": 4,
+          "changed_tokens": [
+            {
+              "position": 1,
+              "projected": "<tool_call>",
+              "seed": "fully"
+            },
+            {
+              "position": 5,
+              "projected": "\ufffds",
+              "seed": "'s"
+            },
+            {
+              "position": 8,
+              "projected": "\ufffds",
+              "seed": " from"
+            },
+            {
+              "position": 22,
+              "projected": "\r",
+              "seed": " capital"
+            }
+          ],
+          "loss": 7.5164265632629395
+        }
+      },
+      "run": "artifacts/admm_rho1",
+      "segment_lipschitz": 937.83349609375,
+      "soft_loss": 1.9979548454284668,
+      "target_to_token_distance_max": 11.695635795593262,
+      "target_to_token_distance_median": 8.168961524963379
+    },
+    {
+      "discrete_accuracy": 0.28125,
+      "discrete_loss": 7.436887741088867,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 90.75485229492188,
+      "gradient_norm_at_e": 21.29953956604004,
+      "iteration": 30,
+      "lipschitz_bound": 4174.606807485572,
+      "primal_residual": 10.22999095916748,
+      "projection_gap": 5.668521404266357,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.3125,
+          "ascii_fraction_of_changes": 0.2,
+          "changed_from_seed": 5,
+          "changed_tokens": [
+            {
+              "position": 3,
+              "projected": "\u5ce5",
+              "seed": " the"
+            },
+            {
+              "position": 8,
+              "projected": "\tfrom",
+              "seed": " from"
+            },
+            {
+              "position": 12,
+              "projected": "\u05d1\u05dc\u05d4",
+              "seed": ","
+            },
+            {
+              "position": 20,
+              "projected": "\ud83c\udd92",
+              "seed": " the"
+            },
+            {
+              "position": 24,
+              "projected": "\u05de\u05db\u05d1\u05d9",
+              "seed": ".\n"
+            }
+          ],
+          "loss": 8.722073554992676
+        },
+        "cosine": {
+          "accuracy": 0.34375,
+          "ascii_fraction_of_changes": 0.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 3,
+              "projected": "\u5f71",
+              "seed": " the"
+            }
+          ],
+          "loss": 6.735905647277832
+        },
+        "euclidean": {
+          "accuracy": 0.28125,
+          "ascii_fraction_of_changes": 1.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 3,
+              "projected": "....",
+              "seed": " the"
+            }
+          ],
+          "loss": 7.436887741088867
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.28125,
+          "ascii_fraction_of_changes": 1.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 3,
+              "projected": "....",
+              "seed": " the"
+            }
+          ],
+          "loss": 7.436887741088867
+        },
+        "whitened": {
+          "accuracy": 0.34375,
+          "ascii_fraction_of_changes": 0.2857142857142857,
+          "changed_from_seed": 7,
+          "changed_tokens": [
+            {
+              "position": 3,
+              "projected": " \u05d7\u05d5\u05d3",
+              "seed": " the"
+            },
+            {
+              "position": 5,
+              "projected": "\ufffds",
+              "seed": "'s"
+            },
+            {
+              "position": 8,
+              "projected": "\ufffds",
+              "seed": " from"
+            },
+            {
+              "position": 11,
+              "projected": "(mapping",
+              "seed": " mapping"
+            },
+            {
+              "position": 12,
+              "projected": "\u0cb8",
+              "seed": ","
+            },
+            {
+              "position": 14,
+              "projected": "\ufffds",
+              "seed": " incidental"
+            },
+            {
+              "position": 22,
+              "projected": "<tool_call>",
+              "seed": " capital"
+            }
+          ],
+          "loss": 6.193747520446777
+        }
+      },
+      "run": "artifacts/admm_rho1",
+      "segment_lipschitz": 408.0753173828125,
+      "soft_loss": 1.7683663368225098,
+      "target_to_token_distance_max": 16.662586212158203,
+      "target_to_token_distance_median": 9.391578674316406
+    },
+    {
+      "discrete_accuracy": 0.25,
+      "discrete_loss": 8.748340606689453,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 99.17569732666016,
+      "gradient_norm_at_e": 32.44693374633789,
+      "iteration": 5,
+      "lipschitz_bound": 653.6541016737501,
+      "primal_residual": 3.6643669605255127,
+      "projection_gap": 6.849565148353577,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "whitened": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        }
+      },
+      "run": "artifacts/repeat_original_admm_rho1",
+      "segment_lipschitz": 178.3811798095703,
+      "soft_loss": 1.8987754583358765,
+      "target_to_token_distance_max": 3.4876456260681152,
+      "target_to_token_distance_median": 3.0075762271881104
+    },
+    {
+      "discrete_accuracy": 0.25,
+      "discrete_loss": 8.748340606689453,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 99.17569732666016,
+      "gradient_norm_at_e": 75.88420867919922,
+      "iteration": 10,
+      "lipschitz_bound": 755.6565609553509,
+      "primal_residual": 3.5797088146209717,
+      "projection_gap": 6.454810857772827,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 20,
+              "projected": "\u72af\u7f6a",
+              "seed": " the"
+            }
+          ],
+          "loss": 8.220539093017578
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "whitened": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        }
+      },
+      "run": "artifacts/repeat_original_admm_rho1",
+      "segment_lipschitz": 211.09442138671875,
+      "soft_loss": 2.293529748916626,
+      "target_to_token_distance_max": 8.241690635681152,
+      "target_to_token_distance_median": 4.459110736846924
+    },
+    {
+      "discrete_accuracy": 0.25,
+      "discrete_loss": 8.748340606689453,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 99.17569732666016,
+      "gradient_norm_at_e": 128.00094604492188,
+      "iteration": 15,
+      "lipschitz_bound": 1563.1995630717865,
+      "primal_residual": 6.006652355194092,
+      "projection_gap": 5.079132080078125,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 20,
+              "projected": "\u72af\u7f6a",
+              "seed": " the"
+            }
+          ],
+          "loss": 8.220539093017578
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "whitened": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.5,
+          "changed_from_seed": 2,
+          "changed_tokens": [
+            {
+              "position": 5,
+              "projected": "\ufffds",
+              "seed": "'s"
+            },
+            {
+              "position": 8,
+              "projected": "<tool_call>",
+              "seed": " from"
+            }
+          ],
+          "loss": 11.104466438293457
+        }
+      },
+      "run": "artifacts/repeat_original_admm_rho1",
+      "segment_lipschitz": 260.2447204589844,
+      "soft_loss": 3.669208526611328,
+      "target_to_token_distance_max": 11.375814437866211,
+      "target_to_token_distance_median": 4.168802738189697
+    },
+    {
+      "discrete_accuracy": 0.25,
+      "discrete_loss": 8.748340606689453,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 99.17569732666016,
+      "gradient_norm_at_e": 194.33522033691406,
+      "iteration": 20,
+      "lipschitz_bound": 10995.579965813085,
+      "primal_residual": 6.679346084594727,
+      "projection_gap": 6.248212814331055,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "whitened": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.0,
+          "changed_from_seed": 2,
+          "changed_tokens": [
+            {
+              "position": 5,
+              "projected": "\ufffds",
+              "seed": "'s"
+            },
+            {
+              "position": 8,
+              "projected": "\u279b",
+              "seed": " from"
+            }
+          ],
+          "loss": 10.450948715209961
+        }
+      },
+      "run": "artifacts/repeat_original_admm_rho1",
+      "segment_lipschitz": 1646.2060546875,
+      "soft_loss": 2.5001277923583984,
+      "target_to_token_distance_max": 11.953925132751465,
+      "target_to_token_distance_median": 6.628256320953369
+    },
+    {
+      "discrete_accuracy": 0.28125,
+      "discrete_loss": 6.80350399017334,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 130.26763916015625,
+      "gradient_norm_at_e": 95.0658950805664,
+      "iteration": 25,
+      "lipschitz_bound": 3820.6076572636375,
+      "primal_residual": 8.57681941986084,
+      "projection_gap": 2.3247766494750977,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 0,
+              "projected": "\ua855",
+              "seed": "Care"
+            }
+          ],
+          "loss": 11.021398544311523
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 1.0,
+          "changed_from_seed": 3,
+          "changed_tokens": [
+            {
+              "position": 0,
+              "projected": " Career",
+              "seed": "Care"
+            },
+            {
+              "position": 3,
+              "projected": "\tthe",
+              "seed": " the"
+            },
+            {
+              "position": 13,
+              "projected": "(tag",
+              "seed": " ignore"
+            }
+          ],
+          "loss": 7.362349033355713
+        },
+        "euclidean": {
+          "accuracy": 0.28125,
+          "ascii_fraction_of_changes": 1.0,
+          "changed_from_seed": 2,
+          "changed_tokens": [
+            {
+              "position": 0,
+              "projected": " Career",
+              "seed": "Care"
+            },
+            {
+              "position": 3,
+              "projected": "\tthe",
+              "seed": " the"
+            }
+          ],
+          "loss": 6.80350399017334
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.28125,
+          "ascii_fraction_of_changes": 1.0,
+          "changed_from_seed": 2,
+          "changed_tokens": [
+            {
+              "position": 0,
+              "projected": " Career",
+              "seed": "Care"
+            },
+            {
+              "position": 3,
+              "projected": "\tthe",
+              "seed": " the"
+            }
+          ],
+          "loss": 6.80350399017334
+        },
+        "whitened": {
+          "accuracy": 0.21875,
+          "ascii_fraction_of_changes": 0.5,
+          "changed_from_seed": 6,
+          "changed_tokens": [
+            {
+              "position": 0,
+              "projected": "\ufffdt",
+              "seed": "Care"
+            },
+            {
+              "position": 1,
+              "projected": "<tool_call>",
+              "seed": "fully"
+            },
+            {
+              "position": 5,
+              "projected": "\ufffds",
+              "seed": "'s"
+            },
+            {
+              "position": 8,
+              "projected": "\u279b",
+              "seed": " from"
+            },
+            {
+              "position": 13,
+              "projected": "<tool_call>",
+              "seed": " ignore"
+            },
+            {
+              "position": 22,
+              "projected": "\r",
+              "seed": " capital"
+            }
+          ],
+          "loss": 11.106517791748047
+        }
+      },
+      "run": "artifacts/repeat_original_admm_rho1",
+      "segment_lipschitz": 445.4573974609375,
+      "soft_loss": 4.478727340698242,
+      "target_to_token_distance_max": 12.531213760375977,
+      "target_to_token_distance_median": 8.102151870727539
+    },
+    {
+      "discrete_accuracy": 0.34375,
+      "discrete_loss": 8.787538528442383,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 107.64289855957031,
+      "gradient_norm_at_e": 29.3850154876709,
+      "iteration": 30,
+      "lipschitz_bound": 6340.771640935214,
+      "primal_residual": 9.82414436340332,
+      "projection_gap": 6.921959757804871,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.3125,
+          "ascii_fraction_of_changes": 0.75,
+          "changed_from_seed": 4,
+          "changed_tokens": [
+            {
+              "position": 3,
+              "projected": "%C",
+              "seed": " the"
+            },
+            {
+              "position": 8,
+              "projected": "\tfrom",
+              "seed": " from"
+            },
+            {
+              "position": 12,
+              "projected": " Athletics",
+              "seed": ","
+            },
+            {
+              "position": 20,
+              "projected": "\ud83c\udd92",
+              "seed": " the"
+            }
+          ],
+          "loss": 17.4765625
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.5,
+          "changed_from_seed": 2,
+          "changed_tokens": [
+            {
+              "position": 3,
+              "projected": "end",
+              "seed": " the"
+            },
+            {
+              "position": 17,
+              "projected": " v\u00e0",
+              "seed": " and"
+            }
+          ],
+          "loss": 8.697213172912598
+        },
+        "euclidean": {
+          "accuracy": 0.34375,
+          "ascii_fraction_of_changes": 0.5,
+          "changed_from_seed": 2,
+          "changed_tokens": [
+            {
+              "position": 3,
+              "projected": "end",
+              "seed": " the"
+            },
+            {
+              "position": 17,
+              "projected": "\u5e76\u4e14",
+              "seed": " and"
+            }
+          ],
+          "loss": 8.787538528442383
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.34375,
+          "ascii_fraction_of_changes": 1.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 3,
+              "projected": "end",
+              "seed": " the"
+            }
+          ],
+          "loss": 8.151756286621094
+        },
+        "whitened": {
+          "accuracy": 0.21875,
+          "ascii_fraction_of_changes": 0.5,
+          "changed_from_seed": 8,
+          "changed_tokens": [
+            {
+              "position": 0,
+              "projected": "\ufffdt",
+              "seed": "Care"
+            },
+            {
+              "position": 1,
+              "projected": "\ufffd\ufffd",
+              "seed": "fully"
+            },
+            {
+              "position": 2,
+              "projected": "8",
+              "seed": " determine"
+            },
+            {
+              "position": 5,
+              "projected": "\ufffds",
+              "seed": "'s"
+            },
+            {
+              "position": 7,
+              "projected": ",",
+              "seed": " topic"
+            },
+            {
+              "position": 8,
+              "projected": "\r",
+              "seed": " from"
+            },
+            {
+              "position": 11,
+              "projected": "(mapping",
+              "seed": " mapping"
+            },
+            {
+              "position": 12,
+              "projected": "\u0644\u0627\u062b",
+              "seed": ","
+            }
+          ],
+          "loss": 15.6642484664917
+        }
+      },
+      "run": "artifacts/repeat_original_admm_rho1",
+      "segment_lipschitz": 645.4273681640625,
+      "soft_loss": 1.8655787706375122,
+      "target_to_token_distance_max": 16.52014923095703,
+      "target_to_token_distance_median": 10.127243995666504
+    },
+    {
+      "discrete_accuracy": 0.25,
+      "discrete_loss": 8.748340606689453,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 99.17569732666016,
+      "gradient_norm_at_e": 32.44693374633789,
+      "iteration": 5,
+      "lipschitz_bound": 653.6541016737501,
+      "primal_residual": 3.6643669605255127,
+      "projection_gap": 6.849565148353577,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "whitened": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        }
+      },
+      "run": "artifacts/parity_refactor_admm_rho1",
+      "segment_lipschitz": 178.3811798095703,
+      "soft_loss": 1.8987754583358765,
+      "target_to_token_distance_max": 3.4876456260681152,
+      "target_to_token_distance_median": 3.0075762271881104
+    },
+    {
+      "discrete_accuracy": 0.25,
+      "discrete_loss": 8.748340606689453,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 99.17569732666016,
+      "gradient_norm_at_e": 75.88420867919922,
+      "iteration": 10,
+      "lipschitz_bound": 755.6565609553509,
+      "primal_residual": 3.5797088146209717,
+      "projection_gap": 6.454810857772827,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 20,
+              "projected": "\u72af\u7f6a",
+              "seed": " the"
+            }
+          ],
+          "loss": 8.220539093017578
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "whitened": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        }
+      },
+      "run": "artifacts/parity_refactor_admm_rho1",
+      "segment_lipschitz": 211.09442138671875,
+      "soft_loss": 2.293529748916626,
+      "target_to_token_distance_max": 8.241690635681152,
+      "target_to_token_distance_median": 4.459110736846924
+    },
+    {
+      "discrete_accuracy": 0.28125,
+      "discrete_loss": 8.3670654296875,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 86.18070983886719,
+      "gradient_norm_at_e": 20.284034729003906,
+      "iteration": 15,
+      "lipschitz_bound": 1265.9386050981993,
+      "primal_residual": 6.146273612976074,
+      "projection_gap": 6.520970344543457,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 20,
+              "projected": "\u72af\u7f6a",
+              "seed": " the"
+            }
+          ],
+          "loss": 8.220539093017578
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean": {
+          "accuracy": 0.28125,
+          "ascii_fraction_of_changes": 1.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 8,
+              "projected": "\tfrom",
+              "seed": " from"
+            }
+          ],
+          "loss": 8.3670654296875
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.28125,
+          "ascii_fraction_of_changes": 1.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 8,
+              "projected": "\tfrom",
+              "seed": " from"
+            }
+          ],
+          "loss": 8.3670654296875
+        },
+        "whitened": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.5,
+          "changed_from_seed": 2,
+          "changed_tokens": [
+            {
+              "position": 5,
+              "projected": "\ufffds",
+              "seed": "'s"
+            },
+            {
+              "position": 8,
+              "projected": "<tool_call>",
+              "seed": " from"
+            }
+          ],
+          "loss": 11.104466438293457
+        }
+      },
+      "run": "artifacts/parity_refactor_admm_rho1",
+      "segment_lipschitz": 205.96847534179688,
+      "soft_loss": 1.846095085144043,
+      "target_to_token_distance_max": 11.442787170410156,
+      "target_to_token_distance_median": 4.173786163330078
+    },
+    {
+      "discrete_accuracy": 0.25,
+      "discrete_loss": 8.748340606689453,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 99.17569732666016,
+      "gradient_norm_at_e": 406.2023620605469,
+      "iteration": 20,
+      "lipschitz_bound": 2710.9979640807433,
+      "primal_residual": 6.674008369445801,
+      "projection_gap": 5.943042755126953,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "whitened": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.0,
+          "changed_from_seed": 3,
+          "changed_tokens": [
+            {
+              "position": 5,
+              "projected": "\ufffds",
+              "seed": "'s"
+            },
+            {
+              "position": 8,
+              "projected": "\ufffd",
+              "seed": " from"
+            },
+            {
+              "position": 9,
+              "projected": "\u0e1b\u0e23\u0e30\u0e01\u0e32",
+              "seed": " the"
+            }
+          ],
+          "loss": 10.287881851196289
+        }
+      },
+      "run": "artifacts/parity_refactor_admm_rho1",
+      "segment_lipschitz": 406.2023620605469,
+      "soft_loss": 2.8052978515625,
+      "target_to_token_distance_max": 12.287464141845703,
+      "target_to_token_distance_median": 6.90540075302124
+    },
+    {
+      "discrete_accuracy": 0.25,
+      "discrete_loss": 8.748340606689453,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 99.17569732666016,
+      "gradient_norm_at_e": 43.31218338012695,
+      "iteration": 25,
+      "lipschitz_bound": 2548.410870492051,
+      "primal_residual": 8.317530632019043,
+      "projection_gap": 6.288668632507324,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 8,
+              "projected": "\ud83c\udd97",
+              "seed": " from"
+            }
+          ],
+          "loss": 10.207695007324219
+        },
+        "cosine": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": null,
+          "changed_from_seed": 0,
+          "changed_tokens": [],
+          "loss": 8.748340606689453
+        },
+        "whitened": {
+          "accuracy": 0.28125,
+          "ascii_fraction_of_changes": 0.25,
+          "changed_from_seed": 4,
+          "changed_tokens": [
+            {
+              "position": 1,
+              "projected": "Basically",
+              "seed": "fully"
+            },
+            {
+              "position": 5,
+              "projected": "\ufffds",
+              "seed": "'s"
+            },
+            {
+              "position": 8,
+              "projected": "\u279b",
+              "seed": " from"
+            },
+            {
+              "position": 22,
+              "projected": "\u1264",
+              "seed": " capital"
+            }
+          ],
+          "loss": 7.3698859214782715
+        }
+      },
+      "run": "artifacts/parity_refactor_admm_rho1",
+      "segment_lipschitz": 306.39031982421875,
+      "soft_loss": 2.459671974182129,
+      "target_to_token_distance_max": 12.236693382263184,
+      "target_to_token_distance_median": 8.173101425170898
+    },
+    {
+      "discrete_accuracy": 0.21875,
+      "discrete_loss": 14.227319717407227,
+      "euclidean_matches_saved_z": true,
+      "gradient_norm_at_Ez": 78.08255004882812,
+      "gradient_norm_at_e": 52.182044982910156,
+      "iteration": 30,
+      "lipschitz_bound": 2456.027595329506,
+      "primal_residual": 10.108509063720703,
+      "projection_gap": 11.92097544670105,
+      "projections": {
+        "all_but_top20": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.0,
+          "changed_from_seed": 3,
+          "changed_tokens": [
+            {
+              "position": 12,
+              "projected": "\u05d1\u05dc\u05d4",
+              "seed": ","
+            },
+            {
+              "position": 20,
+              "projected": "\ud83c\udd92",
+              "seed": " the"
+            },
+            {
+              "position": 24,
+              "projected": "\u05de\u05db\u05d1\u05d9",
+              "seed": ".\n"
+            }
+          ],
+          "loss": 10.500212669372559
+        },
+        "cosine": {
+          "accuracy": 0.28125,
+          "ascii_fraction_of_changes": 1.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 1,
+              "projected": " setattr",
+              "seed": "fully"
+            }
+          ],
+          "loss": 9.134000778198242
+        },
+        "euclidean": {
+          "accuracy": 0.21875,
+          "ascii_fraction_of_changes": 0.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 1,
+              "projected": "\u534e\u5c14\u8857",
+              "seed": "fully"
+            }
+          ],
+          "loss": 14.227319717407227
+        },
+        "euclidean_ascii": {
+          "accuracy": 0.28125,
+          "ascii_fraction_of_changes": 1.0,
+          "changed_from_seed": 1,
+          "changed_tokens": [
+            {
+              "position": 1,
+              "projected": " setattr",
+              "seed": "fully"
+            }
+          ],
+          "loss": 9.134000778198242
+        },
+        "whitened": {
+          "accuracy": 0.25,
+          "ascii_fraction_of_changes": 0.5,
+          "changed_from_seed": 6,
+          "changed_tokens": [
+            {
+              "position": 1,
+              "projected": "Basically",
+              "seed": "fully"
+            },
+            {
+              "position": 2,
+              "projected": " ",
+              "seed": " determine"
+            },
+            {
+              "position": 5,
+              "projected": "\ufffds",
+              "seed": "'s"
+            },
+            {
+              "position": 8,
+              "projected": "\r",
+              "seed": " from"
+            },
+            {
+              "position": 12,
+              "projected": "\u05d1\u05dc\u05d4",
+              "seed": ","
+            },
+            {
+              "position": 22,
+              "projected": "\u1264",
+              "seed": " capital"
+            }
+          ],
+          "loss": 10.985799789428711
+        }
+      },
+      "run": "artifacts/parity_refactor_admm_rho1",
+      "segment_lipschitz": 242.9663543701172,
+      "soft_loss": 2.3063442707061768,
+      "target_to_token_distance_max": 15.892557144165039,
+      "target_to_token_distance_median": 10.219959259033203
+    }
+  ],
+  "proposer_edits": {
+    "ascii_fraction": 0.7264957264957265,
+    "count": 117,
+    "edits": [
+      {
+        "child": "\tlabel",
+        "child_ascii": true,
+        "child_norm_percentile": 19.741052627563477,
+        "log": "artifacts/phase1/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " label"
+      },
+      {
+        "child": "\uaf79",
+        "child_ascii": false,
+        "child_norm_percentile": 3.3295300006866455,
+        "log": "artifacts/phase1/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": "(Schedulers",
+        "child_ascii": true,
+        "child_norm_percentile": 14.145885467529297,
+        "log": "artifacts/phase1/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": "\u5b57\u6bcd",
+        "child_ascii": false,
+        "child_norm_percentile": 66.38151550292969,
+        "log": "artifacts/phase1/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " letter"
+      },
+      {
+        "child": "\u3002\n",
+        "child_ascii": false,
+        "child_norm_percentile": 10.004419326782227,
+        "log": "artifacts/phase1/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " label"
+      },
+      {
+        "child": " analsex",
+        "child_ascii": true,
+        "child_norm_percentile": 2.024232864379883,
+        "log": "artifacts/phase1/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " and"
+      },
+      {
+        "child": "main",
+        "child_ascii": true,
+        "child_norm_percentile": 47.86067199707031,
+        "log": "artifacts/phase1/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " main"
+      },
+      {
+        "child": " FROM",
+        "child_ascii": true,
+        "child_norm_percentile": 10.638269424438477,
+        "log": "artifacts/phase1/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " from"
+      },
+      {
+        "child": "only",
+        "child_ascii": true,
+        "child_norm_percentile": 44.357017517089844,
+        "log": "artifacts/phase1/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " only"
+      },
+      {
+        "child": " \u0434\u0438\u0441\u043a",
+        "child_ascii": false,
+        "child_norm_percentile": 60.96113204956055,
+        "log": "artifacts/phase1/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": "(Schedulers"
+      },
+      {
+        "child": "iges",
+        "child_ascii": true,
+        "child_norm_percentile": 97.7211685180664,
+        "log": "artifacts/phase1/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": "Nib",
+        "child_ascii": true,
+        "child_norm_percentile": 95.06111145019531,
+        "log": "artifacts/phase1/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": "\uaf79"
+      },
+      {
+        "child": "\u3918",
+        "child_ascii": false,
+        "child_norm_percentile": 2.1350412368774414,
+        "log": "artifacts/phase1/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": ","
+      },
+      {
+        "child": "\n",
+        "child_ascii": true,
+        "child_norm_percentile": 84.01060485839844,
+        "log": "artifacts/phase1/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": ","
+      },
+      {
+        "child": "\u72c1",
+        "child_ascii": false,
+        "child_norm_percentile": 16.4880313873291,
+        "log": "artifacts/phase1/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": "capital",
+        "child_ascii": true,
+        "child_norm_percentile": 77.52567291259766,
+        "log": "artifacts/phase1/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": " Verb",
+        "child_ascii": true,
+        "child_norm_percentile": 67.43550872802734,
+        "log": "artifacts/phase1/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " article"
+      },
+      {
+        "child": " vowel",
+        "child_ascii": true,
+        "child_norm_percentile": 22.39451789855957,
+        "log": "artifacts/phase1/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " letter"
+      },
+      {
+        "child": "\u6ce8\u5165",
+        "child_ascii": false,
+        "child_norm_percentile": 65.23253631591797,
+        "log": "artifacts/phase1/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": " redundancy",
+        "child_ascii": true,
+        "child_norm_percentile": 30.515193939208984,
+        "log": "artifacts/phase1/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " mapping"
+      },
+      {
+        "child": "_subject",
+        "child_ascii": true,
+        "child_norm_percentile": 59.119598388671875,
+        "log": "artifacts/phase1/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " topic"
+      },
+      {
+        "child": " wooden",
+        "child_ascii": true,
+        "child_norm_percentile": 14.031119346618652,
+        "log": "artifacts/phase1/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " label"
+      },
+      {
+        "child": ".DropDownItems",
+        "child_ascii": true,
+        "child_norm_percentile": 18.570308685302734,
+        "log": "artifacts/phase1/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": " alphabetical",
+        "child_ascii": true,
+        "child_norm_percentile": 66.64204406738281,
+        "log": "artifacts/phase1/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " letter"
+      },
+      {
+        "child": "\u8d44\u672c",
+        "child_ascii": false,
+        "child_norm_percentile": 74.61761474609375,
+        "log": "artifacts/phase1/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": " articles",
+        "child_ascii": true,
+        "child_norm_percentile": 27.041217803955078,
+        "log": "artifacts/phase1/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " article"
+      },
+      {
+        "child": "\tlabel",
+        "child_ascii": true,
+        "child_norm_percentile": 19.741052627563477,
+        "log": "artifacts/phase1/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " label"
+      },
+      {
+        "child": ")))\n",
+        "child_ascii": true,
+        "child_norm_percentile": 10.100717544555664,
+        "log": "artifacts/phase1/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " incidental"
+      },
+      {
+        "child": " capitalized",
+        "child_ascii": true,
+        "child_norm_percentile": 75.69007873535156,
+        "log": "artifacts/phase1/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": ".\n",
+        "child_ascii": true,
+        "child_norm_percentile": 13.285140991210938,
+        "log": "artifacts/phase1/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": " apost",
+        "child_ascii": true,
+        "child_norm_percentile": 50.57415771484375,
+        "log": "artifacts/phase1/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": " Care",
+        "child_ascii": true,
+        "child_norm_percentile": 38.12272262573242,
+        "log": "artifacts/phase1/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": "Care"
+      },
+      {
+        "child": "\ud83d\udd92",
+        "child_ascii": false,
+        "child_norm_percentile": 2.1706583499908447,
+        "log": "artifacts/phase1/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " ignore"
+      },
+      {
+        "child": " development",
+        "child_ascii": true,
+        "child_norm_percentile": 17.55522346496582,
+        "log": "artifacts/phase1/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": "'s"
+      },
+      {
+        "child": "\ud86d\udce7",
+        "child_ascii": false,
+        "child_norm_percentile": 5.736975193023682,
+        "log": "artifacts/phase1/admm_rho1_s0/admm_proposals.jsonl",
+        "parent": "'s"
+      },
+      {
+        "child": " city",
+        "child_ascii": true,
+        "child_norm_percentile": 12.279290199279785,
+        "log": "artifacts/phase1/admm_rho1_s0/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": "\u2019s",
+        "child_ascii": false,
+        "child_norm_percentile": 40.824337005615234,
+        "log": "artifacts/phase1/admm_rho1_s0/admm_proposals.jsonl",
+        "parent": "'s"
+      },
+      {
+        "child": " inhabited",
+        "child_ascii": true,
+        "child_norm_percentile": 48.22211837768555,
+        "log": "artifacts/phase1/admm_rho1_s0/admm_proposals.jsonl",
+        "parent": "'s"
+      },
+      {
+        "child": " ",
+        "child_ascii": true,
+        "child_norm_percentile": 84.90960693359375,
+        "log": "artifacts/phase1/admm_rho1_s0/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": "\u7f32",
+        "child_ascii": false,
+        "child_norm_percentile": 39.641719818115234,
+        "log": "artifacts/phase1/admm_rho1_s0/admm_proposals.jsonl",
+        "parent": " topic"
+      },
+      {
+        "child": " in",
+        "child_ascii": true,
+        "child_norm_percentile": 11.236503601074219,
+        "log": "artifacts/phase1/admm_rho1_s0/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": "\u68e4",
+        "child_ascii": false,
+        "child_norm_percentile": 3.273466110229492,
+        "log": "artifacts/phase1/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": "'s"
+      },
+      {
+        "child": "\ud83c\udfee",
+        "child_ascii": false,
+        "child_norm_percentile": 3.9614017009735107,
+        "log": "artifacts/phase1/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " only"
+      },
+      {
+        "child": " \ub2f9\uc2e0",
+        "child_ascii": false,
+        "child_norm_percentile": 16.398990631103516,
+        "log": "artifacts/phase1/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " incidental"
+      },
+      {
+        "child": " principalColumn",
+        "child_ascii": true,
+        "child_norm_percentile": 19.06828498840332,
+        "log": "artifacts/phase1/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " letter"
+      },
+      {
+        "child": "\n",
+        "child_ascii": true,
+        "child_norm_percentile": 84.01060485839844,
+        "log": "artifacts/phase1/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " details"
+      },
+      {
+        "child": "\tthe",
+        "child_ascii": true,
+        "child_norm_percentile": 5.231741428375244,
+        "log": "artifacts/phase1/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": "],",
+        "child_ascii": true,
+        "child_norm_percentile": 9.658143043518066,
+        "log": "artifacts/phase1/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " main"
+      },
+      {
+        "child": ".\n\n",
+        "child_ascii": true,
+        "child_norm_percentile": 13.328012466430664,
+        "log": "artifacts/phase1/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": ".\n"
+      },
+      {
+        "child": " the",
+        "child_ascii": true,
+        "child_norm_percentile": 6.1947197914123535,
+        "log": "artifacts/phase1/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": " calcium",
+        "child_ascii": true,
+        "child_norm_percentile": 13.150588035583496,
+        "log": "artifacts/phase1/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": "'s"
+      },
+      {
+        "child": "5",
+        "child_ascii": true,
+        "child_norm_percentile": 12.932928085327148,
+        "log": "artifacts/phase1/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": ","
+      },
+      {
+        "child": "(JFrame",
+        "child_ascii": true,
+        "child_norm_percentile": 15.830436706542969,
+        "log": "artifacts/phase1/admm_rho1_s2/admm_proposals.jsonl",
+        "parent": "'s"
+      },
+      {
+        "child": "\u72c1",
+        "child_ascii": false,
+        "child_norm_percentile": 16.4880313873291,
+        "log": "artifacts/phase1/admm_rho1_s2/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": " cytok",
+        "child_ascii": true,
+        "child_norm_percentile": 11.384907722473145,
+        "log": "artifacts/phase1/admm_rho1_s2/admm_proposals.jsonl",
+        "parent": "\u72c1"
+      },
+      {
+        "child": " fert",
+        "child_ascii": true,
+        "child_norm_percentile": 91.8700942993164,
+        "log": "artifacts/phase1/admm_rho1_s2/admm_proposals.jsonl",
+        "parent": "\u72c1"
+      },
+      {
+        "child": " Honolulu",
+        "child_ascii": true,
+        "child_norm_percentile": 47.7498664855957,
+        "log": "artifacts/phase1/admm_rho1_s2/admm_proposals.jsonl",
+        "parent": "\u72c1"
+      },
+      {
+        "child": "\u00b4s",
+        "child_ascii": false,
+        "child_norm_percentile": 43.022037506103516,
+        "log": "artifacts/phase1/admm_rho1_s2/admm_proposals.jsonl",
+        "parent": "'s"
+      },
+      {
+        "child": "Ubergraph",
+        "child_ascii": true,
+        "child_norm_percentile": 14.554161071777344,
+        "log": "artifacts/phase1/admm_rho1_s2/admm_proposals.jsonl",
+        "parent": "\u72c1"
+      },
+      {
+        "child": "\tlabel",
+        "child_ascii": true,
+        "child_norm_percentile": 19.741052627563477,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " label"
+      },
+      {
+        "child": " rumpe",
+        "child_ascii": true,
+        "child_norm_percentile": 2.495168685913086,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": "2",
+        "child_ascii": true,
+        "child_norm_percentile": 21.53839111328125,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": " vowel",
+        "child_ascii": true,
+        "child_norm_percentile": 22.39451789855957,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " letter"
+      },
+      {
+        "child": ":semicolon",
+        "child_ascii": true,
+        "child_norm_percentile": 32.59351348876953,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": "\tlabel"
+      },
+      {
+        "child": "Details",
+        "child_ascii": true,
+        "child_norm_percentile": 16.139118194580078,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " details"
+      },
+      {
+        "child": " it",
+        "child_ascii": true,
+        "child_norm_percentile": 9.885696411132812,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": "El",
+        "child_ascii": true,
+        "child_norm_percentile": 20.711944580078125,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": "\ub294",
+        "child_ascii": false,
+        "child_norm_percentile": 9.269654273986816,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": "Text",
+        "child_ascii": true,
+        "child_norm_percentile": 14.566692352294922,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": ",",
+        "child_ascii": true,
+        "child_norm_percentile": 53.11945724487305,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s0/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": "\u72c1",
+        "child_ascii": false,
+        "child_norm_percentile": 16.4880313873291,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": " ignoring",
+        "child_ascii": true,
+        "child_norm_percentile": 24.723474502563477,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " ignore"
+      },
+      {
+        "child": "\u7fef",
+        "child_ascii": false,
+        "child_norm_percentile": 6.229677200317383,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": "\u72c1"
+      },
+      {
+        "child": " articles",
+        "child_ascii": true,
+        "child_norm_percentile": 27.041217803955078,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " article"
+      },
+      {
+        "child": "\u87ac",
+        "child_ascii": false,
+        "child_norm_percentile": 10.450291633605957,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": "\u72c1"
+      },
+      {
+        "child": ".duration",
+        "child_ascii": true,
+        "child_norm_percentile": 35.432979583740234,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": "\u72c1"
+      },
+      {
+        "child": "letter",
+        "child_ascii": true,
+        "child_norm_percentile": 81.51345825195312,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " letter"
+      },
+      {
+        "child": "-detail",
+        "child_ascii": true,
+        "child_norm_percentile": 61.5883903503418,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s1/admm_proposals.jsonl",
+        "parent": " details"
+      },
+      {
+        "child": " determines",
+        "child_ascii": true,
+        "child_norm_percentile": 11.53199291229248,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " determine"
+      },
+      {
+        "child": "\u977a",
+        "child_ascii": false,
+        "child_norm_percentile": 42.32223129272461,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " only"
+      },
+      {
+        "child": " capitalism",
+        "child_ascii": true,
+        "child_norm_percentile": 33.97597885131836,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": "\u9762\u90e8",
+        "child_ascii": false,
+        "child_norm_percentile": 46.33639907836914,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " incidental"
+      },
+      {
+        "child": "\tlabel",
+        "child_ascii": true,
+        "child_norm_percentile": 19.741052627563477,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " label"
+      },
+      {
+        "child": "LEY",
+        "child_ascii": true,
+        "child_norm_percentile": 96.6928939819336,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " mapping"
+      },
+      {
+        "child": " Set",
+        "child_ascii": true,
+        "child_norm_percentile": 15.821203231811523,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": " capitalized",
+        "child_ascii": true,
+        "child_norm_percentile": 75.69007873535156,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": "\u3002",
+        "child_ascii": false,
+        "child_norm_percentile": 8.10220718383789,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " label"
+      },
+      {
+        "child": " apost",
+        "child_ascii": true,
+        "child_norm_percentile": 50.57415771484375,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": "\u05de\u05e9\u05db\u05e0\u05ea\u05d0",
+        "child_ascii": false,
+        "child_norm_percentile": 2.3414878845214844,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": "'s"
+      },
+      {
+        "child": " in",
+        "child_ascii": true,
+        "child_norm_percentile": 11.236503601074219,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " and"
+      },
+      {
+        "child": "\u5404\u79cd\u5404\u6837",
+        "child_ascii": false,
+        "child_norm_percentile": 69.9841079711914,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " corresponding"
+      },
+      {
+        "child": "_point",
+        "child_ascii": true,
+        "child_norm_percentile": 18.041988372802734,
+        "log": "artifacts/phase1_heldout/admm_rho0.3_s2/admm_proposals.jsonl",
+        "parent": " topic"
+      },
+      {
+        "child": "\ud86d\udce7",
+        "child_ascii": false,
+        "child_norm_percentile": 5.736975193023682,
+        "log": "artifacts/phase1_heldout/admm_rho1_s0/admm_proposals.jsonl",
+        "parent": "'s"
+      },
+      {
+        "child": " sentence",
+        "child_ascii": true,
+        "child_norm_percentile": 49.18246078491211,
+        "log": "artifacts/phase1_heldout/admm_rho1_s0/admm_proposals.jsonl",
+        "parent": "\ud86d\udce7"
+      },
+      {
+        "child": " city",
+        "child_ascii": true,
+        "child_norm_percentile": 12.279290199279785,
+        "log": "artifacts/phase1_heldout/admm_rho1_s0/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": "\uae4d",
+        "child_ascii": false,
+        "child_norm_percentile": 6.506697654724121,
+        "log": "artifacts/phase1_heldout/admm_rho1_s0/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": "(mapping",
+        "child_ascii": true,
+        "child_norm_percentile": 51.34850311279297,
+        "log": "artifacts/phase1_heldout/admm_rho1_s0/admm_proposals.jsonl",
+        "parent": " mapping"
+      },
+      {
+        "child": " theme",
+        "child_ascii": true,
+        "child_norm_percentile": 38.481529235839844,
+        "log": "artifacts/phase1_heldout/admm_rho1_s0/admm_proposals.jsonl",
+        "parent": " topic"
+      },
+      {
+        "child": "\u68e4",
+        "child_ascii": false,
+        "child_norm_percentile": 3.273466110229492,
+        "log": "artifacts/phase1_heldout/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": "'s"
+      },
+      {
+        "child": " fr\u00e6kke",
+        "child_ascii": false,
+        "child_norm_percentile": 2.369189977645874,
+        "log": "artifacts/phase1_heldout/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": "\u68e4"
+      },
+      {
+        "child": " erotiske",
+        "child_ascii": true,
+        "child_norm_percentile": 2.51627516746521,
+        "log": "artifacts/phase1_heldout/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " fr\u00e6kke"
+      },
+      {
+        "child": " CLL",
+        "child_ascii": true,
+        "child_norm_percentile": 47.26441955566406,
+        "log": "artifacts/phase1_heldout/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": "\u68e4"
+      },
+      {
+        "child": ".movie",
+        "child_ascii": true,
+        "child_norm_percentile": 18.274158477783203,
+        "log": "artifacts/phase1_heldout/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " erotiske"
+      },
+      {
+        "child": "conj",
+        "child_ascii": true,
+        "child_norm_percentile": 87.8315200805664,
+        "log": "artifacts/phase1_heldout/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": "Care"
+      },
+      {
+        "child": " in",
+        "child_ascii": true,
+        "child_norm_percentile": 11.236503601074219,
+        "log": "artifacts/phase1_heldout/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " the"
+      },
+      {
+        "child": " cap",
+        "child_ascii": true,
+        "child_norm_percentile": 80.13429260253906,
+        "log": "artifacts/phase1_heldout/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": " pornofilm",
+        "child_ascii": true,
+        "child_norm_percentile": 2.7748281955718994,
+        "log": "artifacts/phase1_heldout/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " fr\u00e6kke"
+      },
+      {
+        "child": "Only",
+        "child_ascii": true,
+        "child_norm_percentile": 24.77294158935547,
+        "log": "artifacts/phase1_heldout/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " only"
+      },
+      {
+        "child": "\u5447",
+        "child_ascii": false,
+        "child_norm_percentile": 2.4219560623168945,
+        "log": "artifacts/phase1_heldout/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " letter"
+      },
+      {
+        "child": "-capital",
+        "child_ascii": true,
+        "child_norm_percentile": 75.87805938720703,
+        "log": "artifacts/phase1_heldout/admm_rho1_s1/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": "_city",
+        "child_ascii": true,
+        "child_norm_percentile": 12.1836519241333,
+        "log": "artifacts/phase1_heldout/admm_rho1_s2/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": "\tmain",
+        "child_ascii": true,
+        "child_norm_percentile": 31.20049285888672,
+        "log": "artifacts/phase1_heldout/admm_rho1_s2/admm_proposals.jsonl",
+        "parent": " main"
+      },
+      {
+        "child": "ignore",
+        "child_ascii": true,
+        "child_norm_percentile": 39.84157180786133,
+        "log": "artifacts/phase1_heldout/admm_rho1_s2/admm_proposals.jsonl",
+        "parent": " ignore"
+      },
+      {
+        "child": "\u8456",
+        "child_ascii": false,
+        "child_norm_percentile": 7.085144519805908,
+        "log": "artifacts/phase1_heldout/admm_rho1_s2/admm_proposals.jsonl",
+        "parent": "_city"
+      },
+      {
+        "child": " Luc",
+        "child_ascii": true,
+        "child_norm_percentile": 15.381926536560059,
+        "log": "artifacts/phase1_heldout/admm_rho1_s2/admm_proposals.jsonl",
+        "parent": "\u8456"
+      },
+      {
+        "child": "capital",
+        "child_ascii": true,
+        "child_norm_percentile": 77.52567291259766,
+        "log": "artifacts/phase1_heldout/admm_rho1_s2/admm_proposals.jsonl",
+        "parent": " capital"
+      },
+      {
+        "child": " Sudoku",
+        "child_ascii": true,
+        "child_norm_percentile": 21.248178482055664,
+        "log": "artifacts/phase1_heldout/admm_rho1_s2/admm_proposals.jsonl",
+        "parent": " corresponding"
+      }
+    ],
+    "median_child_norm_percentile": 19.741052627563477
+  },
+  "random_displacement": [
+    {
+      "ascii_fraction_of_replacements": null,
+      "changed_count": 0,
+      "distinct_replacement_tokens": 0,
+      "fraction_kept_seed_token": 1.0,
+      "median_norm_percentile_of_replacements": null,
+      "radius": 1.0,
+      "top_replacements": []
+    },
+    {
+      "ascii_fraction_of_replacements": null,
+      "changed_count": 0,
+      "distinct_replacement_tokens": 0,
+      "fraction_kept_seed_token": 1.0,
+      "median_norm_percentile_of_replacements": null,
+      "radius": 3.0,
+      "top_replacements": []
+    },
+    {
+      "ascii_fraction_of_replacements": null,
+      "changed_count": 0,
+      "distinct_replacement_tokens": 0,
+      "fraction_kept_seed_token": 1.0,
+      "median_norm_percentile_of_replacements": null,
+      "radius": 5.0,
+      "top_replacements": []
+    },
+    {
+      "ascii_fraction_of_replacements": 0.9583333333333334,
+      "changed_count": 24,
+      "distinct_replacement_tokens": 19,
+      "fraction_kept_seed_token": 0.995199978351593,
+      "median_norm_percentile_of_replacements": 36.8055534362793,
+      "radius": 7.5,
+      "top_replacements": [
+        {
+          "count": 4,
+          "norm_percentile": 36.8055534362793,
+          "token": "output"
+        },
+        {
+          "count": 2,
+          "norm_percentile": 45.35758972167969,
+          "token": " Letter"
+        },
+        {
+          "count": 2,
+          "norm_percentile": 33.93310546875,
+          "token": " Output"
+        },
+        {
+          "count": 1,
+          "norm_percentile": 60.11885452270508,
+          "token": " detail"
+        },
+        {
+          "count": 1,
+          "norm_percentile": 7.497378349304199,
+          "token": "the"
+        },
+        {
+          "count": 1,
+          "norm_percentile": 27.772686004638672,
+          "token": "Label"
+        },
+        {
+          "count": 1,
+          "norm_percentile": 11.53199291229248,
+          "token": " determines"
+        },
+        {
+          "count": 1,
+          "norm_percentile": 13.465205192565918,
+          "token": "\toutput"
+        },
+        {
+          "count": 1,
+          "norm_percentile": 13.267332077026367,
+          "token": " a"
+        },
+        {
+          "count": 1,
+          "norm_percentile": 27.702770233154297,
+          "token": " Mapping"
+        }
+      ]
+    },
+    {
+      "ascii_fraction_of_replacements": 0.7727272727272727,
+      "changed_count": 264,
+      "distinct_replacement_tokens": 185,
+      "fraction_kept_seed_token": 0.9472000002861023,
+      "median_norm_percentile_of_replacements": 26.752323150634766,
+      "radius": 10.0,
+      "top_replacements": [
+        {
+          "count": 7,
+          "norm_percentile": 27.702770233154297,
+          "token": " Mapping"
+        },
+        {
+          "count": 6,
+          "norm_percentile": 57.954132080078125,
+          "token": "\u8f93\u51fa"
+        },
+        {
+          "count": 6,
+          "norm_percentile": 19.741052627563477,
+          "token": "\tlabel"
+        },
+        {
+          "count": 5,
+          "norm_percentile": 11.53199291229248,
+          "token": " determines"
+        },
+        {
+          "count": 5,
+          "norm_percentile": 47.61333084106445,
+          "token": " Capital"
+        },
+        {
+          "count": 4,
+          "norm_percentile": 27.58602523803711,
+          "token": "(output"
+        },
+        {
+          "count": 4,
+          "norm_percentile": 44.357017517089844,
+          "token": "only"
+        },
+        {
+          "count": 4,
+          "norm_percentile": 10.488546371459961,
+          "token": " Determine"
+        },
+        {
+          "count": 4,
+          "norm_percentile": 26.204877853393555,
+          "token": "Output"
+        },
+        {
+          "count": 4,
+          "norm_percentile": 31.133874893188477,
+          "token": " Details"
+        }
+      ]
+    },
+    {
+      "ascii_fraction_of_replacements": 0.7174590802805924,
+      "changed_count": 2566,
+      "distinct_replacement_tokens": 2187,
+      "fraction_kept_seed_token": 0.4867999851703644,
+      "median_norm_percentile_of_replacements": 38.09634017944336,
+      "radius": 15.0,
+      "top_replacements": [
+        {
+          "count": 11,
+          "norm_percentile": 47.61333084106445,
+          "token": " Capital"
+        },
+        {
+          "count": 11,
+          "norm_percentile": 19.741052627563477,
+          "token": "\tlabel"
+        },
+        {
+          "count": 10,
+          "norm_percentile": 36.8055534362793,
+          "token": "output"
+        },
+        {
+          "count": 10,
+          "norm_percentile": 45.35758972167969,
+          "token": " Letter"
+        },
+        {
+          "count": 9,
+          "norm_percentile": 8.221590042114258,
+          "token": "\u548c"
+        },
+        {
+          "count": 9,
+          "norm_percentile": 31.133874893188477,
+          "token": " Details"
+        },
+        {
+          "count": 8,
+          "norm_percentile": 7.497378349304199,
+          "token": "the"
+        },
+        {
+          "count": 8,
+          "norm_percentile": 57.954132080078125,
+          "token": "\u8f93\u51fa"
+        },
+        {
+          "count": 8,
+          "norm_percentile": 39.61269760131836,
+          "token": "."
+        },
+        {
+          "count": 8,
+          "norm_percentile": 47.86067199707031,
+          "token": "main"
+        }
+      ]
+    },
+    {
+      "ascii_fraction_of_replacements": 0.7019947128094208,
+      "changed_count": 4161,
+      "distinct_replacement_tokens": 3927,
+      "fraction_kept_seed_token": 0.16779999434947968,
+      "median_norm_percentile_of_replacements": 55.559879302978516,
+      "radius": 20.0,
+      "top_replacements": [
+        {
+          "count": 9,
+          "norm_percentile": 13.267332077026367,
+          "token": " a"
+        },
+        {
+          "count": 6,
+          "norm_percentile": 39.61269760131836,
+          "token": "."
+        },
+        {
+          "count": 6,
+          "norm_percentile": 84.01060485839844,
+          "token": "\n"
+        },
+        {
+          "count": 6,
+          "norm_percentile": 11.236503601074219,
+          "token": " in"
+        },
+        {
+          "count": 6,
+          "norm_percentile": 48.011714935302734,
+          "token": "label"
+        },
+        {
+          "count": 6,
+          "norm_percentile": 44.357017517089844,
+          "token": "only"
+        },
+        {
+          "count": 6,
+          "norm_percentile": 13.570075988769531,
+          "token": "4"
+        },
+        {
+          "count": 6,
+          "norm_percentile": 39.17341995239258,
+          "token": ":"
+        },
+        {
+          "count": 6,
+          "norm_percentile": 74.61761474609375,
+          "token": "\u8d44\u672c"
+        },
+        {
+          "count": 5,
+          "norm_percentile": 45.35758972167969,
+          "token": " Letter"
+        }
+      ]
+    }
+  ],
+  "seed_discrete": {
+    "accuracy": 0.25,
+    "loss": 8.748340606689453
+  },
+  "tied_input_output_embeddings": true,
+  "token_nearest_neighbor_distance": {
+    "median": 1.3710744380950928,
+    "p10": 0.9516160488128662,
+    "p90": 1.6984037160873413
+  },
+  "token_norm": {
+    "median": 1.5810694694519043,
+    "p10": 1.3272111415863037,
+    "p90": 1.7739969491958618
+  }
+}

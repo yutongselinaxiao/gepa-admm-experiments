@@ -1,0 +1,13 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,,rejected,False,0.3046875,9.258448102644559,25,True,0,0,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+2,0,1,accepted,False,0.39453125,7.705213807153337,25,True,73,27,"Carefully determines the article's main topic from the label mapping, ignore incidental details, and output靺 the corresponding capitalism letter."
+3,0,2,accepted,False,0.3203125,8.109233916106144,25,True,19,11,"Carefully determine the article's main topic from the label mapping, ignore面部 details, and output only the corresponding capital letter."
+4,0,3,accepted,False,0.31640625,8.46144377611368,25,True,12,6,"Carefully determine the article's main topic from the	label mapping, ignore incidental details, and output only the corresponding capital letter."
+5,0,,rejected,False,0.3046875,7.247881364310948,25,True,16,16,"Carefully determine the article's main topic from the labelLEY, ignore incidental details, and output only Set corresponding capital letter."
+6,0,4,accepted,False,0.328125,8.096351067389332,25,True,16,4,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capitalized letter."
+7,4,5,accepted,False,0.353515625,6.958180309080269,25,True,26,13,"Carefully determine the article's main topic from the。 mapping, ignore incidental details, and output only the corresponding capitalized letter."
+8,0,6,accepted,False,0.32421875,4.036177256775941,25,True,77,67,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding apost letter."
+9,2,7,accepted,False,0.3203125,8.109233916106144,25,True,0,0,"Carefully determine the article's main topic from the label mapping, ignore面部 details, and output only the corresponding capital letter."
+10,0,8,accepted,True,0.404296875,6.093278297733068,25,True,71,20,"Carefully determine the articleמשכנתא main topic from the label mapping, ignore incidental details, in output only the corresponding capital letter."
+11,1,9,accepted,False,0.39453125,5.930741484400258,25,True,19,19,"Carefully determines the article's main topic from the label mapping, ignore incidental details, and output靺 the各种各样 capitalism letter."
+12,6,10,accepted,False,0.314453125,4.2717225643485675,25,True,24,29,"Carefully determine the article's main_point from the label mapping, ignore incidental details, and output only the corresponding apost letter."

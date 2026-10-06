@@ -43,9 +43,9 @@ class ADMMHyperparameters:
 def build_allowed_token_ids(tokenizer: Any, embedding_rows: int) -> torch.Tensor:
     """Allow ordinary vocabulary tokens while excluding special/control tokens."""
     excluded = {int(token_id) for token_id in tokenizer.all_special_ids}
-    for token_id, token in getattr(tokenizer, "added_tokens_decoder", {}).items():
-        if bool(getattr(token, "special", False)):
-            excluded.add(int(token_id))
+    # Every added token is a control token here, including ones registered with
+    # special=False (Qwen3: <tool_call>, <think>, ...).
+    excluded.update(int(token_id) for token_id in getattr(tokenizer, "added_tokens_decoder", {}))
     allowed: list[int] = []
     upper = min(int(embedding_rows), len(tokenizer))
     for token_id in range(upper):
@@ -335,13 +335,15 @@ class ADMMRefiner:
             state.u = state.u + state.e.detach() - ez_new
         return last_task_loss, previous_z
 
-    def discrete_loss(
+    def discrete_metrics(
         self, state: ADMMState, ids: torch.Tensor, examples: Sequence[NewsExample]
-    ) -> float:
-        """Mean label cross-entropy of explicit slot IDs, scored in one forward batch."""
+    ) -> tuple[float, float]:
+        """Mean label cross-entropy and accuracy of explicit slot IDs, in one forward batch."""
         scores = self.evaluator.score_fixed_slot_ids(
             examples, state.reference_instruction, ids
-        )
+        ).detach().float().cpu()
         state.forward_calls += 1
         targets = gold_indices(examples, self.evaluator.labels, torch.device("cpu"))
-        return float(F.cross_entropy(scores.detach().float().cpu(), targets))
+        loss = float(F.cross_entropy(scores, targets))
+        accuracy = float(scores.argmax(dim=-1).eq(targets).float().mean())
+        return loss, accuracy

@@ -1,0 +1,32 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the\tlabel mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the\tlabel mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from2 label mapping, ignore incidental details, and output only the corresponding capital vowel."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the:semicolon mapping, ignore incidentalDetails, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the:semicolon mapping, ignore incidentalDetails, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from2 label mapping, ignore incidental details, and output only the corresponding capital vowel."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from2 label mapping, ignore incidental details, and output only the corresponding capital vowel."
+  },
+  {
+    "instruction": "Carefully determine it article's main topic from the label mapping, ignore incidental details, and output onlyEl corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine it article's main topic from the label mapping, ignore incidental details, and output onlyEl correspondingText letter."
+  }
+]
