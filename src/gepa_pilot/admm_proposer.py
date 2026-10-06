@@ -103,15 +103,21 @@ class ADMMProposer:
                 "e_steps": self.refiner.hp.e_steps,
                 "train_batch_size": self.refiner.hp.train_batch_size,
                 "selection_batch_size": self.selection_batch_size,
+                "projection": self.refiner.hp.projection,
+                "top_p": self.refiner.hp.top_p,
             },
         }
         try:
-            parent_ids = self.refiner.slot_ids(parent, self.reference_article)
+            encoding = self.refiner.encode(parent, self.reference_article)
         except ValueError as exc:
             return self._finish(record, parent, "parent_not_compositional", started, str(exc))
-
-        state = self.refiner.init_state(parent, parent_ids)
+        parent_ids = torch.tensor(
+            encoding.slot_ids, dtype=torch.long, device=self.refiner.evaluator.device
+        )
+        prefix_ids = tuple(encoding.prefix_ids)
+        state = self.refiner.init_state(parent, parent_ids, prefix_ids=prefix_ids)
         record["parent_slot_ids"] = parent_ids.cpu().tolist()
+        record["parent_slot_nll"] = self.refiner.slot_nll(prefix_ids, parent_ids)
         record["parent_selection_loss"], record["parent_selection_accuracy"] = (
             self.refiner.discrete_metrics(state, parent_ids, selection)
         )
@@ -173,6 +179,9 @@ class ADMMProposer:
             return self._finish(record, parent, outcome, started)
         valid = improving
         best = min(valid, key=lambda entry: (entry["selection_loss"], entry["iteration"]))
+        best["slot_nll"] = self.refiner.slot_nll(
+            prefix_ids, torch.tensor(best["slot_ids"], device=self.refiner.evaluator.device)
+        )
         record["chosen"] = best
         record["heldout_accept"] = (
             best["selection_accuracy"] >= record["parent_selection_accuracy"]
@@ -248,3 +257,40 @@ class ADMMHeldOutAcceptance:
         if self._verdict(proposal) is False:
             return "ADMM child lowered held-out accuracy relative to its parent"
         return "New subsample score not better than parent (minibatch strict improvement)"
+
+
+class PolishingReflectionLM:
+    """GEPA reflection strategy: the default reflector rewrites, then ADMM polishes the rewrite.
+
+    `inner` is GEPA's own StatelessReflectionLM, so the reflection step is identical to a
+    reflective-only run. The polish starts from the reflected text and keeps it unless an
+    ADMM iterate beats it on the proposer's held-out batch. Polish diagnostics go into the
+    proposal metadata (and the proposer's JSONL log).
+    """
+
+    def __init__(self, inner: Any, polisher: ADMMProposer) -> None:
+        self.inner = inner
+        self.polisher = polisher
+
+    def reflect(
+        self,
+        candidate: dict[str, str],
+        reflective_dataset: Mapping[str, Sequence[Mapping[str, Any]]],
+        components_to_update: list[str],
+    ) -> tuple[Any, "PolishingReflectionLM"]:
+        proposal, next_inner = self.inner.reflect(candidate, reflective_dataset, components_to_update)
+        self.inner = next_inner
+        reflected = proposal.new_texts.get("instruction")
+        if reflected is None:
+            return proposal, self
+        polished = self.polisher(
+            {"instruction": reflected}, reflective_dataset, ["instruction"]
+        )["instruction"]
+        proposal.metadata["admm_polish"] = {
+            "reflected_instruction": reflected,
+            "polished_instruction": polished,
+            "changed": polished != reflected,
+            "call_index": self.polisher.call_count - 1,
+        }
+        proposal.new_texts["instruction"] = polished
+        return proposal, self

@@ -98,3 +98,27 @@ def load_ag_news_test_split(dataset_name: str, *, allow_test: bool = False) -> l
         )
         for index, row in enumerate(dataset)
     ]
+
+
+def split_selection_report(
+    examples: Sequence[NewsExample], seed: int
+) -> tuple[list[NewsExample], list[NewsExample]]:
+    """Class-stratified half split: GEPA selects on the first half, results are reported on the second.
+
+    Reporting on examples that no selection step saw removes the best-of-k optimism that
+    arises when the same set both chooses the winning candidate and scores it.
+    """
+    by_label: dict[str, list[NewsExample]] = {}
+    for example in sorted(examples, key=lambda item: item.example_id):
+        by_label.setdefault(example.gold_label, []).append(example)
+    rng = random.Random(seed)
+    selection_ids: set[str] = set()
+    for label in sorted(by_label):
+        group = by_label[label]
+        if len(group) % 2:
+            raise ValueError(f"Class {label} has an odd number of examples; cannot halve it.")
+        rng.shuffle(group)
+        selection_ids.update(example.example_id for example in group[: len(group) // 2])
+    selection = [example for example in examples if example.example_id in selection_ids]
+    report = [example for example in examples if example.example_id not in selection_ids]
+    return selection, report

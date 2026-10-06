@@ -1,0 +1,3 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,,rejected,False,0.3046875,8.443300646428101,27,True,9,9,"Carefully analyze the article to identify the primary topic, ignoring any incidental details, and select the corresponding capital letter from the label mapping."
+2,0,1,accepted,True,0.34765625,6.1397285499574545,32,True,48,26,"Carefully identify the article's central topic by focusing on the primary subject and context, ignoring incidental details, and select the corresponding capital letter from the label mapping."

@@ -1,0 +1,17 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,,rejected,False,0.3046875,8.443300646428101,27,True,9,9,"Carefully analyze the article to identify the primary topic, ignoring any incidental details, and select the corresponding capital letter from the label mapping."
+2,0,1,accepted,True,0.34765625,6.1397285499574545,32,True,48,26,"Carefully identify the article's central topic by focusing on the primary subject and context, ignoring incidental details, and select the corresponding capital letter from the label mapping."
+3,1,,rejected,False,0.328125,6.558338883092058,40,True,14,24,"Carefully identify a blog's central theme by focusing on the primary subject and context, prioritizing the main event or issue, and ignoring incidental details. Select the corresponding capital letter from the label mapping."
+4,0,,rejected,False,0.337890625,5.337454446518965,37,True,43,26,"Carefullyclassify the article to identify the central topic, removing on the main subject and context, and select the corresponding capital letters from the label mapping, ignoring any incidental details or keywords."
+5,1,,rejected,False,0.3359375,5.638887177939783,40,True,11,17,"Carefully identify the article's center theme by getting on the primary_subject 
+
+ context, prioritizing the main event or issue, and ignoring incidental details to select the corresponding capital letter from the label mapping."
+6,1,,rejected,False,0.341796875,5.323760363276605,36,True,18,21,"Carefully identify the article's central topic by focusing on the primary subject and context, prioritizing the main events or issue, and select the corresponding capital letter from the label mapping."
+7,1,,rejected,False,0.330078125,6.363498671697012,41,True,9,18,"Carefully identify the article's central topic by means on the primary subject and context, prioritizing the main event or issue, and ignoring incidental details, then select the corresponding capital letters from the label mapping."
+8,0,,rejected,False,0.291015625,7.249464173322637,38,True,5,12,"Carefully analyze the article to identify the primary subject, focusing on human main theme and context, and select the corresponding capital letter from the label mapping, ignoring any incidental details or unrelated information."
+9,1,2,accepted,False,0.330078125,7.4341222714640685,41,True,8,17,"Carefully identify the articles's central topic by focusing on the primary subject and context, prioritizing the main event or issue, and ignoring incidental details, then select the corresponding capital letter from the label mapping."
+10,1,,rejected,False,0.3515625,5.766873250637235,36,True,12,10,"Carefully identify the article's central topic by focusing on the primary subject and context, prioritizing a main event or issue, and select the corresponding capital letter from the label mapping."
+11,1,3,accepted,False,0.291015625,4.342910489902519,36,True,40,69,"Carefully identify the article's central topic.
+
+ focusing on yoga primary subject and context, distinguishing it from incidental details and keywords, and select the corresponding capital letter from the label mapping."
+12,1,,rejected,False,0.349609375,6.123534225566482,32,True,7,6,"Carefully identify the article's central theme by focusing on the primary subject and context, ignoring incidental details, and select the corresponding capital letter from the label mapping."

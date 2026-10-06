@@ -14,6 +14,7 @@ import torch
 import transformers
 import gepa
 from gepa import optimize
+from gepa.proposer.reflective_mutation.reflection_lm import StatelessReflectionLM
 
 from .admm import (
     ADMMHyperparameters,
@@ -21,9 +22,9 @@ from .admm import (
     build_allowed_token_ids,
     hyperparameters_dict,
 )
-from .admm_proposer import ADMMHeldOutAcceptance, ADMMProposer
+from .admm_proposer import ADMMHeldOutAcceptance, ADMMProposer, PolishingReflectionLM
 from .config import PilotConfig
-from .data import NewsExample, load_examples_json
+from .data import NewsExample, load_examples_json, split_selection_report
 from .evaluator import CommonEvaluator, EvaluationSummary
 from .gepa_adapter import AGNewsGEPAAdapter
 from .gepa_report import write_gepa_report
@@ -119,7 +120,18 @@ def main() -> None:
         default=0,
         help="Offsets the GEPA, reflection and ADMM seeds; the data split is unchanged.",
     )
-    parser.add_argument("--proposer", choices=("reflective", "admm"), default="reflective")
+    parser.add_argument(
+        "--selection-split",
+        action="store_true",
+        help="GEPA selects on half of validation; the other half is only used for reporting.",
+    )
+    parser.add_argument(
+        "--proposer", choices=("reflective", "admm", "reflect_polish"), default="reflective"
+    )
+    parser.add_argument(
+        "--admm-projection", choices=("euclidean", "context_top_p"), default="euclidean"
+    )
+    parser.add_argument("--admm-top-p", type=float, default=0.9)
     parser.add_argument("--admm-rho", type=float, default=1.0)
     parser.add_argument("--admm-learning-rate", type=float, default=0.005)
     parser.add_argument("--admm-outer-iterations", type=int, default=10)
@@ -140,6 +152,11 @@ def main() -> None:
     optimization_seed = config.data.seed + 100_000 * args.run_seed
     train = load_examples_json(args.train)
     validation = load_examples_json(args.validation)
+    gepa_valset, report_set = validation, []
+    if args.selection_split:
+        if args.skip_posthoc_audit:
+            raise ValueError("--selection-split reports through the post-hoc audit; do not skip it.")
+        gepa_valset, report_set = split_selection_report(validation, seed=config.data.seed)
     if any(item.example_id.startswith("official-test:") for item in train + validation):
         raise AssertionError("GEPA optimization must not receive official test examples.")
 
@@ -166,7 +183,7 @@ def main() -> None:
     )
     reflector: LocalQwenReflectionLM | None = None
     admm_proposer: ADMMProposer | None = None
-    if args.proposer == "reflective":
+    if args.proposer in ("reflective", "reflect_polish"):
         reflector = LocalQwenReflectionLM(
             evaluator.model,
             evaluator.tokenizer,
@@ -178,7 +195,7 @@ def main() -> None:
             "reflection_lm": reflector,
             "reflection_prompt_template": REFLECTION_PROMPT_TEMPLATE,
         }
-    else:
+    if args.proposer in ("admm", "reflect_polish"):
         admm_hp = ADMMHyperparameters(
             rho=args.admm_rho,
             learning_rate=args.admm_learning_rate,
@@ -186,6 +203,8 @@ def main() -> None:
             e_steps=args.admm_e_steps,
             train_batch_size=args.admm_train_batch_size,
             evaluation_batch_size=args.evaluation_batch_size,
+            projection=args.admm_projection,
+            top_p=args.admm_top_p,
         )
         embedding_rows = evaluator.model.get_input_embeddings().weight.shape[0]
         admm_proposer = ADMMProposer(
@@ -199,7 +218,15 @@ def main() -> None:
             seed=optimization_seed + 2000,
             log_path=run_dir / "admm_proposals.jsonl",
         )
-        proposal_kwargs = {"custom_candidate_proposer": admm_proposer}
+        if args.proposer == "admm":
+            proposal_kwargs = {"custom_candidate_proposer": admm_proposer}
+        else:
+            proposal_kwargs = {
+                "reflection_strategy": PolishingReflectionLM(
+                    StatelessReflectionLM(reflector, REFLECTION_PROMPT_TEMPLATE),
+                    admm_proposer,
+                )
+            }
     acceptance_criterion: Any = "strict_improvement"
     if admm_proposer is not None and args.admm_acceptance == "heldout":
         acceptance_criterion = ADMMHeldOutAcceptance(admm_proposer)
@@ -227,6 +254,9 @@ def main() -> None:
         },
         "train_size": len(train),
         "validation_size": len(validation),
+        "selection_split": args.selection_split,
+        "gepa_valset_size": len(gepa_valset),
+        "report_set_size": len(report_set),
         "official_test_examples_present": False,
         "proposal_cap": args.proposals,
         "reflection_minibatch_size": args.reflection_minibatch_size,
@@ -238,7 +268,7 @@ def main() -> None:
         "optimization_seed": optimization_seed,
         "reflection_model": (
             "same frozen local Qwen checkpoint as task model"
-            if args.proposer == "reflective"
+            if reflector is not None
             else None
         ),
     }
@@ -258,7 +288,7 @@ def main() -> None:
     result = optimize(
         seed_candidate={"instruction": config.prompt.seed_instruction},
         trainset=ExampleDataLoader(train),
-        valset=ExampleDataLoader(validation),
+        valset=ExampleDataLoader(gepa_valset),
         adapter=adapter,
         **proposal_kwargs,
         candidate_selection_strategy="pareto",
@@ -363,6 +393,22 @@ def main() -> None:
         "best_candidate_idx": best_idx,
         "best_instruction": best_instruction,
         "best_validation_accuracy": result.val_aggregate_scores[best_idx],
+        "best_validation_accuracy_scope": "selection half" if args.selection_split else "full validation",
+        "report_half": (
+            {
+                "ids": [example.example_id for example in report_set],
+                "best_accuracy": sum(
+                    audit_cache[best_instruction]["correct_by_id"][example.example_id]
+                    for example in report_set
+                ) / len(report_set),
+                "seed_accuracy": sum(
+                    audit_cache[config.prompt.seed_instruction]["correct_by_id"][example.example_id]
+                    for example in report_set
+                ) / len(report_set),
+            }
+            if args.selection_split
+            else None
+        ),
         "all_accepted_candidates": result.candidates,
         "accepted_candidate_parents": result.parents,
         "accepted_candidate_validation_accuracy": result.val_aggregate_scores,
@@ -382,6 +428,11 @@ def main() -> None:
     print(
         f"DONE proposals={tracker.proposal_count}, accepted={len(result.candidates) - 1}, "
         f"best_val_accuracy={result.val_aggregate_scores[best_idx]:.4f}"
+        + (
+            f", report_half_accuracy={output['report_half']['best_accuracy']:.4f}"
+            if output["report_half"]
+            else ""
+        )
     )
     print(f"WROTE {output_path}")
 

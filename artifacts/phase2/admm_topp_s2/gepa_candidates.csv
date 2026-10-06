@@ -1,0 +1,13 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,,rejected,False,0.3046875,9.258448102644559,25,True,0,0,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+2,0,1,accepted,True,0.388671875,6.7682931472130985,25,True,71,28,"Carefully determine the job's right topic from the label mapping, ignore incidental details, for output only the corresponding capital letter."
+3,1,2,accepted,False,0.375,5.257438118350739,25,True,68,75,"Carefully Identify: job's right topic from the label mapping, ignore incidental details, seek evidence only the prerequisite what letter."
+4,2,,rejected,False,0.431640625,5.135286770648003,25,True,52,23,"Carefully Identify: job's right topic from the label mapping, ignore incidental details, seek evidence only the addressing what letter."
+5,2,,rejected,False,0.408203125,5.032465053081907,25,True,54,37,"Carefully Identify: job's right pursuit from the label mapping, ignore incidental details, seek evidence only the prerequisite what letter."
+6,2,3,accepted,False,0.39453125,5.201713161448392,25,True,46,36,"Carefully Identify: job's right relevance from the label mapping, ignore incidental details, seek evidence only the prerequisite what letter."
+7,3,4,accepted,False,0.39453125,5.201713161448392,25,True,0,0,"Carefully Identify: job's right relevance from the label mapping, ignore incidental details, seek evidence only the prerequisite what letter."
+8,1,5,accepted,False,0.396484375,5.2170673167282136,25,True,34,30,"Carefully determine the job's right topic area the label mapping  ignore incidental details, for output only the corresponding capital letters."
+9,5,6,accepted,False,0.404296875,4.150432289665936,25,True,36,32,"Carefully place each job's right topic area the label mapping  ignore incidental details, for output only the corresponding capital letters."
+10,5,,rejected,False,0.34375,4.457272627359973,25,True,29,56,"Carefully determine the job's right topic area the label mapping  tool incidental details, for job only the correspond capital letters."
+11,2,,rejected,False,0.375,4.950038386941202,25,True,37,37,"Carefully Identify: cigarette's right topic from the label mapping, ignore incidental details, seek evidence only the prerequisite what letter."
+12,2,7,accepted,False,0.396484375,5.092015319412665,25,True,22,11,"Carefully Identify: job's right topic from the label mapping, ignore incidental details, seek evidence only the prerequisites what letter."

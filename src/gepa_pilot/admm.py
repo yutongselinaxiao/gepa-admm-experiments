@@ -23,6 +23,12 @@ class ADMMHyperparameters:
     evaluation_batch_size: int = 32
     validation_frequency: int = 5
     projection_chunk_size: int = 16384
+    # "euclidean": nearest allowed token at each position independently.
+    # "context_top_p": left to right, nearest token among the nucleus (top_p) of the
+    # LM's next-token distribution given the prompt prefix and the tokens already
+    # projected, plus the starting token at that position.
+    projection: str = "euclidean"
+    top_p: float = 0.9
 
     def validate(self) -> None:
         numeric_positive = {
@@ -38,6 +44,10 @@ class ADMMHyperparameters:
         invalid = [name for name, value in numeric_positive.items() if value <= 0]
         if invalid:
             raise ValueError(f"ADMM hyperparameters must be positive: {invalid}")
+        if self.projection not in {"euclidean", "context_top_p"}:
+            raise ValueError(f"Unknown projection: {self.projection}")
+        if not 0.0 < self.top_p <= 1.0:
+            raise ValueError("top_p must be in (0, 1].")
 
 
 def build_allowed_token_ids(tokenizer: Any, embedding_rows: int) -> torch.Tensor:
@@ -259,6 +269,7 @@ class ADMMState:
     z: torch.Tensor
     u: torch.Tensor
     optimizer: torch.optim.Optimizer
+    prefix_ids: tuple[int, ...] | None = None
     forward_calls: int = 0
     backward_calls: int = 0
 
@@ -281,14 +292,29 @@ class ADMMRefiner:
         self.hp = hyperparameters
         self.allowed_token_ids = allowed_token_ids
         self.embedding_weight = evaluator.model.get_input_embeddings().weight
+        self.allowed_mask = torch.zeros(
+            self.embedding_weight.shape[0], dtype=torch.bool, device=evaluator.device
+        )
+        self.allowed_mask[allowed_token_ids.to(evaluator.device)] = True
 
-    def slot_ids(self, instruction: str, reference_article: str) -> torch.Tensor:
+    def encode(self, instruction: str, reference_article: str) -> Any:
         encoding = self.evaluator.prompt_builder.encode(reference_article, instruction)
         if not encoding.compositional:
             raise ValueError("Instruction does not tokenize compositionally inside the prompt.")
+        return encoding
+
+    def slot_ids(self, instruction: str, reference_article: str) -> torch.Tensor:
+        encoding = self.encode(instruction, reference_article)
         return torch.tensor(encoding.slot_ids, dtype=torch.long, device=self.evaluator.device)
 
-    def init_state(self, instruction: str, initial_ids: torch.Tensor) -> ADMMState:
+    def init_state(
+        self,
+        instruction: str,
+        initial_ids: torch.Tensor,
+        prefix_ids: Sequence[int] | None = None,
+    ) -> ADMMState:
+        if self.hp.projection == "context_top_p" and prefix_ids is None:
+            raise ValueError("context_top_p projection needs the prompt prefix IDs.")
         e = (
             self.embedding_weight.index_select(0, initial_ids)
             .detach()
@@ -303,6 +329,7 @@ class ADMMRefiner:
             z=initial_ids.clone(),
             u=torch.zeros_like(e),
             optimizer=torch.optim.Adam([e], lr=self.hp.learning_rate),
+            prefix_ids=None if prefix_ids is None else tuple(int(i) for i in prefix_ids),
         )
 
     def step(self, state: ADMMState, batch: Sequence[NewsExample]) -> tuple[float, torch.Tensor]:
@@ -325,15 +352,60 @@ class ADMMRefiner:
 
         previous_z = state.z.clone()
         with torch.no_grad():
-            state.z = nearest_embedding_token_ids(
-                state.e.detach() + state.u,
+            state.z = self.project(state, state.e.detach() + state.u)
+            ez_new = self.embedding_weight.index_select(0, state.z).detach().float()
+            state.u = state.u + state.e.detach() - ez_new
+        return last_task_loss, previous_z
+
+    def project(self, state: ADMMState, targets: torch.Tensor) -> torch.Tensor:
+        if self.hp.projection == "euclidean":
+            return nearest_embedding_token_ids(
+                targets,
                 self.embedding_weight,
                 self.allowed_token_ids,
                 chunk_size=self.hp.projection_chunk_size,
             )
-            ez_new = self.embedding_weight.index_select(0, state.z).detach().float()
-            state.u = state.u + state.e.detach() - ez_new
-        return last_task_loss, previous_z
+        return self._project_context_top_p(state, targets)
+
+    @torch.inference_mode()
+    def _project_context_top_p(self, state: ADMMState, targets: torch.Tensor) -> torch.Tensor:
+        """Sequential nucleus-constrained projection; one cached forward step per slot token."""
+        model = self.evaluator.model
+        device = self.evaluator.device
+        prefix = torch.tensor([state.prefix_ids], dtype=torch.long, device=device)
+        output = model(input_ids=prefix, use_cache=True)
+        state.forward_calls += 1
+        past, logits = output.past_key_values, output.logits[0, -1]
+        chosen: list[int] = []
+        for position in range(targets.shape[0]):
+            probabilities = logits.float().softmax(dim=-1)
+            sorted_probabilities, sorted_ids = probabilities.sort(descending=True)
+            in_nucleus = (sorted_probabilities.cumsum(dim=0) - sorted_probabilities) < self.hp.top_p
+            candidates = sorted_ids[in_nucleus]
+            candidates = candidates[self.allowed_mask[candidates]]
+            candidates = torch.unique(
+                torch.cat((candidates, state.initial_ids[position : position + 1].to(device)))
+            )
+            vectors = self.embedding_weight.index_select(0, candidates).float()
+            distances = (vectors - targets[position].float()).square().sum(dim=1)
+            token = candidates[distances.argmin()]
+            chosen.append(int(token))
+            output = model(input_ids=token.view(1, 1), past_key_values=past, use_cache=True)
+            past, logits = output.past_key_values, output.logits[0, -1]
+        return torch.tensor(chosen, dtype=torch.long, device=device)
+
+    @torch.inference_mode()
+    def slot_nll(self, prefix_ids: Sequence[int], ids: torch.Tensor) -> float:
+        """Total LM negative log-likelihood of the slot tokens given the prompt prefix."""
+        full = torch.tensor(
+            [list(prefix_ids) + [int(i) for i in ids.tolist()]],
+            dtype=torch.long,
+            device=self.evaluator.device,
+        )
+        log_probs = self.evaluator.model(input_ids=full).logits[0].float().log_softmax(dim=-1)
+        start = len(prefix_ids)
+        positions = torch.arange(start - 1, full.shape[1] - 1, device=full.device)
+        return float(-log_probs[positions, full[0, start:]].sum())
 
     def discrete_metrics(
         self, state: ADMMState, ids: torch.Tensor, examples: Sequence[NewsExample]
