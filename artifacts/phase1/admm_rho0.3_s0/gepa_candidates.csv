@@ -1,0 +1,15 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,,rejected,False,0.31640625,8.46144377611368,25,True,12,6,"Carefully determine the article's main topic from the	label mapping, ignore incidental details, and output only the corresponding capital letter."
+2,0,1,accepted,True,0.34375,6.910871211564455,25,True,33,13,"Carefully determine꽹 article's main topic from the label mapping, ignore incidental details, and output only(Schedulers corresponding capital字母."
+3,1,,rejected,True,0.34375,6.910871211564455,25,True,0,0,"Carefully determine꽹 article's main topic from the label mapping, ignore incidental details, and output only(Schedulers corresponding capital字母."
+4,0,,rejected,False,0.359375,6.745651443441241,25,True,43,15,"Carefully determine the article's main topic from the。
+ mapping, ignore incidental details, analsex output only the corresponding capital letter."
+5,1,,rejected,False,0.33984375,7.0041844126373585,25,True,9,11,"Carefully determine꽹 article'smain topic from the label mapping, ignore incidental details, and output only(Schedulers corresponding capital字母."
+6,1,,rejected,False,0.35546875,5.567770422374728,25,True,21,15,"Carefully determine꽹 article's main topic FROM the label mapping, ignore incidental details, and outputonly(Schedulers corresponding capital字母."
+7,1,,rejected,False,0.359375,6.476331682426336,25,True,43,35,"Carefully determine꽹 article's main topic from the label mapping, ignore incidental details, and output only диск corresponding capital字母."
+8,0,,rejected,False,0.3046875,8.309114777583467,25,True,5,5,"Carefully determine the article's main topic fromiges label mapping, ignore incidental details, and output only the corresponding capital letter."
+9,1,,rejected,False,0.357421875,6.624484066926689,25,True,15,8,"Carefully determineNib article's main topic from the label mapping, ignore incidental details, and output only(Schedulers corresponding capital字母."
+10,0,,rejected,False,0.3046875,9.258448102644559,25,True,0,0,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+11,0,,rejected,False,0.322265625,8.317345172848906,25,True,18,9,"Carefully determine the article's main topic from the label mapping㤘 ignore incidental details, and output only the corresponding capital letter."
+12,0,,rejected,False,0.314453125,9.281511588487295,25,True,8,3,"Carefully determine the article's main topic from the label mapping
+ ignore incidental details, and output only the corresponding capital letter."

@@ -1,0 +1,13 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,,rejected,False,0.337890625,7.594647726737316,25,True,39,22,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding狁 letter."
+2,0,,rejected,False,0.298828125,8.59957609927406,25,True,4,7,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the correspondingcapital letter."
+3,0,,rejected,False,0.345703125,7.720341609671329,25,True,44,23,"Carefully determine the Verb's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+4,0,,rejected,True,0.3046875,9.258448102644559,25,True,0,0,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+5,0,1,accepted,False,0.296875,5.435964023413671,25,True,20,24,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital vowel."
+6,0,,rejected,True,0.3046875,9.258448102644559,25,True,0,0,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+7,1,,rejected,False,0.318359375,4.734195739550005,25,True,83,72,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding注入 vowel."
+8,1,,rejected,False,0.275390625,5.325426668891802,25,True,6,17,"Carefully determine the article's main topic from the label redundancy, ignore incidental details, and output only the corresponding capital vowel."
+9,0,,rejected,False,0.2890625,7.787351450835934,25,True,4,12,"Carefully determine the article's main_subject from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+10,1,,rejected,False,0.30078125,4.196177563208197,25,True,41,39,"Carefully determine the article's main topic from the wooden mapping, ignore incidental details, and output only the corresponding capital vowel."
+11,1,,rejected,False,0.296875,5.435964023413671,25,True,0,0,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital vowel."
+12,0,,rejected,False,0.35546875,5.841709499850928,25,True,43,17,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding.DropDownItems alphabetical."

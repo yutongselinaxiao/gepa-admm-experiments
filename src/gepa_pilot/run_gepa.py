@@ -113,6 +113,12 @@ def main() -> None:
     parser.add_argument("--evaluation-batch-size", type=int, default=32)
     parser.add_argument("--reflection-max-new-tokens", type=int, default=192)
     parser.add_argument("--skip-posthoc-audit", action="store_true")
+    parser.add_argument(
+        "--run-seed",
+        type=int,
+        default=0,
+        help="Offsets the GEPA, reflection and ADMM seeds; the data split is unchanged.",
+    )
     parser.add_argument("--proposer", choices=("reflective", "admm"), default="reflective")
     parser.add_argument("--admm-rho", type=float, default=1.0)
     parser.add_argument("--admm-learning-rate", type=float, default=0.005)
@@ -125,6 +131,7 @@ def main() -> None:
     if args.proposals < 1 or args.reflection_minibatch_size < 1:
         raise ValueError("Proposal and reflection minibatch counts must be positive.")
     config = PilotConfig.from_yaml(args.config)
+    optimization_seed = config.data.seed + 100_000 * args.run_seed
     train = load_examples_json(args.train)
     validation = load_examples_json(args.validation)
     if any(item.example_id.startswith("official-test:") for item in train + validation):
@@ -158,7 +165,7 @@ def main() -> None:
             evaluator.model,
             evaluator.tokenizer,
             device=config.model.device,
-            seed=config.data.seed + 1000,
+            seed=optimization_seed + 1000,
             max_new_tokens=args.reflection_max_new_tokens,
         )
         proposal_kwargs: dict[str, Any] = {
@@ -183,7 +190,7 @@ def main() -> None:
             ),
             train,
             selection_batch_size=args.admm_selection_batch_size,
-            seed=config.data.seed + 2000,
+            seed=optimization_seed + 2000,
             log_path=run_dir / "admm_proposals.jsonl",
         )
         proposal_kwargs = {"custom_candidate_proposer": admm_proposer}
@@ -218,6 +225,8 @@ def main() -> None:
         "use_merge": False,
         "frontier_type": "instance",
         "proposer": args.proposer,
+        "run_seed": args.run_seed,
+        "optimization_seed": optimization_seed,
         "reflection_model": (
             "same frozen local Qwen checkpoint as task model"
             if args.proposer == "reflective"
@@ -254,7 +263,7 @@ def main() -> None:
         track_best_outputs=True,
         display_progress_bar=False,
         cache_evaluation=True,
-        seed=config.data.seed,
+        seed=optimization_seed,
         raise_on_exception=True,
         val_evaluation_policy="full_eval",
         acceptance_criterion="strict_improvement",

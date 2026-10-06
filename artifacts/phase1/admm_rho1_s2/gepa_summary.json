@@ -1,0 +1,59 @@
+{
+  "accepted_proposal_count": 1,
+  "all_proposals_tokenizer_compositional": true,
+  "gepa_selected": {
+    "candidate_idx": 1,
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding\u72c1 letter.",
+    "is_seed": false,
+    "validation_accuracy": 0.337890625,
+    "validation_mean_loss": 7.594647726737316
+  },
+  "interpretation": "GEPA-selected and post-hoc-audit-best are reported separately. The post-hoc audit is exploratory and does not retroactively change GEPA acceptance.",
+  "posthoc_audit_best": {
+    "accuracy_gain_over_seed": 0.076171875,
+    "errors_fixed_vs_parent": 38,
+    "gepa_statuses": [
+      "rejected"
+    ],
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding Honolulu letter.",
+    "mean_loss_change_from_seed": -3.78034396623094,
+    "new_errors_vs_parent": 16,
+    "per_class_accuracy": {
+      "A": 0.796875,
+      "B": 0.1640625,
+      "C": 0.015625,
+      "D": 0.546875
+    },
+    "prediction_counts": {
+      "A": 280,
+      "B": 49,
+      "C": 3,
+      "D": 180
+    },
+    "proposal_numbers": [
+      10
+    ],
+    "validation_accuracy": 0.380859375,
+    "validation_mean_loss": 5.478104136413619
+  },
+  "proposal_count": 12,
+  "rejected_proposal_count": 11,
+  "seed": {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+    "per_class_accuracy": {
+      "A": 0.984375,
+      "B": 0.0703125,
+      "C": 0.015625,
+      "D": 0.1484375
+    },
+    "prediction_counts": {
+      "A": 460,
+      "B": 9,
+      "C": 2,
+      "D": 41
+    },
+    "validation_accuracy": 0.3046875,
+    "validation_mean_loss": 9.258448102644559
+  },
+  "unique_proposal_text_count": 7
+}
