@@ -1,0 +1,53 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 6532.66it/s]
+Iteration 0: Base program full valset score: 0.359375 over 384 / 384 examples
+Iteration 1: Selected program 0 score: 0.359375
+Iteration 1: Proposed new text for instruction: Carefully analyze the text to identify the primary emotion expressed, considering both dominant and incidental elements, and output the corresponding capital letter from the label mapping.
+Iteration 1: New subsample score 0.0 is not better than old score 0.0, skipping
+Iteration 2: Selected program 0 score: 0.359375
+Iteration 2: Proposed new text for instruction: Carefully identify the dominant emotion expressed by the writer, considering the context and primary sentiment, and output the corresponding capital letter from the label mapping.
+Iteration 2: New subsample score 3.0 is not better than old score 3.0, skipping
+Iteration 3: Selected program 0 score: 0.359375
+Iteration 3: Proposed new text for instruction: Carefully analyze the text for the primary emotion conveyed, prioritizing the dominant sentiment over incidental details, and select the corresponding capital letter from the label mapping.
+Iteration 3: New subsample score 3.0 is not better than old score 4.0, skipping
+Iteration 4: Selected program 0 score: 0.359375
+Iteration 4: Proposed new text for instruction: Carefully analyze the text to identify the primary emotion expressed, considering context and dominant sentiment, and output the corresponding capital letter from the label mapping.
+Iteration 4: New subsample score 3.0 is not better than old score 3.0, skipping
+Iteration 5: Selected program 0 score: 0.359375
+Iteration 5: Proposed new text for instruction: Carefully analyze the writer's primary emotional tone by identifying the dominant sentiment from the label mapping, considering context and intensity, and output the corresponding capital letter.
+Iteration 5: New subsample score 2.0 is not better than old score 2.0, skipping
+Iteration 6: Selected program 0 score: 0.359375
+Iteration 6: Proposed new text for instruction: Carefully analyze the text to identify the primary emotion expressed, considering context and tone, and select the corresponding capital letter from the label mapping.
+Iteration 6: New subsample score 1.0 is not better than old score 2.0, skipping
+Iteration 7: Selected program 0 score: 0.359375
+Iteration 7: Proposed new text for instruction: Carefully analyze the primary emotional tone of the text, prioritizing the dominant sentiment over incidental details, and select the corresponding capital letter from the label mapping.
+Iteration 7: New subsample score 4.0 is not better than old score 4.0, skipping
+Iteration 8: Selected program 0 score: 0.359375
+Iteration 8: Proposed new text for instruction: Carefully analyze the text to identify the primary emotion conveyed by the writer, considering context and tone, and output the corresponding capital letter from the label mapping.
+Iteration 8: New subsample score 1.0 is not better than old score 2.0, skipping
+Iteration 9: Selected program 0 score: 0.359375
+Iteration 9: Proposed new text for instruction: Carefully identify the primary emotion conveyed by the writer, considering context and tone, and select the corresponding capital letter from the label mapping.
+Iteration 9: New subsample score 4.0 is not better than old score 4.0, skipping
+Iteration 10: Selected program 0 score: 0.359375
+Iteration 10: Proposed new text for instruction: Carefully identify the primary emotion conveyed by the writer, considering the dominant sentiment from the text, and output the corresponding capital letter from the label mapping.
+Iteration 10: New subsample score 4.0 is not better than old score 4.0, skipping
+Iteration 11: Selected program 0 score: 0.359375
+Iteration 11: Proposed new text for instruction: Carefully identify the primary emotion conveyed by the writer, considering the context and dominant expression, while ignoring incidental details and keywords, and output the corresponding capital letter.
+Iteration 11: New subsample score 4.0 is not better than old score 4.0, skipping
+Iteration 12: Selected program 0 score: 0.359375
+Iteration 12: Proposed new text for instruction: Carefully analyze the text to identify the primary emotion conveyed, prioritizing the dominant sentiment over incidental details, and output the corresponding capital letter from the label mapping.
+Iteration 12: New subsample score 2.0 is not better than old score 2.0, skipping
+AUDIT 1/13
+AUDIT 2/13
+AUDIT 3/13
+AUDIT 4/13
+AUDIT 5/13
+AUDIT 6/13
+AUDIT 7/13
+AUDIT 8/13
+AUDIT 9/13
+AUDIT 10/13
+AUDIT 11/13
+AUDIT 12/13
+AUDIT 13/13
+DONE proposals=12, accepted=0, best_val_accuracy=0.3594, report_half_accuracy=0.3594
+WROTE artifacts/phase4_emotion/reflective_p12_s1/gepa_result.json

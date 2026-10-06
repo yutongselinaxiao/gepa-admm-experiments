@@ -1,0 +1,17 @@
+[
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully analyze the text to identify the primary emotion expressed, considering the context and tone, and output the corresponding capital letter from the label mapping."
+  },
+  {
+    "instruction": "Carefully analyze the text to identify the primary emotion conveyed by the writer, considering both explicit and implicit expressions, and output the corresponding capital letter from the label mapping."
+  },
+  {
+    "instruction": "Carefully analyze the text to identify the primary emotion conveyed by the writer, focusing on the dominant sentiment expressed through context and tone, while distinguishing between explicit and implicit expressions, and output the corresponding capital letter from the label mapping."
+  },
+  {
+    "instruction": "Carefully analyze the text to identify the primary emotion expressed, considering context and dominant themes, and output the corresponding capital letter from the label mapping."
+  }
+]

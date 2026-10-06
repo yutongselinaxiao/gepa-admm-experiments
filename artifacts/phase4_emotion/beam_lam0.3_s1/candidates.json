@@ -1,0 +1,38 @@
+[
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses from the label mapping: ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses from the following mapping: ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses and the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses from the following mapping: ignore these details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the primary emotion the writer expresses from the label mapping: ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the label capital letter."
+  },
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses from the following mapping: ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses from the following mapping: ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Pleasefully determine the main emotion the writer expresses and the label mapping, and provide details, and output only the corresponding capital letters."
+  },
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses from the label mapping: ignore polarity details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses in the label mapping, ignore polarity and, and output only the corresponding capital letter."
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully analyze the text to identify the primary emotion conveyed, considering both contextual and linguistic cues, and select the corresponding capital letter from the label mapping."
+  },
+  {
+    "instruction": "Carefully analyze the text to identify the primary emotion expressed by the writer, considering context and tone, and output the corresponding capital letter from the label mapping."
+  },
+  {
+    "instruction": "Carefully analyze the text to identify the primary emotion expressed by the writer, focusing on the dominant sentiment and context, and output the corresponding capital letter from the label mapping."
+  },
+  {
+    "instruction": "Carefully analyze the text to identify the primary emotion expressed by the writer, focusing on the dominant sentiment and context, and output the corresponding capital letter from the label mapping."
+  },
+  {
+    "instruction": "Carefully analyze the text to identify the primary emotion expressed, considering context and tone, and select the corresponding capital letter from the label mapping."
+  },
+  {
+    "instruction": "Carefully analyze the text to identify the primary emotion expressed by the writer, focusing on the dominant sentiment and context, and output the corresponding capital letter from the label mapping, considering both explicit emotional expressions and contextual cues."
+  },
+  {
+    "instruction": "Carefully analyze the text to identify the primary emotion expressed by the writer, focusing on the dominant sentiment and context, and output the corresponding capital letter from the label mapping, distinguishing between explicit emotional expressions and incidental keywords or phrases."
+  },
+  {
+    "instruction": "Carefully identify the dominant emotion expressed by the writer, considering the context and tone, and output the corresponding capital letter from the label mapping."
+  }
+]

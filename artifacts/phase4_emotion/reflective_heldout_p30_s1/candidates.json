@@ -1,0 +1,29 @@
+[
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully analyze the text to identify the primary emotion expressed, considering both dominant and incidental elements, and output the corresponding capital letter from the label mapping."
+  },
+  {
+    "instruction": "Carefully analyze the writer's primary emotional tone by identifying the dominant sentiment from the label mapping, considering context and intensity, and output the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully identify the primary emotion conveyed by the writer, considering the context and dominant expression, while ignoring incidental details and keywords, and output the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully analyze the writer's dominant expression and context, focusing on the primary emotional tone, while ignoring incidental details and keywords, and output the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully analyze the writer's dominant expression and context, focusing on the primary emotional tone, while distinguishing between incidental details and keywords, and output the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully analyze the writer's expression and context to determine the primary emotion, prioritizing dominant sentiment over incidental details or keywords, and output the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully analyze the writer's expression and context to identify the primary emotion, prioritizing dominant sentiment over incidental details or keywords, and output the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully analyze the text to identify the primary emotion expressed, considering context and dominant sentiment, and output the corresponding capital letter from the label mapping."
+  }
+]
