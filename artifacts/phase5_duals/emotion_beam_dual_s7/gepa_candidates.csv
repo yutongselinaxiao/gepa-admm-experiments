@@ -1,0 +1,20 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,,rejected,False,0.3567708333333333,6.770957654181598,26,True,10,12,"Carefully determine the main emotion the writer expresses from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+2,0,1,accepted,False,0.3567708333333333,6.770957654181598,26,True,10,12,"Carefully determine the main emotion the writer expresses from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+3,0,2,accepted,False,0.359375,6.500506565406417,26,True,45,45,"Carefully determine the main emotion the writer expresses. The label mapping, ignore emotional details, and output only the corresponding label letter."
+4,2,3,accepted,False,0.359375,6.250586399414562,26,True,13,13,"Carefully observe the main emotion the writer expresses. The label mapping, ignore emotional details, and output only the corresponding label letter."
+5,0,4,accepted,False,0.359375,6.558841057455958,26,True,18,18,"Carefully identify the main emotion the writer expresses from the label mapping, ignore any details, and output only the corresponding capital letter.
+"
+6,2,5,accepted,False,0.3671875,6.323698332193761,26,True,13,7,"Carefully determine the main emotion the writer expresses. The label mapping, ignore emotional details, and output only the corresponding label letter.
+"
+7,4,,rejected,False,0.3619791666666667,5.987725801203001,26,True,32,30,"Carefully identify the main emotion the writer expresses from the label mapping, ignoring any details, and output only the corresponding label letter.
+"
+8,2,6,accepted,False,0.34765625,6.292075297610597,26,True,16,25,"Carefully determine the main emotion the writer expresses. The label mapping, ignore the details, and output only the corresponding label letter."
+9,5,7,accepted,False,0.3671875,6.323698332193761,26,True,0,0,"Carefully determine the main emotion the writer expresses. The label mapping, ignore emotional details, and output only the corresponding label letter.
+"
+10,4,8,accepted,False,0.3515625,6.547702430676689,26,True,5,11,"Carefully identify the main emotion the writer expresses in the label mapping, ignoring any details, and output only one corresponding capital letter.
+"
+11,7,9,accepted,False,0.35546875,6.0263003846915355,26,True,9,18,"Carefully identify the main emotion the writer expresses. The label mapping, ignore emotional details, and output only the corresponding label letter.
+"
+12,7,,rejected,False,0.33984375,5.773411725769037,26,True,15,36,"Carefully determine the main emotion the writer expresses. The label mapping is ignore emotional details, and output only the corresponding label letter.
+"

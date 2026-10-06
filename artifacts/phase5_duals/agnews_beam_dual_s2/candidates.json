@@ -1,0 +1,41 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore secondary details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and return only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, use incidental details, and answer only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and return only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label map, use incidental details, and answer only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main subject from the label map, use incidental details, and answer only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping and write the details, and output only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore secondary details, and output only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main subject from the label map, use explicit classification, and answer only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main subject: the label map, use explicit classification, and answer only the corresponding label letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore secondary details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore secondary details, and output only the corresponding label letter."
+  }
+]

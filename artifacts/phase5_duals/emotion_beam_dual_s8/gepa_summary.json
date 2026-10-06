@@ -1,0 +1,67 @@
+{
+  "accepted_proposal_count": 8,
+  "all_proposals_tokenizer_compositional": true,
+  "gepa_selected": {
+    "candidate_idx": 4,
+    "instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignoring any details, and output only the corresponding label letter.\n",
+    "is_seed": false,
+    "validation_accuracy": 0.3697916666666667,
+    "validation_mean_loss": 5.98633246219114
+  },
+  "interpretation": "GEPA-selected and post-hoc-audit-best are reported separately. The post-hoc audit is exploratory and does not retroactively change GEPA acceptance.",
+  "posthoc_audit_best": {
+    "accuracy_gain_over_seed": 0.010416666666666685,
+    "errors_fixed_vs_parent": 26,
+    "gepa_statuses": [
+      "accepted"
+    ],
+    "instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignoring any details, and output only the corresponding label letter.\n",
+    "mean_loss_change_from_seed": -0.7649045683468749,
+    "new_errors_vs_parent": 15,
+    "per_class_accuracy": {
+      "A": 0.59375,
+      "B": 0.5,
+      "C": 0.0703125,
+      "D": 0.4453125,
+      "E": 0.2109375,
+      "F": 0.3984375
+    },
+    "prediction_counts": {
+      "A": 227,
+      "B": 158,
+      "C": 13,
+      "D": 107,
+      "E": 63,
+      "F": 200
+    },
+    "proposal_numbers": [
+      7
+    ],
+    "validation_accuracy": 0.3697916666666667,
+    "validation_mean_loss": 5.98633246219114
+  },
+  "proposal_count": 12,
+  "rejected_proposal_count": 4,
+  "seed": {
+    "instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+    "per_class_accuracy": {
+      "A": 0.546875,
+      "B": 0.5078125,
+      "C": 0.0703125,
+      "D": 0.578125,
+      "E": 0.1484375,
+      "F": 0.3046875
+    },
+    "prediction_counts": {
+      "A": 229,
+      "B": 175,
+      "C": 15,
+      "D": 185,
+      "E": 31,
+      "F": 133
+    },
+    "validation_accuracy": 0.359375,
+    "validation_mean_loss": 6.7512370305380145
+  },
+  "unique_proposal_text_count": 9
+}

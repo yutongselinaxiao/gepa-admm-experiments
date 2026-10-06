@@ -1,0 +1,41 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully choose the article's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully choose the subject's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully choose the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully choose the article's main topic from the label mapping, ignoring other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully choose the article's main topic from the label mapping, ignoring other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully choose the article's main topic from the label mapping, ignoring other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully choose the subject's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully choose a subject's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully choose the subject's main topic from the label.\n1. Education\n2. Work\n3. capital letter."
+  },
+  {
+    "instruction": "Carefully choose a subject's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully read the subject's main topic and the label mapping, ignoring incidental details, and output only the corresponding category letter."
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the following options, ignore incidental details, and select only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, and specify details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore linguistic details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore linguistic details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main subject from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main subject. The label mapping, provide the details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore linguistic details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully apply the article's main topic from the label mapping, ignore other details, and output only the corresponding numeric letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore linguistic details, and output only the corresponding capital letter."
+  }
+]
