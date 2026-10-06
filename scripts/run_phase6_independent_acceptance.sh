@@ -40,3 +40,6 @@ for slot in "${!GPUS[@]}"; do
 done
 wait
 grep -H "DONE\|Traceback" "$OUT"/*.log
+# Recompute every classification number (writes artifacts/classification_results/summary.json).
+$PY -m gepa_pilot.summarize_classification > artifacts/classification_results/summary_after_phase6.log 2>&1
+echo "PHASE6_COMPLETE $(date)" >> "$OUT/STATUS"

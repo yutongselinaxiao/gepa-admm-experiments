@@ -38,12 +38,14 @@ ARMS: dict[str, tuple[str, list[str], str]] = {
     "agnews/reflective_p40": ("agnews", [f"artifacts/phase3/reflective_p40_s{i}" for i in range(10)], "split"),
     "agnews/reflective_heldout_p12": ("agnews", [f"artifacts/phase3/reflective_heldout_p12_s{i}" for i in range(10)], "split"),
     "agnews/reflective_heldout_p30": ("agnews", [f"artifacts/phase3/reflective_heldout_p30_s{i}" for i in range(10)], "split"),
+    "agnews/admm_beam_lam0.3_indep_accept": ("agnews", [f"artifacts/phase6_independent_acceptance/agnews_beam_indep_s{i}" for i in range(10)], "split"),
     "agnews/admm_beam_lam0.3_duals": ("agnews", [f"artifacts/phase5_duals/agnews_beam_dual_s{i}" for i in range(10)], "split"),
     # --- Emotion ---
     "emotion/reflective_p12": ("emotion", [f"artifacts/phase4_emotion/reflective_p12_s{i}" for i in range(10)], "split"),
     "emotion/reflective_heldout_p30": ("emotion", [f"artifacts/phase4_emotion/reflective_heldout_p30_s{i}" for i in range(10)], "split"),
     "emotion/admm_topp": ("emotion", [f"artifacts/phase4_emotion/admm_topp_s{i}" for i in range(10)], "split"),
     "emotion/admm_beam_lam0.3": ("emotion", [f"artifacts/phase4_emotion/beam_lam0.3_s{i}" for i in range(10)], "split"),
+    "emotion/admm_beam_lam0.3_indep_accept": ("emotion", [f"artifacts/phase6_independent_acceptance/emotion_beam_indep_s{i}" for i in range(10)], "split"),
     "emotion/admm_beam_lam0.3_duals": ("emotion", [f"artifacts/phase5_duals/emotion_beam_dual_s{i}" for i in range(10)], "split"),
 }
 
@@ -56,12 +58,19 @@ COMPARISONS = [
     ("agnews/admm_beam_lam0.3", "agnews/admm_topp"),
     ("agnews/admm_topp", "agnews/reflective_p12"),
     ("agnews/admm_beam_lam0.3_duals", "agnews/admm_beam_lam0.3"),
+    ("agnews/admm_beam_lam0.3_indep_accept", "agnews/admm_beam_lam0.3"),
+    ("agnews/admm_beam_lam0.3_indep_accept", "agnews/reflective_heldout_p30"),
+    ("agnews/admm_beam_lam0.3_indep_accept", "agnews/reflective_p40"),
+    ("agnews/admm_beam_lam0.3_indep_accept", "agnews/reflective_p12"),
     ("emotion/admm_beam_lam0.3", "emotion/reflective_p12"),
     ("emotion/admm_beam_lam0.3", "emotion/reflective_heldout_p30"),
     ("emotion/admm_topp", "emotion/reflective_p12"),
     ("emotion/admm_topp", "emotion/reflective_heldout_p30"),
     ("emotion/admm_beam_lam0.3", "emotion/admm_topp"),
     ("emotion/admm_beam_lam0.3_duals", "emotion/admm_beam_lam0.3"),
+    ("emotion/admm_beam_lam0.3_indep_accept", "emotion/admm_beam_lam0.3"),
+    ("emotion/admm_beam_lam0.3_indep_accept", "emotion/reflective_heldout_p30"),
+    ("emotion/admm_beam_lam0.3_indep_accept", "emotion/reflective_p12"),
 ]
 
 
