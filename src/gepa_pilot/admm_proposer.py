@@ -68,12 +68,19 @@ class ADMMProposer:
         log_path: str | Path,
         dual_step: float = 0.0,
         dual_batch_size: int = 64,
+        acceptance_batch_size: int = 0,
     ) -> None:
         hp = refiner.hp
         if dual_step < 0 or dual_batch_size < 1:
             raise ValueError("dual_step must be >= 0 and dual_batch_size >= 1.")
         self.dual_step = dual_step
         self.dual_batch_size = dual_batch_size
+        # > 0: the held-out verdict uses its own batch, disjoint from GEPA's minibatch, from the
+        # selection batch that picks the iterate, and from ADMM's training batches. 0 keeps the
+        # original behavior (verdict on the selection batch that also picked the iterate).
+        if acceptance_batch_size < 0:
+            raise ValueError("acceptance_batch_size must be >= 0.")
+        self.acceptance_batch_size = acceptance_batch_size
         if selection_batch_size < 1:
             raise ValueError("selection_batch_size must be positive.")
         if len(trainset) < selection_batch_size + hp.train_batch_size:
@@ -114,6 +121,8 @@ class ADMMProposer:
         selection, training, generator = heldout_split(
             self.trainset, excluded, self.selection_batch_size, self.seed + call_index
         )
+        acceptance = training[: self.acceptance_batch_size]
+        training = training[self.acceptance_batch_size :]
 
         record: dict[str, Any] = {
             "call_index": call_index,
@@ -129,6 +138,7 @@ class ADMMProposer:
                 "selection_batch_size": self.selection_batch_size,
                 "dual_step": self.dual_step,
                 "dual_batch_size": self.dual_batch_size,
+                "acceptance_batch_size": self.acceptance_batch_size,
                 "projection": self.refiner.hp.projection,
                 "top_p": self.refiner.hp.top_p,
                 "beam_width": self.refiner.hp.beam_width,
@@ -232,9 +242,21 @@ class ADMMProposer:
             prefix_ids, torch.tensor(best["slot_ids"], device=self.refiner.evaluator.device)
         )
         record["chosen"] = best
-        record["heldout_accept"] = (
-            best["selection_accuracy"] >= record["parent_selection_accuracy"]
-        )
+        if acceptance:
+            best_ids = torch.tensor(best["slot_ids"], device=self.refiner.evaluator.device)
+            parent_loss, parent_accuracy = self.refiner.discrete_metrics(state, parent_ids, acceptance)
+            child_loss, child_accuracy = self.refiner.discrete_metrics(state, best_ids, acceptance)
+            record["acceptance_ids"] = [example.example_id for example in acceptance]
+            record["acceptance_batch"] = {
+                "parent_loss": parent_loss, "parent_accuracy": parent_accuracy,
+                "child_loss": child_loss, "child_accuracy": child_accuracy,
+            }
+            # Same rule as HeldOutJudgedReflectionLM: lower loss, accuracy at least the parent's.
+            record["heldout_accept"] = child_loss < parent_loss and child_accuracy >= parent_accuracy
+        else:
+            record["heldout_accept"] = (
+                best["selection_accuracy"] >= record["parent_selection_accuracy"]
+            )
         self.heldout_decisions[best["text"]] = record["heldout_accept"]
         return self._finish(record, best["text"], "proposed", started)
 

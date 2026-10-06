@@ -153,6 +153,12 @@ def main() -> None:
         help="> 0 enables per-class reward constraints with this dual step size.",
     )
     parser.add_argument("--admm-dual-batch-size", type=int, default=64)
+    parser.add_argument(
+        "--admm-acceptance-batch-size",
+        type=int,
+        default=0,
+        help="> 0: held-out verdict on its own batch (not the one that picked the iterate).",
+    )
     parser.add_argument("--admm-fluency-weight", type=float, default=1.0)
     parser.add_argument("--admm-top-p", type=float, default=0.9)
     parser.add_argument("--admm-rho", type=float, default=1.0)
@@ -263,6 +269,7 @@ def main() -> None:
             log_path=run_dir / "admm_proposals.jsonl",
             dual_step=args.admm_dual_step,
             dual_batch_size=args.admm_dual_batch_size,
+            acceptance_batch_size=args.admm_acceptance_batch_size,
         )
         if args.proposer == "admm":
             proposal_kwargs = {"custom_candidate_proposer": admm_proposer}
@@ -328,6 +335,7 @@ def main() -> None:
             "acceptance": args.admm_acceptance,
             "dual_step": args.admm_dual_step,
             "dual_batch_size": args.admm_dual_batch_size,
+            "acceptance_batch_size": args.admm_acceptance_batch_size,
             "seed": admm_proposer.seed,
             "allowed_vocabulary_size": len(admm_proposer.refiner.allowed_token_ids),
         }
