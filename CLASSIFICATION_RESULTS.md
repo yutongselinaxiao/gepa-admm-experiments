@@ -24,14 +24,21 @@ consistent but modest, and borderline-significant at matched compute.
 Accuracy is measured on the 256-example **report half** of validation, which
 no selection step sees. Each cell is the mean ± sd over 10 seeds.
 
-| Arm | AG News (4 classes) | Emotion (6 classes) |
-|---|---:|---:|
-| Seed instruction | 30.86 | 35.94 |
-| Reflective GEPA (12 proposals) | 34.57 ± 2.45 | 35.73 ± 0.36 |
-| Strongest matched reflective baseline (30 proposals, held-out acceptance) | 35.70 ± 1.71 | 36.20 ± 0.65 |
-| ADMM proposer, top-p projection | 36.88 ± 2.23 | 36.09 ± 0.22 |
-| **ADMM proposer, beam-search projection (λ = 0.3)** | **38.32 ± 3.00** | **37.32 ± 1.69** |
-| Beam ADMM + per-class reward constraints | 37.38 ± 2.37 | 37.21 ± 2.28 |
+| Arm | How GEPA generates a child | Acceptance | Proposals | AG News (4 classes) | Emotion (6 classes) |
+|---|---|---|---:|---:|---:|
+| Seed instruction | — (no optimization) | — | — | 30.86 | 35.94 |
+| Reflective GEPA | reflection model (GEPA default) | minibatch (8) | 12 | 34.57 ± 2.45 | 35.73 ± 0.36 |
+| Strongest matched reflective baseline | reflection model | held-out (32) | 30 | 35.70 ± 1.71 | 36.20 ± 0.65 |
+| Top-p ADMM | **ADMM only**, top-p projection | held-out (32) | 12 | 36.88 ± 2.23 | 36.09 ± 0.22 |
+| **Beam ADMM (λ = 0.3)** | **ADMM only**, beam-search projection | held-out (32) | 12 | **38.32 ± 3.00** | **37.32 ± 1.69** |
+| Beam ADMM + per-class reward constraints | **ADMM only**, beam projection, class-weighted loss | held-out (32) | 12 | 37.38 ± 2.37 | 37.21 ± 2.28 |
+
+**ADMM rows replace GEPA's proposer entirely** (`--proposer admm`). They never
+call the reflection model; each child comes from ADMM refining the parent GEPA
+selected. Reflect-then-polish (reflection followed by an ADMM polish) is *not*
+in this table. It was a 3-seed AG News exploration (§5.8: 34.77 ± 1.35) and
+didn't beat reflection alone. The matched baseline row gives reflection the
+same held-out acceptance rule as the ADMM rows, plus 2.5× the proposals.
 
 | Comparison | Difference | Welch p | Mann–Whitney p | Bootstrap 95% CI |
 |---|---:|---:|---:|---|
