@@ -105,6 +105,8 @@ class ADMMProposer:
                 "selection_batch_size": self.selection_batch_size,
                 "projection": self.refiner.hp.projection,
                 "top_p": self.refiner.hp.top_p,
+                "beam_width": self.refiner.hp.beam_width,
+                "fluency_weight": self.refiner.hp.fluency_weight,
             },
         }
         try:

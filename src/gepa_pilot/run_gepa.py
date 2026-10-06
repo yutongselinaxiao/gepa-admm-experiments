@@ -129,8 +129,12 @@ def main() -> None:
         "--proposer", choices=("reflective", "admm", "reflect_polish"), default="reflective"
     )
     parser.add_argument(
-        "--admm-projection", choices=("euclidean", "context_top_p"), default="euclidean"
+        "--admm-projection",
+        choices=("euclidean", "context_top_p", "context_beam"),
+        default="euclidean",
     )
+    parser.add_argument("--admm-beam-width", type=int, default=4)
+    parser.add_argument("--admm-fluency-weight", type=float, default=1.0)
     parser.add_argument("--admm-top-p", type=float, default=0.9)
     parser.add_argument("--admm-rho", type=float, default=1.0)
     parser.add_argument("--admm-learning-rate", type=float, default=0.005)
@@ -205,6 +209,8 @@ def main() -> None:
             evaluation_batch_size=args.evaluation_batch_size,
             projection=args.admm_projection,
             top_p=args.admm_top_p,
+            beam_width=args.admm_beam_width,
+            fluency_weight=args.admm_fluency_weight,
         )
         embedding_rows = evaluator.model.get_input_embeddings().weight.shape[0]
         admm_proposer = ADMMProposer(

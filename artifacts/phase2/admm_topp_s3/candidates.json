@@ -1,0 +1,38 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the Article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine a Article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine a article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine a Article's main topic from the title mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine a article's main subject from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main subject from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine a Article's main topic from the title mapping ( ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the Article\u2019s main topic from the label mapping, ignore incidental details, and outputs only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the Article\u2019s main topics from the label mapping, ignore incidental details, and outputs only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine a Article's main topic from the title mapping (ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine a Article'smain topic from the title mapping, ignore incidental details, and output only the corresponding capital letter."
+  }
+]

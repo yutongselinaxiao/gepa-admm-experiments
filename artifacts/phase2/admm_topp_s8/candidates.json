@@ -1,0 +1,38 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the articles's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the articles's main topic from the label mapping, ignore incidental details. and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the depth's main website from the label mapping, ignore incidental details. and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the depth's main website from the label mapping, ignore incidental details. and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the part's temporal topic from the label mapping, ignore emotions details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the depth's main website from the label mapping, ignore incidental details. and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the part's temporal topic from the label mapping, ignore emotions details, and output only a corresponding capital letter."
+  },
+  {
+    "instruction": "**fully determine the depth's main website from the label mapping, ignore incidental details. and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the articles's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully create the part's temporal topic from the label mapping, ignore emotions details, and output only a corresponding verb letter."
+  },
+  {
+    "instruction": "Carefully create a part's temporal topic from the label mapping, ignore emotions details, and output only a corresponding verb letter."
+  }
+]

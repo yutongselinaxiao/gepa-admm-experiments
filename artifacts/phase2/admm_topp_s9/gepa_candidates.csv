@@ -1,0 +1,13 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,1,accepted,False,0.30078125,7.511302271319159,25,True,11,13,"Carefully determine the article's main topic from the context mapping, ignore incidental details, and output only the corresponding capital letter."
+2,0,2,accepted,False,0.32421875,8.03886260977004,25,True,23,13,"Carefully determine what article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+3,0,3,accepted,False,0.30078125,8.810868139999531,25,True,4,6,"Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the appropriate capital letter."
+4,1,4,accepted,False,0.3359375,6.1647734730999035,25,True,38,20,"Carefully determine the article's crucial topic from the context mapping, ignore incidental details. For output only the corresponding capital letter."
+5,1,5,accepted,False,0.30078125,7.511302271319159,25,True,0,0,"Carefully determine the article's main topic from the context mapping, ignore incidental details, and output only the corresponding capital letter."
+6,4,6,accepted,False,0.3359375,6.1647734730999035,25,True,0,0,"Carefully determine the article's crucial topic from the context mapping, ignore incidental details. For output only the corresponding capital letter."
+7,3,7,accepted,False,0.314453125,7.894791792368449,25,True,17,10,"Carefully determine the Article's main topic from the label mapping, ignore incidental details, and output only one appropriate capital letter."
+8,2,,rejected,False,0.345703125,6.2248440956238715,25,True,23,12,"Carefully add what article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+9,7,8,accepted,True,0.357421875,5.680292184951342,25,True,30,8,"Carefully indicate the Article's main topic from the label mapping, ignore incidental details, and output only one appropriate capital letter."
+10,6,9,accepted,False,0.369140625,5.600617107499489,25,True,34,17,"Carefully determine the article's crucial topic from the beginning mapping, ignore incidental details. For output only the corresponding capital letter."
+11,9,10,accepted,False,0.369140625,5.600617107499489,25,True,0,0,"Carefully determine the article's crucial topic from the beginning mapping, ignore incidental details. For output only the corresponding capital letter."
+12,2,,rejected,False,0.314453125,7.659452315669343,25,True,16,21,"Carefully determine what article's main topic from the label mapping, ignore incidental details, and output only the category capital letter."

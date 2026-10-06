@@ -27,8 +27,12 @@ class ADMMHyperparameters:
     # "context_top_p": left to right, nearest token among the nucleus (top_p) of the
     # LM's next-token distribution given the prompt prefix and the tokens already
     # projected, plus the starting token at that position.
+    # "context_beam": beam search over the slot with the same per-position candidate
+    # sets; a beam scores sum ||target_i - E(w_i)||^2 + fluency_weight * NLL(w_i | prefix).
     projection: str = "euclidean"
     top_p: float = 0.9
+    beam_width: int = 4
+    fluency_weight: float = 1.0
 
     def validate(self) -> None:
         numeric_positive = {
@@ -44,7 +48,9 @@ class ADMMHyperparameters:
         invalid = [name for name, value in numeric_positive.items() if value <= 0]
         if invalid:
             raise ValueError(f"ADMM hyperparameters must be positive: {invalid}")
-        if self.projection not in {"euclidean", "context_top_p"}:
+        if self.beam_width < 1 or self.fluency_weight < 0:
+            raise ValueError("beam_width must be >= 1 and fluency_weight >= 0.")
+        if self.projection not in {"euclidean", "context_top_p", "context_beam"}:
             raise ValueError(f"Unknown projection: {self.projection}")
         if not 0.0 < self.top_p <= 1.0:
             raise ValueError("top_p must be in (0, 1].")
@@ -313,8 +319,8 @@ class ADMMRefiner:
         initial_ids: torch.Tensor,
         prefix_ids: Sequence[int] | None = None,
     ) -> ADMMState:
-        if self.hp.projection == "context_top_p" and prefix_ids is None:
-            raise ValueError("context_top_p projection needs the prompt prefix IDs.")
+        if self.hp.projection != "euclidean" and prefix_ids is None:
+            raise ValueError(f"{self.hp.projection} projection needs the prompt prefix IDs.")
         e = (
             self.embedding_weight.index_select(0, initial_ids)
             .detach()
@@ -365,7 +371,54 @@ class ADMMRefiner:
                 self.allowed_token_ids,
                 chunk_size=self.hp.projection_chunk_size,
             )
-        return self._project_context_top_p(state, targets)
+        if self.hp.projection == "context_top_p":
+            return self._project_context_top_p(state, targets)
+        return self._project_context_beam(state, targets)
+
+    def _candidates(self, logits: torch.Tensor, initial_token: torch.Tensor) -> torch.Tensor:
+        """Allowed tokens in the nucleus of `logits`, plus the starting token at this position."""
+        probabilities = logits.float().softmax(dim=-1)
+        sorted_probabilities, sorted_ids = probabilities.sort(descending=True)
+        in_nucleus = (sorted_probabilities.cumsum(dim=0) - sorted_probabilities) < self.hp.top_p
+        candidates = sorted_ids[in_nucleus]
+        candidates = candidates[self.allowed_mask[candidates]]
+        return torch.unique(torch.cat((candidates, initial_token.view(1).to(candidates.device))))
+
+    @torch.inference_mode()
+    def _project_context_beam(self, state: ADMMState, targets: torch.Tensor) -> torch.Tensor:
+        """Beam search: distance to the ADMM target plus weighted LM NLL, nucleus-constrained."""
+        model = self.evaluator.model
+        device = self.evaluator.device
+        prefix = torch.tensor([state.prefix_ids], dtype=torch.long, device=device)
+        output = model(input_ids=prefix, use_cache=True)
+        state.forward_calls += 1
+        past, logits = output.past_key_values, output.logits[:, -1]
+        beam_scores = torch.zeros(1, device=device)
+        beam_tokens = torch.empty(1, 0, dtype=torch.long, device=device)
+        for position in range(targets.shape[0]):
+            log_probs = logits.float().log_softmax(dim=-1)
+            target = targets[position].float()
+            sources, tokens, scores = [], [], []
+            for beam in range(len(beam_scores)):
+                candidates = self._candidates(logits[beam], state.initial_ids[position])
+                vectors = self.embedding_weight.index_select(0, candidates).float()
+                distance = (vectors - target).square().sum(dim=1)
+                nll = -log_probs[beam, candidates]
+                sources.append(torch.full_like(candidates, beam))
+                tokens.append(candidates)
+                scores.append(beam_scores[beam] + distance + self.hp.fluency_weight * nll)
+            sources_t, tokens_t, scores_t = torch.cat(sources), torch.cat(tokens), torch.cat(scores)
+            keep = scores_t.topk(min(self.hp.beam_width, len(scores_t)), largest=False).indices
+            beam_index = sources_t[keep]
+            beam_scores = scores_t[keep]
+            beam_tokens = torch.cat((beam_tokens[beam_index], tokens_t[keep].unsqueeze(1)), dim=1)
+            past.reorder_cache(beam_index)
+            output = model(
+                input_ids=tokens_t[keep].unsqueeze(1), past_key_values=past, use_cache=True
+            )
+            state.forward_calls += 1
+            past, logits = output.past_key_values, output.logits[:, -1]
+        return beam_tokens[beam_scores.argmin()]
 
     @torch.inference_mode()
     def _project_context_top_p(self, state: ADMMState, targets: torch.Tensor) -> torch.Tensor:
@@ -378,14 +431,7 @@ class ADMMRefiner:
         past, logits = output.past_key_values, output.logits[0, -1]
         chosen: list[int] = []
         for position in range(targets.shape[0]):
-            probabilities = logits.float().softmax(dim=-1)
-            sorted_probabilities, sorted_ids = probabilities.sort(descending=True)
-            in_nucleus = (sorted_probabilities.cumsum(dim=0) - sorted_probabilities) < self.hp.top_p
-            candidates = sorted_ids[in_nucleus]
-            candidates = candidates[self.allowed_mask[candidates]]
-            candidates = torch.unique(
-                torch.cat((candidates, state.initial_ids[position : position + 1].to(device)))
-            )
+            candidates = self._candidates(logits, state.initial_ids[position])
             vectors = self.embedding_weight.index_select(0, candidates).float()
             distances = (vectors - targets[position].float()).square().sum(dim=1)
             token = candidates[distances.argmin()]

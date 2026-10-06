@@ -1,0 +1,35 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the context mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine what article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the appropriate capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's crucial topic from the context mapping, ignore incidental details. For output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's main topic from the context mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's crucial topic from the context mapping, ignore incidental details. For output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the Article's main topic from the label mapping, ignore incidental details, and output only one appropriate capital letter."
+  },
+  {
+    "instruction": "Carefully indicate the Article's main topic from the label mapping, ignore incidental details, and output only one appropriate capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's crucial topic from the beginning mapping, ignore incidental details. For output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the article's crucial topic from the beginning mapping, ignore incidental details. For output only the corresponding capital letter."
+  }
+]

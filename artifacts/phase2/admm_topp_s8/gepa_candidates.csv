@@ -1,0 +1,13 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,1,accepted,False,0.32421875,7.411125225116168,25,True,28,18,"Carefully determine the articles's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+2,1,2,accepted,False,0.3515625,6.789964020683741,25,True,21,7,"Carefully determine the articles's main topic from the label mapping, ignore incidental details. and output only the corresponding capital letter."
+3,2,3,accepted,False,0.39453125,6.302871126753237,25,True,51,29,"Carefully determine the depth's main website from the label mapping, ignore incidental details. and output only the corresponding capital letter."
+4,3,4,accepted,False,0.39453125,6.302871126753237,25,True,0,0,"Carefully determine the depth's main website from the label mapping, ignore incidental details. and output only the corresponding capital letter."
+5,0,5,accepted,False,0.365234375,6.816284560795923,25,True,49,18,"Carefully determine the part's temporal topic from the label mapping, ignore emotions details, and output only the corresponding capital letter."
+6,5,,rejected,False,0.376953125,5.6013773881731765,25,True,26,20,"Carefully determine the part's temporal topic from the label mapping. ignore decimals details, and output only the corresponding capital letter."
+7,4,6,accepted,False,0.39453125,6.302871126753237,25,True,0,0,"Carefully determine the depth's main website from the label mapping, ignore incidental details. and output only the corresponding capital letter."
+8,5,7,accepted,False,0.3828125,6.51564668879941,25,True,25,16,"Carefully determine the part's temporal topic from the label mapping, ignore emotions details, and output only a corresponding capital letter."
+9,6,8,accepted,False,0.43359375,5.723765605014743,25,True,38,18,"**fully determine the depth's main website from the label mapping, ignore incidental details. and output only the corresponding capital letter."
+10,0,9,accepted,False,0.32421875,7.411125225116168,25,True,28,18,"Carefully determine the articles's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+11,7,10,accepted,True,0.404296875,4.741038197413782,25,True,90,79,"Carefully create the part's temporal topic from the label mapping, ignore emotions details, and output only a corresponding verb letter."
+12,10,11,accepted,False,0.40625,4.915432884688154,25,True,38,37,"Carefully create a part's temporal topic from the label mapping, ignore emotions details, and output only a corresponding verb letter."
