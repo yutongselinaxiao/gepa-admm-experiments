@@ -1724,6 +1724,142 @@
         }
       ]
     },
+    "emotion/admm_topp": {
+      "task": "emotion",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 36.09375,
+      "sd": 0.21960261528946953,
+      "scores": [
+        35.9375,
+        35.9375,
+        36.19791666666667,
+        36.19791666666667,
+        35.9375,
+        35.9375,
+        35.9375,
+        36.45833333333333,
+        35.9375,
+        36.45833333333333
+      ],
+      "seed_instruction_report_accuracy": 35.9375,
+      "improved_over_seed": 4,
+      "mean_accepted": 6.8,
+      "mean_wall_time_seconds": 247.92315291529522,
+      "mean_admm_backward_calls": 720,
+      "runs": [
+        {
+          "run": "artifacts/phase4_emotion/admm_topp_s0",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 9,
+          "proposals": 12,
+          "wall_time_seconds": 250.05521307094023,
+          "metric_calls": 2112,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/admm_topp_s1",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 248.10632460890338,
+          "metric_calls": 2112,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/admm_topp_s2",
+          "report_accuracy": 36.19791666666667,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label map, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 2,
+          "proposals": 12,
+          "wall_time_seconds": 240.99389300495386,
+          "metric_calls": 1344,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/admm_topp_s3",
+          "report_accuracy": 36.19791666666667,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label map, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 8,
+          "proposals": 12,
+          "wall_time_seconds": 245.81842255406082,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/admm_topp_s4",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 6,
+          "proposals": 12,
+          "wall_time_seconds": 241.2443207311444,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/admm_topp_s5",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 9,
+          "proposals": 12,
+          "wall_time_seconds": 247.28346722992137,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/admm_topp_s6",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 252.46474517183378,
+          "metric_calls": 3648,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/admm_topp_s7",
+          "report_accuracy": 36.45833333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully retrieve the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 257.645035889931,
+          "metric_calls": 2880,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/admm_topp_s8",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 4,
+          "proposals": 12,
+          "wall_time_seconds": 245.92281396919861,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/admm_topp_s9",
+          "report_accuracy": 36.45833333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully retrieve the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 6,
+          "proposals": 12,
+          "wall_time_seconds": 249.69729292206466,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        }
+      ]
+    },
     "emotion/admm_beam_lam0.3": {
       "task": "emotion",
       "protocol": "split",
@@ -2086,6 +2222,33 @@
       "bootstrap_ci95": [
         0.1041666666666643,
         2.2135416666666643
+      ]
+    },
+    "emotion/admm_topp vs emotion/reflective_p12": {
+      "difference": 0.3645833333333357,
+      "welch_p": 0.016259274326301507,
+      "mann_whitney_p": 0.011346149831578787,
+      "bootstrap_ci95": [
+        0.1302083333333357,
+        0.625
+      ]
+    },
+    "emotion/admm_topp vs emotion/reflective_heldout_p30": {
+      "difference": -0.1041666666666714,
+      "welch_p": 0.6403395941783161,
+      "mann_whitney_p": 0.9676894885143436,
+      "bootstrap_ci95": [
+        -0.5208333333333286,
+        0.2864583333333286
+      ]
+    },
+    "emotion/admm_beam_lam0.3 vs emotion/admm_topp": {
+      "difference": 1.2239583333333286,
+      "welch_p": 0.048610646780921175,
+      "mann_whitney_p": 0.11338338496859633,
+      "bootstrap_ci95": [
+        0.2864583333333357,
+        2.265625
       ]
     },
     "emotion/admm_beam_lam0.3_duals vs emotion/admm_beam_lam0.3": {

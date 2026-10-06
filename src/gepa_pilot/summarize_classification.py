@@ -42,6 +42,7 @@ ARMS: dict[str, tuple[str, list[str], str]] = {
     # --- Emotion ---
     "emotion/reflective_p12": ("emotion", [f"artifacts/phase4_emotion/reflective_p12_s{i}" for i in range(10)], "split"),
     "emotion/reflective_heldout_p30": ("emotion", [f"artifacts/phase4_emotion/reflective_heldout_p30_s{i}" for i in range(10)], "split"),
+    "emotion/admm_topp": ("emotion", [f"artifacts/phase4_emotion/admm_topp_s{i}" for i in range(10)], "split"),
     "emotion/admm_beam_lam0.3": ("emotion", [f"artifacts/phase4_emotion/beam_lam0.3_s{i}" for i in range(10)], "split"),
     "emotion/admm_beam_lam0.3_duals": ("emotion", [f"artifacts/phase5_duals/emotion_beam_dual_s{i}" for i in range(10)], "split"),
 }
@@ -57,6 +58,9 @@ COMPARISONS = [
     ("agnews/admm_beam_lam0.3_duals", "agnews/admm_beam_lam0.3"),
     ("emotion/admm_beam_lam0.3", "emotion/reflective_p12"),
     ("emotion/admm_beam_lam0.3", "emotion/reflective_heldout_p30"),
+    ("emotion/admm_topp", "emotion/reflective_p12"),
+    ("emotion/admm_topp", "emotion/reflective_heldout_p30"),
+    ("emotion/admm_beam_lam0.3", "emotion/admm_topp"),
     ("emotion/admm_beam_lam0.3_duals", "emotion/admm_beam_lam0.3"),
 ]
 

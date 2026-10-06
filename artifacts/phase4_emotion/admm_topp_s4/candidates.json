@@ -1,0 +1,23 @@
+[
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully determine the main emotion the writer expresses from the label mapping. ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully retrieve the main emotion the writer expresses from the label mapping. ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully retrieve the main emotion the writer expresses from the label mapping. ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully retrieve the main emotion the writer expresses from the label mapping. ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully retrieve the main incidents the writer provides from the label mapping. ignore incidental details, and output only the corresponding word letter..."
+  },
+  {
+    "instruction": "Carefully retrieve the main incidents the writer provides from the label mapping. ignore incidental details, and output only the corresponding word letter..."
+  }
+]

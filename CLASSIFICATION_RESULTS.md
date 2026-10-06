@@ -29,7 +29,7 @@ no selection step sees. Each cell is the mean ± sd over 10 seeds.
 | Seed instruction | 30.86 | 35.94 |
 | Reflective GEPA (12 proposals) | 34.57 ± 2.45 | 35.73 ± 0.36 |
 | Strongest matched reflective baseline (30 proposals, held-out acceptance) | 35.70 ± 1.71 | 36.20 ± 0.65 |
-| ADMM proposer, top-p projection | 36.88 ± 2.23 | — |
+| ADMM proposer, top-p projection | 36.88 ± 2.23 | 36.09 ± 0.22 |
 | **ADMM proposer, beam-search projection (λ = 0.3)** | **38.32 ± 3.00** | **37.32 ± 1.69** |
 | Beam ADMM + per-class reward constraints | 37.38 ± 2.37 | 37.21 ± 2.28 |
 
@@ -40,6 +40,8 @@ no selection step sees. Each cell is the mean ± sd over 10 seeds.
 | AG News: beam ADMM − reflective (40 proposals, ≈ wall-time match) | +2.73 | 0.066 | 0.021 | [+0.1, +5.3] |
 | Emotion: beam ADMM − reflective (12 proposals) | +1.59 | 0.016 | 0.003 | [+0.6, +2.7] |
 | Emotion: beam ADMM − matched baseline | +1.12 | 0.075 | 0.127 | [+0.1, +2.2] |
+| AG News: beam ADMM − top-p ADMM | +1.45 | 0.239 | 0.306 | [−0.7, +3.7] |
+| Emotion: beam ADMM − top-p ADMM | +1.22 | 0.049 | 0.113 | [+0.3, +2.3] |
 
 **What this does and doesn't establish**
 - **Established:** a consistent advantage of +1 to +4 pp across every
@@ -604,6 +606,10 @@ artifacts are. Numbers are report-half accuracy unless stated.
 - **Setup:** the pipeline generalized through `TaskConfig`, with AG News
   verified bit-identical (data hashes, prompt token IDs, a parity run).
   dair-ai/emotion, same protocol, 10 seeds per arm.
+- **Added afterwards (Phase 4b):** top-p ADMM was left out of the first
+  emotion batch to save compute. It was run afterwards with exactly the AG News
+  top-p settings, to test whether the beam search adds anything beyond the
+  top-p constraint ([`scripts/run_phase4b_emotion_topp.sh`](scripts/run_phase4b_emotion_topp.sh)).
 - **Seed and manual baselines** (full validation): seed 35.94%, manual
   instructions 29.95–35.68%. One manual instruction predicts Surprise for
   481 of 768 inputs.
@@ -612,13 +618,23 @@ artifacts are. Numbers are report-half accuracy unless stated.
   | Arm | Accuracy | Seeds that beat the seed instruction |
   |---|---:|---:|
   | Reflective | 35.73 ± 0.36 | 0/10 |
+  | Top-p ADMM (Phase 4b) | 36.09 ± 0.22 | 4/10 |
   | Matched baseline (30 proposals, held-out) | 36.20 ± 0.65 | 4/10 |
   | Beam ADMM | **37.32 ± 1.69** | 6/10 |
 
   - Beam ADMM vs. reflective: +1.59, p = 0.016.
   - Beam ADMM vs. matched baseline: +1.12, p = 0.075.
+  - Beam ADMM vs. top-p ADMM: +1.22, Welch p = 0.049 (Mann–Whitney p = 0.11).
+  - Top-p ADMM vs. matched baseline: −0.10, p = 0.64, a tie.
+  - Top-p ADMM's selected prompts differ from the seed by one word at most
+    ("label map", "retrieve"); 6 of 10 seeds end on the seed instruction itself.
 - **Shows:**
   - Same direction as AG News, smaller effect.
+  - **The beam search matters more here than on AG News.** Top-p ADMM alone is
+    no better than the matched reflective baseline; the multi-word beam edits
+    provide the gain. On AG News beam beat top-p by +1.45 (p = 0.24). The same
+    direction on both tasks suggests the joint (beam) projection adds value
+    beyond the fluency constraint.
   - The instruction slot has little leverage on this task for this model: no
     method gains more than about 4 pp in any seed.
 - **Artifacts:** [`artifacts/phase4_emotion/`](artifacts/phase4_emotion/),
