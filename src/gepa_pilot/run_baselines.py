@@ -30,7 +30,7 @@ def _file_sha256(path: Path) -> str:
 def _diagnostic_subset(examples: Sequence[NewsExample]) -> list[NewsExample]:
     return [
         item
-        for label in ("A", "B", "C", "D")
+        for label in sorted({entry.gold_label for entry in examples})
         for item in [entry for entry in examples if entry.gold_label == label][:2]
     ]
 
@@ -64,6 +64,7 @@ def main() -> None:
         system_prompt=config.prompt.system_prompt,
         label_names=config.prompt.label_names,
         enable_thinking=config.prompt.enable_thinking,
+        input_heading=config.task.input_heading,
     )
 
     deterministic_probe = examples[:8]

@@ -22,6 +22,13 @@ class PromptEncoding:
     slot_roundtrip_exact: bool
 
 
+def label_list(labels: Sequence[str]) -> str:
+    """'A, B, C, or D' for four labels; 'A or B' for two."""
+    if len(labels) == 2:
+        return f"{labels[0]} or {labels[1]}"
+    return ", ".join(labels[:-1]) + f", or {labels[-1]}"
+
+
 class PromptBuilder:
     """Construct the single editable instruction slot and verify token boundaries."""
 
@@ -32,8 +39,10 @@ class PromptBuilder:
         label_names: dict[str, str],
         *,
         enable_thinking: bool = False,
+        input_heading: str = "Article",
     ) -> None:
         self.tokenizer = tokenizer
+        self.input_heading = input_heading
         self.system_prompt = system_prompt
         self.label_names = label_names
         self.enable_thinking = enable_thinking
@@ -52,6 +61,7 @@ class PromptBuilder:
         return result
 
     def _messages(self, article: str, instruction: str) -> list[dict[str, str]]:
+        # article: the input text, whatever the task calls it (see input_heading).
         mapping = "\n".join(
             f"{label} = {class_name}" for label, class_name in self.label_names.items()
         )
@@ -61,9 +71,9 @@ class PromptBuilder:
             "### End editable instruction\n\n"
             "### Label mapping\n"
             f"{mapping}\n\n"
-            "### Article\n"
+            f"### {self.input_heading}\n"
             f"{article}\n\n"
-            "Respond with exactly one label: A, B, C, or D."
+            f"Respond with exactly one label: {label_list(self.labels)}."
         )
         return [
             {"role": "system", "content": self.system_prompt},

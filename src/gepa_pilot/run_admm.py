@@ -99,6 +99,7 @@ def main() -> None:
         system_prompt=config.prompt.system_prompt,
         label_names=config.prompt.label_names,
         enable_thinking=config.prompt.enable_thinking,
+        input_heading=config.task.input_heading,
     )
     instruction = config.prompt.seed_instruction
     seed_encodings = evaluator.prompt_builder.assert_seed_gates(

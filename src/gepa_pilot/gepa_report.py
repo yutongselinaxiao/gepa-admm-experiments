@@ -10,7 +10,8 @@ from typing import Any
 
 def _prediction_counts(audit: dict[str, Any]) -> dict[str, int]:
     counts = Counter(audit.get("predicted_by_id", {}).values())
-    return {label: int(counts.get(label, 0)) for label in ("A", "B", "C", "D")}
+    labels = sorted(audit.get("per_class_accuracy") or counts)
+    return {label: int(counts.get(label, 0)) for label in labels}
 
 
 def write_gepa_report(result_path: str | Path) -> dict[str, Any]:

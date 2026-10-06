@@ -1,0 +1,9 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 7676.32it/s]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+RESULT seed: accuracy=0.3594, mean_loss=6.7512, seconds=13.98
+RESULT manual_1: accuracy=0.2995, mean_loss=7.2221, seconds=6.88
+RESULT manual_2: accuracy=0.3568, mean_loss=5.5071, seconds=5.37
+RESULT manual_3: accuracy=0.3438, mean_loss=6.4751, seconds=3.39
+PASS deterministic validation probe
+PASS no official test examples were evaluated
+WROTE artifacts/emotion/baseline_results.json

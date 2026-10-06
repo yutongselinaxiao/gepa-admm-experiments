@@ -35,6 +35,22 @@ class PromptConfig:
 
 
 @dataclass(frozen=True)
+class TaskConfig:
+    """Task wording and dataset fields. Defaults reproduce the AG News pilot exactly."""
+
+    name: str = "AG News"
+    dataset_config: str | None = None
+    text_field: str = "text"
+    label_field: str = "label"
+    # Heading of the input section in the classification prompt.
+    input_heading: str = "Article"
+    # Phrases used by the reflection template and the per-example feedback.
+    input_noun: str = "news article"
+    input_short: str = "article"
+    focus: str = "the article's central topic"
+
+
+@dataclass(frozen=True)
 class DataConfig:
     dataset_name: str = "fancyzhx/ag_news"
     seed: int = 20261002
@@ -48,6 +64,7 @@ class PilotConfig:
     prompt: PromptConfig
     data: DataConfig
     manual_instructions: tuple[str, ...]
+    task: TaskConfig = TaskConfig()
 
     @classmethod
     def from_yaml(cls, path: str | Path) -> "PilotConfig":
@@ -61,14 +78,15 @@ class PilotConfig:
         }
         prompt = PromptConfig(**prompt_raw)
         data = DataConfig(**raw.get("data", {}))
+        task = TaskConfig(**raw.get("task", {}))
         manual = tuple(str(item) for item in raw.get("manual_instructions", ()))
 
-        expected_labels = ("A", "B", "C", "D")
-        if tuple(prompt.label_names) != expected_labels:
+        expected_labels = tuple(chr(ord("A") + index) for index in range(len(prompt.label_names)))
+        if not 2 <= len(expected_labels) <= 26 or tuple(prompt.label_names) != expected_labels:
             raise ValueError(
-                "prompt.label_names must preserve the order A, B, C, D; "
+                "prompt.label_names must be consecutive capital letters starting at A; "
                 f"received {tuple(prompt.label_names)}"
             )
         if len(manual) != 3:
             raise ValueError("Exactly three manual alternative instructions are required.")
-        return cls(model=model, prompt=prompt, data=data, manual_instructions=manual)
+        return cls(model=model, prompt=prompt, data=data, manual_instructions=manual, task=task)

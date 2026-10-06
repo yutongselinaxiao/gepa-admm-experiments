@@ -41,9 +41,9 @@ def _write_examples(path: Path, examples: Sequence[NewsExample]) -> str:
     return _sha256(rows)
 
 
-def _class_counts(examples: Sequence[NewsExample]) -> dict[str, int]:
+def _class_counts(examples: Sequence[NewsExample], labels: Sequence[str]) -> dict[str, int]:
     counts = Counter(example.gold_label for example in examples)
-    return {label: counts[label] for label in ("A", "B", "C", "D")}
+    return {label: counts[label] for label in labels}
 
 
 def main() -> None:
@@ -65,6 +65,10 @@ def main() -> None:
         train_size=config.data.train_size,
         validation_size=config.data.validation_size,
         seed=config.data.seed,
+        num_classes=len(config.prompt.label_names),
+        dataset_config=config.task.dataset_config,
+        text_field=config.task.text_field,
+        label_field=config.task.label_field,
     )
     if set(item.example_id for item in train) & set(item.example_id for item in validation):
         raise AssertionError("Training and validation IDs overlap.")
@@ -82,7 +86,7 @@ def main() -> None:
         "train": {
             "path": str(train_path),
             "size": len(train),
-            "class_counts": _class_counts(train),
+            "class_counts": _class_counts(train, tuple(config.prompt.label_names)),
             "canonical_content_sha256": train_sha256,
             "file_sha256": _file_sha256(train_path),
             "example_ids": [item.example_id for item in train],
@@ -90,7 +94,7 @@ def main() -> None:
         "validation": {
             "path": str(validation_path),
             "size": len(validation),
-            "class_counts": _class_counts(validation),
+            "class_counts": _class_counts(validation, tuple(config.prompt.label_names)),
             "canonical_content_sha256": validation_sha256,
             "file_sha256": _file_sha256(validation_path),
             "example_ids": [item.example_id for item in validation],

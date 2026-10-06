@@ -1,0 +1,1922 @@
+[
+  {
+    "example_id": "official-train:10300:train",
+    "article": "i reshaped the workout slightly because my left upper arm was feeling tender",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:15915:train",
+    "article": "i responded to her that i did not feel unfortunate at all rather i felt fortunate that i made decisions i could sleep with at night",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3510:train",
+    "article": "i feel like its flying by and im afraid im going to miss something",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:6224:train",
+    "article": "i admire makes me feel amazed at my life",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:6152:train",
+    "article": "ive always been able to produce work despite a day job and that i suspect professional pressures might add to a feeling of artistic foment it would take quite a bit to get me out of the saddle",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:359:train",
+    "article": "i am feeling overwhelmed with the responsibilities of being a teacher that someone is trusting me with their most precious gift and it is an honor",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:4754:train",
+    "article": "i am still working through the guilt of feeling selfish for self preservation without the justification that i must survive to bring up my babies",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8367:train",
+    "article": "i think of that image i feel calm amp safe a href http revealthestaryoutrulyare",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:13484:train",
+    "article": "i feel my life being threatened by illness i lose my mind",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:13845:train",
+    "article": "i settle in other ways based on feeling worthless",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:15756:train",
+    "article": "i still dont feel like finishing typing about it but i just know my legions and legions of loyal readers have been clamouring for the exicting conclusion to my disney vacation",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:15101:train",
+    "article": "i really like it i feel so nostalgic watching decade as i remember a lot of the hesei kamen riders",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6170:train",
+    "article": "i can like tbt when i m feeling nostalgic",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:463:train",
+    "article": "i feel bitchy because i am hurting too",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4541:train",
+    "article": "i guess it is the taboo feeling naughty bad and dirty",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:9045:train",
+    "article": "i somehow feel terrified as though if i dare slow down or walk in place to catch my breath billy blanks will jump out of the screen and yell into my face with all his fierceness",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:11618:train",
+    "article": "i feel like the cabbage potatoes and venison were components of a rich stew and the pomegranate seeds were meant to cut through the thick oiliness of the rest of the dish",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9172:train",
+    "article": "i feel shocked robbed and shaken of everything i thought i wanted",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:11315:train",
+    "article": "i feel like im doomed until he returns",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:510:train",
+    "article": "i must find a way to accept these limitations until they are older without feeling held back or resentful",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:15647:train",
+    "article": "i have to report and suddenly your author feels bashful for his maniacal rants",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3400:train",
+    "article": "i am quite perplexed by liam i m trying to figure out if he s always been submissive or does he feel he needs to be submissive to mark and johnny",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4772:train",
+    "article": "i feel for loving you",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:12530:train",
+    "article": "i wake up i realize that my panty is wet and i feel very horny",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:12:train",
+    "article": "i think it s the easiest time of year to feel dissatisfied",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:390:train",
+    "article": "i bought a virtually fat free thousand islands and feeling very impressed with myself hold large quantities of this substance on the leaves of lettuce and cucumber with my friend but it will be total sugar becomes if you do not burn fat",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1242:train",
+    "article": "i feel i need to put my beloved uggs to one side and get back on the ballet pump bandwagon",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6378:train",
+    "article": "i have to move stop staring at the other ladies this doesn t feel good does it feel bad",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8806:train",
+    "article": "ill have to admit while it was an awesome feeling many a time i didnt know what to say froze or went mind blank while observing her",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12944:train",
+    "article": "i think are close to me as online friends also feel they still very curious about me",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:2195:train",
+    "article": "im still feeling a bit stunned by an experience i had tonight while watching a movie",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1125:train",
+    "article": "i don t want you to feel pressured into making love",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:15317:train",
+    "article": "im by no means huge however as im only i find that any extra weight at all makes me feel very uncomfortable in myself as well as my clothes",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3788:train",
+    "article": "im feeling as if im not caring and i dont want to fail my finals",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7827:train",
+    "article": "i feel a lot of jaded fans are doing i m rating it based on what i ve seen heard and played",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:13501:train",
+    "article": "i was feeling and i said impatient",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8445:train",
+    "article": "i can tell myself that i feel like i trust others and yet what i am actually feeling is loyal which can cause me to pretend that there is trust when there is none",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7302:train",
+    "article": "i feel so super not old",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7439:train",
+    "article": "i realize that the vision that i had for it at the beginning is not what i feel passionate about any more",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:12814:train",
+    "article": "i went i was amazed at what i have and i began to feel when the woman canal spoke about the divine hierarchies and they wanted us to do for a new era of spiritual evolution",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:11889:train",
+    "article": "i feel like ive shaken off some of the funk thats been floating around me for the last bit",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:9798:train",
+    "article": "i am still feeling a bit melancholy over my daughter going back to college and the end of a fun summer",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:14863:train",
+    "article": "i feel slightly like a traitor admitting that i really liked the new place",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:524:train",
+    "article": "i am always so sensitive and my every sense feels like it is being assaulted as i drag myself away from the darkness",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4240:train",
+    "article": "i said feeling a little shaky as i stared at the ocean from which the goddess was rising not knowing why",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:12450:train",
+    "article": "i feel extremely fond of comes an avalanche of anxiety",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:10887:train",
+    "article": "i feel i am suffering from a bad case of i only want to nap",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:851:train",
+    "article": "i thought maybe it was just my hands feeling funny but i touched my hair with my totally clean forearm and it became sticky",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:744:train",
+    "article": "i started to feel kind of skeptical about this myself",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1741:train",
+    "article": "i feel intimidated by the wide open design and therefore find it hard to write",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:9999:train",
+    "article": "im feeling cranky im very defensive about it",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:14898:train",
+    "article": "when an alcoholic stood dribbling over a food counter",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8197:train",
+    "article": "i feel about it has me shocked",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:12659:train",
+    "article": "i thought id try to demonstrate the difference as i know if i hadnt seen it for myself i may still be feeling doubtful",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:15119:train",
+    "article": "i couldnt help feeling charmed and amused",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:15298:train",
+    "article": "ive been feeling like im on shaky quilting waters and have started questioning my work",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:13517:train",
+    "article": "i was really worried that i would feel intimidated by monica but when we met that morning she was incredibly welcoming and made me feel relaxed straight away",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2992:train",
+    "article": "i do feel insecure because if there was a way to examine boyfriends he d be exempted",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3971:train",
+    "article": "i stared up at him amazed by the feeling and as equally amazed that nothing else was happening",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:10358:train",
+    "article": "im tired of feeling lethargic and im hungry and im going to eat this bread and the sausage and the entire chocolate bar the minute i get home",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:612:train",
+    "article": "i remember feeling amazed",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:15990:train",
+    "article": "i feel really glad that i dont look like the celebrities out there that are so beautiful she told dr",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3585:train",
+    "article": "i got a feeling that the hateful talk in the work place wore thin and they kept her around only for what they absolutely needed her to cover",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4276:train",
+    "article": "i care very little about impressing people unless its a person who i feel deserves being impressed",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:11034:train",
+    "article": "im feeling romantic towards not another relative friend coworker",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4380:train",
+    "article": "ive ever worked on and i feel very privileged to work with such an amazing team",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2140:train",
+    "article": "im old enough that graduation and yk feels like just yesterday i find myself a bit stunned by this",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:3388:train",
+    "article": "i like the brush a lot but since returning from spain sob and the release of real techniques i started using the expert face brush for my liquid foundation and the sephora mineral powder brush sat at the back of my collection feeling unloved",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:11901:train",
+    "article": "im feeling a little tender swollen and hot in that area today",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3934:train",
+    "article": "im not enjoying winter hate feeling cold and having to dress in so many layers",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4291:train",
+    "article": "i feel reluctant to share because my experiences feel incomplete especially now that my ideas are making a shift",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7589:train",
+    "article": "i feel so strange sitting here blogging away amp not having to study",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:6944:train",
+    "article": "i feel like a person who tortured somebody because i like to see the fans confused and embarrassed at the same time",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2421:train",
+    "article": "i still feel innocent and small",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12975:train",
+    "article": "i guess so walking around feeling cranky and mad",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:941:train",
+    "article": "i feel a bit reluctant to turn to other people",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2863:train",
+    "article": "i dont call what i am feeling as nervous but more anxious",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:854:train",
+    "article": "im known to feel affectionate toward those who adore leonard cohen is what makes me like him quite a lot",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:11345:train",
+    "article": "i often feel so distressed and freaked out whenever my child gets sick",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1016:train",
+    "article": "i think of how much time we spent just doing fun childhood stuff together as a family i feel amazed",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:11057:train",
+    "article": "i can feel something inside me something delicate and peaceful unfurling inside my chest",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:14295:train",
+    "article": "i feel like if i could just go to detention after school for a couple days then everything would be ok",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6974:train",
+    "article": "i feel a gentle tap on my shoulder",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:374:train",
+    "article": "i want to love you but i feel like there some sort of hindrance thats keeping me from loving you",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:14750:train",
+    "article": "i want to help each of them feel special she said",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:14527:train",
+    "article": "i am good at something that i feel passionate about and all of the other students that graduate this year are in the same boat what happens after",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3645:train",
+    "article": "i work out i feel invigorated",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:10637:train",
+    "article": "i am feeling quite blessed and enjoying my time here",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7213:train",
+    "article": "i still feel a bit stunned and i suppose i should be racked with regret and shame",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:8185:train",
+    "article": "i feel selfish for that choice i made i just beg that you dont let your love for me go away",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:14010:train",
+    "article": "i no raphael says grasping for his usual eloquence and feeling it slip from his fingers with spiteful ease",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:5867:train",
+    "article": "i feel amazed how this sh it things happened to me",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:5930:train",
+    "article": "i really don t feel all that bothered by the north london derby",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2339:train",
+    "article": "i had thought but i feel scared and somewhat trepidatious nervous and sad",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:13599:train",
+    "article": "i feel a bit strange saying it",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:12304:train",
+    "article": "i left feeling pretty chuffed with my finds",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7836:train",
+    "article": "i met a really cute girl who i feel kind of fond for today and normally girls are really complex to me but i can just be myself around her",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3292:train",
+    "article": "i woke up feeling all frustrated and upset again re enacting the moment i had to succumb to the docs insults and arrogance for a favor to clarify truth about my health",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:5657:train",
+    "article": "i think its just a subconscious acknowledgement about my feelings towards eddie eg ignored",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7108:train",
+    "article": "i feel excuse the messy thoughts i cant wait to make new friends im afraid to leave",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9547:train",
+    "article": "i feel like they would only mask or dull the problems instead of help me work my way through them",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3563:train",
+    "article": "i saw i had a direct message dm on twitter from a former friend jeff who i no longer feel friendly toward",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3622:train",
+    "article": "i ini i feel strange",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:3662:train",
+    "article": "i also loved the feeling of that gentle rippling through the body when i floated in water it was a bonus having friends with pools growing up in australia",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4154:train",
+    "article": "i was definitely feeling nostalgic and was a bit sad when one of my favorite exhibitions the hall of ocean life was closed",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:12224:train",
+    "article": "im feeling cranky im not going to lie",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:12703:train",
+    "article": "i know theres no hurry to get it done but it still feels a bit weird to not be checking out the newest patch content",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:3318:train",
+    "article": "i cannot and i feel a strange sadness for a thing that i m now ready for but cannot do",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5389:train",
+    "article": "i feel like i dont honestly know which bits of the dt that i admired are the results of ccs own wit",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3779:train",
+    "article": "i would like to know why duke university administrators feel that it is acceptable to readmit collin finnerty news story jan",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4151:train",
+    "article": "i am feeling brave we will go somewhere further afield like a walk in the woodlands around a farm to the beach or some other full day activity",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:10542:train",
+    "article": "i used to feel when i was still a child being very curious and innocent with everything and everyone around me",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:14105:train",
+    "article": "im not feeling overwhelmed by school just yet i only give that a week or so hah",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1838:train",
+    "article": "i am feeling much more myself again now and i would like to say thank you to everyone for the lovely get well wishes your lovely comments always mean so much to me",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3588:train",
+    "article": "i feel disturbed and sad",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2723:train",
+    "article": "i feel reluctant to leave",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:8142:train",
+    "article": "i didnt really feel like being thankful",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:375:train",
+    "article": "i feel is that they are fond of themselves and ok second thought really sensitive to spelled everything here",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3002:train",
+    "article": "ive been feeling restless inside and i dont understand why",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:536:train",
+    "article": "i just woke up from my nap and i feel extremely agitated and grumpy",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:15285:train",
+    "article": "i feel strongly impressed that there must be something for me to do",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:14355:train",
+    "article": "i spent so much of my pregnancy feeling like a listless slug",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2157:train",
+    "article": "im definately feeling the change but im refusing to feel impatient about it",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2889:train",
+    "article": "i sort of feel a bit unsure now as to what to touch upon next",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:11506:train",
+    "article": "i feel blessed to be on this journey so quickly and honored to help",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:12886:train",
+    "article": "i look at myself and feel dissatisfied",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:5554:train",
+    "article": "i feel like there are a couple of castanets songs i really liked over the last five or eight years but i feel like ray raposa just got lost in that wave of freak folk that rolled in and crested in like and then got washed back out to sea",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3855:train",
+    "article": "i feel very peaceful about the whole situation",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:14478:train",
+    "article": "i know mom s who would take once look at my facebook profile and feel envious of all the fun i seem to be having out with my friends the carefree state that my life is in where i am only responsible for me and can pick up at any time and go away for the weekend",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1405:train",
+    "article": "i can admit that even though i feel horrible now",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12682:train",
+    "article": "i am sitting at the computer feeling melancholy and a little overwhelmed torn as to what to write home in this my final e mail",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:15261:train",
+    "article": "i feel that if i met the author that we would get along because the writing seemed more friendly than formal",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:203:train",
+    "article": "i feel now so uncomfortable with all of them i guess is me",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1620:train",
+    "article": "i feel useless standing on the sidelines like a wet lettuce while someone does something i am quite capable of",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5143:train",
+    "article": "i sure know where to come if i m feeling a little tender",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:10945:train",
+    "article": "i know it was not pleasant for her and i feel selfish saying it but i think i would have fallen apart if i had been there",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:12459:train",
+    "article": "i enjoy reading immensely and i feel strange or off when i m in between books or just lack the time to read",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:6926:train",
+    "article": "i suggest before you begin you take some time to reflect on your relationships and understand what specifically makes you feel valued and loved and what makes you feel insecure and unnecessary",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:13883:train",
+    "article": "i pray that you feel the presence of god around you and that you realize that the birth of gods son was a precious gift for you and you never have to be alone",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5914:train",
+    "article": "i feel blessed that i was there at the right time in the right place to see them and to feel a part of something that i hope will give the people of kuwait hope for progress",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1352:train",
+    "article": "i love a movie with a good feel to it that really keeps you enthralled and the road has just that",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:7171:train",
+    "article": "i trained my heart and mind to receive and believe the truth i am feeling rejected but it is only a feeling brought about by my past experiences",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12890:train",
+    "article": "im feeling so unsure when things are pressing in about me comes a gentle voice so still",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:15974:train",
+    "article": "i am feeling much like the guy in the pic above a little overwhelmed and starved for time but very delighted to be making new work and preparing my little florida bungalow for thanksgiving guests this weekend",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1148:train",
+    "article": "i think i brag and it feels strange because i still see myself as a little fattie pre teen unworthy of any male attention",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:10348:train",
+    "article": "i was feeling melty and miserable enough myself so i can only imagine what he must have been going through",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4355:train",
+    "article": "i mean think about how that would feel that would be stupid embarrassing",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9194:train",
+    "article": "i was feeling amazing so i was disappointed when my lab work in december came back the same way it did the previous year overall it was good but i did not have enough protein in my diet",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:11651:train",
+    "article": "i also feel curious when i read all the readings because not only i want to have depth understanding of social constructivism itself but also i found this unit gives opportunity for me to understand the philosophy of each type of constructivism",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:9330:train",
+    "article": "i have stopped feeling surprised",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1415:train",
+    "article": "i will usually tell him that i was feeling frustrated for whatever reason and ask him to help me fix it",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:15327:train",
+    "article": "i feel like i have to redeem myself even though i think they realized why i was distraught and were ok with it",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5354:train",
+    "article": "i feel blackburn will be a stubborn team against blackpool and holloway will want a positive reaction in this game even if they don get a result",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:9039:train",
+    "article": "i feel good players can play with each other whether they have to play on the right or left of the centre back role",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8934:train",
+    "article": "i feel so impatient when it comes to certain issues",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8412:train",
+    "article": "i hate missing practice because i feel like the reps in practice are vital to your performance on sunday",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2715:train",
+    "article": "ive worked plenty of them and have yet to find one that leaves me feeling satisfied with the way ive spent another day that i will never get back",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12019:train",
+    "article": "i was out until at a social gathering so i feel a bit groggy today",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:14825:train",
+    "article": "i feel like im making all the effort and i cant be bothered with it anymore",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8122:train",
+    "article": "i just really feel so curious about whether you and dad have ever been bitten",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:9935:train",
+    "article": "i sometimes feel shy about my musical taste because some of it wanders towards what some might call techno slander",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4807:train",
+    "article": "i feel curious about this one i think i might fall in love by uncle montagues tales of terror",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:9823:train",
+    "article": "i am always feeling hot i am hot to the touch",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:8106:train",
+    "article": "i woke up this morning feeling very agitated at the day coming",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1365:train",
+    "article": "i was afraid to clean nicos ears but after his doctor showed me how then i didnt feel like i could hurt him",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:11425:train",
+    "article": "i am also feeling his prompting to offer my comments about what exactly is going on in our very troubled world and what he has lead me to do regarding these times we are finding ourselves in",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1086:train",
+    "article": "i honestly don t think it s possible for me to feel romantic love at this point",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7835:train",
+    "article": "i feel alone all the time and he just happened to be there",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:15560:train",
+    "article": "i am glad that the exhibition closed during spring though as its a time of new leaves and colour and that makes me feel more hopeful",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:544:train",
+    "article": "i feel like i have been rather unkind to it",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:9385:train",
+    "article": "i feel myself being sucked back in and this vicious cycle starts again every time you open the door and every time you show me more you back back any hints of love what is it that youre afraid of",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:14768:train",
+    "article": "i am currently feeling i wouldnt surprised if its flipped again",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:8220:train",
+    "article": "i feel completely shaken up",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:14430:train",
+    "article": "i constantly feel lied to and wronged by them i love these people to death",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7688:train",
+    "article": "im having my biannual mammogram and although i know it only hurts for a while im feeling unusually apprehensive",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5996:train",
+    "article": "i feel like ive been a totally hot mess that i had second thoughts about publishing it",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7546:train",
+    "article": "i was feeling very generous wild and crazy and we went through the drive through at steak and shake",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:9522:train",
+    "article": "i thought i wont be affected by how youre thinking feeling but the petty side of you digust me",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:10173:train",
+    "article": "i kept waiting to feel the water and when i did i was surprised at the velocity i gained",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:2071:train",
+    "article": "i feel so accepted",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:306:train",
+    "article": "im feeling really quite angry",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:9556:train",
+    "article": "i feel gloomy yet excited",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1435:train",
+    "article": "im feeling a little stressed about it",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6341:train",
+    "article": "i think beaches are my favorite places although i get the feeling i would be quite fond of the desert also",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:15733:train",
+    "article": "i suddenly feel anxious im crying over little things",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:763:train",
+    "article": "i am pretty certain we will use this name as a middle name if its a girl as it has such a special feeling to it and the connection with his her poppy is so lovely to me",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:13601:train",
+    "article": "i lured him in using emoexaderistic things about my life to to make him feel like he could be the tragic hero to save this young girl sorta romance plot",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:11617:train",
+    "article": "i feel very reluctant to have to walk through",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:10828:train",
+    "article": "i feel a bit sentimental",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:11471:train",
+    "article": "i feel like i totally fucked up",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7532:train",
+    "article": "i feel it would be too messy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:14630:train",
+    "article": "i feel so repressed with this one now",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4919:train",
+    "article": "i feel stumped something comes out of my pen and im always a little amazed by this",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:13504:train",
+    "article": "i feel more inhibited more shy in my own town with a camera than i do in the centre of london",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3162:train",
+    "article": "i myself stood before the crowd and talk but no more recent addition to the crowd feeling a little shaky hihi training and skills needed to maintain constant the better",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:12486:train",
+    "article": "i feel genuinely wronged",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2507:train",
+    "article": "i remember feeling excited about that particular day because i considered myself a grown up and woop",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8353:train",
+    "article": "i usually wash my hair every other day and after a few uses my hair is now feeling lovely soft and conditioned again",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3060:train",
+    "article": "i was feeling very keen to get out of the camp site before they realised i had been given the best gift of all free accommodation and free services",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:15837:train",
+    "article": "i still feel embarrassed when i think about it",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:11643:train",
+    "article": "i feel rushed again and its the lack of time jerry springer weather amp suddenly you want to put porn on i am very confused but hey let me do that while you enjoy that i had fun fun fun without your hun without a block so hype all about it",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1146:train",
+    "article": "im told by horsey people that they are a rare find so i feel quite lucky",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8321:train",
+    "article": "i could set all these discouraging feelings free",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:11043:train",
+    "article": "i am suggesting is to create a happy environment to live in with your partner the man has to feel like his feelings are just as important as yours",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8104:train",
+    "article": "i do really feel treasured by you too",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5498:train",
+    "article": "i want to enjoy this and feel successful",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8193:train",
+    "article": "i still get excellent feedback from unlikely people friends of my parents team mates co workers and the support really makes me feel like im doing something worthwhile",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:11748:train",
+    "article": "i have the feeling that she was the super agent we even found out that while she is good at shooting she is not good at shooting at a moving truck",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:15396:train",
+    "article": "i do not like feeling unsure and uncertain",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2976:train",
+    "article": "i hate the feeling that i am a pathetic loser that can do nothing right",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2832:train",
+    "article": "i asked the girls i was with if it was just me or if their eyes were feeling weird also",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:7806:train",
+    "article": "i called animesh told him my feelings he was very supportive",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:14975:train",
+    "article": "i did feel that the ending was fairly rushed and didnt provide the closure i was looking for but regardless this was historical fiction at its finest",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:14609:train",
+    "article": "i felt i handled it okay but the class really began to feel like instead of caring about the subject matter it was turning into a fight for my grade",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6857:train",
+    "article": "im not feeling like the meetings are a particularly supportive environment how does she expect to be treated when she has lost the weight she wants to lose",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:14559:train",
+    "article": "i haven t been able to shake this akward and unusual feeling i feel irritable and space out all the time feels like i was surged as well as my computer",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:10462:train",
+    "article": "im feeling quite adventurous and tried out those drinks that i just normally read through the pages of pocketbooks",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4860:train",
+    "article": "i was grateful for each and every one but it still made me feel funny",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:2698:train",
+    "article": "i am feeling generous so let s assume the former marlins each equal their most production season",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:11742:train",
+    "article": "i guess im a tough woman but i feel delicate",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:15102:train",
+    "article": "i do find myself feeling anxious seeing what everyone else is doing and feeling that i am not up to part with my peers and or i am stagnate",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1692:train",
+    "article": "i have said this before being a mom has made me feel more vulnerable than i have ever felt before",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:15371:train",
+    "article": "ive seen how mean other kids and adults can be to a child who doesnt fit into the norm and no way was i going to label him so he could be made to feel he was anything other than amazing",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1314:train",
+    "article": "i stopped feeling bitter and sorry for myself and lost myself in the work my work started getting better or rather continued to get better",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:10572:train",
+    "article": "i feel a lot more contented just having re lived a few moments of that trip through these photos",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:15227:train",
+    "article": "i was in the bathroom i had sat down to pee it was to make me feel submissive again per instructions",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9436:train",
+    "article": "i remembered seeing these pieces and feeling so impressed by them but seeing them again i was surprised i was blinded by my memories",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:6465:train",
+    "article": "i wanted to feel like i could depend on you and put in ur care and dare i say tender hands some of the things i hold dear u like a winter never seen in these lands became so cold",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3817:train",
+    "article": "i feeling irritable",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2406:train",
+    "article": "i feel really disgusted with myself more than the pain and agony",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2699:train",
+    "article": "i feel about cops is unfortunate and sad",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5038:train",
+    "article": "i feel curious reserved habits was nothing else",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:13280:train",
+    "article": "i think about how great everyone elses life is i feel that much more crappy about mine",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6238:train",
+    "article": "i can remember i feel especially impressed to start fresh new and remove clutter",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:9392:train",
+    "article": "i feel strange pangs of loneliness or emptiness bubble up",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:718:train",
+    "article": "i was older i might not feel as frightened about spending the time i have left alone",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7564:train",
+    "article": "i was to worried about them knowing if i was high or not and feeling a little paranoid and i have never never been that type of person that would think and care about what people think about me and would always focus on what i had to do to get to where i needed to get in life",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2586:train",
+    "article": "i know you feel tortured reading this",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:11713:train",
+    "article": "i was told it would make my arms go numb but i didnt feel anything numb about it as they pricked my arm with their so called baby iv",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:13895:train",
+    "article": "ive decided that whenever i start to feel mad about tod i dig deeper into myself to find the real solution",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:11678:train",
+    "article": "i say it it makes me feel special",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5345:train",
+    "article": "i did a breathing treatment but as i laid in bed i felt like complete crap and i couldnt sleep so i called in thinking i really need to get steroids and ill feel fine right",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1888:train",
+    "article": "i feel more energetic and motivated",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3086:train",
+    "article": "i pick up the cards i feel a shiver go up my spine and i just feel so curious",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:4334:train",
+    "article": "i am worried that you might feel pressured or obligated that wasnt my intention and i am sensitive to your situation",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:9286:train",
+    "article": "i feel like i just am so discontent with my work load and with myself",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8414:train",
+    "article": "i have an awesome husband i got to lay in bed for two days straight which i think is directly linked to the fact that im already feeling much better",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2075:train",
+    "article": "im feeling pressured at my desk due to the piles of tasks waiting for me i will often pack up and go write in a quiet corner in my bedroom living room or kitchen",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:10179:train",
+    "article": "i am sure you will feel very unhappy about it too",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:14099:train",
+    "article": "i feel utterly disillusioned",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6216:train",
+    "article": "i feel a little hopeless sometimes",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:13522:train",
+    "article": "i feel like an awful lot has happened in the past week or so",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:10402:train",
+    "article": "i feel a little delicate",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5061:train",
+    "article": "i remember feeling annoyed but also wondering if i shouldn t stop and buy something",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1727:train",
+    "article": "i tell the people closest to me things that i am feeling and its as if they arent surprised because theyd known it all along",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:13570:train",
+    "article": "ill feel even more pressured",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:9947:train",
+    "article": "i feel ludicrous even thinking these things",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1485:train",
+    "article": "i feel so bitchy suddenly",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:9781:train",
+    "article": "i can feel that they arent supporting me but that doesnt mean i dont want them im my life",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9419:train",
+    "article": "i feel completely blessed to have such wonderful family and friends",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:13556:train",
+    "article": "when i failed the entrance exam of the medical school and was studying biochemistry which has no job prospects in zambia",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:14016:train",
+    "article": "i was sent home still feeling a bit shaky and dizzy",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:12595:train",
+    "article": "im feeling less fearful today ptl",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2063:train",
+    "article": "ive been reading again and feeling pleasantly surprised to find my reading list contained four similar books a fine chance to compare and contrast differ",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:3870:train",
+    "article": "i feel pathetic because i feel like you never once called me your bestfriend and i just continued to call you my bff and i just get treated like a friend",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:11365:train",
+    "article": "i feel i was wronged",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8060:train",
+    "article": "i was a tad more jaded stopping the booth rep from reciting his memorized spiel by mentioning that i had been following the unit for a year but came away feeling pretty impressed",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:11844:train",
+    "article": "i started feeling a bit homesick with the mention of mulligans name",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7072:train",
+    "article": "i feeling so uncertain concerned afraid of this person circumstance environment change",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5211:train",
+    "article": "im still feeling very incredibly overwhelmed with the entire situation",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:6922:train",
+    "article": "i just try not to talk to anyone when i feel irritable like that",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:12526:train",
+    "article": "i try that i just feel that im being judged by eyes that only see me as a weird and vain bastard who thinks so much of himself",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4986:train",
+    "article": "im feeling determined to face facts have a gander at my donut a href http",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:11830:train",
+    "article": "i feel insecure around people who i marvel at people who humble me",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3180:train",
+    "article": "i feel generally dissatisfied and lost",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:12532:train",
+    "article": "i feel like i am one of them now before i resigned i got offered a job at the local council",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5177:train",
+    "article": "i always feel a bit anxious before i preceptor because i am still learning",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:15874:train",
+    "article": "i wanted to because he loves me and i feel like if he cares enough about me even if he doesnt care about the wedding itself he should be more supportive and not throw it in my face",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:8718:train",
+    "article": "i feel so rude i thought as i dialed my house",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3561:train",
+    "article": "i volunteered for everything and wound up feeling overwhelmed and people got mad at me for not being able to meet my obligations",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:10346:train",
+    "article": "i guess ive heard enough over the two months because each time i hear such comments i honestly feel offended",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:15430:train",
+    "article": "i find myself smiling at their feelings towards me and almost feeling affectionate towards them",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:558:train",
+    "article": "im afraid im in an environment that makes me feel more relaxed cause",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:10539:train",
+    "article": "im feeling a little impressed at their creativity",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:13220:train",
+    "article": "i feel like i want to be very very rebellious until they regret of what they have done to their single daughter",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:15666:train",
+    "article": "im feeling that kind of feeling when you are confused yet like bleh",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:15057:train",
+    "article": "i have not seen any change in my appearance but i feel more energetic i am sure this is just mental",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12666:train",
+    "article": "i feel him frantic now humping against my hip moaning when i suck his tongue into my mouth",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:9499:train",
+    "article": "i feel compassionate toward myself and my bodys new limitations which i need to become accustomed to as time takes me further into middle age and aging",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6981:train",
+    "article": "i feel funny cause bonka neva thanked me fa his awards",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:11236:train",
+    "article": "i know also that many others especially parents feel shocked and betrayed at what has been revealed",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:3574:train",
+    "article": "i feel like i m a very very dangerous human being right now",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2293:train",
+    "article": "i feel not heartless because my heart hurts so i still feel it i feel so much pain",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8028:train",
+    "article": "i feel like i instantly became an addison reed super collector hours ago",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8164:train",
+    "article": "i stood inside the chabad sukkah watching the sunlight filter through the woven schach of the roof and feeling the gentle breeze coming through the open lattice walls i began to relax",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:14192:train",
+    "article": "i di spazzola prima di andare a dormire one hundred strokes of the brush before bed though she didnt support the film because she feels that its not loyal to her novel",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5855:train",
+    "article": "i feel all shaken up and im waiting for things to settle",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5412:train",
+    "article": "i feel that they were just as surprised to be sharing my dream as i was to have them sharing it",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:11353:train",
+    "article": "i feel so inlove whenever i watch the film i love steve sean faris julie s love interest i adore their friendship plus i was so thrilled about the whole sleepover scavenger hunt thing but other than that i absolutely love the part where julie talks to her mom",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:10995:train",
+    "article": "i needed to feel rebellious",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8432:train",
+    "article": "i feel neglectful that i have to skip over all the entries from this community and that i dont have the time to be as religious as i had been",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2524:train",
+    "article": "i sit down to author this letter i feel a little surprised that an entire year has already passed us by",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:9563:train",
+    "article": "i plan on making another post all about that but ive had some progress and i feel fucking fantastic",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7078:train",
+    "article": "i receive the good news in joy like the magi or do i feel threatened by gods message like herod",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:14764:train",
+    "article": "i am a boy i like girls they are pretty and i like it when they smile at me but it makes me feel funny",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:8520:train",
+    "article": "i feel like it is cool for now but we wonder when fabolous plans to release his long awaited losos way rise to power album",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:419:train",
+    "article": "i usually use smaller legos however this year i have a few students with fine motor delays and i want all my students to feel successful",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1928:train",
+    "article": "i asked darren about it when he got home as i was feeling a bit curious even though it didnt really matter and it was really none of my business",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:14870:train",
+    "article": "i feel sometimes like i want to say things that i am sure will offend",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:11379:train",
+    "article": "i feel sure the donation would have been rejected",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9816:train",
+    "article": "i have not written is that i am still feeling angry about something that happened on friday which seems to have invaded my happy place with recurring angry thoughts",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:14218:train",
+    "article": "i feel surprised that scientists to actually question about how it is weird for the initial conditions of the universe to be fine tuned to very special values such that our universe is almost flat",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:13673:train",
+    "article": "i dont understand why i feel so empty and hollow deep within me",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2072:train",
+    "article": "id love to hear how any of you handle these types of situations as well so if you have any stories of your own feel free to share",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1032:train",
+    "article": "i cant hide my feeling when i feel so glad",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12499:train",
+    "article": "i dont like the way i feel when i am angry",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2856:train",
+    "article": "i feel there is also a difference between loving someone and being in love with someone",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3695:train",
+    "article": "i feel hopeless i cannot cope",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12334:train",
+    "article": "i feel shy to him all the time",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4607:train",
+    "article": "i cant decide how i feel about some of the supporting roles particularly the girlfriend and alfred molina both quite funny but were they one dimensional caricatures or legitimate characters simply overshadowed by a fantastic lead",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1859:train",
+    "article": "i just feel weird doing it but i want to make sure he feels loved in there",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5640:train",
+    "article": "i get the feeling they genuinely liked being out here and appreciated the place",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:14335:train",
+    "article": "i will go to the supermarket and feel up tomatoes and hope life imitates art and some cute guy will ask me out",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9:train",
+    "article": "i feel romantic too",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1045:train",
+    "article": "i smoothly hand her a twenty feeling smug that they are both interested",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12818:train",
+    "article": "i feel like a blank sheet",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:13059:train",
+    "article": "i hate it i am feeling bothered by my boob size",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:10603:train",
+    "article": "ive been feeling miserable ever since i graduated high school",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5748:train",
+    "article": "i feel so embarrassed of myself for even having the nerve to post them all up for everyone else to read",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7263:train",
+    "article": "i know its not my fault but after failing to keep three babies alive in my womb how else should i feel two friends came by with a sweet gift and a sandwich for todd",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:9517:train",
+    "article": "im already feeling emotional before i had a chance to say anything at all she turns to me says i love you",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:11968:train",
+    "article": "i feel so low from living high chorus post chorus outro i need you more need you more i need you more than dope",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:10252:train",
+    "article": "i feel agitated right on through",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3522:train",
+    "article": "im feeling a but of melancholy today a bit of sadness but i also feel that the sadness is ok",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:15205:train",
+    "article": "i feel her pain and i let her know and i want anyone else suffering with depression to know that you are not alone",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9289:train",
+    "article": "i feel very hostile at the thought of taking out my credit card",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2792:train",
+    "article": "i was feeling for the horses cooped up and determined if we got even a little stretch of weather i was going to see that each and every horse got a chance to get outside",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12117:train",
+    "article": "i might tackle a memoir but i feel i need to live longer before i qualify to have anything useful to say",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5028:train",
+    "article": "i am feeling so stunned and sad about the earthquake in christchurch new zealand yesterday",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:13446:train",
+    "article": "i feel insulted whenever people say guys cant cry or feel emotional",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3702:train",
+    "article": "i look back on that i feel amazed that at such a young age i could just pull it together like that",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:15354:train",
+    "article": "i would ideally like to be able to come to terms with it at one point and have acim happily integrated with all the abraham processes just so i can feel resolved",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1883:train",
+    "article": "i guess these expectations of me being so goddamn perfect have made me feel afraid to change",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:15825:train",
+    "article": "i even feel it is a game that i am a part of some strange reality swarming with violent carnivores adding to the bare landscape of the place i now know",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:522:train",
+    "article": "i feel really lucky to have found you as a resource and have always felt the answers i needed were there for the asking",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:13987:train",
+    "article": "i really like it and am thrilled to see where all of this will take us but on another hand i feel that the drama seems a bit messy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6744:train",
+    "article": "i feel weird knowing mine died when i wasn t around",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:12502:train",
+    "article": "i don t feel dissatisfied just distracted from my life",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7122:train",
+    "article": "i feel when you should walk in to see the film you should be pleasantly surprised with the film s inherent connect",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:3115:train",
+    "article": "i wasnt feeling well at all so had to take a few days off work lots of winter germs going round and being in an air conditioned office probably doesnt help",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12679:train",
+    "article": "i feel all kinds of excitment bacuse i really enjoy art and i hope my art will generate some talk amongst the loyal and the passerby",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:14504:train",
+    "article": "i am supposed to go about being strong when i feel so inhibited",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8864:train",
+    "article": "i feel like i should admit to her how many times a week i make pasta for dinner and that i never make my bed at school so shes less impressed or something",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:6657:train",
+    "article": "i have to admit that i was feeling distracted by the fact that i was blocking traffic",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8943:train",
+    "article": "i feel ugly to stop being lazy so i dont embarrass my friends to wear white so i could have short hair without feeling fat not that i really want short hair but still to be able to kiss someone without feeling like i have to pull away",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5105:train",
+    "article": "i feel all our time is devoted to scheduling instead of actually making the center be top notch",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:10275:train",
+    "article": "i think i deserve for once this freedom makes me feel amazing",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:10877:train",
+    "article": "ive found that when i make a simple mistake or i really screw up i feel foolish guilty and like i will never be myself again",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7013:train",
+    "article": "i feel very dissatisfied with myself",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4032:train",
+    "article": "im not going to lie some days i feel uber supportive and other days i feel uber frustrated",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6849:train",
+    "article": "i find myself feeling shamefully skeptical of the wisdom of popular gurus especially when it comes to persuasively explaining seriously complex phenomena even when its offered to standing ovations coming from cheering audiences",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:6046:train",
+    "article": "i am posting about a past event where i am feeling like i should be insulted",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3665:train",
+    "article": "i have a sense of both in my mind s eye i feel that divine energy way up aloft and i experience its reflection in me sometimes like a rare sunny day in a rainy climate",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:13286:train",
+    "article": "i feel curious and bewildered",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:7973:train",
+    "article": "i could loose my job i would be so f amp ed for xmas i hate xmas i hate holidays i wish they would go away i feel nervous i feel sad what if i disappoint my family my friends",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4044:train",
+    "article": "i just know that im feeling so hot now",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:11410:train",
+    "article": "i did not really want to die but i wanted out of the pain that i was experiencing and that i was allowing others to experience by watching me and feeling helpless to do anything about it",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:868:train",
+    "article": "i couldn t turn my head away even when i feel frightened",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:14137:train",
+    "article": "im sure the bundle guys are feeling pretty generous this time of year",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3582:train",
+    "article": "i feel petty moaning about it but its annoying me so from now on im keeping my stuff in a bag in my room if they ask i can always say im keeping it there to stop the bathroom getting cluttered",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:9362:train",
+    "article": "i feel very disturbed now thanks to this psychopath s useless and fake story",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5958:train",
+    "article": "i noticed myself feeling victimized resentful fearful ripped off crazy my body reacted with sensations of tension and chaos",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2163:train",
+    "article": "i could sense that he was uncomfortable when he came to deliver the letter but i was willing to attribute to him feeling weird about being so romantic and vulnerable",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:12446:train",
+    "article": "i have a feeling she will sleep through the night more and be a little less agitated",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:14804:train",
+    "article": "i feel the divine feminine playing out last night also by giving her heart yet not to just all in the universe but to the divine masculine gods to help wake and heal him",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6947:train",
+    "article": "i still feel a little bit funny when i discover his fb damn it",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:7955:train",
+    "article": "i imagine ill eventually migrate to the middle but even alone that feels greedy to me",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4356:train",
+    "article": "im excited and i feel like this is a project that i can be passionate about and totally immerse myself in",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4764:train",
+    "article": "i feel content sending packet after packet out into the world",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3916:train",
+    "article": "i feel guilt that i was cranky last night and didn t fully embrace my evening alone with the boy",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:15596:train",
+    "article": "out on a weekend with a group of people",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:13878:train",
+    "article": "i find myself often feeling isolated alone and starved for stimulating adult conversation",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7339:train",
+    "article": "i didnt feel pressured to do more or like he wont get anything out of the one day",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1174:train",
+    "article": "i couldn t help but feel sympathetic for netflix as an army of the misinformed denounced netflix for the recent price hike",
+    "gold_label": "C"
+  }
+]

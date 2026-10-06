@@ -38,10 +38,17 @@ class AGNewsGEPAAdapter(
 ):
     """GEPA adapter backed by the pilot's shared Qwen evaluator."""
 
-    def __init__(self, evaluator: CommonEvaluator, *, evaluation_batch_size: int = 32) -> None:
+    def __init__(
+        self,
+        evaluator: CommonEvaluator,
+        *,
+        evaluation_batch_size: int = 32,
+        focus: str = "the article's central topic",
+    ) -> None:
         if evaluation_batch_size < 1:
             raise ValueError("evaluation_batch_size must be positive.")
         self.evaluator = evaluator
+        self.focus = focus
         self.evaluation_batch_size = evaluation_batch_size
         self.evaluation_invocations = 0
         self.examples_scored = 0
@@ -53,7 +60,7 @@ class AGNewsGEPAAdapter(
         return (
             f"Predicted {predicted} ({names[predicted]}) but the gold class is "
             f"{gold} ({names[gold]}). Revise the general decision rule to distinguish "
-            "the article's central topic from incidental entities and keywords."
+            f"{self.focus} from incidental entities and keywords."
         )
 
     def evaluate(

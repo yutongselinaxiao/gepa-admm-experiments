@@ -129,7 +129,7 @@ def run_objective_audit(
                 "validation_mean_loss": float(audit["mean_loss"]),
                 "per_class_accuracy": audit["per_class_accuracy"],
                 "per_class_mean_loss": {
-                    label: mean(losses_by_class[label]) for label in ("A", "B", "C", "D")
+                    label: mean(losses_by_class[label]) for label in sorted(losses_by_class)
                 },
             }
         )

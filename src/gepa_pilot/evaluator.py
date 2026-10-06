@@ -96,6 +96,7 @@ class CommonEvaluator:
         system_prompt: str,
         label_names: dict[str, str],
         enable_thinking: bool,
+        input_heading: str = "Article",
     ) -> "CommonEvaluator":
         from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -118,6 +119,7 @@ class CommonEvaluator:
             system_prompt,
             label_names,
             enable_thinking=enable_thinking,
+            input_heading=input_heading,
         )
         return cls(model, tokenizer, builder, device=device)
 

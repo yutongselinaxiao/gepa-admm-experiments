@@ -1,0 +1,46 @@
+# Second classification task: dair-ai/emotion (tweets, 6 emotions). Same model and
+# protocol as configs/pilot.yaml; per-class sizes match the AG News pilot
+# (64 train and 128 validation examples per class).
+model:
+  name_or_path: Qwen/Qwen3-1.7B
+  revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  local_files_only: true
+  local_snapshot_path: /home/xiaoyuto/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  dtype: bfloat16
+  device: cuda:0
+
+task:
+  name: emotion
+  dataset_config: split
+  text_field: text
+  label_field: label
+  input_heading: Text
+  input_noun: short social-media post
+  input_short: post
+  focus: the dominant emotion the writer expresses
+
+prompt:
+  system_prompt: >-
+    You are a careful emotion classifier. Follow the supplied label mapping
+    and response format exactly.
+  seed_instruction: >-
+    Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.
+  label_names:
+    A: Sadness
+    B: Joy
+    C: Love
+    D: Anger
+    E: Fear
+    F: Surprise
+  enable_thinking: false
+
+data:
+  dataset_name: dair-ai/emotion
+  seed: 20261002
+  train_size: 384
+  validation_size: 768
+
+manual_instructions:
+  - Identify the feeling the writer is mainly expressing, map it to the listed emotions, and answer with only one label letter.
+  - Focus on the writer's own emotional state rather than events or people mentioned. Return exactly one label letter.
+  - Decide whether the post mainly expresses sadness, joy, love, anger, fear, or surprise, then output its mapped letter only.

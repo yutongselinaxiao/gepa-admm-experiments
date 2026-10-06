@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any, Iterable, Sequence
 
 
-LABEL_TO_CLASS_ID = {"A": 0, "B": 1, "C": 2, "D": 3}
+LABEL_TO_CLASS_ID = {chr(ord("A") + index): index for index in range(26)}
 CLASS_ID_TO_LABEL = {value: key for key, value in LABEL_TO_CLASS_ID.items()}
 
 
@@ -31,16 +31,20 @@ def load_examples_json(path: str | Path) -> list[NewsExample]:
 
 
 def stratified_split_indices(
-    labels: Sequence[int], train_size: int, validation_size: int, seed: int
+    labels: Sequence[int],
+    train_size: int,
+    validation_size: int,
+    seed: int,
+    num_classes: int = 4,
 ) -> tuple[list[int], list[int]]:
-    if train_size % 4 != 0 or validation_size % 4 != 0:
-        raise ValueError("Stratified AG News sample sizes must be divisible by four.")
-    train_per_class = train_size // 4
-    validation_per_class = validation_size // 4
+    if train_size % num_classes != 0 or validation_size % num_classes != 0:
+        raise ValueError(f"Stratified sample sizes must be divisible by {num_classes}.")
+    train_per_class = train_size // num_classes
+    validation_per_class = validation_size // num_classes
     rng = random.Random(seed)
     train_indices: list[int] = []
     validation_indices: list[int] = []
-    for class_id in range(4):
+    for class_id in range(num_classes):
         candidates = [index for index, label in enumerate(labels) if int(label) == class_id]
         rng.shuffle(candidates)
         required = train_per_class + validation_per_class
@@ -58,22 +62,31 @@ def load_ag_news_development_splits(
     train_size: int,
     validation_size: int,
     seed: int,
+    *,
+    num_classes: int = 4,
+    dataset_config: str | None = None,
+    text_field: str = "text",
+    label_field: str = "label",
 ) -> tuple[list[NewsExample], list[NewsExample]]:
-    """Load only the official training split and create disjoint stratified splits."""
+    """Load only the official training split and create disjoint stratified splits.
+
+    Despite the name (kept for existing callers), this works for any single-label
+    classification dataset whose integer labels 0..num_classes-1 map to letters A, B, ...
+    """
     from datasets import load_dataset
 
-    dataset = load_dataset(dataset_name, split="train")
-    labels = list(dataset["label"])
+    dataset = load_dataset(dataset_name, dataset_config, split="train")
+    labels = list(dataset[label_field])
     train_indices, validation_indices = stratified_split_indices(
-        labels, train_size, validation_size, seed
+        labels, train_size, validation_size, seed, num_classes=num_classes
     )
 
     def convert(indices: Iterable[int], split_name: str) -> list[NewsExample]:
         return [
             NewsExample(
                 example_id=f"official-train:{index}:{split_name}",
-                article=str(dataset[index]["text"]),
-                gold_label=CLASS_ID_TO_LABEL[int(dataset[index]["label"])],
+                article=str(dataset[index][text_field]),
+                gold_label=CLASS_ID_TO_LABEL[int(dataset[index][label_field])],
             )
             for index in indices
         ]

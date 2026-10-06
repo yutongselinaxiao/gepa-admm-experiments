@@ -35,16 +35,23 @@ from .gepa_adapter import AGNewsGEPAAdapter
 from .gepa_report import write_gepa_report
 from .gepa_tracking import IterationSafetyStopper, ObservationTracker, ProposalCountStopper
 from .local_reflection import LocalQwenReflectionLM
+from .prompting import label_list
 
 
-REFLECTION_PROMPT_TEMPLATE = """You are improving one editable instruction for a four-class AG News classifier.
+_NUMBER_WORDS = {2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight"}
+
+
+def reflection_prompt_template(config: PilotConfig) -> str:
+    """GEPA reflection template for the configured task (identical to the pilot's for AG News)."""
+    task = config.task
+    labels = tuple(config.prompt.label_names)
+    mapping = "\n".join(f"- {label} = {name}" for label, name in config.prompt.label_names.items())
+    classes = _NUMBER_WORDS.get(len(labels), str(len(labels)))
+    return f"""You are improving one editable instruction for a {classes}-class {task.name} classifier.
 
 The task interface is immutable:
-- A = World
-- B = Sports
-- C = Business
-- D = Sci/Tech
-- The classifier receives one news article and must output exactly one capital letter: A, B, C, or D.
+{mapping}
+- The classifier receives one {task.input_noun} and must output exactly one capital letter: {label_list(labels)}.
 - The label mapping and response format are supplied elsewhere in the fixed prompt. Do not alter, reorder, or invent labels.
 
 Current editable instruction:
@@ -57,7 +64,7 @@ Observed examples, predictions, and feedback:
 <side_info>
 ```
 
-Infer a general improvement from the errors without copying article-specific facts. Write one complete replacement instruction of at most 90 words. It should help identify the article's central topic, preserve the immutable mapping, and require the one-letter response. Output only the replacement instruction enclosed in triple backticks, with no heading or explanation."""
+Infer a general improvement from the errors without copying {task.input_short}-specific facts. Write one complete replacement instruction of at most 90 words. It should help identify {task.focus}, preserve the immutable mapping, and require the one-letter response. Output only the replacement instruction enclosed in triple backticks, with no heading or explanation."""
 
 
 class ExampleDataLoader:
@@ -192,10 +199,12 @@ def main() -> None:
         system_prompt=config.prompt.system_prompt,
         label_names=config.prompt.label_names,
         enable_thinking=config.prompt.enable_thinking,
+        input_heading=config.task.input_heading,
     )
     adapter = AGNewsGEPAAdapter(
-        evaluator, evaluation_batch_size=args.evaluation_batch_size
+        evaluator, evaluation_batch_size=args.evaluation_batch_size, focus=config.task.focus
     )
+    reflection_template = reflection_prompt_template(config)
     reflector: LocalQwenReflectionLM | None = None
     heldout_judge: HeldOutJudgedReflectionLM | None = None
     admm_proposer: ADMMProposer | None = None
@@ -209,11 +218,11 @@ def main() -> None:
         )
         proposal_kwargs: dict[str, Any] = {
             "reflection_lm": reflector,
-            "reflection_prompt_template": REFLECTION_PROMPT_TEMPLATE,
+            "reflection_prompt_template": reflection_template,
         }
         if args.proposer == "reflective" and args.reflection_acceptance == "heldout":
             heldout_judge = HeldOutJudgedReflectionLM(
-                StatelessReflectionLM(reflector, REFLECTION_PROMPT_TEMPLATE),
+                StatelessReflectionLM(reflector, reflection_template),
                 evaluator,
                 train,
                 selection_batch_size=args.admm_selection_batch_size,
@@ -251,7 +260,7 @@ def main() -> None:
         else:
             proposal_kwargs = {
                 "reflection_strategy": PolishingReflectionLM(
-                    StatelessReflectionLM(reflector, REFLECTION_PROMPT_TEMPLATE),
+                    StatelessReflectionLM(reflector, reflection_template),
                     admm_proposer,
                 )
             }
