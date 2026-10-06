@@ -1,7 +1,8 @@
 # Projection diagnostics: what the ADMM Z-step does
 
 Produced by [`src/gepa_pilot/projection_diagnostics.py`](../../src/gepa_pilot/projection_diagnostics.py).
-Full numbers are in [`report.json`](report.json).
+Full numbers are in [`report.json`](report.json). The figures are explained in
+detail in [`../figures/README.md`](../figures/README.md).
 
 Sources:
 - 18 saved iterates (iterations 5–30) from the three standalone ρ=1 runs:

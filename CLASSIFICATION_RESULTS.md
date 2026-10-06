@@ -793,7 +793,8 @@ artifacts are. Numbers are report-half accuracy unless stated.
     categories and drops the output format.
   - **Fluent is not the same as meaningful.** Perplexity measures local
     plausibility, not whether the instruction still says the right thing.
-- **Figures:**
+- **Figures** (each is explained in detail in
+  [`artifacts/figures/README.md`](artifacts/figures/README.md)):
 
   ![Filter keep rate](artifacts/figures/fig3_filter_keep_rate.png)
 
