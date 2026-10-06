@@ -1,0 +1,6 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 6468.39it/s]
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/xiaoyuto/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Oct  5 23:45:17 2026).
+GRAD Carefully solve the problem step by step, check each calcula :: nll_ref_full: cons=0.959 align=0.056, nll_ref_answer: cons=0.798 align=0.009, rloo: cons=-0.023 align=0.013, rwr: cons=0.544 align=0.049
+GRAD Read the problem twice, list the known quantities, solve ste :: nll_ref_full: cons=0.938 align=0.239, nll_ref_answer: cons=0.718 align=0.128, rloo: cons=-0.131 align=0.009, rwr: cons=0.338 align=0.002
+GRAD Answer immediately with only the final number and no reasoni :: nll_ref_full: cons=0.921 align=0.313, nll_ref_answer: cons=0.618 align=0.169, rloo: cons=0.443 align=0.559, rwr: cons=0.018 align=-0.078

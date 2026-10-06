@@ -1,0 +1,12 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 8986.95it/s]
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/xiaoyuto/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Oct  5 23:45:17 2026).
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+RANK 1/8 acc=0.775 ref_full=2.910 own_answer=2.598 t=721s :: Read the problem twice, list the known quantities, solve ste
+RANK 2/8 acc=0.810 ref_full=3.154 own_answer=1.653 t=155s :: Solve the problem. Keep the reasoning short and focused on t
+RANK 3/8 acc=0.795 ref_full=2.797 own_answer=1.655 t=155s :: First estimate the answer roughly, then compute it exactly a
+RANK 4/8 acc=0.835 ref_full=3.153 own_answer=1.557 t=173s :: Respond in a friendly and encouraging tone.
+RANK 5/8 acc=0.605 ref_full=2.961 own_answer=1.943 t=156s :: Give only a rough estimate of the answer, rounded to the nea
+RANK 6/8 acc=0.645 ref_full=3.066 own_answer=2.850 t=143s :: Write a short poem about the problem before answering.
+RANK 7/8 acc=0.855 ref_full=2.998 own_answer=1.965 t=144s :: Focus on the last sentence of the problem, which contains th
+RANK 8/8 acc=0.810 ref_full=2.747 own_answer=1.469 t=161s :: Carefully solve the problem step by step, check each calcula

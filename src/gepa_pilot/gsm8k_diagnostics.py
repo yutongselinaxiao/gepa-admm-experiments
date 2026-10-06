@@ -538,6 +538,8 @@ def merge_rank(output_dir: str = "artifacts/gsm8k_diagnostics") -> dict[str, Any
     """Combine rank shards and compute the surrogate audit."""
     rows = []
     for path in sorted(Path(output_dir).glob("rank_*.json")):
+        if path.name == "rank_summary.json":
+            continue
         rows.extend(json.loads(path.read_text(encoding="utf-8"))["rows"])
     summary = summarize_rank(rows)
     Path(output_dir, "rank_summary.json").write_text(

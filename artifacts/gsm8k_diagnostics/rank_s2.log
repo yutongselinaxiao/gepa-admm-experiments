@@ -1,0 +1,11 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 9254.09it/s]
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/xiaoyuto/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Oct  5 23:45:17 2026).
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+RANK 1/7 acc=0.810 ref_full=2.721 own_answer=1.402 t=671s :: Break the problem into small steps, compute each intermediat
+RANK 2/7 acc=0.790 ref_full=2.751 own_answer=1.839 t=226s :: Explain your reasoning clearly as if teaching a student, the
+RANK 3/7 acc=0.880 ref_full=2.908 own_answer=1.369 t=181s :: Solve the problem.
+RANK 4/7 acc=0.845 ref_full=3.088 own_answer=1.463 t=162s :: Make sure your answer is formatted correctly.
+RANK 5/7 acc=0.840 ref_full=3.020 own_answer=1.434 t=166s :: Ignore the numbers in the problem and guess a plausible answ
+RANK 6/7 acc=0.835 ref_full=2.999 own_answer=1.347 t=152s :: Solve the problem using only mental math and skip writing in
+RANK 7/7 acc=0.830 ref_full=2.904 own_answer=1.454 t=159s :: Convert all quantities to the same units before calculating.

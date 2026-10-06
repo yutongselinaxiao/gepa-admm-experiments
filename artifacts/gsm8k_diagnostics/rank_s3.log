@@ -1,0 +1,11 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 9377.23it/s]
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/xiaoyuto/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Oct  5 23:45:17 2026).
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+RANK 1/7 acc=0.815 ref_full=2.876 own_answer=1.486 t=693s :: Think about what the question is really asking, set up the c
+RANK 2/7 acc=0.800 ref_full=2.836 own_answer=1.719 t=210s :: Use careful arithmetic and track units at every step.
+RANK 3/7 acc=0.865 ref_full=2.831 own_answer=1.146 t=173s :: Answer the question.
+RANK 4/7 acc=0.855 ref_full=3.141 own_answer=1.142 t=156s :: Do not overthink; go with your first instinct.
+RANK 5/7 acc=0.800 ref_full=2.994 own_answer=2.231 t=160s :: Always add all the numbers in the problem together to get th
+RANK 6/7 acc=0.790 ref_full=2.964 own_answer=1.915 t=164s :: Repeat the problem in your own words, then solve it step by 
+RANK 7/7 acc=0.715 ref_full=2.843 own_answer=2.628 t=146s :: Multiply every number in the problem by two before solving.

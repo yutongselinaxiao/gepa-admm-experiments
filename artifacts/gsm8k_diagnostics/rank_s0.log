@@ -1,0 +1,12 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 9075.30it/s]
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /home/xiaoyuto/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Mon Oct  5 23:45:17 2026).
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+RANK 1/8 acc=0.805 ref_full=2.739 own_answer=1.592 t=701s :: Carefully solve the problem step by step, check each calcula
+RANK 2/8 acc=0.785 ref_full=2.907 own_answer=1.728 t=175s :: Write an equation for the unknown quantity, solve it, and ch
+RANK 3/8 acc=0.825 ref_full=2.823 own_answer=1.768 t=173s :: Work backwards from what is asked to the given information, 
+RANK 4/8 acc=0.830 ref_full=3.162 own_answer=1.544 t=160s :: Be concise.
+RANK 5/8 acc=0.455 ref_full=3.169 own_answer=3.024 t=140s :: Answer immediately with only the final number and no reasoni
+RANK 6/8 acc=0.825 ref_full=2.803 own_answer=1.556 t=175s :: Reply with the answer 0 unless you are completely certain.
+RANK 7/8 acc=0.775 ref_full=2.783 own_answer=1.900 t=161s :: Consider two different solution approaches and give the answ
+RANK 8/8 acc=0.830 ref_full=3.084 own_answer=2.091 t=154s :: Solve step by step, but report the answer in words instead o

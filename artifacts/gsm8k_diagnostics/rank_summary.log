@@ -1,0 +1,32 @@
+{
+  "neg_nll_ref_full": {
+    "spearman": -0.19652430321461095,
+    "pairwise_disagreements": 237,
+    "pairs": 423
+  },
+  "neg_nll_ref_answer": {
+    "spearman": -0.12544578538529022,
+    "pairwise_disagreements": 236,
+    "pairs": 423
+  },
+  "neg_nll_own_answer": {
+    "spearman": 0.7433164121586645,
+    "pairwise_disagreements": 81,
+    "pairs": 423
+  },
+  "neg_nll_own_confidence (label-free)": {
+    "spearman": 0.49465300809119767,
+    "pairwise_disagreements": 126,
+    "pairs": 423
+  },
+  "self_consistency (label-free)": {
+    "spearman": 0.8419887180107464,
+    "pairwise_disagreements": 63,
+    "pairs": 423
+  },
+  "sampled_accuracy (RL objective)": {
+    "spearman": 0.8817437487589707,
+    "pairwise_disagreements": 53,
+    "pairs": 423
+  }
+}
