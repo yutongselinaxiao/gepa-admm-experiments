@@ -1,0 +1,2101 @@
+{
+  "arms": {
+    "agnews/p1_reflective": {
+      "task": "agnews",
+      "protocol": "rescored",
+      "seeds": 3,
+      "mean": 36.067708333333336,
+      "sd": 3.6295207981162383,
+      "scores": [
+        37.109375,
+        32.03125,
+        39.0625
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 3,
+      "mean_accepted": 3.3333333333333335,
+      "mean_wall_time_seconds": 128.16213922233632,
+      "mean_admm_backward_calls": 0,
+      "runs": [
+        {
+          "run": "artifacts/gepa_confirmation_mb8",
+          "report_accuracy": 37.109375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully analyze the article to determine the primary subject and context, focusing on the main event or issue, and ignore incidental details. Select the corresponding capital letter from the label mapping.",
+          "accepted": 4,
+          "proposals": 12,
+          "wall_time_seconds": 132.49220108008012,
+          "metric_calls": 2752,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase1/reflective_s1",
+          "report_accuracy": 32.03125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully analyze the article to identify the primary subject, focusing on the main event or theme, and select the corresponding capital letter from the label mapping, ignoring any incidental details or entities.",
+          "accepted": 2,
+          "proposals": 12,
+          "wall_time_seconds": 124.43654350191355,
+          "metric_calls": 1728,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase1/reflective_s2",
+          "report_accuracy": 39.0625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic from the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 4,
+          "proposals": 12,
+          "wall_time_seconds": 127.55767308501527,
+          "metric_calls": 2240,
+          "admm_backward_calls": 0
+        }
+      ]
+    },
+    "agnews/p1_admm_euclid_rho0.3_minibatch": {
+      "task": "agnews",
+      "protocol": "rescored",
+      "seeds": 3,
+      "mean": 32.552083333333336,
+      "sd": 3.544442080420885,
+      "scores": [
+        35.15625,
+        28.515625,
+        33.984375
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 2,
+      "mean_accepted": 1.3333333333333333,
+      "mean_wall_time_seconds": 155.15870825837678,
+      "mean_admm_backward_calls": 720,
+      "runs": [
+        {
+          "run": "artifacts/phase1/admm_rho0.3_s0",
+          "report_accuracy": 35.15625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine\uaf79 article's main topic from the label mapping, ignore incidental details, and output only(Schedulers corresponding capital\u5b57\u6bcd.",
+          "accepted": 1,
+          "proposals": 12,
+          "wall_time_seconds": 146.51490508811548,
+          "metric_calls": 1216,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase1/admm_rho0.3_s1",
+          "report_accuracy": 28.515625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital vowel.",
+          "accepted": 1,
+          "proposals": 12,
+          "wall_time_seconds": 170.83212884608656,
+          "metric_calls": 1216,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase1/admm_rho0.3_s2",
+          "report_accuracy": 33.984375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article development main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 2,
+          "proposals": 12,
+          "wall_time_seconds": 148.12909084092826,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        }
+      ]
+    },
+    "agnews/p1_admm_euclid_rho1_minibatch": {
+      "task": "agnews",
+      "protocol": "rescored",
+      "seeds": 3,
+      "mean": 32.552083333333336,
+      "sd": 2.3545756927116046,
+      "scores": [
+        32.8125,
+        30.078125,
+        34.765625
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 2,
+      "mean_accepted": 1.6666666666666667,
+      "mean_wall_time_seconds": 143.8427342760066,
+      "mean_admm_backward_calls": 720,
+      "runs": [
+        {
+          "run": "artifacts/phase1/admm_rho1_s0",
+          "report_accuracy": 32.8125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding city letter.",
+          "accepted": 3,
+          "proposals": 12,
+          "wall_time_seconds": 145.24386561196297,
+          "metric_calls": 2240,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase1/admm_rho1_s1",
+          "report_accuracy": 30.078125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental\n, and output only the corresponding capital letter.",
+          "accepted": 1,
+          "proposals": 12,
+          "wall_time_seconds": 143.06412695907056,
+          "metric_calls": 1216,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase1/admm_rho1_s2",
+          "report_accuracy": 34.765625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding\u72c1 letter.",
+          "accepted": 1,
+          "proposals": 12,
+          "wall_time_seconds": 143.22021025698632,
+          "metric_calls": 1216,
+          "admm_backward_calls": 720
+        }
+      ]
+    },
+    "agnews/p1_admm_euclid_rho0.3_heldout": {
+      "task": "agnews",
+      "protocol": "rescored",
+      "seeds": 3,
+      "mean": 35.416666666666664,
+      "sd": 4.561010387535675,
+      "scores": [
+        30.46875,
+        36.328125,
+        39.453125
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 2,
+      "mean_accepted": 10,
+      "mean_wall_time_seconds": 156.43191368257007,
+      "mean_admm_backward_calls": 720,
+      "runs": [
+        {
+          "run": "artifacts/phase1_heldout/admm_rho0.3_s0",
+          "report_accuracy": 30.46875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine it article's main topic from the label mapping, ignore incidental details, and output onlyEl corresponding capital letter.",
+          "accepted": 9,
+          "proposals": 12,
+          "wall_time_seconds": 152.3578805248253,
+          "metric_calls": 3264,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase1_heldout/admm_rho0.3_s1",
+          "report_accuracy": 36.328125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignoring incidental details, and output only the corresponding\u87acletter.",
+          "accepted": 11,
+          "proposals": 12,
+          "wall_time_seconds": 155.99357439391315,
+          "metric_calls": 4800,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase1_heldout/admm_rho0.3_s2",
+          "report_accuracy": 39.453125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article\u05de\u05e9\u05db\u05e0\u05ea\u05d0 main topic from the label mapping, ignore incidental details, in output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 160.94428612897173,
+          "metric_calls": 5312,
+          "admm_backward_calls": 720
+        }
+      ]
+    },
+    "agnews/p1_admm_euclid_rho1_heldout": {
+      "task": "agnews",
+      "protocol": "rescored",
+      "seeds": 3,
+      "mean": 34.114583333333336,
+      "sd": 1.3718299157360336,
+      "scores": [
+        32.8125,
+        35.546875,
+        33.984375
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 3,
+      "mean_accepted": 9.333333333333334,
+      "mean_wall_time_seconds": 152.61032380939773,
+      "mean_admm_backward_calls": 720,
+      "runs": [
+        {
+          "run": "artifacts/phase1_heldout/admm_rho1_s0",
+          "report_accuracy": 32.8125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article\ud86d\udce7 main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 11,
+          "proposals": 12,
+          "wall_time_seconds": 150.2700685421005,
+          "metric_calls": 3264,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase1_heldout/admm_rho1_s1",
+          "report_accuracy": 35.546875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article CLL main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 158.72880880301818,
+          "metric_calls": 5312,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase1_heldout/admm_rho1_s2",
+          "report_accuracy": 33.984375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding Luc letter.",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 148.83209408307448,
+          "metric_calls": 3264,
+          "admm_backward_calls": 720
+        }
+      ]
+    },
+    "agnews/reflective_p12": {
+      "task": "agnews",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 34.5703125,
+      "sd": 2.451584685385772,
+      "scores": [
+        37.109375,
+        32.03125,
+        39.0625,
+        34.765625,
+        35.15625,
+        33.203125,
+        33.59375,
+        36.328125,
+        30.859375,
+        33.59375
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 9,
+      "mean_accepted": 2.5,
+      "mean_wall_time_seconds": 110.18057107622735,
+      "mean_admm_backward_calls": 0,
+      "runs": [
+        {
+          "run": "artifacts/phase2/reflective_s0",
+          "report_accuracy": 37.109375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully analyze the article to determine the primary subject and context, focusing on the main event or issue, and ignore incidental details. Select the corresponding capital letter from the label mapping.",
+          "accepted": 3,
+          "proposals": 12,
+          "wall_time_seconds": 129.66217073705047,
+          "metric_calls": 1216,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase2/reflective_s1",
+          "report_accuracy": 32.03125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully analyze the article to identify the primary subject, focusing on the main event or theme, and select the corresponding capital letter from the label mapping, ignoring any incidental details or entities.",
+          "accepted": 2,
+          "proposals": 12,
+          "wall_time_seconds": 115.94840626604855,
+          "metric_calls": 960,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase2/reflective_s2",
+          "report_accuracy": 39.0625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic from the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 4,
+          "proposals": 12,
+          "wall_time_seconds": 116.93460900522768,
+          "metric_calls": 1216,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase2/reflective_s3",
+          "report_accuracy": 34.765625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring any incidental details or entities, and output the corresponding capital letter.",
+          "accepted": 2,
+          "proposals": 12,
+          "wall_time_seconds": 97.95988151803613,
+          "metric_calls": 960,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase2/reflective_s4",
+          "report_accuracy": 35.15625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary event or subject, and output the corresponding capital letter.",
+          "accepted": 2,
+          "proposals": 12,
+          "wall_time_seconds": 107.40173540683463,
+          "metric_calls": 960,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase2/reflective_s5",
+          "report_accuracy": 33.203125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output the corresponding capital letter.",
+          "accepted": 2,
+          "proposals": 12,
+          "wall_time_seconds": 106.35908702109009,
+          "metric_calls": 704,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase2/reflective_s6",
+          "report_accuracy": 33.59375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 3,
+          "proposals": 12,
+          "wall_time_seconds": 110.72793056024238,
+          "metric_calls": 1216,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase2/reflective_s7",
+          "report_accuracy": 36.328125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic from the label mapping, focusing on the primary event or subject, and output only the corresponding capital letter.",
+          "accepted": 4,
+          "proposals": 12,
+          "wall_time_seconds": 128.40871229907498,
+          "metric_calls": 1472,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase2/reflective_s8",
+          "report_accuracy": 30.859375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 1,
+          "proposals": 12,
+          "wall_time_seconds": 87.72630144003779,
+          "metric_calls": 704,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase2/reflective_s9",
+          "report_accuracy": 33.59375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 2,
+          "proposals": 12,
+          "wall_time_seconds": 100.67687650863081,
+          "metric_calls": 704,
+          "admm_backward_calls": 0
+        }
+      ]
+    },
+    "agnews/reflect_polish": {
+      "task": "agnews",
+      "protocol": "split",
+      "seeds": 3,
+      "mean": 34.765625,
+      "sd": 1.3531646934131853,
+      "scores": [
+        35.546875,
+        33.203125,
+        35.546875
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 3,
+      "mean_accepted": 3.3333333333333335,
+      "mean_wall_time_seconds": 437.3406093833037,
+      "mean_admm_backward_calls": 720,
+      "runs": [
+        {
+          "run": "artifacts/phase2/polish_s0",
+          "report_accuracy": 35.546875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic by focusing on the primary subject and context, ignoring incidental details, and select the corresponding capital letter from the label mapping.",
+          "accepted": 3,
+          "proposals": 12,
+          "wall_time_seconds": 457.516482478939,
+          "metric_calls": 1216,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/polish_s1",
+          "report_accuracy": 33.203125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's primary subject and context, focusing on the main events, theme, and output focus the each capital word.",
+          "accepted": 4,
+          "proposals": 12,
+          "wall_time_seconds": 427.74862089101225,
+          "metric_calls": 1472,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/polish_s2",
+          "report_accuracy": 35.546875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic by focusing on the primary subject and context, ignoring incidental details, and select the corresponding capital letter from the label mapping.",
+          "accepted": 3,
+          "proposals": 12,
+          "wall_time_seconds": 426.75672477995977,
+          "metric_calls": 1216,
+          "admm_backward_calls": 720
+        }
+      ]
+    },
+    "agnews/admm_topp": {
+      "task": "agnews",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 36.875,
+      "sd": 2.2341261030757518,
+      "scores": [
+        34.375,
+        41.015625,
+        37.5,
+        38.671875,
+        33.984375,
+        35.9375,
+        35.15625,
+        37.109375,
+        39.0625,
+        35.9375
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 10,
+      "mean_accepted": 9.6,
+      "mean_wall_time_seconds": 260.5046220954973,
+      "mean_admm_backward_calls": 720,
+      "runs": [
+        {
+          "run": "artifacts/phase2/admm_topp_s0",
+          "report_accuracy": 34.375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine a article's main topic from the label mapping, ignore incidental details, and state only the corresponding capital letter.",
+          "accepted": 11,
+          "proposals": 12,
+          "wall_time_seconds": 257.7272050627507,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/admm_topp_s1",
+          "report_accuracy": 41.015625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the articles's mainly topics from the label mapping ( ignore incidental details. for output only the corresponding capital letter.",
+          "accepted": 8,
+          "proposals": 12,
+          "wall_time_seconds": 258.340072338935,
+          "metric_calls": 1984,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/admm_topp_s2",
+          "report_accuracy": 37.5,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the job's right topic from the label mapping, ignore incidental details, for output only the corresponding capital letter.",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 257.48542419588193,
+          "metric_calls": 1984,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/admm_topp_s3",
+          "report_accuracy": 38.671875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine a Article's main topic from the title mapping (ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 11,
+          "proposals": 12,
+          "wall_time_seconds": 258.86334702093154,
+          "metric_calls": 3264,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/admm_topp_s4",
+          "report_accuracy": 33.984375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the title mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 282.13449321268126,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/admm_topp_s5",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine a article's main topic from the label mapping. ignore incidental details, for output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 256.68797281431034,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/admm_topp_s6",
+          "report_accuracy": 35.15625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine a subjective is main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 260.2684214869514,
+          "metric_calls": 2752,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/admm_topp_s7",
+          "report_accuracy": 37.109375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic and the term mapping, ignore incidental details, and output only the corresponding numeric letter.",
+          "accepted": 8,
+          "proposals": 12,
+          "wall_time_seconds": 257.05712820077315,
+          "metric_calls": 2240,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/admm_topp_s8",
+          "report_accuracy": 39.0625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully create the part's temporal topic from the label mapping, ignore emotions details, and output only a corresponding verb letter.",
+          "accepted": 11,
+          "proposals": 12,
+          "wall_time_seconds": 256.1610371749848,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/admm_topp_s9",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully indicate the Article's main topic from the label mapping, ignore incidental details, and output only one appropriate capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 260.3211194467731,
+          "metric_calls": 2240,
+          "admm_backward_calls": 720
+        }
+      ]
+    },
+    "agnews/admm_beam_lam0.3": {
+      "task": "agnews",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 38.3203125,
+      "sd": 3.000165016439605,
+      "scores": [
+        37.109375,
+        40.625,
+        44.53125,
+        37.5,
+        40.625,
+        39.0625,
+        34.375,
+        35.9375,
+        37.890625,
+        35.546875
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 10,
+      "mean_accepted": 9.2,
+      "mean_wall_time_seconds": 266.78532532085666,
+      "mean_admm_backward_calls": 720,
+      "runs": [
+        {
+          "run": "artifacts/phase2/beam_lam0.3_s0",
+          "report_accuracy": 37.109375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the subject and main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 11,
+          "proposals": 12,
+          "wall_time_seconds": 266.7491188137792,
+          "metric_calls": 2240,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/beam_lam0.3_s1",
+          "report_accuracy": 40.625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully choose the article topic main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 9,
+          "proposals": 12,
+          "wall_time_seconds": 267.95596272312105,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/beam_lam0.3_s2",
+          "report_accuracy": 44.53125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine a subject for news topic from the text provided, and classify it, and output only the corresponding topic letter.",
+          "accepted": 5,
+          "proposals": 12,
+          "wall_time_seconds": 270.055095246993,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/beam_lam0.3_s3",
+          "report_accuracy": 37.5,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's main topic from the label mapping, without other details.  Output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 265.28034397913143,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/beam_lam0.3_s4",
+          "report_accuracy": 40.625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the broad's main topic from the label mapping, ignore incidental details, and output only the corresponding category letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 266.35682662716135,
+          "metric_calls": 2240,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/beam_lam0.3_s5",
+          "report_accuracy": 39.0625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully choose a topic's main topic from the label mapping, ignore the details, and output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 264.368567685131,
+          "metric_calls": 1984,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/beam_lam0.3_s6",
+          "report_accuracy": 34.375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully choose the article's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 6,
+          "proposals": 12,
+          "wall_time_seconds": 265.091921498999,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/beam_lam0.3_s7",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Pleasefully determine the article's main topic from the label mapping, ignore linguistic details, and output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 267.08486374188215,
+          "metric_calls": 2752,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/beam_lam0.3_s8",
+          "report_accuracy": 37.890625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully describe a subject's main topic from the label mapping, ignoring incidental details, and output only the corresponding category letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 262.32072087423876,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/beam_lam0.3_s9",
+          "report_accuracy": 35.546875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping, choose one label, and output only the corresponding capital letter.",
+          "accepted": 11,
+          "proposals": 12,
+          "wall_time_seconds": 272.5898320181295,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        }
+      ]
+    },
+    "agnews/admm_beam_lam1.0": {
+      "task": "agnews",
+      "protocol": "split",
+      "seeds": 3,
+      "mean": 35.416666666666664,
+      "sd": 7.756964066982542,
+      "scores": [
+        26.953125,
+        37.109375,
+        42.1875
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 2,
+      "mean_accepted": 9,
+      "mean_wall_time_seconds": 268.92464416706935,
+      "mean_admm_backward_calls": 720,
+      "runs": [
+        {
+          "run": "artifacts/phase2/beam_lam1.0_s0",
+          "report_accuracy": 26.953125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping and respond with the label and the summary sentence.\n\nLabel mapping:",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 269.3095941292122,
+          "metric_calls": 1984,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/beam_lam1.0_s1",
+          "report_accuracy": 37.109375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the topic of the following text and label it with the corresponding label, and output only the corresponding label letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 269.41286787297577,
+          "metric_calls": 2240,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase2/beam_lam1.0_s2",
+          "report_accuracy": 42.1875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Please classify this news article's main topic into one of the following categories:\n\n- [ ] World\n- [ ] Business",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 268.05147049902007,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        }
+      ]
+    },
+    "agnews/reflective_p30": {
+      "task": "agnews",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 35.15625,
+      "sd": 1.2352647110032733,
+      "scores": [
+        37.109375,
+        34.375,
+        33.984375,
+        34.765625,
+        35.15625,
+        35.546875,
+        33.59375,
+        36.328125,
+        36.71875,
+        33.984375
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 10,
+      "mean_accepted": 6.2,
+      "mean_wall_time_seconds": 193.24355683661997,
+      "mean_admm_backward_calls": 0,
+      "runs": [
+        {
+          "run": "artifacts/phase3/reflective_p30_s0",
+          "report_accuracy": 37.109375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully analyze the article to determine the primary subject and context, focusing on the main event or issue, while ignoring incidental details. Select the corresponding capital letter from the label mapping.",
+          "accepted": 6,
+          "proposals": 30,
+          "wall_time_seconds": 195.6782578281127,
+          "metric_calls": 2272,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p30_s1",
+          "report_accuracy": 34.375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring any incidental details, and output only the corresponding capital letter.",
+          "accepted": 5,
+          "proposals": 30,
+          "wall_time_seconds": 186.0998398559168,
+          "metric_calls": 2016,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p30_s2",
+          "report_accuracy": 33.984375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic by focusing on the primary subject matter, ignoring incidental details, and selecting the most relevant label from A (World), B (Sports), C (Business), or D (Sci/Tech).",
+          "accepted": 8,
+          "proposals": 30,
+          "wall_time_seconds": 222.64135942189023,
+          "metric_calls": 2528,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p30_s3",
+          "report_accuracy": 34.765625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring any incidental details or entities, and output the corresponding capital letter.",
+          "accepted": 8,
+          "proposals": 30,
+          "wall_time_seconds": 187.9236050178297,
+          "metric_calls": 2280,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p30_s4",
+          "report_accuracy": 35.15625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary event or subject, and output the corresponding capital letter.",
+          "accepted": 3,
+          "proposals": 30,
+          "wall_time_seconds": 175.1565293041058,
+          "metric_calls": 1504,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p30_s5",
+          "report_accuracy": 35.546875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central theme from the label mapping, focusing on the primary subject matter and ignoring any incidental details, and output the corresponding capital letter.",
+          "accepted": 6,
+          "proposals": 30,
+          "wall_time_seconds": 163.63786659622565,
+          "metric_calls": 2016,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p30_s6",
+          "report_accuracy": 33.59375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 6,
+          "proposals": 30,
+          "wall_time_seconds": 185.23554643802345,
+          "metric_calls": 2272,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p30_s7",
+          "report_accuracy": 36.328125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic from the label mapping, focusing on the primary event or subject, and output only the corresponding capital letter.",
+          "accepted": 8,
+          "proposals": 30,
+          "wall_time_seconds": 199.4807889838703,
+          "metric_calls": 2528,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p30_s8",
+          "report_accuracy": 36.71875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central theme from the label mapping, focusing on the primary subject matter and ignoring any incidental details, and output only the corresponding capital letter.",
+          "accepted": 5,
+          "proposals": 30,
+          "wall_time_seconds": 197.77341569121927,
+          "metric_calls": 2016,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p30_s9",
+          "report_accuracy": 33.984375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic by focusing on the primary subject matter, ignoring incidental details, and selecting the most relevant label from A (World), B (Sports), C (Business), or D (Sci/Tech).",
+          "accepted": 7,
+          "proposals": 30,
+          "wall_time_seconds": 218.80835922900587,
+          "metric_calls": 2272,
+          "admm_backward_calls": 0
+        }
+      ]
+    },
+    "agnews/reflective_p40": {
+      "task": "agnews",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 35.5859375,
+      "sd": 3.228799122228168,
+      "scores": [
+        37.109375,
+        34.375,
+        33.984375,
+        34.765625,
+        35.546875,
+        31.640625,
+        34.375,
+        36.328125,
+        33.984375,
+        43.75
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 10,
+      "mean_accepted": 8.4,
+      "mean_wall_time_seconds": 225.10060093342327,
+      "mean_admm_backward_calls": 0,
+      "runs": [
+        {
+          "run": "artifacts/phase3/reflective_p40_s0",
+          "report_accuracy": 37.109375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully analyze the article to determine the primary subject and context, focusing on the main event or issue, and ignore incidental details. Select the corresponding capital letter from the label mapping.",
+          "accepted": 6,
+          "proposals": 40,
+          "wall_time_seconds": 238.10482134809718,
+          "metric_calls": 2176,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p40_s1",
+          "report_accuracy": 34.375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring any incidental details, and output only the corresponding capital letter.",
+          "accepted": 7,
+          "proposals": 40,
+          "wall_time_seconds": 210.19843341922387,
+          "metric_calls": 2688,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p40_s2",
+          "report_accuracy": 33.984375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic by focusing on the primary subject matter, ignoring incidental details, and selecting the most relevant label from A (World), B (Sports), C (Business), or D (Sci/Tech).",
+          "accepted": 12,
+          "proposals": 40,
+          "wall_time_seconds": 255.47941878065467,
+          "metric_calls": 3200,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p40_s3",
+          "report_accuracy": 34.765625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring any incidental details or entities, and output the corresponding capital letter.",
+          "accepted": 9,
+          "proposals": 40,
+          "wall_time_seconds": 213.727990583051,
+          "metric_calls": 2696,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p40_s4",
+          "report_accuracy": 35.546875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic by focusing on the primary subject and context, ignoring incidental details, and select the corresponding capital letter from the label mapping.",
+          "accepted": 4,
+          "proposals": 40,
+          "wall_time_seconds": 200.21258920803666,
+          "metric_calls": 1920,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p40_s5",
+          "report_accuracy": 31.640625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central theme by focusing on the primary subject and disregarding incidental details, ensuring the response is a single capital letter based on the label mapping.",
+          "accepted": 8,
+          "proposals": 40,
+          "wall_time_seconds": 193.15618283394724,
+          "metric_calls": 2688,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p40_s6",
+          "report_accuracy": 34.375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully analyze the article to determine the primary topic, focusing on the main idea and context, and assign the corresponding capital letter based on the label mapping.",
+          "accepted": 8,
+          "proposals": 40,
+          "wall_time_seconds": 217.42393050901592,
+          "metric_calls": 2944,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p40_s7",
+          "report_accuracy": 36.328125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic from the label mapping, focusing on the primary event or subject, and output only the corresponding capital letter.",
+          "accepted": 14,
+          "proposals": 40,
+          "wall_time_seconds": 242.54611071711406,
+          "metric_calls": 4224,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p40_s8",
+          "report_accuracy": 33.984375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic by focusing on the primary subject matter, ignoring incidental details, and selecting the most relevant label from A (World), B (Sports), C (Business), or D (Sci/Tech).",
+          "accepted": 6,
+          "proposals": 40,
+          "wall_time_seconds": 238.85652973409742,
+          "metric_calls": 2432,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_p40_s9",
+          "report_accuracy": 43.75,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic by focusing on the primary subject matter, ignoring incidental details, and selecting the most relevant label from A (World), B (Sports), C (Business), or D (Sci/Tech). Ensure the response reflects the article's main focus, not just keywords or entities.",
+          "accepted": 10,
+          "proposals": 40,
+          "wall_time_seconds": 241.30000220099464,
+          "metric_calls": 2688,
+          "admm_backward_calls": 0
+        }
+      ]
+    },
+    "agnews/reflective_heldout_p12": {
+      "task": "agnews",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 34.9609375,
+      "sd": 1.9768524024334606,
+      "scores": [
+        35.546875,
+        32.03125,
+        34.375,
+        35.9375,
+        39.0625,
+        33.203125,
+        33.984375,
+        36.328125,
+        33.59375,
+        35.546875
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 10,
+      "mean_accepted": 5.5,
+      "mean_wall_time_seconds": 131.17983874687926,
+      "mean_admm_backward_calls": 0,
+      "runs": [
+        {
+          "run": "artifacts/phase3/reflective_heldout_p12_s0",
+          "report_accuracy": 35.546875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic by focusing on the primary subject and context, ignoring incidental details, and select the corresponding capital letter from the label mapping.",
+          "accepted": 6,
+          "proposals": 12,
+          "wall_time_seconds": 137.16139662265778,
+          "metric_calls": 1984,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p12_s1",
+          "report_accuracy": 32.03125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully analyze the article to identify the primary subject, focusing on the main event or theme, and select the corresponding capital letter from the label mapping, ignoring any incidental details or entities.",
+          "accepted": 3,
+          "proposals": 12,
+          "wall_time_seconds": 134.71882305759937,
+          "metric_calls": 1216,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p12_s2",
+          "report_accuracy": 34.375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully analyze the article to determine the primary topic, focusing on the main subject and context, and select the corresponding capital letter from the label mapping.",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 106.84010174684227,
+          "metric_calls": 2240,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p12_s3",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully analyze the article to identify the central topic, focusing on the primary subject and context, and select the corresponding capital letter from the label mapping.",
+          "accepted": 6,
+          "proposals": 12,
+          "wall_time_seconds": 119.39295993279666,
+          "metric_calls": 1728,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p12_s4",
+          "report_accuracy": 39.0625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic from the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 6,
+          "proposals": 12,
+          "wall_time_seconds": 134.99713981105015,
+          "metric_calls": 1472,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p12_s5",
+          "report_accuracy": 33.203125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output the corresponding capital letter.",
+          "accepted": 4,
+          "proposals": 12,
+          "wall_time_seconds": 129.12558515695855,
+          "metric_calls": 1216,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p12_s6",
+          "report_accuracy": 33.984375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully analyze the article to identify the primary topic, focusing on the main subject and context, and select the corresponding capital letter from the label mapping.",
+          "accepted": 5,
+          "proposals": 12,
+          "wall_time_seconds": 135.64658553199843,
+          "metric_calls": 1728,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p12_s7",
+          "report_accuracy": 36.328125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic from the label mapping, focusing on the primary event or subject, and output only the corresponding capital letter.",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 150.524996496737,
+          "metric_calls": 1984,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p12_s8",
+          "report_accuracy": 33.59375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 6,
+          "proposals": 12,
+          "wall_time_seconds": 125.4287555841729,
+          "metric_calls": 1728,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p12_s9",
+          "report_accuracy": 35.546875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic by focusing on the primary subject and context, ignoring incidental details, and select the corresponding capital letter from the label mapping.",
+          "accepted": 5,
+          "proposals": 12,
+          "wall_time_seconds": 137.9620435279794,
+          "metric_calls": 1728,
+          "admm_backward_calls": 0
+        }
+      ]
+    },
+    "agnews/reflective_heldout_p30": {
+      "task": "agnews",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 35.703125,
+      "sd": 1.7096507877260263,
+      "scores": [
+        34.765625,
+        33.59375,
+        35.546875,
+        35.9375,
+        39.0625,
+        33.59375,
+        34.375,
+        36.328125,
+        37.109375,
+        36.71875
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 10,
+      "mean_accepted": 12.5,
+      "mean_wall_time_seconds": 207.80153861581348,
+      "mean_admm_backward_calls": 0,
+      "runs": [
+        {
+          "run": "artifacts/phase3/reflective_heldout_p30_s0",
+          "report_accuracy": 34.765625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central theme from the label mapping, focusing on the primary subject and ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 15,
+          "proposals": 30,
+          "wall_time_seconds": 224.78821329493076,
+          "metric_calls": 3808,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p30_s1",
+          "report_accuracy": 33.59375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 11,
+          "proposals": 30,
+          "wall_time_seconds": 202.96657059155405,
+          "metric_calls": 3040,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p30_s2",
+          "report_accuracy": 35.546875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary event or theme, and output the corresponding capital letter.",
+          "accepted": 14,
+          "proposals": 30,
+          "wall_time_seconds": 198.88481910899282,
+          "metric_calls": 3808,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p30_s3",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully analyze the article to identify the central topic, focusing on the primary subject and context, and select the corresponding capital letter from the label mapping.",
+          "accepted": 14,
+          "proposals": 30,
+          "wall_time_seconds": 199.5102453152649,
+          "metric_calls": 4064,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p30_s4",
+          "report_accuracy": 39.0625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic from the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 9,
+          "proposals": 30,
+          "wall_time_seconds": 214.28549703024328,
+          "metric_calls": 2272,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p30_s5",
+          "report_accuracy": 33.59375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 13,
+          "proposals": 30,
+          "wall_time_seconds": 200.70863599609584,
+          "metric_calls": 3296,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p30_s6",
+          "report_accuracy": 34.375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully analyze the article to determine the primary topic, focusing on the main subject and context, and select the corresponding capital letter from the label mapping.",
+          "accepted": 10,
+          "proposals": 30,
+          "wall_time_seconds": 212.81064269086346,
+          "metric_calls": 2528,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p30_s7",
+          "report_accuracy": 36.328125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic from the label mapping, focusing on the primary event or subject, and output only the corresponding capital letter.",
+          "accepted": 14,
+          "proposals": 30,
+          "wall_time_seconds": 218.55587399192154,
+          "metric_calls": 3552,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p30_s8",
+          "report_accuracy": 37.109375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central topic from the label mapping, focusing on the primary subject and ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 12,
+          "proposals": 30,
+          "wall_time_seconds": 193.45970252901316,
+          "metric_calls": 3040,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase3/reflective_heldout_p30_s9",
+          "report_accuracy": 36.71875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully identify the article's central theme from the label mapping, focusing on the primary subject matter and ignoring any incidental details, and output only the corresponding capital letter.",
+          "accepted": 13,
+          "proposals": 30,
+          "wall_time_seconds": 212.045185609255,
+          "metric_calls": 3040,
+          "admm_backward_calls": 0
+        }
+      ]
+    },
+    "agnews/admm_beam_lam0.3_duals": {
+      "task": "agnews",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 37.3828125,
+      "sd": 2.3728660232011625,
+      "scores": [
+        37.890625,
+        40.234375,
+        37.109375,
+        37.109375,
+        33.203125,
+        39.453125,
+        37.890625,
+        33.984375,
+        36.71875,
+        40.234375
+      ],
+      "seed_instruction_report_accuracy": 30.859375,
+      "improved_over_seed": 10,
+      "mean_accepted": 10.1,
+      "mean_wall_time_seconds": 278.7787927981466,
+      "mean_admm_backward_calls": 720,
+      "runs": [
+        {
+          "run": "artifacts/phase5_duals/agnews_beam_dual_s0",
+          "report_accuracy": 37.890625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully choose the subject's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter.",
+          "accepted": 12,
+          "proposals": 12,
+          "wall_time_seconds": 279.1109450678341,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/agnews_beam_dual_s1",
+          "report_accuracy": 40.234375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully choose the article's main topic from the label mapping, no external details, and output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 279.73602705681697,
+          "metric_calls": 1984,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/agnews_beam_dual_s2",
+          "report_accuracy": 37.109375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping and write the details, and output only the corresponding label letter.",
+          "accepted": 12,
+          "proposals": 12,
+          "wall_time_seconds": 288.44710127124563,
+          "metric_calls": 2752,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/agnews_beam_dual_s3",
+          "report_accuracy": 37.109375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping. Check label names, we output only the corresponding capital letter.",
+          "accepted": 11,
+          "proposals": 12,
+          "wall_time_seconds": 284.3271861439571,
+          "metric_calls": 2240,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/agnews_beam_dual_s4",
+          "report_accuracy": 33.203125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignore linguistic details, and output only the corresponding capital letter.",
+          "accepted": 12,
+          "proposals": 12,
+          "wall_time_seconds": 272.46883846400306,
+          "metric_calls": 2240,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/agnews_beam_dual_s5",
+          "report_accuracy": 39.453125,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the subject's main topic from the label mapping, ignoring incidental details. Should output only the corresponding capital letter.",
+          "accepted": 8,
+          "proposals": 12,
+          "wall_time_seconds": 278.18266854295507,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/agnews_beam_dual_s6",
+          "report_accuracy": 37.890625,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the category's main topic from the label mapping, ignore other details, and output only the corresponding capital letter.",
+          "accepted": 9,
+          "proposals": 12,
+          "wall_time_seconds": 275.52218819689006,
+          "metric_calls": 1984,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/agnews_beam_dual_s7",
+          "report_accuracy": 33.984375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully choose the article's main topic from the label mapping, ignore other details, and output only the corresponding capital letter.",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 274.0884147230536,
+          "metric_calls": 1472,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/agnews_beam_dual_s8",
+          "report_accuracy": 36.71875,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Carefully determine the article's main topic from the label mapping, ignoring semantic details, and output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 276.2351036076434,
+          "metric_calls": 1728,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/agnews_beam_dual_s9",
+          "report_accuracy": 40.234375,
+          "seed_report_accuracy": 30.859375,
+          "selected_instruction": "Canfully determine a topic's main topic of the label mapping and write the label, and output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 279.6694549070671,
+          "metric_calls": 2240,
+          "admm_backward_calls": 720
+        }
+      ]
+    },
+    "emotion/reflective_p12": {
+      "task": "emotion",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 35.729166666666664,
+      "sd": 0.36416973894796956,
+      "scores": [
+        34.89583333333333,
+        35.9375,
+        35.9375,
+        35.41666666666667,
+        35.41666666666667,
+        35.9375,
+        35.9375,
+        35.9375,
+        35.9375,
+        35.9375
+      ],
+      "seed_instruction_report_accuracy": 35.9375,
+      "improved_over_seed": 0,
+      "mean_accepted": 2,
+      "mean_wall_time_seconds": 103.99915440282784,
+      "mean_admm_backward_calls": 0,
+      "runs": [
+        {
+          "run": "artifacts/phase4_emotion/reflective_p12_s0",
+          "report_accuracy": 34.89583333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully identify the dominant emotion expressed by the writer, considering both explicit and implicit cues, and output the corresponding capital letter from the label mapping.",
+          "accepted": 4,
+          "proposals": 12,
+          "wall_time_seconds": 108.53091227961704,
+          "metric_calls": 2112,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_p12_s1",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 0,
+          "proposals": 12,
+          "wall_time_seconds": 86.33685697009787,
+          "metric_calls": 576,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_p12_s2",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 2,
+          "proposals": 12,
+          "wall_time_seconds": 110.38688572030514,
+          "metric_calls": 1344,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_p12_s3",
+          "report_accuracy": 35.41666666666667,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully analyze the text to identify the primary emotion expressed, considering context and dominant keywords, and output the corresponding capital letter from the label mapping.",
+          "accepted": 1,
+          "proposals": 12,
+          "wall_time_seconds": 119.48643580731004,
+          "metric_calls": 960,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_p12_s4",
+          "report_accuracy": 35.41666666666667,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully analyze the text to identify the primary emotion expressed, considering context and dominant keywords, and output the corresponding capital letter from the label mapping.",
+          "accepted": 3,
+          "proposals": 12,
+          "wall_time_seconds": 102.04137337906286,
+          "metric_calls": 1728,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_p12_s5",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 3,
+          "proposals": 12,
+          "wall_time_seconds": 104.98100416874513,
+          "metric_calls": 1728,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_p12_s6",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 2,
+          "proposals": 12,
+          "wall_time_seconds": 98.8645142968744,
+          "metric_calls": 1344,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_p12_s7",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 3,
+          "proposals": 12,
+          "wall_time_seconds": 115.29348706500605,
+          "metric_calls": 1728,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_p12_s8",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 1,
+          "proposals": 12,
+          "wall_time_seconds": 85.32725068926811,
+          "metric_calls": 960,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_p12_s9",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 1,
+          "proposals": 12,
+          "wall_time_seconds": 108.74282365199178,
+          "metric_calls": 960,
+          "admm_backward_calls": 0
+        }
+      ]
+    },
+    "emotion/reflective_heldout_p30": {
+      "task": "emotion",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 36.19791666666667,
+      "sd": 0.6495932963149196,
+      "scores": [
+        35.9375,
+        37.23958333333333,
+        35.9375,
+        35.41666666666667,
+        36.97916666666667,
+        35.41666666666667,
+        36.97916666666667,
+        35.9375,
+        35.9375,
+        36.19791666666667
+      ],
+      "seed_instruction_report_accuracy": 35.9375,
+      "improved_over_seed": 4,
+      "mean_accepted": 6.1,
+      "mean_wall_time_seconds": 184.2584499368444,
+      "mean_admm_backward_calls": 0,
+      "runs": [
+        {
+          "run": "artifacts/phase4_emotion/reflective_heldout_p30_s0",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 7,
+          "proposals": 30,
+          "wall_time_seconds": 215.87358618481085,
+          "metric_calls": 3552,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_heldout_p30_s1",
+          "report_accuracy": 37.23958333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully analyze the writer's primary emotional tone by identifying the dominant sentiment from the label mapping, considering context and intensity, and output the corresponding capital letter.",
+          "accepted": 8,
+          "proposals": 30,
+          "wall_time_seconds": 157.85571514628828,
+          "metric_calls": 3936,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_heldout_p30_s2",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 5,
+          "proposals": 30,
+          "wall_time_seconds": 172.69340081885457,
+          "metric_calls": 2784,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_heldout_p30_s3",
+          "report_accuracy": 35.41666666666667,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully analyze the text to identify the primary emotion expressed, considering context and dominant keywords, and output the corresponding capital letter from the label mapping.",
+          "accepted": 6,
+          "proposals": 30,
+          "wall_time_seconds": 191.94906905898824,
+          "metric_calls": 3168,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_heldout_p30_s4",
+          "report_accuracy": 36.97916666666667,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully analyze the text to identify the primary emotion expressed, prioritizing contextual and tonal cues over incidental details, and output the corresponding capital letter from the label mapping.",
+          "accepted": 5,
+          "proposals": 30,
+          "wall_time_seconds": 159.74933940498158,
+          "metric_calls": 2784,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_heldout_p30_s5",
+          "report_accuracy": 35.41666666666667,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully analyze the text to identify the primary emotion expressed, considering context and dominant keywords, and output the corresponding capital letter from the label mapping.",
+          "accepted": 4,
+          "proposals": 30,
+          "wall_time_seconds": 177.24809265509248,
+          "metric_calls": 2400,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_heldout_p30_s6",
+          "report_accuracy": 36.97916666666667,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully analyze the text to identify the primary emotion expressed, considering context and intensity, and select the corresponding capital letter from the label mapping.",
+          "accepted": 6,
+          "proposals": 30,
+          "wall_time_seconds": 158.71640603104606,
+          "metric_calls": 3168,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_heldout_p30_s7",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 4,
+          "proposals": 30,
+          "wall_time_seconds": 174.12054863059893,
+          "metric_calls": 2400,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_heldout_p30_s8",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 8,
+          "proposals": 30,
+          "wall_time_seconds": 228.75595502974465,
+          "metric_calls": 3552,
+          "admm_backward_calls": 0
+        },
+        {
+          "run": "artifacts/phase4_emotion/reflective_heldout_p30_s9",
+          "report_accuracy": 36.19791666666667,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully analyze the text to identify the primary emotion conveyed, considering the context and dominant expression, and output the corresponding capital letter from the label mapping.",
+          "accepted": 8,
+          "proposals": 30,
+          "wall_time_seconds": 205.62238640803844,
+          "metric_calls": 2784,
+          "admm_backward_calls": 0
+        }
+      ]
+    },
+    "emotion/admm_beam_lam0.3": {
+      "task": "emotion",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 37.31770833333333,
+      "sd": 1.692374432879678,
+      "scores": [
+        35.9375,
+        37.5,
+        36.45833333333333,
+        35.9375,
+        36.45833333333333,
+        39.58333333333333,
+        35.9375,
+        39.84375,
+        39.58333333333333,
+        35.9375
+      ],
+      "seed_instruction_report_accuracy": 35.9375,
+      "improved_over_seed": 6,
+      "mean_accepted": 8.8,
+      "mean_wall_time_seconds": 262.3963071987964,
+      "mean_admm_backward_calls": 720,
+      "runs": [
+        {
+          "run": "artifacts/phase4_emotion/beam_lam0.3_s0",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 260.2335418337025,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/beam_lam0.3_s1",
+          "report_accuracy": 37.5,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses in the label mapping, ignore polarity and, and output only the corresponding capital letter.",
+          "accepted": 11,
+          "proposals": 12,
+          "wall_time_seconds": 265.93564232299104,
+          "metric_calls": 4032,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/beam_lam0.3_s2",
+          "report_accuracy": 36.45833333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignoring incidental details, and output only the corresponding emotion letter.",
+          "accepted": 9,
+          "proposals": 12,
+          "wall_time_seconds": 261.7502487897873,
+          "metric_calls": 3648,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/beam_lam0.3_s3",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 261.65630964701995,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/beam_lam0.3_s4",
+          "report_accuracy": 36.45833333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully identify the main emotion the writer expresses from the label mapping, ignore the details, and output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 256.83539962302893,
+          "metric_calls": 2880,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/beam_lam0.3_s5",
+          "report_accuracy": 39.58333333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the person expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 9,
+          "proposals": 12,
+          "wall_time_seconds": 262.5139072863385,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/beam_lam0.3_s6",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 265.14598840707913,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/beam_lam0.3_s7",
+          "report_accuracy": 39.84375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the text expresses from the label mapping, and elaborate details, and output only the corresponding emotion letter.",
+          "accepted": 8,
+          "proposals": 12,
+          "wall_time_seconds": 263.71997751295567,
+          "metric_calls": 2880,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/beam_lam0.3_s8",
+          "report_accuracy": 39.58333333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the person expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 9,
+          "proposals": 12,
+          "wall_time_seconds": 259.24601108999923,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase4_emotion/beam_lam0.3_s9",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 8,
+          "proposals": 12,
+          "wall_time_seconds": 266.926045475062,
+          "metric_calls": 2880,
+          "admm_backward_calls": 720
+        }
+      ]
+    },
+    "emotion/admm_beam_lam0.3_duals": {
+      "task": "emotion",
+      "protocol": "split",
+      "seeds": 10,
+      "mean": 37.213541666666664,
+      "sd": 2.2783771336282603,
+      "scores": [
+        41.40625,
+        33.33333333333333,
+        36.45833333333333,
+        36.45833333333333,
+        35.9375,
+        39.58333333333333,
+        39.0625,
+        35.9375,
+        37.5,
+        36.45833333333333
+      ],
+      "seed_instruction_report_accuracy": 35.9375,
+      "improved_over_seed": 7,
+      "mean_accepted": 8.3,
+      "mean_wall_time_seconds": 275.0291902593337,
+      "mean_admm_backward_calls": 720,
+      "runs": [
+        {
+          "run": "artifacts/phase5_duals/emotion_beam_dual_s0",
+          "report_accuracy": 41.40625,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the person expresses in the label mapping. Ignore incidental details, and output only the corresponding emotion letter.",
+          "accepted": 8,
+          "proposals": 12,
+          "wall_time_seconds": 275.54937101108953,
+          "metric_calls": 3648,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/emotion_beam_dual_s1",
+          "report_accuracy": 33.33333333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine if the emotion of writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 8,
+          "proposals": 12,
+          "wall_time_seconds": 283.1690795808099,
+          "metric_calls": 3648,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/emotion_beam_dual_s2",
+          "report_accuracy": 36.45833333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully identify the main emotion the writer expresses from the label mapping, ignore the details, and output only the corresponding capital letter.",
+          "accepted": 6,
+          "proposals": 12,
+          "wall_time_seconds": 270.43539262283593,
+          "metric_calls": 2880,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/emotion_beam_dual_s3",
+          "report_accuracy": 36.45833333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully identify the main emotion the writer expresses from the label mapping, ignore the details, and output only the corresponding capital letter.",
+          "accepted": 8,
+          "proposals": 12,
+          "wall_time_seconds": 277.26958851423115,
+          "metric_calls": 2880,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/emotion_beam_dual_s4",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 8,
+          "proposals": 12,
+          "wall_time_seconds": 269.2749017109163,
+          "metric_calls": 2112,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/emotion_beam_dual_s5",
+          "report_accuracy": 39.58333333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the person expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 10,
+          "proposals": 12,
+          "wall_time_seconds": 271.12147948984057,
+          "metric_calls": 3648,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/emotion_beam_dual_s6",
+          "report_accuracy": 39.0625,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion of the given from the label mapping, ignoring incidental details, and output only the corresponding label letter.",
+          "accepted": 11,
+          "proposals": 12,
+          "wall_time_seconds": 278.70972047094256,
+          "metric_calls": 3264,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/emotion_beam_dual_s7",
+          "report_accuracy": 35.9375,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+          "accepted": 9,
+          "proposals": 12,
+          "wall_time_seconds": 275.1937332311645,
+          "metric_calls": 3648,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/emotion_beam_dual_s8",
+          "report_accuracy": 37.5,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully determine the main emotion the writer expresses from the label mapping, ignoring any details, and output only the corresponding label letter.\n",
+          "accepted": 8,
+          "proposals": 12,
+          "wall_time_seconds": 272.5632155286148,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        },
+        {
+          "run": "artifacts/phase5_duals/emotion_beam_dual_s9",
+          "report_accuracy": 36.45833333333333,
+          "seed_report_accuracy": 35.9375,
+          "selected_instruction": "Carefully identify the main emotion the writer expresses from the label mapping, ignore the details, and output only the corresponding capital letter.",
+          "accepted": 7,
+          "proposals": 12,
+          "wall_time_seconds": 277.0054204328917,
+          "metric_calls": 2496,
+          "admm_backward_calls": 720
+        }
+      ]
+    }
+  },
+  "comparisons": {
+    "agnews/admm_beam_lam0.3 vs agnews/reflective_p12": {
+      "difference": 3.75,
+      "welch_p": 0.00696314311288786,
+      "mann_whitney_p": 0.009004441423548969,
+      "bootstrap_ci95": [
+        1.5234375,
+        6.09375
+      ]
+    },
+    "agnews/admm_beam_lam0.3 vs agnews/reflective_p30": {
+      "difference": 3.1640625,
+      "welch_p": 0.009497979772201797,
+      "mann_whitney_p": 0.0064014999121456235,
+      "bootstrap_ci95": [
+        1.328125,
+        5.15625
+      ]
+    },
+    "agnews/admm_beam_lam0.3 vs agnews/reflective_p40": {
+      "difference": 2.734375,
+      "welch_p": 0.06551835495787937,
+      "mann_whitney_p": 0.02074745878194337,
+      "bootstrap_ci95": [
+        0.078125,
+        5.2734375
+      ]
+    },
+    "agnews/admm_beam_lam0.3 vs agnews/reflective_heldout_p12": {
+      "difference": 3.359375,
+      "welch_p": 0.009490020139280655,
+      "mann_whitney_p": 0.009939606824290504,
+      "bootstrap_ci95": [
+        1.2890625,
+        5.546875
+      ]
+    },
+    "agnews/admm_beam_lam0.3 vs agnews/reflective_heldout_p30": {
+      "difference": 2.6171875,
+      "welch_p": 0.03074364941127959,
+      "mann_whitney_p": 0.033821522780542006,
+      "bootstrap_ci95": [
+        0.625,
+        4.7265625
+      ]
+    },
+    "agnews/admm_beam_lam0.3 vs agnews/admm_topp": {
+      "difference": 1.4453125,
+      "welch_p": 0.23879880082581,
+      "mann_whitney_p": 0.30584730356075973,
+      "bootstrap_ci95": [
+        -0.703125,
+        3.7109375
+      ]
+    },
+    "agnews/admm_topp vs agnews/reflective_p12": {
+      "difference": 2.3046875,
+      "welch_p": 0.041451423399493446,
+      "mann_whitney_p": 0.04893930138037711,
+      "bootstrap_ci95": [
+        0.390625,
+        4.296875
+      ]
+    },
+    "agnews/admm_beam_lam0.3_duals vs agnews/admm_beam_lam0.3": {
+      "difference": -0.9375,
+      "welch_p": 0.4489028147682227,
+      "mann_whitney_p": 0.5692949401876588,
+      "bootstrap_ci95": [
+        -3.203125,
+        1.2109375
+      ]
+    },
+    "emotion/admm_beam_lam0.3 vs emotion/reflective_p12": {
+      "difference": 1.5885416666666643,
+      "welch_p": 0.01605027189426398,
+      "mann_whitney_p": 0.003266805177741775,
+      "bootstrap_ci95": [
+        0.625,
+        2.656249999999993
+      ]
+    },
+    "emotion/admm_beam_lam0.3 vs emotion/reflective_heldout_p30": {
+      "difference": 1.1197916666666572,
+      "welch_p": 0.0753205629656105,
+      "mann_whitney_p": 0.12716210135435327,
+      "bootstrap_ci95": [
+        0.1041666666666643,
+        2.2135416666666643
+      ]
+    },
+    "emotion/admm_beam_lam0.3_duals vs emotion/admm_beam_lam0.3": {
+      "difference": -0.1041666666666643,
+      "welch_p": 0.9089942769002343,
+      "mann_whitney_p": 1.0,
+      "bootstrap_ci95": [
+        -1.7708333333333357,
+        1.5625
+      ]
+    }
+  }
+}

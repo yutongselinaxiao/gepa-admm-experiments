@@ -1,5 +1,7 @@
 # GEPA and ADMM discrete-prompt pilot
 
+> **Later results:** ADMM running *inside* GEPA (proposer, projections, acceptance, matched baselines, a second task) is consolidated in [`CLASSIFICATION_RESULTS.md`](CLASSIFICATION_RESULTS.md). GSM8K surrogate diagnostics: [`artifacts/gsm8k_diagnostics/README.md`](artifacts/gsm8k_diagnostics/README.md).
+
 This repository is an implementation and experimental record for the pilot in
 [`gepa_admm_pilot_plan.tex`](gepa_admm_pilot_plan.tex). It compares two ways to
 optimize a natural-language classification instruction while keeping the
