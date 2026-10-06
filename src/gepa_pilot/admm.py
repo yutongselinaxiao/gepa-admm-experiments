@@ -338,8 +338,17 @@ class ADMMRefiner:
             prefix_ids=None if prefix_ids is None else tuple(int(i) for i in prefix_ids),
         )
 
-    def step(self, state: ADMMState, batch: Sequence[NewsExample]) -> tuple[float, torch.Tensor]:
-        """One outer iteration. Returns the last E-step task loss and the previous z."""
+    def step(
+        self,
+        state: ADMMState,
+        batch: Sequence[NewsExample],
+        class_weights: torch.Tensor | None = None,
+    ) -> tuple[float, torch.Tensor]:
+        """One outer iteration. Returns the last E-step task loss and the previous z.
+
+        class_weights (one per label) turns the task loss into a class-weighted mean
+        cross-entropy; None keeps the plain mean exactly as before.
+        """
         targets = gold_indices(batch, self.evaluator.labels, self.evaluator.device)
         ez_current = self.embedding_weight.index_select(0, state.z).detach().float()
         last_task_loss = math.nan
@@ -348,7 +357,12 @@ class ADMMRefiner:
             scores = self.evaluator.score_slot_embeddings(
                 batch, state.reference_instruction, state.e
             )
-            task_loss = F.cross_entropy(scores.float(), targets)
+            if class_weights is None:
+                task_loss = F.cross_entropy(scores.float(), targets)
+            else:
+                weights = class_weights.to(scores.device)[targets]
+                per_example = F.cross_entropy(scores.float(), targets, reduction="none")
+                task_loss = (weights * per_example).sum() / weights.sum()
             penalty = 0.5 * self.hp.rho * (state.e - ez_current + state.u).square().sum()
             (task_loss + penalty).backward()
             state.optimizer.step()
@@ -452,6 +466,30 @@ class ADMMRefiner:
         start = len(prefix_ids)
         positions = torch.arange(start - 1, full.shape[1] - 1, device=full.device)
         return float(-log_probs[positions, full[0, start:]].sum())
+
+    def per_class_accuracy(
+        self, state: ADMMState, ids: torch.Tensor, examples: Sequence[NewsExample]
+    ) -> torch.Tensor:
+        """Accuracy of explicit slot IDs for each label (NaN for labels absent from `examples`)."""
+        labels = self.evaluator.labels
+        batch_size = self.hp.evaluation_batch_size
+        scores = torch.cat(
+            [
+                self.evaluator.score_fixed_slot_ids(
+                    examples[start : start + batch_size], state.reference_instruction, ids
+                ).detach().float().cpu()
+                for start in range(0, len(examples), batch_size)
+            ]
+        )
+        state.forward_calls += -(-len(examples) // batch_size)
+        targets = gold_indices(examples, labels, torch.device("cpu"))
+        correct = scores.argmax(dim=-1).eq(targets).float()
+        accuracy = torch.full((len(labels),), float("nan"))
+        for index in range(len(labels)):
+            mask = targets.eq(index)
+            if mask.any():
+                accuracy[index] = correct[mask].mean()
+        return accuracy
 
     def discrete_metrics(
         self, state: ADMMState, ids: torch.Tensor, examples: Sequence[NewsExample]

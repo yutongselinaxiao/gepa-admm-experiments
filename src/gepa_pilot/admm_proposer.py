@@ -66,8 +66,14 @@ class ADMMProposer:
         selection_batch_size: int,
         seed: int,
         log_path: str | Path,
+        dual_step: float = 0.0,
+        dual_batch_size: int = 64,
     ) -> None:
         hp = refiner.hp
+        if dual_step < 0 or dual_batch_size < 1:
+            raise ValueError("dual_step must be >= 0 and dual_batch_size >= 1.")
+        self.dual_step = dual_step
+        self.dual_batch_size = dual_batch_size
         if selection_batch_size < 1:
             raise ValueError("selection_batch_size must be positive.")
         if len(trainset) < selection_batch_size + hp.train_batch_size:
@@ -121,6 +127,8 @@ class ADMMProposer:
                 "e_steps": self.refiner.hp.e_steps,
                 "train_batch_size": self.refiner.hp.train_batch_size,
                 "selection_batch_size": self.selection_batch_size,
+                "dual_step": self.dual_step,
+                "dual_batch_size": self.dual_batch_size,
                 "projection": self.refiner.hp.projection,
                 "top_p": self.refiner.hp.top_p,
                 "beam_width": self.refiner.hp.beam_width,
@@ -142,6 +150,14 @@ class ADMMProposer:
             self.refiner.discrete_metrics(state, parent_ids, selection)
         )
 
+        # Reward constraints (dual_step > 0): one multiplier per class, raised for classes
+        # whose discrete accuracy on a dual batch falls below the mean class accuracy.
+        # The dual batch comes from the ADMM training pool, so it is disjoint from both
+        # GEPA's minibatch and the selection batch that judges the child.
+        use_duals = self.dual_step > 0
+        dual_batch = training[: self.dual_batch_size] if use_duals else []
+        duals = torch.zeros(len(self.refiner.evaluator.labels))
+        dual_cache: dict[tuple[int, ...], torch.Tensor] = {}
         cursor, training_order = 0, list(range(len(training)))
         batch_size = self.refiner.hp.train_batch_size
         scored: dict[tuple[int, ...], dict[str, Any]] = {}
@@ -152,7 +168,9 @@ class ADMMProposer:
                 cursor = 0
             batch = [training[index] for index in training_order[cursor : cursor + batch_size]]
             cursor += batch_size
-            task_loss, _ = self.refiner.step(state, batch)
+            task_loss, _ = self.refiner.step(
+                state, batch, class_weights=1.0 + duals if use_duals else None
+            )
             ids = tuple(state.z.cpu().tolist())
             ez = self.refiner.embedding_weight.index_select(0, state.z).detach().float()
             row: dict[str, Any] = {
@@ -161,6 +179,17 @@ class ADMMProposer:
                 "primal_residual_norm": float((state.e.detach() - ez).norm()),
                 "changed_token_count_from_parent": int(state.z.ne(parent_ids).sum()),
             }
+            if use_duals:
+                if ids not in dual_cache:
+                    dual_cache[ids] = self.refiner.per_class_accuracy(state, state.z, dual_batch)
+                class_accuracy = dual_cache[ids]
+                present = ~torch.isnan(class_accuracy)
+                target = class_accuracy[present].mean()
+                duals[present] = (
+                    duals[present] + self.dual_step * (target - class_accuracy[present])
+                ).clamp_min(0.0)
+                row["dual_class_accuracy"] = class_accuracy.tolist()
+                row["class_duals"] = duals.tolist()
             if row["changed_token_count_from_parent"] and ids not in scored:
                 roundtrip = decode_and_check_slot(self.refiner.evaluator, self.reference_article, state.z)
                 entry = {
