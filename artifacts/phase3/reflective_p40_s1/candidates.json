@@ -1,0 +1,26 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully analyze the article to identify the primary subject, focusing on the main event or theme, and select the corresponding capital letter from the label mapping, ignoring any incidental details or entities."
+  },
+  {
+    "instruction": "Carefully analyze the article to determine the primary subject, focusing on the main event or theme, and select the corresponding capital letter from the label mapping, prioritizing context over incidental details or entities."
+  },
+  {
+    "instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring any incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully identify the article's central theme by focusing on the primary subject matter, ignoring incidental details, and select the corresponding capital letter based on the label mapping."
+  },
+  {
+    "instruction": "Carefully analyze the article to determine its primary subject matter, focusing on the main topic and ignoring incidental details, then output the corresponding capital letter based on the label mapping."
+  },
+  {
+    "instruction": "Carefully analyze the article to identify the primary subject or main event, focusing on the most significant theme or context, and select the corresponding capital letter from the label mapping, prioritizing the article's central topic over incidental details or entities."
+  },
+  {
+    "instruction": "Carefully identify the article's central theme by focusing on the primary subject matter, considering the context and key entities, and select the corresponding capital letter based on the label mapping."
+  }
+]

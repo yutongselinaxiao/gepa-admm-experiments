@@ -1,0 +1,35 @@
+[
+  {
+    "instruction": "Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully identify the article's central topic by focusing on the primary subject and context, ignoring incidental details, and select the corresponding capital letter from the label mapping."
+  },
+  {
+    "instruction": "Carefully identify the article's central topic by focusing on the primary subject matter, ignoring incidental details, and selecting the most relevant label from A (World), B (Sports), C (Business), or D (Sci/Tech)."
+  },
+  {
+    "instruction": "Carefully analyze the article to determine its primary subject, focusing on the main topic and ignoring irrelevant details. Select the most appropriate label from A (World), B (Sports), C (Business), or D (Sci/Tech)."
+  },
+  {
+    "instruction": "Carefully identify the article's central theme from the label mapping, focusing on the primary subject matter and ignoring any incidental details, and output only the corresponding capital letter."
+  },
+  {
+    "instruction": "Carefully identify the article's central topic by focusing on the primary subject matter, ignoring incidental details, and selecting the most relevant label from A (World), B (Sports), C (Business), or D (Sci/Tech). Ensure the response reflects the article's main focus, not just keywords or entities."
+  },
+  {
+    "instruction": "Carefully identify the article's central topic by focusing on the primary subject matter, ignoring incidental details, and selecting the most relevant label from A (World), B (Sports), C (Business), or D (Sci/Tech). Prioritize the main theme over specific entities or keywords."
+  },
+  {
+    "instruction": "Carefully identify the article's central topic based on the label mapping, focusing on the primary subject matter and ignoring incidental details, and output only the corresponding capital letter."
+  }
+]
