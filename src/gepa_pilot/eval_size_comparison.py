@@ -167,6 +167,36 @@ def main() -> None:
     fig.savefig("artifacts/figures/fig8b_eval_size_differences.png", dpi=200, bbox_inches="tight")
     print("WROTE artifacts/figures/fig8b_eval_size_differences.png")
 
+    # Figure 8c: spread across seeds (sd) of the same runs scored on each set.
+    fig, axes = plt.subplots(1, 2, figsize=(12.5, 4.2), sharex=False)
+    for ax, task in zip(axes, ARMS):
+        size = big[task]["report_size"]
+        arms_ = ARMS[task]
+        for row, arm in enumerate(reversed(arms_)):
+            small, large = data[(task, arm)]
+            sd_small, sd_large = statistics.stdev(small), statistics.stdev(large)
+            color = COLOR[METHOD[arm]]
+            ax.barh(row + 0.18, sd_small, height=0.34, color=SURFACE, edgecolor=color, lw=1.4)
+            ax.barh(row - 0.18, sd_large, height=0.34, color=color, edgecolor=color)
+            ax.text(max(sd_small, sd_large) + 0.08, row, f"{100 * (sd_large - sd_small) / sd_small:+.0f}%",
+                    va="center", fontsize=8, color=TEXT)
+        ax.set_yticks(range(len(arms_)), [LABELS[a] for a in reversed(arms_)], fontsize=8)
+        ax.set_xlabel("spread across the 10 seeds: sd of report accuracy (pp)")
+        ax.set_title("AG News" if task == "agnews" else "Emotion")
+        ax.set_ylim(-0.6, len(arms_) + 0.2)
+        ax.grid(axis="y", visible=False)
+    handles = [plt.Rectangle((0, 0), 1, 1, facecolor=SURFACE, edgecolor=TEXT_2, label="scored on 256 examples"),
+               plt.Rectangle((0, 0), 1, 1, color=TEXT_2, label="scored on ~2,000 examples")]
+    fig.legend(handles=handles, loc="lower center", ncol=2, fontsize=8, frameon=False, bbox_to_anchor=(0.5, -0.06))
+    fig.suptitle("Does a larger evaluation set reduce the spread across seeds? (percent: change in sd)",
+                 fontsize=11, fontweight="bold", x=0.01, ha="left")
+    fig.text(0.01, -0.1, "Same runs and same selected prompts in both bars; only the evaluation set differs. A large drop means "
+             "much of the spread was evaluation noise; a small drop means the runs genuinely ended on prompts of different quality.",
+             fontsize=7.5, color=TEXT_2)
+    fig.subplots_adjust(wspace=0.75, bottom=0.2, top=0.86)
+    fig.savefig("artifacts/figures/fig8c_eval_size_spread.png", dpi=200, bbox_inches="tight")
+    print("WROTE artifacts/figures/fig8c_eval_size_spread.png")
+
 
 if __name__ == "__main__":
     main()

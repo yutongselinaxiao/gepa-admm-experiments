@@ -296,6 +296,103 @@ def per_proposal_quality() -> list[str]:
     return lines + [""]
 
 
+def word_diff(parent: str, child: str) -> str:
+    """Child text with inserted words in **bold** and deleted parent words as ~~strikethrough~~."""
+    import difflib
+
+    a, b = parent.split(), child.split()
+    out: list[str] = []
+    for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b).get_opcodes():
+        if op == "equal":
+            out += a[i1:i2]
+        if op in ("delete", "replace"):
+            out.append("~~" + " ".join(a[i1:i2]) + "~~")
+        if op in ("insert", "replace"):
+            out.append("**" + " ".join(b[j1:j2]) + "**")
+    return " ".join(out)
+
+
+def multistart_diversity() -> list[str]:
+    """Do the 3 starts of a multi-start proposal find different candidates? Candidates are de-duplicated
+    across starts, so starts 1 and 2 only log candidates no earlier start found."""
+    import glob
+
+    lines = ["## Multi-start: what the extra starts contribute (Phase 9, all proposals)", "",
+             "| Task | Proposals | New candidates per start (0 / 1 / 2) | Winner came from start 0 / 1 / 2 | "
+             "Only an extra start beat the parent |", "|---|---:|---|---|---:|"]
+    for task in ("agnews", "emotion"):
+        counts, wins, only_extra, proposals = [0, 0, 0], [0, 0, 0], 0, 0
+        for run in sorted(glob.glob(f"artifacts/phase9/{task}_multistart_s*/")):
+            for line in Path(run, "admm_proposals.jsonl").read_text().splitlines():
+                p = json.loads(line)
+                proposals += 1
+                rows = {0: p["iterations"], **{int(k): v for k, v in p.get("start_iterations", {}).items()}}
+                scored = {k: [r["new_projection"] for r in v if (r.get("new_projection") or {}).get("selection_loss")
+                              is not None] for k, v in rows.items()}
+                for k, v in scored.items():
+                    counts[k] += len(v)
+                if p["outcome"] == "proposed":
+                    wins[p["chosen"].get("start", 0)] += 1
+                    if not any(c["selection_loss"] < p["parent_selection_loss"] for c in scored.get(0, [])):
+                        only_extra += 1
+        lines.append(f"| {task} | {proposals} | {' / '.join(f'{c / proposals:.1f}' for c in counts)} | "
+                     f"{' / '.join(map(str, wins))} | {only_extra} |")
+    return lines + [""]
+
+
+def method_examples() -> list[str]:
+    """Real accepted proposals per method (largest and median validation net) and each arm's final prompt
+    for its median seed (AG News)."""
+    import glob
+
+    def proposals(pattern: str, want=lambda p: True):
+        out = []
+        for run in sorted(d for d in glob.glob(pattern) if Path(d).is_dir()):
+            nets = net_by_pair(run)
+            for line in Path(run, "admm_proposals.jsonl").read_text().splitlines():
+                p = json.loads(line)
+                key = (p["parent_instruction"], p["child_instruction"])
+                if p["outcome"] == "proposed" and p.get("heldout_accept") and key in nets and want(p):
+                    out.append((nets[key], p, run))
+        return sorted(out, key=lambda x: x[0])
+
+    sections = [
+        ("C fixed-length beam ADMM", "artifacts/phase6_independent_acceptance/agnews_beam_indep_s*", lambda p: True),
+        ("I multi-start, winner from an extra start", "artifacts/phase9/agnews_multistart_s*",
+         lambda p: p["chosen"].get("start", 0) > 0),
+        ("D multi-length, LM insertion (2-longer variant)", "artifacts/phase7/agnews_multilength_s*",
+         lambda p: p["chosen"].get("start_offset", 0) > 0),
+        ("D multi-length, LM insertion (2-shorter variant)", "artifacts/phase7/agnews_multilength_s*",
+         lambda p: p["chosen"].get("start_offset", 0) < 0),
+        ("F multi-length, gradient insertion (2-longer variant)", "artifacts/phase10/agnews_mlgrad_s*",
+         lambda p: p["chosen"].get("start_offset", 0) > 0),
+        ("G gated, length changed", "artifacts/phase8/agnews_gated_s*", lambda p: p["chosen"].get("start_offset", 0) != 0),
+        ("G gated, same length", "artifacts/phase8/agnews_gated_s*", lambda p: p["chosen"].get("start_offset", 0) == 0),
+    ]
+    lines = ["## Example accepted proposals (AG News)", "",
+             "Bold = inserted words, strikethrough = deleted words. Net = validation net of the child vs. its parent "
+             "(correct-count change on the 512 validation examples; +5 ≈ +1 pp).", ""]
+    for title, pattern, want in sections:
+        rows = proposals(pattern, want)
+        if not rows:
+            continue
+        lines += [f"### {title} ({len(rows)} accepted)", ""]
+        for tag, (net, p, run) in (("largest net", rows[-1]), ("median net", rows[len(rows) // 2])):
+            lines.append(f"- **{tag}, net {net:+d}** ({Path(run).name}): {word_diff(p['parent_instruction'], p['child_instruction'])}")
+        lines.append("")
+    lines += ["## Final prompts (AG News, each arm's median-scoring seed on the 2k set)", "",
+              "| Arm | 2k accuracy | Final prompt |", "|---|---:|---|"]
+    by_run = json.loads(Path("artifacts/report2k/agnews.json").read_text(encoding="utf-8"))["by_run"]
+    for label, pattern, _ in arms("agnews"):
+        runs = sorted((100 * v, k) for k, v in by_run.items() if re.search(pattern, k))
+        if not runs:
+            continue
+        score, run = runs[len(runs) // 2]
+        prompt = json.loads(Path(run, "gepa_result.json").read_text(encoding="utf-8"))["best_instruction"].strip()
+        lines.append(f"| {DISPLAY.get(label, label)} | {score:.2f} | {prompt} |")
+    return lines + [""]
+
+
 def main() -> None:
     out = Path("artifacts/phase_7_10")
     out.mkdir(parents=True, exist_ok=True)
@@ -366,32 +463,38 @@ def main() -> None:
     fig.savefig("artifacts/figures/fig12_all_arms_2k.png", dpi=200, bbox_inches="tight")
     plt.close(fig)
 
-    # Figure 13: accuracy vs. ADMM compute (forward passes per run) for the ADMM arms.
+    # Figure 13: accuracy vs. ADMM compute relative to C. Compute = model forward passes made inside the
+    # ADMM proposer over one GEPA run (E-steps, projection steps, candidate scoring on S and S').
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.4))
     for ax, task in zip(axes, data):
+        base = data[task]["arms"]["C  fair beam ADMM"]["admm_forward_calls"]
+        means = {r.split("  ")[0]: statistics.mean(v["scores"]) for r, v in data[task]["arms"].items()}
+        upper = "H" if means.get("H", 0) >= means.get("I", 0) else "I"
         for label, row in data[task]["arms"].items():
             if not row["admm_forward_calls"]:
                 continue
+            x = row["admm_forward_calls"] / base
             mean, half = ci(row["scores"])
             color = FAMILY[row["family"]]
-            ax.errorbar([row["admm_forward_calls"]], [mean], yerr=[[half], [half]], fmt="o", color=color, capsize=3, ms=6)
+            ax.errorbar([x], [mean], yerr=[[half], [half]], fmt="o", color=color, capsize=3, ms=6)
             letter = label.split("  ")[0]
-            means = {r.split("  ")[0]: statistics.mean(v["scores"]) for r, v in data[task]["arms"].items()}
-            upper = "H" if means.get("H", 0) >= means.get("I", 0) else "I"  # H and I sit at the same compute
-            offset = {upper: (8, 8), ("I" if upper == "H" else "H"): (8, -12),
-                      "D": (-16, 4), "F": (7, 4)}.get(letter, (6, 4))
-            ax.annotate(letter, (row["admm_forward_calls"], mean), textcoords="offset points",
-                        xytext=offset, fontsize=9, color=color, fontweight="bold")
+            offset = {upper: (8, 8), ("I" if upper == "H" else "H"): (8, -12), "D": (-16, 4), "F": (7, 4),
+                      "G": (8, 8)}.get(letter, (6, 4))
+            ax.annotate(letter, (x, mean), textcoords="offset points", xytext=offset, fontsize=9, color=color,
+                        fontweight="bold")
         ax.axhline(data[task]["seed"], color=REFERENCE, lw=1, ls="--")
-        ref = data[task]["arms"]["B  matched reflective (30)"]["scores"]
-        ax.axhline(statistics.mean(ref), color=COLOR["reflective"], lw=1, ls=":")
-        ax.set_xscale("log")
-        ax.set_xlabel("ADMM forward passes per run (log scale)")
+        ax.axhline(statistics.mean(data[task]["arms"]["B  matched reflective (30)"]["scores"]),
+                   color=COLOR["reflective"], lw=1, ls=":")
+        ax.set_xlim(0.6, 3.8)
+        ax.set_xlabel("ADMM compute per GEPA run, relative to C")
         ax.set_ylabel("2k report accuracy (%), mean ± 95% CI")
         ax.set_title("AG News" if task == "agnews" else "Emotion")
-    axes[0].text(0.01, 0.02, "dashed: seed instruction · dotted: matched reflective (B)", transform=axes[0].transAxes,
-                 fontsize=7.5, color=TEXT_2)
-    fig.suptitle("Accuracy vs. ADMM compute (letters as in the table)", fontsize=11, fontweight="bold", x=0.01, ha="left")
+    bases = {t: data[t]["arms"]["C  fair beam ADMM"]["admm_forward_calls"] for t in data}
+    fig.text(0.01, -0.04, "Compute = model forward passes inside the ADMM proposer over one 12-proposal run (E-steps, projection "
+             f"steps, candidate scoring); 1× = C's {bases['agnews']:,.0f} (AG News) / {bases['emotion']:,.0f} (emotion).\n"
+             "Dashed: seed instruction. Dotted: matched reflection (B). Bars: mean ± 95% CI over 10 seeds.",
+             fontsize=7.5, color=TEXT_2)
+    fig.suptitle("Accuracy vs. ADMM compute (letters as in the arms table)", fontsize=11, fontweight="bold", x=0.01, ha="left")
     fig.subplots_adjust(wspace=0.25, top=0.86)
     fig.savefig("artifacts/figures/fig13_compute_vs_accuracy.png", dpi=200, bbox_inches="tight")
     plt.close(fig)
@@ -432,9 +535,10 @@ def main() -> None:
         for method, b in by_method.items():
             lines.append(f"| {task} | {method} | {b['mean']:+.1f} | {b['nets']} | {b['seconds']:.0f} | {b['nll_change']:+.2f} |")
     diagnostic_lines, diagnostics = phase7_diagnostics()
-    lines += [""] + diagnostic_lines + seed_planning(data) + acceptance_evidence() + candidate_pool_effect() + per_proposal_quality()
+    lines += [""] + diagnostic_lines + seed_planning(data) + acceptance_evidence() + candidate_pool_effect() + per_proposal_quality() + multistart_diversity()
     focus_figures(data)
     (out / "tables.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (out / "examples.md").write_text("\n".join(method_examples()) + "\n", encoding="utf-8")
     (out / "summary.json").write_text(json.dumps({"arms": data, "bench": bench, "phase7": diagnostics}, indent=2),
                                       encoding="utf-8")
     print("\n".join(lines))

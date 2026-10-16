@@ -116,3 +116,10 @@ Polish effect (E − A', same judge and proposal count): +2.44 pp (p = 0.018).
 | emotion | I | 120 | 99% | -1.7 | 54 | -1.1 |
 | emotion | H | 360 | 79% | -3.4 | 140 | -2.3 |
 
+## Multi-start: what the extra starts contribute (Phase 9, all proposals)
+
+| Task | Proposals | New candidates per start (0 / 1 / 2) | Winner came from start 0 / 1 / 2 | Only an extra start beat the parent |
+|---|---:|---|---|---:|
+| agnews | 120 | 2.6 / 2.3 / 1.9 | 41 / 35 / 37 | 20 |
+| emotion | 120 | 3.9 / 3.0 / 2.5 | 34 / 45 / 40 | 31 |
+
