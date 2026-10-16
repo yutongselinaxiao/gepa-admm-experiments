@@ -145,6 +145,8 @@ class GatedADMMRefiner:
         candidates = candidates[self.refiner.allowed_mask[candidates]]
         if initial is not None:
             candidates = torch.cat((candidates, torch.tensor([initial], device=candidates.device)))
+        if not len(candidates):  # nucleus holds only disallowed tokens (e.g. end of turn) at a spare slot
+            candidates = logits.masked_fill(~self.refiner.allowed_mask, -math.inf).argmax().view(1)
         return torch.unique(candidates)
 
     @torch.inference_mode()

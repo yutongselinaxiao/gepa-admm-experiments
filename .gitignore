@@ -9,6 +9,7 @@ artifacts/phase7/*
 !artifacts/phase7/jobs.jsonl
 artifacts/phase7_failed/
 artifacts/phase7_rerun/
+artifacts/phase8_failed/
 artifacts/phase8/*
 !artifacts/phase8/jobs.jsonl
 artifacts/phase9/*
