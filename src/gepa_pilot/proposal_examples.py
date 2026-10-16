@@ -193,9 +193,83 @@ def main() -> None:
     md += rejected_but_better(rows, "reflection", "minibatch (GEPA default)")
     md += ["**Euclidean ADMM proposer** (Phase 1):", ""]
     md += rejected_but_better(rows, "Euclidean ADMM", "minibatch (GEPA default)")
+    md += ["", "#### Average child vs. what GEPA keeps (like-for-like runs, 512 validation examples)", ""]
+    md += outcome_decomposition()
     Path("artifacts/proposal_diagnostics/examples.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     print("\n".join(md))
     print("WROTE artifacts/figures/fig9b_fixes_vs_breaks.png")
+    tail_figure()
+
+
+
+def tail_figure() -> None:
+    """Figure 9c: share of children whose net gain (fixes - breaks) is at least x, per proposer.
+
+    Like-for-like runs only (one experiment per proposer, 10 runs x 12 proposals)."""
+    from .make_figures import COLOR, MARKER  # noqa: F401
+    rows = load_rows()
+    sets = {
+        "agnews": [("reflection", "artifacts/phase2/reflective_s", "reflective", "-"),
+                   ("top-p ADMM", "artifacts/phase2/admm_topp_s", "topp", "--"),
+                   ("beam ADMM (fair S')", "phase6_independent_acceptance/agnews", "beam", ":")],
+        "emotion": [("reflection", "phase4_emotion/reflective_p12_s", "reflective", "-"),
+                    ("top-p ADMM", "phase4_emotion/admm_topp_s", "topp", "--"),
+                    ("beam ADMM (fair S')", "phase6_independent_acceptance/emotion", "beam", ":")],
+    }
+    fig, axes = plt.subplots(1, 2, figsize=(12, 4.2), sharey=True)
+    for ax, (task, series) in zip(axes, sets.items()):
+        for name, key, color, style in series:
+            nets = sorted(r["fixes"] - r["breaks"] for r in rows if r["task"] == task and key in r["run"])
+            xs = list(range(-40, 61))
+            ax.plot(xs, [100 * sum(n >= x for n in nets) / len(nets) for x in xs], color=COLOR[color], ls=style,
+                    label=f"{name} (n = {len(nets)})")
+        ax.axvline(0, color=REFERENCE, lw=1)
+        ax.axvline(5, color=REFERENCE, lw=1, ls=":")
+        ax.text(5.8, 45, "net ≥ +5", fontsize=8, color=TEXT_2)
+        ax.set_xlim(-40, 60)
+        ax.set_xlabel("net gain x of a child over its parent (fixes − breaks, of 512 examples)")
+        ax.set_title("AG News" if task == "agnews" else "Emotion")
+        ax.legend(loc="upper right", fontsize=8)
+    axes[0].set_ylabel("children with net gain ≥ x (%)")
+    fig.suptitle("Upper tail of child quality: how often a proposer produces a clearly better child",
+                 fontsize=11, fontweight="bold", x=0.01, ha="left")
+    fig.subplots_adjust(top=0.84, wspace=0.08)
+    fig.savefig("artifacts/figures/fig9c_child_quality_tail.png", dpi=200, bbox_inches="tight")
+    plt.close(fig)
+    print("WROTE artifacts/figures/fig9c_child_quality_tail.png")
+
+
+LIKE_FOR_LIKE = {
+    ("agnews", "reflection"): "artifacts/phase2/reflective_s",
+    ("agnews", "top-p ADMM"): "artifacts/phase2/admm_topp_s",
+    ("agnews", "beam ADMM (fair S')"): "phase6_independent_acceptance/agnews",
+    ("emotion", "reflection"): "phase4_emotion/reflective_p12_s",
+    ("emotion", "top-p ADMM"): "phase4_emotion/admm_topp_s",
+    ("emotion", "beam ADMM (fair S')"): "phase6_independent_acceptance/emotion",
+}
+
+
+def outcome_decomposition() -> list[str]:
+    """Average child vs. what GEPA keeps: all children, the upper tail, accepted children, the best
+    child per run, and the final selected prompt vs. the seed (all on the 512 validation examples)."""
+    rows = load_rows()
+    lines = ["| Task / proposer | Mean net, all children | Children with net ≥ +5 | Accepted: count, mean net | "
+             "Best child per run (mean) | Final prompt vs. seed (mean) |", "|---|---:|---:|---:|---:|---:|"]
+    for (task, name), key in LIKE_FOR_LIKE.items():
+        sub = [r for r in rows if r["task"] == task and key in r["run"]]
+        net = [r["fixes"] - r["breaks"] for r in sub]
+        accepted = [r["fixes"] - r["breaks"] for r in sub if r["status"] == "accepted"]
+        runs = sorted({r["run"] for r in sub})
+        best = [max(r["fixes"] - r["breaks"] for r in sub if r["run"] == run) for run in runs]
+        final = []
+        for run in runs:
+            result = json.loads(Path(run, "gepa_result.json").read_text(encoding="utf-8"))
+            audit, seed = result["audit_by_instruction"], result["all_accepted_candidates"][0]["instruction"]
+            final.append(512 * (audit[result["best_instruction"]]["accuracy"] - audit[seed]["accuracy"]))
+        lines.append(f"| {'AG News' if task == 'agnews' else 'Emotion'} / {name} | {statistics.mean(net):+.1f} | "
+                     f"{100 * sum(x >= 5 for x in net) / len(net):.0f}% | {len(accepted)}, "
+                     f"{statistics.mean(accepted):+.1f} | {statistics.mean(best):+.1f} | {statistics.mean(final):+.1f} |")
+    return lines
 
 
 if __name__ == "__main__":
