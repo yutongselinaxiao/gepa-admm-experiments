@@ -74,11 +74,13 @@ def net_by_pair(run: str) -> dict[tuple[str, str], int]:
 
 def phase7_diagnostics() -> tuple[list[str], dict]:
     """Which length variant wins in multi-length runs, and what the polish does (all Phase 7 runs)."""
-    lines, out = ["## Phase 7 proposal diagnostics (all runs; validation net vs. parent, of 512)", ""], {}
-    lines += ["| Task | Variant | Proposed | Accepted on S' | Mean validation net | Share better |", "|---|---:|---:|---:|---:|---:|"]
-    for task in ("agnews", "emotion"):
+    lines, out = ["## Multi-length variants and polish outcomes (all runs; validation net vs. parent, of 512)", ""], {}
+    lines += ["| Arm | Task | Variant | Proposed | Accepted on S' | Mean validation net | Share better |",
+              "|---|---|---:|---:|---:|---:|---:|"]
+    for (arm, phase, stem), task in [(a, t) for a in (("D", "phase7", "multilength"), ("F", "phase10", "mlgrad"))
+                                     for t in ("agnews", "emotion")]:
         stats_by: dict[int, dict[str, list]] = {}
-        for run in sorted(str(p) for p in Path("artifacts/phase7").glob(f"{task}_multilength_s*") if p.is_dir()):
+        for run in sorted(str(p) for p in Path(f"artifacts/{phase}").glob(f"{task}_{stem}_s*") if p.is_dir()):
             nets = net_by_pair(run)
             for line in Path(run, "admm_proposals.jsonl").read_text().splitlines():
                 p = json.loads(line)
@@ -91,9 +93,9 @@ def phase7_diagnostics() -> tuple[list[str], dict]:
                     row["nets"].append(nets[(p["parent_instruction"], p["child_instruction"])])
         for o in sorted(stats_by):
             r = stats_by[o]
-            out[f"{task}/multilength/{o:+d}"] = {"proposed": len(r["accepted"]), "accepted": sum(r["accepted"]),
-                                                 "mean_net": statistics.mean(r["nets"]) if r["nets"] else None}
-            lines.append(f"| {task} | {o:+d} tokens | {len(r['accepted'])} | {sum(r['accepted'])} | "
+            out[f"{arm}/{task}/{o:+d}"] = {"proposed": len(r["accepted"]), "accepted": sum(r["accepted"]),
+                                           "mean_net": statistics.mean(r["nets"]) if r["nets"] else None}
+            lines.append(f"| {arm} | {task} | {o:+d} tokens | {len(r['accepted'])} | {sum(r['accepted'])} | "
                          f"{statistics.mean(r['nets']):+.1f} | {100 * sum(x > 0 for x in r['nets']) / len(r['nets']):.0f}% |")
     lines += ["", "| Task | Polish outcome on reflection's draft | Count | Share |", "|---|---|---:|---:|"]
     for task in ("agnews", "emotion"):
@@ -193,7 +195,7 @@ def main() -> None:
             means = {r.split("  ")[0]: statistics.mean(v["scores"]) for r, v in data[task]["arms"].items()}
             upper = "H" if means.get("H", 0) >= means.get("I", 0) else "I"  # H and I sit at the same compute
             offset = {upper: (8, 8), ("I" if upper == "H" else "H"): (8, -12),
-                      "D": (-16, 4), "F": (-16, -12)}.get(letter, (6, 4))
+                      "D": (-16, 4), "F": (7, 4)}.get(letter, (6, 4))
             ax.annotate(letter, (row["admm_forward_calls"], mean), textcoords="offset points",
                         xytext=offset, fontsize=9, color=color, fontweight="bold")
         ax.axhline(data[task]["seed"], color=REFERENCE, lw=1, ls="--")

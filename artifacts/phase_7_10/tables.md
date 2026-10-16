@@ -14,6 +14,7 @@ Mean ± sd over seeds; differences are Welch's t-tests against C (fair beam ADMM
 | I  multi-start (3 runs) | 10 | 36.15 ± 1.99 | +1.13 (0.298) | +2.06 (0.014) | 20,974 |
 | H  fixed beam, 36 proposals | 10 | 36.32 ± 1.87 | +1.30 (0.223) | +2.23 (0.006) | 21,008 |
 | D  multi-length, LM insertion | 10 | 35.59 ± 1.72 | +0.58 (0.575) | +1.51 (0.038) | 20,221 |
+| F  multi-length, gradient ins. | 10 | 38.26 ± 2.56 | +3.24 (0.013) | +4.17 (0.000) | 23,634 |
 | G  gated | 10 | 36.62 ± 3.26 | +1.60 (0.245) | +2.53 (0.041) | 7,861 |
 
 Polish effect (E − A', same judge and proposal count): +2.44 pp (p = 0.018).
@@ -29,6 +30,7 @@ Polish effect (E − A', same judge and proposal count): +2.44 pp (p = 0.018).
 | I  multi-start (3 runs) | 10 | 38.05 ± 0.81 | +0.12 (0.761) | +1.26 (0.001) | 21,725 |
 | H  fixed beam, 36 proposals | 10 | 37.72 ± 1.10 | -0.20 (0.675) | +0.93 (0.037) | 21,766 |
 | D  multi-length, LM insertion | 10 | 37.05 ± 1.24 | -0.88 (0.098) | +0.25 (0.576) | 21,254 |
+| F  multi-length, gradient ins. | 10 | 37.09 ± 0.70 | -0.83 (0.045) | +0.30 (0.340) | 24,375 |
 | G  gated | 10 | 37.86 ± 0.93 | -0.06 (0.891) | +1.07 (0.009) | 8,201 |
 
 ## Proposal bench (6 parents per task)
@@ -46,16 +48,22 @@ Polish effect (E − A', same judge and proposal count): +2.44 pp (p = 0.018).
 | emotion | multistart | -9.0 | [2, 18, -45, -3, -6, -20] | 204 | -0.01 |
 | emotion | fixed | -7.7 | [2, 5, -45, -3, 6, -11] | 75 | +0.03 |
 
-## Phase 7 proposal diagnostics (all runs; validation net vs. parent, of 512)
+## Multi-length variants and polish outcomes (all runs; validation net vs. parent, of 512)
 
-| Task | Variant | Proposed | Accepted on S' | Mean validation net | Share better |
-|---|---:|---:|---:|---:|---:|
-| agnews | -2 tokens | 71 | 47 | +13.8 | 68% |
-| agnews | +0 tokens | 27 | 12 | -5.1 | 30% |
-| agnews | +2 tokens | 16 | 7 | -4.5 | 31% |
-| emotion | -2 tokens | 67 | 39 | -7.7 | 19% |
-| emotion | +0 tokens | 30 | 10 | -4.2 | 40% |
-| emotion | +2 tokens | 22 | 9 | -7.8 | 23% |
+| Arm | Task | Variant | Proposed | Accepted on S' | Mean validation net | Share better |
+|---|---|---:|---:|---:|---:|---:|
+| D | agnews | -2 tokens | 71 | 47 | +13.8 | 68% |
+| D | agnews | +0 tokens | 27 | 12 | -5.1 | 30% |
+| D | agnews | +2 tokens | 16 | 7 | -4.5 | 31% |
+| D | emotion | -2 tokens | 67 | 39 | -7.7 | 19% |
+| D | emotion | +0 tokens | 30 | 10 | -4.2 | 40% |
+| D | emotion | +2 tokens | 22 | 9 | -7.8 | 23% |
+| F | agnews | -2 tokens | 11 | 7 | +11.8 | 73% |
+| F | agnews | +0 tokens | 4 | 1 | +0.5 | 50% |
+| F | agnews | +2 tokens | 101 | 65 | +9.2 | 74% |
+| F | emotion | -2 tokens | 23 | 12 | -8.1 | 17% |
+| F | emotion | +0 tokens | 9 | 6 | +4.9 | 67% |
+| F | emotion | +2 tokens | 88 | 47 | -14.0 | 31% |
 
 | Task | Polish outcome on reflection's draft | Count | Share |
 |---|---|---:|---:|

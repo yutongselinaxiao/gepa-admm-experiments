@@ -227,6 +227,34 @@
           ],
           "admm_forward_calls": 20220.8
         },
+        "F  multi-length, gradient ins.": {
+          "family": "variable-length ADMM",
+          "runs": [
+            "artifacts/phase10/agnews_mlgrad_s0",
+            "artifacts/phase10/agnews_mlgrad_s1",
+            "artifacts/phase10/agnews_mlgrad_s2",
+            "artifacts/phase10/agnews_mlgrad_s3",
+            "artifacts/phase10/agnews_mlgrad_s4",
+            "artifacts/phase10/agnews_mlgrad_s5",
+            "artifacts/phase10/agnews_mlgrad_s6",
+            "artifacts/phase10/agnews_mlgrad_s7",
+            "artifacts/phase10/agnews_mlgrad_s8",
+            "artifacts/phase10/agnews_mlgrad_s9"
+          ],
+          "scores": [
+            35.4,
+            37.3,
+            35.75,
+            36.05,
+            40.400000000000006,
+            37.55,
+            42.95,
+            38.5,
+            37.15,
+            41.5
+          ],
+          "admm_forward_calls": 23633.9
+        },
         "G  gated": {
           "family": "variable-length ADMM",
           "runs": [
@@ -460,6 +488,34 @@
           ],
           "admm_forward_calls": 21253.6
         },
+        "F  multi-length, gradient ins.": {
+          "family": "variable-length ADMM",
+          "runs": [
+            "artifacts/phase10/emotion_mlgrad_s0",
+            "artifacts/phase10/emotion_mlgrad_s1",
+            "artifacts/phase10/emotion_mlgrad_s2",
+            "artifacts/phase10/emotion_mlgrad_s3",
+            "artifacts/phase10/emotion_mlgrad_s4",
+            "artifacts/phase10/emotion_mlgrad_s5",
+            "artifacts/phase10/emotion_mlgrad_s6",
+            "artifacts/phase10/emotion_mlgrad_s7",
+            "artifacts/phase10/emotion_mlgrad_s8",
+            "artifacts/phase10/emotion_mlgrad_s9"
+          ],
+          "scores": [
+            37.025948103792416,
+            37.82435129740519,
+            37.025948103792416,
+            37.025948103792416,
+            37.87425149700599,
+            37.025948103792416,
+            37.6746506986028,
+            37.025948103792416,
+            37.025948103792416,
+            35.37924151696607
+          ],
+          "admm_forward_calls": 24375.1
+        },
         "G  gated": {
           "family": "variable-length ADMM",
           "runs": [
@@ -628,35 +684,65 @@
     }
   },
   "phase7": {
-    "agnews/multilength/-2": {
+    "D/agnews/-2": {
       "proposed": 71,
       "accepted": 47,
       "mean_net": 13.76056338028169
     },
-    "agnews/multilength/+0": {
+    "D/agnews/+0": {
       "proposed": 27,
       "accepted": 12,
       "mean_net": -5.148148148148148
     },
-    "agnews/multilength/+2": {
+    "D/agnews/+2": {
       "proposed": 16,
       "accepted": 7,
       "mean_net": -4.5
     },
-    "emotion/multilength/-2": {
+    "D/emotion/-2": {
       "proposed": 67,
       "accepted": 39,
       "mean_net": -7.686567164179104
     },
-    "emotion/multilength/+0": {
+    "D/emotion/+0": {
       "proposed": 30,
       "accepted": 10,
       "mean_net": -4.166666666666667
     },
-    "emotion/multilength/+2": {
+    "D/emotion/+2": {
       "proposed": 22,
       "accepted": 9,
       "mean_net": -7.818181818181818
+    },
+    "F/agnews/-2": {
+      "proposed": 11,
+      "accepted": 7,
+      "mean_net": 11.818181818181818
+    },
+    "F/agnews/+0": {
+      "proposed": 4,
+      "accepted": 1,
+      "mean_net": 0.5
+    },
+    "F/agnews/+2": {
+      "proposed": 101,
+      "accepted": 65,
+      "mean_net": 9.158415841584159
+    },
+    "F/emotion/-2": {
+      "proposed": 23,
+      "accepted": 12,
+      "mean_net": -8.130434782608695
+    },
+    "F/emotion/+0": {
+      "proposed": 9,
+      "accepted": 6,
+      "mean_net": 4.888888888888889
+    },
+    "F/emotion/+2": {
+      "proposed": 88,
+      "accepted": 47,
+      "mean_net": -14.022727272727273
     },
     "agnews/polish_outcomes": {
       "proposed": 64,

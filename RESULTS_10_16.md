@@ -14,7 +14,7 @@ takeaways.
 
 **Through the first 2026-10-16 entries, no new optimization seeds were added:** those numbers
 come from a larger evaluation set and re-analysis of existing runs. The last entry adds new
-runs (Phases 7–9).
+runs (Phases 7–10).
 
 ## Key takeaways
 - **Emotion:** fair beam ADMM beats both reflective baselines on 2k examples (+1.1 pp,
@@ -34,11 +34,15 @@ runs (Phases 7–9).
 - **GEPA's minibatch rule misses many better children** (ties on 8 examples).
 - **Reflect-then-polish helps on AG News once judged fairly:** +2.4 pp over reflection with the
   same judge (p = 0.018). It doesn't help on emotion.
-- **New ADMM variants on AG News (+0.6 to +1.6 pp over fair beam ADMM) mostly match what 3× compute
-  alone buys:** 36 proposals +1.3, multi-start +1.1. Gated (+1.6) is the only one at about C's
-  compute, but it isn't significant.
+- **AG News: multi-length with gradient-chosen insertion is the best arm,** at 38.26: +3.2 pp
+  over fair beam ADMM (p = 0.013) and +2.7 over LM insertion (p = 0.015). Against the
+  equal-compute controls the gain is about +2 pp (p = 0.06–0.07).
+- **The other new AG News variants (+0.6 to +1.6 pp) mostly match what 3× compute alone buys**
+  (36 proposals +1.3, multi-start +1.1). Gated (+1.6) is the only one at about C's compute, but
+  it isn't significant.
 - **On emotion, nothing beats plain fair beam ADMM:** multi-start (+0.12) and gated (−0.06) tie
-  it; multi-length and polish fall back toward reflection.
+  it. Multi-length (both insertion rules) and polish fall back toward reflection: insertions
+  hurt on emotion and S′ can't catch them.
 
 ---
 
@@ -338,7 +342,7 @@ a larger gap means better separation.*
 
 ---
 
-## 2026-10-16 (later): Phases 7–9, new proposers and compute controls
+## 2026-10-16 (later): Phases 7–10, new proposers and compute controls
 
 ### The new arms
 Every arm uses the same protocol unless noted: 10 seeds (0–9) per task, selection/report split,
@@ -359,7 +363,9 @@ setup: beam projection (λ = 0.3), 20 ADMM rounds, selection on S, independent a
   change.
 - **H fixed beam, 36 proposals (Phase 9):** C's proposer with 3× the GEPA proposals. It spends
   the same compute as I and D on more GEPA iterations instead of harder proposals.
-- **F multi-length, gradient insertion (Phase 10):** still running; added when done.
+- **F multi-length, gradient insertion (Phase 10):** D, but the longer variant's tokens are
+  chosen by the task-loss gradient among the LM's 64 likeliest tokens, keeping the one with the
+  lowest exact training loss.
 
 Code: [`phase_7_10_analysis.py`](src/gepa_pilot/phase_7_10_analysis.py). Full tables with
 p-values and compute: [`artifacts/phase_7_10/tables.md`](artifacts/phase_7_10/tables.md).
@@ -379,17 +385,20 @@ reflection + ADMM polish (orange), fixed-length ADMM (purple), variable-length A
 | C fair beam ADMM | 35.02 | **37.92** |
 | D multi-length, LM insertion | 35.59 | 37.05 |
 | E fair reflect-then-polish | 36.18 | 37.00 |
-| G gated | **36.62** | 37.86 |
+| F multi-length, gradient insertion | **38.26** | 37.09 |
+| G gated | 36.62 | 37.86 |
 | I multi-start | 36.15 | **38.05** |
 | H fixed beam, 36 proposals | 36.32 | 37.72 |
 
 - **AG News:**
-  - every new ADMM arm is +0.6 to +1.6 pp above C, none significant (p = 0.22–0.58);
-  - all of them beat matched reflection (B), at p = 0.006–0.04.
+  - **F is the only arm significantly above C:** +3.24 pp, p = 0.013 (paired by seed p = 0.039;
+    higher than C on 8 of 10 seeds);
+  - the other new ADMM arms are +0.6 to +1.6 pp above C, none significant (p = 0.22–0.58);
+  - every new ADMM arm beats matched reflection (B), at p ≤ 0.04 (F: +4.17, p < 0.001).
 - **Emotion:**
   - nothing beats C; multi-start (+0.12) and gated (−0.06) tie it;
-  - polish (−0.92, p = 0.02) and multi-length (−0.88, p = 0.10) fall back toward the
-    reflection level.
+  - polish (−0.92, p = 0.02) and both multi-length arms (D −0.88, p = 0.10; F −0.83,
+    p = 0.045) fall back toward the reflection level.
 - **Many comparisons at n = 10:** read a single p ≈ 0.03–0.04 as suggestive.
 
 ### Reflect-then-polish works once judged fairly (AG News)
@@ -414,17 +423,27 @@ proxy for compute, not FLOPs; G's no-cache beam makes its passes longer.*
 - **G is the exception:** +1.60 at about 7.9k passes, close to C's 7.0k.
   - It's the only gain that doesn't come with about 3× compute.
   - But its spread is the largest (sd 3.3), so it isn't significant yet.
-- **Length variation by itself doesn't help at equal compute:** D vs. I is −0.56 on AG News
-  and −1.00 on emotion.
+- **At equal compute (about 21–24k passes), how the length changes matters:**
+  - F vs. I: +2.11 (p = 0.056) on AG News, −0.96 (p = 0.011) on emotion;
+  - D vs. I: −0.56 on AG News, −1.00 on emotion;
+  - so gradient-chosen insertion helps on AG News, while LM insertion never does.
+- **F vs. H (spend the compute on more proposals instead):** +1.94 (p = 0.071) on AG News.
 
-### Multi-length: which variant wins (Phase 7, all runs)
-- **AG News, the shorter variant does the work:**
+### Multi-length: which variant wins (all D and F runs)
+Validation net = fixes − breaks against the parent, of 512. Full table in
+[`tables.md`](artifacts/phase_7_10/tables.md).
+
+- **D (LM insertion), AG News: the shorter variant does the work.**
   - −2 tokens: chosen 71 times, 68% better on validation, mean net +13.8;
   - same length: −5.1 (30% better); +2 tokens: −4.5 (31% better);
   - the recurring edit is "label mapping, ~~ignore incidental details,~~ **and provide
-    details**…".
-- **Emotion:** every variant is net negative (−4 to −8).
-- **Runs collapse onto one prompt:** two AG News seeds ended on the identical final prompt.
+    details**…"; two seeds ended on the identical final prompt.
+- **F (gradient insertion), AG News: the longer variant takes over.**
+  - +2 tokens: chosen 101 of 116 times, 74% better, mean net +9.2;
+  - all 10 seeds end on different prompts, e.g. "…output only the **numeric** corresponding
+    **target** capital letter", "…output only the **JSON format numeric code** letter".
+- **Emotion, both rules:** the longer variant hurts (D −7.8, F −14.0). S′ still accepted 47 of
+  F's 88 longer children, which is why F trails C there.
 
 ### Proposal bench: one child per method from the same parents
 ![Proposal bench](artifacts/figures/fig14_proposal_bench.png)
@@ -460,5 +479,5 @@ proposal, change in NLL per token (fluency, lower is better). Code:
   table, so Phase 9's wiped Phases 7–8. No scores were lost (all cached by prompt); the table
   now merges.
 
-### Still running
-- **F gradient insertion (Phase 10):** 20 runs, about noon (`artifacts/phase10/STATUS`).
+### Status
+All batches are finished: Phases 7–10, 120 runs, all 10 seeds per arm on both tasks.
