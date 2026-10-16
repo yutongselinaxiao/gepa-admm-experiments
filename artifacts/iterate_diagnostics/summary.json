@@ -1,0 +1,228 @@
+{
+  "AG News / beam (S twice)": {
+    "proposals": 120,
+    "returned_a_child": 93,
+    "final_round_is_parent": 94,
+    "final_round_status": {
+      "parent (no change)": 94,
+      "revisit of an earlier candidate": 9,
+      "new candidate in round 20": 17
+    },
+    "returned_from_round_20": 2,
+    "chosen_round_median": 14,
+    "chosen_round_histogram": {
+      "1": 4,
+      "3": 1,
+      "4": 2,
+      "6": 2,
+      "7": 3,
+      "8": 2,
+      "9": 4,
+      "10": 5,
+      "11": 5,
+      "12": 5,
+      "13": 10,
+      "14": 9,
+      "15": 8,
+      "16": 6,
+      "17": 11,
+      "18": 5,
+      "19": 9,
+      "20": 2
+    },
+    "returns_to_parent_per_proposal_mean": 2.158333333333333,
+    "distinct_candidates_per_proposal_median": 3.0,
+    "final_minus_returned_selection_loss": {
+      "n": 84,
+      "median": 0.997469425201416,
+      "share_final_worse": 0.9761904761904762
+    }
+  },
+  "AG News / beam (fair S')": {
+    "proposals": 120,
+    "returned_a_child": 98,
+    "final_round_is_parent": 86,
+    "final_round_status": {
+      "revisit of an earlier candidate": 9,
+      "new candidate in round 20": 25,
+      "parent (no change)": 86
+    },
+    "returned_from_round_20": 7,
+    "chosen_round_median": 13.0,
+    "chosen_round_histogram": {
+      "1": 8,
+      "6": 1,
+      "7": 1,
+      "8": 5,
+      "9": 5,
+      "10": 4,
+      "11": 10,
+      "12": 10,
+      "13": 10,
+      "14": 10,
+      "15": 3,
+      "16": 6,
+      "17": 4,
+      "18": 5,
+      "19": 9,
+      "20": 7
+    },
+    "returns_to_parent_per_proposal_mean": 2.4166666666666665,
+    "distinct_candidates_per_proposal_median": 3.0,
+    "final_minus_returned_selection_loss": {
+      "n": 91,
+      "median": 0.9451603889465332,
+      "share_final_worse": 0.9230769230769231
+    }
+  },
+  "AG News / top-p": {
+    "proposals": 120,
+    "returned_a_child": 98,
+    "final_round_is_parent": 92,
+    "final_round_status": {
+      "parent (no change)": 92,
+      "new candidate in round 20": 27,
+      "revisit of an earlier candidate": 1
+    },
+    "returned_from_round_20": 4,
+    "chosen_round_median": 14.5,
+    "chosen_round_histogram": {
+      "8": 2,
+      "9": 1,
+      "10": 5,
+      "11": 8,
+      "12": 6,
+      "13": 14,
+      "14": 13,
+      "15": 8,
+      "16": 12,
+      "17": 10,
+      "18": 11,
+      "19": 4,
+      "20": 4
+    },
+    "returns_to_parent_per_proposal_mean": 2.175,
+    "distinct_candidates_per_proposal_median": 3.0,
+    "final_minus_returned_selection_loss": {
+      "n": 97,
+      "median": 0.9844002723693848,
+      "share_final_worse": 0.9587628865979382
+    }
+  },
+  "Emotion / beam (S twice)": {
+    "proposals": 120,
+    "returned_a_child": 89,
+    "final_round_is_parent": 64,
+    "final_round_status": {
+      "revisit of an earlier candidate": 20,
+      "parent (no change)": 64,
+      "new candidate in round 20": 36
+    },
+    "returned_from_round_20": 13,
+    "chosen_round_median": 12,
+    "chosen_round_histogram": {
+      "1": 1,
+      "2": 4,
+      "3": 1,
+      "4": 2,
+      "6": 2,
+      "7": 3,
+      "8": 8,
+      "9": 4,
+      "10": 8,
+      "11": 4,
+      "12": 8,
+      "13": 6,
+      "14": 3,
+      "15": 7,
+      "16": 5,
+      "17": 3,
+      "18": 3,
+      "19": 4,
+      "20": 13
+    },
+    "returns_to_parent_per_proposal_mean": 3.575,
+    "distinct_candidates_per_proposal_median": 4.0,
+    "final_minus_returned_selection_loss": {
+      "n": 73,
+      "median": 0.2493128776550293,
+      "share_final_worse": 0.821917808219178
+    }
+  },
+  "Emotion / beam (fair S')": {
+    "proposals": 120,
+    "returned_a_child": 97,
+    "final_round_is_parent": 64,
+    "final_round_status": {
+      "parent (no change)": 64,
+      "new candidate in round 20": 24,
+      "revisit of an earlier candidate": 32
+    },
+    "returned_from_round_20": 5,
+    "chosen_round_median": 12,
+    "chosen_round_histogram": {
+      "1": 7,
+      "2": 1,
+      "3": 2,
+      "4": 4,
+      "5": 4,
+      "6": 3,
+      "7": 5,
+      "8": 5,
+      "9": 4,
+      "10": 4,
+      "11": 6,
+      "12": 8,
+      "13": 3,
+      "14": 12,
+      "15": 3,
+      "16": 6,
+      "17": 3,
+      "18": 3,
+      "19": 9,
+      "20": 5
+    },
+    "returns_to_parent_per_proposal_mean": 3.9,
+    "distinct_candidates_per_proposal_median": 4.0,
+    "final_minus_returned_selection_loss": {
+      "n": 70,
+      "median": 0.3368258476257324,
+      "share_final_worse": 0.9285714285714286
+    }
+  },
+  "Emotion / top-p": {
+    "proposals": 120,
+    "returned_a_child": 66,
+    "final_round_is_parent": 99,
+    "final_round_status": {
+      "parent (no change)": 99,
+      "new candidate in round 20": 19,
+      "revisit of an earlier candidate": 2
+    },
+    "returned_from_round_20": 7,
+    "chosen_round_median": 15.0,
+    "chosen_round_histogram": {
+      "7": 2,
+      "8": 1,
+      "9": 1,
+      "10": 6,
+      "11": 6,
+      "12": 2,
+      "13": 7,
+      "14": 7,
+      "15": 2,
+      "16": 8,
+      "17": 7,
+      "18": 5,
+      "19": 5,
+      "20": 7
+    },
+    "returns_to_parent_per_proposal_mean": 1.5333333333333334,
+    "distinct_candidates_per_proposal_median": 2.0,
+    "final_minus_returned_selection_loss": {
+      "n": 65,
+      "median": 0.33803462982177734,
+      "share_final_worse": 0.8923076923076924
+    }
+  }
+}

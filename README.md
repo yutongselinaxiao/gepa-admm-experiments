@@ -1,5 +1,7 @@
 # GEPA and ADMM discrete-prompt pilot
 
+> **Results log by date:** [`RESULTS_LOG.md`](RESULTS_LOG.md).
+>
 > **Later results:** ADMM running *inside* GEPA (proposer, projections, acceptance, matched baselines, a second task) is consolidated in [`CLASSIFICATION_RESULTS.md`](CLASSIFICATION_RESULTS.md). GSM8K surrogate diagnostics: [`artifacts/gsm8k_diagnostics/README.md`](artifacts/gsm8k_diagnostics/README.md).
 
 This repository is an implementation and experimental record for the pilot in

@@ -13,6 +13,8 @@ The official test splits have **not** been used.
 
 ---
 
+> **Newer results** (2,000-example re-scoring, seed-count comparison, ADMM iterate diagnostic, Phase 7) are logged by date in [`RESULTS_LOG.md`](RESULTS_LOG.md).
+
 ## 1. Headline
 
 **Main finding (revised after Phase 6, §5.13).** The best variant is GEPA
