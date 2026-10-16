@@ -123,3 +123,17 @@ Polish effect (E − A', same judge and proposal count): +2.44 pp (p = 0.018).
 | agnews | 120 | 2.6 / 2.3 / 1.9 | 41 / 35 / 37 | 20 |
 | emotion | 120 | 3.9 / 3.0 / 2.5 | 34 / 45 / 40 | 31 |
 
+## Fair per-proposal comparison of C, I, H (net = Δ correct vs. parent, of 512)
+
+| Task | Arm | First proposal: proposed / accepted (of 10) | First proposal: mean net | First 12 proposals per run: mean net (unchanged = 0) |
+|---|---|---:|---:|---:|
+| agnews | C | 10 / 10 | +11.0 | +6.4 |
+| agnews | I | 10 / 10 | +14.3 | +6.4 |
+| agnews | H | 10 / 10 | +11.2 | +5.9 |
+| emotion | C | 8 / 2 | -2.4 | -1.6 |
+| emotion | I | 10 / 4 | -2.0 | -1.7 |
+| emotion | H | 8 / 2 | -2.4 | -1.6 |
+
+- agnews: I − C on the first proposal, paired by seed: +3.3 (I better on 4, worse on 3, tied on 3; Wilcoxon p = 0.47). C and H gave the identical first child on 9/10 seeds (same proposer and seed; the rest is GPU nondeterminism).
+- emotion: I − C on the first proposal, paired by seed: +0.4 (I better on 3, worse on 4, tied on 3; Wilcoxon p = 0.84). C and H gave the identical first child on 10/10 seeds (same proposer and seed; the rest is GPU nondeterminism).
+

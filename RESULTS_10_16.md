@@ -155,16 +155,43 @@ deleted):
 *Figure 15. Fixed-length ADMM with 1 start (C), 3 starts (I), or 36 proposals (H), plus matched
 reflection (B) for reference. Report accuracy on the 2k sets.*
 
-**Per proposal** (all proposals of each arm; net = Δ correct answers of the child vs. its
-parent, out of 512 validation examples):
+**Per proposal, compared fairly.** Within a run, each proposal starts from whatever parent
+GEPA picked, and after the first step C, I and H follow different lineages. H's later 24
+proposals also start from more optimized parents. So the fair per-proposal comparisons are:
+- **The first proposal of each run:** for a given seed, all three arms start from the seed
+  instruction with the same GEPA minibatch, S, S′ and training batches. They are paired by seed.
+- **The first 12 proposals of each run:** the same position in the search for every arm
+  (unchanged proposals count as net 0).
+
+Net = Δ correct answers of the child vs. its parent, out of 512 validation examples.
+
+| Task | Arm | First proposal: proposed / accepted (of 10) | First proposal: mean net | First 12 proposals: mean net |
+|---|---|---:|---:|---:|
+| AG News | C | 10 / 10 | +11.0 | +6.4 |
+| AG News | I | 10 / 10 | +14.3 | +6.4 |
+| AG News | H | 10 / 10 | +11.2 | +5.9 |
+| Emotion | C | 8 / 2 | −2.4 | −1.6 |
+| Emotion | I | 10 / 4 | −2.0 | −1.7 |
+| Emotion | H | 8 / 2 | −2.4 | −1.6 |
+
+- **The extra starts don't reliably give a better child.**
+  - I − C on the first proposal, paired by seed: +3.3 on AG News (I better on 4 seeds, worse
+    on 3, tied on 3; Wilcoxon p = 0.47), +0.4 on emotion (p = 0.84).
+  - Over the first 12 proposals the arms are equal: +6.4 / +6.4 / +5.9 on AG News, about −1.6
+    each on emotion.
+- **Sanity check:** C and H run the same proposer with the same seed, so their first proposals
+  should match, and they do on 9/10 (AG News) and 10/10 (emotion) seeds. The one difference is
+  GPU nondeterminism.
+
+*Supplementary, not controlled* (all proposals, different parents across arms):
 
 | Task | Arm | Proposals that changed the prompt | Mean net of changed children | Accepted children (their mean net) |
 |---|---|---:|---:|---:|
 | AG News | C | 82% | +7.9 | 79 (+9.3) |
-| AG News | I | **94%** | +6.8 | 81 (+9.4) |
+| AG News | I | 94% | +6.8 | 81 (+9.4) |
 | AG News | H | 67% | +5.5 | 156 (+8.3) |
 | Emotion | C | 81% | −2.0 | 45 (−0.8) |
-| Emotion | I | **99%** | −1.7 | 54 (−1.1) |
+| Emotion | I | 99% | −1.7 | 54 (−1.1) |
 | Emotion | H | 79% | −3.4 | 140 (−2.3) |
 
 **Why can an ADMM proposal be identical to its parent, before acceptance?**
@@ -202,10 +229,10 @@ parent, out of 512 validation examples):
   - AG News: I +1.13 (p = 0.30) and H +1.30 (p = 0.22) over C;
   - emotion: I +0.12, H −0.20; none significant.
 - **What 3 starts change:** nearly every proposal now finds a candidate that beats the parent on
-  S (94–99% vs. 81–82%), but the children aren't better. Accepted children match C's (+9.4 vs.
-  +9.3 on AG News).
-- **H gets its gain differently:** about twice as many accepted children (156 vs. 79), each
-  slightly weaker.
+  S (94–99% vs. 81–82%), but in the fair comparison the children aren't better.
+- **H gets its gain differently:** about twice as many accepted children (156 vs. 79). Its lower
+  per-child net in the supplementary table reflects harder, later parents, not a weaker
+  proposer: over the first 12 proposals it matches C.
 - **Hypothesis:** the gains for I and H, where present, come from more accepted steps stacking
   along a lineage, not from better individual edits.
 - **Hypothesis (overfitting to S):** picking the best of more candidates on the same 32 examples

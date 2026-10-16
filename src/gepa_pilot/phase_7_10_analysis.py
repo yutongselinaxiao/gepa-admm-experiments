@@ -393,6 +393,44 @@ def method_examples() -> list[str]:
     return lines + [""]
 
 
+def fair_first_proposals() -> list[str]:
+    """Controlled per-proposal comparison of C, I, H. (a) The first proposal of each run: same parent (the seed
+    instruction), same GEPA minibatch, S, S' and training batches for a given seed, so arms are paired by seed.
+    (b) The first 12 proposals of each run (H's later 24 start from more optimized parents); unchanged = net 0."""
+    arms_ = {"C": "artifacts/phase6_independent_acceptance/{t}_beam_indep_s{s}",
+             "I": "artifacts/phase9/{t}_multistart_s{s}", "H": "artifacts/phase9/{t}_beam_p36_s{s}"}
+    lines = ["## Fair per-proposal comparison of C, I, H (net = Δ correct vs. parent, of 512)", "",
+             "| Task | Arm | First proposal: proposed / accepted (of 10) | First proposal: mean net | "
+             "First 12 proposals per run: mean net (unchanged = 0) |", "|---|---|---:|---:|---:|"]
+    notes = []
+    for task in ("agnews", "emotion"):
+        first: dict[str, list] = {a: [] for a in arms_}
+        twelve: dict[str, list] = {a: [] for a in arms_}
+        identical = 0
+        for seed in range(10):
+            texts = {}
+            for arm, pattern in arms_.items():
+                run = pattern.format(t=task, s=seed)
+                nets = net_by_pair(run)
+                log = [json.loads(l) for l in Path(run, "admm_proposals.jsonl").read_text().splitlines()]
+                texts[arm] = log[0]["child_instruction"]
+                key = (log[0]["parent_instruction"], log[0]["child_instruction"])
+                first[arm].append((nets.get(key, 0), log[0]["outcome"] == "proposed", bool(log[0].get("heldout_accept"))))
+                twelve[arm] += [nets.get((p["parent_instruction"], p["child_instruction"]), 0) for p in log[:12]]
+            identical += texts["C"] == texts["H"]
+        for arm in arms_:
+            f = first[arm]
+            lines.append(f"| {task} | {arm} | {sum(x[1] for x in f)} / {sum(x[2] for x in f)} | "
+                         f"{statistics.mean(x[0] for x in f):+.1f} | {statistics.mean(twelve[arm]):+.1f} |")
+        diff = [i[0] - c[0] for i, c in zip(first["I"], first["C"])]
+        p = float(stats.wilcoxon(diff).pvalue) if any(diff) else 1.0
+        notes.append(f"- {task}: I − C on the first proposal, paired by seed: {statistics.mean(diff):+.1f} "
+                     f"(I better on {sum(d > 0 for d in diff)}, worse on {sum(d < 0 for d in diff)}, tied on "
+                     f"{sum(d == 0 for d in diff)}; Wilcoxon p = {p:.2f}). C and H gave the identical first child "
+                     f"on {identical}/10 seeds (same proposer and seed; the rest is GPU nondeterminism).")
+    return lines + [""] + notes + [""]
+
+
 def main() -> None:
     out = Path("artifacts/phase_7_10")
     out.mkdir(parents=True, exist_ok=True)
@@ -535,7 +573,7 @@ def main() -> None:
         for method, b in by_method.items():
             lines.append(f"| {task} | {method} | {b['mean']:+.1f} | {b['nets']} | {b['seconds']:.0f} | {b['nll_change']:+.2f} |")
     diagnostic_lines, diagnostics = phase7_diagnostics()
-    lines += [""] + diagnostic_lines + seed_planning(data) + acceptance_evidence() + candidate_pool_effect() + per_proposal_quality() + multistart_diversity()
+    lines += [""] + diagnostic_lines + seed_planning(data) + acceptance_evidence() + candidate_pool_effect() + per_proposal_quality() + multistart_diversity() + fair_first_proposals()
     focus_figures(data)
     (out / "tables.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     (out / "examples.md").write_text("\n".join(method_examples()) + "\n", encoding="utf-8")
