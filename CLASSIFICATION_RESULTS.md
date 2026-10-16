@@ -13,7 +13,7 @@ The official test splits have **not** been used.
 
 ---
 
-> **Newer results** (2,000-example re-scoring, seed-count comparison, ADMM iterate diagnostic, Phase 7) are logged by date in [`RESULTS_LOG.md`](RESULTS_LOG.md).
+> **Newer results** (2,000-example re-scoring, seed-count comparison, ADMM iterate diagnostic, Phase 7) are logged by date in [`RESULTS_10_16.md`](RESULTS_10_16.md).
 
 ## 1. Headline
 
