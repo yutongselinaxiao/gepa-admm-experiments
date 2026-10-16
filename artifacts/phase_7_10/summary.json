@@ -1,0 +1,668 @@
+{
+  "arms": {
+    "agnews": {
+      "seed": 28.9,
+      "arms": {
+        "A  reflective GEPA": {
+          "family": "reflection",
+          "runs": [
+            "artifacts/phase2/reflective_s0",
+            "artifacts/phase2/reflective_s1",
+            "artifacts/phase2/reflective_s2",
+            "artifacts/phase2/reflective_s3",
+            "artifacts/phase2/reflective_s4",
+            "artifacts/phase2/reflective_s5",
+            "artifacts/phase2/reflective_s6",
+            "artifacts/phase2/reflective_s7",
+            "artifacts/phase2/reflective_s8",
+            "artifacts/phase2/reflective_s9"
+          ],
+          "scores": [
+            34.5,
+            31.05,
+            34.8,
+            34.300000000000004,
+            34.050000000000004,
+            32.45,
+            32.15,
+            35.15,
+            28.9,
+            32.15
+          ],
+          "admm_forward_calls": null
+        },
+        "A' reflective + held-out judge": {
+          "family": "reflection",
+          "runs": [
+            "artifacts/phase3/reflective_heldout_p12_s0",
+            "artifacts/phase3/reflective_heldout_p12_s1",
+            "artifacts/phase3/reflective_heldout_p12_s2",
+            "artifacts/phase3/reflective_heldout_p12_s3",
+            "artifacts/phase3/reflective_heldout_p12_s4",
+            "artifacts/phase3/reflective_heldout_p12_s5",
+            "artifacts/phase3/reflective_heldout_p12_s6",
+            "artifacts/phase3/reflective_heldout_p12_s7",
+            "artifacts/phase3/reflective_heldout_p12_s8",
+            "artifacts/phase3/reflective_heldout_p12_s9"
+          ],
+          "scores": [
+            33.15,
+            31.05,
+            35.4,
+            34.35,
+            34.8,
+            32.45,
+            35.8,
+            35.15,
+            32.15,
+            33.15
+          ],
+          "admm_forward_calls": null
+        },
+        "B  matched reflective (30)": {
+          "family": "reflection",
+          "runs": [
+            "artifacts/phase3/reflective_heldout_p30_s0",
+            "artifacts/phase3/reflective_heldout_p30_s1",
+            "artifacts/phase3/reflective_heldout_p30_s2",
+            "artifacts/phase3/reflective_heldout_p30_s3",
+            "artifacts/phase3/reflective_heldout_p30_s4",
+            "artifacts/phase3/reflective_heldout_p30_s5",
+            "artifacts/phase3/reflective_heldout_p30_s6",
+            "artifacts/phase3/reflective_heldout_p30_s7",
+            "artifacts/phase3/reflective_heldout_p30_s8",
+            "artifacts/phase3/reflective_heldout_p30_s9"
+          ],
+          "scores": [
+            33.2,
+            32.15,
+            35.199999999999996,
+            34.35,
+            34.8,
+            32.15,
+            35.4,
+            35.15,
+            34.5,
+            33.95
+          ],
+          "admm_forward_calls": null
+        },
+        "E  fair reflect-then-polish": {
+          "family": "reflection + ADMM",
+          "runs": [
+            "artifacts/phase7/agnews_polish_fair_s0",
+            "artifacts/phase7/agnews_polish_fair_s1",
+            "artifacts/phase7/agnews_polish_fair_s2",
+            "artifacts/phase7/agnews_polish_fair_s3",
+            "artifacts/phase7/agnews_polish_fair_s4",
+            "artifacts/phase7/agnews_polish_fair_s5",
+            "artifacts/phase7/agnews_polish_fair_s6",
+            "artifacts/phase7/agnews_polish_fair_s7",
+            "artifacts/phase7/agnews_polish_fair_s8",
+            "artifacts/phase7/agnews_polish_fair_s9"
+          ],
+          "scores": [
+            35.949999999999996,
+            33.2,
+            34.8,
+            34.35,
+            35.699999999999996,
+            40.150000000000006,
+            38.45,
+            39.85,
+            34.65,
+            34.699999999999996
+          ],
+          "admm_forward_calls": 9348.9
+        },
+        "C  fair beam ADMM": {
+          "family": "fixed-length ADMM",
+          "runs": [
+            "artifacts/phase6_independent_acceptance/agnews_beam_indep_s0",
+            "artifacts/phase6_independent_acceptance/agnews_beam_indep_s1",
+            "artifacts/phase6_independent_acceptance/agnews_beam_indep_s2",
+            "artifacts/phase6_independent_acceptance/agnews_beam_indep_s3",
+            "artifacts/phase6_independent_acceptance/agnews_beam_indep_s4",
+            "artifacts/phase6_independent_acceptance/agnews_beam_indep_s5",
+            "artifacts/phase6_independent_acceptance/agnews_beam_indep_s6",
+            "artifacts/phase6_independent_acceptance/agnews_beam_indep_s7",
+            "artifacts/phase6_independent_acceptance/agnews_beam_indep_s8",
+            "artifacts/phase6_independent_acceptance/agnews_beam_indep_s9"
+          ],
+          "scores": [
+            40.9,
+            35.55,
+            36.9,
+            33.25,
+            35.55,
+            32.95,
+            33.85,
+            35.85,
+            31.15,
+            34.2
+          ],
+          "admm_forward_calls": 7008.2
+        },
+        "I  multi-start (3 runs)": {
+          "family": "fixed-length ADMM",
+          "runs": [
+            "artifacts/phase9/agnews_multistart_s0",
+            "artifacts/phase9/agnews_multistart_s1",
+            "artifacts/phase9/agnews_multistart_s2",
+            "artifacts/phase9/agnews_multistart_s3",
+            "artifacts/phase9/agnews_multistart_s4",
+            "artifacts/phase9/agnews_multistart_s5",
+            "artifacts/phase9/agnews_multistart_s6",
+            "artifacts/phase9/agnews_multistart_s7",
+            "artifacts/phase9/agnews_multistart_s8",
+            "artifacts/phase9/agnews_multistart_s9"
+          ],
+          "scores": [
+            39.7,
+            37.2,
+            35.3,
+            38.550000000000004,
+            35.25,
+            34.0,
+            35.5,
+            37.1,
+            35.6,
+            33.25
+          ],
+          "admm_forward_calls": 20973.8
+        },
+        "H  fixed beam, 36 proposals": {
+          "family": "fixed-length ADMM",
+          "runs": [
+            "artifacts/phase9/agnews_beam_p36_s0",
+            "artifacts/phase9/agnews_beam_p36_s1",
+            "artifacts/phase9/agnews_beam_p36_s2",
+            "artifacts/phase9/agnews_beam_p36_s3",
+            "artifacts/phase9/agnews_beam_p36_s4",
+            "artifacts/phase9/agnews_beam_p36_s5",
+            "artifacts/phase9/agnews_beam_p36_s6",
+            "artifacts/phase9/agnews_beam_p36_s7",
+            "artifacts/phase9/agnews_beam_p36_s8",
+            "artifacts/phase9/agnews_beam_p36_s9"
+          ],
+          "scores": [
+            35.15,
+            35.85,
+            37.65,
+            36.75,
+            39.25,
+            36.7,
+            38.800000000000004,
+            35.35,
+            33.85,
+            33.85
+          ],
+          "admm_forward_calls": 21007.8
+        },
+        "D  multi-length, LM insertion": {
+          "family": "variable-length ADMM",
+          "runs": [
+            "artifacts/phase7/agnews_multilength_s0",
+            "artifacts/phase7/agnews_multilength_s1",
+            "artifacts/phase7/agnews_multilength_s2",
+            "artifacts/phase7/agnews_multilength_s3",
+            "artifacts/phase7/agnews_multilength_s4",
+            "artifacts/phase7/agnews_multilength_s5",
+            "artifacts/phase7/agnews_multilength_s6",
+            "artifacts/phase7/agnews_multilength_s7",
+            "artifacts/phase7/agnews_multilength_s8",
+            "artifacts/phase7/agnews_multilength_s9"
+          ],
+          "scores": [
+            35.4,
+            35.4,
+            35.4,
+            35.4,
+            35.4,
+            32.800000000000004,
+            35.4,
+            39.900000000000006,
+            35.4,
+            35.4
+          ],
+          "admm_forward_calls": 20220.8
+        },
+        "G  gated": {
+          "family": "variable-length ADMM",
+          "runs": [
+            "artifacts/phase8/agnews_gated_s0",
+            "artifacts/phase8/agnews_gated_s1",
+            "artifacts/phase8/agnews_gated_s2",
+            "artifacts/phase8/agnews_gated_s3",
+            "artifacts/phase8/agnews_gated_s4",
+            "artifacts/phase8/agnews_gated_s5",
+            "artifacts/phase8/agnews_gated_s6",
+            "artifacts/phase8/agnews_gated_s7",
+            "artifacts/phase8/agnews_gated_s8",
+            "artifacts/phase8/agnews_gated_s9"
+          ],
+          "scores": [
+            35.25,
+            42.4,
+            40.2,
+            35.35,
+            31.65,
+            39.25,
+            35.55,
+            34.25,
+            38.0,
+            34.25
+          ],
+          "admm_forward_calls": 7860.9
+        }
+      },
+      "polish_effect": {
+        "diff": 2.4350000000000023,
+        "p": 0.017808842108453238
+      }
+    },
+    "emotion": {
+      "seed": 37.025948103792416,
+      "arms": {
+        "A  reflective GEPA": {
+          "family": "reflection",
+          "runs": [
+            "artifacts/phase4_emotion/reflective_p12_s0",
+            "artifacts/phase4_emotion/reflective_p12_s1",
+            "artifacts/phase4_emotion/reflective_p12_s2",
+            "artifacts/phase4_emotion/reflective_p12_s3",
+            "artifacts/phase4_emotion/reflective_p12_s4",
+            "artifacts/phase4_emotion/reflective_p12_s5",
+            "artifacts/phase4_emotion/reflective_p12_s6",
+            "artifacts/phase4_emotion/reflective_p12_s7",
+            "artifacts/phase4_emotion/reflective_p12_s8",
+            "artifacts/phase4_emotion/reflective_p12_s9"
+          ],
+          "scores": [
+            35.778443113772454,
+            37.025948103792416,
+            37.025948103792416,
+            36.57684630738523,
+            36.57684630738523,
+            37.025948103792416,
+            37.025948103792416,
+            37.025948103792416,
+            37.025948103792416,
+            37.025948103792416
+          ],
+          "admm_forward_calls": null
+        },
+        "B  matched reflective (30)": {
+          "family": "reflection",
+          "runs": [
+            "artifacts/phase4_emotion/reflective_heldout_p30_s0",
+            "artifacts/phase4_emotion/reflective_heldout_p30_s1",
+            "artifacts/phase4_emotion/reflective_heldout_p30_s2",
+            "artifacts/phase4_emotion/reflective_heldout_p30_s3",
+            "artifacts/phase4_emotion/reflective_heldout_p30_s4",
+            "artifacts/phase4_emotion/reflective_heldout_p30_s5",
+            "artifacts/phase4_emotion/reflective_heldout_p30_s6",
+            "artifacts/phase4_emotion/reflective_heldout_p30_s7",
+            "artifacts/phase4_emotion/reflective_heldout_p30_s8",
+            "artifacts/phase4_emotion/reflective_heldout_p30_s9"
+          ],
+          "scores": [
+            37.025948103792416,
+            38.02395209580838,
+            37.025948103792416,
+            36.57684630738523,
+            35.778443113772454,
+            36.57684630738523,
+            37.075848303393215,
+            37.025948103792416,
+            37.025948103792416,
+            35.778443113772454
+          ],
+          "admm_forward_calls": null
+        },
+        "E  fair reflect-then-polish": {
+          "family": "reflection + ADMM",
+          "runs": [
+            "artifacts/phase7/emotion_polish_fair_s0",
+            "artifacts/phase7/emotion_polish_fair_s1",
+            "artifacts/phase7/emotion_polish_fair_s2",
+            "artifacts/phase7/emotion_polish_fair_s3",
+            "artifacts/phase7/emotion_polish_fair_s4",
+            "artifacts/phase7/emotion_polish_fair_s5",
+            "artifacts/phase7/emotion_polish_fair_s6",
+            "artifacts/phase7/emotion_polish_fair_s7",
+            "artifacts/phase7/emotion_polish_fair_s8",
+            "artifacts/phase7/emotion_polish_fair_s9"
+          ],
+          "scores": [
+            35.778443113772454,
+            38.02395209580838,
+            37.025948103792416,
+            37.025948103792416,
+            37.025948103792416,
+            37.025948103792416,
+            37.025948103792416,
+            37.025948103792416,
+            37.025948103792416,
+            37.025948103792416
+          ],
+          "admm_forward_calls": 9083.5
+        },
+        "C  fair beam ADMM": {
+          "family": "fixed-length ADMM",
+          "runs": [
+            "artifacts/phase6_independent_acceptance/emotion_beam_indep_s0",
+            "artifacts/phase6_independent_acceptance/emotion_beam_indep_s1",
+            "artifacts/phase6_independent_acceptance/emotion_beam_indep_s2",
+            "artifacts/phase6_independent_acceptance/emotion_beam_indep_s3",
+            "artifacts/phase6_independent_acceptance/emotion_beam_indep_s4",
+            "artifacts/phase6_independent_acceptance/emotion_beam_indep_s5",
+            "artifacts/phase6_independent_acceptance/emotion_beam_indep_s6",
+            "artifacts/phase6_independent_acceptance/emotion_beam_indep_s7",
+            "artifacts/phase6_independent_acceptance/emotion_beam_indep_s8",
+            "artifacts/phase6_independent_acceptance/emotion_beam_indep_s9"
+          ],
+          "scores": [
+            37.4251497005988,
+            37.87425149700599,
+            37.025948103792416,
+            38.17365269461078,
+            37.025948103792416,
+            37.025948103792416,
+            38.822355289421154,
+            39.471057884231534,
+            37.025948103792416,
+            39.37125748502994
+          ],
+          "admm_forward_calls": 7262
+        },
+        "I  multi-start (3 runs)": {
+          "family": "fixed-length ADMM",
+          "runs": [
+            "artifacts/phase9/emotion_multistart_s0",
+            "artifacts/phase9/emotion_multistart_s1",
+            "artifacts/phase9/emotion_multistart_s2",
+            "artifacts/phase9/emotion_multistart_s3",
+            "artifacts/phase9/emotion_multistart_s4",
+            "artifacts/phase9/emotion_multistart_s5",
+            "artifacts/phase9/emotion_multistart_s6",
+            "artifacts/phase9/emotion_multistart_s7",
+            "artifacts/phase9/emotion_multistart_s8",
+            "artifacts/phase9/emotion_multistart_s9"
+          ],
+          "scores": [
+            38.02395209580838,
+            37.87425149700599,
+            38.02395209580838,
+            39.920159680638726,
+            37.375249500998,
+            37.624750499002,
+            38.822355289421154,
+            38.02395209580838,
+            37.025948103792416,
+            37.77445109780439
+          ],
+          "admm_forward_calls": 21724.9
+        },
+        "H  fixed beam, 36 proposals": {
+          "family": "fixed-length ADMM",
+          "runs": [
+            "artifacts/phase9/emotion_beam_p36_s0",
+            "artifacts/phase9/emotion_beam_p36_s1",
+            "artifacts/phase9/emotion_beam_p36_s2",
+            "artifacts/phase9/emotion_beam_p36_s3",
+            "artifacts/phase9/emotion_beam_p36_s4",
+            "artifacts/phase9/emotion_beam_p36_s5",
+            "artifacts/phase9/emotion_beam_p36_s6",
+            "artifacts/phase9/emotion_beam_p36_s7",
+            "artifacts/phase9/emotion_beam_p36_s8",
+            "artifacts/phase9/emotion_beam_p36_s9"
+          ],
+          "scores": [
+            38.12375249500998,
+            38.37325349301397,
+            37.624750499002,
+            38.12375249500998,
+            37.5249500998004,
+            36.27744510978044,
+            38.822355289421154,
+            35.47904191616767,
+            37.82435129740519,
+            39.07185628742515
+          ],
+          "admm_forward_calls": 21765.6
+        },
+        "D  multi-length, LM insertion": {
+          "family": "variable-length ADMM",
+          "runs": [
+            "artifacts/phase7/emotion_multilength_s0",
+            "artifacts/phase7/emotion_multilength_s1",
+            "artifacts/phase7/emotion_multilength_s2",
+            "artifacts/phase7/emotion_multilength_s3",
+            "artifacts/phase7/emotion_multilength_s4",
+            "artifacts/phase7/emotion_multilength_s5",
+            "artifacts/phase7/emotion_multilength_s6",
+            "artifacts/phase7/emotion_multilength_s7",
+            "artifacts/phase7/emotion_multilength_s8",
+            "artifacts/phase7/emotion_multilength_s9"
+          ],
+          "scores": [
+            39.37125748502994,
+            37.025948103792416,
+            37.025948103792416,
+            37.025948103792416,
+            34.58083832335329,
+            35.97804391217565,
+            37.6746506986028,
+            36.82634730538922,
+            37.924151696606785,
+            37.025948103792416
+          ],
+          "admm_forward_calls": 21253.6
+        },
+        "G  gated": {
+          "family": "variable-length ADMM",
+          "runs": [
+            "artifacts/phase8/emotion_gated_s0",
+            "artifacts/phase8/emotion_gated_s1",
+            "artifacts/phase8/emotion_gated_s2",
+            "artifacts/phase8/emotion_gated_s3",
+            "artifacts/phase8/emotion_gated_s5",
+            "artifacts/phase8/emotion_gated_s6",
+            "artifacts/phase8/emotion_gated_s7"
+          ],
+          "scores": [
+            37.025948103792416,
+            38.87225548902195,
+            38.17365269461078,
+            37.5249500998004,
+            37.025948103792416,
+            37.025948103792416,
+            37.77445109780439
+          ],
+          "admm_forward_calls": 8184.428571428572
+        }
+      }
+    }
+  },
+  "bench": {
+    "agnews": {
+      "gated": {
+        "nets": [
+          9,
+          21,
+          2,
+          -3,
+          11,
+          -1
+        ],
+        "mean": 6.5,
+        "seconds": 114.31541820506875,
+        "nll_change": 0.10615163478869445
+      },
+      "ml_grad": {
+        "nets": [
+          15,
+          19,
+          -13,
+          12,
+          0,
+          9
+        ],
+        "mean": 7,
+        "seconds": 259.85560736525804,
+        "nll_change": 0.779464836591556
+      },
+      "ml_lm": {
+        "nets": [
+          31,
+          21,
+          -6,
+          -14,
+          2,
+          7
+        ],
+        "mean": 6.833333333333333,
+        "seconds": 202.96708530622223,
+        "nll_change": 0.5818911773468688
+      },
+      "multistart": {
+        "nets": [
+          10,
+          -5,
+          0,
+          -2,
+          20,
+          19
+        ],
+        "mean": 7,
+        "seconds": 215.3606693908417,
+        "nll_change": -0.3722786865234373
+      },
+      "fixed": {
+        "nets": [
+          8,
+          0,
+          -10,
+          0,
+          20,
+          0
+        ],
+        "mean": 3,
+        "seconds": 70.61357364989817,
+        "nll_change": -0.1442037200927736
+      }
+    },
+    "emotion": {
+      "gated": {
+        "nets": [
+          4,
+          4,
+          -18,
+          -2,
+          -6,
+          -13
+        ],
+        "mean": -5.166666666666667,
+        "seconds": 115.87025059689768,
+        "nll_change": -0.11179706106158749
+      },
+      "ml_grad": {
+        "nets": [
+          -17,
+          -5,
+          11,
+          0,
+          -12,
+          16
+        ],
+        "mean": -1.1666666666666667,
+        "seconds": 262.95195309848833,
+        "nll_change": 0.3426216949910034
+      },
+      "ml_lm": {
+        "nets": [
+          -10,
+          -1,
+          -45,
+          -4,
+          0,
+          10
+        ],
+        "mean": -8.333333333333334,
+        "seconds": 211.84977435778515,
+        "nll_change": 0.2379390707237233
+      },
+      "multistart": {
+        "nets": [
+          2,
+          18,
+          -45,
+          -3,
+          -6,
+          -20
+        ],
+        "mean": -9,
+        "seconds": 203.6983467702909,
+        "nll_change": -0.007610223232171531
+      },
+      "fixed": {
+        "nets": [
+          2,
+          5,
+          -45,
+          -3,
+          6,
+          -11
+        ],
+        "mean": -7.666666666666667,
+        "seconds": 75.39277792077822,
+        "nll_change": 0.0337566473545173
+      }
+    }
+  },
+  "phase7": {
+    "agnews/multilength/-2": {
+      "proposed": 71,
+      "accepted": 47,
+      "mean_net": 13.76056338028169
+    },
+    "agnews/multilength/+0": {
+      "proposed": 27,
+      "accepted": 12,
+      "mean_net": -5.148148148148148
+    },
+    "agnews/multilength/+2": {
+      "proposed": 16,
+      "accepted": 7,
+      "mean_net": -4.5
+    },
+    "emotion/multilength/-2": {
+      "proposed": 67,
+      "accepted": 39,
+      "mean_net": -7.686567164179104
+    },
+    "emotion/multilength/+0": {
+      "proposed": 30,
+      "accepted": 10,
+      "mean_net": -4.166666666666667
+    },
+    "emotion/multilength/+2": {
+      "proposed": 22,
+      "accepted": 9,
+      "mean_net": -7.818181818181818
+    },
+    "agnews/polish_outcomes": {
+      "proposed": 64,
+      "no_token_change": 18,
+      "no_selection_improvement": 36,
+      "no_exact_roundtrip": 2
+    },
+    "emotion/polish_outcomes": {
+      "proposed": 88,
+      "no_selection_improvement": 23,
+      "no_exact_roundtrip": 2,
+      "no_token_change": 7
+    }
+  }
+}
