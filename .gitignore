@@ -7,3 +7,5 @@ artifacts/**/*.pt
 # are writing. Add finished runs explicitly with `git add -f`.
 artifacts/phase7/*
 !artifacts/phase7/jobs.jsonl
+artifacts/phase7_failed/
+artifacts/phase7_rerun/
