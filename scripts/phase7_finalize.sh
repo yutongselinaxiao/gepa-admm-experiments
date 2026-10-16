@@ -9,7 +9,7 @@ set -u
 cd "$(dirname "$0")/.."
 PY=/dataMeR2/yutong/envs/myenv/bin/python
 $PY scripts/failure_watcher.py artifacts/phase7/jobs.jsonl --rerun-dir artifacts/phase7_rerun \
-  --failed-dir artifacts/phase7_failed --min-free-mb 18000 --max-per-gpu 1
+  --failed-dir artifacts/phase7_failed --min-free-mb 25000 --max-per-gpu 1 --retries 5 --retry-wait 300
 until [ -f artifacts/phase7/STATUS ]; do sleep 60; done
 moved=""
 for name in $($PY -c "import json; r=json.load(open('artifacts/phase7_rerun/watcher.status.json'))['results']; print(' '.join(n for n, o in r.items() if o == 'done'))"); do

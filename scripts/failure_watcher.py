@@ -49,6 +49,7 @@ def main() -> None:
     parser.add_argument("--retries", type=int, default=2)
     parser.add_argument("--settle", type=int, default=60)
     parser.add_argument("--poll", type=int, default=30)
+    parser.add_argument("--retry-wait", type=int, default=300, help="seconds before a failed job may restart")
     args = parser.parse_args()
     if any(g < 4 for g in args.gpus):
         raise SystemExit("Only GPUs 4-7 may be used for this project.")
@@ -63,6 +64,7 @@ def main() -> None:
     running: dict[str, tuple[subprocess.Popen, int, dict]] = {}
     results: dict[str, str] = {}
     hold_until: dict[int, float] = {}
+    not_before: dict[str, float] = {}
 
     def log(message: str) -> None:
         print(f"[{time.strftime('%H:%M:%S')}] {message}", flush=True)
@@ -87,14 +89,17 @@ def main() -> None:
                 continue
             handled.add(name)
             job = jobs[name]
-            texts = [read(Path(job["log"])), read(Path(job.get("run_dir", ""), "run_log.txt")),
-                     read(failed_dir / Path(job["log"]).name), read(failed_dir / name / "run_log.txt")]
+            texts = [read(Path(job["log"])), read(Path(job.get("run_dir", ""), "run_log.txt"))]
+            # outputs already moved aside (possibly by an earlier watcher) carry tags such as ".main"
+            texts += [read(path) for path in failed_dir.glob(f"{Path(job['log']).name}*") if path.is_file()]
+            texts += [read(path) for path in failed_dir.glob(f"{name}*/run_log.txt")]
             if not gpu_error(*texts):
                 log(f"NOT RETRYING {name}: '{outcome}' is not a GPU error")
                 results[name] = f"not retried ({outcome})"
                 continue
             move_aside(job, failed_dir, "main")
             attempts[name] = 0
+            not_before[name] = time.time() + args.retry_wait
             pending.append(rerun_job(job))
             log(f"GPU ERROR in main batch: {name}; queued for rerun in {rerun_dir}")
         for name, (proc, gpu, job) in list(running.items()):
@@ -105,6 +110,7 @@ def main() -> None:
             if outcome.startswith("gpu error") and attempts[name] <= args.retries:
                 move_aside(job, failed_dir, f"rerun{attempts[name]}")
                 pending.append(job)
+                not_before[name] = time.time() + args.retry_wait
                 log(f"GPU ERROR again: {name} (GPU {gpu}); requeue")
             else:
                 results[name] = outcome
@@ -115,9 +121,11 @@ def main() -> None:
             ours = {g: sum(1 for _, gg, _ in running.values() if gg == g) for g in args.gpus}
             candidates = [g for g in args.gpus if free.get(g, 0) >= args.min_free_mb
                           and ours[g] < args.max_per_gpu and hold_until.get(g, 0) <= now]
-            if candidates:
+            ready = [j for j in pending if not_before.get(j["name"], 0) <= now]
+            if candidates and ready:
                 gpu = max(candidates, key=lambda g: free[g])
-                job = pending.pop(0)
+                job = ready[0]
+                pending.remove(job)
                 attempts[job["name"]] += 1
                 with open(job["log"], "w") as out:
                     proc = subprocess.Popen(job["cmd"], shell=True, stdout=out, stderr=subprocess.STDOUT,
