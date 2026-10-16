@@ -452,7 +452,7 @@ label to another, relative to its parent, per proposal. "net" = fixes − breaks
 Reflection rewrites about 40% of the tokens; ADMM proposers edit about 4% (1–3 tokens), yet both
 change a similar share of predictions.*
 
-| Task / proposer | Proposals | Text edited (median % of tokens) | Flip rate (median) | Fixes | Breaks | Wrong → different wrong | Fixes as % of fixes + breaks | Median accuracy change |
+| Task / proposer | Proposals counted | Text edited (median % of tokens) | Flip rate (median) | Fixes (mean per proposal) | Breaks (mean per proposal) | Wrong → different wrong (mean per proposal) | Fixes as % of fixes + breaks (pooled) | Accuracy change (median) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | AG News: reflection | 405 | 40% | 17.4% | 26.3 | 24.6 | 45.9 | 52% | +0.00 pp |
 | AG News: Euclidean ADMM | 97 | 4% | 12.5% | 25.5 | 18.2 | 37.8 | 58% | +1.17 pp |
@@ -462,6 +462,35 @@ change a similar share of predictions.*
 | Emotion: reflection | 412 | 48% | 18.9% | 30.3 | 33.3 | 30.5 | 48% | -0.39 pp |
 | Emotion: top-p ADMM | 66 | 4% | 14.2% | 26.6 | 32.3 | 26.7 | 45% | -0.52 pp |
 | Emotion: beam ADMM | 186 | 4% | 13.4% | 23.5 | 25.8 | 24.6 | 48% | -0.26 pp |
+
+**How to read the numbers in this table:**
+- **Fixes, breaks and wrong → different wrong are averages.** Each single proposal has whole
+  numbers (e.g. 19 fixes and 19 breaks in Example A); the table shows their **mean over all
+  proposals** in the group, so it can be fractional (26.3 fixes = 26.3 examples on average).
+- **Flip rate and accuracy change are medians,** which are less sensitive to a few extreme
+  proposals.
+- **"Fixes as % of fixes + breaks" is pooled:** all fixes in the group divided by all fixes and
+  breaks.
+
+**Why the number of proposals differs between rows.** Each row pools every run of that proposer
+in the comparisons, so groups contain different numbers of runs. Proposals where the child is
+identical to its parent are excluded, since there is nothing to compare. That happens when an
+ADMM proposal changes no token or finds no candidate better than the parent on S, and the
+proposer returns the parent unchanged:
+
+| Task / proposer | Runs pooled | Proposals made | Child = parent (excluded) | Counted |
+|---|---|---:|---:|---:|
+| AG News: reflection | 10 × 12-proposal + 10 × 30-proposal (held-out judge) | 420 | 15 | 405 |
+| AG News: Euclidean ADMM | 6 minibatch + 6 held-out (Phase 1), 12 proposals each | 144 | 47 | 97 |
+| AG News: top-p ADMM | 10 runs × 12 | 120 | 22 | 98 |
+| AG News: beam ADMM | 10 (S used twice) + 10 (fair S′), 12 each | 240 | 49 | 191 |
+| AG News: reflect-then-polish | 3 runs × 12 | 36 | 0 | 36 |
+| Emotion: reflection | 10 × 12 + 10 × 30 (held-out judge) | 420 | 8 | 412 |
+| Emotion: top-p ADMM | 10 runs × 12 | 120 | 54 | 66 |
+| Emotion: beam ADMM | 10 (S used twice) + 10 (fair S′), 12 each | 240 | 54 | 186 |
+
+Reflection almost always writes something new; ADMM returns the parent unchanged in 18–45% of
+proposals (most often top-p on emotion, where few edits beat the parent).
 
 - **Both kinds of proposal change many predictions.** On AG News, reflection changes about 17%
   of the 512 predictions by rewriting about 40% of the instruction. ADMM changes 12–15% by
