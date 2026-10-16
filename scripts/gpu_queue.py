@@ -5,8 +5,10 @@ Runs shell commands from a JSONL job file on the allowed GPUs (default 4-7 only)
 launched on the allowed GPU with the most free memory, provided that GPU has at least
 --min-free-mb free and fewer than --max-per-gpu of *our* jobs. After a launch, that GPU is held
 for --settle seconds so the new job's model load shows up in nvidia-smi before the next
-decision. A job that dies with a CUDA out-of-memory error is retried (its run directory is
-removed first); any other failure is recorded and not retried. Progress goes to <jobs>.status.json.
+decision. A job that hits a GPU error (CUDA out of memory, or a CUDA/cuDNN/cuBLAS failure, which
+on shared GPUs usually means memory pressure) is retried, whether the error killed the process
+or GEPA caught it and logged it to run_log.txt; its run directory is removed first. Any other
+failure is recorded and not retried. Progress goes to <jobs>.status.json.
 
 Job line: {"name": ..., "cmd": ..., "log": ..., "done_marker": "DONE", "run_dir": ...}
 """
@@ -36,19 +38,25 @@ def free_memory_mb(gpus: list[int]) -> dict[int, int]:
 
 
 SWALLOWED = ("reflection failed", "Traceback")  # GEPA logs proposer exceptions and keeps going
+GPU_ERRORS = ("out of memory", "outofmemoryerror", "cuda error", "cudnn", "mha_graph", "cublas_status",
+              "cuda failure", "device-side assert")
+
+
+def gpu_error(*texts: str) -> bool:
+    return any(marker in text.lower() for text in texts for marker in GPU_ERRORS)
 
 
 def classify(job: dict, returncode: int) -> str:
     log = Path(job["log"]).read_text(encoding="utf-8", errors="replace") if Path(job["log"]).exists() else ""
     run_log = Path(job.get("run_dir", ""), "run_log.txt")
-    if job.get("run_dir") and run_log.exists():
-        gepa_log = run_log.read_text(encoding="utf-8", errors="replace")
-        if any(marker in gepa_log for marker in SWALLOWED):
-            return "failed (proposal errors swallowed by GEPA; see run_log.txt)"
+    gepa_log = (run_log.read_text(encoding="utf-8", errors="replace")
+                if job.get("run_dir") and run_log.exists() else "")
+    if gpu_error(log, gepa_log):
+        return "gpu error (retryable)"
+    if any(marker in gepa_log for marker in SWALLOWED):
+        return "failed (proposal errors swallowed by GEPA; see run_log.txt)"
     if returncode == 0 and job.get("done_marker", "") in log:
         return "done"
-    if "out of memory" in log.lower() or "OutOfMemoryError" in log:
-        return "oom"
     return "failed"
 
 
@@ -86,8 +94,8 @@ def main() -> None:
                 continue
             del running[name]
             outcome = classify(job, proc.returncode)
-            if outcome == "oom" and attempts[name] <= args.retries:
-                print(f"[{time.strftime('%H:%M:%S')}] OOM {name} on GPU {gpu}; requeue", flush=True)
+            if outcome.startswith("gpu error") and attempts[name] <= args.retries:
+                print(f"[{time.strftime('%H:%M:%S')}] GPU ERROR {name} on GPU {gpu}; requeue", flush=True)
                 if job.get("run_dir"):
                     shutil.rmtree(job["run_dir"], ignore_errors=True)
                 pending.append(job)
