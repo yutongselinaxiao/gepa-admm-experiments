@@ -76,3 +76,43 @@ Polish effect (E − A', same judge and proposal count): +2.44 pp (p = 0.018).
 | emotion | no_token_change | 7 | 6% |
 | emotion | no_exact_roundtrip | 2 | 2% |
 
+## Seeds needed (80% power, two-sided α = 0.05)
+
+| Task | Comparison | Observed diff | Pooled sd | Seeds/arm for the observed diff | for 1 pp | for 2 pp |
+|---|---|---:|---:|---:|---:|---:|
+| agnews | F vs I | +2.11 | 2.30 | 19 | 83 | 21 |
+| agnews | F vs H | +1.94 | 2.24 | 22 | 80 | 20 |
+| agnews | G vs C | +1.60 | 2.98 | 55 | 140 | 35 |
+| agnews | I vs C | +1.13 | 2.35 | 68 | 87 | 22 |
+| agnews | E vs A' reflective + held-out judge | +2.44 | 2.05 | 12 | 67 | 17 |
+| emotion | G vs C | -0.06 | 0.96 | 4033 | 15 | 4 |
+| emotion | I vs C | +0.12 | 0.90 | 826 | 13 | 4 |
+
+## Acceptance evidence (children vs. parent on 512 validation examples)
+
+| Task | Proposer | Rule | Runs | Accepted | …actually better (mean net) | Rejected | …actually better (mean net) | Rejections that tied on the minibatch |
+|---|---|---|---:|---:|---:|---:|---:|---:|
+| AG News | reflect-then-polish (old) | minibatch (8 examples) | 3 | 10 | 60% (+4.1) | 26 | 58% (+4.1) | 20/26 |
+| AG News | reflect-then-polish (E) | S′ judge (32 examples) | 10 | 63 | 68% (+10.0) | 54 | 43% (-5.6) | — |
+| AG News | reflection (A) | minibatch (8 examples) | 10 | 25 | 72% (+10.6) | 90 | 48% (+2.2) | 71/95 |
+| AG News | reflection (A′) | S′ judge (32 examples) | 10 | 55 | 73% (+9.3) | 65 | 25% (-5.4) | — |
+| Emotion | reflect-then-polish (E) | S′ judge (32 examples) | 10 | 43 | 21% (-5.7) | 77 | 29% (-5.9) | — |
+
+## Candidate-pool size vs. validation net of the chosen child (beam ADMM proposals)
+
+| Task | Proposals | Median candidates on S | Few: n, mean net | Many: n, mean net | Spearman ρ (p) |
+|---|---:|---:|---:|---:|---:|
+| agnews | 191 | 3 | 114, +9.6 | 77, +7.4 | -0.14 (0.049) |
+| emotion | 186 | 5 | 125, -2.7 | 61, -1.4 | +0.04 (0.594) |
+
+## Per-proposal quality of fixed-length ADMM arms (validation net vs. parent, of 512)
+
+| Task | Arm | Proposals | Changed the prompt | Mean net, changed | Accepted | Mean net, accepted |
+|---|---|---:|---:|---:|---:|---:|
+| agnews | C | 120 | 82% | +7.9 | 79 | +9.3 |
+| agnews | I | 120 | 94% | +6.8 | 81 | +9.4 |
+| agnews | H | 360 | 67% | +5.5 | 156 | +8.3 |
+| emotion | C | 120 | 81% | -2.0 | 45 | -0.8 |
+| emotion | I | 120 | 99% | -1.7 | 54 | -1.1 |
+| emotion | H | 360 | 79% | -3.4 | 140 | -2.3 |
+

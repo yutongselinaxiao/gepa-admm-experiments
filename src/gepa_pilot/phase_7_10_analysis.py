@@ -112,6 +112,190 @@ def phase7_diagnostics() -> tuple[list[str], dict]:
     return lines + [""], out
 
 
+FOCUS = {
+    "fig15_q1_multistart.png": ("Q1. Do parallel ADMM runs per proposal help?",
+                                ["C  fair beam ADMM", "I  multi-start (3 runs)", "H  fixed beam, 36 proposals",
+                                 "B  matched reflective (30)"]),
+    "fig16_q2_variable_length.png": ("Q2. Variable-length ADMM proposers vs. fixed length",
+                                     ["C  fair beam ADMM", "I  multi-start (3 runs)", "D  multi-length, LM insertion",
+                                      "F  multi-length, gradient ins.", "G  gated"]),
+    "fig17_q3_polish.png": ("Q3. Reflect-then-polish vs. reflection alone",
+                            ["A  reflective GEPA", "A' reflective + held-out judge", "B  matched reflective (30)",
+                             "E  fair reflect-then-polish", "C  fair beam ADMM"]),
+}
+DISPLAY = {
+    "A  reflective GEPA": "A: reflection, minibatch rule (12)",
+    "A' reflective + held-out judge": "A′: reflection, S′ judge (12)",
+    "B  matched reflective (30)": "B: reflection, S′ judge (30)",
+    "C  fair beam ADMM": "C: fixed-length beam ADMM",
+    "D  multi-length, LM insertion": "D: multi-length, LM insertion",
+    "E  fair reflect-then-polish": "E: reflection + ADMM polish, S′ judge",
+    "F  multi-length, gradient ins.": "F: multi-length, gradient insertion",
+    "G  gated": "G: gated variable length",
+    "H  fixed beam, 36 proposals": "H: fixed-length ADMM, 36 proposals",
+    "I  multi-start (3 runs)": "I: multi-start, 3 ADMM runs/proposal",
+}
+
+
+def focus_figures(data: dict) -> None:
+    """One small figure per question: the arms that answer it, each run as a dot, mean ± 95% CI,
+    with fair beam ADMM (C) as a shaded reference band."""
+    for name, (title, labels) in FOCUS.items():
+        fig, axes = plt.subplots(2, 1, figsize=(10, 2 * (0.5 * len(labels) + 1.1)))
+        for ax, task in zip(axes, data):
+            rows = data[task]["arms"]
+            shown = [l for l in labels if l in rows][::-1]
+            c_mean, c_half = ci(rows["C  fair beam ADMM"]["scores"])
+            ax.axvspan(c_mean - c_half, c_mean + c_half, color=FAMILY["fixed-length ADMM"], alpha=0.08, lw=0)
+            for y, label in enumerate(shown):
+                row = rows[label]
+                color = FAMILY[row["family"]]
+                ax.scatter(row["scores"], [y] * len(row["scores"]), s=20, color=color, alpha=0.5, zorder=3)
+                mean, half = ci(row["scores"])
+                ax.errorbar([mean], [y], xerr=[[half], [half]], fmt="o", color=color, ms=6, capsize=3, lw=1.6, zorder=4)
+                if label != "C  fair beam ADMM":
+                    p = float(stats.ttest_ind(row["scores"], rows["C  fair beam ADMM"]["scores"], equal_var=False).pvalue)
+                    note = f"{mean:.2f}   {mean - c_mean:+.2f} vs C (p = {p:.3f})"
+                else:
+                    note = f"{mean:.2f}   reference"
+                ax.text(1.01, y, note, transform=ax.get_yaxis_transform(), va="center", fontsize=7.5,
+                        color=TEXT if label == "C  fair beam ADMM" or p >= 0.05 else TEXT, fontweight="bold" if
+                        label != "C  fair beam ADMM" and p < 0.05 else "normal")
+            ax.axvline(data[task]["seed"], color=REFERENCE, lw=1, ls="--")
+            ax.set_yticks(range(len(shown)), [DISPLAY[l] for l in shown], fontsize=8)
+            ax.set_xlabel("accuracy on the 2k report set (%)")
+            ax.set_title("AG News" if task == "agnews" else "Emotion", fontsize=10)
+            ax.grid(axis="y", visible=False)
+        fig.suptitle(title, fontsize=11, fontweight="bold", x=0.01, ha="left")
+        fig.text(0.01, 0.005, "Dots: one per seed. Bars: mean ± 95% CI. Shaded band: C's 95% CI. Dashed line: seed "
+                 "instruction. Bold: p < 0.05 vs C (Welch).", fontsize=7.5, color=TEXT_2)
+        fig.subplots_adjust(hspace=0.55, top=0.9, bottom=0.12, right=0.68)
+        fig.savefig(f"artifacts/figures/{name}", dpi=200, bbox_inches="tight")
+        plt.close(fig)
+
+
+def seed_planning(data: dict) -> list[str]:
+    """Seeds per arm for 80% power (two-sided alpha = 0.05) to detect a given difference, using the
+    pooled sd of the two arms at n = 10 (normal approximation: n = 2 (1.96 + 0.84)^2 sd^2 / d^2)."""
+    pairs = [("agnews", "F  multi-length, gradient ins.", "I  multi-start (3 runs)"),
+             ("agnews", "F  multi-length, gradient ins.", "H  fixed beam, 36 proposals"),
+             ("agnews", "G  gated", "C  fair beam ADMM"),
+             ("agnews", "I  multi-start (3 runs)", "C  fair beam ADMM"),
+             ("agnews", "E  fair reflect-then-polish", "A' reflective + held-out judge"),
+             ("emotion", "G  gated", "C  fair beam ADMM"),
+             ("emotion", "I  multi-start (3 runs)", "C  fair beam ADMM")]
+    lines = ["## Seeds needed (80% power, two-sided α = 0.05)", "",
+             "| Task | Comparison | Observed diff | Pooled sd | Seeds/arm for the observed diff | for 1 pp | for 2 pp |",
+             "|---|---|---:|---:|---:|---:|---:|"]
+    for task, a, b in pairs:
+        x, y = data[task]["arms"][a]["scores"], data[task]["arms"][b]["scores"]
+        diff = statistics.mean(x) - statistics.mean(y)
+        sd = math.sqrt((statistics.variance(x) + statistics.variance(y)) / 2)
+        need = lambda d: math.ceil(2 * (1.96 + 0.8416) ** 2 * sd ** 2 / d ** 2)  # noqa: E731
+        lines.append(f"| {task} | {a.split('  ')[0]} vs {b.split('  ')[0]} | {diff:+.2f} | {sd:.2f} | "
+                     f"{need(abs(diff)) if abs(diff) > 0.05 else '—'} | {need(1.0)} | {need(2.0)} |")
+    return lines + [""]
+
+
+def acceptance_evidence() -> list[str]:
+    """Polish (and reflection) children under the two acceptance rules: accepted/rejected counts, how
+    many were actually better on the 512 validation examples, and how many minibatch rejections were
+    exact ties on the 8 minibatch examples."""
+    import glob
+
+    from .proposal_examples import minibatch_scores
+
+    groups = [
+        ("AG News", "reflect-then-polish (old)", "minibatch (8 examples)", "artifacts/phase2/polish_s[0-9]", True),
+        ("AG News", "reflect-then-polish (E)", "S′ judge (32 examples)", "artifacts/phase7/agnews_polish_fair_s[0-9]", False),
+        ("AG News", "reflection (A)", "minibatch (8 examples)", "artifacts/phase2/reflective_s[0-9]", True),
+        ("AG News", "reflection (A′)", "S′ judge (32 examples)", "artifacts/phase3/reflective_heldout_p12_s[0-9]", False),
+        ("Emotion", "reflect-then-polish (E)", "S′ judge (32 examples)", "artifacts/phase7/emotion_polish_fair_s[0-9]", False),
+    ]
+    lines = ["## Acceptance evidence (children vs. parent on 512 validation examples)", "",
+             "| Task | Proposer | Rule | Runs | Accepted | …actually better (mean net) | Rejected | "
+             "…actually better (mean net) | Rejections that tied on the minibatch |",
+             "|---|---|---|---:|---:|---:|---:|---:|---:|"]
+    for task, proposer, rule, pattern, minibatch in groups:
+        runs = sorted(glob.glob(pattern))
+        accepted, rejected, ties, decided = [], [], 0, 0
+        for run in runs:
+            nets = net_by_pair(run)
+            result = json.loads(Path(run, "gepa_result.json").read_text(encoding="utf-8"))
+            for c in result["candidate_table"]:
+                key = (c["parent_instruction"], c["instruction"])
+                if key in nets:
+                    (accepted if c["status"] == "accepted" else rejected).append(nets[key])
+            if minibatch:
+                for old, new in minibatch_scores(run).values():
+                    decided += 1
+                    ties += abs(old - new) < 1e-9
+        share = lambda xs: f"{100 * sum(x > 0 for x in xs) / len(xs):.0f}% ({statistics.mean(xs):+.1f})"  # noqa: E731
+        lines.append(f"| {task} | {proposer} | {rule} | {len(runs)} | {len(accepted)} | {share(accepted)} | "
+                     f"{len(rejected)} | {share(rejected)} | {f'{ties}/{decided}' if minibatch else '—'} |")
+    return lines + [""]
+
+
+def candidate_pool_effect() -> list[str]:
+    """Within beam ADMM proposals: does a larger pool of candidates competing on S go with a worse
+    chosen child on validation? (Correlational check of the 'picking from more candidates overfits S'
+    hypothesis.)"""
+    import glob
+
+    lines = ["## Candidate-pool size vs. validation net of the chosen child (beam ADMM proposals)", "",
+             "| Task | Proposals | Median candidates on S | Few: n, mean net | Many: n, mean net | Spearman ρ (p) |",
+             "|---|---:|---:|---:|---:|---:|"]
+    for task, patterns in (("agnews", ["artifacts/phase6_independent_acceptance/agnews_beam_indep_s*",
+                                       "artifacts/phase2/beam_lam0.3_s*"]),
+                           ("emotion", ["artifacts/phase6_independent_acceptance/emotion_beam_indep_s*",
+                                        "artifacts/phase4_emotion/beam_lam0.3_s*"])):
+        rows = []
+        for run in sorted(d for p in patterns for d in glob.glob(p) if Path(d).is_dir()):
+            nets = net_by_pair(run)
+            for line in Path(run, "admm_proposals.jsonl").read_text().splitlines():
+                p = json.loads(line)
+                if p["outcome"] != "proposed":
+                    continue
+                n = sum(1 for it in p["iterations"] if (it.get("new_projection") or {}).get("selection_loss") is not None)
+                key = (p["parent_instruction"], p["child_instruction"])
+                if key in nets:
+                    rows.append((n, nets[key]))
+        median = statistics.median(r[0] for r in rows)
+        few, many = [r[1] for r in rows if r[0] <= median], [r[1] for r in rows if r[0] > median]
+        rho, pval = stats.spearmanr([r[0] for r in rows], [r[1] for r in rows])
+        lines.append(f"| {task} | {len(rows)} | {median:.0f} | {len(few)}, {statistics.mean(few):+.1f} | "
+                     f"{len(many)}, {statistics.mean(many):+.1f} | {rho:+.2f} ({pval:.3f}) |")
+    return lines + [""]
+
+
+def per_proposal_quality() -> list[str]:
+    """For the fixed-length ADMM arms (C, I, H): share of proposals that changed the prompt, and the
+    validation net of changed / accepted children (vs. their parent, of 512)."""
+    import glob
+
+    arms_ = [("C", "artifacts/phase6_independent_acceptance/{t}_beam_indep_s*"),
+             ("I", "artifacts/phase9/{t}_multistart_s*"), ("H", "artifacts/phase9/{t}_beam_p36_s*")]
+    lines = ["## Per-proposal quality of fixed-length ADMM arms (validation net vs. parent, of 512)", "",
+             "| Task | Arm | Proposals | Changed the prompt | Mean net, changed | Accepted | Mean net, accepted |",
+             "|---|---|---:|---:|---:|---:|---:|"]
+    for task in ("agnews", "emotion"):
+        for arm, pattern in arms_:
+            made, changed, accepted = 0, [], []
+            for run in sorted(d for d in glob.glob(pattern.format(t=task)) if Path(d).is_dir()):
+                nets = net_by_pair(run)
+                result = json.loads(Path(run, "gepa_result.json").read_text(encoding="utf-8"))
+                for c in result["candidate_table"]:
+                    made += 1
+                    key = (c["parent_instruction"], c["instruction"])
+                    if key in nets:
+                        changed.append(nets[key])
+                        if c["status"] == "accepted":
+                            accepted.append(nets[key])
+            lines.append(f"| {task} | {arm} | {made} | {100 * len(changed) / made:.0f}% | {statistics.mean(changed):+.1f} | "
+                         f"{len(accepted)} | {statistics.mean(accepted):+.1f} |")
+    return lines + [""]
+
+
 def main() -> None:
     out = Path("artifacts/phase_7_10")
     out.mkdir(parents=True, exist_ok=True)
@@ -248,7 +432,8 @@ def main() -> None:
         for method, b in by_method.items():
             lines.append(f"| {task} | {method} | {b['mean']:+.1f} | {b['nets']} | {b['seconds']:.0f} | {b['nll_change']:+.2f} |")
     diagnostic_lines, diagnostics = phase7_diagnostics()
-    lines += [""] + diagnostic_lines
+    lines += [""] + diagnostic_lines + seed_planning(data) + acceptance_evidence() + candidate_pool_effect() + per_proposal_quality()
+    focus_figures(data)
     (out / "tables.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     (out / "summary.json").write_text(json.dumps({"arms": data, "bench": bench, "phase7": diagnostics}, indent=2),
                                       encoding="utf-8")
