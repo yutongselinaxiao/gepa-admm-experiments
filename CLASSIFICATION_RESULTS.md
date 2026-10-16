@@ -636,9 +636,13 @@ artifacts are. Numbers are report-half accuracy unless stated.
 - **Shows:**
   - Exploration explains about 1 pp of the 3.75 pp gap. With *more* accepted
     candidates than ADMM (12.5 vs. 9.2), reflection still trails by 2.6 pp.
-  - Reflection plateaus around 35–36% because its proposals are paraphrases of
-    one instruction (20–23 distinct texts out of 30); paraphrasing doesn't
-    move the model's predictions.
+  - Reflection plateaus around 35–36%. Its proposals are variations of one
+    instruction (20–23 distinct texts out of 30). *Correction (2026-10-16):* an
+    earlier version said these paraphrases "don't move the model's
+    predictions". They do, flipping a median 17% of validation predictions,
+    but fixes and breaks nearly cancel (52% fixes on AG News), whereas ADMM's
+    smaller edits are tilted toward fixes (58–60%). See
+    [`RESULTS_10_16.md`](RESULTS_10_16.md).
   - Seed 9 of the 40-proposal arm reached 43.8%. Reflection occasionally finds
     a large win, which widens its interval.
 - **Artifacts:** [`artifacts/phase3/`](artifacts/phase3/),

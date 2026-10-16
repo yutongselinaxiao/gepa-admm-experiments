@@ -1,0 +1,190 @@
+{
+  "behavior": {
+    "agnews / reflection": {
+      "proposals": 405,
+      "token_edit_fraction_median": 0.4,
+      "word_edit_fraction_median": 0.48,
+      "abs_length_change_median": 4,
+      "flip_rate_median": 0.173828125,
+      "flips_per_edited_token_median": 0.494140625,
+      "fix_share_of_flips": 0.5168577535950253,
+      "accuracy_change_median_pp": 0.0
+    },
+    "agnews / Euclidean ADMM": {
+      "proposals": 97,
+      "token_edit_fraction_median": 0.04,
+      "word_edit_fraction_median": 0.09523809523809523,
+      "abs_length_change_median": 0,
+      "flip_rate_median": 0.125,
+      "flips_per_edited_token_median": 2.685546875,
+      "fix_share_of_flips": 0.5842776203966006,
+      "accuracy_change_median_pp": 1.171875
+    },
+    "agnews / top-p ADMM": {
+      "proposals": 98,
+      "token_edit_fraction_median": 0.04,
+      "word_edit_fraction_median": 0.05,
+      "abs_length_change_median": 0.0,
+      "flip_rate_median": 0.1484375,
+      "flips_per_edited_token_median": 2.677408854166667,
+      "fix_share_of_flips": 0.5797648102950965,
+      "accuracy_change_median_pp": 1.7578125
+    },
+    "agnews / beam ADMM": {
+      "proposals": 191,
+      "token_edit_fraction_median": 0.04,
+      "word_edit_fraction_median": 0.05,
+      "abs_length_change_median": 0,
+      "flip_rate_median": 0.1171875,
+      "flips_per_edited_token_median": 1.953125,
+      "fix_share_of_flips": 0.6024791359842906,
+      "accuracy_change_median_pp": 1.953125
+    },
+    "agnews / reflect-then-polish": {
+      "proposals": 36,
+      "token_edit_fraction_median": 0.3793103448275862,
+      "word_edit_fraction_median": 0.4330357142857143,
+      "abs_length_change_median": 5.0,
+      "flip_rate_median": 0.265625,
+      "flips_per_edited_token_median": 0.559326171875,
+      "fix_share_of_flips": 0.5285658764088612,
+      "accuracy_change_median_pp": 0.78125
+    },
+    "emotion / reflection": {
+      "proposals": 412,
+      "token_edit_fraction_median": 0.4838709677419355,
+      "word_edit_fraction_median": 0.5406593406593406,
+      "abs_length_change_median": 4.0,
+      "flip_rate_median": 0.18880208333333334,
+      "flips_per_edited_token_median": 0.4209201388888889,
+      "fix_share_of_flips": 0.47654998856097003,
+      "accuracy_change_median_pp": -0.390625
+    },
+    "emotion / top-p ADMM": {
+      "proposals": 66,
+      "token_edit_fraction_median": 0.038461538461538464,
+      "word_edit_fraction_median": 0.045454545454545456,
+      "abs_length_change_median": 0.0,
+      "flip_rate_median": 0.14192708333333331,
+      "flips_per_edited_token_median": 2.640625,
+      "fix_share_of_flips": 0.4516957862281603,
+      "accuracy_change_median_pp": -0.5208333333333315
+    },
+    "emotion / beam ADMM": {
+      "proposals": 186,
+      "token_edit_fraction_median": 0.038461538461538464,
+      "word_edit_fraction_median": 0.045454545454545456,
+      "abs_length_change_median": 0.0,
+      "flip_rate_median": 0.13411458333333334,
+      "flips_per_edited_token_median": 2.0989583333333335,
+      "fix_share_of_flips": 0.4769851657940663,
+      "accuracy_change_median_pp": -0.2604166666666685
+    }
+  },
+  "acceptance": {
+    "agnews / reflection / minibatch (GEPA default)": {
+      "accepted": 25,
+      "rejected": 90,
+      "share_accepted_better": 0.72,
+      "share_rejected_better": 0.4777777777777778,
+      "mean_change_accepted_pp": 2.0703125,
+      "mean_change_rejected_pp": 0.4361979166666667
+    },
+    "agnews / reflection / held-out judge": {
+      "accepted": 125,
+      "rejected": 165,
+      "share_accepted_better": 0.72,
+      "share_rejected_better": 0.28484848484848485,
+      "mean_change_accepted_pp": 1.7,
+      "mean_change_rejected_pp": -1.0179924242424243
+    },
+    "agnews / Euclidean ADMM / minibatch (GEPA default)": {
+      "accepted": 9,
+      "rejected": 40,
+      "share_accepted_better": 0.6666666666666666,
+      "share_rejected_better": 0.7,
+      "mean_change_accepted_pp": 1.5625,
+      "mean_change_rejected_pp": 1.7431640625
+    },
+    "agnews / Euclidean ADMM / held-out on S (S used twice)": {
+      "accepted": 41,
+      "rejected": 7,
+      "share_accepted_better": 0.7073170731707317,
+      "share_rejected_better": 0.42857142857142855,
+      "mean_change_accepted_pp": 1.3243140243902438,
+      "mean_change_rejected_pp": 0.1953125
+    },
+    "agnews / top-p ADMM / held-out on S (S used twice)": {
+      "accepted": 77,
+      "rejected": 21,
+      "share_accepted_better": 0.8051948051948052,
+      "share_rejected_better": 0.5714285714285714,
+      "mean_change_accepted_pp": 1.7349837662337662,
+      "mean_change_rejected_pp": 0.3255208333333333
+    },
+    "agnews / beam ADMM / held-out on S (S used twice)": {
+      "accepted": 68,
+      "rejected": 25,
+      "share_accepted_better": 0.8676470588235294,
+      "share_rejected_better": 0.6,
+      "mean_change_accepted_pp": 2.3552389705882355,
+      "mean_change_rejected_pp": 0.6015625
+    },
+    "agnews / beam ADMM / held-out on independent S'": {
+      "accepted": 79,
+      "rejected": 19,
+      "share_accepted_better": 0.8227848101265823,
+      "share_rejected_better": 0.5263157894736842,
+      "mean_change_accepted_pp": 1.8196202531645569,
+      "mean_change_rejected_pp": 0.3803453947368421
+    },
+    "agnews / reflect-then-polish / minibatch (GEPA default)": {
+      "accepted": 10,
+      "rejected": 26,
+      "share_accepted_better": 0.6,
+      "share_rejected_better": 0.5769230769230769,
+      "mean_change_accepted_pp": 0.80078125,
+      "mean_change_rejected_pp": 0.7962740384615384
+    },
+    "emotion / reflection / minibatch (GEPA default)": {
+      "accepted": 20,
+      "rejected": 100,
+      "share_accepted_better": 0.3,
+      "share_rejected_better": 0.32,
+      "mean_change_accepted_pp": -0.25390625,
+      "mean_change_rejected_pp": -0.34244791666666674
+    },
+    "emotion / reflection / held-out judge": {
+      "accepted": 61,
+      "rejected": 231,
+      "share_accepted_better": 0.16393442622950818,
+      "share_rejected_better": 0.2813852813852814,
+      "mean_change_accepted_pp": -0.4866803278688523,
+      "mean_change_rejected_pp": -0.3945707070707072
+    },
+    "emotion / top-p ADMM / held-out on S (S used twice)": {
+      "accepted": 44,
+      "rejected": 22,
+      "share_accepted_better": 0.2727272727272727,
+      "share_rejected_better": 0.2727272727272727,
+      "mean_change_accepted_pp": -0.7250236742424245,
+      "mean_change_rejected_pp": -0.775331439393939
+    },
+    "emotion / beam ADMM / held-out on S (S used twice)": {
+      "accepted": 62,
+      "rejected": 27,
+      "share_accepted_better": 0.3709677419354839,
+      "share_rejected_better": 0.14814814814814814,
+      "mean_change_accepted_pp": -0.15330981182795703,
+      "mean_change_rejected_pp": -0.7667824074074068
+    },
+    "emotion / beam ADMM / held-out on independent S'": {
+      "accepted": 45,
+      "rejected": 52,
+      "share_accepted_better": 0.3333333333333333,
+      "share_rejected_better": 0.38461538461538464,
+      "mean_change_accepted_pp": -0.10706018518518563,
+      "mean_change_rejected_pp": -0.383112980769231
+    }
+  }
+}
