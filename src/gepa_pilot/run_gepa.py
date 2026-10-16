@@ -33,6 +33,7 @@ from .data import NewsExample, load_examples_json, split_selection_report
 from .evaluator import CommonEvaluator, EvaluationSummary
 from .gepa_adapter import AGNewsGEPAAdapter
 from .gepa_report import write_gepa_report
+from .gated_admm import GatedConfig
 from .gepa_tracking import IterationSafetyStopper, ObservationTracker, ProposalCountStopper
 from .local_reflection import LocalQwenReflectionLM
 from .prompting import label_list
@@ -161,6 +162,19 @@ def main() -> None:
         help="Slot-length offsets per ADMM proposal, e.g. 0 -2 2 (multi-length). Must include 0.",
     )
     parser.add_argument(
+        "--admm-insertion",
+        choices=("lm", "gradient"),
+        default="lm",
+        help="How a longer length variant picks inserted tokens: the LM's top token, or by task-loss gradient.",
+    )
+    parser.add_argument(
+        "--admm-gated",
+        action="store_true",
+        help="Gated variable-length ADMM (keep-gates + blank-capable beam projection; gated_admm.py).",
+    )
+    parser.add_argument("--admm-spare-slots", type=int, default=4)
+    parser.add_argument("--admm-gate-weight", type=float, default=10.0)
+    parser.add_argument(
         "--admm-acceptance-batch-size",
         type=int,
         default=0,
@@ -278,6 +292,9 @@ def main() -> None:
             dual_batch_size=args.admm_dual_batch_size,
             acceptance_batch_size=args.admm_acceptance_batch_size,
             length_offsets=args.admm_length_offsets,
+            insertion=args.admm_insertion,
+            gated=GatedConfig(spare_slots=args.admm_spare_slots, gate_weight=args.admm_gate_weight)
+            if args.admm_gated else None,
         )
         if args.proposer == "admm":
             proposal_kwargs = {"custom_candidate_proposer": admm_proposer}
@@ -359,6 +376,8 @@ def main() -> None:
             "dual_batch_size": args.admm_dual_batch_size,
             "acceptance_batch_size": args.admm_acceptance_batch_size,
             "length_offsets": args.admm_length_offsets,
+            "insertion": args.admm_insertion,
+            "gated": vars(admm_proposer.gated) if admm_proposer.gated is not None else None,
             "seed": admm_proposer.seed,
             "allowed_vocabulary_size": len(admm_proposer.refiner.allowed_token_ids),
         }
