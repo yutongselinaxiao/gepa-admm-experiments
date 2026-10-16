@@ -127,6 +127,8 @@ def main() -> None:
                 job = ready[0]
                 pending.remove(job)
                 attempts[job["name"]] += 1
+                if job.get("run_dir") and Path(job["run_dir"]).exists():  # leftover from an interrupted watcher
+                    move_aside(job, failed_dir, f"stale{attempts[job['name']]}")
                 with open(job["log"], "w") as out:
                     proc = subprocess.Popen(job["cmd"], shell=True, stdout=out, stderr=subprocess.STDOUT,
                                             env=dict(os.environ, CUDA_VISIBLE_DEVICES=str(gpu)))
