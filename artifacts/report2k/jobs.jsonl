@@ -1,0 +1,2 @@
+{"name": "rescore_agnews", "cmd": "cd /home/xiaoyuto/gepa && PYTHONPATH=src HF_HUB_OFFLINE=1 /dataMeR2/yutong/envs/myenv/bin/python -m gepa_pilot.report_set rescore --task agnews", "log": "artifacts/report2k/rescore_agnews.log", "done_marker": "WROTE artifacts/report2k/agnews.json"}
+{"name": "rescore_emotion", "cmd": "cd /home/xiaoyuto/gepa && PYTHONPATH=src HF_HUB_OFFLINE=1 /dataMeR2/yutong/envs/myenv/bin/python -m gepa_pilot.report_set rescore --task emotion", "log": "artifacts/report2k/rescore_emotion.log", "done_marker": "WROTE artifacts/report2k/emotion.json"}

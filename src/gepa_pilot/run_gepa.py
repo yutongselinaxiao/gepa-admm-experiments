@@ -154,6 +154,13 @@ def main() -> None:
     )
     parser.add_argument("--admm-dual-batch-size", type=int, default=64)
     parser.add_argument(
+        "--admm-length-offsets",
+        type=int,
+        nargs="+",
+        default=[0],
+        help="Slot-length offsets per ADMM proposal, e.g. 0 -2 2 (multi-length). Must include 0.",
+    )
+    parser.add_argument(
         "--admm-acceptance-batch-size",
         type=int,
         default=0,
@@ -270,16 +277,31 @@ def main() -> None:
             dual_step=args.admm_dual_step,
             dual_batch_size=args.admm_dual_batch_size,
             acceptance_batch_size=args.admm_acceptance_batch_size,
+            length_offsets=args.admm_length_offsets,
         )
         if args.proposer == "admm":
             proposal_kwargs = {"custom_candidate_proposer": admm_proposer}
         else:
-            proposal_kwargs = {
-                "reflection_strategy": PolishingReflectionLM(
-                    StatelessReflectionLM(reflector, reflection_template),
-                    admm_proposer,
+            polishing = PolishingReflectionLM(
+                StatelessReflectionLM(reflector, reflection_template), admm_proposer
+            )
+            if args.reflection_acceptance == "heldout":
+                # Fair reflect-then-polish: the final child (polished or not) is judged against the
+                # GEPA parent, with the reflective arms' rule, on the polish's independent slice S'.
+                if args.admm_acceptance_batch_size <= 0:
+                    raise ValueError("reflect_polish with held-out acceptance needs --admm-acceptance-batch-size > 0.")
+                heldout_judge = HeldOutJudgedReflectionLM(
+                    polishing,
+                    evaluator,
+                    train,
+                    selection_batch_size=args.admm_selection_batch_size,
+                    seed=optimization_seed + 2000,
+                    log_path=run_dir / "heldout_judgements.jsonl",
+                    acceptance_slice=args.admm_acceptance_batch_size,
                 )
-            }
+                proposal_kwargs = {"reflection_strategy": heldout_judge}
+            else:
+                proposal_kwargs = {"reflection_strategy": polishing}
     acceptance_criterion: Any = "strict_improvement"
     if admm_proposer is not None and args.admm_acceptance == "heldout":
         acceptance_criterion = ADMMHeldOutAcceptance(admm_proposer)
@@ -336,6 +358,7 @@ def main() -> None:
             "dual_step": args.admm_dual_step,
             "dual_batch_size": args.admm_dual_batch_size,
             "acceptance_batch_size": args.admm_acceptance_batch_size,
+            "length_offsets": args.admm_length_offsets,
             "seed": admm_proposer.seed,
             "allowed_vocabulary_size": len(admm_proposer.refiner.allowed_token_ids),
         }

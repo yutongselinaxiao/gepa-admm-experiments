@@ -27,7 +27,9 @@ from typing import Any, Mapping, Sequence
 
 import torch
 
-from .admm import ADMMRefiner, decode_and_check_slot
+import torch.nn.functional as F
+
+from .admm import ADMMRefiner, decode_and_check_slot, gold_indices
 from .data import NewsExample
 
 
@@ -69,6 +71,7 @@ class ADMMProposer:
         dual_step: float = 0.0,
         dual_batch_size: int = 64,
         acceptance_batch_size: int = 0,
+        length_offsets: Sequence[int] = (0,),
     ) -> None:
         hp = refiner.hp
         if dual_step < 0 or dual_batch_size < 1:
@@ -81,6 +84,11 @@ class ADMMProposer:
         if acceptance_batch_size < 0:
             raise ValueError("acceptance_batch_size must be >= 0.")
         self.acceptance_batch_size = acceptance_batch_size
+        # Slot-length offsets tried per proposal. (0,) is the original single-length proposer;
+        # e.g. (0, -2, 2) also refines a 2-token-shorter and a 2-token-longer variant of the parent.
+        if 0 not in length_offsets:
+            raise ValueError("length_offsets must include 0 (the parent's own length).")
+        self.length_offsets = tuple(dict.fromkeys(int(o) for o in length_offsets))
         if selection_batch_size < 1:
             raise ValueError("selection_batch_size must be positive.")
         if len(trainset) < selection_batch_size + hp.train_batch_size:
@@ -143,6 +151,7 @@ class ADMMProposer:
                 "top_p": self.refiner.hp.top_p,
                 "beam_width": self.refiner.hp.beam_width,
                 "fluency_weight": self.refiner.hp.fluency_weight,
+                "length_offsets": list(self.length_offsets),
             },
         }
         try:
@@ -168,61 +177,43 @@ class ADMMProposer:
         dual_batch = training[: self.dual_batch_size] if use_duals else []
         duals = torch.zeros(len(self.refiner.evaluator.labels))
         dual_cache: dict[tuple[int, ...], torch.Tensor] = {}
-        cursor, training_order = 0, list(range(len(training)))
-        batch_size = self.refiner.hp.train_batch_size
         scored: dict[tuple[int, ...], dict[str, Any]] = {}
-        iterations: list[dict[str, Any]] = []
-        for iteration in range(1, self.refiner.hp.outer_iterations + 1):
-            if cursor + batch_size > len(training_order):
-                training_order = torch.randperm(len(training), generator=generator).tolist()
-                cursor = 0
-            batch = [training[index] for index in training_order[cursor : cursor + batch_size]]
-            cursor += batch_size
-            task_loss, _ = self.refiner.step(
-                state, batch, class_weights=1.0 + duals if use_duals else None
-            )
-            ids = tuple(state.z.cpu().tolist())
-            ez = self.refiner.embedding_weight.index_select(0, state.z).detach().float()
-            row: dict[str, Any] = {
-                "iteration": iteration,
-                "train_soft_task_loss": task_loss,
-                "primal_residual_norm": float((state.e.detach() - ez).norm()),
-                "changed_token_count_from_parent": int(state.z.ne(parent_ids).sum()),
-            }
-            if use_duals:
-                if ids not in dual_cache:
-                    dual_cache[ids] = self.refiner.per_class_accuracy(state, state.z, dual_batch)
-                class_accuracy = dual_cache[ids]
-                present = ~torch.isnan(class_accuracy)
-                target = class_accuracy[present].mean()
-                duals[present] = (
-                    duals[present] + self.dual_step * (target - class_accuracy[present])
-                ).clamp_min(0.0)
-                row["dual_class_accuracy"] = class_accuracy.tolist()
-                row["class_duals"] = duals.tolist()
-            if row["changed_token_count_from_parent"] and ids not in scored:
-                roundtrip = decode_and_check_slot(self.refiner.evaluator, self.reference_article, state.z)
-                entry = {
-                    "iteration": iteration,
-                    "slot_ids": list(ids),
-                    "text": roundtrip["reconstructed_instruction"],
-                    "roundtrip_exact": roundtrip["roundtrip_exact"],
-                    "selection_loss": None,
-                    "selection_accuracy": None,
-                }
-                if roundtrip["roundtrip_exact"] and roundtrip["reconstruction_error"] is None:
-                    entry["selection_loss"], entry["selection_accuracy"] = (
-                        self.refiner.discrete_metrics(state, state.z, selection)
-                    )
-                scored[ids] = entry
-                row["new_projection"] = entry
-            iterations.append(row)
-
+        states: dict[tuple[int, ...], Any] = {}  # candidate ids -> the ADMM state that produced it
+        iterations, cursor_state = self._refine_from(
+            state, parent_ids, parent_ids, training, generator, selection, scored, states,
+            use_duals, dual_batch, duals, dual_cache, offset=0,
+        )
         record["iterations"] = iterations
-        record["forward_calls"] = state.forward_calls
-        record["backward_calls"] = state.backward_calls
-        self.forward_calls += state.forward_calls
-        self.backward_calls += state.backward_calls
+        all_states = [state]
+        if len(self.length_offsets) > 1:
+            record["length_variants"] = []
+            for offset in self.length_offsets:
+                if offset == 0:
+                    continue
+                variant = self._length_variant(state, parent_ids, prefix_ids, offset, training)
+                record["length_variants"].append({k: v for k, v in variant.items() if k != "ids"})
+                if variant["ids"] is None:
+                    continue
+                variant_ids = variant["ids"]
+                variant_state = self.refiner.init_state(variant["text"], variant_ids, prefix_ids=prefix_ids)
+                all_states.append(variant_state)
+                key = tuple(variant_ids.cpu().tolist())
+                if key not in scored:  # the unrefined variant is itself a candidate
+                    loss, accuracy = self.refiner.discrete_metrics(variant_state, variant_ids, selection)
+                    scored[key] = {"iteration": 0, "slot_ids": list(key), "text": variant["text"],
+                                   "roundtrip_exact": True, "selection_loss": loss,
+                                   "selection_accuracy": accuracy, "start_offset": offset}
+                    states[key] = variant_state
+                variant_rows, _ = self._refine_from(
+                    variant_state, variant_ids, parent_ids, training, generator, selection, scored, states,
+                    use_duals, dual_batch, torch.zeros_like(duals), {}, offset=offset,
+                )
+                record.setdefault("variant_iterations", {})[str(offset)] = variant_rows
+        del cursor_state
+        record["forward_calls"] = sum(st.forward_calls for st in all_states)
+        record["backward_calls"] = sum(st.backward_calls for st in all_states)
+        self.forward_calls += record["forward_calls"]
+        self.backward_calls += record["backward_calls"]
 
         valid = [entry for entry in scored.values() if entry["selection_loss"] is not None]
         improving = [
@@ -244,8 +235,9 @@ class ADMMProposer:
         record["chosen"] = best
         if acceptance:
             best_ids = torch.tensor(best["slot_ids"], device=self.refiner.evaluator.device)
+            best_state = states[tuple(best["slot_ids"])]
             parent_loss, parent_accuracy = self.refiner.discrete_metrics(state, parent_ids, acceptance)
-            child_loss, child_accuracy = self.refiner.discrete_metrics(state, best_ids, acceptance)
+            child_loss, child_accuracy = self.refiner.discrete_metrics(best_state, best_ids, acceptance)
             record["acceptance_ids"] = [example.example_id for example in acceptance]
             record["acceptance_batch"] = {
                 "parent_loss": parent_loss, "parent_accuracy": parent_accuracy,
@@ -259,6 +251,106 @@ class ADMMProposer:
             )
         self.heldout_decisions[best["text"]] = record["heldout_accept"]
         return self._finish(record, best["text"], "proposed", started)
+
+    def _refine_from(
+        self, state: Any, start_ids: torch.Tensor, parent_ids: torch.Tensor, training: list,
+        generator: torch.Generator, selection: list, scored: dict, states: dict,
+        use_duals: bool, dual_batch: list, duals: torch.Tensor, dual_cache: dict, *, offset: int,
+    ) -> tuple[list[dict[str, Any]], None]:
+        """Run the ADMM iterations from `state`; add every new exact-round-trip projection to `scored`."""
+        cursor, training_order = 0, list(range(len(training)))
+        batch_size = self.refiner.hp.train_batch_size
+        iterations: list[dict[str, Any]] = []
+        for iteration in range(1, self.refiner.hp.outer_iterations + 1):
+            if cursor + batch_size > len(training_order):
+                training_order = torch.randperm(len(training), generator=generator).tolist()
+                cursor = 0
+            batch = [training[index] for index in training_order[cursor : cursor + batch_size]]
+            cursor += batch_size
+            task_loss, _ = self.refiner.step(
+                state, batch, class_weights=1.0 + duals if use_duals else None
+            )
+            ids = tuple(state.z.cpu().tolist())
+            ez = self.refiner.embedding_weight.index_select(0, state.z).detach().float()
+            row: dict[str, Any] = {
+                "iteration": iteration,
+                "train_soft_task_loss": task_loss,
+                "primal_residual_norm": float((state.e.detach() - ez).norm()),
+                "changed_token_count_from_parent": (
+                    int(state.z.ne(parent_ids).sum()) if state.z.shape == parent_ids.shape
+                    else max(len(ids), len(parent_ids))
+                ),
+            }
+            if use_duals:
+                if ids not in dual_cache:
+                    dual_cache[ids] = self.refiner.per_class_accuracy(state, state.z, dual_batch)
+                class_accuracy = dual_cache[ids]
+                present = ~torch.isnan(class_accuracy)
+                target = class_accuracy[present].mean()
+                duals[present] = (
+                    duals[present] + self.dual_step * (target - class_accuracy[present])
+                ).clamp_min(0.0)
+                row["dual_class_accuracy"] = class_accuracy.tolist()
+                row["class_duals"] = duals.tolist()
+            if ids != tuple(start_ids.cpu().tolist()) and ids != tuple(parent_ids.cpu().tolist()) \
+                    and ids not in scored:
+                roundtrip = decode_and_check_slot(self.refiner.evaluator, self.reference_article, state.z)
+                entry = {
+                    "iteration": iteration,
+                    "slot_ids": list(ids),
+                    "text": roundtrip["reconstructed_instruction"],
+                    "roundtrip_exact": roundtrip["roundtrip_exact"],
+                    "selection_loss": None,
+                    "selection_accuracy": None,
+                    "start_offset": offset,
+                }
+                if roundtrip["roundtrip_exact"] and roundtrip["reconstruction_error"] is None:
+                    entry["selection_loss"], entry["selection_accuracy"] = (
+                        self.refiner.discrete_metrics(state, state.z, selection)
+                    )
+                scored[ids] = entry
+                states[ids] = state
+                row["new_projection"] = entry
+            iterations.append(row)
+
+        return iterations, None
+
+    def _length_variant(
+        self, state: Any, parent_ids: torch.Tensor, prefix_ids: tuple[int, ...], offset: int, training: list,
+    ) -> dict[str, Any]:
+        """A shorter (offset < 0) or longer (offset > 0) version of the parent, built to stay fluent.
+
+        Saliency is the gradient norm of the task loss with respect to each slot embedding, on the
+        first training batch. Deletion drops the lowest-saliency tokens; insertion places the LM's
+        most likely allowed token before the highest-saliency positions. The final slot token
+        (which carries the trailing newline) is never touched.
+        """
+        evaluator = self.refiner.evaluator
+        batch = training[: self.refiner.hp.train_batch_size]
+        e = self.refiner.embedding_weight.index_select(0, parent_ids).detach().float().clone().requires_grad_(True)
+        targets = gold_indices(batch, evaluator.labels, evaluator.device)
+        loss = F.cross_entropy(evaluator.score_slot_embeddings(batch, state.reference_instruction, e).float(), targets)
+        loss.backward()
+        state.forward_calls += 1
+        state.backward_calls += 1
+        saliency = e.grad.norm(dim=1)[:-1].cpu()  # exclude the final token
+        ids = parent_ids.cpu().tolist()
+        if offset < 0:
+            drop = set(saliency.argsort()[: -offset].tolist())
+            ids = [token for i, token in enumerate(ids) if i not in drop]
+        else:
+            for position in sorted(saliency.argsort(descending=True)[:offset].tolist(), reverse=True):
+                context = torch.tensor([list(prefix_ids) + ids[:position]], device=evaluator.device)
+                with torch.inference_mode():
+                    logits = evaluator.model(input_ids=context).logits[0, -1].float()
+                    token = int(logits.masked_fill(~self.refiner.allowed_mask, -float("inf")).argmax())
+                state.forward_calls += 1
+                ids.insert(position, token)
+        variant = torch.tensor(ids, dtype=torch.long, device=evaluator.device)
+        roundtrip = decode_and_check_slot(evaluator, self.reference_article, variant)
+        ok = roundtrip["roundtrip_exact"] and roundtrip["reconstruction_error"] is None
+        return {"offset": offset, "text": roundtrip["reconstructed_instruction"], "roundtrip_exact": ok,
+                "ids": variant if ok else None, "length": len(ids)}
 
     def _finish(
         self,
@@ -387,9 +479,15 @@ class HeldOutJudgedReflectionLM:
         selection_batch_size: int,
         seed: int,
         log_path: str | Path,
+        acceptance_slice: int = 0,
     ) -> None:
         self.inner = inner
         self.evaluator = evaluator
+        # 0: judge on the selection batch S of heldout_split (reflective arms: nothing is chosen on S).
+        # > 0: judge on the next `acceptance_slice` examples after S, i.e. the S' slice an
+        # ADMMProposer with acceptance_batch_size = acceptance_slice and the same seed reserves.
+        # Use this when an inner ADMM step already chose its candidate on S (reflect-then-polish).
+        self.acceptance_slice = acceptance_slice
         self.trainset = list(trainset)
         self.selection_batch_size = selection_batch_size
         self.seed = seed
@@ -414,9 +512,11 @@ class HeldOutJudgedReflectionLM:
         call_index = self.call_count
         self.call_count += 1
         excluded = excluded_minibatch_ids(self._ids_by_article, reflective_dataset["instruction"])
-        selection, _, _ = heldout_split(
+        selection, rest, _ = heldout_split(
             self.trainset, excluded, self.selection_batch_size, self.seed + call_index
         )
+        if self.acceptance_slice:
+            selection = rest[: self.acceptance_slice]
         parent_summary = self.evaluator.evaluate(
             selection, candidate["instruction"], batch_size=len(selection)
         )

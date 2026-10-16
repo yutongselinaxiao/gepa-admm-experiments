@@ -1,0 +1,4 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,1,accepted,True,0.365234375,5.95256737322655,23,True,49,18,Carefully determine the article's main topic from the label mapping and provide details and output only the corresponding capital letter.
+2,1,,rejected,False,0.400390625,2.490371500946752,25,True,87,69,"Carefully determine the subject's main topic category and label, and provide details explanation in only the corresponding Label value.
+ letter."

@@ -1,0 +1,10 @@
+{
+  "task": "agnews",
+  "source_split": "train (official)",
+  "official_test_examples_used": false,
+  "excluded_indices": "all indices used by train.json and validation.json",
+  "per_class": 500,
+  "size": 2000,
+  "seed": 20261015,
+  "file_sha256": "64f99ce81d42262764c9be9d65f4b5693c0c27f72634a039e3a7424c55004382"
+}

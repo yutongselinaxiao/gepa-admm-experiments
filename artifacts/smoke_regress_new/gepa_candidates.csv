@@ -1,0 +1,3 @@
+proposal_number,parent_candidate_idx,candidate_idx,status,selected_best,validation_accuracy,validation_mean_loss,slot_token_count,tokenizer_compositional,errors_fixed_count,new_errors_count,instruction
+1,0,1,accepted,True,0.318359375,8.067450933852864,25,True,15,6,"Carefully determine the article's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
+2,1,,rejected,False,0.31640625,7.589617934162328,25,True,4,5,"Carefully determine the article's main subject from the label mapping, ignoring incidental details, and output only the corresponding capital letter."
