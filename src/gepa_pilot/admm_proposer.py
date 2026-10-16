@@ -22,6 +22,7 @@ from __future__ import annotations
 import json
 import time
 from collections import defaultdict
+from types import SimpleNamespace
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
@@ -30,6 +31,7 @@ import torch
 import torch.nn.functional as F
 
 from .admm import ADMMRefiner, decode_and_check_slot, gold_indices
+from .gated_admm import GatedADMMRefiner, GatedConfig
 from .data import NewsExample
 
 
@@ -72,6 +74,8 @@ class ADMMProposer:
         dual_batch_size: int = 64,
         acceptance_batch_size: int = 0,
         length_offsets: Sequence[int] = (0,),
+        insertion: str = "lm",
+        gated: GatedConfig | None = None,
     ) -> None:
         hp = refiner.hp
         if dual_step < 0 or dual_batch_size < 1:
@@ -89,6 +93,15 @@ class ADMMProposer:
         if 0 not in length_offsets:
             raise ValueError("length_offsets must include 0 (the parent's own length).")
         self.length_offsets = tuple(dict.fromkeys(int(o) for o in length_offsets))
+        # How a longer variant picks its inserted tokens: "lm" (the LM's most likely token) or
+        # "gradient" (candidates ranked by the task-loss gradient, chosen by exact training loss).
+        if insertion not in ("lm", "gradient"):
+            raise ValueError(f"Unknown insertion rule: {insertion}")
+        self.insertion = insertion
+        # Gated variable-length ADMM (gated_admm.py) replaces the fixed-length refinement.
+        self.gated = gated
+        if gated is not None and len(self.length_offsets) > 1:
+            raise ValueError("Gated ADMM sets the length itself; do not combine it with length_offsets.")
         if selection_batch_size < 1:
             raise ValueError("selection_batch_size must be positive.")
         if len(trainset) < selection_batch_size + hp.train_batch_size:
@@ -152,6 +165,8 @@ class ADMMProposer:
                 "beam_width": self.refiner.hp.beam_width,
                 "fluency_weight": self.refiner.hp.fluency_weight,
                 "length_offsets": list(self.length_offsets),
+                "insertion": self.insertion,
+                "gated": None if self.gated is None else vars(self.gated),
             },
         }
         try:
@@ -179,12 +194,19 @@ class ADMMProposer:
         dual_cache: dict[tuple[int, ...], torch.Tensor] = {}
         scored: dict[tuple[int, ...], dict[str, Any]] = {}
         states: dict[tuple[int, ...], Any] = {}  # candidate ids -> the ADMM state that produced it
-        iterations, cursor_state = self._refine_from(
-            state, parent_ids, parent_ids, training, generator, selection, scored, states,
-            use_duals, dual_batch, duals, dual_cache, offset=0,
-        )
+        all_states: list[Any] = [state]
+        if self.gated is not None:
+            iterations, gated_state = self._refine_gated(
+                parent, parent_ids, prefix_ids, training, generator, selection, scored, states
+            )
+            all_states.append(gated_state)
+            cursor_state = None
+        else:
+            iterations, cursor_state = self._refine_from(
+                state, parent_ids, parent_ids, training, generator, selection, scored, states,
+                use_duals, dual_batch, duals, dual_cache, offset=0,
+            )
         record["iterations"] = iterations
-        all_states = [state]
         if len(self.length_offsets) > 1:
             record["length_variants"] = []
             for offset in self.length_offsets:
@@ -315,6 +337,103 @@ class ADMMProposer:
 
         return iterations, None
 
+    def _refine_gated(
+        self, parent: str, parent_ids: torch.Tensor, prefix_ids: tuple[int, ...], training: list,
+        generator: torch.Generator, selection: list, scored: dict, states: dict,
+    ) -> tuple[list[dict[str, Any]], Any]:
+        """Gated variable-length ADMM; every new exact-round-trip token sequence is scored on S."""
+        refiner = GatedADMMRefiner(self.refiner, self.gated)
+        batch_size = self.refiner.hp.train_batch_size
+        gstate = refiner.init_state(parent, parent_ids, prefix_ids, training[:batch_size])
+        parent_key = tuple(parent_ids.cpu().tolist())
+        cursor, order = 0, list(range(len(training)))
+        rows: list[dict[str, Any]] = []
+        for iteration in range(1, self.refiner.hp.outer_iterations + 1):
+            if cursor + batch_size > len(order):
+                order = torch.randperm(len(training), generator=generator).tolist()
+                cursor = 0
+            batch = [training[index] for index in order[cursor : cursor + batch_size]]
+            cursor += batch_size
+            task_loss = refiner.step(gstate, batch)
+            ids = refiner.token_ids(gstate)
+            key = tuple(ids.cpu().tolist())
+            row: dict[str, Any] = {
+                "iteration": iteration,
+                "train_soft_task_loss": task_loss,
+                "length": len(key),
+                "deleted_original": sum(t is None for t, o in zip(gstate.z, gstate.initial) if o is not None),
+                "filled_spare": sum(t is not None for t, o in zip(gstate.z, gstate.initial) if o is None),
+                "gates": [round(g, 3) for g in gstate.a.detach().sigmoid().tolist()],
+            }
+            if key != parent_key and key not in scored:
+                roundtrip = decode_and_check_slot(self.refiner.evaluator, self.reference_article, ids)
+                entry = {
+                    "iteration": iteration, "slot_ids": list(key), "text": roundtrip["reconstructed_instruction"],
+                    "roundtrip_exact": roundtrip["roundtrip_exact"], "selection_loss": None,
+                    "selection_accuracy": None, "start_offset": len(key) - len(parent_key),
+                }
+                candidate_state = SimpleNamespace(
+                    reference_instruction=roundtrip["reconstructed_instruction"], forward_calls=0, backward_calls=0
+                )
+                if roundtrip["roundtrip_exact"] and roundtrip["reconstruction_error"] is None:
+                    entry["selection_loss"], entry["selection_accuracy"] = (
+                        self.refiner.discrete_metrics(candidate_state, ids, selection)
+                    )
+                gstate.forward_calls += candidate_state.forward_calls
+                scored[key] = entry
+                states[key] = candidate_state
+                row["new_projection"] = entry
+            rows.append(row)
+        return rows, gstate
+
+    def _gradient_insert(
+        self, ids: list[int], prefix_ids: tuple[int, ...], positions: list[int], batch: list, check: list,
+        state: Any,
+    ) -> list[int]:
+        """Insert one token: at each candidate position, rank the LM's 64 most likely tokens by the
+        first-order change in the task loss (gradient at an inserted placeholder, GCG-style), then keep
+        the (position, token) with the lowest exact loss on `check`. The placeholder is the LM's most
+        likely token. Restricting to likely tokens keeps the insertion fluent."""
+        evaluator = self.refiner.evaluator
+        weight = self.refiner.embedding_weight
+        targets = gold_indices(batch, evaluator.labels, evaluator.device)
+        check_targets = gold_indices(check, evaluator.labels, evaluator.device)
+        reference = state.reference_instruction
+        candidates: list[list[int]] = []
+        for position in positions:
+            context = torch.tensor([list(prefix_ids) + ids[:position]], device=evaluator.device)
+            with torch.inference_mode():
+                logits = evaluator.model(input_ids=context).logits[0, -1].float()
+                placeholder = int(logits.masked_fill(~self.refiner.allowed_mask, -float("inf")).argmax())
+            trial = ids[:position] + [placeholder] + ids[position:]
+            e = weight.index_select(0, torch.tensor(trial, device=evaluator.device)).detach().float()
+            e.requires_grad_(True)
+            scores = evaluator.score_gated_slot_embeddings(batch, reference, e, torch.zeros(len(trial)))
+            F.cross_entropy(scores.float(), targets).backward()
+            state.forward_calls += 2
+            state.backward_calls += 1
+            with torch.no_grad():  # gradient ranking among the LM's 64 most likely allowed tokens
+                fluent = logits.masked_fill(~self.refiner.allowed_mask, -float("inf")).topk(64).indices
+                change = (weight.index_select(0, fluent).float() - e[position].detach()) @ e.grad[position]
+                tokens = fluent[change.topk(8, largest=False).indices].tolist()
+            for token in dict.fromkeys([placeholder] + tokens):
+                candidates.append(ids[:position] + [int(token)] + ids[position:])
+        best, best_loss = ids, float("inf")
+        for trial in candidates:
+            trial_ids = torch.tensor(trial, device=evaluator.device)
+            roundtrip = decode_and_check_slot(evaluator, self.reference_article, trial_ids)
+            if not roundtrip["roundtrip_exact"] or roundtrip["reconstruction_error"] is not None:
+                continue
+            with torch.inference_mode():
+                scores = evaluator.score_gated_slot_embeddings(
+                    check, reference, weight.index_select(0, trial_ids).float(), torch.zeros(len(trial))
+                )
+            state.forward_calls += 1
+            loss = float(F.cross_entropy(scores.float(), check_targets))
+            if loss < best_loss:
+                best, best_loss = trial, loss
+        return best
+
     def _length_variant(
         self, state: Any, parent_ids: torch.Tensor, prefix_ids: tuple[int, ...], offset: int, training: list,
     ) -> dict[str, Any]:
@@ -338,6 +457,16 @@ class ADMMProposer:
         if offset < 0:
             drop = set(saliency.argsort()[: -offset].tolist())
             ids = [token for i, token in enumerate(ids) if i not in drop]
+        elif self.insertion == "gradient":
+            check = training[: 2 * self.refiner.hp.train_batch_size]
+            for _ in range(offset):  # one token at a time, each at the best of the 6 most sensitive gaps
+                gaps = saliency.argsort(descending=True)[:6].tolist()
+                before = ids
+                ids = self._gradient_insert(ids, prefix_ids, gaps, batch, check, state)
+                if ids is before:
+                    break
+                at = next((i for i in range(len(before)) if ids[i] != before[i]), len(before) - 1)
+                saliency = torch.cat((saliency[:at], torch.zeros(1), saliency[at:]))  # new token: not reused
         else:
             for position in sorted(saliency.argsort(descending=True)[:offset].tolist(), reverse=True):
                 context = torch.tensor([list(prefix_ids) + ids[:position]], device=evaluator.device)

@@ -9,3 +9,4 @@ artifacts/phase7/*
 !artifacts/phase7/jobs.jsonl
 artifacts/phase7_failed/
 artifacts/phase7_rerun/
+artifacts/length_bench/*.log

@@ -279,6 +279,71 @@ class CommonEvaluator:
             inputs_embeds, attention_mask, last_positions
         )
 
+    def score_gated_slot_embeddings(
+        self,
+        examples: Sequence[NewsExample],
+        reference_instruction: str,
+        slot_embeddings: torch.Tensor,
+        log_gates: torch.Tensor,
+    ) -> torch.Tensor:
+        """Score a soft slot of any length whose positions carry keep-gates g in (0, 1].
+
+        log g is added to every query's attention logit for that slot key, and positions advance
+        by g, so g -> 0 removes the token exactly as deleting it would (its key is unattended and
+        later tokens shift back by one position). Gradients reach `slot_embeddings` and, through the
+        attention mask, `log_gates`. The prefix and suffix come from `reference_instruction`.
+        """
+        if not self._all_labels_are_single_token():
+            raise NotImplementedError("Gated slot scoring requires single-token labels.")
+        if slot_embeddings.ndim != 2 or log_gates.shape != (slot_embeddings.shape[0],):
+            raise ValueError("Need slot_embeddings [n, hidden] and log_gates [n].")
+        encodings = [self.prompt_builder.encode(example.article, reference_instruction) for example in examples]
+        if any(not encoding.compositional for encoding in encodings):
+            raise ValueError("Cannot inject embeddings into a non-compositional prompt.")
+        embedding_layer = self.model.get_input_embeddings()
+        dtype = embedding_layer.weight.dtype
+        slot = slot_embeddings.to(device=self.device, dtype=dtype)
+        log_gates = log_gates.to(self.device).float().clamp_min(-1e4)
+        gates = log_gates.detach().exp()
+        n = slot.shape[0]
+        lengths = [len(e.prefix_ids) + n + len(e.suffix_ids) for e in encodings]
+        total = max(lengths)
+        pad_embedding = embedding_layer(torch.tensor([int(self.tokenizer.pad_token_id)], device=self.device)).detach()
+        rows, positions, masks, last_positions = [], [], [], []
+        causal = torch.ones(total, total, dtype=torch.bool, device=self.device).tril()
+        for encoding, length in zip(encodings, lengths):
+            p, s = len(encoding.prefix_ids), len(encoding.suffix_ids)
+            prefix = embedding_layer(torch.tensor(encoding.prefix_ids, device=self.device)).detach()
+            suffix = embedding_layer(torch.tensor(encoding.suffix_ids, device=self.device)).detach()
+            row = torch.cat((prefix, slot, suffix, pad_embedding.expand(total - length, -1)), dim=0)
+            slot_positions = p + torch.cumsum(gates, 0) - gates
+            position = torch.cat((
+                torch.arange(p, device=self.device, dtype=torch.float32), slot_positions,
+                p + gates.sum() + torch.arange(s, device=self.device, dtype=torch.float32),
+                torch.zeros(total - length, device=self.device),
+            ))
+            allowed = causal.clone()
+            allowed[:, length:] = False
+            allowed[length:, :] = torch.eye(total, dtype=torch.bool, device=self.device)[length:, :]
+            bias = torch.zeros(total, device=self.device)
+            bias = torch.cat((bias[:p], log_gates, bias[p + n:]))
+            mask = torch.where(allowed, bias.unsqueeze(0), torch.finfo(torch.float32).min)
+            rows.append(row)
+            positions.append(position)
+            masks.append(mask)
+            last_positions.append(length - 1)
+        inputs_embeds = torch.stack(rows)
+        attention_mask = torch.stack(masks).unsqueeze(1).to(dtype)
+        label_ids = torch.tensor([self.label_token_ids[label][0] for label in self.labels], device=self.device)
+        unique_positions, position_lookup = torch.unique(
+            torch.tensor(last_positions, device=self.device), sorted=True, return_inverse=True
+        )
+        outputs = self.model(inputs_embeds=inputs_embeds, attention_mask=attention_mask,
+                             position_ids=torch.stack(positions), use_cache=False,
+                             logits_to_keep=unique_positions)
+        batch_indices = torch.arange(len(rows), device=self.device)
+        return outputs.logits[batch_indices, position_lookup].index_select(-1, label_ids).float()
+
     def score_fixed_slot_ids(
         self,
         examples: Sequence[NewsExample],
