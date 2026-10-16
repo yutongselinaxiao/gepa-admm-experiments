@@ -122,9 +122,15 @@ def main() -> None:
                   f"{s['returns_to_parent_per_proposal_mean']:.2f}")
     (out / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
 
-    fig, axes = plt.subplots(1, 3, figsize=(13.5, 3.9), gridspec_kw={"width_ratios": [1.15, 1, 1.25]})
+    figures = []
+
+    def new_figure(name: str, size: tuple[float, float]):
+        fig, ax = plt.subplots(figsize=size)
+        figures.append((fig, name))
+        return ax
+
     # (a) which round the returned candidate came from (fair beam arm, both tasks)
-    ax = axes[0]
+    ax = new_figure("fig7a_admm_returned_round.png", (7.2, 4.2))
     # Everything here is the beam ADMM proposer (violet); tasks differ by shade.
     for shade, task, offset in ((COLOR["beam"], "AG News", -0.2), (BEAM_LIGHT, "Emotion", 0.2)):
         hist = summary[f"{task} / beam (fair S')"]["chosen_round_histogram"]
@@ -133,11 +139,11 @@ def main() -> None:
                label=task)
     ax.set_xlabel("round the returned candidate came from")
     ax.set_ylabel("proposals")
-    ax.set_title("(a) Round of the returned candidate", fontsize=10)
+    ax.set_title("Returned candidates come from all 20 rounds, rarely the last (fair beam ADMM proposer)")
     ax.set_xticks([1, 5, 10, 15, 20])
     ax.legend(loc="upper left")
     # (b) status of the round-20 iterate
-    ax = axes[1]
+    ax = new_figure("fig7b_admm_round20_status.png", (7.2, 3.6))
     statuses = ["parent (no change)", "revisit of an earlier candidate", "new candidate in round 20"]
     tasks = ["AG News", "Emotion"]
     left = [0.0, 0.0]
@@ -155,11 +161,11 @@ def main() -> None:
         left = [a + b for a, b in zip(left, values)]
     ax.set_xlim(0, 100)
     ax.set_xlabel("share of proposals (%)")
-    ax.set_title("(b) The round-20 iterate is", fontsize=10)
-    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.22), fontsize=8)
+    ax.set_title("What the round-20 iterate is (fair beam ADMM proposer)")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.24), ncol=3, fontsize=8.5)
     ax.grid(axis="y", visible=False)
     # (c) one typical trajectory
-    ax = axes[2]
+    ax = new_figure("fig7c_admm_trajectory.png", (7.2, 4.4))
     example = example_trajectory(records_by[("AG News", "beam (fair S')")])
     if example:
         rows = example["iterations"]
@@ -183,12 +189,13 @@ def main() -> None:
         EXAMPLE.update(example)
     ax.set_xlabel("ADMM round")
     ax.set_ylabel("tokens changed from the parent")
-    ax.set_title("(c) One proposal's trajectory", fontsize=10)
+    ax.set_title("One AG News proposal: the iterate oscillates back to the parent")
     ax.set_xticks([1, 5, 10, 15, 20])
-    fig.subplots_adjust(wspace=0.38, bottom=0.27)
-    path = Path("artifacts/figures/fig7_admm_iterates.png")
-    fig.savefig(path, dpi=200, bbox_inches="tight")
-    print(f"WROTE {path}")
+    for fig, name in figures:
+        path = Path("artifacts/figures") / name
+        fig.savefig(path, dpi=200, bbox_inches="tight")
+        plt.close(fig)
+        print(f"WROTE {path}")
     if EXAMPLE:
         print("EXAMPLE parent:", EXAMPLE["parent_instruction"])
         for row in EXAMPLE["iterations"]:

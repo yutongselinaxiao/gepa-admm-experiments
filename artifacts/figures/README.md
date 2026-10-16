@@ -288,3 +288,40 @@ upper left.
   exist; the annotation gives the counts instead.
 
 **Used in:** [CLASSIFICATION_RESULTS.md §5.14](../../CLASSIFICATION_RESULTS.md).
+
+---
+
+## Figure 7a–c — which ADMM iterate the proposer returns
+
+![Figure 7a](fig7a_admm_returned_round.png)
+![Figure 7b](fig7b_admm_round20_status.png)
+![Figure 7c](fig7c_admm_trajectory.png)
+
+From [`iterate_diagnostics.py`](../../src/gepa_pilot/iterate_diagnostics.py), over all proposals
+of the fair beam ADMM proposer (Phase 6). Each proposal runs 20 ADMM rounds and returns the
+lowest-loss candidate on the held-out batch S (if it beats the parent).
+- **7a** shows which round the returned candidate came from: spread over the whole run,
+  rarely round 20.
+- **7b** shows what the round-20 iterate is: mostly the parent itself (72% AG News, 53%
+  emotion).
+- **7c** follows one proposal: the discrete iterate oscillates rather than converging (1.5–4
+  returns to the parent per proposal across arms).
+
+The takeaway: keep the best candidate seen, never the last round. Numbers for all arms are in
+[`RESULTS_10_16.md`](../../RESULTS_10_16.md).
+
+---
+
+## Figure 8 — the same runs on a small vs. a large evaluation set
+
+![Figure 8](fig8_eval_size.png)
+
+From [`eval_size_comparison.py`](../../src/gepa_pilot/eval_size_comparison.py).
+- **What it shows:** for each arm (10 seeds), each run's selected prompt scored on the
+  256-example report half (hollow) and on the ~2,000-example report set (filled), with mean ±
+  95% CI.
+- **Why the levels differ:** the large set is a slightly harder sample on AG News and an easier
+  one on emotion. That shifts every prompt alike, the seed instruction included.
+- **Why the spreads differ:** the large set shrinks the spread most where measurement noise
+  dominated (emotion ADMM arms, −50 to −73%), and little where runs genuinely differ (AG News).
+- Details are in [`RESULTS_10_16.md`](../../RESULTS_10_16.md).
