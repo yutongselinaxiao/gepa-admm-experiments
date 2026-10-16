@@ -522,13 +522,14 @@ proposals (most often top-p on emotion, where few edits beat the parent).
   of the 512 predictions by rewriting about 40% of the instruction. ADMM changes 12–15% by
   editing 1–3 tokens (about 4%). Per edited token, ADMM's edits move about 10× more
   predictions.
-- **The difference is direction, not size.** Reflection's fixes and breaks nearly cancel: on
-  AG News an average of 26.3 fixes against 24.6 breaks, net +1.7 examples, median accuracy
-  change +0.00 pp (Example A: 19 fixes, 19 breaks, net 0). The ADMM proposers fix about as
-  many examples (25.5–26.7) but break fewer (17.0–19.3), net +7.3 to +8.7 (Example B: 24 fixes,
-  13 breaks, net +11 = +2.15 pp).
-- **Almost half of all flips are wrong → different wrong** (about 35–46 per proposal on AG
-  News). These change behavior without changing accuracy, e.g. a Business article moving from
+- **The difference is direction, not size.** In the like-for-like table, reflection's fixes and
+  breaks largely offset each other on AG News: 25.8 fixes against 21.8 breaks per proposal,
+  net +4.0 examples, median accuracy change +0.59 pp (Example A: 19 fixes, 19 breaks, net 0).
+  The ADMM proposers fix about as many examples (24.1–26.7) but break fewer (16.3–19.3), net
+  +7.4 to +7.8 (Example B: 24 fixes, 13 breaks, net +11 = +2.15 pp). The pooled table shows the
+  same pattern.
+- **Almost half of all flips are wrong → different wrong** (about 34–44 per proposal on AG
+  News in the like-for-like table). These change behavior without changing accuracy, e.g. a Business article moving from
   "World" to "Sci/Tech".
 - **Correction to an earlier explanation.** `CLASSIFICATION_RESULTS.md` §5.10 had said
   reflection's paraphrases "don't move the model's predictions". They do move them, but in
