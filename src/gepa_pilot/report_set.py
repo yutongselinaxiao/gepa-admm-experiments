@@ -89,8 +89,16 @@ def rescore(task: str, summary_path: str, output: str, batch_size: int, extra_ru
 
     out_path = Path(output)
     cache: dict[str, dict[str, Any]] = {}
-    if out_path.exists():  # resume: keep prompts already scored
-        cache = json.loads(out_path.read_text(encoding="utf-8")).get("by_prompt", {})
+    earlier_runs: dict[str, float] = {}
+    if out_path.exists():  # resume: keep prompts already scored, and runs scored by earlier calls
+        previous = json.loads(out_path.read_text(encoding="utf-8"))
+        cache = previous.get("by_prompt", {})
+        # Runs from earlier calls (e.g. other phases' --extra-runs) stay, unless their run directory
+        # no longer holds a result (moved aside after a failure); runs passed now are re-derived.
+        earlier_runs = {
+            run: accuracy for run, accuracy in previous.get("by_run", {}).items()
+            if run not in runs and Path(run, "gepa_result.json").exists()
+        }
     prompts = sorted({config.prompt.seed_instruction, *runs.values()} - set(cache))
     if prompts:
         evaluator = CommonEvaluator.from_pretrained(
@@ -119,7 +127,7 @@ def rescore(task: str, summary_path: str, output: str, batch_size: int, extra_ru
         "task": task,
         "report_size": len(report),
         "seed_accuracy": cache[config.prompt.seed_instruction]["accuracy"],
-        "by_run": {run: cache[prompt]["accuracy"] for run, prompt in runs.items()},
+        "by_run": {**earlier_runs, **{run: cache[prompt]["accuracy"] for run, prompt in runs.items()}},
         "by_prompt": cache,
     }
     out_path.parent.mkdir(parents=True, exist_ok=True)
