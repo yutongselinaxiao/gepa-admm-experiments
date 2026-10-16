@@ -452,6 +452,31 @@ label to another, relative to its parent, per proposal. "net" = fixes − breaks
 Reflection rewrites about 40% of the tokens; ADMM proposers edit about 4% (1–3 tokens), yet both
 change a similar share of predictions.*
 
+**Like-for-like comparison (main table).** One experiment per proposer, each run with the
+same pipeline and protocol: 10 seeds × 12 proposals, selection split, minibatch 8. Each row
+starts from the same **120 proposals made**. Rows differ only in how many proposals returned
+the parent unchanged; those are excluded because there's nothing to compare. Reflection almost
+always writes something new; the ADMM proposers return the parent in 18–45% of proposals.
+
+| Task / proposer (one experiment, 10 runs × 12 proposals = 120 proposals made) | Counted | Child = parent (excluded) | Text edited (median) | Flip rate (median) | Fixes (mean per proposal) | Breaks (mean per proposal) | Wrong → different wrong (mean) | Fixes as % of fixes + breaks (pooled) | Accuracy change (median) |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| AG News: reflection (12 proposals, minibatch) | 115 | 5 | 41% | 17.8% | 25.8 | 21.8 | 44.4 | 54% | +0.59 pp |
+| AG News: top-p ADMM | 98 | 22 | 4% | 14.8% | 26.7 | 19.3 | 39.2 | 58% | +1.76 pp |
+| AG News: beam ADMM (fair S') | 98 | 22 | 4% | 12.7% | 24.1 | 16.3 | 34.1 | 60% | +1.76 pp |
+| Emotion: reflection (12 proposals, minibatch) | 120 | 0 | 61% | 20.1% | 32.0 | 34.5 | 35.0 | 48% | -0.26 pp |
+| Emotion: top-p ADMM | 66 | 54 | 4% | 14.2% | 26.6 | 32.3 | 26.7 | 45% | -0.52 pp |
+| Emotion: beam ADMM (fair S') | 97 | 23 | 4% | 13.8% | 24.6 | 26.6 | 24.7 | 48% | -0.26 pp |
+
+On AG News, all three proposers fix about the same number of examples per proposal (24–27), but
+reflection breaks more (21.8, against 16.3–19.3), so its net gain is smaller: about +4 examples
+against +7 to +8. On emotion, all three are roughly balanced or slightly break-heavy.
+
+**All runs pooled (supplementary).** The table below pools *every* run of each proposer across
+experiments: reflection includes the 30-proposal held-out runs, beam ADMM includes both the
+"S used twice" and the fair-S′ experiments, and Euclidean ADMM is only available from Phase 1.
+That's why its row totals differ; the breakdown follows the table. The conclusions match the
+like-for-like table.
+
 | Task / proposer | Proposals counted | Text edited (median % of tokens) | Flip rate (median) | Fixes (mean per proposal) | Breaks (mean per proposal) | Wrong → different wrong (mean per proposal) | Fixes as % of fixes + breaks (pooled) | Accuracy change (median) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | AG News: reflection | 405 | 40% | 17.4% | 26.3 | 24.6 | 45.9 | 52% | +0.00 pp |
@@ -472,8 +497,9 @@ change a similar share of predictions.*
 - **"Fixes as % of fixes + breaks" is pooled:** all fixes in the group divided by all fixes and
   breaks.
 
-**Why the number of proposals differs between rows.** Each row pools every run of that proposer
-in the comparisons, so groups contain different numbers of runs. Proposals where the child is
+**Why the totals differ in the pooled table.** It pools every run of each proposer across
+experiments, so groups contain different numbers of runs; every individual run still makes
+exactly 12 (or 30) proposals. Proposals where the child is
 identical to its parent are excluded, since there is nothing to compare. That happens when an
 ADMM proposal changes no token or finds no candidate better than the parent on S, and the
 proposer returns the parent unchanged:
