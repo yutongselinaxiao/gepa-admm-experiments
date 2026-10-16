@@ -2,3 +2,8 @@ __pycache__/
 *.pyc
 artifacts/**/gepa_state.bin
 artifacts/**/*.pt
+
+# In-progress run outputs: ignored so `git stash -u` / `git clean` cannot move them while jobs
+# are writing. Add finished runs explicitly with `git add -f`.
+artifacts/phase7/*
+!artifacts/phase7/jobs.jsonl

@@ -1,0 +1,5 @@
+[22:44:19] START rescore_agnews on GPU 4 (free 38369 MB, ours 1)
+[22:44:20] START rescore_emotion on GPU 5 (free 38365 MB, ours 1)
+[22:59:50] DONE rescore_emotion (GPU 5)
+[23:46:08] DONE rescore_agnews (GPU 4)
+ALL DONE: 2/2 succeeded

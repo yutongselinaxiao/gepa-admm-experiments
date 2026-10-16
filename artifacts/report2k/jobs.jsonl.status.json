@@ -1,0 +1,13 @@
+{
+  "pending": [],
+  "running": {},
+  "results": {
+    "rescore_emotion": "done",
+    "rescore_agnews": "done"
+  },
+  "attempts": {
+    "rescore_agnews": 1,
+    "rescore_emotion": 1
+  },
+  "updated": "2026-10-15 23:46:23"
+}
