@@ -79,3 +79,56 @@
 | 2 → 2 (tie: rejected) | +5.47 pp | Carefully determine the article's main topic from the。 ⏎  mapping, ignore incidental details, analsex output only the corresponding capital letter. |
 | 3 → 3 (tie: rejected) | +5.08 pp | Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding.DropDownItems alphabetical. |
 
+
+#### Average child vs. what GEPA keeps (like-for-like runs, 512 validation examples)
+
+| Task / proposer | Mean net, all children | Children with net ≥ +5 | Accepted: count, mean net | Best child per run (mean) | Final prompt vs. seed (mean) |
+|---|---:|---:|---:|---:|---:|
+| AG News / reflection | +4.1 | 48% | 25, +10.6 | +23.5 | +18.3 |
+| AG News / top-p ADMM | +7.3 | 60% | 77, +8.9 | +24.5 | +33.2 |
+| AG News / beam ADMM (fair S') | +7.9 | 67% | 79, +9.3 | +25.4 | +29.0 |
+| Emotion / reflection | -2.5 | 10% | 20, -1.9 | +6.5 | -0.3 |
+| Emotion / top-p ADMM | -5.7 | 11% | 44, -5.6 | +4.8 | +0.7 |
+| Emotion / beam ADMM (fair S') | -2.0 | 23% | 45, -0.8 | +12.3 | +7.2 |
+
+#### Like-for-like proposal table (10 runs x 12 proposals per row)
+
+| Task / proposer | Changed / made | Text edited (median) | Flip rate (median) | Fixes | Breaks | Wrong → different wrong | Net per change | Net per call |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| AG News / reflection | 115 / 120 | 41% | 17.8% | 25.8 | 21.8 | 44.4 | +4.1 | +3.9 |
+| AG News / top-p ADMM | 98 / 120 | 4% | 14.8% | 26.7 | 19.3 | 39.2 | +7.3 | +6.0 |
+| AG News / beam ADMM (fair S') | 98 / 120 | 4% | 12.7% | 24.1 | 16.3 | 34.1 | +7.9 | +6.4 |
+| Emotion / reflection | 120 / 120 | 61% | 20.1% | 32.0 | 34.5 | 35.0 | -2.5 | -2.5 |
+| Emotion / top-p ADMM | 66 / 120 | 4% | 14.2% | 26.6 | 32.3 | 26.7 | -5.7 | -3.1 |
+| Emotion / beam ADMM (fair S') | 97 / 120 | 4% | 13.8% | 24.6 | 26.6 | 24.7 | -2.0 | -1.6 |
+
+#### All runs pooled, per proposer
+
+| Task / proposer | Proposals counted | Text edited (median) | Flip rate (median) | Fixes | Breaks | Wrong → different wrong | Accuracy change (median) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| AG News / reflection | 405 | 40% | 17.4% | 26.3 | 24.6 | 45.9 | +0.00 pp |
+| AG News / Euclidean ADMM | 97 | 4% | 12.5% | 25.5 | 18.2 | 37.8 | +1.17 pp |
+| AG News / top-p ADMM | 98 | 4% | 14.8% | 26.7 | 19.3 | 39.2 | +1.76 pp |
+| AG News / beam ADMM | 191 | 4% | 11.7% | 25.7 | 17.0 | 35.1 | +1.95 pp |
+| AG News / reflect-then-polish | 36 | 38% | 26.6% | 37.8 | 33.7 | 63.6 | +0.78 pp |
+| Emotion / reflection | 412 | 48% | 18.9% | 30.3 | 33.3 | 30.5 | -0.39 pp |
+| Emotion / top-p ADMM | 66 | 4% | 14.2% | 26.6 | 32.3 | 26.7 | -0.52 pp |
+| Emotion / beam ADMM | 186 | 4% | 13.4% | 23.5 | 25.8 | 24.6 | -0.26 pp |
+
+#### Acceptance reliability (share of accepted / rejected children actually better)
+
+| Task / proposer / acceptance rule | Accepted | …actually better | Rejected | …actually better |
+|---|---:|---:|---:|---:|
+| agnews / reflection / minibatch (GEPA default) | 25 | 72% | 90 | 48% |
+| agnews / reflection / held-out judge | 125 | 72% | 165 | 28% |
+| agnews / Euclidean ADMM / minibatch (GEPA default) | 9 | 67% | 40 | 70% |
+| agnews / Euclidean ADMM / held-out on S (S used twice) | 41 | 71% | 7 | 43% |
+| agnews / top-p ADMM / held-out on S (S used twice) | 77 | 81% | 21 | 57% |
+| agnews / beam ADMM / held-out on S (S used twice) | 68 | 87% | 25 | 60% |
+| agnews / beam ADMM / held-out on independent S' | 79 | 82% | 19 | 53% |
+| agnews / reflect-then-polish / minibatch (GEPA default) | 10 | 60% | 26 | 58% |
+| emotion / reflection / minibatch (GEPA default) | 20 | 30% | 100 | 32% |
+| emotion / reflection / held-out judge | 61 | 16% | 231 | 28% |
+| emotion / top-p ADMM / held-out on S (S used twice) | 44 | 27% | 22 | 27% |
+| emotion / beam ADMM / held-out on S (S used twice) | 62 | 37% | 27 | 15% |
+| emotion / beam ADMM / held-out on independent S' | 45 | 33% | 52 | 38% |

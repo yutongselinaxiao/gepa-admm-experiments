@@ -22,7 +22,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
-from .make_figures import GRID, REFERENCE, SURFACE, TEXT, TEXT_2  # noqa: F401  (shared style)
+from .make_figures import COLOR, GRID, REFERENCE, SURFACE, TEXT, TEXT_2  # noqa: F401  (shared style)
 
 FIX, BREAK, WRONG = "#4f4e4b", "#a8a7a2", "#d9d8d3"
 VALIDATION = {"agnews": "artifacts/data/validation.json", "emotion": "artifacts/data_emotion/validation.json"}
@@ -142,36 +142,38 @@ def contingency(rows: list[dict], task: str, proposer: str, rule: str) -> list[s
 def main() -> None:
     rows = load_rows()
     md: list[str] = []
-    # Figure 9b
-    groups = [("agnews", ["reflection", "Euclidean ADMM", "top-p ADMM", "beam ADMM", "reflect-then-polish"]),
-              ("emotion", ["reflection", "top-p ADMM", "beam ADMM"])]
-    fig, axes = plt.subplots(1, 2, figsize=(12, 3.9), gridspec_kw={"width_ratios": [5, 3.3]})
-    for ax, (task, proposers) in zip(axes, groups):
-        ys = list(range(len(proposers)))[::-1]
-        for y, p in zip(ys, proposers):
-            sub = [r for r in rows if r["task"] == task and r["proposer"] == p]
+    # Figure 9b: like-for-like runs (one experiment per proposer, 10 runs x 12 proposals).
+    fig, axes = plt.subplots(1, 2, figsize=(12, 3.2))
+    for ax, task in zip(axes, ("agnews", "emotion")):
+        names = [name for t, name in LIKE_FOR_LIKE if t == task]
+        ys = list(range(len(names)))[::-1]
+        for y, name in zip(ys, names):
+            sub, made = like_for_like(rows, task, name)
             fixes = statistics.mean(r["fixes"] for r in sub)
             breaks = statistics.mean(r["breaks"] for r in sub)
             w2w = statistics.mean(r["wrong_to_wrong"] for r in sub)
+            per_call = sum(r["fixes"] - r["breaks"] for r in sub) / made
             ax.barh(y, -breaks, color=BREAK, height=0.6, edgecolor=SURFACE)
             ax.barh(y, fixes, color=FIX, height=0.6, edgecolor=SURFACE)
             ax.barh(y, w2w, left=fixes, color=WRONG, height=0.6, edgecolor=SURFACE)
             ax.text(-breaks / 2, y, f"{breaks:.1f}", ha="center", va="center", fontsize=8, color=TEXT)
             ax.text(fixes / 2, y, f"{fixes:.1f}", ha="center", va="center", fontsize=8, color="white")
-            ax.text(fixes + w2w + 1, y, f"net {fixes - breaks:+.1f}", ha="left", va="center", fontsize=8, color=TEXT)
+            ax.text(fixes + w2w + 1, y, f"net {fixes - breaks:+.1f} per change\n"
+                    f"{per_call:+.1f} per call ({len(sub)}/{made} changed)",
+                    ha="left", va="center", fontsize=7.5, color=TEXT)
         ax.axvline(0, color=TEXT, lw=0.8)
-        ax.set_yticks(ys, proposers, fontsize=8.5)
-        ax.set_xlim(-48, 120)
+        ax.set_yticks(ys, names, fontsize=8.5)
+        ax.set_xlim(-40, 125)
         ax.set_title("AG News" if task == "agnews" else "Emotion")
         ax.grid(axis="y", visible=False)
     handles = [plt.Rectangle((0, 0), 1, 1, color=c) for c in (BREAK, FIX, WRONG)]
     fig.legend(handles, ["breaks (right → wrong)", "fixes (wrong → right)", "wrong → different wrong"],
-               loc="lower center", ncol=3, fontsize=8.5, frameon=False, bbox_to_anchor=(0.5, -0.06))
-    fig.suptitle("What a typical child changes relative to its parent (mean per proposal)", fontsize=11,
-                 fontweight="bold", x=0.01, ha="left")
-    fig.supxlabel("validation examples per proposal (out of 512):  ← breaks   |   fixes, then wrong → different wrong →",
+               loc="lower center", ncol=3, fontsize=8.5, frameon=False, bbox_to_anchor=(0.5, -0.08))
+    fig.suptitle("What a child changes relative to its parent (mean per changed prompt; like-for-like runs)",
+                 fontsize=11, fontweight="bold", x=0.01, ha="left")
+    fig.supxlabel("validation examples (out of 512):  ← breaks   |   fixes, then wrong → different wrong →",
                   fontsize=9, color=TEXT_2, y=0.04)
-    fig.subplots_adjust(wspace=0.3, bottom=0.22, top=0.84)
+    fig.subplots_adjust(wspace=0.45, bottom=0.25, top=0.82)
     fig.savefig("artifacts/figures/fig9b_fixes_vs_breaks.png", dpi=200, bbox_inches="tight")
     plt.close(fig)
 
@@ -195,10 +197,17 @@ def main() -> None:
     md += rejected_but_better(rows, "Euclidean ADMM", "minibatch (GEPA default)")
     md += ["", "#### Average child vs. what GEPA keeps (like-for-like runs, 512 validation examples)", ""]
     md += outcome_decomposition()
+    md += ["", "#### Like-for-like proposal table (10 runs x 12 proposals per row)", ""]
+    md += like_for_like_table(rows)
+    md += ["", "#### All runs pooled, per proposer", ""]
+    md += pooled_table(rows)
+    md += ["", "#### Acceptance reliability (share of accepted / rejected children actually better)", ""]
+    md += acceptance_table()
     Path("artifacts/proposal_diagnostics/examples.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     print("\n".join(md))
     print("WROTE artifacts/figures/fig9b_fixes_vs_breaks.png")
     tail_figure()
+    decomposition_figure()
 
 
 
@@ -206,7 +215,6 @@ def tail_figure() -> None:
     """Figure 9c: share of children whose net gain (fixes - breaks) is at least x, per proposer.
 
     Like-for-like runs only (one experiment per proposer, 10 runs x 12 proposals)."""
-    from .make_figures import COLOR, MARKER  # noqa: F401
     rows = load_rows()
     sets = {
         "agnews": [("reflection", "artifacts/phase2/reflective_s", "reflective", "-"),
@@ -270,6 +278,99 @@ def outcome_decomposition() -> list[str]:
                      f"{100 * sum(x >= 5 for x in net) / len(net):.0f}% | {len(accepted)}, "
                      f"{statistics.mean(accepted):+.1f} | {statistics.mean(best):+.1f} | {statistics.mean(final):+.1f} |")
     return lines
+
+
+
+def like_for_like(rows: list[dict], task: str, name: str) -> tuple[list[dict], int]:
+    """The counted (changed) proposals of one like-for-like experiment, and how many proposals it made."""
+    key = LIKE_FOR_LIKE[(task, name)]
+    sub = [r for r in rows if r["task"] == task and key in r["run"]]
+    runs = sorted({r["run"] for r in sub})
+    made = sum(len(json.loads(Path(run, "gepa_result.json").read_text(encoding="utf-8"))["candidate_table"])
+               for run in runs)
+    return sub, made
+
+
+def like_for_like_table(rows: list[dict]) -> list[str]:
+    lines = ["| Task / proposer | Changed / made | Text edited (median) | Flip rate (median) | Fixes | Breaks | "
+             "Wrong → different wrong | Net per change | Net per call |", "|---|---:|---:|---:|---:|---:|---:|---:|---:|"]
+    for task, name in LIKE_FOR_LIKE:
+        sub, made = like_for_like(rows, task, name)
+        mean = lambda k: statistics.mean(r[k] for r in sub)  # noqa: E731
+        net = sum(r["fixes"] - r["breaks"] for r in sub)
+        lines.append(f"| {'AG News' if task == 'agnews' else 'Emotion'} / {name} | {len(sub)} / {made} | "
+                     f"{100 * statistics.median(r['token_edit_fraction'] for r in sub):.0f}% | "
+                     f"{100 * statistics.median(r['flip_rate'] for r in sub):.1f}% | {mean('fixes'):.1f} | "
+                     f"{mean('breaks'):.1f} | {mean('wrong_to_wrong'):.1f} | {net / len(sub):+.1f} | {net / made:+.1f} |")
+    return lines
+
+
+def pooled_table(rows: list[dict]) -> list[str]:
+    lines = ["| Task / proposer | Proposals counted | Text edited (median) | Flip rate (median) | Fixes | Breaks | "
+             "Wrong → different wrong | Accuracy change (median) |", "|---|---:|---:|---:|---:|---:|---:|---:|"]
+    for task in ("agnews", "emotion"):
+        for proposer in dict.fromkeys(r["proposer"] for r in rows if r["task"] == task):
+            sub = [r for r in rows if r["task"] == task and r["proposer"] == proposer]
+            mean = lambda k: statistics.mean(r[k] for r in sub)  # noqa: E731
+            lines.append(f"| {'AG News' if task == 'agnews' else 'Emotion'} / {proposer} | {len(sub)} | "
+                         f"{100 * statistics.median(r['token_edit_fraction'] for r in sub):.0f}% | "
+                         f"{100 * statistics.median(r['flip_rate'] for r in sub):.1f}% | {mean('fixes'):.1f} | "
+                         f"{mean('breaks'):.1f} | {mean('wrong_to_wrong'):.1f} | "
+                         f"{statistics.median(r['accuracy_change_pp'] for r in sub):+.2f} pp |")
+    return lines
+
+
+def acceptance_table() -> list[str]:
+    summary = json.loads(Path("artifacts/proposal_diagnostics/summary.json").read_text(encoding="utf-8"))
+    lines = ["| Task / proposer / acceptance rule | Accepted | …actually better | Rejected | …actually better |",
+             "|---|---:|---:|---:|---:|"]
+    for key, v in summary["acceptance"].items():
+        lines.append(f"| {key} | {v['accepted']} | {100 * v['share_accepted_better']:.0f}% | {v['rejected']} | "
+                     f"{100 * v['share_rejected_better']:.0f}% |")
+    return lines
+
+
+STAGES = ["all children\n(vs. parent)", "accepted children\n(vs. parent)", "best child\nper run (vs. parent)",
+          "final prompt\n(vs. seed)"]
+
+
+def decomposition_figure() -> None:
+    """Figure 9d: from the average child to the final prompt, per proposer (examples of 512)."""
+    rows = load_rows()
+    style = {"reflection": ("reflective", "o", "-"), "top-p ADMM": ("topp", "^", "--"),
+             "beam ADMM (fair S')": ("beam", "D", ":")}
+    fig, axes = plt.subplots(1, 2, figsize=(13, 4.4), sharey=True)
+    for ax, task in zip(axes, ("agnews", "emotion")):
+        for name in [n for t, n in LIKE_FOR_LIKE if t == task]:
+            sub, _ = like_for_like(rows, task, name)
+            runs = sorted({r["run"] for r in sub})
+            final = []
+            for run in runs:
+                result = json.loads(Path(run, "gepa_result.json").read_text(encoding="utf-8"))
+                audit, seed = result["audit_by_instruction"], result["all_accepted_candidates"][0]["instruction"]
+                final.append(512 * (audit[result["best_instruction"]]["accuracy"] - audit[seed]["accuracy"]))
+            values = [statistics.mean(r["fixes"] - r["breaks"] for r in sub),
+                      statistics.mean(r["fixes"] - r["breaks"] for r in sub if r["status"] == "accepted"),
+                      statistics.mean(max(r["fixes"] - r["breaks"] for r in sub if r["run"] == run) for run in runs),
+                      statistics.mean(final)]
+            method, marker, ls = style[name]
+            k = [n for t, n in LIKE_FOR_LIKE if t == task].index(name)
+            xs = [x + (k - 1) * 0.26 for x in range(4)]
+            ax.bar(xs, values, width=0.26, color=COLOR[method], edgecolor=SURFACE, label=name)
+            for x, v in zip(xs, values):
+                ax.text(x, v + (0.6 if v >= 0 else -0.6), f"{v:+.1f}", ha="center",
+                        va="bottom" if v >= 0 else "top", fontsize=7, color=TEXT)
+        ax.axhline(0, color=REFERENCE, lw=1)
+        ax.set_xticks(range(4), STAGES, fontsize=8)
+        ax.grid(axis="x", visible=False)
+        ax.set_title("AG News" if task == "agnews" else "Emotion")
+        ax.legend(fontsize=8, loc="upper left")
+    axes[0].set_ylabel("net gain, validation examples (of 512)")
+    fig.suptitle("From the average child to the final prompt (like-for-like runs)", fontsize=11, fontweight="bold", x=0.01, ha="left")
+    fig.subplots_adjust(wspace=0.06, top=0.84)
+    fig.savefig("artifacts/figures/fig9d_average_to_final.png", dpi=200, bbox_inches="tight")
+    plt.close(fig)
+    print("WROTE artifacts/figures/fig9d_average_to_final.png")
 
 
 if __name__ == "__main__":

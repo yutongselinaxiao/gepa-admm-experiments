@@ -49,6 +49,18 @@ def ci(values: list[float]) -> tuple[float, float, float]:
     return mean, sd, stats.t.ppf(0.975, len(values) - 1) * sd / math.sqrt(len(values))
 
 
+def welch(a: list[float], b: list[float]) -> tuple[float, float, float]:
+    """Difference of means, Welch 95% CI half-width, and p-value."""
+    va, vb = statistics.variance(a) / len(a), statistics.variance(b) / len(b)
+    df = (va + vb) ** 2 / (va ** 2 / (len(a) - 1) + vb ** 2 / (len(b) - 1))
+    diff = statistics.mean(a) - statistics.mean(b)
+    return diff, stats.t.ppf(0.975, df) * math.sqrt(va + vb), float(stats.ttest_ind(a, b, equal_var=False).pvalue)
+
+
+SHORT = {"admm_beam_lam0.3_indep_accept": "fair beam ADMM", "reflective_heldout_p30": "matched reflective",
+         "reflective_p12": "reflective GEPA", "admm_topp": "top-p ADMM"}
+
+
 def main() -> None:
     summary = json.loads(Path("artifacts/classification_results/summary.json").read_text(encoding="utf-8"))
     big = {t: json.loads(Path(f"artifacts/report2k/{t}.json").read_text(encoding="utf-8")) for t in ARMS}
@@ -124,6 +136,36 @@ def main() -> None:
     fig.subplots_adjust(wspace=0.55, bottom=0.2, top=0.88)
     fig.savefig("artifacts/figures/fig8_eval_size.png", dpi=200, bbox_inches="tight")
     print("WROTE artifacts/figures/fig8_eval_size.png")
+
+    # Figure 8b: each comparison's difference with its 95% CI, on 256 vs. ~2,000 examples.
+    fig, axes = plt.subplots(1, 2, figsize=(12, 3.4), sharey=True)
+    for ax, task in zip(axes, ARMS):
+        for row, (a, b) in enumerate(reversed(COMPARISONS)):
+            for measure, dy, filled in ((0, 0.15, False), (1, -0.15, True)):
+                diff, half, p = welch(data[(task, a)][measure], data[(task, b)][measure])
+                color = COLOR[METHOD[a]]
+                ax.errorbar([diff], [row + dy], xerr=[[half], [half]], fmt="o", color=color, capsize=3, lw=1.3,
+                            markerfacecolor=color if filled else SURFACE, markeredgecolor=color, markersize=6)
+                ax.text(diff + half + 0.15, row + dy, f"p = {p:.3f}", va="center", fontsize=7.5,
+                        color=TEXT if p < 0.05 else TEXT_2, fontweight="bold" if p < 0.05 else "normal")
+        ax.axvline(0, color=REFERENCE, lw=1)
+        lo, hi = ax.get_xlim()
+        ax.set_xlim(lo, hi + 0.3 * (hi - lo))
+        ax.set_yticks(range(len(COMPARISONS)), [f"{SHORT[a]} − {SHORT[b]}" for a, b in reversed(COMPARISONS)],
+                      fontsize=8.5)
+        ax.set_xlabel("difference in report accuracy (pp), mean ± 95% CI")
+        ax.set_title("AG News" if task == "agnews" else "Emotion")
+        ax.grid(axis="y", visible=False)
+    handles = [plt.Line2D([], [], marker="o", ls="", markerfacecolor=SURFACE, markeredgecolor=TEXT_2,
+                          label="scored on 256 examples"),
+               plt.Line2D([], [], marker="o", ls="", markerfacecolor=TEXT_2, markeredgecolor=TEXT_2,
+                          label="scored on ~2,000 examples")]
+    fig.legend(handles=handles, loc="lower center", ncol=2, fontsize=8, frameon=False, bbox_to_anchor=(0.5, -0.06))
+    fig.suptitle("Key comparisons on both evaluation sets (10 seeds each, Welch's t-test; bold = p < 0.05)",
+                 fontsize=11, fontweight="bold", x=0.02, ha="left")
+    fig.subplots_adjust(wspace=0.05, bottom=0.25, top=0.84)
+    fig.savefig("artifacts/figures/fig8b_eval_size_differences.png", dpi=200, bbox_inches="tight")
+    print("WROTE artifacts/figures/fig8b_eval_size_differences.png")
 
 
 if __name__ == "__main__":
