@@ -37,8 +37,8 @@ runs (Phases 7–9).
 - **New ADMM variants on AG News (+0.6 to +1.6 pp over fair beam ADMM) mostly match what 3× compute
   alone buys:** 36 proposals +1.3, multi-start +1.1. Gated (+1.6) is the only one at about C's
   compute, but it isn't significant.
-- **On emotion, plain fair beam ADMM (or multi-start) is still best;** length variation and
-  polish don't help.
+- **On emotion, nothing beats plain fair beam ADMM:** multi-start (+0.12) and gated (−0.06) tie
+  it; multi-length and polish fall back toward reflection.
 
 ---
 
@@ -379,7 +379,7 @@ reflection + ADMM polish (orange), fixed-length ADMM (purple), variable-length A
 | C fair beam ADMM | 35.02 | **37.92** |
 | D multi-length, LM insertion | 35.59 | 37.05 |
 | E fair reflect-then-polish | 36.18 | 37.00 |
-| G gated | **36.62** | 37.63 (n = 7) |
+| G gated | **36.62** | 37.86 |
 | I multi-start | 36.15 | **38.05** |
 | H fixed beam, 36 proposals | 36.32 | 37.72 |
 
@@ -387,7 +387,7 @@ reflection + ADMM polish (orange), fixed-length ADMM (purple), variable-length A
   - every new ADMM arm is +0.6 to +1.6 pp above C, none significant (p = 0.22–0.58);
   - all of them beat matched reflection (B), at p = 0.006–0.04.
 - **Emotion:**
-  - nothing beats C; multi-start ties it (+0.12);
+  - nothing beats C; multi-start (+0.12) and gated (−0.06) tie it;
   - polish (−0.92, p = 0.02) and multi-length (−0.88, p = 0.10) fall back toward the
     reflection level.
 - **Many comparisons at n = 10:** read a single p ≈ 0.03–0.04 as suggestive.
@@ -452,7 +452,7 @@ proposal, change in NLL per token (fluency, lower is better). Code:
 - **Gated ADMM crashed when a spare slot's nucleus had only disallowed tokens:**
   - 3 emotion runs (s4, s8, s9) lost 1–2 of 12 proposals each;
   - now falls back to the most likely allowed token;
-  - the 3 runs are rerunning, so G emotion is n = 7 for now.
+  - the 3 runs were rerun with the fix (no errors); G now has all 10 seeds on both tasks.
 - **Multi-start ran 3 identical copies:** batches only reshuffle once the training pool is used
   up, which 20 rounds never reach. Caught by the smoke test before Phase 9; extra starts now
   draw their own order.
@@ -461,5 +461,4 @@ proposal, change in NLL per token (fluency, lower is better). Code:
   now merges.
 
 ### Still running
-- **G emotion s4, s8, s9:** reruns with the fix (`artifacts/phase8/STATUS_FINAL`).
 - **F gradient insertion (Phase 10):** 20 runs, about noon (`artifacts/phase10/STATUS`).

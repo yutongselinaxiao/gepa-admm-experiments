@@ -467,20 +467,26 @@
             "artifacts/phase8/emotion_gated_s1",
             "artifacts/phase8/emotion_gated_s2",
             "artifacts/phase8/emotion_gated_s3",
+            "artifacts/phase8/emotion_gated_s4",
             "artifacts/phase8/emotion_gated_s5",
             "artifacts/phase8/emotion_gated_s6",
-            "artifacts/phase8/emotion_gated_s7"
+            "artifacts/phase8/emotion_gated_s7",
+            "artifacts/phase8/emotion_gated_s8",
+            "artifacts/phase8/emotion_gated_s9"
           ],
           "scores": [
             37.025948103792416,
             38.87225548902195,
             38.17365269461078,
             37.5249500998004,
+            39.67065868263473,
             37.025948103792416,
             37.025948103792416,
-            37.77445109780439
+            37.77445109780439,
+            37.025948103792416,
+            38.522954091816366
           ],
-          "admm_forward_calls": 8184.428571428572
+          "admm_forward_calls": 8200.7
         }
       }
     }

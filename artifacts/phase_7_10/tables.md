@@ -29,7 +29,7 @@ Polish effect (E − A', same judge and proposal count): +2.44 pp (p = 0.018).
 | I  multi-start (3 runs) | 10 | 38.05 ± 0.81 | +0.12 (0.761) | +1.26 (0.001) | 21,725 |
 | H  fixed beam, 36 proposals | 10 | 37.72 ± 1.10 | -0.20 (0.675) | +0.93 (0.037) | 21,766 |
 | D  multi-length, LM insertion | 10 | 37.05 ± 1.24 | -0.88 (0.098) | +0.25 (0.576) | 21,254 |
-| G  gated | 7 | 37.63 ± 0.70 | -0.29 (0.488) | +0.84 (0.028) | 8,184 |
+| G  gated | 10 | 37.86 ± 0.93 | -0.06 (0.891) | +1.07 (0.009) | 8,201 |
 
 ## Proposal bench (6 parents per task)
 
