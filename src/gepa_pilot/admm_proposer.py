@@ -76,6 +76,7 @@ class ADMMProposer:
         length_offsets: Sequence[int] = (0,),
         insertion: str = "lm",
         gated: GatedConfig | None = None,
+        starts: int = 1,
     ) -> None:
         hp = refiner.hp
         if dual_step < 0 or dual_batch_size < 1:
@@ -100,6 +101,11 @@ class ADMMProposer:
         self.insertion = insertion
         # Gated variable-length ADMM (gated_admm.py) replaces the fixed-length refinement.
         self.gated = gated
+        # Independent ADMM runs per proposal from the same parent (multi-start). Extra starts differ
+        # only in their training-batch order; all their candidates join one pool chosen on S.
+        if starts < 1:
+            raise ValueError("starts must be >= 1.")
+        self.starts = starts
         if gated is not None and len(self.length_offsets) > 1:
             raise ValueError("Gated ADMM sets the length itself; do not combine it with length_offsets.")
         if selection_batch_size < 1:
@@ -167,6 +173,7 @@ class ADMMProposer:
                 "length_offsets": list(self.length_offsets),
                 "insertion": self.insertion,
                 "gated": None if self.gated is None else vars(self.gated),
+                "starts": self.starts,
             },
         }
         try:
@@ -207,6 +214,21 @@ class ADMMProposer:
                 use_duals, dual_batch, duals, dual_cache, offset=0,
             )
         record["iterations"] = iterations
+        for start in range(1, self.starts):
+            start_generator = torch.Generator(device="cpu").manual_seed(self.seed + call_index + 7919 * start)
+            if self.gated is not None:
+                rows, extra_state = self._refine_gated(
+                    parent, parent_ids, prefix_ids, training, start_generator, selection, scored, states,
+                    start=start,
+                )
+            else:
+                extra_state = self.refiner.init_state(parent, parent_ids, prefix_ids=prefix_ids)
+                rows, _ = self._refine_from(
+                    extra_state, parent_ids, parent_ids, training, start_generator, selection, scored, states,
+                    use_duals, dual_batch, torch.zeros_like(duals), {}, offset=0, start=start,
+                )
+            all_states.append(extra_state)
+            record.setdefault("start_iterations", {})[str(start)] = rows
         if len(self.length_offsets) > 1:
             record["length_variants"] = []
             for offset in self.length_offsets:
@@ -277,10 +299,12 @@ class ADMMProposer:
     def _refine_from(
         self, state: Any, start_ids: torch.Tensor, parent_ids: torch.Tensor, training: list,
         generator: torch.Generator, selection: list, scored: dict, states: dict,
-        use_duals: bool, dual_batch: list, duals: torch.Tensor, dual_cache: dict, *, offset: int,
+        use_duals: bool, dual_batch: list, duals: torch.Tensor, dual_cache: dict, *, offset: int, start: int = 0,
     ) -> tuple[list[dict[str, Any]], None]:
         """Run the ADMM iterations from `state`; add every new exact-round-trip projection to `scored`."""
         cursor, training_order = 0, list(range(len(training)))
+        if start > 0:  # extra multi-start runs see their own batch order (start 0 keeps the original)
+            training_order = torch.randperm(len(training), generator=generator).tolist()
         batch_size = self.refiner.hp.train_batch_size
         iterations: list[dict[str, Any]] = []
         for iteration in range(1, self.refiner.hp.outer_iterations + 1):
@@ -325,6 +349,7 @@ class ADMMProposer:
                     "selection_loss": None,
                     "selection_accuracy": None,
                     "start_offset": offset,
+                    "start": start,
                 }
                 if roundtrip["roundtrip_exact"] and roundtrip["reconstruction_error"] is None:
                     entry["selection_loss"], entry["selection_accuracy"] = (
@@ -339,7 +364,7 @@ class ADMMProposer:
 
     def _refine_gated(
         self, parent: str, parent_ids: torch.Tensor, prefix_ids: tuple[int, ...], training: list,
-        generator: torch.Generator, selection: list, scored: dict, states: dict,
+        generator: torch.Generator, selection: list, scored: dict, states: dict, start: int = 0,
     ) -> tuple[list[dict[str, Any]], Any]:
         """Gated variable-length ADMM; every new exact-round-trip token sequence is scored on S."""
         refiner = GatedADMMRefiner(self.refiner, self.gated)
@@ -347,6 +372,8 @@ class ADMMProposer:
         gstate = refiner.init_state(parent, parent_ids, prefix_ids, training[:batch_size])
         parent_key = tuple(parent_ids.cpu().tolist())
         cursor, order = 0, list(range(len(training)))
+        if start > 0:  # extra multi-start runs see their own batch order (start 0 keeps the original)
+            order = torch.randperm(len(training), generator=generator).tolist()
         rows: list[dict[str, Any]] = []
         for iteration in range(1, self.refiner.hp.outer_iterations + 1):
             if cursor + batch_size > len(order):
@@ -370,7 +397,7 @@ class ADMMProposer:
                 entry = {
                     "iteration": iteration, "slot_ids": list(key), "text": roundtrip["reconstructed_instruction"],
                     "roundtrip_exact": roundtrip["roundtrip_exact"], "selection_loss": None,
-                    "selection_accuracy": None, "start_offset": len(key) - len(parent_key),
+                    "selection_accuracy": None, "start_offset": len(key) - len(parent_key), "start": start,
                 }
                 candidate_state = SimpleNamespace(
                     reference_instruction=roundtrip["reconstructed_instruction"], forward_calls=0, backward_calls=0

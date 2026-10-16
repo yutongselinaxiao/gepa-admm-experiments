@@ -11,4 +11,8 @@ artifacts/phase7_failed/
 artifacts/phase7_rerun/
 artifacts/phase8/*
 !artifacts/phase8/jobs.jsonl
+artifacts/phase9/*
+!artifacts/phase9/jobs.jsonl
+artifacts/phase10/*
+!artifacts/phase10/jobs.jsonl
 artifacts/length_bench/*.log

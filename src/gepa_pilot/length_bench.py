@@ -8,6 +8,7 @@ independent acceptance batch S' and the same ADMM training batches. Methods:
 - ml_lm:    multi-length, offsets (0, -2, +2), insertion = the LM's most likely token (Phase 7)
 - ml_grad:  multi-length, offsets (0, -2, +2), insertion chosen by the task-loss gradient
 - gated:    gated variable-length ADMM (keep-gates + blank-capable beam projection)
+- multistart: three fixed-length beam ADMM runs from the parent (different batch orders), pooled
 
 For diagnosis only, parent and child are both scored on the 512 validation examples; nothing is
 selected or accepted on them. Parents: the seed instruction plus accepted prompts from the
@@ -41,6 +42,7 @@ METHODS = {
     "ml_lm": {"length_offsets": (0, -2, 2), "insertion": "lm"},
     "ml_grad": {"length_offsets": (0, -2, 2), "insertion": "gradient"},
     "gated": {"gated": GatedConfig()},
+    "multistart": {"length_offsets": (0,), "starts": 3},
 }
 
 

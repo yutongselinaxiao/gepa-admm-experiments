@@ -172,6 +172,12 @@ def main() -> None:
         action="store_true",
         help="Gated variable-length ADMM (keep-gates + blank-capable beam projection; gated_admm.py).",
     )
+    parser.add_argument(
+        "--admm-starts",
+        type=int,
+        default=1,
+        help="Independent ADMM runs per proposal from the same parent, pooled and chosen on S (multi-start).",
+    )
     parser.add_argument("--admm-spare-slots", type=int, default=4)
     parser.add_argument("--admm-gate-weight", type=float, default=10.0)
     parser.add_argument(
@@ -295,6 +301,7 @@ def main() -> None:
             insertion=args.admm_insertion,
             gated=GatedConfig(spare_slots=args.admm_spare_slots, gate_weight=args.admm_gate_weight)
             if args.admm_gated else None,
+            starts=args.admm_starts,
         )
         if args.proposer == "admm":
             proposal_kwargs = {"custom_candidate_proposer": admm_proposer}
@@ -377,6 +384,7 @@ def main() -> None:
             "acceptance_batch_size": args.admm_acceptance_batch_size,
             "length_offsets": args.admm_length_offsets,
             "insertion": args.admm_insertion,
+            "starts": args.admm_starts,
             "gated": vars(admm_proposer.gated) if admm_proposer.gated is not None else None,
             "seed": admm_proposer.seed,
             "allowed_vocabulary_size": len(admm_proposer.refiner.allowed_token_ids),

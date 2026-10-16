@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Phase 8: full GEPA runs of two new variable-length ADMM proposers (beam projection, independent S'
-# acceptance), 10 seeds x 2 tasks: multi-length with gradient-chosen insertion (mlgrad) and gated
-# variable-length ADMM (gated). Waits until Phase 7 is fully finished (STATUS_FINAL) so the two
+# Phase 8: full GEPA runs of gated variable-length ADMM (beam projection, independent S' acceptance),
+# 10 seeds x 2 tasks. (Multi-length with gradient-chosen insertion moved to Phase 10, after the
+# Phase 9 controls.) Waits until Phase 7 is fully finished (STATUS_FINAL) so the two
 # batches do not compete for memory on the shared GPUs, then runs through the queue (GPU errors,
 # including ones GEPA swallows, are retried) and re-scores all Phase 8 runs on the 2k report sets.
 set -u
