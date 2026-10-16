@@ -164,7 +164,11 @@ def figures(rows: list[dict], summary: dict) -> None:
 
     # Figure 10: acceptance reliability.
     items = [(k, v) for k, v in summary["acceptance"].items() if v["accepted"] and v["rejected"]]
-    labels = [k.replace("agnews / ", "AG News: ").replace("emotion / ", "Emotion: ") for k, _ in items]
+    size = {f"{t} / {p} / {r}": (len(runs), sum(len(json.loads(Path(run, "gepa_result.json").read_text(encoding="utf-8"))
+                                                    ["candidate_table"]) for run in runs) // len(runs))
+            for t, p, r, runs in GROUPS}
+    labels = [k.replace("agnews / ", "AG News: ").replace("emotion / ", "Emotion: ")
+              + f"  [{size[k][0]} runs × {size[k][1]}]" for k, _ in items]
     fig, ax = plt.subplots(figsize=(9.5, 0.42 * len(items) + 1.4))
     ys = list(range(len(items)))[::-1]
     acc = [100 * v["share_accepted_better"] for _, v in items]
@@ -178,6 +182,9 @@ def figures(rows: list[dict], summary: dict) -> None:
     ax.set_yticks(ys, labels, fontsize=8)
     ax.set_xlim(0, 112)
     ax.set_xlabel("children actually better than their parent on 512 validation examples (%)")
+    fig.text(0.01, -0.03, "n = number of children the rule accepted (dark) or rejected (light), summed over all runs of the "
+             "group; [runs × proposals per run] in each label.\nChildren identical to their parent (ADMM found nothing "
+             "better) are not counted, so accepted + rejected can be below runs × proposals.", fontsize=8, color=TEXT_2)
     ax.set_title("How well each acceptance rule separates better from worse children", fontsize=11)
     ax.legend(loc="lower right", fontsize=8)
     ax.grid(axis="y", visible=False)

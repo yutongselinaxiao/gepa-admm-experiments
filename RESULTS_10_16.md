@@ -167,6 +167,37 @@ parent, out of 512 validation examples):
 | Emotion | I | **99%** | −1.7 | 54 (−1.1) |
 | Emotion | H | 79% | −3.4 | 140 (−2.3) |
 
+**Why can an ADMM proposal be identical to its parent, before acceptance?**
+- **GEPA's proposer hook must return a prompt text,** so an ADMM proposal that finds nothing
+  useful returns the parent's own text. GEPA then sees a child identical to its parent, scores a
+  tie, and rejects it.
+- **Reflection almost never does this** (5 of 120 on AG News), because the LM always writes
+  something new.
+- **ADMM returns the parent in three cases** (counts below, out of all proposals):
+  - **No token changed:** in all 20 rounds the projection mapped back to the parent's own
+    tokens. The penalty ρ pulls the embeddings back toward the current tokens, and beam/top-p
+    always keep the parent's token as an option (Q4), so a weak gradient never moves a token.
+  - **No candidate beat the parent on S:** ADMM did produce new prompts, but none had lower loss
+    on S than the parent. By design the proposer then returns the parent rather than a child it
+    already expects to be worse.
+  - **No exact round trip:** the new token sequence decodes to text that re-tokenizes
+    differently, so it can't be submitted as a prompt.
+
+| Task | Arm | Proposed a new prompt | No candidate beat the parent on S | No token changed | No exact round trip |
+|---|---|---:|---:|---:|---:|
+| AG News | C | 98 / 120 | 16 | 3 | 3 |
+| AG News | I | 113 / 120 | 7 | 0 | 0 |
+| AG News | H | 240 / 360 | 94 | 18 | 8 |
+| Emotion | C | 97 / 120 | 22 | 0 | 1 |
+| Emotion | I | 119 / 120 | 1 | 0 | 0 |
+| Emotion | H | 284 / 360 | 69 | 3 | 4 |
+
+- **Mostly the S filter:** "no candidate beat the parent" is the main reason. Multi-start nearly
+  removes it, because 3 runs give 3 chances to find one.
+- **H returns the parent more often** (33% on AG News vs. 18% for C).
+  - **Hypothesis:** with 36 proposals, later parents are already well optimized, so ADMM finds
+    fewer local improvements.
+
 - **Final accuracy:**
   - AG News: I +1.13 (p = 0.30) and H +1.30 (p = 0.22) over C;
   - emotion: I +0.12, H −0.20; none significant.
@@ -406,6 +437,16 @@ Net = Δ correct answers of the child vs. its parent, of 512 validation examples
 
 *Figure 10. Share of accepted (dark) and rejected (light) children that were actually better
 (net > 0), per proposer and acceptance rule. A bigger gap means better separation.*
+- **n:** the number of children that rule accepted or rejected, summed over all runs of the
+  group. The label gives [runs × proposals per run].
+- **Why the n's differ:**
+  - **Group size:** most groups are 10 runs × 12 proposals (120). The held-out reflection groups
+    are the 30-proposal runs (300); Euclidean ADMM had 6 runs (72); the old polish had 3 runs
+    (36).
+  - **Unchanged proposals aren't counted:** when ADMM returns the parent itself (see Q1), there
+    is no child to judge. E.g. emotion top-p counts 66 of 120.
+  - **The rule itself:** the minibatch rule rejects most children (AG News reflection: 25
+    accepted vs. 90 rejected); the S′ judge accepts more.
 
 - **The minibatch rule can't see small edits:**
   - Euclidean ADMM's rejected children were *more* often better (70%) than its accepted ones
