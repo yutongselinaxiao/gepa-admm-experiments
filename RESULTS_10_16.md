@@ -292,7 +292,8 @@ C.*
   12-proposal run.
   - Per proposal that's about 20 rounds × (3 E-step passes + about 26 projection steps) plus
     scoring candidates on S and S′: about 580 for C, so 1× ≈ 7,000 per run.
-  - D, F, I and H do about 3× that work. G and E do about 1.1–1.3×.
+  - D, I and H do about 3× that work, F 3.4× (the gradient search adds trials). G does 1.1× and E
+    1.3×.
 - **Caveat:** forward passes are a proxy, not FLOPs; G's projection recomputes the whole prefix,
   so its passes are longer.
 
