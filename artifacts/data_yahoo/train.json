@@ -1,0 +1,3202 @@
+[
+  {
+    "example_id": "official-train:662564:train",
+    "article": "what evidences are there of the initiation of mountain building and its culmination when mountain is worn down",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:16358:train",
+    "article": "How do I get rid of SBC Online Protection?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1231641:train",
+    "article": "What empties the haunted air, and unweaves a rainbow?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:321214:train",
+    "article": "For guys:  Are you more attracted to the butt or boobs?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1013155:train",
+    "article": "what is a good website to get really good myspace layouts?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:977811:train",
+    "article": "jim brown cleveland browns is he in jail?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:967707:train",
+    "article": "Whats the name of the device (I believe its an MP3 player) that is seen in a couple of popular videos?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:153012:train",
+    "article": "I use Windows Xp, windows movie maker, nero dvd burn, but i can't get my movies to burn, whats up?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:856506:train",
+    "article": "Intro Physics?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:268513:train",
+    "article": "where is the best place to download free songs and or games?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1314492:train",
+    "article": "why does my friend fernando suck a lot of you know what?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:649793:train",
+    "article": "who's your fav person and why ?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:533901:train",
+    "article": "if u could have fought in the civil war which side would u choose? and why?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:379951:train",
+    "article": "i want to lose 20 lbs. in one week. does anyone have any tips?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1119956:train",
+    "article": "How do you make Mini Christmas Trees...?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:535602:train",
+    "article": "Without using pictures or your astronaut buddies, can you, personally prove the world is round?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:612094:train",
+    "article": "what about boobs?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:625050:train",
+    "article": "Describe the most serious injury you've ever experienced.  What was that like?  Are you stronger now? do share",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:182607:train",
+    "article": "Boxers or briefs?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1106252:train",
+    "article": "Christian conservatives: do U have any good friends who  R liberal? Do your beliefs affect your relationship?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:238236:train",
+    "article": "What are file types? Why are there different types of files? What isthe purpose of the Files of Type list box?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:766085:train",
+    "article": "my boyfriend is bragging bout us holding hands and saying that we've huged what to tell him bc we havn't huged",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1353005:train",
+    "article": "how many people have flirted with you this week?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1165777:train",
+    "article": "What method do I use to calculate the integral of sin (x) * sin (nx) dx?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:998026:train",
+    "article": "what are some movies where the characters smoke?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:51552:train",
+    "article": "What is the best resturant in the whole wide world?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:861496:train",
+    "article": "What would you say is the most unrealistic part of the movie \"The Core\"?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:873953:train",
+    "article": "wife and i had thanksgiving at daughters house,,,about 1 AM we both woke up with severe gastric pain , and had",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:550495:train",
+    "article": "when a woman is going thru great long term trauma in her life, how does it affect most vital love and friend?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:744494:train",
+    "article": "List all the positive prime numbers p less than 100 and such that one of the digits of p is 3 or 7.?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1201276:train",
+    "article": "what is the bronx zip code?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:986764:train",
+    "article": "Does HIPAA require that the authorization form indicate the prupose for request of medical records?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:761007:train",
+    "article": "Can anyone translate these roman numerals for me?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1236601:train",
+    "article": "Why at me my cat strongly shouts?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:807847:train",
+    "article": "how obnoxious?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:809453:train",
+    "article": "can u answer this??",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:872207:train",
+    "article": "i was in a major car accident n i had to stop birth cont. aftr 10days  will this mess my cycle up?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:246471:train",
+    "article": "What are the best windsurfing spots in san francisco?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:770422:train",
+    "article": "What is that movie that has jennifer lopez going into the mind of this serial killer?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1206679:train",
+    "article": "what do you think is the best supplement for me the amino capsules  or whey protein powders?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:715834:train",
+    "article": "Can you get me info on the common brushtail possum?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:274114:train",
+    "article": "Why won't the Sydney Roosters release Craig Wing?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:436249:train",
+    "article": "is there place on earth you can find peace???",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:928460:train",
+    "article": "What does any one know about being in the US Coast Guard?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:628223:train",
+    "article": "where do Intellectual Property rights (with respect to pharmaceuticals) differ from those in the US and how?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1158616:train",
+    "article": "Should I quit my job?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1080863:train",
+    "article": "Are all colors in a bag of M&M represented equally or are some more popular than others?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1009864:train",
+    "article": "how long are court hearings for restraining orders?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:263184:train",
+    "article": "Is a wireless network much better than cable/dsl modem?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:352914:train",
+    "article": "Ques about love?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:327058:train",
+    "article": "How can there be a grand unified theory when there is no way to prove what happens in a singularity?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:717297:train",
+    "article": "Why are billions being pumped into this Iraqi war when for a fraction of that the southern border could be?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:773396:train",
+    "article": "what is sachin tendulkar's father's name?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:751237:train",
+    "article": "graduation present?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:9911:train",
+    "article": "Why are there so many Jews in Hollywood?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:603865:train",
+    "article": "How many times did USA reached FIFA world cup final?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1332504:train",
+    "article": "do you think Maradona's presence will be enough to inspire the Argentinian team to the final?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:654522:train",
+    "article": "Why u People Keep reporting me to yahoo But No one Reported this Racist Bi7ch Malika.Read her question Below.?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:436452:train",
+    "article": "string theory?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:35781:train",
+    "article": "What does your Yahoo ID mean? Why did you choose it?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:401514:train",
+    "article": "If you constantly talk to yourself,do you lose an argument?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1348296:train",
+    "article": "Is it importent to have a GF?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:934247:train",
+    "article": "After a heavy marijuana user quits smoking -what is the longest period of time he will continue to drop dirty?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:933907:train",
+    "article": "Muslims - What makes you believe the words of Mohamed?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1284608:train",
+    "article": "Who the best and cute player in the Germany?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1306765:train",
+    "article": "why do our bodies change as we get older?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1324145:train",
+    "article": "a sardar ji joke ;)?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1241147:train",
+    "article": "I like men of all races, but I have a specific interest in White men. (There's More...)?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1208684:train",
+    "article": "i have a crush on a guy that i just met who has a girl friend, what do i do?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:755679:train",
+    "article": "Which do you remember more pleasure or pain?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:291965:train",
+    "article": "Is the bacteria found inside a human intestine eubacteria or archaebacteria ?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:269695:train",
+    "article": "What do you think of Mr.Bush?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:956096:train",
+    "article": "Is titleist coming out with a new driver for 07, I have the 905r,  Just wondering.?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:753649:train",
+    "article": "what is the status on Chavo Guerro? did he really quit or will be back?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:737478:train",
+    "article": "Can a man be considered to be heterozygous, if so please give an example!?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:71728:train",
+    "article": "How to put in color ink from an ink installation kit?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:41655:train",
+    "article": "Voice Chat Problem?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1305922:train",
+    "article": "Could you advise me ?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1380121:train",
+    "article": "Is it possible here?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:124815:train",
+    "article": "I need to find the person home address in this no.510-862-1890, california?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:216144:train",
+    "article": "do any countries in the Middle East have a woman for president or leader?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:885697:train",
+    "article": "Question!!!!!!!?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:417086:train",
+    "article": "Has the Religion and Spirituality section been hijacked by Christians?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1350998:train",
+    "article": "Angels Glory again ?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:829102:train",
+    "article": "Why were books taken out of the Bible during the Protestant Reformation?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:549794:train",
+    "article": "is masturbation healthy?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1345802:train",
+    "article": "has anyone bought or used a product called...?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:77925:train",
+    "article": "when was the nurse practice act started?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:74384:train",
+    "article": "HOW to best mess with telemarketers?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:838362:train",
+    "article": "what do i have to do to become a probation officer?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:682125:train",
+    "article": "how can i improve my freethrow shot?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:614211:train",
+    "article": "lightspeed blockes access to different sites, including yahoo messenger,how do you bypass it?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:605244:train",
+    "article": "I was wondering....?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:978738:train",
+    "article": "What is the word for hatred of men?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1082137:train",
+    "article": "What is the biblical perspective on the origin of different races?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:182531:train",
+    "article": "woried about my educational future I feel deprived,what can I do?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1164992:train",
+    "article": "will they put any Star Wars movies on umd?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:976436:train",
+    "article": "what is the best way to keep an apple pie fresh til Thanksgiving?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:137321:train",
+    "article": "What popular (radio-friendly, party-friendly) songs make you think of particular movies?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:676409:train",
+    "article": "WEDDING is it weird for you to still be a virgin after you wedding night?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:75386:train",
+    "article": "what is the easiest trick to do on heelys?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1351505:train",
+    "article": "at what age do you start menpause and what are the signs of this , can you start at 37?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:432122:train",
+    "article": "Conservative Christians like Bush and DeLay wear their faith on their sleeve. Is money everything? Shouldn't",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1008502:train",
+    "article": "Chemical face peel in my teens??",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:529036:train",
+    "article": "who has more chances of winning  this next saturday de la hoya or mallorga.?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1043449:train",
+    "article": "why evrytime I Disk Defragmenter it says at the end, some file coud not be Defragmented?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:356907:train",
+    "article": "which cultre is the best in the earth?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:558822:train",
+    "article": "The marriage amendment?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:545654:train",
+    "article": "how do u bowl strikes at tenpin bowling?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:688316:train",
+    "article": "What is the meaning of death?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:603236:train",
+    "article": "I'm considering getting a tummy tuck. I want to know how bad the scar will be after it is completly healed.",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1000968:train",
+    "article": "crime scenes?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:292560:train",
+    "article": "what is the definition and guidelines for an IBEW unindentured apprentice?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:659076:train",
+    "article": "Analyse  this hypothesis -What determines rersistance in all forms?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9972:train",
+    "article": "How many earth rotations are completed within a light year?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1302303:train",
+    "article": "Do You Care About What Goes On Outside Your Country?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:764207:train",
+    "article": "Do you have an unfulfilled  fantasy? If so what is it?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:28895:train",
+    "article": "What are 5 jobs that using fractions is a required or needed skill??????",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:34985:train",
+    "article": "What are the \"balls of your feet\"?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:305383:train",
+    "article": "is distilling alcohol illeagal according to the atf?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:811029:train",
+    "article": "Can you answer guys?? Is this HOT or NOT??",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:277262:train",
+    "article": "Is the only 'neccessary' pain for a human being when teeth come in?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:920089:train",
+    "article": "Can you sue your ex girlfriend is she gave you an infection?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1361371:train",
+    "article": "How many think SealRBorders should run for office?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:481600:train",
+    "article": "What is the best house building trade fair to be an exhibitor at in florida?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1289398:train",
+    "article": "Does my best friend's brother like me?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:247005:train",
+    "article": "Can You Handle The Truth About Whom God's Anointed Really Are AND Are NOT?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:222414:train",
+    "article": "what exactly does the queen(QE2) do?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1342677:train",
+    "article": "Does anyone think the referees are out to get the USA this world cup?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:434934:train",
+    "article": "discuss whether \"the western media failed to report the Iraq war accurately due to government pressure\"",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:688273:train",
+    "article": "CAN some one translate this pharse for me \" i just wanted to say\"? in to spanish please!!?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:502571:train",
+    "article": "need help on helping daughter with hands on equations 3x+7=4x help me refresh my mind asap!?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:307264:train",
+    "article": "what  does it take for a person from mexico to be legal in the U.S.?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:749492:train",
+    "article": "How often do you pray and go to church or home fellowship?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:300488:train",
+    "article": "why is it called a \"graduated\" cylinder?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:355841:train",
+    "article": "What senario would cause Bush to give his resignation?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:956963:train",
+    "article": "I smoke grass for nuff time but have never felt Paranoid, I've even tried to make me feel it.?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:806509:train",
+    "article": "the scientists name and the inventions made by them which helped the development of physical science?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:52407:train",
+    "article": "Can anyone give me a screensavermaker?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:259132:train",
+    "article": "As both database and RAM/address space become larger,is partitioning important?why?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:649592:train",
+    "article": "What is the SLI in Motherboard?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:35158:train",
+    "article": "What happens to my liver if I drink until I am drunk every day?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1369858:train",
+    "article": "Question for people who live in GA?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:214907:train",
+    "article": "Will closing out my bank accounts (not Credit Cards) hurt my credit score?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1213649:train",
+    "article": "Is there a place where you can locate apartments with the rent showing on the site that you are looking at?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1342607:train",
+    "article": "Who Would Jesus Bomb?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:300428:train",
+    "article": "church of christ that emerge in the philippines 1914?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:952690:train",
+    "article": "Do flies spread diseases?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:13580:train",
+    "article": "What exactly is a good samaritan???",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:7037:train",
+    "article": "iam little fat what is the best diet in your opinion?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1233554:train",
+    "article": "Do you have Lumenos?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:108103:train",
+    "article": "how do i know when i am falling in love?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:10308:train",
+    "article": "How many places in the world are called San Jose?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:515005:train",
+    "article": "What is the weight of a men's size softball (in ounces)?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:987481:train",
+    "article": "Know of a website where you can put in a word and get all the words that can be spelled by those letters?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:12277:train",
+    "article": "how to report a corrupt elwood indiana policeman?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:2782:train",
+    "article": "Why are there so many religons? and how do you know which one is right?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:312358:train",
+    "article": "What are the changes made by a ROUTER on a packet,when route it from one network to another?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:439239:train",
+    "article": "How to  make 100$ in a week?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1357392:train",
+    "article": "I am looking to getting into the radiology field where do i start?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:587240:train",
+    "article": "what is the difference between script writing and screenplaying?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:567079:train",
+    "article": "Do you care who will win the upcoming Mexican presidential election?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1122908:train",
+    "article": "how can i damage my tenants credit rating of he hasn't paid rent?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1038115:train",
+    "article": "phone calls?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:462357:train",
+    "article": "What is a brain fart?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:180432:train",
+    "article": "how many women like to?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:543718:train",
+    "article": "how do you cure depression without medication?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:38773:train",
+    "article": "being water is h20, what compound can you add to make it burn for use in motor vehicles?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1276915:train",
+    "article": "What do teachers think of their former students going to work at pizza hut?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1020743:train",
+    "article": "Has anyone read Barack Obama's new book?  I am about half done and was wondering what people thought..?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1152958:train",
+    "article": "Polynomials?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:813604:train",
+    "article": "are there any women prisoners on death row?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:158703:train",
+    "article": "did socrates convincingly prove his case about the soul being immortal?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1038048:train",
+    "article": "pimple,boil or cysts? won't pop, won't go away!!?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1128238:train",
+    "article": "i like my friend guy.?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1100710:train",
+    "article": "euro money?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:659339:train",
+    "article": "If Allah is Arabic for God then was is the name of the God Muslims serve?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:438504:train",
+    "article": "Why do guys say one thing but, do another?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1136986:train",
+    "article": "Are Royal Rumbles usually only on PPV?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:847726:train",
+    "article": "What is the worst smell?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:56459:train",
+    "article": "funny jokes, type them out here.?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:452862:train",
+    "article": "\"You Will Be Sent To Hell For Not Believing I Exist\"?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:121247:train",
+    "article": "Can I use software speech recognition for learn english?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:769519:train",
+    "article": "Have you ever seen the sky when a bad thunderstorm was coming and the sky was an ominous green?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1335861:train",
+    "article": "How can I find a good lawyer pro bono ?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1285161:train",
+    "article": "im looking for a bloke named of martin pace he would be about 38yrs of age,his half maltise,his dads name is?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:888874:train",
+    "article": "Je suis mdr quand vous critiquez Cannavaro juste pour c'est quelque dernier match,bande de footix sérieux?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:44234:train",
+    "article": "is anyyone here in the 4h club? if so , what do u do?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:61256:train",
+    "article": "How can i find out what new HD channels are going to be released by cox cable?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1052652:train",
+    "article": "how do i find my friend from my old massager?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:532294:train",
+    "article": "Do you ever wonder if you are worshiping the wrong God?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1080749:train",
+    "article": "can anybody give me steps on how to build a web site or a site that gives me real good examples?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1206720:train",
+    "article": "as girl asked me how pretty she was what should i say any killer lines?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1338766:train",
+    "article": "why does it always rain on me?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:455528:train",
+    "article": "how do I respond to an RFP that asks for financials from a company that is too new to have them?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:829975:train",
+    "article": "author: Tuesdays with Morrie?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:501282:train",
+    "article": "SCIENCE SMART PEOPLE help us out...............?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:514939:train",
+    "article": "Will East Bengal win agains Md. Sporting this year?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:316039:train",
+    "article": "Who is responsible for Real Madrid current state of  \"No trophies\"  ?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:10484:train",
+    "article": "what is the best way to proprating?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:422684:train",
+    "article": "Where can I find petrified wood and palm wood in Texas?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:949197:train",
+    "article": "What is your favorite kind of question to answer on here?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:477459:train",
+    "article": "is there any where someone who has diabetes in Chicago can live under 500 a month?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1163325:train",
+    "article": "i know those ones, but what i'm looking for is kind of a club song?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1117480:train",
+    "article": "help with linear equations?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:250617:train",
+    "article": "Favorite Newscaster?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:56769:train",
+    "article": "Who is better kobe bryant or lebron james?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:932759:train",
+    "article": "Who is the worst unit you've seen?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1223077:train",
+    "article": "whos sad cuz mexico lost gainst argentina? : (?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:914886:train",
+    "article": "i have a circular rash on my skin. what is is?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:149111:train",
+    "article": "what training and schooling does a coach need?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1237344:train",
+    "article": "What are the ages of our representatives in Washington; our senators and congressmen?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1102659:train",
+    "article": "are politicians on welfare? are they public servants?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1371385:train",
+    "article": "Why do people who have never done drugs talk like they know everything about them?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:40885:train",
+    "article": "which is the best site which has lots of tutorials for 3d studio max 6?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:569830:train",
+    "article": "yoo hoo.. any bikers out here...i have a \"biker\" question?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:544171:train",
+    "article": "What is th highest mountain in the world?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:670163:train",
+    "article": "how do u know that u are truly in love with a guy?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:170367:train",
+    "article": "Can anybody guide me for the successful and proven way of trading the stocks ?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:198319:train",
+    "article": "The most inteligent President........?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1322829:train",
+    "article": "Death in belief of ECKANKAR?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1180623:train",
+    "article": "How do you multiple fractions?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:899771:train",
+    "article": "Do atheists boycott Christmas parties, or just go for the free booze?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1066260:train",
+    "article": "Will a computer become faster if you create a partition for programs and another one for music?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:118384:train",
+    "article": "how can i know that my daughter has started dating.[13 years old]?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:89870:train",
+    "article": "Im a dual American Israeli citizen.When i get a new U.S passport,do they automatically notify Israel about it?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:302510:train",
+    "article": "How do I get around...?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1196809:train",
+    "article": "has this ruined ne1 elses friendship???",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:183962:train",
+    "article": "What is your favorite hockey team??",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1292103:train",
+    "article": "Anyone who has lost weight what is your story. Im looking to lose 35lbs. Open for all suggestions.?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:99884:train",
+    "article": "What is a safe neighborhood near Yale University?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1219934:train",
+    "article": "Why is it that we men watch important stuff like sports and women watch junk like soaps and Lifetime movies?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:572475:train",
+    "article": "Is it going to pass?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1193676:train",
+    "article": "which is the best university for BBA in london?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1201431:train",
+    "article": "when was the bill of rights written?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:953648:train",
+    "article": "Bannanas to gain weight?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:586786:train",
+    "article": "what is the best way to breakup with your girlfriend? face to face or e-mail.?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1032874:train",
+    "article": "Do browsers behave differently towards JavaScript's codes?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:681155:train",
+    "article": "The final three!!!!!!! But im taking Jade to win Top Model, liked her from the 1st episode.. Who will win?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1195522:train",
+    "article": "Can somebody please tell me how to write a round table discussion?  Thankyou!!!?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:544455:train",
+    "article": "what are the merits and demerits of A+ in information technology?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1048885:train",
+    "article": "Happy Thanksgiving everyone! What is your favorite dish?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1298878:train",
+    "article": "Is the \"C\" on The Chicago Cubs hat for Chicago or for Cubs?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1230870:train",
+    "article": "Does anyone here listen to Michael Savage?  Is he the greatest or what?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1276730:train",
+    "article": "baseball cards... world series special card?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:717416:train",
+    "article": "Who was your favorite Peter Sellers character??",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:808928:train",
+    "article": "who is better, cam'ron or tru life???",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:744529:train",
+    "article": "Favourite finishing move???????",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:146975:train",
+    "article": "im looking for a short activity to lead the church in to start the sunday morning worship service?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1322764:train",
+    "article": "What punishment should be given to the murders of the two US soldiers that were said to be beheaded?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1288799:train",
+    "article": "anyone from arkansas?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:795159:train",
+    "article": "what will happen (side effects) if we magnitize the human body??",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:92525:train",
+    "article": "is it good to jack off?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1394356:train",
+    "article": "What are the points for? What does it mean buy the levels?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:793036:train",
+    "article": "Will Jimmy Johnson ever coach again?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:460372:train",
+    "article": "What is the capital of England????",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:907564:train",
+    "article": "will someone please.......?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:582266:train",
+    "article": "How do I access past messages in Messenger?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1389820:train",
+    "article": "If the escort service sends me a midget, should I...?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1396156:train",
+    "article": "Will the World end this year?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1225679:train",
+    "article": "Who was being \"testy,\" Matt or Ann?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:299469:train",
+    "article": "Why is it that when a newly elected president wants to end war he gets assassined?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:799938:train",
+    "article": "What kind of a loophole does a 288{A} sex offender have in California?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:80175:train",
+    "article": "why does my penis itch?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1288346:train",
+    "article": "What do you do for work.....?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:384883:train",
+    "article": "what is web address for computer networking q&a and system admin question and answers?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:623764:train",
+    "article": "which is the best toom to chat on yahoo messenger?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:436955:train",
+    "article": "does cherifer capsules really make you grow taller?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1040558:train",
+    "article": "Do you believe in god at first sight?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:538113:train",
+    "article": "what is national defence academy(india)?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1056958:train",
+    "article": "How do you finish homework the fastest way?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1005165:train",
+    "article": "Myspace Information?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:539342:train",
+    "article": "If Israel will reclaim their land, when will this happen? Christians; does your Bible give any claims to this?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:418826:train",
+    "article": "what is the correct way to write gerald f martin and shariot a martin if they are married?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:674840:train",
+    "article": "Do you think that Military technology is really 25 years more advanced than the technology we know today?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1259948:train",
+    "article": "!?!?I Need Advice!?!?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:950066:train",
+    "article": "school question?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:967813:train",
+    "article": "How does a compresser water pump work?please explain in detail.?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1253430:train",
+    "article": "How will current flow in super conducting wire in this circuit ?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1091205:train",
+    "article": "State Mottos?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:475628:train",
+    "article": "how does soil sample size affect drainage and water retention?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:673178:train",
+    "article": "I want to fill-in a form then hit a botton of the form to print that data in a completly differrent form.?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:652571:train",
+    "article": "GUYS: Very attractive girl, less attractive legs?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:980208:train",
+    "article": "Hi,i look for Guy Quellette referee juniors kickboxing quebec.If somebody can help me apreciate?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:476745:train",
+    "article": "My penis line hole got bigger form  masterbateing?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:388066:train",
+    "article": "y am i so sad about  his death?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:414557:train",
+    "article": "my immigration file is gone to wrong address?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:986803:train",
+    "article": "What is the scariest movie you ever seen?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:711577:train",
+    "article": "how much fat do you burn in a run?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:982782:train",
+    "article": "Can we die if we eat mentos with coke?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:904772:train",
+    "article": "What would attract you?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:979448:train",
+    "article": "College decision making?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:475407:train",
+    "article": "In the movie \"Pretty Women\" they go out to eat at a very posh place.?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:778975:train",
+    "article": "I'm the yougest of the family.?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:89975:train",
+    "article": "I had a new tower built and I can't get IM to download on to it.If anyone has an idea that can help me?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:39837:train",
+    "article": "I need Replys ASAP.Serious Situation,Possible Chemical Burn on the face, From Hydroderm Products?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:419247:train",
+    "article": "how to make my pc run faster?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:877724:train",
+    "article": "can Brazilian footballer kaka relay accept Islam?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1357005:train",
+    "article": "where can I find someone who just wants to have sex?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:684639:train",
+    "article": "is it true that sugar can heal wounds?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1263909:train",
+    "article": "wat is Open  Source Format , Wat is Linus  os?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:409734:train",
+    "article": "Are their any proud Nigerian?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1034318:train",
+    "article": "How many drafts do you think it took to publish the Bible?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:89610:train",
+    "article": "Do they really cut a chunk out of your hair when they hair drug test you?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:923637:train",
+    "article": "concentration?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:998290:train",
+    "article": "Dumb Math question?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:192694:train",
+    "article": "Should I like him?????",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:641253:train",
+    "article": "Your favorite inspirational quote?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1007201:train",
+    "article": "Does the Hotel Praia Maria Lltd in Senegal really exist.  Full address is c/o Shell Dakar, Vincent, Senegal?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:994402:train",
+    "article": "what is the effect of tempereture on beetroot membrane?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:368317:train",
+    "article": "Do you think a 24 hour Consumer gasoline boycott in the US would be feasible?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:126609:train",
+    "article": "how can i know i am talking with real girl.in chat room?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1104900:train",
+    "article": "hai i am just 17 i can see protruding green veins in my feet.I am afraid that it may develop even in my legs.?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:200046:train",
+    "article": "could you choose a beatle song....?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1077422:train",
+    "article": "Sports physicals and moms going with sons?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:851462:train",
+    "article": "I m curious abt indian educated youths which direcetions they r aheading, Youngsters look china.?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1180643:train",
+    "article": "in the UK whats the average salary ofa salaried Doctor in business accounting and economics in a university?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:586188:train",
+    "article": "Anyone know a book with pizza that would introduce a section on fractions?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:634574:train",
+    "article": "what does the nucleolus do?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:581403:train",
+    "article": "is man masturbate more easily or women? and why?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:551686:train",
+    "article": "is etopps a good website?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:885310:train",
+    "article": "How can I print out my whole address book? I would like it in 3 columns to a page?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:140110:train",
+    "article": "What professional sports teams are publicly traded?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:154345:train",
+    "article": "when my boyfriend is cheeting what do i do?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1231757:train",
+    "article": "What does lemon juice do to a fish smell and what is the chemical explanation?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:577396:train",
+    "article": "military president in Chile, now he was comndem to prision?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:810837:train",
+    "article": "im new and this is what i have to say!!!!?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:446717:train",
+    "article": "Why is it that only billionaires - or at least milti-millionaires - can run for the Presidency of America?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:29530:train",
+    "article": "Geographic Information Systems? Anyone?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:481041:train",
+    "article": "formation of river systems and their flooding?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:300001:train",
+    "article": "what does the definition- the measure of the distance and direction an object moves-mean?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1191184:train",
+    "article": "What is multimedia?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:469561:train",
+    "article": "what is the normal level of calcium in human body?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:704027:train",
+    "article": "I'm crazily in love with a guy, what should I do? Please read the details!!!?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:453370:train",
+    "article": "Why don't I have friends? I am a nice person, and I'm sure that I have been nice to everyone I've met, So why?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:73517:train",
+    "article": "What is the feminine of avuncular?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:831124:train",
+    "article": "why was i fired?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1184489:train",
+    "article": "how i am going to do thish coming exam?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1254036:train",
+    "article": "What reduces tumors without surgery?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:836963:train",
+    "article": "Did the enlightenment of knowledge during the age of modernism spawn the idea of postmodernism?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:298874:train",
+    "article": "what is the percentage of women in ministry in the U.S. between 2000 and 2006?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:200114:train",
+    "article": "can any one let me know where i can find abbreviated words in english such as dad mom and thier meaning?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:373261:train",
+    "article": "Who manufactures Metyrapone ( used for testing cushing's syndrome) in India?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:769260:train",
+    "article": "when your spouse died in texas does his half goes to our children.?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:390937:train",
+    "article": "I am the best, no?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:437730:train",
+    "article": "You need to answer this question if you want to be alive!!!?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1175207:train",
+    "article": "Im Bored Now That School Is Out?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1095728:train",
+    "article": "Do you think that pakistan is the headquarter of al-Quaeda ?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:665604:train",
+    "article": "whats currently going on between the Shiites and Sunnis?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:30365:train",
+    "article": "I missed my ex-girl friend and want to return. how?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:932779:train",
+    "article": "Does someone have to show you they love you. Or are the words enough?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:177323:train",
+    "article": "Maths problem help?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:731618:train",
+    "article": "Did u know the Volkswagen Logo makes a swatstika when it is spun at about 30-40 mph!?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:922462:train",
+    "article": "How can you tell if a guy wants more than just a booty call?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1037188:train",
+    "article": "How do I get rid of the popups under what I am searching for that guesses what I am typing in?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:78684:train",
+    "article": "Why it takes so long for Netgear to send out the rebate?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:579990:train",
+    "article": "Ask me anything u like,I'm a open book?!?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1007322:train",
+    "article": "How many guys buy their lady flowers \"just because\"?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:381033:train",
+    "article": "i am looking for a girl friend in Lahore Pakistan?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:554147:train",
+    "article": "a picture of a 300 pouind bike rider on a bmx bike?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:351289:train",
+    "article": "how much do civil engineers make (0 exp.)?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:232275:train",
+    "article": "Is it better to have a high GPA, or take WAY above avg courses and get like a 3.5 GPA?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:149398:train",
+    "article": "Bibliography citing webarticles/pages?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1122536:train",
+    "article": "I am looking for adult personals for swingers and alternative lifestyles in BC canada?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:877982:train",
+    "article": "What bowl will the University of Oklahoma go to?  Will Texas lose and OU go to the Big 12 Championship?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:129507:train",
+    "article": "why the application of ideal gas law is essential and what is a difference between ideal and real gas.?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1218155:train",
+    "article": "When we switch on the TV, the sound appears first rather than picture.Why?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:437721:train",
+    "article": "How do you stop yourself from loosing concentration or feeling sleepy when you are bored in a lecture?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1234607:train",
+    "article": "Whats a good nickname for someone who has the name Kate and wants a nickname no one else has?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:841283:train",
+    "article": "what was the cause      death of gerald lavert?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1371859:train",
+    "article": "does sugar and carbs. affect a person different when they have epilepsy?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:179815:train",
+    "article": "how could i download protools m-powered recording software free for no charge or pay?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:834484:train",
+    "article": "Should English be the only language allowed to speak at work in the US?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:688808:train",
+    "article": "what percentage of hispanics have african ancestry?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1139184:train",
+    "article": "he's planning on leaving... what should i do?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:505385:train",
+    "article": "Are the Red Sox as good as they look so far?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:671545:train",
+    "article": "Is the Army Corp of Engineers responsible for the up-keep of Retention ponds?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:261637:train",
+    "article": "How do you get dressed when you get dressed?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:236538:train",
+    "article": "do anyone have a easy free book about electricity concepts like current voltage ....?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1361848:train",
+    "article": "which is a more fun, marketable and interesting major to pursue, sociology or psychology?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:691576:train",
+    "article": "Does anyone know where I can find Full Moon o Sagashite & Inu-Yasha on season?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:114062:train",
+    "article": "My father has been dx with lung cancer is there a program that may help him with some of his medical claims?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:934185:train",
+    "article": "Hi ladies I need an answer about the pill and sex drive?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1265376:train",
+    "article": "English of tomorrow \"Euro-English\" - EU announcement?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:115823:train",
+    "article": "Can you name a scientist that studied Neptune?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1256974:train",
+    "article": "How is Computers are used in Schools, Hospitals, Office, Desk Top Publishing, technology, Communication Scienc",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:278968:train",
+    "article": "how do I build a stone bread oven?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:205285:train",
+    "article": "To all of you people who keep looking for dates on this thing...?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1306382:train",
+    "article": "What formation will Australia be using in the World Cup?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:10958:train",
+    "article": "How many points do you have on this yahoo! answer thing?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1224152:train",
+    "article": "I want to seriously date my neighbor. I like her that much. How can I ask her out without her feeling awkward?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:502442:train",
+    "article": "What law firm is most successful in challenging NMFS fishery regulations?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:20850:train",
+    "article": "Anyone have a good stock tip?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1397840:train",
+    "article": "just downloaded x men 3 in svcd, divx eng format?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1211577:train",
+    "article": "What's the worlds biggest lie?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:407974:train",
+    "article": "what kind of animal is myotis myotis?how do you know?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1079836:train",
+    "article": "How hot should an AMD 64FX-62 run at idle? Plus what can I do to make it cooler and quieter?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:22040:train",
+    "article": "Is Europe an extraditing country?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:683424:train",
+    "article": "Computer downloads?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1214868:train",
+    "article": "does a TB scan hurt?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:655878:train",
+    "article": "if you attend Howard University, can you take course at Georgetown?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:363658:train",
+    "article": "I need Finland ecology facts it is urgent!!!?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:819596:train",
+    "article": "If I received some money as a gift, do I have to pay taxes on it?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:203224:train",
+    "article": "wats the use of physiotherapy in rehablition?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:361434:train",
+    "article": "How hot is the sun?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:201455:train",
+    "article": "I need to know all there is to know about ocean zones?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:407699:train",
+    "article": "Who is your favorite Muppet? And which is your favorite Muppet Movie?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:571259:train",
+    "article": "why are they load's of wrestling shows like ecw ovw wwe?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1091042:train",
+    "article": "Is data written on both sides of a flopy disk?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1170892:train",
+    "article": ",how do i write her name in greek .?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:881463:train",
+    "article": "Math homework problem!?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:322198:train",
+    "article": "Where can I find articles about \"High Speed Communications\"?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:251368:train",
+    "article": "Ever heard of Zeuhl?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1354566:train",
+    "article": "does nipple rings prevent you from breast feeding your child if you decide to have kids in the future?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1317357:train",
+    "article": "if you combine 100 degrees with another 100 degrees will it become 200 degrees ?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:356326:train",
+    "article": "Do you think Iraq will gain full security?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:447798:train",
+    "article": "Your choice, would you rather live in the Flintstones days or the Jetsons days?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:96124:train",
+    "article": "why are people so dumb?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:707110:train",
+    "article": "How did Baseball go from the national past time to the most boring professional sport in America?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1363781:train",
+    "article": "What golfer won The Masters in 1955?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:112984:train",
+    "article": "I need to find some info about my gymnasticshow do i do a frontflip with out landing on my butt?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:597995:train",
+    "article": "Why are there 3 and 4 (sometimes 5 or 6) leaf clovers?? Are there more 4 leaf ones in a specific time of year?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:698565:train",
+    "article": "What are Mortars?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:25668:train",
+    "article": "IS THERE REALLY \" LOVE IN FIRST SIGHT\" HAPPEN IN EVERY 1 OF US IN THIS WORLD?!!!?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1338367:train",
+    "article": "What if there was nothing to begin with?  No creation, no God?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:506338:train",
+    "article": "Do people live for personal satisfaction or money?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:467569:train",
+    "article": "do parents treat children different?ommy is successful but receives no $ then sis who does no work gets $?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1087818:train",
+    "article": "what is a exposition paper?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:893063:train",
+    "article": "how can i download a music tracks ?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:805727:train",
+    "article": "Follow question?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:364904:train",
+    "article": "hi... who out of u is in LOVE at the moment....define what love means to u and how do u know its love for real",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1187612:train",
+    "article": "How do Care-Providers get their care and feeding?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:131660:train",
+    "article": "please give me required web sites regarding doctors recruitment in dubai{UAE}and its procedure?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:962259:train",
+    "article": "My name is Maribel and I'm setting up a hairdressing salon in my house. What should I call it?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:708929:train",
+    "article": "Do you know about dentistry?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:991831:train",
+    "article": "How much jaw growth occurs after 15+ years of age in males?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:832665:train",
+    "article": "Is it right to search for a new love after failing in one you loved so much ?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1196961:train",
+    "article": "who would you like to see be detroit's next goalie if legace doesn't come back?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:385667:train",
+    "article": "If you are a friend of Bill W. does that mean you are a alcoholic?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:515164:train",
+    "article": "Why do some jets show vapour trails and others not-even in the same part of the sky?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:557228:train",
+    "article": "Can people no longer spell?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:436818:train",
+    "article": "who is the president of the senate in Belize.?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:477280:train",
+    "article": "The girl was afraid to go home because of the man in the mask.?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:495649:train",
+    "article": "Why did you marry that looser?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1284529:train",
+    "article": "what IS THE AVERAGE STAY IN THE Army if you are stationed in Washington D.C/virginia?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:674472:train",
+    "article": "Do you think that someone who is 12 can really know what love is?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1258391:train",
+    "article": "does smokin weed help loose weight?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1231032:train",
+    "article": "Changes to the bible ?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:355910:train",
+    "article": "why you dont have punk cloths on yahoo avatar??",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1300128:train",
+    "article": "where can i find free down load of software?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1395038:train",
+    "article": "Is there software to change parts of many MP3 file names all at once?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1063334:train",
+    "article": "How big is Tucker?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1330334:train",
+    "article": "How many hattrick may happen before semi-final?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:836494:train",
+    "article": "How to meet a special friend?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:512572:train",
+    "article": "why aren't people diversifying their bonds anymore?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:961213:train",
+    "article": "Why legislation is important in upholding and protecting the rights of both employer and employee?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:80900:train",
+    "article": "What is a Soke?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1187885:train",
+    "article": "Are you a good singer ???",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:809182:train",
+    "article": "can you download naruto episodes on to your ipod video,if so where do you download it?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:712053:train",
+    "article": "Is it difficult to become a translator?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1186790:train",
+    "article": "Why has nobody presented yet a documentary that summarizes evolutinary evidence alongside creationism?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:86924:train",
+    "article": "Where can I find an English translation for a song in Portuguese?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:148486:train",
+    "article": "What should I do If I found a hidden security cam in the fitting room?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:681337:train",
+    "article": "How do you make blue gum?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1342564:train",
+    "article": "Do you know about Theta Nu Epsilon?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:661729:train",
+    "article": "does anyone like the song miss new booty?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:425022:train",
+    "article": "How many feet are in 40 yards?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:579382:train",
+    "article": "Where can I buy diluted hydrochloric acid?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:79911:train",
+    "article": "How do you know if you are gay?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:251068:train",
+    "article": "what foods should you \"not\" eat when you have been diagnosed with diverticulosis...are there meds for this?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1213756:train",
+    "article": "who's played the house of the dead game? if so what do you think of it?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:528867:train",
+    "article": "Shaved or not shave?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:711616:train",
+    "article": "The best way to find a backer to become a professional poker player?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1025074:train",
+    "article": "Does Egbert get revenge?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:490427:train",
+    "article": "Why do I care about having a scar on my ear?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:961194:train",
+    "article": "I had asked on Saddam Hussaine's fate months back. One ashok-sahu's answer was chosen as the Best. Next  what?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:527176:train",
+    "article": "need a very cheep car that runs good?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:359206:train",
+    "article": "Avatar question?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1380162:train",
+    "article": "can settlement talks be used as evidence in civil cases?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:587755:train",
+    "article": "True Love is a magic for life and why its not coming on everyone's plate.?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:723923:train",
+    "article": "why does our hair and nails continue to grow after we die? morbid, sorry.?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:18349:train",
+    "article": "How did you do today on your Mid-term exams?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1258768:train",
+    "article": "aM I rEallY SKiNNY?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:813775:train",
+    "article": "im n school and i want to get on myspace but its blocked....how do i unblock it??",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:615332:train",
+    "article": "How can you record video from a Tandberg 880 video conferencing unit?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:156613:train",
+    "article": "did you know any dictionary  web where i can find canadian history words?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1022932:train",
+    "article": "Whats the most dates you've had in one weekend?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:917397:train",
+    "article": "i've downloded itunes 7 on windows but every time i click on the icon it wont start the program?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:658421:train",
+    "article": "I got to little memory space on one drive put a ton on another drive what should i do?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:36876:train",
+    "article": "Does size matter?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:843813:train",
+    "article": "Did you hear that Mr. Rogers was a master of Tai Chi Chuan?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:479853:train",
+    "article": "how much fresh water exists in the world?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:109119:train",
+    "article": "Where do you picture gay rights in America in 50 years?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:263381:train",
+    "article": "Neocons Scenario for Iran >> would it be similar to that for Iraq??",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1217425:train",
+    "article": "When Applying For A Business Job, What Is Usually More Important...?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:586460:train",
+    "article": "Describe location, charge, mass contribution, and role in forming isotopes, ions, and compounds for the ...?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1038461:train",
+    "article": "how do you make yourself orgas* if you never have??? what spot do you touch? how long?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:871207:train",
+    "article": "To have the celebrity of your dreams, would you....?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:313344:train",
+    "article": "How to sell telecom services if you are working in a network provider company?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1207434:train",
+    "article": "Can only a human be a mutant?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:161302:train",
+    "article": "How long can a person live without sleep?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:404308:train",
+    "article": "who wants to date me im 19 male and looking for hot male older than me im tall dark hair and eyes...want fun!?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1059396:train",
+    "article": "Bible Verse.....?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1049333:train",
+    "article": "can my company legally track me on a mobile phone without telling me?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:431637:train",
+    "article": "Will one get HIV or STD if he had gay homosex without any penetration?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:902639:train",
+    "article": "Unbiased advice about school?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:750677:train",
+    "article": "Anyone know of a good on-line dream dictionary?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1223845:train",
+    "article": "what is universe made of ?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:59695:train",
+    "article": "The Impact of Outsourcing on the US job market?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1294222:train",
+    "article": "argentinans only please!!!!!?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1032356:train",
+    "article": "What is the name of the current President in China?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1293736:train",
+    "article": "Please help-question about drugs?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:84105:train",
+    "article": "what is the best way to ask out a boy if he already has a girlfriend?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1027826:train",
+    "article": "How can I not be so nervous when making speeches?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1103600:train",
+    "article": "Tribute mastercard?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:970119:train",
+    "article": "where does the 'nun' come from when people say 'nun night'?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:915759:train",
+    "article": "does the us have the biggest population in the world?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:602338:train",
+    "article": "How do i get the new music before the radio gets it?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:847645:train",
+    "article": "what does dimentico intorno tutto mean?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:975224:train",
+    "article": "7.Why the U.S. enters to World War I and what effect did the war have on civil liberties?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:828668:train",
+    "article": "Is one parent black and the other white?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:895319:train",
+    "article": "Does anyone have any info about becoming a financial planner?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:173567:train",
+    "article": "Why does Pres. Bush insist on mispronouncing the word \"nuclear\"?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1203022:train",
+    "article": "what is decimal notation and science notation?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:557918:train",
+    "article": "can i send sms to india? for that what i have to do...?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1057589:train",
+    "article": "I am Ron Burgundy?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:574079:train",
+    "article": "what is chinese money called?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:685384:train",
+    "article": "Is ciara engaged to bow wow?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1331458:train",
+    "article": "Which WWE superstar is my favorite? 10 pts (HINTS)?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:602793:train",
+    "article": "do you love USA and why?, is it the better country in the world?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1183672:train",
+    "article": "How old should a boy start to learn how to play soccer?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:470183:train",
+    "article": "Have you seen these statistics?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:547596:train",
+    "article": "God and Birth Control?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:699503:train",
+    "article": "what is the best secret of sucess and How can I be Rich and famous?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1017318:train",
+    "article": "what does this mean?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:665028:train",
+    "article": "will the bears have a dominating defense this year as it was last year?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:131256:train",
+    "article": "how do box bets work for football(ie, mine is steelers/seahawks 2/1?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:311182:train",
+    "article": "How do I know if the object of my affection feels the same?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:71321:train",
+    "article": "korpel tunnel?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:289506:train",
+    "article": "what do PT and EM  stand for?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:313198:train",
+    "article": "why do dog howl. is it a sign of boredom or are they seing thing that human can't see.?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1039758:train",
+    "article": "I need to re-install Windows XP Home on my Laptop but I dont have a disc.  I do have my licence code though.?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:510690:train",
+    "article": "I have a Colt 32 Cal ACP.  I was curious as to what theis gun might be worth. Pleases advise.?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:408218:train",
+    "article": "why javascript is not running on my machine with XP Home/Pentium-IV?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1325355:train",
+    "article": "Terrell Owens!! Did he Do Right or Wrong?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:350892:train",
+    "article": "Someone that I care for very deeply ,mother is dying, what can I do to help?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1375882:train",
+    "article": "Why has the Sept 11 2001 Videos from the PENTAGON & CITGO GAS CAMERA not been released?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:157801:train",
+    "article": "I REALLY dig this guy, but he's way out of my league! How do I confront him?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:128329:train",
+    "article": "Is the installation of an internal DVD drive easy?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:982627:train",
+    "article": "Gospel means 'good news?, what word is used for 'great news'?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8576:train",
+    "article": "Why do people drink coffee?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1303445:train",
+    "article": "Who is going to win ?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:95901:train",
+    "article": "Can we actually realize time travelling?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:243325:train",
+    "article": "wha tis 12% of 1.37?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:913115:train",
+    "article": "do you agree that the women who work outside would be less respect to her husband as he can do work like men?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:436583:train",
+    "article": "i'm 14. Why is girl be embarassed after she know that i like her? please tell me?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:131296:train",
+    "article": "who are the female wrestlers other than chyna capable of lifting a male wrestler? have you seen them doing it?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:447064:train",
+    "article": "2006 can be written as the sum of 59 consecutive numbers, which ones?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:176125:train",
+    "article": "how can i check my pay checks at wal-mart?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:477393:train",
+    "article": "like some decorating tips for nurse week?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:479887:train",
+    "article": "Is it possible of breaking out a optical fibre access password of a system?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:63999:train",
+    "article": "Do you know if I will have a good or bad future or if I\"ll ever see Levi james Bobo ever again?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:916385:train",
+    "article": "FTIR or TGA for expoxy?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:873330:train",
+    "article": "if a field goal is short is it still a live ball after it bounces?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:629970:train",
+    "article": "plz help!!! i need some advice on something really \"IMPORTANT\"?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:541531:train",
+    "article": "How Art Thou?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:197171:train",
+    "article": "Should we do the future a favor, and get rid of alcohol and cigarettes? Would you vote for it?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1125588:train",
+    "article": "Implicit Differentiation?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:263782:train",
+    "article": "what  causes  protein in urine and what are the effects of this situation ?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:694966:train",
+    "article": "what can be considered a special circumstance affecting your financial status?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:236989:train",
+    "article": "where can I get information on my sbc account?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1159085:train",
+    "article": "romantic dilemma...help?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1049691:train",
+    "article": "ladies, why semi-burning??",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:763636:train",
+    "article": "What are the Charters OF Freedom?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:46146:train",
+    "article": "If your only true love passed away and you had a child by him, and after his death you never realy loved again",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:319204:train",
+    "article": "Is online dating just like one big orgy?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1183092:train",
+    "article": "Is Mt.Zion and Mt.Moria one and the same?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:746587:train",
+    "article": "why do children still get bllied at school?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:983265:train",
+    "article": "song at nfl games?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:1390992:train",
+    "article": "Against what team was Micheal Jordan's first NBA game and how many points did he score?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:981164:train",
+    "article": "Where can I buy western classical music cassettes, CDs, DVDs (Mozart etc) in India?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:664337:train",
+    "article": "how do u take off a security tag off merchandise? other then with a magnet?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:74071:train",
+    "article": "why doesnt the us just invade canada? shouldnt be too hard to take that place. molson 4 everybody!!!?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:924176:train",
+    "article": "My husband ordered food from a small franchise resteraunt and when he brought it home .He was eating an.......",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:592189:train",
+    "article": "is a married relationship worth it when you aren't married to each other?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:173063:train",
+    "article": "What exactly is a cover letter and how can I write a good one for applying for a job?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:571661:train",
+    "article": "I have come to the conclusion that the only thing Christians are good for is a good laugh.?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:481810:train",
+    "article": "what is ISA?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:979652:train",
+    "article": "Where can I find U.S. monthly home foreclosure statistics by state on the web?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:300567:train",
+    "article": "how can i get high resolution images?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:685683:train",
+    "article": "word 2002 asian format phonetics change numbers with diacritic symbols?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1349921:train",
+    "article": "teen has windows xp with log in password under administrator she's locked me out,how can i get that password",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1020440:train",
+    "article": "what are some adaptive traits a monkey might develop while living in a swampy environment?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1321765:train",
+    "article": "Post your most embarrassing moment.?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:539732:train",
+    "article": "What is Adam Dunn's e-mail adress?!?! please i need to know!?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:447255:train",
+    "article": "how do you write a formal summary?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:802251:train",
+    "article": "need help with essay. :)?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:841544:train",
+    "article": "how long is semiannually?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:975519:train",
+    "article": "All I wanna do is drink, Basically?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:1053080:train",
+    "article": "i enlisted for the army... but since i didnt sign up for anything that deals with infantry...?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:22011:train",
+    "article": "Identify this bird.?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1053915:train",
+    "article": "Mary was a virgin when she gave birth to the Lord Jesus Christ. Why do Catholics say that she is \"ever-virgin\"",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:726269:train",
+    "article": "Can you name a real life celebrity who comes from Prince Edward Island, Canada?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:500929:train",
+    "article": "what should be my haemoglobin level be?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:534628:train",
+    "article": "is the wwe really fake?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:990021:train",
+    "article": "Solve the problems below correctly and I will vote u best answer!!?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1229160:train",
+    "article": "If the government had a cure for HIV/AIDS should they make it public or would that make the epidemic worst.?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:319797:train",
+    "article": "a word for the definition:the physical features of a region of the earth?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:943159:train",
+    "article": "What to do when you feel more tired than usual?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:101862:train",
+    "article": "Why did Kelloggs of Battle Creek tear down their original building?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:352636:train",
+    "article": "why are people so mean? why do they have to be so mean?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:818506:train",
+    "article": "I have a tax audit question?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:635936:train",
+    "article": "how can you tell if a guy REALLY likes u?? tanx in advance!!=))?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:302712:train",
+    "article": "want to get a copy of The $20,000 Pyramid with Dick Clark from 1976.?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1281163:train",
+    "article": "How do I locate T C Store, in Jackson Mississippi?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:921101:train",
+    "article": "Does anyone know anything about the \"Jedi Religion\"? I need serious info. for a World Religions report.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1143229:train",
+    "article": "what is colony counter?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:203077:train",
+    "article": "What can I do to relieve the pain of plantar fascitis?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:553757:train",
+    "article": "how can i get german nationality while i am staying outside germany in egypt?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1072554:train",
+    "article": "Wrong story for the headline. I clicked on the \"wiggles ill\" and the story on Madonna came on.?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1344066:train",
+    "article": "I need a song to tell a guy I'm sorry and I want to fix things. Any suggestions?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:297191:train",
+    "article": "Help About Gmail Account !!!?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:704089:train",
+    "article": "Where can I see a replay of last nights hockey game #5 between the Mighty Ducks and Edmonton Oilers ?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:853121:train",
+    "article": "what are some reasons why water isn't generally a good solvent for recrystallization?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:513500:train",
+    "article": "how do i convert a  video file type to be playable on my pc?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:84170:train",
+    "article": "will a standard dsl modem accomodate a set of remote wireless cameras ?.?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:236822:train",
+    "article": "What is Office Ready 3.0 Professional?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1192001:train",
+    "article": "how are metal carbonates formed?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:85076:train",
+    "article": "how come i am not rich?",
+    "gold_label": "G"
+  },
+  {
+    "example_id": "official-train:1362476:train",
+    "article": "music ppl i need your help?",
+    "gold_label": "H"
+  },
+  {
+    "example_id": "official-train:1035268:train",
+    "article": "Are the Giants really going after Ryan Klesko?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:57842:train",
+    "article": "what kind of chemical reaction is solid sodium hydroxide is added to an aqueous solution of carbonic acid to p",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:151866:train",
+    "article": "how do i reformat my computer to delete the hard drive?",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:574232:train",
+    "article": "Would you get arthritis if you crack your knuckles regularly???",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:694711:train",
+    "article": "what are different colour asthma pumps for?  Blue & Beige ones?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:97854:train",
+    "article": "why am i still depressed?",
+    "gold_label": "I"
+  },
+  {
+    "example_id": "official-train:607667:train",
+    "article": "Realistically, do you think or believe that in the future, there will be a female president? Why? And how?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:1104163:train",
+    "article": "I am looking for an affordable immigration firm in California who can process my green card and advice me.?",
+    "gold_label": "J"
+  },
+  {
+    "example_id": "official-train:80568:train",
+    "article": "whats the best fantasy team?",
+    "gold_label": "F"
+  },
+  {
+    "example_id": "official-train:733138:train",
+    "article": "jusy wat some friends that i can talk to from time to time?",
+    "gold_label": "I"
+  }
+]

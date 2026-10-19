@@ -1,0 +1,45 @@
+# Candidate task: community-datasets/yahoo_answers_topics (question titles only, 10 topics). Same model and protocol as configs/pilot.yaml;
+# per-class sizes match the other tasks (64 train and 128 validation examples per class).
+model:
+  name_or_path: Qwen/Qwen3-1.7B
+  revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  local_files_only: true
+  local_snapshot_path: /home/xiaoyuto/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  dtype: bfloat16
+  device: cuda:0
+
+task:
+  name: "yahoo"
+  text_field: "question_title"
+  label_field: "topic"
+  input_heading: "Question"
+  input_noun: "question title"
+  input_short: "question"
+  focus: "the topic the question is about"
+
+prompt:
+  system_prompt: "You are a careful question topic classifier. Follow the supplied label mapping and response format exactly."
+  seed_instruction: "Carefully determine the question's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  label_names:
+    A: "Society & Culture"
+    B: "Science & Mathematics"
+    C: "Health"
+    D: "Education & Reference"
+    E: "Computers & Internet"
+    F: "Sports"
+    G: "Business & Finance"
+    H: "Entertainment & Music"
+    I: "Family & Relationships"
+    J: "Politics & Government"
+  enable_thinking: false
+
+data:
+  dataset_name: community-datasets/yahoo_answers_topics
+  seed: 20261002
+  train_size: 640
+  validation_size: 1280
+
+manual_instructions:
+  - "Identify what the question is mainly about, map it to the listed topics, and answer with only one label letter."
+  - "Focus on the subject of the question rather than incidental words. Return exactly one label letter."
+  - "Decide which of the ten listed topics best fits the question, then output its mapped letter only."

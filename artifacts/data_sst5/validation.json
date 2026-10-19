@@ -1,0 +1,3202 @@
+[
+  {
+    "example_id": "official-train:583:validation",
+    "article": "the effort is sincere and the results are honest , but the film is so bleak that it 's hardly watchable .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4482:validation",
+    "article": "a movie more to be prescribed than recommended -- as visually bland as a dentist 's waiting room , complete with soothing muzak and a cushion of predictable narrative rhythms .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7645:validation",
+    "article": "it is dark , brooding and slow , and takes its central idea way too seriously .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3694:validation",
+    "article": "there is no substitute for on-screen chemistry , and when friel pulls the strings that make williams sink into melancholia , the reaction in williams is as visceral as a gut punch .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1765:validation",
+    "article": "writer\\/director alexander payne -lrb- election -rrb- and his co-writer jim taylor brilliantly employ their quirky and fearless ability to look american angst in the eye and end up laughing .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:6919:validation",
+    "article": "this is the kind of movie that gets a quick release before real contenders arrive in september .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1407:validation",
+    "article": "fulford-wierzbicki ... deftly captures the wise-beyond-her-years teen .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2184:validation",
+    "article": "and how .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:2306:validation",
+    "article": "yakusho , as always , is wonderful as the long-faced sad sack ... and his chemistry with shimizu is very believable .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:8103:validation",
+    "article": "a movie that will thrill you , touch you and make you laugh as well .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7135:validation",
+    "article": "a clichéd and shallow cautionary tale about the hard-partying lives of gay men .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2986:validation",
+    "article": "malone does have a gift for generating nightmarish images that will be hard to burn out of your brain .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3885:validation",
+    "article": "katz 's documentary does n't have much panache , but with material this rich it does n't need it .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:880:validation",
+    "article": "though it goes further than both , anyone who has seen the hunger or cat people will find little new here , but a tasty performance from vincent gallo lifts this tale of cannibal lust above the ordinary .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:963:validation",
+    "article": "with a `` spy kids '' sequel opening next week , why bother with a contemptible imitator starring a `` snl '' has-been acting like an 8-year-old channeling roberto benigni ?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7058:validation",
+    "article": "overcomes its visual hideousness with a sharp script and strong performances .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4140:validation",
+    "article": "control-alt-delete simone as quickly as possible",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3749:validation",
+    "article": "i ca n't .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4394:validation",
+    "article": "attal pushes too hard to make this a comedy or serious drama .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5021:validation",
+    "article": "jason patric and ray liotta make for one splendidly cast pair .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5209:validation",
+    "article": "all in all , road to perdition is more in love with strangeness than excellence .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2712:validation",
+    "article": "mostly , -lrb- goldbacher -rrb- just lets her complicated characters be unruly , confusing and , through it all , human .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3617:validation",
+    "article": "a stylish but steady , and ultimately very satisfying , piece of character-driven storytelling .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3857:validation",
+    "article": "some remarkable achival film about how shanghai -lrb- of all places -rrb- served jews who escaped the holocaust .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4883:validation",
+    "article": "what can one say about a balding 50-year-old actor playing an innocent boy carved from a log ?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5831:validation",
+    "article": "despite an impressive roster of stars and direction from kathryn bigelow , the weight of water is oppressively heavy .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6265:validation",
+    "article": "the script is a dim-witted pairing of teen-speak and animal gibberish .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:486:validation",
+    "article": "a marvelous performance by allison lohman as an identity-seeking foster child .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:5634:validation",
+    "article": "like edward norton in american history x , ryan gosling -lrb- murder by numbers -rrb- delivers a magnetic performance .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2994:validation",
+    "article": "an allegory concerning the chronically mixed signals african american professionals get about overachieving could be intriguing , but the supernatural trappings only obscure the message .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4880:validation",
+    "article": "the faithful will enjoy this sometimes wry adaptation of v.s. naipaul 's novel , but newcomers may find themselves stifling a yawn or two during the first hour .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1809:validation",
+    "article": "the whole affair is as predictable as can be .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1080:validation",
+    "article": "if there 's no art here , it 's still a good yarn -- which is nothing to sneeze at these days .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4961:validation",
+    "article": "off the hook is overlong and not well-acted , but credit writer-producer-director adam watstein with finishing it at all .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6201:validation",
+    "article": "but it also has many of the things that made the first one charming .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:6079:validation",
+    "article": "a special kind of movie , this melancholic film noir reminded me a lot of memento ...",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5258:validation",
+    "article": "offers the flash of rock videos fused with solid performances and eerie atmosphere .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3646:validation",
+    "article": "thanks to ice cube , benjamins feels an awful lot like friday in miami .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3093:validation",
+    "article": "it will guarantee to have you leaving the theater with a smile on your face .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5163:validation",
+    "article": "you really have to salute writer-director haneke -lrb- he adapted elfriede jelinek 's novel -rrb- for making a film that is n't nearly as graphic but much more powerful , brutally shocking and difficult to watch .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:43:validation",
+    "article": "many shallower movies these days seem too long , but this one is egregiously short .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5401:validation",
+    "article": "-lrb- h -rrb- ad i suffered and bled on the hard ground of ia drang , i 'd want something a bit more complex than we were soldiers to be remembered by .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1527:validation",
+    "article": "its juxtaposition of overwrought existentialism and stomach-churning gore will have you forever on the verge of either cracking up or throwing up .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1064:validation",
+    "article": "no amount of good acting is enough to save oleander 's uninspired story .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4890:validation",
+    "article": "the film is small in scope , yet perfectly formed .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4422:validation",
+    "article": "... a powerful sequel and one of the best films of the year .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1534:validation",
+    "article": "the action here is unusually tame , the characters are too simplistic to maintain interest , and the plot offers few surprises .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7726:validation",
+    "article": "arteta directs one of the best ensemble casts of the year",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2896:validation",
+    "article": "why anyone who is not a character in this movie should care is beyond me .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7657:validation",
+    "article": "or for the year , for that matter .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7440:validation",
+    "article": "if signs is a good film , and it is , the essence of a great one is in there somewhere .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:2384:validation",
+    "article": "the script falls back on too many tried-and-true shenanigans that hardly distinguish it from the next teen comedy .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8494:validation",
+    "article": "this is a movie that refreshes the mind and spirit along with the body , so original is its content , look , and style .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:765:validation",
+    "article": "... tackling a low-budget movie in which inexperienced children play the two main characters might not be the best way to cut your teeth in the film industry .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:8028:validation",
+    "article": "the acting , for the most part , is terrific , although the actors must struggle with the fact that they 're playing characters who sometimes feel more like literary conceits than flesh-and-blood humans .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1656:validation",
+    "article": "it aimlessly and unsuccessfully attempts to fuse at least three dull plots into one good one .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1255:validation",
+    "article": "... bright , intelligent , and humanly funny film .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5390:validation",
+    "article": "for most movies , 84 minutes is short , but this one feels like a life sentence .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1684:validation",
+    "article": "as david letterman and the onion have proven , the worst of tragedies can be fertile sources of humor , but lawrence has only a fleeting grasp of how to develop them .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:490:validation",
+    "article": "any chekhov is better than no chekhov , but it would be a shame if this was your introduction to one of the greatest plays of the last 100 years .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7888:validation",
+    "article": "well-meaning to a fault , antwone fisher manages the dubious feat of turning one man 's triumph of will into everyman 's romance comedy .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5962:validation",
+    "article": "like being trapped inside a huge video game , where exciting , inane images keep popping past your head and the same illogical things keep happening over and over again .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4607:validation",
+    "article": "but they do n't fit well together and neither is well told .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1223:validation",
+    "article": "beautifully produced .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3197:validation",
+    "article": "a surprisingly ` solid ' achievement by director malcolm d. lee and writer john ridley .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4043:validation",
+    "article": "even better than the first one !",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:8301:validation",
+    "article": "i 'll put it this way : if you 're in the mood for a melodrama narrated by talking fish , this is the movie for you .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6343:validation",
+    "article": "seems content to dog-paddle in the mediocre end of the pool , and it 's a sad , sick sight .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6067:validation",
+    "article": "brash , intelligent and erotically perplexing , haneke 's portrait of an upper class austrian society and the suppression of its tucked away demons is uniquely felt with a sardonic jolt .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:6748:validation",
+    "article": "the last kiss will probably never achieve the popularity of my big fat greek wedding , but its provocative central wedding sequence has far more impact .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4543:validation",
+    "article": "nettelbeck ... has a pleasing way with a metaphor .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2868:validation",
+    "article": "nothing about the film -- with the possible exception of elizabeth hurley 's breasts -- is authentic .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8497:validation",
+    "article": "` if you are in the mood for an intelligent weepy , it can easily worm its way into your heart . '",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7381:validation",
+    "article": "rehearsals are frequently more fascinating than the results .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1719:validation",
+    "article": "this story still seems timely and important .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1954:validation",
+    "article": "a real audience-pleaser that will strike a chord with anyone who 's ever waited in a doctor 's office , emergency room , hospital bed or insurance company office .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3366:validation",
+    "article": "schaeffer is n't in this film , which may be why it works as well as it does .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4667:validation",
+    "article": "-lrb- t -rrb- oo many of these gross out scenes ...",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:726:validation",
+    "article": "a tired , predictable , bordering on offensive , waste of time , money and celluloid .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5368:validation",
+    "article": "as a hybrid teen thriller and murder mystery , murder by numbers fits the profile too closely .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1551:validation",
+    "article": "the movie certainly has its share of clever moments and biting dialogue , but there 's just not much lurking below its abstract surface .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7064:validation",
+    "article": "like the full monty , this is sure to raise audience 's spirits and leave them singing long after the credits roll .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4072:validation",
+    "article": "you 'll just have your head in your hands wondering why lee 's character did n't just go to a bank manager and save everyone the misery .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3849:validation",
+    "article": "for all its plot twists , and some of them verge on the bizarre as the film winds down , blood work is a strong , character-oriented piece .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7028:validation",
+    "article": "if you ever wanted to be an astronaut , this is the ultimate movie experience - it 's informative and breathtakingly spectacular .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4130:validation",
+    "article": "crush could be the worst film a man has made about women since valley of the dolls .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5234:validation",
+    "article": "if you 're looking for a tale of brits behaving badly , watch snatch again .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:365:validation",
+    "article": "ali 's graduation from little screen to big is far less painful than his opening scene encounter with an over-amorous terrier .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4679:validation",
+    "article": "it would n't matter so much that this arrogant richard pryor wannabe 's routine is offensive , puerile and unimaginatively foul-mouthed if it was at least funny .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7124:validation",
+    "article": "so putrid it is not worth the price of the match that should be used to burn every print of the film .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1372:validation",
+    "article": "it 's uninteresting .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4759:validation",
+    "article": "ensemble movies , like soap operas , depend on empathy .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3519:validation",
+    "article": "it seems impossible that an epic four-hour indian musical about a cricket game could be this good , but it is .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:6402:validation",
+    "article": "it 's a cool event for the whole family .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1381:validation",
+    "article": "like a soft drink that 's been sitting open too long : it 's too much syrup and not enough fizz .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6460:validation",
+    "article": "it 's a clear-eyed portrait of an intensely lived time , filled with nervous energy , moral ambiguity and great uncertainties .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2596:validation",
+    "article": "the film desperately sinks further and further into comedy futility .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6130:validation",
+    "article": "at 78 minutes it just zings along with vibrance and warmth .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5995:validation",
+    "article": "befuddled in its characterizations as it begins to seem as long as the two year affair which is its subject",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5846:validation",
+    "article": "it 's definitely a step in the right direction .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:316:validation",
+    "article": "nothing about this movie works .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1560:validation",
+    "article": "a word of advice to the makers of the singles ward : celebrity cameos do not automatically equal laughs .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7151:validation",
+    "article": "the movie just has too much on its plate to really stay afloat for its just under ninety minute running time .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:249:validation",
+    "article": "oversexed , at times overwrought comedy\\/drama that offers little insight into the experience of being forty , female and single .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2014:validation",
+    "article": "with spy kids 2 : the island of lost dreams , the spy kids franchise establishes itself as a durable part of the movie landscape : a james bond series for kids .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4625:validation",
+    "article": "a film that begins with the everyday lives of naval personnel in san diego and ends with scenes so true and heartbreaking that tears welled up in my eyes both times i saw the film .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5388:validation",
+    "article": "in a summer overrun with movies dominated by cgi aliens and super heroes , it revigorates the mind to see a feature that concentrates on people , a project in which the script and characters hold sway .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2764:validation",
+    "article": "yes , i have given this movie a rating of zero .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2291:validation",
+    "article": "it may be a somewhat backhanded compliment to say that the film makes the viewer feel like the movie 's various victimized audience members after a while , but it also happens to be the movie 's most admirable quality",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3158:validation",
+    "article": "in other words , it 's just another sports drama\\/character study .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1289:validation",
+    "article": "mostly honest , this somber picture reveals itself slowly , intelligently , artfully .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1905:validation",
+    "article": "this gorgeous epic is guaranteed to lift the spirits of the whole family .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3081:validation",
+    "article": "allegiance to chekhov , which director michael cacoyannis displays with somber earnestness in the new adaptation of the cherry orchard , is a particularly vexing handicap .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:112:validation",
+    "article": "this pathetic junk is barely an hour long .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:350:validation",
+    "article": "the most consistently funny of the austin powers films .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3697:validation",
+    "article": "the characters are paper thin and the plot is so cliched and contrived that it makes your least favorite james bond movie seem as cleverly plotted as the usual suspects .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3780:validation",
+    "article": "cox is far more concerned with aggrandizing madness , not the man , and the results might drive you crazy .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:2171:validation",
+    "article": "laced with liberal doses of dark humor , gorgeous exterior photography , and a stable-full of solid performances , no such thing is a fascinating little tale .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5882:validation",
+    "article": "the four feathers is definitely horse feathers , but if you go in knowing that , you might have fun in this cinematic sandbox .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3107:validation",
+    "article": "` like a child with an important message to tell ... -lrb- skins ' -rrb- faults are easy to forgive because the intentions are lofty . '",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:844:validation",
+    "article": "the script was reportedly rewritten a dozen times -- either 11 times too many or else too few .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1605:validation",
+    "article": "does n't deserve a passing grade -lrb- even on a curve -rrb- .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1557:validation",
+    "article": "the powerful success of read my lips with such provocative material shows why , after only three films , director\\/co-writer jacques audiard , though little known in this country , belongs in the very top rank of french filmmakers .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1982:validation",
+    "article": "if i want a real movie , i 'll buy the criterion dvd .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8029:validation",
+    "article": "-lrb- less a movie than -rrb- an appalling , odoriferous thing ... so rotten in almost every single facet of production that you 'll want to crawl up your own \\*\\*\\* in embarrassment .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2199:validation",
+    "article": "it 's packed with adventure and a worthwhile environmental message , so it 's great for the kids .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3573:validation",
+    "article": "devos and cassel have tremendous chemistry -- their sexual and romantic tension , while never really vocalized , is palpable .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2446:validation",
+    "article": "there is something in full frontal , i guess , about artifice and acting and how it distorts reality for people who make movies and watch them , but like most movie riddles , it works only if you have an interest in the characters you see .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2662:validation",
+    "article": "wiser souls would have tactfully pretended not to see it and left it lying there",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6962:validation",
+    "article": "this film was made by and for those folks who collect the serial killer cards and are fascinated by the mere suggestion of serial killers .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:351:validation",
+    "article": "it 's both degrading and strangely liberating to see people working so hard at leading lives of sexy intrigue , only to be revealed by the dispassionate gantz brothers as ordinary , pasty lumpen .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1924:validation",
+    "article": "expanded to 65 minutes for theatrical release , it still feels somewhat unfinished .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1036:validation",
+    "article": "it 's not a great monster movie .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5437:validation",
+    "article": "a period story about a catholic boy who tries to help a jewish friend get into heaven by sending the audience straight to hell .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4036:validation",
+    "article": "mike leigh populates his movie with a wonderful ensemble cast of characters that bring the routine day to day struggles of the working class to life",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1341:validation",
+    "article": "ice age wo n't drop your jaw , but it will warm your heart , and i 'm giving it a strong thumbs up .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:903:validation",
+    "article": "extraordinary debut from josh koury .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:6189:validation",
+    "article": "what starts off as a potentially incredibly twisting mystery becomes simply a monster chase film .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6403:validation",
+    "article": "time literally stops on a dime in the tries-so-hard-to-be-cool `` clockstoppers , '' but that does n't mean it still wo n't feel like the longest 90 minutes of your movie-going life .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7748:validation",
+    "article": "a depraved , incoherent , instantly disposable piece of hackery .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3005:validation",
+    "article": "a wonderful , ghastly film .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:6314:validation",
+    "article": "any attempts at nuance given by the capable cast is drowned out by director jon purdy 's sledgehammer sap .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1097:validation",
+    "article": "a fascinating case study of flower-power liberation -- and the price that was paid for it .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:6073:validation",
+    "article": "you can fire a torpedo through some of clancy 's holes , and the scripters do n't deserve any oscars .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5304:validation",
+    "article": "it 's surprisingly decent , particularly for a tenth installment in a series .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8349:validation",
+    "article": "occasionally interesting but essentially unpersuasive , a footnote to a still evolving story .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:676:validation",
+    "article": "makes 98 minutes feel like three hours .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1663:validation",
+    "article": "but the problem with wendigo , for all its effective moments , is n't really one of resources .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4225:validation",
+    "article": "yes , mibii is rote work and predictable , but with a philosophical visual coming right at the end that extravagantly redeems it .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2642:validation",
+    "article": "i know that i 'll never listen to marvin gaye or the supremes the same way again",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8462:validation",
+    "article": "light-years ahead of paint-by-number american blockbusters like pearl harbor , at least artistically .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5267:validation",
+    "article": "more of a career curio than a major work .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:724:validation",
+    "article": "well-acted , well-directed and , for all its moodiness , not too pretentious .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3796:validation",
+    "article": "i 'm sure the filmmakers found this a remarkable and novel concept , but anybody who has ever seen an independent film can report that it is instead a cheap cliché .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3847:validation",
+    "article": "less funny than it should be and less funny than it thinks it is .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:792:validation",
+    "article": "a sugar-coated rocky whose valuable messages are forgotten 10 minutes after the last trombone honks .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6331:validation",
+    "article": "halfway through the movie , the humor dwindles .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8132:validation",
+    "article": "a moving picture that does not move .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2881:validation",
+    "article": "it 's just weirdness for the sake of weirdness , and where human nature should be ingratiating , it 's just grating .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:693:validation",
+    "article": "special p.o.v. camera mounts on bikes , skateboards , and motorcycles provide an intense experience when splashed across the immense imax screen .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1353:validation",
+    "article": "despite some strong performances , never rises above the level of a telanovela .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2155:validation",
+    "article": "a lovely film for the holiday season .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2060:validation",
+    "article": "phillip noyce and all of his actors -- as well as his cinematographer , christopher doyle -- understand the delicate forcefulness of greene 's prose , and it 's there on the screen in their version of the quiet american .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1167:validation",
+    "article": "the movie is so contrived , nonsensical and formulaic that , come to think of it , the day-old shelf would be a more appropriate location to store it .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8395:validation",
+    "article": "all of the filmmakers ' calculations ca n't rescue brown sugar from the curse of blandness .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1984:validation",
+    "article": "a conventional but heartwarming tale .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4489:validation",
+    "article": "constantly touching , surprisingly funny , semi-surrealist exploration of the creative act .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7328:validation",
+    "article": "congrats disney on a job well done , i enjoyed it just as much !",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7164:validation",
+    "article": "the story itself is actually quite vapid .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2898:validation",
+    "article": "the movie 's major and most devastating flaw is its reliance on formula , though , and it 's quite enough to lessen the overall impact the movie could have had .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3810:validation",
+    "article": "no amount of arty theorizing -- the special effects are ` german-expressionist , ' according to the press notes -- can render it anything but laughable .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8083:validation",
+    "article": "it 's excessively quirky and a little underconfident in its delivery , but otherwise this is the best ` old neighborhood ' project since christopher walken kinda romanced cyndi lauper in the opportunists .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:5197:validation",
+    "article": "an enjoyable above average summer diversion .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2714:validation",
+    "article": "adam sandler 's heart may be in the right place , but he needs to pull his head out of his butt",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1273:validation",
+    "article": "my big fat greek wedding is not only the best date movie of the year , it 's also a -- dare i say it twice -- delightfully charming -- and totally american , i might add -- slice of comedic bliss .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3359:validation",
+    "article": "intensely romantic , thought-provoking and even an engaging mystery .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7121:validation",
+    "article": "watching austin powers in goldmember is like binging on cotton candy .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1200:validation",
+    "article": "miller tells this very compelling tale with little fuss or noise , expertly plucking tension from quiet .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7365:validation",
+    "article": "narc can only remind us of brilliant crime dramas without becoming one itself .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:108:validation",
+    "article": "isabelle huppert excels as the enigmatic mika and anna mouglalis is a stunning new young talent in one of chabrol 's most intense psychological mysteries .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:310:validation",
+    "article": "jones helps breathe some life into the insubstantial plot , but even he is overwhelmed by predictability .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7822:validation",
+    "article": "bad company .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1115:validation",
+    "article": "it 's that painful .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3164:validation",
+    "article": "in this film we at least see a study in contrasts ; the wide range of one actor , and the limited range of a comedian .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3829:validation",
+    "article": "a naturally funny film , home movie makes you crave chris smith 's next movie .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3054:validation",
+    "article": "merchant has n't directed this movie so much as produced it -- like sausage .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4496:validation",
+    "article": "that rare movie that works on any number of levels -- as a film of magic and whimsy for children , a heartfelt romance for teenagers and a compelling argument about death , both pro and con , for adults .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:8363:validation",
+    "article": "a high-minded snoozer .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5818:validation",
+    "article": "the impulses that produced this project ... are commendable , but the results are uneven .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1358:validation",
+    "article": "none of this is meaningful or memorable , but frosting is n't , either , and you would n't turn down a big bowl of that , would you ?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1978:validation",
+    "article": "something must have been lost in the translation .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7375:validation",
+    "article": "a compelling yarn , but not quite a ripping one .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3518:validation",
+    "article": "sade achieves the near-impossible : it turns the marquis de sade into a dullard .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1342:validation",
+    "article": "a tasty masala .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7690:validation",
+    "article": "if a few good men told us that we `` ca n't handle the truth '' than high crimes poetically states at one point in this movie that we `` do n't care about the truth . ''",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:8134:validation",
+    "article": "just another combination of bad animation and mindless violence ... lacking the slightest bit of wit or charm .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1888:validation",
+    "article": "less about shakespeare than the spawn of fools who saw quentin tarantino 's handful of raucous gangster films and branched out into their own pseudo-witty copycat interpretations .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6370:validation",
+    "article": "that jack nicholson makes this man so watchable is a tribute not only to his craft , but to his legend .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7132:validation",
+    "article": "the script 's snazzy dialogue establishes a realistic atmosphere that involves us in the unfolding crisis , but the lazy plotting ensures that little of our emotional investment pays off .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:8482:validation",
+    "article": "a breathtaking adventure for all ages , spirit tells its poignant and uplifting story in a stunning fusion of music and images .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3400:validation",
+    "article": "... while the humor aspects of ` jason x ' were far more entertaining than i had expected , everything else about the film tanks .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2679:validation",
+    "article": "a penetrating glimpse into the tissue-thin ego of the stand-up comic .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4742:validation",
+    "article": "nelson 's intentions are good , but the end result does no justice to the story itself .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8111:validation",
+    "article": "dreary tale of middle-class angst",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4767:validation",
+    "article": "a film that suffers because of its many excesses .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4763:validation",
+    "article": "the lousy john q all but spits out denzel washington 's fine performance in the title role .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1162:validation",
+    "article": "my wife is an actress works as well as it does because -lrb- the leads -rrb- are such a companionable couple .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1806:validation",
+    "article": "it 's bright , pristine style and bold colors make it as much fun as reading an oversized picture book before bedtime .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1093:validation",
+    "article": "in a word : no. .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5435:validation",
+    "article": "an already thin story boils down to surviving invaders seeking an existent anti-virus .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1766:validation",
+    "article": "if you can push on through the slow spots , you 'll be rewarded with some fine acting .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7111:validation",
+    "article": "should be required viewing for civics classes and would-be public servants alike .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7818:validation",
+    "article": "it concentrates far too much on the awkward interplay and utter lack of chemistry between chan and hewitt .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1614:validation",
+    "article": "the script becomes lifeless and falls apart like a cheap lawn chair .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8091:validation",
+    "article": "ms. hutchins is talented enough and charismatic enough to make us care about zelda 's ultimate fate .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2775:validation",
+    "article": "just too silly and sophomoric to ensnare its target audience .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7775:validation",
+    "article": "a terrific date movie , whatever your orientation .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2917:validation",
+    "article": "a remarkably alluring film set in the constrictive eisenhower era about one suburban woman 's yearning in the face of a loss that shatters her cheery and tranquil suburban life .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1216:validation",
+    "article": "i have not been this disappointed by a movie in a long time .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6595:validation",
+    "article": "as a kind of colorful , dramatized pbs program , frida gets the job done .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2270:validation",
+    "article": "filmmaker tian zhuangzhuang triumphantly returns to narrative filmmaking with a visually masterful work of quiet power .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3943:validation",
+    "article": "brings together some of the biggest names in japanese anime , with impressive results .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:55:validation",
+    "article": "here polanski looks back on those places he saw at childhood , and captures them by freeing them from artefact , and by showing them heartbreakingly drably .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4770:validation",
+    "article": "staggers between flaccid satire and what is supposed to be madcap farce .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3306:validation",
+    "article": "there 's not a single jump-in-your-seat moment and believe it or not , jason actually takes a backseat in his own film to special effects .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5055:validation",
+    "article": "an ambitious , serious film that manages to do virtually everything wrong ; sitting through it is something akin to an act of cinematic penance .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:8057:validation",
+    "article": "-- is a crime that should be punishable by chainsaw .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6085:validation",
+    "article": "exceptionally well acted by diane lane and richard gere .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4582:validation",
+    "article": "-lrb- i -rrb- t 's certainly laudable that the movie deals with hot-button issues in a comedic context , but barbershop is n't as funny as it should be .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5555:validation",
+    "article": "the movie is brilliant , really .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7695:validation",
+    "article": "it 's lazy for a movie to avoid solving one problem by trying to distract us with the solution to another .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6037:validation",
+    "article": "matthew lillard is born to play shaggy !",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:8448:validation",
+    "article": "this is a superior horror flick .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4797:validation",
+    "article": "a conventional , but well-crafted film about a historic legal battle in ireland over a man 's right to raise his own children .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3440:validation",
+    "article": "none of this has the suavity or classical familiarity of bond , but much of it is good for a laugh .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6898:validation",
+    "article": "holm does his sly , intricate magic , and iben hjelje is entirely appealing as pumpkin .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4546:validation",
+    "article": "after the first 10 minutes , which is worth seeing , the movie sinks into an abyss of clichés , depression and bad alternative music .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8325:validation",
+    "article": "captivates and shows how a skillful filmmaker can impart a message without bludgeoning the audience over the head .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2736:validation",
+    "article": "astonishing ... -lrb- frames -rrb- profound ethical and philosophical questions in the form of dazzling pop entertainment .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:6372:validation",
+    "article": "if borstal boy is n't especially realistic , it is an engaging nostalgia piece .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6643:validation",
+    "article": "jagger , stoppard and director michael apted ... deliver a riveting and surprisingly romantic ride .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1389:validation",
+    "article": "ultimately , the film never recovers from the clumsy cliché of the ugly american abroad , and the too-frosty exterior ms. paltrow employs to authenticate her british persona is another liability .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2783:validation",
+    "article": "as animation increasingly emphasizes the computer and the cool , this is a film that takes a stand in favor of tradition and warmth .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3516:validation",
+    "article": "a fantastic premise anchors this movie , but what it needs is either a more rigid , blair witch-style commitment to its mockumentary format , or a more straightforward , dramatic treatment , with all the grandiosity that that implies .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6810:validation",
+    "article": "the issues are presented in such a lousy way , complete with some of the year 's -lrb- unintentionally -rrb- funniest moments , that it 's impossible to care .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2374:validation",
+    "article": "about a boy vividly recalls the cary grant of room for one more , houseboat and father goose in its affectionate depiction of the gentle war between a reluctant , irresponsible man and the kid who latches onto him .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:2828:validation",
+    "article": "b picture , and i mean that as a compliment .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4818:validation",
+    "article": "... salaciously simplistic .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4020:validation",
+    "article": "a winning and wildly fascinating work .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:5645:validation",
+    "article": "spielberg has managed to marry science fiction with film noir and action flicks with philosophical inquiry .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2779:validation",
+    "article": "right now , they 're merely signposts marking the slow , lingering death of imagination .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5747:validation",
+    "article": "this is a movie you can trust .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7303:validation",
+    "article": "yes , it 's as good as you remember .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:6920:validation",
+    "article": "talk to her is not the perfect movie many have made it out to be , but it 's still quite worth seeing .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7932:validation",
+    "article": "a jaw-droppingly beautiful work that upends nearly every cliché of japanese animation while delivering a more than satisfactory amount of carnage .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:8344:validation",
+    "article": "it 's fitting that a movie as artificial and soulless as the country bears owes its genesis to an animatronic display at disneyland .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3633:validation",
+    "article": "his scenes are short and often unexpected .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:944:validation",
+    "article": "not only is it a charming , funny and beautifully crafted import , it uses very little dialogue , making it relatively effortless to read and follow the action at the same time .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:8451:validation",
+    "article": "yet another self-consciously overwritten story about a rag-tag bunch of would-be characters that team up for a ca n't - miss heist -- only to have it all go wrong .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7633:validation",
+    "article": "works as pretty contagious fun .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3650:validation",
+    "article": "murphy and wilson actually make a pretty good team ... but the project surrounding them is distressingly rote .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6825:validation",
+    "article": "while puerile men dominate the story , the women shine .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3429:validation",
+    "article": "ninety minutes of viva castro !",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3083:validation",
+    "article": "sparkling , often hilarious romantic jealousy comedy ... attal looks so much like a young robert deniro that it seems the film should instead be called ` my husband is travis bickle ' .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5443:validation",
+    "article": "the film did n't move me one way or the other , but it was an honest effort and if you want to see a flick about telemarketers this one will due .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4235:validation",
+    "article": "sensitive ensemble performances and good period reconstruction add up to a moving tragedy with some buoyant human moments .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3540:validation",
+    "article": "less a study in madness or love than a study in schoolgirl obsession .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:171:validation",
+    "article": "frida is certainly no disaster , but neither is it the kahlo movie frida fans have been looking for .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:8146:validation",
+    "article": "a compassionate , moving portrait of an american -lrb- and an america -rrb- always reaching for something just outside his grasp .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:809:validation",
+    "article": "working from a surprisingly sensitive script co-written by gianni romoli ... ozpetek avoids most of the pitfalls you 'd expect in such a potentially sudsy set-up .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3531:validation",
+    "article": "he 's not good with people .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1234:validation",
+    "article": "we started to wonder if ... some unpaid intern had just typed ` chris rock , ' ` anthony hopkins ' and ` terrorists ' into some univac-like script machine .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7906:validation",
+    "article": "the movie straddles the fence between escapism and social commentary , and on both sides it falls short .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6090:validation",
+    "article": "everything else about high crimes is , like the military system of justice it portrays , tiresomely regimented .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3452:validation",
+    "article": "a thunderous ride at first , quiet cadences of pure finesse are few and far between ; their shortage dilutes the potency of otherwise respectable action .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7190:validation",
+    "article": "it 's loud and boring ; watching it is like being trapped at a bad rock concert .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7502:validation",
+    "article": "it must be in the genes .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7267:validation",
+    "article": "a meditation on faith and madness , frailty is blood-curdling stuff .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7473:validation",
+    "article": "famuyiwa 's feature deals with its subject matter in a tasteful , intelligent manner , rather than forcing us to endure every plot contrivance that the cliché-riddled genre can offer .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:6817:validation",
+    "article": "mandel holland 's direction is uninspired , and his scripting unsurprising , but the performances by phifer and black are ultimately winning .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7983:validation",
+    "article": "the action scenes have all the suspense of a 20-car pileup , while the plot holes are big enough for a train car to drive through -- if kaos had n't blown them all up .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3282:validation",
+    "article": "a deeply felt and vividly detailed story about newcomers in a strange new world .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1444:validation",
+    "article": "to build a feel-good fantasy around a vain dictator-madman is off-putting , to say the least , not to mention inappropriate and wildly undeserved .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2706:validation",
+    "article": "the video work is so grainy and rough , so dependent on being ` naturalistic ' rather than carefully lit and set up , that it 's exhausting to watch .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1618:validation",
+    "article": "collateral damage offers formula payback and the big payoff , but the explosions tend to simply hit their marks , pyro-correctly .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3403:validation",
+    "article": "tsai ming-liang 's witty , wistful new film , what time is it there ?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8282:validation",
+    "article": "the innocence of holiday cheer ai n't what it used to be .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3547:validation",
+    "article": "if you 're looking for something new and hoping for something entertaining , you 're in luck .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2849:validation",
+    "article": "what 's missing is what we call the ` wow ' factor .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4971:validation",
+    "article": "maggie smith as the ya-ya member with the o2-tank will absolutely crack you up with her crass , then gasp for gas , verbal deportment .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:186:validation",
+    "article": "an hour and a half of joyful solo performance .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:147:validation",
+    "article": "it 's a frightful vanity film that , no doubt , pays off what debt miramax felt they owed to benigni .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2118:validation",
+    "article": "rollerball is as bad as you think , and worse than you can imagine .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3143:validation",
+    "article": "warm in its loving yet unforgivingly inconsistent depiction of everyday people , relaxed in its perfect quiet pace and proud in its message .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5404:validation",
+    "article": "unfunny comedy with a lot of static set ups , not much camera movement , and most of the scenes take place indoors in formal settings with motionless characters .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3264:validation",
+    "article": "the drama was so uninspiring that even a story immersed in love , lust , and sin could n't keep my attention .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6503:validation",
+    "article": "watching the powerpuff girls movie , my mind kept returning to one anecdote for comparison : the cartoon in japan that gave people seizures .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7396:validation",
+    "article": "do we really need another film that praises female self-sacrifice ?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:473:validation",
+    "article": "it 's no surprise that as a director washington demands and receives excellent performances , from himself and from newcomer derek luke .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3546:validation",
+    "article": "ultimately feels like just one more in the long line of films this year about the business of making movies .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7434:validation",
+    "article": "the best part about `` gangs '' was daniel day-lewis .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:5334:validation",
+    "article": "despite the film 's shortcomings , the stories are quietly moving .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7920:validation",
+    "article": "it 's not exactly worth the bucks to expend the full price for a date , but when it comes out on video , it 's well worth a rental .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3086:validation",
+    "article": "wait for pay per view or rental but do n't dismiss barbershop out of hand .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6674:validation",
+    "article": "you have once again entered the bizarre realm where director adrian lyne holds sway , where all relationships are simultaneously broadly metaphorical , oddly abstract , and excruciatingly literal .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6772:validation",
+    "article": "and for all the wrong reasons besides .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4980:validation",
+    "article": "photographed with melancholy richness and eloquently performed yet also decidedly uncinematic .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:2164:validation",
+    "article": "by that measure , it is a failure .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6658:validation",
+    "article": "it jumps around with little logic or continuity , presenting backstage bytes of information that never amount to a satisfying complete picture of this particular , anciently demanding métier .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7255:validation",
+    "article": "i 'll stay with the stage versions , however , which bite cleaner , and deeper .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6692:validation",
+    "article": "some stunning visuals -- and some staggeringly boring cinema .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4355:validation",
+    "article": "not bad , but not all that good .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4396:validation",
+    "article": "in any case , i would recommend big bad love only to winger fans who have missed her since 1995 's forget paris .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1202:validation",
+    "article": "the wanton slipperiness of \\* corpus and its amiable jerking and reshaping of physical time and space would make it a great piece to watch with kids and use to introduce video as art .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4112:validation",
+    "article": "tom green and an ivy league college should never appear together on a marquee , especially when the payoff is an unschooled comedy like stealing harvard , which fails to keep 80 minutes from seeming like 800 .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5008:validation",
+    "article": "steve oedekerk is , alas , no woody allen .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2845:validation",
+    "article": "heartwarming here relies less on forced air than on petter næss ' delicate , clever direction ... and a wonderful , imaginative script by axel hellstenius .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:6977:validation",
+    "article": "a graceful , moving tribute to the courage of new york 's finest and a nicely understated expression of the grief shared by the nation at their sacrifice .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7123:validation",
+    "article": "it ends up being neither , and fails at both endeavors .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7658:validation",
+    "article": "an invaluable historical document thanks to the filmmaker 's extraordinary access to massoud , whose charm , cultivation and devotion to his people are readily apparent .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3286:validation",
+    "article": "but how it washed out despite all of that is the project 's prime mystery .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7352:validation",
+    "article": "is a mess .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4362:validation",
+    "article": "more of the same old garbage hollywood has been trying to pass off as acceptable teen entertainment for some time now .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4837:validation",
+    "article": "no matter how firmly director john stainton has his tongue in his cheek , the fact remains that a wacky concept does not a movie make .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1292:validation",
+    "article": "in some ways , lagaan is quintessential bollywood .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7369:validation",
+    "article": "brainy , artistic and muted , almost to the point of suffocation .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3027:validation",
+    "article": "the pool drowned me in boredom .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4779:validation",
+    "article": "to show these characters in the act and give them no feelings of remorse -- and to cut repeatedly to the flashback of the original rape -- is overkill to the highest degree .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5462:validation",
+    "article": "to call this one an eventual cult classic would be an understatement , and woe is the horror fan who opts to overlook this goofily endearing and well-lensed gorefest .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:6244:validation",
+    "article": "there are scenes of cinematic perfection that steal your heart away .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:6276:validation",
+    "article": "it 's a fine , old-fashioned-movie movie , which is to say it 's unburdened by pretensions to great artistic significance .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7120:validation",
+    "article": "in addition to the overcooked , ham-fisted direction , which has all the actors reaching for the back row , the dialogue sounds like horrible poetry .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4289:validation",
+    "article": "the main characters are simply named the husband , the wife and the kidnapper , emphasizing the disappointingly generic nature of the entire effort .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4603:validation",
+    "article": "there may have been a good film in `` trouble every day , '' but it is not what is on the screen .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:739:validation",
+    "article": "a positively thrilling combination of ethnography and all the intrigue , betrayal , deceit and murder of a shakespearean tragedy or a juicy soap opera .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:6654:validation",
+    "article": "`` the best disney movie since the lion king ''",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:6284:validation",
+    "article": "parents beware ; this is downright movie penance .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4593:validation",
+    "article": "it picked me up , swung me around , and dropped me back in my seat with more emotional force than any other recent film .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7498:validation",
+    "article": "`` feardotcom '' has the makings of an interesting meditation on the ethereal nature of the internet and the otherworldly energies it could channel , but it simply becomes a routine shocker .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3353:validation",
+    "article": "the actors are fantastic .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:302:validation",
+    "article": "are monsters born , or made ?",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4753:validation",
+    "article": "very stupid and annoying .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:444:validation",
+    "article": "manages to accomplish what few sequels can -- it equals the original and in some ways even betters it .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3535:validation",
+    "article": "rubbo 's humorously tendentious intervention into the who-wrote-shakespeare controversy .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4652:validation",
+    "article": "about amy 's cuteness , amy 's career success -lrb- she 's a best-selling writer of self-help books who ca n't help herself -rrb- , and amy 's neuroses when it comes to men .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5237:validation",
+    "article": "... the maudlin way its story unfolds suggests a director fighting against the urge to sensationalize his material .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2228:validation",
+    "article": "there 's surely something wrong with a comedy where the only belly laughs come from the selection of outtakes tacked onto the end credits .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4975:validation",
+    "article": "appropriately cynical social commentary aside , # 9 never quite ignites .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7268:validation",
+    "article": "he 's one of the few ` cool ' actors who never seems aware of his own coolness .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1811:validation",
+    "article": "always destined to be measured against anthony asquith 's acclaimed 1952 screen adaptation .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1957:validation",
+    "article": "one funny popcorn flick .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7228:validation",
+    "article": "a non-britney person might survive a screening with little harm done , except maybe for the last 15 minutes , which are as maudlin as any after-school special you can imagine .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4034:validation",
+    "article": "there 's absolutely no reason why blue crush , a late-summer surfer girl entry , should be as entertaining as it is",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4356:validation",
+    "article": "there 's a scientific law to be discerned here that producers would be well to heed : mediocre movies start to drag as soon as the action speeds up ; when the explosions start , they fall to pieces .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5355:validation",
+    "article": "are we dealing with dreams , visions or being told what actually happened as if it were the third ending of clue ?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7619:validation",
+    "article": "the performers are so spot on , it is hard to conceive anyone else in their roles .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2563:validation",
+    "article": "under-rehearsed and lifeless",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4222:validation",
+    "article": "dramatically lackluster .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5423:validation",
+    "article": "genuinely unnerving .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1492:validation",
+    "article": "few of the increasingly far-fetched events that first-time writer-director neil burger follows up with are terribly convincing , which is a pity , considering barry 's terrific performance .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7765:validation",
+    "article": "in gleefully , thumpingly hyperbolic terms , it covers just about every cliche in the compendium about crass , jaded movie types and the phony baloney movie biz .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:790:validation",
+    "article": "i have no problem with `` difficult '' movies , or movies that ask the audience to meet them halfway and connect the dots instead of having things all spelled out .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4383:validation",
+    "article": "devotees of star trek ii : the wrath of khan will feel a nagging sense of deja vu , and the grandeur of the best next generation episodes is lacking .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4412:validation",
+    "article": "measured against practically any like-themed film other than its oscar-sweeping franchise predecessor the silence of the lambs , red dragon rates as an exceptional thriller .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:8177:validation",
+    "article": "my wife is an actress has its moments in looking at the comic effects of jealousy .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3981:validation",
+    "article": "` synthetic ' is the best description of this well-meaning , beautifully produced film that sacrifices its promise for a high-powered star pedigree .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1958:validation",
+    "article": "bad company has one of the most moronic screenplays of the year , full of holes that will be obvious even to those who are n't looking for them .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3916:validation",
+    "article": "same guy with both hats .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1640:validation",
+    "article": "and it 's not that funny -- which is just generally insulting .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:278:validation",
+    "article": "light the candles , bring out the cake and do n't fret about the calories because there 's precious little substance in birthday girl -- it 's simply , and surprisingly , a nice , light treat .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1417:validation",
+    "article": "george clooney , in his first directorial effort , presents this utterly ridiculous shaggy dog story as one of the most creative , energetic and original comedies to hit the screen in years .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2041:validation",
+    "article": "a beautiful paean to a time long past .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:5333:validation",
+    "article": "it 's obvious -lrb- je-gyu is -rrb- trying for poetry ; what he gets instead has all the lyricism of a limerick scrawled in a public restroom .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3099:validation",
+    "article": "but the cinematography is cloudy , the picture making becalmed .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2920:validation",
+    "article": "writer-director randall wallace has bitten off more than he or anyone else could chew , and his movie veers like a drunken driver through heavy traffic .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3061:validation",
+    "article": "the attempt to build up a pressure cooker of horrified awe emerges from the simple fact that the movie has virtually nothing to show .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:241:validation",
+    "article": "the bai brothers have taken an small slice of history and opened it up for all of us to understand , and they 've told a nice little story in the process .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5809:validation",
+    "article": "` you 'll laugh for not quite and hour and a half , but come out feeling strangely unsatisfied .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4664:validation",
+    "article": "too much of the movie feels contrived , as if the filmmakers were worried the story would n't work without all those gimmicks .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4706:validation",
+    "article": "alternately frustrating and rewarding .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1854:validation",
+    "article": "the movie should be credited with remembering his victims .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3907:validation",
+    "article": "while there 's likely very little crossover appeal to those without much interest in the elizabethans -lrb- as well as rank frustration from those in the know about rubbo 's dumbed-down tactics -rrb- , much ado about something is an amicable endeavor .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4704:validation",
+    "article": "the smash 'em - up , crash 'em - up , shoot 'em - up ending comes out of nowhere substituting mayhem for suspense .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:2967:validation",
+    "article": "every sequel you skip will be two hours gained .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6446:validation",
+    "article": "one of the worst films of 2002 .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5727:validation",
+    "article": "it 's good to see michael caine whipping out the dirty words and punching people in the stomach again .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3718:validation",
+    "article": "it squanders chan 's uniqueness ; it could even be said to squander jennifer love hewitt !",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1638:validation",
+    "article": "less a heartfelt appeal for the handicapped than a nice belgian waffle .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:2971:validation",
+    "article": "like shave ice without the topping , this cinematic snow cone is as innocuous as it is flavorless .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3513:validation",
+    "article": "quite frankly , i ca n't see why any actor of talent would ever work in a mcculloch production again if they looked at how this movie turned out .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7581:validation",
+    "article": "armed with a game supporting cast , from the pitch-perfect forster to the always hilarious meara and levy , like mike shoots and scores , doing its namesake proud .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:201:validation",
+    "article": "the modern-day royals have nothing on these guys when it comes to scandals .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8336:validation",
+    "article": "has the disjointed feel of a bunch of strung-together tv episodes .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:805:validation",
+    "article": "director jay russell weighs down his capricious fairy-tale with heavy sentiment and lightweight meaning .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:209:validation",
+    "article": "coal is n't as easy to come by as it used to be and this would be a worthy substitute for naughty children 's stockings .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7641:validation",
+    "article": "provides a very moving and revelatory footnote to the holocaust .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:8030:validation",
+    "article": "funny and touching .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7823:validation",
+    "article": "so vivid a portrait of a woman consumed by lust and love and crushed by betrayal that it conjures up the intoxicating fumes and emotional ghosts of a freshly painted rembrandt .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2488:validation",
+    "article": "witty and often surprising , a dark little morality tale disguised as a romantic comedy .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1987:validation",
+    "article": "the problem is the needlessly poor quality of its archival prints and film footage .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6853:validation",
+    "article": "it 's that good .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7212:validation",
+    "article": "pure cinematic intoxication , a wildly inventive mixture of comedy and melodrama , tastelessness and swooning elegance .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:6270:validation",
+    "article": "a solid and refined piece of moviemaking imbued with passion and attitude .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:426:validation",
+    "article": "though excessively tiresome , the uncertainty principle , as verbally pretentious as the title may be , has its handful of redeeming features , as long as you discount its ability to bore .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7667:validation",
+    "article": "another in a long line of ultra-violent war movies , this one is not quite what it could have been as a film , but the story and theme make up for it .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3655:validation",
+    "article": "a depressingly retrograde , ` post-feminist ' romantic comedy that takes an astonishingly condescending attitude toward women .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7874:validation",
+    "article": "as gamely as the movie tries to make sense of its title character , there remains a huge gap between the film 's creepy , clean-cut dahmer -lrb- jeremy renner -rrb- and fiendish acts that no amount of earnest textbook psychologizing can bridge .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2243:validation",
+    "article": "` snow dogs ' has both .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1020:validation",
+    "article": "the misery of these people becomes just another voyeuristic spectacle , to be consumed and forgotten .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7042:validation",
+    "article": "this is rote spookiness , with nary an original idea -lrb- or role , or edit , or score , or anything , really -rrb- in sight , and the whole of the proceedings beg the question ` why ? '",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5721:validation",
+    "article": "this latest installment of the horror film franchise that is apparently as invulnerable as its trademark villain has arrived for an incongruous summer playoff , demonstrating yet again that the era of the intelligent , well-made b movie is long gone .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5794:validation",
+    "article": "there is a real subject here , and it is handled with intelligence and care .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:6939:validation",
+    "article": "to say that this vapid vehicle is downright doltish and uneventful is just as obvious as telling a country skunk that he has severe body odor .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8311:validation",
+    "article": "the first tunisian film i have ever seen , and it 's also probably the most good-hearted yet sensual entertainment i 'm likely to see all year .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:965:validation",
+    "article": "in a summer of clones , harvard man is something rare and riveting : a wild ride that relies on more than special effects .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:6631:validation",
+    "article": "go back to sleep .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2094:validation",
+    "article": "the acting is amateurish , the cinematography is atrocious , the direction is clumsy , the writing is insipid and the violence is at once luridly graphic and laughably unconvincing .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6158:validation",
+    "article": "aniston has at last decisively broken with her friends image in an independent film of satiric fire and emotional turmoil .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:285:validation",
+    "article": "shatner is probably the funniest person in the film , which gives you an idea just how bad it was .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8365:validation",
+    "article": "bring on the sequel .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3490:validation",
+    "article": "like the tuck family themselves , this movie just goes on and on and on and on",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2405:validation",
+    "article": "never lets go your emotions , taking them to surprising highs , sorrowful lows and hidden impulsive niches ... gorgeous , passionate , and at times uncommonly moving .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1194:validation",
+    "article": "your stomach for heaven depends largely on your appetite for canned corn .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5405:validation",
+    "article": "a movie in which two not very absorbing characters are engaged in a romance you ca n't wait to see end .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6741:validation",
+    "article": "weirdly , broomfield has compelling new material but he does n't unveil it until the end , after endless scenes of him wheedling reluctant witnesses and pointing his camera through the smeared windshield of his rental car .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8143:validation",
+    "article": "audiard successfully maintains suspense on different levels throughout a film that is both gripping and compelling .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4692:validation",
+    "article": "i like my christmas movies with more elves and snow and less pimps and ho 's .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8385:validation",
+    "article": "a lame romantic comedy about an unsympathetic character and someone who would not likely be so stupid as to get involved with her .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:76:validation",
+    "article": "methodical , measured , and gently tedious in its comedy , secret ballot is a purposefully reductive movie -- which may be why it 's so successful at lodging itself in the brain .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4806:validation",
+    "article": "imagine -lrb- if possible -rrb- a pasolini film without passion or politics , or an almodovar movie without beauty or humor , and you have some idea of the glum , numb experience of watching o fantasma .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4856:validation",
+    "article": "beautifully shot , delicately scored and powered by a set of heartfelt performances , it 's a lyrical endeavour .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1068:validation",
+    "article": "... another example of how sandler is losing his touch .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8289:validation",
+    "article": "the film 's hero is a bore and his innocence soon becomes a questionable kind of inexcusable dumb innocence .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4992:validation",
+    "article": "a funny and touching film that is gorgeously acted by a british cast to rival gosford park 's .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7041:validation",
+    "article": "this is more a case of ` sacre bleu ! '",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:2856:validation",
+    "article": "the film truly does rescue -lrb- the funk brothers -rrb- from motown 's shadows .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:2080:validation",
+    "article": "cloaks a familiar anti-feminist equation -lrb- career - kids = misery -rrb- in tiresome romantic-comedy duds .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1319:validation",
+    "article": "the metaphors are provocative , but too often , the viewer is left puzzled by the mechanics of the delivery .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5075:validation",
+    "article": "has the marks of a septuagenarian ; it 's a crusty treatment of a clever gimmick .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1808:validation",
+    "article": "vampire epic succeeds as spooky action-packed trash of the highest order .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3776:validation",
+    "article": "while you have to admit it 's semi-amusing to watch robert deniro belt out `` when you 're a jet , you 're a jet all the way , '' it 's equally distasteful to watch him sing the lyrics to `` tonight . ''",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7122:validation",
+    "article": "nothing overly original , mind you , but solidly entertaining .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1797:validation",
+    "article": "it 's a feel-bad ending for a depressing story that throws a bunch of hot-button items in the viewer 's face and asks to be seen as hip , winking social commentary .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1661:validation",
+    "article": "beautifully crafted , engaging filmmaking that should attract upscale audiences hungry for quality and a nostalgic , twisty yarn that will keep them guessing .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1466:validation",
+    "article": "one of the most exciting action films to come out of china in recent years .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:580:validation",
+    "article": "allen 's funniest and most likeable movie in years .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5101:validation",
+    "article": "one of the worst movies of the year .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4492:validation",
+    "article": "birthday girl does n't try to surprise us with plot twists , but rather seems to enjoy its own transparency .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3423:validation",
+    "article": "one of the best films of the year with its exquisite acting , inventive screenplay , mesmerizing music , and many inimitable scenes of tenderness , loss , discontent , and yearning .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1432:validation",
+    "article": "like leafing through an album of photos accompanied by the sketchiest of captions .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1013:validation",
+    "article": "by turns numbingly dull-witted and disquietingly creepy .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:974:validation",
+    "article": "one regards reign of fire with awe .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4926:validation",
+    "article": "the movie is n't horrible , but you can see mediocre cresting on the next wave .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5473:validation",
+    "article": "as if drop dead gorgeous was n't enough , this equally derisive clunker is fixated on the spectacle of small-town competition .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:116:validation",
+    "article": "the trappings of i spy are so familiar you might as well be watching a rerun .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1348:validation",
+    "article": "too bad .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:611:validation",
+    "article": "unless you come in to the film with a skateboard under your arm , you 're going to feel like you were n't invited to the party .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3075:validation",
+    "article": "none of his actors stand out , but that 's less of a problem here than it would be in another film : characterization matters less than atmosphere .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1011:validation",
+    "article": "has enough wit , energy and geniality to please not only the fanatical adherents on either side , but also people who know nothing about the subject and think they 're not interested .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3747:validation",
+    "article": "draggin ' about dragons",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6101:validation",
+    "article": "while bollywood\\/hollywood will undoubtedly provide its keenest pleasures to those familiar with bombay musicals , it also has plenty for those -lrb- like me -rrb- who are n't .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1702:validation",
+    "article": "derailed by bad writing and possibly also by some of that extensive post-production reworking to aim the film at young males in the throes of their first full flush of testosterone .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7617:validation",
+    "article": "would that greengrass had gone a tad less for grit and a lot more for intelligibility .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8350:validation",
+    "article": "a crude teen-oriented variation on a theme that the playwright craig lucas explored with infinitely more grace and eloquence in his prelude to a kiss .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5037:validation",
+    "article": "a subtle , humorous , illuminating study of politics , power and social mobility .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:6890:validation",
+    "article": "... a hokey piece of nonsense that tries too hard to be emotional .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2893:validation",
+    "article": "the large-frame imax camera lends itself beautifully to filming the teeming life on the reefs , making this gorgeous film a must for everyone from junior scientists to grown-up fish lovers .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2774:validation",
+    "article": "a fascinating literary mystery story with multiple strands about the controversy of who really wrote shakespeare 's plays .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1439:validation",
+    "article": "adolescents will be adequately served by the movie 's sophomoric blend of shenanigans and slapstick , although the more lascivious-minded might be disappointed in the relative modesty of a movie that sports a ` topless tutorial service . '",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4357:validation",
+    "article": "borstal boy represents the worst kind of filmmaking , the kind that pretends to be passionate and truthful but is really frustratingly timid and soggy .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6355:validation",
+    "article": "it 's just rather leaden and dull .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4691:validation",
+    "article": "-lrb- a -rrb- crushing disappointment .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3062:validation",
+    "article": "wes craven 's presence is felt ; not the craven of ' a nightmare on elm street ' or ` the hills have eyes , ' but the sad schlock merchant of ` deadly friend . '",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5189:validation",
+    "article": "in my own very humble opinion , in praise of love lacks even the most fragmented charms i have found in almost all of his previous works .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6234:validation",
+    "article": "not even solondz 's thirst for controversy , sketchy characters and immature provocations can fully succeed at cheapening it .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5784:validation",
+    "article": "a sensitive , modest comic tragedy that works as both character study and symbolic examination of the huge economic changes sweeping modern china .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:260:validation",
+    "article": "not only better than its predecessor , it may rate as the most magical and most fun family fare of this or any recent holiday season .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7160:validation",
+    "article": "the film would have been more enjoyable had the balance shifted in favor of water-bound action over the land-based ` drama , ' but the emphasis on the latter leaves blue crush waterlogged .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8210:validation",
+    "article": "moore provides an invaluable service by sparking debate and encouraging thought .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5461:validation",
+    "article": "reign of fire has the disadvantage of also looking cheap .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7080:validation",
+    "article": "completely awful iranian drama ... as much fun as a grouchy ayatollah in a cold mosque .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3865:validation",
+    "article": "time out is existential drama without any of the pretension associated with the term .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:5706:validation",
+    "article": "although some viewers will not be able to stomach so much tongue-in-cheek weirdness , those who do will have found a cult favorite to enjoy for a lifetime .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:733:validation",
+    "article": "the last three narcissists left on earth compete for each others ' affections .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1810:validation",
+    "article": "see scratch for the history , see scratch for the music , see scratch for a lesson in scratching , but , most of all , see it for the passion .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4259:validation",
+    "article": "initially gripping , eventually cloying pow drama .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3462:validation",
+    "article": "the movie is genial but never inspired , and little about it will stay with you .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6884:validation",
+    "article": "why spend $ 9 on the same stuff you can get for a buck or so in that greasy little vidgame pit in the theater lobby ?",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7562:validation",
+    "article": "far away .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4849:validation",
+    "article": "offers an interesting look at the rapidly changing face of beijing .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:6112:validation",
+    "article": "just how these families interact may surprise you .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5605:validation",
+    "article": "flashy gadgets and whirling fight sequences may look cool , but they ca n't distract from the flawed support structure holding equilibrium up .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3088:validation",
+    "article": "the movie is a trove of delights .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:8097:validation",
+    "article": "oddly compelling .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:298:validation",
+    "article": "this is an interesting movie ! ''",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3909:validation",
+    "article": "stevens has a flair for dialogue comedy , the film operates nicely off the element of surprise , and the large cast is solid .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5181:validation",
+    "article": "kirshner and monroe seem to be in a contest to see who can out-bad-act the other .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1603:validation",
+    "article": "a reminder that beyond all the hype and recent digital glitz , spielberg knows how to tell us about people .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7045:validation",
+    "article": "feels aimless for much of its running time , until late in the film when a tidal wave of plot arrives , leaving questions in its wake .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6641:validation",
+    "article": "fails as a dystopian movie , as a retooling of fahrenheit 451 , and even as a rip-off of the matrix .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5045:validation",
+    "article": "clayburgh and tambor are charming performers ; neither of them deserves eric schaeffer .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7004:validation",
+    "article": "generic thriller junk .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6973:validation",
+    "article": "wo n't be placed in the pantheon of the best of the swashbucklers but it is a whole lot of fun and you get to see the one of the world 's best actors , daniel auteuil , have a whale of a good time .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7881:validation",
+    "article": "and second , what 's with all the shooting ?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4457:validation",
+    "article": "suffers from its timid parsing of the barn-side target of sons trying to breach gaps in their relationships with their fathers .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5724:validation",
+    "article": "and that makes all the difference .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4654:validation",
+    "article": "call me a cold-hearted curmudgeon for not being able to enjoy a mindless action movie , but i believe a movie can be mindless without being the peak of all things insipid .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6952:validation",
+    "article": "this is a shrewd and effective film from a director who understands how to create and sustain a mood .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3000:validation",
+    "article": "those unfamiliar with mormon traditions may find the singles ward occasionally bewildering .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:2343:validation",
+    "article": "as literary desecrations go , this makes for perfectly acceptable , occasionally very enjoyable children 's entertainment .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1872:validation",
+    "article": "a movie where story is almost an afterthought amidst a swirl of colors and inexplicable events .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5081:validation",
+    "article": "the film virtually chokes on its own self-consciousness .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7:validation",
+    "article": "campanella gets the tone just right -- funny in the middle of sad in the middle of hopeful .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2373:validation",
+    "article": "a poorly scripted , preachy fable that forgets about unfolding a coherent , believable story in its zeal to spread propaganda .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:828:validation",
+    "article": "a damn fine and a truly distinctive and a deeply pertinent film .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2331:validation",
+    "article": "in addition to scoring high for originality of plot -- putting together familiar themes of family , forgiveness and love in a new way -- lilo & stitch has a number of other assets to commend it to movie audiences both innocent and jaded .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:981:validation",
+    "article": "to the civilized mind , a movie like ballistic : ecks vs. sever is more of an ordeal than an amusement .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7401:validation",
+    "article": "it 's hard to say who might enjoy this , are there tolstoy groupies out there ?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2003:validation",
+    "article": "hugely accomplished slice of hitchcockian suspense .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:6006:validation",
+    "article": "the story has little wit and no surprises .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7993:validation",
+    "article": "a fiercely clever and subtle film , capturing the precarious balance between the extravagant confidence of the exiled aristocracy and the cruel earnestness of the victorious revolutionaries .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:6904:validation",
+    "article": "the troubling thing about clockstoppers is that it does n't make any sense .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1774:validation",
+    "article": "... will always be remembered for the 9-11 terrorist attacks .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1732:validation",
+    "article": "although god is great addresses interesting matters of identity and heritage , it 's hard to shake the feeling that it was intended to be a different kind of film .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1981:validation",
+    "article": "the lightest , most breezy movie steven spielberg has made in more than a decade .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7283:validation",
+    "article": "land , people and narrative flow together in a stark portrait of motherhood deferred and desire explored .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7087:validation",
+    "article": "a zombie movie in every sense of the word -- mindless , lifeless , meandering , loud , painful , obnoxious .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6407:validation",
+    "article": "too long , and larded with exposition , this somber cop drama ultimately feels as flat as the scruffy sands of its titular community .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1896:validation",
+    "article": "the sinister inspiration that fuelled devito 's early work is confused in death to smoochy into something both ugly and mindless .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1627:validation",
+    "article": "pacino and williams seem to keep upping the ante on each other , just as their characters do in the film .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5636:validation",
+    "article": "by the time you reach the finale , you 're likely wondering why you 've been watching all this strutting and posturing .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6304:validation",
+    "article": "definitely in the guilty pleasure b-movie category , reign of fire is so incredibly inane that it is laughingly enjoyable .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3628:validation",
+    "article": "kitschy , flashy , overlong soap opera .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6104:validation",
+    "article": "captures all the longing , anguish and ache , the confusing sexual messages and the wish to be a part of that elusive adult world .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:7503:validation",
+    "article": "only for young children , if them .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1361:validation",
+    "article": "i had a dream that a smart comedy would come along to rescue me from a summer of teen-driven , toilet-humor codswallop , and its name was earnest .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3084:validation",
+    "article": "a harrowing account of a psychological breakdown .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1502:validation",
+    "article": "the film makes strong arguments regarding the social status of america 's indigenous people , but really only exists to try to eke out an emotional tug of the heart , one which it fails to get .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3488:validation",
+    "article": "if the material is slight and admittedly manipulative , jacquot preserves tosca 's intoxicating ardor through his use of the camera .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1446:validation",
+    "article": "judith and zaza 's extended bedroom sequence ... is so intimate and sensual and funny and psychologically self-revealing that it makes most of what passes for sex in the movies look like cheap hysterics .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4998:validation",
+    "article": "for those of us who respond more strongly to storytelling than computer-generated effects , the new star wars installment has n't escaped the rut dug by the last one .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7194:validation",
+    "article": "this ill-conceived and expensive project winds up looking like a bunch of talented thesps slumming it .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7839:validation",
+    "article": "... better described as a ghost story gone badly awry .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4645:validation",
+    "article": "seriously , rent the disney version .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6607:validation",
+    "article": "macdowell ... gives give a solid , anguished performance that eclipses nearly everything else she 's ever done .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1555:validation",
+    "article": "great dragons !",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:6197:validation",
+    "article": "the graphic carnage and re-creation of war-torn croatia is uncomfortably timely , relevant , and sickeningly real .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4826:validation",
+    "article": "pascale bailly 's rom-com provides amélie 's audrey tautou with another fabuleux destin -- i.e. , a banal spiritual quest .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3217:validation",
+    "article": "... a triumph of emotionally and narratively complex filmmaking .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:8147:validation",
+    "article": "-lrb- stephen -rrb- earnhart 's film is more about the optimism of a group of people who are struggling to give themselves a better lot in life than the ones they currently have .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:6250:validation",
+    "article": "the whole mess boils down to a transparently hypocritical work that feels as though it 's trying to set the women 's liberation movement back 20 years . '",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4637:validation",
+    "article": "it 's tough being a black man in america , especially when the man has taken away your car , your work-hours and denied you health insurance .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4129:validation",
+    "article": "if you 're part of her targeted audience , you 'll cheer .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8009:validation",
+    "article": "this is a nervy , risky film , and villeneuve has inspired croze to give herself over completely to the tormented persona of bibi .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1615:validation",
+    "article": "this is one of those war movies that focuses on human interaction rather than battle and action sequences ... and it 's all the stronger because of it .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1696:validation",
+    "article": "nothing more or less than an outright bodice-ripper -- it should have ditched the artsy pretensions and revelled in the entertaining shallows .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7730:validation",
+    "article": "it may not be particularly innovative , but the film 's crisp , unaffected style and air of gentle longing make it unexpectedly rewarding .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8432:validation",
+    "article": "it 's a 100-year old mystery that is constantly being interrupted by elizabeth hurley in a bathing suit .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:4247:validation",
+    "article": "but one thing 's for sure : it never comes close to being either funny or scary .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1195:validation",
+    "article": "in the wrong hands , i.e. peploe 's , it 's simply unbearable",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6653:validation",
+    "article": "unfunny and lacking any sense of commitment to or affection for its characters , the reginald hudlin comedy relies on toilet humor , ethnic slurs .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5539:validation",
+    "article": "some motion pictures portray ultimate passion ; others create ultimate thrills .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:2029:validation",
+    "article": "a series of escapades demonstrating the adage that what is good for the goose is also good for the gander , some of which occasionally amuses but none of which amounts to much of a story .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4271:validation",
+    "article": "if only it were , well , funnier .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6411:validation",
+    "article": "the story ... is inspiring , ironic , and revelatory of just how ridiculous and money-oriented the record industry really is .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:4228:validation",
+    "article": "tartakovsky 's team has some freakish powers of visual charm , but the five writers slip into the modern rut of narrative banality .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1866:validation",
+    "article": "a knowing sense of humor and a lot of warmth ignite son of the bride .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5759:validation",
+    "article": "... bibbidy-bobbidi-bland .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4512:validation",
+    "article": "much like its easily dismissive take on the upscale lifestyle , there is n't much there here .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4937:validation",
+    "article": "one of those films that started with a great premise and then just fell apart .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7800:validation",
+    "article": "provides the kind of ` laugh therapy ' i need from movie comedies -- offbeat humor , amusing characters , and a happy ending .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5085:validation",
+    "article": "a genuinely moving and wisely unsentimental drama .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:3755:validation",
+    "article": "this film is an act of spiritual faith -- an eloquent , deeply felt meditation on the nature of compassion .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8085:validation",
+    "article": "busy urban comedy is clearly not zhang 's forte , his directorial touch is neither light nor magical enough to bring off this kind of whimsy .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6837:validation",
+    "article": "is it really an advantage to invest such subtlety and warmth in an animatronic bear when the humans are acting like puppets ?",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4218:validation",
+    "article": "tsai has managed to create an underplayed melodrama about family dynamics and dysfunction that harks back to the spare , unchecked heartache of yasujiro ozu .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:3893:validation",
+    "article": "this makes minority report necessary viewing for sci-fi fans , as the film has some of the best special effects ever .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2729:validation",
+    "article": "a clumsily manufactured exploitation flick , a style-free exercise in manipulation and mayhem .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6212:validation",
+    "article": "sayles is making a statement about the inability of dreams and aspirations to carry forward into the next generation .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:6516:validation",
+    "article": "fear dot com is more frustrating than a modem that disconnects every 10 seconds .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5772:validation",
+    "article": "in the end , though , it is only mildly amusing when it could have been so much more .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:5974:validation",
+    "article": "is a question for philosophers , not filmmakers ; all the filmmakers need to do is engage an audience .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7687:validation",
+    "article": "queen of the damned as you might have guessed , makes sorry use of aaliyah in her one and only starring role -- she does little here but point at things that explode into flame .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4741:validation",
+    "article": "what 's next ?",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1362:validation",
+    "article": "a delightful surprise because despite all the backstage drama , this is a movie that tells stories that work -- is charming , is moving , is funny and looks professional .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:5130:validation",
+    "article": "this would-be ` james bond for the extreme generation ' pic is one big , dumb action movie .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4447:validation",
+    "article": "a fast paced and suspenseful argentinian thriller about the shadow side of play .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:5728:validation",
+    "article": "slack and uninspired , and peopled mainly by characters so unsympathetic that you 're left with a sour taste in your mouth .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3587:validation",
+    "article": "one ca n't shake the feeling that crossroads is nothing more than an hour-and-a-half-long commercial for britney 's latest album .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6291:validation",
+    "article": "kosminsky ... puts enough salt into the wounds of the tortured and self-conscious material to make it sting .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1853:validation",
+    "article": "bisset delivers a game performance , but she is unable to save the movie .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7788:validation",
+    "article": "the story is lacking any real emotional impact , and the plot is both contrived and cliched .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:841:validation",
+    "article": "what goes on for the 110 minutes of `` panic room '' is a battle of witlessness between a not-so-bright mother and daughter and an even less capable trio of criminals .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3145:validation",
+    "article": "a chilly , remote , emotionally distant piece ... so dull that its tagline should be : ` in space , no one can hear you snore . '",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7094:validation",
+    "article": "once again , director chris columbus takes a hat-in-hand approach to rowling that stifles creativity and allows the film to drag on for nearly three hours .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:41:validation",
+    "article": "` what 's the russian word for wow !? '",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:5909:validation",
+    "article": "both lead performances are oscar-size .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:953:validation",
+    "article": "fierce , glaring and unforgettable .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:6705:validation",
+    "article": "it 's as if allen , at 66 , has stopped challenging himself .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5662:validation",
+    "article": "the film is all over the place , really .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1935:validation",
+    "article": "driven by a fantastic dual performance from ian holm ... the film is funny , insightfully human and a delightful lark for history buffs .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:7319:validation",
+    "article": "you have no affinity for most of the characters .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5971:validation",
+    "article": "the performances are amiable and committed , and the comedy more often than not hits the bullseye .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:3253:validation",
+    "article": "the movie is too amateurishly square to make the most of its own ironic implications .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4164:validation",
+    "article": "i never thought i 'd say this , but i 'd much rather watch teens poking their genitals into fruit pies !",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8265:validation",
+    "article": "this is so de palma .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:919:validation",
+    "article": "a captivating coming-of-age story that may also be the first narrative film to be truly informed by the wireless age .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:8305:validation",
+    "article": "rarely has sex on screen been so aggressively anti-erotic .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7579:validation",
+    "article": "it all seemed wasted like deniro 's once promising career and the once grand long beach boardwalk .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8063:validation",
+    "article": "as social exposé , skins has its heart in the right place , but that 's not much to hang a soap opera on .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:2235:validation",
+    "article": "- spy action flick with antonio banderas and lucy liu never comes together .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6253:validation",
+    "article": "the paradiso 's rusted-out ruin and ultimate collapse during the film 's final -lrb- restored -rrb- third ... emotionally belittle a cinema classic .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6535:validation",
+    "article": "cacoyannis is perhaps too effective in creating an atmosphere of dust-caked stagnation and labored gentility .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7478:validation",
+    "article": "elegant and eloquent -lrb- meditation -rrb- on death and that most elusive of passions , love .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:2745:validation",
+    "article": "if you 're in the right b-movie frame of mind , it may just scare the pants off you .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:2357:validation",
+    "article": "terrible .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1332:validation",
+    "article": "a drama of great power , yet some members of the audience will leave the theater believing they have seen a comedy .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:1285:validation",
+    "article": "a moving and weighty depiction of one family 's attempts to heal after the death of a child .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:1266:validation",
+    "article": "`` red dragon '' is entertaining .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:799:validation",
+    "article": "to be influenced chiefly by humanity 's greatest shame , reality shows -- reality shows for god 's sake !",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4758:validation",
+    "article": "slackers ' jokey approach to college education is disappointingly simplistic -- the film 's biggest problem -- and there are no unforgettably stupid stunts or uproariously rude lines of dialogue to remember it by .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7630:validation",
+    "article": "screenwriter dan schneider and director shawn levy substitute volume and primary colors for humor and bite .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:510:validation",
+    "article": "delirious fun .",
+    "gold_label": "E"
+  },
+  {
+    "example_id": "official-train:1716:validation",
+    "article": "it 's almost as if it 's an elaborate dare more than a full-blooded film .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:8231:validation",
+    "article": "a psychic journey deep into the very fabric of iranian ... life .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:4329:validation",
+    "article": "has its moments , but it 's pretty far from a treasure .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7092:validation",
+    "article": "-lrb- green is -rrb- the comedy equivalent of saddam hussein , and i 'm just about ready to go to the u.n. and ask permission for a preemptive strike .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6515:validation",
+    "article": "the film sometimes flags ... but there is enough secondary action to keep things moving along at a brisk , amusing pace .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:2454:validation",
+    "article": "you wo n't have any trouble getting kids to eat up these veggies .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:460:validation",
+    "article": "the movie is like a year late for tapping into our reality tv obsession , and even tardier for exploiting the novelty of the `` webcast . ''",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3017:validation",
+    "article": "smart and fun , but far more witty than it is wise .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:8228:validation",
+    "article": "see clockstoppers if you have nothing better to do with 94 minutes .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:187:validation",
+    "article": "contrived pastiche of caper clichés .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6396:validation",
+    "article": "a fascinating but choppy documentary .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:8201:validation",
+    "article": "the movie is silly beyond comprehension , and even if it were n't silly , it would still be beyond comprehension .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2859:validation",
+    "article": "it 's 51 times better than this .",
+    "gold_label": "C"
+  },
+  {
+    "example_id": "official-train:7534:validation",
+    "article": "while the production details are lavish , film has little insight into the historical period and its artists , particularly in how sand developed a notorious reputation .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:773:validation",
+    "article": "at its most basic , this cartoon adventure is that wind-in-the-hair exhilarating .",
+    "gold_label": "D"
+  },
+  {
+    "example_id": "official-train:5268:validation",
+    "article": "suffers from unlikable characters and a self-conscious sense of its own quirky hipness .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6430:validation",
+    "article": "after seeing ` analyze that , ' i feel better already .",
+    "gold_label": "D"
+  }
+]

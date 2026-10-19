@@ -25,6 +25,9 @@ from .data import CLASS_ID_TO_LABEL, NewsExample, load_examples_json
 TASKS = {
     "agnews": ("configs/pilot.yaml", "artifacts/data"),
     "emotion": ("configs/emotion.yaml", "artifacts/data_emotion"),
+    "yahoo": ("configs/yahoo.yaml", "artifacts/data_yahoo"),
+    "sst5": ("configs/sst5.yaml", "artifacts/data_sst5"),
+    "dbpedia": ("configs/dbpedia.yaml", "artifacts/data_dbpedia"),
 }
 
 

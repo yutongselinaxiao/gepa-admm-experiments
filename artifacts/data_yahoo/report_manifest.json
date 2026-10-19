@@ -1,0 +1,10 @@
+{
+  "task": "yahoo",
+  "source_split": "train (official)",
+  "official_test_examples_used": false,
+  "excluded_indices": "all indices used by train.json and validation.json",
+  "per_class": 200,
+  "size": 2000,
+  "seed": 20261015,
+  "file_sha256": "04f1e02854910106a506990c7d984fcfff6107b2100e2f413de375727d4dd74d"
+}
