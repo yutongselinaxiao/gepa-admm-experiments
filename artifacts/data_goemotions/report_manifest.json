@@ -1,0 +1,10 @@
+{
+  "task": "goemotions",
+  "source_split": "train (official)",
+  "official_test_examples_used": false,
+  "excluded_indices": "all indices used by train.json and validation.json",
+  "per_class": 250,
+  "size": 2000,
+  "seed": 20261015,
+  "file_sha256": "288c3d8d0e49bcf5c022b7f9c2a100a585a4932aa3d14018a09173c0b0bd5727"
+}

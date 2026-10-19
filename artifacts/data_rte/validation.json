@@ -1,0 +1,1282 @@
+[
+  {
+    "example_id": "official-train:2479:validation",
+    "article": "Premise: Anna Nobili is no ordinary nun. The 38-year-old used to be a lap-dancer, and spent many years working in Italian nightclubs. She is now using her talents in a rather different way - for what she calls \"The Holy Dance\" in a performance on Tuesday evening at the Holy Cross in Jerusalem Basilica in Rome, in front of senior Catholic clerics including Archbishop Gianfranco Ravasi, head of the Vatican's Cultural Department. Miss Nobili told the BBC World Service that the transformation from podium lap dancer to nun happened gradually.\nHypothesis: Anna Nobili became a nun in 2002.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1390:validation",
+    "article": "Premise: After the Sept. 11 attacks, Malinowski said, the CIA bypassed the advice of FBI and military interrogators and turned to contractors \"whose approach would be consistent with the Bush administration's theory that you have to go to the dark side to fight the dark side.\" Agency officials have maintained that the CIA turned to contractors because the agency didn't have its own roster of skilled interrogators, and that contractors were required to abide by the same rules as agency employees. But one contract interrogator, David A. Passaro, was convicted of beating an Afghan detainee who later died. Passaro was sentenced in 2007 to eight years in prison.\nHypothesis: Tom Malinowski is director for Human Rights Watch.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2182:validation",
+    "article": "Premise: US Secretary of State Hillary Clinton has urged all 70 nations attending a conference on Afghanistan's future to help the country succeed. She told delegates at the one-day event in The Hague that the international effort there had been \"undermanned and underfunded\" over recent years. Among the countries to offer help has been US foe Iran. The conference comes after the US announced a major policy rethink on its approach towards Afghanistan. The meeting, called by the UN, comes amid widespread concern that not enough progress has been made since the US-led invasion in 2001. Support for Afghan reconstruction is being sought beyond the mainly-Western countries which have troops there.\nHypothesis: Hillary Clinton is the US Secretary of State.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1750:validation",
+    "article": "Premise: In the modest backyard of Rosemarie Morgan's 1890-era house, about a half-mile from Yale University, there is a small Buddha, azalea and forsythia, Japanese cherry and plum trees, and an Amish-made chicken coop with five residents — four who lay eggs and Gloria, who is barren but one heck of a watchdog. The fowl are technically illegal under New Haven's zoning code, which prohibited raising hens and other livestock when it was updated during the 1950s. But these days, many dozens of backyard hens are generally tolerated under the city's informal enforcement program — call it \"don't cluck, don't tell\" — that mostly looks the other way. With urban fowl increasingly common, Alderman Roland Lemar has introduced legislation that would allow residents to raise up to six hens.\nHypothesis: The Morgans have lived near Yale University since the 1950s.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2434:validation",
+    "article": "Premise: In February of 1995, one man single-handedly bankrupted the bank that financed the Napoleonic Wars. Founded in 1762, Barings Bank was Britain's oldest merchant bank and Queen Elizabeth's personal bank.\nHypothesis: Barings was Britain's oldest merchant bank.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:989:validation",
+    "article": "Premise: Worldwide, child labor is most prevalent in the agricultural sector, where children are widely used as day laborers. Working long hours, children working in agriculture are often exposed to harmful pesticides, dangerous machinery, backbreaking loads, and many other hazardous conditions.\nHypothesis: Child labor is widely used in Asia.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2311:validation",
+    "article": "Premise: A front page editorial in South Africa's largest weekly newspaper, The Sunday Times, criticizes President Thabo Mbeki's \"incompetent\" handling of the country's ongoing anti-immigrant violence, and urges him to resign from office. \"Either he will not lead or he cannot lead. Whichever is the case, the conclusion is the same: he must go,\" the editorial reads. \"And so we appeal to President Mbeki: Stand down in the interests of your country.\"\nHypothesis: \"The Sunday Times\" is the name of the largest weekly newspaper in South Africa.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1442:validation",
+    "article": "Premise: Clinton informed the two parties that in the absence of an agreement, a public announcement would be made, with the apparent objective of applying pressure to both sides, particularly the Israelis.\nHypothesis: Clinton told the two sides that he would publicly announce their failure to agree, thereby pressurising them.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1343:validation",
+    "article": "Premise: A large proportion of young children in Ukraine suffer from various health problems that have probably gone undiagnosed until now, but which are being detected in connection with the Chernobyl disaster. This could well point to a weak health care system and harsh living conditions.\nHypothesis: Chernobyl disaster had repercussions outside ex-USSR.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:534:validation",
+    "article": "Premise: FMLN guerrilla units ambushed the 1st company of military detachment no. 2 Jr. Battalion at la Pena Canton, Villa Victoria Jurisdiction.\nHypothesis: FMLN guerrilla units attacked a commercial company.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:593:validation",
+    "article": "Premise: As hurricane Katrina moves beyond the Floridian peninsula, death tolls have begun to surface. On Friday, the official count was seven dead, at least five missing. 4 people in Broward, 3 in Miami. The forecast for Hurricane  Katrina predicts that it will continue on its present northwesterly course and approach the panhandle of Florida and the Mississippi delta region in the next few days.\nHypothesis: Hurricane Katrina hit Florida.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:940:validation",
+    "article": "Premise: The iF awards are presented in Hanover, Germany, at the International Forum Design Hannover GMBH. There are a number of fields and disciplines which have their own awards.TAG Heuer's Monaco Calibre 360 LS Concept Chronograph has won the award in the Leisure/Lifestyle category. The timepiece was chosen from over 2,200 watches from 35 countries. This prestigious award was given to the company for the second time in two years. Last year the winner in the same category was TAG Heuer's Professional Golf Watch, designed together with Tiger Woods. This year's winning timepiece from TAG Heuer has a mechanical movement, which represents the first in the history of watchmaking to reach a precision of 1/100th of a second. The watch itself is to be seen at the iF design exhibition 2007, held in Hanover, from March 15 till August.\nHypothesis: Tiger Woods attends the iF design exhibition 2007.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:973:validation",
+    "article": "Premise: Ordonez Reyes accused Jose Jesus Pena, alleged chief of security for the Nicaraguan embassy in Tegucigalpa, of masterminding the January 7th assassination of contra-commander Manuel Antonio Rugama.\nHypothesis: Manuel Antonio Rugama was killed by Jose Jesus Pena.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2136:validation",
+    "article": "Premise: Six hostages in Iraq were freed.\nHypothesis: The four Jordanian hostages, kidnapped about a week ago, were freed.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:936:validation",
+    "article": "Premise: A Continental Connection flight from Newark to Buffalo crashed into a house about four to six miles from Buffalo Niagara International Airport on Thursday night, killing 50 people, officials said. Continental Airlines Flight 3407 is a daily commuter flight from Newark Liberty International Airport in Newark, New Jersey to Buffalo, New York, operated under the Continental Connection brand by Virginia-based regional airline Colgan Air.\nHypothesis: Buffalo is not far from Newark.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1831:validation",
+    "article": "Premise: Paralysis was followed by aphasia, and after acute pain, followed by a long period of apathy, from which death relieved Swift in October 1745.\nHypothesis: Swift died in 1745.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:220:validation",
+    "article": "Premise: Paul Bremer, the top U.S. civilian administrator in Iraq, and Iraq's new president, Ghazi al-Yawar, visited the northern Iraqi city of Kirkuk.\nHypothesis: Ghazi al-Yawar is Iraq's new president.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1083:validation",
+    "article": "Premise: The Osaka World Trade Center is the tallest building in Western Japan.\nHypothesis: The Osaka World Trade Center is the tallest building in Japan.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:294:validation",
+    "article": "Premise: This coalition took seven months to form, the longest deadlock in Dutch history. It occurred only after negotiations between the CDA and the PvdA failed, first over tax issues, then over the issue of abortion.\nHypothesis: Three parties form a Dutch coalition government.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:515:validation",
+    "article": "Premise: Nike Inc. said, Monday, that its first-quarter profit grew 32 percent, as the world's largest sneaker and athletic apparel company posted broad gains in sales and orders.\nHypothesis: Nike said that orders for delivery were up 11 percent from a year earlier, and it was optimistic about its growth prospects.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1765:validation",
+    "article": "Premise: The experiment helped establish that the bacteria came first, causing inflammation, then ulcers.\nHypothesis: Inflammation is the result of ulcers.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1741:validation",
+    "article": "Premise: It is an image familiar to many Southern Californians but vividly illustrative in this Egyptian metropolis, where a U.N. conference on global population is trying for the first time to draw clear links between population growth and the environment.\nHypothesis: The International Conference on Population and Development was held in Cairo.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:838:validation",
+    "article": "Premise: For one, Israel can comfortably subtract Gaza's 1.5m inhabitants from its demographic nightmare, maintaining, for a while longer perhaps, the Jewish majority.\nHypothesis: Israel has 1.5m Jewish inhabitants.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2088:validation",
+    "article": "Premise: Three leading Japanese banks have announced an alliance forming the world's largest financial group. Fuji Bank, Dai-Ichi Kangyo and the Industrial Bank of Japan say their operations will be integrated by the spring of 2002.\nHypothesis: Merger of Japanese Banks creates the world's biggest bank.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2323:validation",
+    "article": "Premise: Shiite and Kurdish political leaders continued talks, on Monday, on forming a new government, saying they expected a full cabinet to be announced within a day or two.\nHypothesis: Washington is pressing Iraq's leaders to end weeks of political deadlock and to form a new government as soon as possible, US officials say.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:618:validation",
+    "article": "Premise: The European Organization for Nuclear Research (CERN) said on Monday that repairing the Large Hadron Collider (LHC) will cost up to €16.6 million or $21 million. The LHC, which is the world's largest and highest-energy particle accelerator, is located near the border of France and Switzerland and crosses the border four times. It has a diameter of 27 km (17 miles). It is designed to simulate the conditions shortly after the Big Bang, but it broke down on September 19 due to an electrical failure.\nHypothesis: CERN head office is in Paris.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1434:validation",
+    "article": "Premise: Oil prices, notoriously vulnerable to political events, spiked as high as $40 a barrel during the Gulf War in 1991.\nHypothesis: The Gulf War was fought in 1991.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1985:validation",
+    "article": "Premise: In August, Gates' foundation gave Yunus' Grameen Foundation 1.5 million for a program to extend its microfinance programs to 5 million more of the world's poorest families. Three years ago, tech entrepreneur Craig McCaw provided 2 million to start up the Grameen Technology Center, which is using microcredit to finance cheap mobile service for people in Uganda and Rwanda.\nHypothesis: Gates' foundation extends its microfinance programs to 5 million more of the world's poorest families.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1946:validation",
+    "article": "Premise: Voting for a new European Parliament has been clouded by apathy.\nHypothesis: Apathy clouds EU voting.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1349:validation",
+    "article": "Premise: The book contains short stories by the famous Bulgarian writer, Nikolai Haitov.\nHypothesis: Nikolai Haitov is a writer.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1757:validation",
+    "article": "Premise: Moreau, 72, received a Golden Bear award for lifetime achievement at the Berlin Film Festival Friday.\nHypothesis: The Golden Palm has been awarded at the Cannes film Festival.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:331:validation",
+    "article": "Premise: Former Chancellor Helmut Kohl, who stunned Germans with admission that he used illegal bank accounts to funnel secret money to Christian Democratic party, invokes personal honor in refusing to disclose names of people who gave more than $1 million between 1993 and 1998; scandal threatens to shred Kohl's place in history for reunifying Germany and leading Europe toward common currency.\nHypothesis: The name of Helmut Kohl's political party is the Christian Democratic Union.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:320:validation",
+    "article": "Premise: Tenzin Gyatso, the 14th Dalai Lama, has vowed to step down from his position if things \"get out of control\" in Tibet, where violent demonstrations against China have killed anywhere from 13 to 100 people. At a news conference in Dharamsala, India, the Dalai Lama said he was opposed to the use of violence against China's rule. \"Violence is almost suicide,\" he said. \"Even if 1,000 Tibetans sacrifice their lives, it will not help.\" However, he acknowledges that many radical Tibetans have criticized his policy of non-violence, and says that his only option is to \"completely resign\" if the bloodshed continues.\nHypothesis: The 14th Dalai Lama was born in Dharamsala.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:589:validation",
+    "article": "Premise: Blue Mountain Lumber is a subsidiary of Malaysian forestry transnational corporation, Ernslaw One.\nHypothesis: Blue Mountain Lumber owns Ernslaw One.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2015:validation",
+    "article": "Premise: Hudson's mother, Darnell Donerson, 57, and brother, Jason Hudson, 29 were found dead in Donerson's home on October 24 and the body of Hudson's 7-year-old nephew, Julian King was found four days later in a stolen SUV. A handgun police say is tied to the case was found nearby, but Reuters reports that Bond did not comment on any evidence in the case.\nHypothesis: Jason Hudson was Jennifer's brother.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:848:validation",
+    "article": "Premise: That prompted Clinton, wife Hillary Rodham Clinton and daughter Chelsea to spend a cold and dreary Saturday in Minsk.\nHypothesis: Clinton's wife is called Hillary Rodham Clinton.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2036:validation",
+    "article": "Premise: Police have arrested the owner of a mattress factory in Hay Hassini, Casablanca, Morocco which burned down in a disaster that claimed 55 lives. His son, who was the factory's manager, was also arrested. Those killed ―35 of whom were women ―were trapped inside by locked fire exits, which were barricaded to stop theft during working hours. \"The people who died were either asphyxiated or burned,\" commented a firefighter. 17 were wounded. Moustapha Taouil of the Casablanca civil protection service said the blaze was triggered by an inadequatly maintained electric saw on the ground floor. The initial fire quickly engulfed all four storeys of the building.\nHypothesis: Casablanca is a Moroccan city.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1409:validation",
+    "article": "Premise: Other drugs on the market, approved to treat mild to moderate Alzheimer's, are believed to work by inhibiting cholinesterase, an enzyme that breaks down acetylcholine which is a chemical used by nerves to communicate with each other.\nHypothesis: Alzheimer's disease is treated using drugs.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1136:validation",
+    "article": "Premise: Two persons were injured in dynamite attacks perpetrated this evening against two bank branches in this northwestern, Colombian city.\nHypothesis: Two bank branches were attacked with dynamite.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:79:validation",
+    "article": "Premise: More than 150 dolphins, marine turtles and beaked whales have been washed up dead on beaches in Africa.\nHypothesis: Dead dolphins, turtles and whales have been found on African beaches.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2364:validation",
+    "article": "Premise: The BBC's Americas editor Will Grant says many Mexicans are tired of conflict and long for a return to normality.\nHypothesis: Will Grant is researching a conflict with Mexicans.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:658:validation",
+    "article": "Premise: Ecuador has received short shrift in U.S. policy debates. Yet in recent years, significant public debate has taken place in Ecuador on the joint U.S./Colombian initiative and its effects on Ecuador and its citizens.\nHypothesis: Peru debates border region with Ecuador.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:260:validation",
+    "article": "Premise: There is no way Marlowe could legally leave Italy, especially after an arrest warrant has been issued for him by the authorities. Assisted by Zaleshoff, he succeeds in making his escape from Milan.\nHypothesis: Marlowe was arrested by Italian authorities.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:883:validation",
+    "article": "Premise: Organic fertilizers like vermi compost are used for increasing the quality, fertility and mineral content of the soil.\nHypothesis: Organic fertilizers are used as soil enhancers.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:965:validation",
+    "article": "Premise: Israeli scientists predict the world's coral reefs could begin to collapse in as little as 30 years from now. Studies show the oceans are becoming increasingly acidic as they soak up manmade emissions of carbon dioxide. The Hebrew University of Jerusalem researchers say this will make it difficult for many coral organisms to produce skeletal and other hard parts. The team's work on corals in the Red Sea suggests a tipping point will be reached in between 30 and 70 years.  Then the forces of erosion eating away at corals will outstrip the organisms' ability to make the reefs.\nHypothesis: The coral organisms are endangered by the acidification of oceans.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1284:validation",
+    "article": "Premise: To further assist Mexico, the White House on April 15 named a former U.S. Justice Department official to lead efforts to crack down on drug-related violence along the U.S. side of its southwest border with Mexico.  Homeland Security Secretary Janet Napolitano announced the appointment of Alan Bersin, a former federal prosecutor, during a visit to El Paso, Texas.  Bersin held the same post - dubbed \"border czar\" - during the Clinton administration. And three Mexican drug gangs — the Sinaloa cartel, Los Zetas and La Familia Michoacana - have been placed on a list of significant foreign narcotics traffickers targeted for special sanctions, the White House said April 15.  This action allows the United States to freeze all cartel assets in U.S. jurisdiction and bars Americans from dealing with organizations that may be linked or associated with these groups and their operatives.\nHypothesis: La Familia Michoacana are drug traffickers.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1735:validation",
+    "article": "Premise: Rock stars Aerosmith are to hold a free concert in Hawaii to placate angry fans who brought a legal case against them. The Walk This Way hitmakers cancelled a sold-out show in Maui two years ago, leaving hundreds of fans out of pocket. They filed a class action case, which claimed the band had pulled out in favour of a bigger gig in Chicago and a private show for car dealers in Oahu. Lawyers for the would-be concert-goers said Aerosmith had now agreed to put on a new show, and would pay all expenses.\nHypothesis: Aerosmith are a rock band.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1154:validation",
+    "article": "Premise: The American television network \"CNN\" reported that officials at the American Defense Department (The Pentagon) will recommend halting the bombing on Iraq to President Bill Clinton this evening, Saturday.\nHypothesis: CNN reported that officials at the Pentagon said that President Clinton is obligated to stop the shelling on Iraq .",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1939:validation",
+    "article": "Premise: Guanshengyuan, a Chinese company that makes children's candy, has stopped selling its popular brand White Rabbit, which is sold nationally in China, after tests confirmed the presence of melamine. Bright foods owns the candy company. Earlier their powdered milk was found to contain melamine which sickened over 53,000 people and was responsible for the deaths of at least four infant children. Guanshengyuan has stopped exporting their goods to the nearly 50 companies overseas that buy them. Melamine has also been found in Hong Kong in baby cereal and vegetable formula made by Heinz. It has also been found in wasabi crackers which are manufactured by the Chinese company, Silang House. Another Chinese food company called Marudai Food Co. has also halted the sales of several items such as meat buns, cream buns and corn crepes made with cream over fears that melamine laced powered milk has contaminated their products. So far there have been no reports of any illnesses associated with Marudai Foods.\nHypothesis: 4 children died in Hong Kong because of melamine contained in milk.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:863:validation",
+    "article": "Premise: A jet, carrying French Caribbean islanders home from a Panama vacation, crashed in rural Venezuela early Tuesday, after the pilot reported trouble with the engines.\nHypothesis: A plane carrying vacationers home to the French Caribbean island of Martinique crashed, Tuesday, in western Venezuela after reporting engine problems, killing all 160 people on board, officials said.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:648:validation",
+    "article": "Premise: The two rescuers who retrieved him are firefighters with a California-based FEMA team: J.D. Madden of Santa Clara and Eric Mijangos of Menlo Park.\nHypothesis: A FEMA team is based in California.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:905:validation",
+    "article": "Premise: On April 27th, Pavolini went on, ahead of his troops, and reached Mussolini. Accompanying him were Angela Curti, the former mistress of Mussolini.\nHypothesis: Angela Curti was Mussolini's mistress.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1833:validation",
+    "article": "Premise: Budapest again became the focus of national political drama in the late 1980s, when Hungary led the reform movement in eastern Europe that broke the communist monopoly on political power and ushered in the possibility of multiparty politics.\nHypothesis: In the late 1980s Budapest became the center of the reform movement.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1987:validation",
+    "article": "Premise: Mr Fitzgerald revealed he was one of several top officials who told Mr Libby in June 2003 that Valerie Plame, wife of the former ambassador Joseph Wilson, worked for the CIA.\nHypothesis: Joseph Wilson is Valerie Plame's ex-husband.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:27:validation",
+    "article": "Premise: When patients interrupt a course of antibiotics, the surviving bacteria return with a vengeance, often having rapidly mutated to resist the therapy.\nHypothesis: Bacteria is winning the war against antibiotics.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1143:validation",
+    "article": "Premise: A strong supporter of the \"Italian road to socialism\", he was close to Enrico Berlinguer, and gained a position in the party secretariat. In 1969, he drew up the report proposing the expulsion from the party of the Manifesto group. In 1984, after Berlinguer's death, Natta was elected as party secretary.\nHypothesis: Natta supported Italian Socialism.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:997:validation",
+    "article": "Premise: The Sioux Ghost Shirt was a feature of Glasgow's Kelvingrove Museum for more than 100 years before being repatriated to its land of origin.\nHypothesis: A Sioux ghost shirt was returned by a Scottish museum.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:956:validation",
+    "article": "Premise: Cool, humid weather Sunday helped slow the advance of a fire that caused the evacuation of hundreds of homes and businesses in Alaska's Interior.\nHypothesis: There was a fire in Alaska.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:656:validation",
+    "article": "Premise: BEIJING — In the decade since the Chinese government began repressing Falun Gong, a crusade that human rights groups say has led to the imprisonment of tens of thousands of practitioners and claimed at least 2,000 lives, the world's attention has shifted elsewhere. The drive against the spiritual group has eliminated its leadership, decimated the ranks of faithful and convinced many Chinese that the group is an \"evil cult,\" as the government contends. But 10 years on, the war on Falun Gong remains unfinished.\nHypothesis: Falun Gong is a spiritual group.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1999:validation",
+    "article": "Premise: JOHANNESBURG: Organizers of a peace conference that was to have been attended by five Nobel laureates in Johannesburg this week said Tuesday that they had canceled it after the South African government denied a visa to the Dalai Lama. Two of South Africa's Nobel Peace Prize laureates, the retired Anglican archbishop Desmond Tutu and former President F.W. de Klerk, condemned the government for giving in to pressure from China to block the Tibetan spiritual leader's entry into the country and said they would refuse to participate in the conference if he was not there. The executive director of the Norwegian Nobel Committee, Geir Lundestad, also said he would stay away.\nHypothesis: The Peace Conference in South Africa has been canceled, giving support to the Dalai Lama.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1656:validation",
+    "article": "Premise: The International Atomic Energy Agency report detailing the discovery also faulted Tehran for not cooperating with the U.N. watchdog's attempts to investigate other suspicious aspects of Iran s nuclear program.\nHypothesis: Tehran did not cooperate with the U.N. watchdog's attempts to investigate suspicious aspects of Iran's nuclear program.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:97:validation",
+    "article": "Premise: With the city's hotels in the midst of a sudden slowdown in business, operators are seeking wage cuts and other concessions from the unions representing 27,500 bellhops, housekeepers and waiters. But the unions are drawing a line across hotel lobbies, from the high-end Carlyle to the more budget-minded Ramada Inn, saying they see no need to bend now that operators are cutting rates in an effort to fill vacant rooms with tourists, executives and other travelers. It is far too soon to judge the financial health of the industry, said Peter Ward, president of the New York Hotel and Motel Trades Council, an alliance of hotel unions.\nHypothesis: The New York Hotel and Motel Trades Council is an alliance of hotel unions.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:413:validation",
+    "article": "Premise: Mr Lopez Obrador has alleged electoral fraud cost him the presidency, despite a recount confirming Felipe Calderon as Mexico's president-elect.\nHypothesis: Felipe Calderon won the presidential election of Mexico.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1441:validation",
+    "article": "Premise: Nevertheless, Salesforce.com's stock--which began trading on the New York Stock Exchange under the symbol \"CRM\"--got a Wall Street reception in line with that of other recent successful tech IPOs.\nHypothesis: Salesforce.com started trading under the symbol \"CRM.\"",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1742:validation",
+    "article": "Premise: She was finally found at 10.35am the next day by PC David Lloyd George. Something had caught his eye in the undergrowth - her blue school coat or the deep red of the gloves that she had been wearing - and he stepped off the forestry track. Muriel Drinkwater was lying on her back, one arm outstretched by her side, the other slightly raised but with the gloved hand limp. Her eyes were open, but there was no doubt that she was dead. She was just a few weeks short of her 13th birthday. The constable blew sharply on his whistle.  The year was 1946, when murder was supposedly less commonplace than now. The killing of Muriel Drinkwater was to make headlines for months and would vex Detective Chief Inspector William \"Bulldog\" Chapman, the Scotland Yard detective who led the inquiry, until his death nine years later.\nHypothesis: Muriel Drinkwater was killed in 1946.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1499:validation",
+    "article": "Premise: As the storm passed, a celebratory mood took over the city until early Sunday morning, when rap mogul, Suge Knight, was targeted by gunfire at a Kanye West party.\nHypothesis: The most notable happening occurred early Sunday morning, when rap-label owner, Marion \"Suge\" Knight, was shot in the leg at a Kanye West party.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2128:validation",
+    "article": "Premise: UK Foreign Secretary Jack Straw said Iraqis had \"shown again their determination to defy the terrorists and take part in the democratic process\".\nHypothesis: Jack Straw holds the position of UK Foreign Secretary.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2413:validation",
+    "article": "Premise: Approximately a dozen individuals have reported becoming sick after eating raw oysters consumed in a restaurant in Chattanooga, Tennessee. The Chattanooga-Hamilton County Health Department and Tennessee Department of Health confirmed that the patients were infected with norovirus.  Norovirus is a foodborne pathogen that can cause acute gastroenteritis in humans. The symptoms of norovirus illness begin suddenly, most often in 24 to 48 hours after ingestion of the virus, but they can appear as early as 12 hours after exposure. The gastrointestinal symptoms include nausea, vomiting, diarrhea, and some stomach cramping.\nHypothesis: Oysters have been linked to gastrointestinal diseases caused by a virus.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:598:validation",
+    "article": "Premise: The six-member delegation included lawyers from the Justice, State, and Homeland Security Departments, according to U.S. military sources, who spoke on condition of anonymity because only Justice was allowed to officially disclose the mission. They were to spend a minimum of one hour with each of the Uighur (WEE-gur) captives, who are part of China's Muslim minority and who risk religious persecution if returned to their homeland. Each was captured in Afghanistan in late 2001 and handed over to U.S. forces, who interrogated them to learn about al-Qaeda's paramilitary training camp structure.\nHypothesis: Six Uighurs were captured to gain information about al-Qaeda.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:238:validation",
+    "article": "Premise: Argentina was still obsessed with the Falkland islands even in 1994, 12 years after its defeat in the 74-day war with Britain.\nHypothesis: The Falklands War took place in 1982.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1068:validation",
+    "article": "Premise: With a Queensland state election coming up in Australia, many minor parties and independents will be looking to hold balance of power and making the major parties listen to what they have to say. The Patrica Petersen are one of the independents. Wikinews reporter Patrick Gillett held an exclusive email interview with Ms Peterson, candidate for the electoral district of Bundamba.\nHypothesis: Patrica Petersen was brought up in Bundamba.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2038:validation",
+    "article": "Premise: The International Olympic Committee has leapt to the defence of the drug-testing lab at the centre of the Merlene Ottey doping case. Athletics' governing body, the IAAF, last week cleared Ottey of accusations of steroid use and lifted a two-year ban after their arbitration panel said the IOC-accredited lab in Lausanne improperly tested Ottey's urine sample.\nHypothesis: Sportswomen have been accused of doping.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:211:validation",
+    "article": "Premise: El-Nashar was detained July 14 in Cairo after Britain notified Egyptian authorities that it suspected he may have had links to some of the attackers.\nHypothesis: El-Nashar was arrested in Egypt.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:694:validation",
+    "article": "Premise: RJ Reynolds Tobacco announced yesterday that it plans to build a factory in Turkey to produce cigarettes by late 1993.\nHypothesis: RJR built factories in Turkey.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1590:validation",
+    "article": "Premise: The 26-member International Energy Agency said, Friday, that member countries would release oil to help relieve the U.S. fuel crisis caused by Hurricane Katrina.\nHypothesis: Foreign oil reserves will be made available to the U.S. in the wake of Hurricane Katrina.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1851:validation",
+    "article": "Premise: Pibul was anti-communist as well as nationalistic.\nHypothesis: Pibul was nationalistic.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1117:validation",
+    "article": "Premise: The situation is being monitored by the World Health Organization but says \"it is too early to know whether the virus is changing in ways that would signal the start of a human flu pandemic,\" says Maria Cheng a spokeswoman for the WHO. \"It's one isolate from a single virus from Turkey. The sample suggests the virus might be more inclined to bind to human cells rather than animal cells, but there's no evidence that it's becoming more infectious. If we started to see a lot more samples from Turkey with this mutation and saw the virus changing, we'd be more concerned.\"\nHypothesis: The World Health Organization is based in Turkey.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:522:validation",
+    "article": "Premise: Iranian nuclear officials say 54,000 centrifuges would produce enough enriched uranium to fuel a 1,000-megawatt reactor, such as the one being built by Russia that is near completion at the southern city of Bushehr.\nHypothesis: 54,000 centrifuges would produce enough enriched uranium to fuel a 1,000-megawatt reactor.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2220:validation",
+    "article": "Premise: Even though the charges were dropped on January 22, 2006, his Nobel Prize reception continues to provoke mixed feelings of pride and anger among Turks. On the other hand, as Pamuk intended, the criminal case brought international attention to freedom of speech in Turkey. In his Nobel speech, he defined literature as:  ... what a person creates when he shuts himself up in a room, sits down at a table, and retires to a corner to express his thoughts - that is, the meaning of literature... When a writer shuts himself up in a room for years on end, with this gesture he suggests a single humanity, a world without a centre.\nHypothesis: Pamuk won a Nobel Prize.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:916:validation",
+    "article": "Premise: A briefcase containing magnets, batteries and a cell phone sitting in the bushes outside a Charleston, South Carolina coffee shop drew the local bomb squad's attention, before it was determined that it contained no explosives. Police had earlier closed down Calhoun Street in downtown, where the coffee shop is located, but reopened the street and let local residents and business owners that the situation was over after performing an investigation.\nHypothesis: A briefcase was found outside Starbucks in Charleston.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:270:validation",
+    "article": "Premise: In Russia, BAT is setting up a joint venture with Yava, Moscow's largest cigarette factory.\nHypothesis: BAT acquired production interests in the Ukraine, Hungary and Russia.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:291:validation",
+    "article": "Premise: \"The Black Panther\", or \"The Black Pearl\", as he was known, was top scorer in the 1966 World Cup, with nine goals to his name.\nHypothesis: The best scorer at the World Championship in 1966 was \"The Black Pearl.\"",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:524:validation",
+    "article": "Premise: Mossad is one of the world's most well-known intelligence agencies, and is often viewed in the same regard as the CIA and MI6.\nHypothesis: Mossad is an intelligence agency.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2341:validation",
+    "article": "Premise: Time Warner is the world's largest media and Internet company.\nHypothesis: Time Warner is the world's largest company.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1959:validation",
+    "article": "Premise: Two prominent scientists have made guest appearances on the show, paleontologist Stephen Jay Gould and Stephen Hawking, the theoretical physicist whose brilliance has been compared with Einstein's.\nHypothesis: Stephen Hawking is a physicist.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:221:validation",
+    "article": "Premise: Typhoon Xangsane was downgraded to a tropical storm Sunday as it moved inland from the central Vietnam coast, where it killed two people, injured at least 80 others and damaged hundreds of homes, officials and state-controlled media reported.\nHypothesis: A typhoon batters the Philippines.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2214:validation",
+    "article": "Premise: The son of Italy's last king returned to his homeland Monday, ending more than a half-century of exile. Victor Emmanuel and his family landed at a military airport in Rome in a private plane and headed immediately for an audience with Pope John Paul II.\nHypothesis: Italian royal family returns home.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2100:validation",
+    "article": "Premise: When she was barely 20 years old, Dutch singer Edsilia Rombley got her first large taste of international acclaim. Already a winner of the smaller imitation contest Soundmix Show, she decided to shoot higher. With a great deal of determination, she performed in front of hundreds of millions of television viewers at the 1998 Eurovision Song Contest in Birmingham, United Kingdom. Her song, the R&B flavored \"Hemel en aarde\" (Heaven and earth), placed fourth and gave her country their highest placing at Eurovision since their last win in 1975. No Dutch contestant after her has been able to place similarly.\nHypothesis: Edsilia Rombley is a Dutch singer.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:529:validation",
+    "article": "Premise: Two trains collided in Shandong, China 4:41am local time on Monday killing at least 71 people and injuring over 400, including four French citizens. It is still not known exactly how many people were on either of the trains. The collision occurred in Zibo when one of the trains traveling from Beijing to Qingdao jumped tracks and collided head on with a train traveling in the opposite direction from Yantai to Xuzhou. Both of the trains are reported to have been traveling at their maximum speeds when they collided.\nHypothesis: Zibo is in the vicinity of Beijing.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1138:validation",
+    "article": "Premise: The most recent poll carried out by NOP market research in January revealed that 61% of Britons are opposed to joining the euro.\nHypothesis: The introduction of the euro has been opposed.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:431:validation",
+    "article": "Premise: Police in Rio de Janeiro arrested five men and recovered millions of dollars worth of art stolen earlier this month, including works by Salvador Dali and Henri Matisse. Police recovered all the stolen art except two Chinese ceramic sculptures from the 7th Century and a collection of silverware.\nHypothesis: Millions of dollars of art were recovered, including works by Dali.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1681:validation",
+    "article": "Premise: A Muslim charity in the Philippines that was supported by bin Laden and run by a brother-in-law, Mohammad Jamal Khalifa, financed Shah and the other plotters.\nHypothesis: Mohammad Khalifa's father-in-law is Osama Bin Laden.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1475:validation",
+    "article": "Premise: Dr Wood led a courageous and committed team in the fight to save 28 patients suffering from between two and 92 per cent body burns, deadly infections and delayed shock. As well as receiving much praise from both her own patients and the media, she also attracted controversy among other burns surgeons due to the fact that spray-on skin had not yet been subjected to clinical trials.\nHypothesis: Burns surgeons approve Dr Wood's spray-on skin.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1829:validation",
+    "article": "Premise: Radical Jordanian cleric, Abu Qatada, and nine other foreign nationals said to pose a threat to the UK's security, have been detained, pending deportation.\nHypothesis: 10 foreign nationals were a threat to Britian's national security.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2293:validation",
+    "article": "Premise: Clint Brown, sports presenter for 3 News on TV3 in New Zealand has resigned amid the allegations that he had verbally attacked a taxi driver which resulted in him being admitted to hospital with a concussion and a broken eye socket. TV3 has confirmed that they have accepted the resignation of Brown. Rick Friesen, Chief Operating Officer of the TV Works division of CanWest MediaWorks NZ, that runs TV3, said: \"We wish to acknowledge Clint's significant skills as a sports broadcaster, and thank him for his 17 years of very loyal service to TV3. Clint Brown is a passionate New Zealand sports fan, and he has been at the forefront of some of New Zealand's biggest sporting moments.\"\nHypothesis: Rick Friesen is employed at CanWest MediaWorks NZ.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:866:validation",
+    "article": "Premise: Mr Ferdinand Piech said that the German company did not have any confidential plans or documents about GM's ultra-low-cost factory project.\nHypothesis: Documents included secret plans for a new factory.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:107:validation",
+    "article": "Premise: Tyson, who served three years in jail for rape in the 1990s and who bit off part of Evander Holyfield's ear during a 1997 fight, still thinks he can be heavyweight champion again.\nHypothesis: Mike Tyson bit Holyfield's ear in 1990.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:243:validation",
+    "article": "Premise: The final major piece of comet Shoemaker-Levy 9 was to hit just after midnight, completing a ring of crater-like plumes of swirling superheated gas and debris thousands of miles across. \"It hit Jupiter like a string of machine-gun bullets\" said Eugene Shoemaker, an astronomer at the Lowell Observatory in Flagstaff, Ariz., who helped discover the comet last year.\nHypothesis: The Shoemaker-Levy comet hit Jupiter.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2145:validation",
+    "article": "Premise: New York Times reporter Judith Miller broke her media silence by writing a column the newspaper published on Sunday. Her lengthy story recounted two testimonies, September 30 and October 12, she gave to a U.S. federal grand jury seeking information on the source of the Valerie Plame leak. The column described the testimony as one that relied heavily on her reporting notes given to special prosecutor Patrick Fitzgerald between her first and second  appearances.\nHypothesis: Judith Miller works for the New York Times.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:777:validation",
+    "article": "Premise: Two British soldiers have been arrested in the southern Iraq city of Basra, sparking clashes outside a police station where they are being held.\nHypothesis: Two British soldiers' imprisonment prompted UK troops to storm a police station.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:92:validation",
+    "article": "Premise: The Auburn High School Athletic Hall of Fame recently introduced its Class of 2005 which includes 10 members.\nHypothesis: The Auburn High School Athletic Hall of Fame has ten members.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:633:validation",
+    "article": "Premise: \"If we could put a man on the moon within decades back in the 1960s, I think we can eliminate TB if we develop the will to do so\" said O'Brien, who called for a significant investment for the research, particularly the large field trials necessary to demonstrate efficacy.\nHypothesis: The moon was first touched by mankind in 1969.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:510:validation",
+    "article": "Premise: Earlier this year reporter Judith Miller was jailed for refusing to name the US-government source who identified a member of the US Central Intelligence Agency (CIA), Valerie Plame.\nHypothesis: Judith Miller is a member of CIA.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1039:validation",
+    "article": "Premise: Like the corporate logos, the ear is a representation, in mouth-watering chocolate, a delicious reminder of the infamous boxing incident in 1997, when an enraged Mike Tyson bit Holyfield's ear.\nHypothesis: Mike Tyson bit Holyfield's ear in 1997.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1792:validation",
+    "article": "Premise: German Siemens and ThyssenKrupp may sell relevant core technology to China, which owns the first commercially operated maglev line.\nHypothesis: Maglev is commercially used.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:948:validation",
+    "article": "Premise: Byrraju Ramalinga Raju, founder and chairman of Satyam Computer Services, and his brother, B. Rama Raju, the company's managing director, were arrested late Friday by Andhra Pradesh police. The brothers were placed under judicial custody in a Hyderabad, India jail and will remain there until January 23. Facing charges of criminal breach of trust (Section 406 of IPC), criminal conspiracy (Section 120-B), cheating (Section 420), falsification of records and forgery (Section 468), and fraudulent cancellation of securities (Section 477-a), they face up to ten years imprisonment if convicted.\nHypothesis: Raju has Hepatitis-C.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1618:validation",
+    "article": "Premise: Northwest Strikes: If Northwest flight attendants go on strike on the 15th, what does that mean for travelers? I have a trip booked on the 24th. Will NW rebook us with other airlines?\nHypothesis: Italian flight assistants go on strike.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2209:validation",
+    "article": "Premise: Also Friday, five Iraqi soldiers were killed and nine wounded in a bombing, targeting their convoy near Beiji, 150 miles north of Baghdad, the Iraqi military said.\nHypothesis: Three Iraqi soldiers also died Saturday when their convoy was attacked by gunmen near Adhaim.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1775:validation",
+    "article": "Premise: Salvadoran reporter Mauricio Pineda, a sound technician for the local Canal Doce television station, was shot to death today in Morazan Department in the eastern part of the country.\nHypothesis: Mauricio Pineda was killed by gunfire.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:467:validation",
+    "article": "Premise: In fact, Woolsey had had no first-hand experience with the world of spies until President Bill Clinton appointed him Director of Central Intelligence.\nHypothesis: James Woolsey is the director of the CIA.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:873:validation",
+    "article": "Premise: Washington Scientists have identified a hormone that significantly extends the lifespan of mice, a discovery that could mark a crucial step toward developing drugs that boost longevity in people.\nHypothesis: Texas researchers have found a naturally occurring hormone that can extend the lifespan of mice by as much as 30%, a discovery that opens a new avenue of research into human longevity.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:67:validation",
+    "article": "Premise: Sonia Gandhi can be defeated in the next elections in India by BJP.\nHypothesis: Sonia Gandhi is defeated by BJP.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:709:validation",
+    "article": "Premise: Edwin Hubble is recongized as having been one of the foremost astronomers of the modern era.\nHypothesis: Edwin Hubble was an astronomer.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1740:validation",
+    "article": "Premise: Environmental and social groups criticized the World Bank decision for shying from meaningful reform.\nHypothesis: The World Bank is criticized for its policies.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:15:validation",
+    "article": "Premise: Greg Page, a former heavyweight boxing champion who suffered a severe brain injury in a 2001 fight, has died at 50. His wife Patricia said the one-time WBA champion had died at his home in Kentucky, USA, of complications related to injuries he suffered in the fight. Page was in a coma for a week after the 9 March 2001 fight against Dale Crowe which was stopped in the 10th round. Patricia Page said he was \"in a better place now\" after announcing on Monday he had died overnight in his sleep.\nHypothesis: Greg Page was a WBA champion.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1483:validation",
+    "article": "Premise: Local media reported on Tuesday that a gold mine collapsed in northwestern Tanzania on Sunday, killing at least twenty people. According to reports, the incident occurred at Geita region when the 100-metre-deep shaft the miners were working in collapsed after being flooded by heavy seasonal rains. Some media reports say that thirty people might have been killed by the accident.  \"I know there is no hope of finding anybody alive,\" said Kelega Chacha, a miner who left the site soon before the mine's collapse. \"We will just have to look for the bodies to give them a decent burial.\"\nHypothesis: Kelega Chacha died in the Geita region.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:189:validation",
+    "article": "Premise: Dr. Pridi was forced into exile, and Field Marshal Pibul again assumed power.\nHypothesis: Pibul was a field marshal.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:158:validation",
+    "article": "Premise: Hassan Mustafa Osama Nasr, a Muslim cleric also known as Abu Omar was taken by a CIA-led team in Milan on 17 February, 2003 and allegedly transferred by vehicle to the Aviano Air Base near Venice, later by air to the Ramstein Air Base in Germany, and lastly sent to Egypt. He was released from prison on Sunday and says that he would like to return to Italy. He also said he has been tortured with electric shocks, beatings, rape threats and genital abuse, and that \"I have been reduced to a wreck of a human being.\"\nHypothesis: The CIA abducted Osama Nasr in 2003.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1662:validation",
+    "article": "Premise: The bus, which was heading for Nairobi in Kenya , crashed in the Kabale district of Uganda near the Rwandan border.\nHypothesis: The Kabale district borders on Rwanda.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:968:validation",
+    "article": "Premise: Mr Fitzgibbon expects some of the 17,000 additional US troops heading for Afghanistan will bolster Australian forces operating in the dangerous Oruzgan province in the south. The defence minister was planning to raise the issue specifically with US Defence Secretary Robert Gates. He has already held talks with US central command chief General David Petraeus and director of the Central Intelligence Agency (CIA) Leon Panetta. General Petraeus discussed the new US strategy for Afghanistan and the troop surge in which an extra 17,000 troops will be deployed in the southern provinces where Taliban insurgents have been most active.\nHypothesis: David Petraeus is the director of the CIA.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1227:validation",
+    "article": "Premise: British singer-songwriter Natasha Bedingfield, who sang with her brother Daniel and sister Nikola as The DNA Algorithm, tied the knot with a California businessman in Malibu. According to reports the marriage, which took place Saturday in a 30-minute outdoor ceremony overlooking the Pacific Ocean, was attended by about 150 guests.  The guests watched Bedingfield walk down the aisle in a Vera Wang dress beside the chateau at the Church Estates Vineyards.  Bedingfield, who was born in New Zealand and grown up in England, found her partner, in America.\nHypothesis: Natasha Bedingfield is married to Matthew Robinson.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1660:validation",
+    "article": "Premise: Buffalo, New York - The Common Council of Buffalo voted on Tuesday to send the Elmwood Village Hotel proposal \"to committee for further discussion\", after citing the need for more public involvement. The Elmwood Village Hotel is a development proposal by the Savarino Construction Services Corporation, a project designed by the architect Karl Frizlen of The Frizlen Group. The hotel would be placed on the southeast corner of Elmwood and Forest Avenues in Buffalo.\nHypothesis: The Frizlen Group is situated in Buffalo.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2097:validation",
+    "article": "Premise: The settlement must be approved by Citigroup's board of directors and the board of Regents of the University of California, the lead plaintiff for investors in the case.\nHypothesis: The University of California's board of Regents still needs to ratify the settlement - as does Citigroup's board of directors.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:951:validation",
+    "article": "Premise: South Korean President Roh Moo-hyun Thursday asked the Board of Audit and Inspection (BAI) to investigate questions arising about the Foreign Ministry's response to the kidnapping of a South Korean in Iraq who was later killed by Muslim militants, according to Yonhap.\nHypothesis: A South Korean in Iraq was killed by Muslim militants.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1340:validation",
+    "article": "Premise: By the time a case of rabies is confirmed, the disease may have taken hold in the area.\nHypothesis: A case of rabies was confirmed.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1248:validation",
+    "article": "Premise: Michaela Roeder, 31, was found guilty of six counts of manslaughter and mercy killing.\nHypothesis: A German nurse was convicted of manslaughter and mercy killing of patients by lethal injection.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1412:validation",
+    "article": "Premise: Global markets should be \"quite strong enough to absorb it without lasting damage\", he said . \"I would stress that these circumstances are unique to Barings and should not apply to other banks operating in London.\" Barings faced losses of at least 600m in contracts on three stock exchanges in Singapore , Osaka and Tokyo , he said , but 'further unquantifiable losses' were expected .\nHypothesis: The banking firm Barings collapsed due to speculations made by Nick Leeson.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1203:validation",
+    "article": "Premise: Local Law enforcement officials acting on behalf of the European Commission raided offices of Intel and several computer makers this morning, a spokesman for the EU said. He did not specify which countries or which other firms were involved. However, a spokesman for Intel Germany, Hans-Jürgen Werner, said that Intel's offices in Munich and Swindon were among those searched. It emerged on Wednesday 13th, that raids also took place at Intel's facility in County Kildare, Ireland in relation to the firms anti-competitive business practices. Intel employs over 5,000 people at its Irish manufacturing facility.\nHypothesis: Intel Germany engaged Hans-Jürgen Werner as spokesman.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1104:validation",
+    "article": "Premise: The liner notes to the CD surmise that Farrakhan is the author of three selections, \"Is She Is, or Is She Ain't\", \"Don't Touch Me Nylon,\" and \"Female Boxer\" and that is quite possible. The most interesting is the first of these three, a topical number on Christie Jorgensen, the subject of a series of sex change operations. While such transexual operations have since become more common, this was the first to receive high publicity.\nHypothesis: Sex-change operations become more common.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:619:validation",
+    "article": "Premise: The Walt Disney Co. donated one of the world's most significant private collections of African artwork, yesterday, to the Smithsonian's National Museum of African Art.\nHypothesis: Disney gave the Smithsonian a trove of sought-after African art.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:176:validation",
+    "article": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Alexander the Great's Tomb remains undiscovered.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:607:validation",
+    "article": "Premise: When Adolf Hitler heard of how Mussolini was executed and put on public display, he vowed he would not let this happen to him. Hitler shot his mistress and new wife, Eva Braunn, and then swallowing some poison, he shot himself in the mouth.\nHypothesis: Mussolini's mistress was Eva Braunn.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2385:validation",
+    "article": "Premise: These early men learned to make fire. They traveled over land bridges from Africa, and began to populate the world, about 1 million years ago.\nHypothesis: Humans existed 10,000 years ago.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1645:validation",
+    "article": "Premise: Coronado High School English teacher Lori Rosales has read the Harry Potter books and sees them as educational and something that children can relate to because the stories are timeless.\nHypothesis: Teacher wins right to market Harry Potter.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1395:validation",
+    "article": "Premise: That police statement reinforced published reports, that eyewitnesses said de Menezes had jumped over the turnstile at Stockwell subway station and was wearing a padded jacket, despite warm weather.\nHypothesis: However, the documents leaked to ITV News suggest that Menezes, an electrician, walked casually into the subway station and was wearing a light denim jacket.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1162:validation",
+    "article": "Premise: Moscow (USSR), 12 Jul 89 (PRAVDA)- Blood is flowing in Columbia, where last year, according to official statistics, there were 4,600 victims of political violence, including Jaime Pardo Leal (president of Colombia's national coordination committee), around 30 deputies and many municipal advisors and mayors.\nHypothesis: Around 30 deputies were killed on 12 Jul 89.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1382:validation",
+    "article": "Premise: Romania currently supplies one of the world's largest contingents of troops in Iraq, with nearly 1000 people.\nHypothesis: Romania sent 730 troops in Iraq.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2049:validation",
+    "article": "Premise: Mark Allen, the company's president and chief operating officer, will become the new CEO.\nHypothesis: Mark Allen is appointed as chief operating officer.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2425:validation",
+    "article": "Premise: FermiLab's goal is to ensure that if a program runs and is certified on RedHat Enterprise, then it will run on the corresponding Fermi Linux LTS release. They have built Fermi Linux LTS for Fermilab's use, and that is their ultimate goal.\nHypothesis: FermiLab created Linux LTS.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2103:validation",
+    "article": "Premise: Then came the dozens of protesters who started camping out near Bush's ranch this month, led by a California mother who lost her son in the war and insists on speaking to the president.\nHypothesis: FBI whistleblower Coleen Rowley has also arrived in Texas, as has Becky Lourey, another mother who has lost her son in Iraq and a state senator in Minnesota",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1877:validation",
+    "article": "Premise: Zinedine Zidane has beaten Thierry Henry and Ronaldo to the Fifa 2003 World Player of the Year award.\nHypothesis: FIFA selects world football player of the year 1994.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1867:validation",
+    "article": "Premise: Often criticized and blamed for politically unpopular policies, and confronted with numerous setbacks, the World Bank is experiencing a difficult time with regard to which strategies to adopt, in particular in Africa.\nHypothesis: The World Bank is criticized for its policies.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:213:validation",
+    "article": "Premise: Domestic fire incidents have an important impact on population health by contributing to early death, serious and often disfiguring injuries, and ongoing disability. Fire-related injury is a leading cause of unintentional injury in the home in all age groups.\nHypothesis: Domestic fires are a major cause of unintentional injury in the home.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:752:validation",
+    "article": "Premise: 20 million years ago there were apes, and by 5 million years ago our closest ancestors and cousins, early ape-humans, had split from the other apes.\nHypothesis: Humans existed 10,000 years ago.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1021:validation",
+    "article": "Premise: More than 1,500 people died when the Titanic sank in 1912.\nHypothesis: The Titanic sank in 1912.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2348:validation",
+    "article": "Premise: The last Australian to win Miss Universe was Perth's Kerry Anne Wells in 1972.\nHypothesis: Not since 1972 has an Australian woman been named Miss Universe.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1093:validation",
+    "article": "Premise: In June 2004, top Russian oil producer Lukoil signed a $1 billion 35-year production-sharing agreement to develop Uzbek natural gas deposits.\nHypothesis: Lukoil earned $1 billion in 2004.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:47:validation",
+    "article": "Premise: Tension and battles between Greek police and anarchist demonstrators took place in the centre of Athens, Greece, during the anti-war demonstration of the 4th European Social Forum which is taking place in the Greek capital, from 4 to 7 of May 2006. The march of the approximately 1,000 anarchists ended with clashes between groups of anarchists and police. Riot police used tear gas, while a branch of a Greek bank, a fast-food store and around 50 shop windows in central Athens were damaged.\nHypothesis: The riots in Greece started on December 6.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1471:validation",
+    "article": "Premise: Franz Liszt, a Hungarian composer who lived from 1811 to 1886 was the equivalent of a rock star in his day. His piano compositions were extremely popular and he often gave concerts to his multitude of fans. Liszt was also the pioneer of many musical techniques, including the symphonic poem and the technique of transforming themes.\nHypothesis: Franz Liszt lived from 1811 to 1886.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:953:validation",
+    "article": "Premise: Mozambique's Maria Mutola and Israel's Alex Averbukh produced the best performances of the year, in the women's 800 metres and men's pole vault, at the Super Grand Prix in Madrid on Saturday.\nHypothesis: The women's ten thousand metres champion is from Mozambique.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1261:validation",
+    "article": "Premise: An American-owned tugboat from Italy along with its 16 member crew was hijacked around 11 am EST on Saturday in the Gulf of Aden.  The Italian Ambassador, Pierandrea Magistrati, confirmed that \"there is a boat that has been hijacked, I believe by Somali pirates.\" Additionally, Shona Lowe, a spokeswoman at NATO's Northwood maritime command center reported that the Italian-flagged tugboat was hijacked this morning off of Somalia's northern coast.  Lowe also confirmed that Italian government officials along with the company that owned the tugboat were trying to secure the release of the crew, ten of which were Italians.\nHypothesis: The Gulf of Aden is located along the northern coast of Somalia.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:558:validation",
+    "article": "Premise: With a 38-35 victory over the New York Giants at Giants Stadium Saturday night, the New England Patriots became the second team in the modern era of the National Football League to go undefeated (16-0) in the regular season. The only other team to have achieved this feat was the Miami Dolphins in 1972, who were 14-0 due to a different regular season structure at the time.\nHypothesis: New England Patriots is the name of a fast food chain.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2276:validation",
+    "article": "Premise: Prime Minister Jos Manuel Duro Barroso resigns. He is to assume the presidency of the European Commission later in the year (the European Parliament approves him on July 22).\nHypothesis: New Portuguese prime minister is elected.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1507:validation",
+    "article": "Premise: During the Tiananmen Square protest of 1989, Chinese student demonstrators in Beijing built a 10-meter version of the Statue of Liberty to symbolize their struggle.\nHypothesis: The Statue of Liberty was built in 1989.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:353:validation",
+    "article": "Premise: Wilder and his colleagues are cautious about their results also because the data do not make clear whether it was the anesthesia that contributed to the children's learning deficits, or whether it was an underlying condition that may have required surgery and precipitated the learning problems. Of the more than 5,000 babies studied, 593 needed at least one surgery and just over 100 infants needed more than two before age 3. There may be something unusual about this population of children that could have made them vulnerable to learning problems and required they undergo surgery and anesthesia.\nHypothesis: Anesthesia causes learning disabilities.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1253:validation",
+    "article": "Premise: Rescuers searched rough seas off the capital yesterday for survivors of a ferry collision that claimed at least 28 lives, as officials blamed crew incompetence for the accident.\nHypothesis: 100 or more people lost their lives in a ferry sinking.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:879:validation",
+    "article": "Premise: The Socialist Party was formerly part of the Labour Party, which has ruled the United Kingdom since 1997 and remains a member of the Socialist International. On the bus, Saunders and some of his cohorts — they occasionally, especially the older members, address each other as \"comrade\" — explains their view on how the split with Labour came about. As the Third Way became the dominant voice in the Labour Party, culminating with the replacement of Neil Kinnock with Tony Blair as party leader, the Socialist cadre became increasingly disaffected. \"There used to be democratic structures, political meetings\" within the party, they say. The branch meetings still exist but \"now, they passed a resolution calling for renationalisation of the railways, and they [the party leadership] just ignored it.\" They claim that the disaffection with New Labour has caused the party to lose \"half its membership\" and that people are seeking alternatives.\nHypothesis: The Socialist Party was founded in the United Kingdom.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:780:validation",
+    "article": "Premise: Qatar and Oman are members of the Gulf Cooperation Council, GCC, which also groups Saudi Arabia, Kuwait, Bahrain and the United Arab Emirates (UAE).\nHypothesis: The members of the Gulf Cooperation Council are: Saudi Arabia, Kuwait, United Arab Emirates, Qatar, Oman, Bahrain.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2375:validation",
+    "article": "Premise: The Israeli army forces carried out, on Saturday, a widespread military operation into the West Bank town of Jenin and its refugee camp, local Palestinian sources said.\nHypothesis: The Israeli army carried out a widespread operation in Jenin.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2072:validation",
+    "article": "Premise: California Gov. Arnold Schwarzenegger (R) on Friday signed five bills into law that allow California to receive more than $17.5 billion in federal economic stimulus aid, but the funding will not be enough for the state to avoid $3 billion in tax increases and cuts to services to balance its budget, the San Francisco Chronicle reports. The legislation changes eligibility reporting requirements for children enrolled in Medi-Cal and allows more people to qualify for unemployment insurance and extends the benefit by 20 weeks. Medi-Cal is the state's Medicaid program.\nHypothesis: Arnold Schwarzenegger is Austrian.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1827:validation",
+    "article": "Premise: The Health Department has been made aware that property located at Bear Creek is under investigation by the NC Division of Waste Management for the illegal discharge of hazardous chemical materials.\nHypothesis: Hazardous chemical materials have been discovered at Bear Creek.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1691:validation",
+    "article": "Premise: On Tuesday, BVA published a telephone poll conducted for French magazine Le Figaro and news channel LCI to gauge support for right-wing presidential candidates. 73% of Union pour un Mouvement Populaire (Union for a Popular Movement or UMP) party supporters identified Interior Minister Nicolas Sarkozy as their preferred candidate for May's presidential election. The UMP is one of the two major parties in France, and represents conservative politics. It was formed in 2002 as a union of several right-wing parties, and currently controls the legislature (the National Assembly) and the executive. Current president Jacques Chirac is aligned with the UMP.\nHypothesis: Nicolas Sarkozy is supported by the Union pour un Mouvement Populaire.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1141:validation",
+    "article": "Premise: After the SkyWest airliner touched down, the Airport Movement Area Safety System (AMASS) alerted and the air traffic controller transmitted \"Hold, Hold, Hold\" to the SkyWest flight crew in an attempt to stop the aircraft short of runway 1L. The SkyWest crew applied maximum braking that resulted in the airplane stopping in the middle of runway 1L. As this was occurring, the captain of Republic Airlines flight 4912 took control of the aircraft from the first officer, realized the aircraft was traveling too fast to stop, and initiated an immediate takeoff. According to the crew of SkyWest 5741, the Republic Airlines aircraft overflew theirs by 30 to 50 feet. The Federal Aviation Administration has categorized the incident as an operational error.\nHypothesis: NTSB is responsible for investigating transportation accidents in the United States.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:551:validation",
+    "article": "Premise: Christopher Reeve, an actor and director who became an inspiration worldwide after being paralyzed in a horse riding accident, died Sunday of heart failure.\nHypothesis: Christopher Reeve had an accident.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1973:validation",
+    "article": "Premise: China immediately expressed regret over his decision and suggested that \"ulterior motives\" may be at play. \"It is understandable if some people do not understand the Chinese government policy on Darfur, but I am afraid that some people may have ulterior motives, and this we cannot accept... China is also concerned about the humanitarian situation in Darfur. [But] empty rhetoric will not help. We hope that relevant people will be more pragmatic,\" said Liu Jianchao, the Deputy-Director General of the Information Department in China's foreign ministry.\nHypothesis: Liu Jianchao is an employee of China's foreign ministry.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1996:validation",
+    "article": "Premise: On December 6 2008, Adela Lupse, presenting the call-in quiz Telepremii on National TV on Romanian television, had what The Daily Telegraph described as a \"tantrum on air\". As the final prize became available, Ms Lupse's show had no callers. Already excited, she began to shout. Throwing the telephone down on the studio floor and stomping on it, she admonished her viewers, \"I want the telephone to ring now. Now. Call me now!\".\nHypothesis: Ms Lupse is a TV presenter.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1274:validation",
+    "article": "Premise: They named themselves for Saint Joan of Arc. The brigade began with 17 women, but soon grew to 135 members. Its mission was to obtain money, weapons, provisions, and information for the combatant men. Many smuggled weapons into the combat zones by carrying them in carts filled with grain or cement.\nHypothesis: Saint Joan of Arc's brigade got weapons for combatants.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1393:validation",
+    "article": "Premise: The Cosmic Microwave Background (CMB) is a uniform fabric of radiation that covers the entire universe at a constant temperature of 2.7 kelvins.\nHypothesis: The temperature of the Cosmic Microwave Background is 2.7 kelvins.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1646:validation",
+    "article": "Premise: English has been written using the Latin alphabet since around the ninth century. (Before that, Old English had been written using the Anglo-Saxon Futhorc.) The spelling system or orthography of English is historical, not phonological.\nHypothesis: A spelling reform was approved in all German speaking countries.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2197:validation",
+    "article": "Premise: The common binding of Catholic faith did little to prevent the Bavarians from slaughtering fellow believers in the 19th century under Prussian Protestant officers.\nHypothesis: 19 Bavarians are Catholic.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1373:validation",
+    "article": "Premise: German automaker, Volkswagen AG, launched a special collector's edition of its original Beetle, on Thursday, to mark the end of the line for the most popular car in history.\nHypothesis: Volkswagen AG produces the 'Beetle'.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1844:validation",
+    "article": "Premise: The new work went an extra step, suggesting that the connections that the stem cells form to help bridge the damaged spinal cord, are key to recovery.\nHypothesis: The experiment, reported Monday, isn't the first to show that stem cells offer tantalizing hope for spinal cord injury.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:168:validation",
+    "article": "Premise: U.S. space shuttle Atlantis and its seven-member crew concluded their pursuit of the International Space Station (ISS) on Wednesday and docked with the orbital outpost at 12:05 EDT (1605 GMT).\nHypothesis: US shuttle Atlantis docks with the Mir space station.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1937:validation",
+    "article": "Premise: Rose made his first start since joining the Knicks 10 games ago, replacing Thomas, who has an infected elbow.\nHypothesis: Rose joined the Knicks 10 games ago.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1706:validation",
+    "article": "Premise: Oh Eun-sun was the first Korean woman to climb Mt. Everest solo. For all the hardships she must have endured, she merely says that she was lucky. She now reminisces about the days she spent in that mountain.\nHypothesis: A woman succeeds in climbing Everest solo.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2129:validation",
+    "article": "Premise: Ahern, who was travelling to Tokyo for an EU-Japan summit yesterday, will consult with other EU leaders by telephone later this week in an effort to find an agreed candidate to presidency of the European commission.\nHypothesis: EU leaders found an agreement about a candidate to the post of European commission president.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2369:validation",
+    "article": "Premise: \"They brought us 7-Up, bottled water, ice and a diet of rice, though you didn't feel like eating,\" said Jim Lankes, 48, of Phoenix.\nHypothesis: Jim Lankes was given bottles of waters, ice and rice.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1840:validation",
+    "article": "Premise: Anant Gupta who was kidnapped from the elite locality of Sector 14, Noida, India has returned home. He was kidnapped on November 13, 2006 and released by his abductors yesterday morning. The police have made an arrest in the city of New Delhi. The other two accused are absconding. The boy claimed that he was kept in a jungle and was treated nicely by the three men.\nHypothesis: Anant Gupta was kidnapped in India.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1199:validation",
+    "article": "Premise: GM has initiated criminal investigations in Germany and the US on the basis of their suspicions that Mr Lopez and his team stole confidential information before defecting to VW in March.\nHypothesis: Lopez took documents from GM to VW.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:275:validation",
+    "article": "Premise: Humic acids are complex organic molecules formed by the breakdown of organic matter in the soil. They are not considered to be fertilizers, but soil enhancers and improvers.\nHypothesis: Organic fertilizers are used as soil enhancers.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1149:validation",
+    "article": "Premise: The United States Marshals Service working together with nearly 960 other law enforcement agencies recently concluded a week-long operation, Operation FALCON, which succeeded in the arrest of 10,340 fugitives across the United States and elsewhere. Other regional sweeps have been conducted before; but this was the first of its kind at the national level and resulted in the highest number of arrests ever recorded in a single operation.\nHypothesis: Operation Condor was a genocide and a campaign of counter-terrorism implemented by the right-wing dictatorships that dominated the Southern Cone in Latin America from the 1950s to 1980s.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1367:validation",
+    "article": "Premise: The memorandum noted the United Nations estimated that 2.5 million to 3.5 million people died of AIDS last year.\nHypothesis: Over 2 million people died of AIDS last year.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:765:validation",
+    "article": "Premise: About 10 million people live in the Paris metropolitan area, more than 15 percent of the country's total population. France's second largest city is Marseille (795,600) on the Mediterranean coast.\nHypothesis: About 10 million people live in France.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:825:validation",
+    "article": "Premise: Nevertheless, 58 percent of Americans expressed their satisfaction with the President's job performance. 44 percent supported Nixon at the very beginning of the investigation into Watergate.\nHypothesis: 58% of Americans are unsatisfied with Clinton's job performance.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2190:validation",
+    "article": "Premise: A priest who served in the Diocese of Metuchen in the mid-1980s has been sentenced to life in prison for sexually abusing a Massachusetts boy.\nHypothesis: Pedophile gets life in prison",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1496:validation",
+    "article": "Premise: Controversy and discussion erupted on internet forums on 28 February 2007, when publicity was given to Essjay, a prominent Wikipedia administrator and editor, having claimed false credentials which were published in a magazine. Internet encyclopedia Wikipedia co-founder Jimbo Wales was travelling in India, and at 06:42 on March 3 he issued a statement that further information had come to his attention and he had asked the editor to resign his positions of trust within the community. At 03:17 on March 4 Essjay announced on his user talk page that he had retired and was no longer active on Wikipedia.\nHypothesis: Wikipedia was launched by Jimbo Wales.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2119:validation",
+    "article": "Premise: The outlawed Basque political party in Spain, Batasuna, called, on Monday, parties in the Basque Autonomous Government to boycott the parliament decision to ban it.\nHypothesis: Spain's Basque party calls for the boycott of a parliament decision.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1269:validation",
+    "article": "Premise: Two of Gianni Versace's favorite buzzwords were quality and future, so after the 50-year-old designer was murdered last July outside his Miami Beach, Fla. mansion, it was somehow inevitable that his family would have to go about putting those words together: They had to ask themselves how they could ensure the future of the company Versace had built without sacrificing its reputation for quality.\nHypothesis: Gianni Versace is a designer.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:600:validation",
+    "article": "Premise: After graduating in 1977, Gallager chose to accept a full scholarship to play football for Temple University.\nHypothesis: Gallager attended Temple University.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:105:validation",
+    "article": "Premise: The British tabloids portrayed Nicholas Leeson as a working-class villain who single-handedly brought down Barings PLC, a 233-year-old London merchant bank that helped finance the Napoleonic wars.\nHypothesis: Barings was Britain's oldest merchant bank.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:641:validation",
+    "article": "Premise: Some large Russian oil companies, including Lukoil, Zarubezhneft, the state-owned oil company, and Alpha Eco, the trader, were implicated by the report.\nHypothesis: Zarubezhneft trades in oil.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2309:validation",
+    "article": "Premise: Among the fascinating sites in the city are Independence Hall where the Declaration of Independence was signed, and one of America's principal symbols of freedom, The Liberty Bell, located in Congress Hall.\nHypothesis: The US Declaration of Independence is located in America.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:11:validation",
+    "article": "Premise: November 9, 1989 , the day the Berlin Wall fell and the world changed forever . Not even the most astute saw it coming . As Hungary's foreign minister in the late summer of 1989 , Gyula Horn gave the order to let visiting East Germans use his country to do a 400-mile end run around the Berlin Wall , a move now seen as the beginning of the end for hard-line communism in Europe .\nHypothesis: The Berlin Wall was torn down in 1989.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1148:validation",
+    "article": "Premise: Honda also released a video where a humanoid robot named Asimo was operated by a person wearing the helmet. The employee was stated to be thinking about raising his right hand, after which Asimo moved its right arm. Honda states that it could be quite some time before the technology is ready to go live due to difficulties such as the human brain's liability to become distracted, creating mixed thought patterns. A related problem is the amount of focus required by the operator. \"Practical uses are still way into the future.\" said Honda Research Institute Japan Co executive, Yasuhisa Arai. \"I'm [just] talking about dreams today.\"\nHypothesis: Yasuhisa Arai is an employee of Honda Research Institute Japan.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2412:validation",
+    "article": "Premise: Recreational marijuana smokers are no more likely to develop oral cancer than nonusers.\nHypothesis: Smoking marijuana does not increase the risk of developing oral cancer.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1410:validation",
+    "article": "Premise: Scientists had thought all gamma-ray bursts had a standard energy.\nHypothesis: The scientists had thought that all explosions gamma the ray have a standard energy.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1335:validation",
+    "article": "Premise: Norwegian police released one of three people arrested when Edvard Munch's painting 'The Scream', stolen from the National Gallery in Oslo, was found.\nHypothesis: Norwegian police arrested three people for the theft of Munch's painting, 'The Scream'.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2340:validation",
+    "article": "Premise: Heavy rain flooded parts of the site, with dozens of tents lost under water, while lightning strikes affected the stages and knocked out power lines.\nHypothesis: 100 tents had been washed away.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2316:validation",
+    "article": "Premise: The PMDB is also the party led by Senator Jader Barbalho, the recently elected Senate President heaped with serious corruption charges.\nHypothesis: Jader Barbalho is the Senate President.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1588:validation",
+    "article": "Premise: Two 8-year-old girls in Orlando, Florida, located in the United States have made a big donation to the research and curing of breast cancer. Victoria Petrucelly and Jesse Theobald along with classmates from their third grade class at The Christ School, raised almost US$24,000 by setting up lemonade stands and selling pink lemonade. The two girls were thinking about starting the lemonade stand in 2008, but were inspired to donate money when Petrucelly's mother, who suffered from the disease, died on Valentine's Day, February 14.\nHypothesis: Victoria Petrucelly is a student from the Christ School.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1070:validation",
+    "article": "Premise: Suncreams designed for children could offer less protection than they claim on the bottle.\nHypothesis: Suncreams designed for children protect at the level they advertise.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1731:validation",
+    "article": "Premise: Of course, most of the tax cuts expire in 2010; only three years from when Rangel would take over as chair if Democrats win.\nHypothesis: Democrats won the elections three years ago.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1546:validation",
+    "article": "Premise: Bush and his wife, Laura, departed the White House on Thursday afternoon to spend four days at the wooded presidential retreat of rustic cabins in the Maryland mountains. Along with the first lady's mother, Jenna Welch, the weekend gathering includes the president's parents, former President George H.W. Bush and his wife, Barbara; his sister Doro Koch and her husband, Bobby; and his brother, Marvin, and his wife, Margaret.\nHypothesis: The name of George H.W. Bush's wife is Barbara.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1207:validation",
+    "article": "Premise: Sultan Al-Shawi, a.k.a the Attorney, said during a funeral held for the victims, \"They were all children of Iraq killed during the savage bombing.\"\nHypothesis: The Attorney, said at the funeral, \"They were all Iraqis killed during the brutal shelling.\"",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1794:validation",
+    "article": "Premise: The FDA would not say in which states the pills had been sold, but instead recommended that customers determine whether products they bought are being recalled by checking the store list on the FDA Web site, and the batch list. The batch numbers appear on the container's label.\nHypothesis: The FDA provided a list of states in which the pills have been sold.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:574:validation",
+    "article": "Premise: Vanunu, 49, was abducted by Israeli agents and convicted of treason in 1986 after discussing his work as a mid-level Dimona technician with Britain's Sunday Times newspaper.\nHypothesis: Vanunu's disclosures in 1968 led experts to conclude that Israel has a stockpile of nuclear warheads.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:779:validation",
+    "article": "Premise: The World Bank has also been criticized for its role in financing projects that have been detrimental to human rights and the natural environment.\nHypothesis: The World Bank is criticized for its activities.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:65:validation",
+    "article": "Premise: The cost of the consumer of the United States fell in June.\nHypothesis: U.S. consumer spending dived in June.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:913:validation",
+    "article": "Premise: On Tuesday, December 23, the menswear retailer The Officers Club's administrators PricewaterhouseCoopers decided to close 32 of the 150 stores immediately. PricewaterhouseCoopers also announced that TimeC 1215 limited had bought 118 of the stores for an undisclosed fee. TimeC 1215 is backed by David Charlton, chief executive of The Officers Club. This deal saves around 900 jobs. The Officers Club began in the early 1990s in Sunderland and has headquarters at Cramlington, Northumberland.\nHypothesis: The UK retailer Zavvi has called in administrators during Christmas.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1111:validation",
+    "article": "Premise: Switzerland has ratified bilateral agreements with the members of the European Union in March 2004, but the new members (Cyprus , Czech Republic , Estonia, Hungary, Latvia, Lithuania, Malta, Poland, Slovakia and Slovenia) were not included in the deal.\nHypothesis: Lithuania intends to introduce the use of the Euro as an official currency on January 1, 2007.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2294:validation",
+    "article": "Premise: The BBC's Tim Franks says frustrated British diplomats insist there have been several achievements but there is no doubt that the continued delay in reaching agreement on a budget for the EU hangs over all discussions.\nHypothesis: Diplomats agree on EU budget.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:111:validation",
+    "article": "Premise: As late as 1799, priests were still being imprisoned or deported to penal colonies and persecution only worsened after the French army led by General Louis Alexandre Berthier captured Rome and imprisoned Pope Pius VI, who would die in captivity in Valence, Drôme, France in August of 1799.\nHypothesis: Alexandre Berthier died in 1799.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:507:validation",
+    "article": "Premise: The unconfirmed case in Dundee concerns a rabies-like virus known only in bats.\nHypothesis: A case of rabies was confirmed.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2433:validation",
+    "article": "Premise: For many years, Sudam was controlled by Jader Barbalho, who was the governor of the state of Para and its senator.\nHypothesis: Jader Barbalho is the governor of Sudam.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1980:validation",
+    "article": "Premise: Following a steady flow of leaks and statements on apparently incriminating discoveries, her office has been gagged by senior legal authorities.\nHypothesis: Because of leaks, a gag was placed on Holland's office.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2414:validation",
+    "article": "Premise: The report catalogues 10 missed opportunities within the CIA and FBI to uncover pieces of the September 11 plot.\nHypothesis: Ten missed opportunities within the CIA and FBI are uncovered in the report.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:678:validation",
+    "article": "Premise: The ship, owned by Mitsui O.S.K. Lines and flagged in the Cayman Islands, came under attack at around 4 p.m. Somali time (UTC+3) as gunfire came from two small priate boats. The vessel, with a crew of eighteen from the Philippines, suffered light damage to its front and windows were broken. The Jasmine Ace was en-route from Sharjah, United Arab Emirates to Mombasa, Kenya. The 126.75m car carrier had loaded with 377 used cars in Sharjah on March 17.\nHypothesis: Mitsui O.S.K is the owner of the Cayman Islands.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:594:validation",
+    "article": "Premise: The Salt Lake City 2002 Winter Olympics will take place from February 8th to February 24th 2002. The Paralympics will take place in Salt Lake City from March 7th to March 16th 2002.\nHypothesis: 2002 Olympic Winter games take place in Salt Lake.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:126:validation",
+    "article": "Premise: The industrial espionage case involving GM and VW began with the hiring of Jos Ignacio Lopez, an employee of GM subsidiary Adam Opel, by VW as production director.\nHypothesis: There was an industrial espionage case involving GM and VW.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:375:validation",
+    "article": "Premise: The sale was made to pay Yukos' US$ 27.5 billion tax bill, Yuganskneftegaz was originally sold for US$9.4 billion to a little known company Baikalfinansgroup which was later bought by the Russian state-owned oil company Rosneft .\nHypothesis: Yuganskneftegaz cost US$ 27.5 billion.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:812:validation",
+    "article": "Premise: The media always talk about the Dow being up or down a certain number of points.\nHypothesis: Dow Jones is down.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:741:validation",
+    "article": "Premise: In an interview this week, the president said that Vice President Dick Cheney and Defense Secretary Donald Rumsfeld will be a valued part of his administration until his presidency comes to an end.\nHypothesis: Dick Cheney is Vice President of the Defense Secretary Donald Rumsfeld.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:708:validation",
+    "article": "Premise: Iran will hold the first runoff presidential election in its history, between President Akbar Hashemi Rafsanjani and Tehran's hard-line mayor, election officials said Saturday.\nHypothesis: Hashemi Rafsanjani will face Tehran's hard-line mayor in Iran's first runoff presidential election ever, officials said Saturday.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:869:validation",
+    "article": "Premise: Atlanta-based Delta Air Lines announced plans to cut 7,000 to 9,000 jobs by the end of 2007, approximately 17% of its employees. CEO Gerald Grinstein will take a 25% pay cut. Executives have their pay cut by 15%. Other employees will have their pay reduced by 7 to 10%. Employees that make less than $25,000 a year will not be affected by these pay cuts. Delta has already cancelled leases on 40 aircraft and they plan to reduce its fleet by at least 80 more. They plan to reduce domestic capacity by 15 to 20 percent and increase international capacity by 25 percent.\nHypothesis: European Airlines are cutting jobs.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2174:validation",
+    "article": "Premise: Rather than deterring crime, capital punishment actually increases the level of brutality in society.\nHypothesis: Capital punishment is a deterrent to crime.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1545:validation",
+    "article": "Premise: ET confirms that actor Bruce Willis has married his girlfriend of a year, model/actress Emma Heming.  A small, private wedding ceremony took place on Saturday at Willis' home in Parrot Cay, Turks & Caicos, a rep said.  In attendance were the 54-year-old actor's first wife, Demi Moore, and her husband Ashton Kutcher, as well as his daughters Rumer, Scout, and Tallulah Belle. The couple plans to hold a civil ceremony when they return to California.\nHypothesis: Bruce Willis' wife is from California.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1671:validation",
+    "article": "Premise: A bid topping $17.7 billion was jointly proffered by Time Warner Inc. and Comcast Corporation on Thursday to buy beleaguered Adelphia Communications Corporation in an industry consolidation move. Adelphia is the fifth largest cable service provider in the United States with nearly 5 million subscribers. The market-share grabbing bid trumps the previous Cablevision offer of $16.5 billion. The bid is under scrutiny by the presiding judge over the Adelphia's Chapter 11 bankruptcy filing, and must also be approved by the company's creditors owed in the range of $20 million.\nHypothesis: Time Warner is based in Cingular.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:279:validation",
+    "article": "Premise: Castro's successful visits to Harlem and the Bronx, his speech to the United Nations General Assembly, and the October 21 march of 3,000 against U.S. policy and subsequent picket lines at Cuba's UN mission in defense of the revolution - all these events dealt blows to the U.S. government's unceasing efforts to isolate and slander Cuba.\nHypothesis: Castro visits the UN.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2053:validation",
+    "article": "Premise: US-based News Corporation (formerly based in Australia) has announced its purchase of IGN Entertainment, a US-based online media group, for US$650 million. IGN's assets include popular video game sites IGN.com and GameSpy.com, as well as movie and game review site Rotten Tomatoes. IGN will become part of the News Corporation's Fox Interactive Media division, which will expand the company's online presence to become the fourth largest online media company, with over 70 million individual users and 12 billion page views per month when the takeover is complete.\nHypothesis: News Corporation is located in Australia.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2277:validation",
+    "article": "Premise: Stefano Falconi, director of finance at the Massachusetts Institute of Technology (MIT), has joined Carnegie Mellon as its vice president for administration and chief financial officer. Falconi succeeds Jeff Bolton, who left the university last July to become chief financial officer at the Mayo Foundation in Rochester, Minn.\nHypothesis: The Massachusetts Institute of Technology (MIT) appoints Stefano Falconi as chief financial officer.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2120:validation",
+    "article": "Premise: The Bills will announce the release of  12-year veteran Drew Bledsoe on Wednesday afternoon, leaving J.P. Losman as the No. 1 QB.\nHypothesis: The Bills announced that they will release the 33-year-old Bledsoe.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1955:validation",
+    "article": "Premise: Please note that Arabic is the language of Quran so it's better to learn it to understand clearly all the miracles in Quran.\nHypothesis: Arabic is the language of the Quran.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1114:validation",
+    "article": "Premise: CBS newsman Harry Reasoner is returning to his Iowa hometown to get married Saturday.\nHypothesis: CBS newsman Harry Reasoner was born in Iowa.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1843:validation",
+    "article": "Premise: Article 19 said a correspondent for the independent newspaper Narodnaya Volya who attempted to determine how many people involved in emergency work in the contaminated zone around the Chernobyl nuclear reactor after the 1986 catastrophe were still alive was told by the Ministry of Emergencies that non-state newspapers could be refused access to any information.\nHypothesis: The catastrophe at Chernobyl happened in 1986.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1381:validation",
+    "article": "Premise: The cholera epidemic in Zimbabwe appears to have passed its peak, says the World Health Organization (WHO).  The number of new cases recorded in the week to mid-March nearly halved to 2,000, against 3,800 the preceding week and 8,000 cases a week in February.  But the agency warned the weekly statistics were not always accurate.  There have been more than 90,000 cholera cases in Zimbabwe since the start of the epidemic last August, about 4,000 of them fatal.\nHypothesis: Since last August about 4,000 people died of cholera in Zimbabwe.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2483:validation",
+    "article": "Premise: Bülent Ecevit, former prime minister of Turkey and poet, has died at 81. Ecevit was in a coma for nearly six months following a stroke. Ecevit was the prime minister of the government ordering a military intervention on July 20, 1974, to prevent a coup in Cyprus by Greek forces, dividing the island and setting the stage for the foundation of the breakaway Turkish Republic of Northern Cyprus.\nHypothesis: Bülent Ecevit was a poet.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2343:validation",
+    "article": "Premise: By 1979, the literacy rate in Cuba was higher than 90%, comparable to the rates in the United States and other developed countries.\nHypothesis: The literacy rate in Cuba is 90%.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2351:validation",
+    "article": "Premise: More than 6,400 migratory birds and other animals were killed in Nevada by drinking water in the cyanide-laced ponds produced by gold mining operations.\nHypothesis: Animals have died by the thousands from drinking at cyanide-laced holding ponds.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1024:validation",
+    "article": "Premise: The area is used by both nomadic herders, who follow their herds and stay in mobile cattle camps, and sedentary farmers. \"Attacks in this region could be the work of the (Tuareg rebel) Niger Justice Movement (MNJ) or they could be the work of Malian bandits,\" a security source, who declined to be identified, told Reuters. The rebels say that wealth generated from Niger's vast uranium deposits has not been distributed equally, and demand more autonomy for the Tuareg inhabitants of the northern Agadez region, where most of Niger's uranium is mined. At least 300 rebels and 80 government soldiers have been killed since the MNJ began its military campaign in early 2007.\nHypothesis: MNJ is a group of Malian bandits.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:504:validation",
+    "article": "Premise: The agreement also stated a period of transition for the Baltic countries to last until December 31, 1999. This was a much shorter period than that which was assigned to the Central European countries (their transition periods were declared to be 10 years). Estonia declined the transition period, Latvia received a transition period of four years, and Lithuania received a transition period of six years.\nHypothesis: Baltic Countries join the EU.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1388:validation",
+    "article": "Premise: The Sears Tower in Chicago, finished in 1974, has 110 stories and is 1,450 feet tall.\nHypothesis: The Sears Tower has 110 stories.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:660:validation",
+    "article": "Premise: With more than 223,000 refugees already in Texas, Perry said officials at relief centers, around the state, say they are running out of room.\nHypothesis: With more than 220,000 refugees in Texas, Perry warned that his state was running out of room.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:343:validation",
+    "article": "Premise: At the police-training center in Waipahu, 17 members of the Honolulu Police Department's recruit class practiced driving on this training course on Friday. It will be the last recruit class for a while. Another class set to begin next week has been postponed and a second recruit class scheduled for July will also likely be put off to save money. \"We're going to just delay it for now until the budget situation clears up a little bit more,\" Honolulu Mayor Mufi Hannemann said.\nHypothesis: Mufi Hannemann is the mayor of Honolulu.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:724:validation",
+    "article": "Premise: On the eve of a widely anticipated retaliation against Russian forces in Grozny, military commanders withdrew key units from the city, leaving it vulnerable to guerrilla infiltration.\nHypothesis: Russian forces vulnerable to guerrilla fighters",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:584:validation",
+    "article": "Premise: Edward VIII shocked the world in 1936 when he gave up his throne to marry an American divorcee, Wallis Simpson.\nHypothesis: King Edward VIII abdictated in 1936.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:553:validation",
+    "article": "Premise: Rozsa ( Rose ) Hill , the third hill near the river, lies north of Castle Hill.\nHypothesis: Rozsa Hill lies north of Castle Hill.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:667:validation",
+    "article": "Premise: The bet, which won him dinner for four, was regarding the existence and mass of the top quark, an elementary particle discovered in 1995.\nHypothesis: The Top Quark is the last of six flavors of quarks predicted by the standard model theory of particle physics.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:113:validation",
+    "article": "Premise: ISLAMABAD, Pakistan (CNN) -- Taliban militants made their deepest incursion into Pakistan this week, seizing control of areas that are a short drive from the capital city.  A Pakistani government official said the militants fully withdrew from the Buner district on Friday, although other officials cast doubt on the extent of the pullout and how long it would last. Buner is only 60 miles outside Islamabad. The situation is particularly concerning because Pakistan is a nuclear-armed state. The Islamic republic is believed to have between 30 and 40 nuclear warheads, according to the U.N. nuclear watchdog, the International Atomic Energy Agency (IAEA).\nHypothesis: Pakistan's nuclear arsenal creates concerns.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:380:validation",
+    "article": "Premise: Newspapers choke on rising paper costs and falling revenue.\nHypothesis: The cost of paper is rising.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1966:validation",
+    "article": "Premise: If you suffer from certain genetic illnesses, or carry a gene for that illness, scientists can take one or two cells to check for those genes and transfer only healthy embryos.\nHypothesis: Scientists can determine whether an embryo has genetic illnesses or is a carrier of them.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:36:validation",
+    "article": "Premise: In addition to establishing the electoral commission, the laws also concern nationality, a contentious issue since citizenship laws were tightened to exclude one of Gbagbo's main competitors from the 2000 presidential race, former prime minister Alassane Ouattara.\nHypothesis: Gbagbo is a competitor of Ouattara.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1091:validation",
+    "article": "Premise: Spain will recruit 500 extra police to fight Basque separatists ETA and Islamist militants in the next four years, Interior Minister Alfredo Perez Rubalcaba said on Tuesday. Including the new recruits, the number of anti-terrorism officers will have increased by 1,800 since the Socialist government took office in 2004, days after Islamist militants killed 191 people by bombing Madrid trains, Rubalcaba told a parliamentary committee. ETA has killed more than 800 people in four decades in its fight for an independent Basque Country composed of part of northern Spain and southern France. Its last fatal attack came on May 14, authorities believe, when a car bomb wrecked a police barracks in the Spanish Basque Country, killing one officer. The government will also provide an additional 800 officers to combat organised crime and another 1,248 staff to tackle domestic violence, Rubalcaba said.\nHypothesis: ETA fights for the independence of Basque Country.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1124:validation",
+    "article": "Premise: Canadian traffickers also are reported to drop their marijuana loads across the border in remote areas (often without the knowledge of rural landowners), cross into the United States without drugs, later retrieve the marijuana, and continue on to U.S.  distribution sites.\nHypothesis: Most of the marijuana entering the United States comes from Canada.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:179:validation",
+    "article": "Premise: The Pet passport alone can be used to enter the UK, but it will not suffice to enter many countries. For instance Guatemala, like almost every country, demands that all imported pets have a rabies vaccination, but will not accept the Pet passport as proof of said vaccination.\nHypothesis: Guatemala accepts the Pet passport as proof of vaccination.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1411:validation",
+    "article": "Premise: An explosion, followed by a raging fire, demolished a plastics factory, killing at least three people and injuring at least 37.\nHypothesis: A massive blast at a plastics factory killed at least two people.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:930:validation",
+    "article": "Premise: [Episcopal News Service]  Several parishes and villages in Sudan's Episcopal Diocese of Mundri have fallen victim to a fresh wave of attacks by the Lord's Resistance Army, a Ugandan rebel organization whose soldiers are prolonging a two-decades-long terrorist campaign gruesomely marked by widespread massacres and child abductions. At least four people have been confirmed dead and insecurity in the region is forcing residents to flee the villages of Tore Wandi, Moba, Bangolo, Ledinwa and Garia for the relative safety of Mundri. One of the slain is Wilson, a lay reader at a parish in Moba, wrote the Rt. Rev. Bismark Monday, bishop of Mundri, in a January 15 email to church partners. Monday explained that one of Wilson's sons and grandsons -- both about 10 years old -- were abducted.\nHypothesis: The Lord's Resistance Army is a rebel organization.",
+    "gold_label": "A"
+  }
+]

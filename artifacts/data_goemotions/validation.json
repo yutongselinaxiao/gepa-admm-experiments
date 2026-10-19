@@ -1,0 +1,2872 @@
+[
+  {
+    "example_id": "official-train:22393:validation:1",
+    "article": "Haha, no. But probably just because I hadn't thought to do it.\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:22393:validation:6",
+    "article": "Haha, no. But probably just because I hadn't thought to do it.\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1453:validation:0",
+    "article": "It's such a relieving feeling to know you're finally gone. You never have to go back. You are so strong you got this!!\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1453:validation:1",
+    "article": "It's such a relieving feeling to know you're finally gone. You never have to go back. You are so strong you got this!!\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6728:validation:0",
+    "article": "Truly a beautiful story, 11/10 :')\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6728:validation:2",
+    "article": "Truly a beautiful story, 11/10 :')\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:29373:validation:1",
+    "article": "I was too mad to continue with the second episode lol I see now that he's married and think HOW?\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:29373:validation:7",
+    "article": "I was too mad to continue with the second episode lol I see now that he's married and think HOW?\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:18037:validation:5",
+    "article": "Ah okay, I'm sorry lol, I'm dumb. Thanks for your response.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:18037:validation:7",
+    "article": "Ah okay, I'm sorry lol, I'm dumb. Thanks for your response.\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19093:validation:2",
+    "article": "Man I love how venezuela is a dictatorship when it has 4.5 times less prisoners per capita than the US\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19093:validation:7",
+    "article": "Man I love how venezuela is a dictatorship when it has 4.5 times less prisoners per capita than the US\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23955:validation:1",
+    "article": "It makes me mad when people steal them lol... chances are if you're nice I'll just *give* it to you\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23955:validation:2",
+    "article": "It makes me mad when people steal them lol... chances are if you're nice I'll just *give* it to you\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:23955:validation:3",
+    "article": "It makes me mad when people steal them lol... chances are if you're nice I'll just *give* it to you\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23955:validation:7",
+    "article": "It makes me mad when people steal them lol... chances are if you're nice I'll just *give* it to you\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:43315:validation:0",
+    "article": "I’m happy I can help.\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:43315:validation:4",
+    "article": "I’m happy I can help.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:43315:validation:6",
+    "article": "I’m happy I can help.\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:43315:validation:7",
+    "article": "I’m happy I can help.\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:29714:validation:0",
+    "article": "You don’t understand it because it’s insanely dumb, as the vid demonstrates.\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:29714:validation:3",
+    "article": "You don’t understand it because it’s insanely dumb, as the vid demonstrates.\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:22644:validation:0",
+    "article": "Not much? Oh honey, it's everything! You two are beautiful! Congratulations!\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:22644:validation:1",
+    "article": "Not much? Oh honey, it's everything! You two are beautiful! Congratulations!\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:22644:validation:5",
+    "article": "Not much? Oh honey, it's everything! You two are beautiful! Congratulations!\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:22644:validation:7",
+    "article": "Not much? Oh honey, it's everything! You two are beautiful! Congratulations!\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3572:validation:3",
+    "article": "Sure. We can back another vote if it's found out that remain was illegally funded by [NAME], constantly lied.\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3572:validation:4",
+    "article": "Sure. We can back another vote if it's found out that remain was illegally funded by [NAME], constantly lied.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:29329:validation:1",
+    "article": "That was a bad fastbreak lol\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:29329:validation:3",
+    "article": "That was a bad fastbreak lol\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:29329:validation:6",
+    "article": "That was a bad fastbreak lol\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:29329:validation:7",
+    "article": "That was a bad fastbreak lol\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:38403:validation:0",
+    "article": ">more money than you I seriously, *seriously* doubt that. >doing something before this guys are outta the country Prove it.\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:38403:validation:2",
+    "article": ">more money than you I seriously, *seriously* doubt that. >doing something before this guys are outta the country Prove it.\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:19695:validation:0",
+    "article": "No problem! Happy to help :)\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19695:validation:6",
+    "article": "No problem! Happy to help :)\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:36662:validation:2",
+    "article": "Because eye witnesses have always been proven to be credible. \"Hands up, don't shoot\"\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:36662:validation:4",
+    "article": "Because eye witnesses have always been proven to be credible. \"Hands up, don't shoot\"\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:10289:validation:0",
+    "article": "You literally changed someone's life for the better. You made the world a better place. Thank you for helping change the stigma against autism.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:10289:validation:1",
+    "article": "You literally changed someone's life for the better. You made the world a better place. Thank you for helping change the stigma against autism.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:10289:validation:2",
+    "article": "You literally changed someone's life for the better. You made the world a better place. Thank you for helping change the stigma against autism.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:10289:validation:5",
+    "article": "You literally changed someone's life for the better. You made the world a better place. Thank you for helping change the stigma against autism.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:11903:validation:0",
+    "article": "Great piece, thanks for sharing.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:11903:validation:4",
+    "article": "Great piece, thanks for sharing.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:11903:validation:5",
+    "article": "Great piece, thanks for sharing.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:11903:validation:7",
+    "article": "Great piece, thanks for sharing.\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9931:validation:1",
+    "article": "Gotta admit, I chuckled at this one\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9931:validation:4",
+    "article": "Gotta admit, I chuckled at this one\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9931:validation:5",
+    "article": "Gotta admit, I chuckled at this one\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9931:validation:7",
+    "article": "Gotta admit, I chuckled at this one\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:23583:validation:1",
+    "article": "Yeah, I actually like the combination of the two styles of names thought. Love the LAFC and the LA Galaxy...lol\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23583:validation:2",
+    "article": "Yeah, I actually like the combination of the two styles of names thought. Love the LAFC and the LA Galaxy...lol\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:23583:validation:4",
+    "article": "Yeah, I actually like the combination of the two styles of names thought. Love the LAFC and the LA Galaxy...lol\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23583:validation:5",
+    "article": "Yeah, I actually like the combination of the two styles of names thought. Love the LAFC and the LA Galaxy...lol\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:21954:validation:4",
+    "article": "Feels good to be a Nets fan right now\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:21954:validation:6",
+    "article": "Feels good to be a Nets fan right now\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2208:validation:4",
+    "article": "I have faith that you do it *correctly*\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2208:validation:6",
+    "article": "I have faith that you do it *correctly*\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:28065:validation:6",
+    "article": "I love it when drama comes home to roost\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:28065:validation:7",
+    "article": "I love it when drama comes home to roost\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:25323:validation:3",
+    "article": "Happy Daily Peko #270! Source couldn’t be found I think it’s from the manga.\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:25323:validation:6",
+    "article": "Happy Daily Peko #270! Source couldn’t be found I think it’s from the manga.\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:24253:validation:0",
+    "article": "This is actually really sweet... 46 g of sugar per tattoo sweet\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:24253:validation:1",
+    "article": "This is actually really sweet... 46 g of sugar per tattoo sweet\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:24253:validation:2",
+    "article": "This is actually really sweet... 46 g of sugar per tattoo sweet\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:24253:validation:4",
+    "article": "This is actually really sweet... 46 g of sugar per tattoo sweet\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:40632:validation:0",
+    "article": "i never really laughed at it, but its still one of my favorite movies. i view it more as a slice-of-life drama.\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:40632:validation:7",
+    "article": "i never really laughed at it, but its still one of my favorite movies. i view it more as a slice-of-life drama.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:14311:validation:1",
+    "article": "Thank goodness for that!\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:14311:validation:5",
+    "article": "Thank goodness for that!\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:30562:validation:0",
+    "article": "I just wanna say, I appreciate you making it into a gif. I wouldn't have watched the video. So thank you.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:30562:validation:1",
+    "article": "I just wanna say, I appreciate you making it into a gif. I wouldn't have watched the video. So thank you.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:30562:validation:4",
+    "article": "I just wanna say, I appreciate you making it into a gif. I wouldn't have watched the video. So thank you.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:30562:validation:5",
+    "article": "I just wanna say, I appreciate you making it into a gif. I wouldn't have watched the video. So thank you.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8005:validation:1",
+    "article": "I think I'm kinda the same way like I change up so much everything I say feels like a lie... See just did it again. Fuck.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8005:validation:2",
+    "article": "I think I'm kinda the same way like I change up so much everything I say feels like a lie... See just did it again. Fuck.\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8005:validation:3",
+    "article": "I think I'm kinda the same way like I change up so much everything I say feels like a lie... See just did it again. Fuck.\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8005:validation:7",
+    "article": "I think I'm kinda the same way like I change up so much everything I say feels like a lie... See just did it again. Fuck.\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12614:validation:0",
+    "article": "The bed is comfy and I want it to stay that way\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12614:validation:2",
+    "article": "The bed is comfy and I want it to stay that way\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12614:validation:4",
+    "article": "The bed is comfy and I want it to stay that way\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12614:validation:7",
+    "article": "The bed is comfy and I want it to stay that way\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12245:validation:3",
+    "article": "The games are that expensive, because corporations have figured out that people will pay that price point. Now bugger off.\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12245:validation:4",
+    "article": "The games are that expensive, because corporations have figured out that people will pay that price point. Now bugger off.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:33916:validation:2",
+    "article": "You're not my real mom. I don't have to listen to you. Just because my dad loves you doesn't mean that I have to!\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:33916:validation:3",
+    "article": "You're not my real mom. I don't have to listen to you. Just because my dad loves you doesn't mean that I have to!\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:33916:validation:6",
+    "article": "You're not my real mom. I don't have to listen to you. Just because my dad loves you doesn't mean that I have to!\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:33916:validation:7",
+    "article": "You're not my real mom. I don't have to listen to you. Just because my dad loves you doesn't mean that I have to!\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:42205:validation:4",
+    "article": "I just saw it on there... pretty cheap to be such a old item... starting bid on one was a $1\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:42205:validation:5",
+    "article": "I just saw it on there... pretty cheap to be such a old item... starting bid on one was a $1\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:43395:validation:1",
+    "article": "Sorry I kind of took it like you were flexing on my or my opponents skill or something lmao\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:43395:validation:3",
+    "article": "Sorry I kind of took it like you were flexing on my or my opponents skill or something lmao\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:29034:validation:0",
+    "article": "Yeah ik that should be unacceptable too lmao\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:29034:validation:1",
+    "article": "Yeah ik that should be unacceptable too lmao\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:29034:validation:4",
+    "article": "Yeah ik that should be unacceptable too lmao\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:29034:validation:7",
+    "article": "Yeah ik that should be unacceptable too lmao\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:43184:validation:2",
+    "article": "Mate you are mental, no way [NAME] would mess up like you have said!\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:43184:validation:3",
+    "article": "Mate you are mental, no way [NAME] would mess up like you have said!\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:43184:validation:5",
+    "article": "Mate you are mental, no way [NAME] would mess up like you have said!\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:43184:validation:7",
+    "article": "Mate you are mental, no way [NAME] would mess up like you have said!\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:32424:validation:0",
+    "article": "Props to your dad, you dodged a big bullet there\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:32424:validation:7",
+    "article": "Props to your dad, you dodged a big bullet there\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:610:validation:0",
+    "article": "This is my favorite game of all time. Thanks for bringing back some good memories!\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:610:validation:4",
+    "article": "This is my favorite game of all time. Thanks for bringing back some good memories!\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:610:validation:5",
+    "article": "This is my favorite game of all time. Thanks for bringing back some good memories!\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:610:validation:6",
+    "article": "This is my favorite game of all time. Thanks for bringing back some good memories!\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:34383:validation:0",
+    "article": "I'll show some love for diazepam! Congratulations on the re up and let me Know if they are\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:34383:validation:1",
+    "article": "I'll show some love for diazepam! Congratulations on the re up and let me Know if they are\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:34383:validation:3",
+    "article": "I'll show some love for diazepam! Congratulations on the re up and let me Know if they are\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:34383:validation:5",
+    "article": "I'll show some love for diazepam! Congratulations on the re up and let me Know if they are\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:34383:validation:6",
+    "article": "I'll show some love for diazepam! Congratulations on the re up and let me Know if they are\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:34383:validation:7",
+    "article": "I'll show some love for diazepam! Congratulations on the re up and let me Know if they are\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:10686:validation:4",
+    "article": "Pokemon Go has kind of helped me with depression, tbh. \nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:10686:validation:6",
+    "article": "Pokemon Go has kind of helped me with depression, tbh. \nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5905:validation:0",
+    "article": "And let us not forget the lord's privilege with a new bride. Ahhhh......the good old days.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5905:validation:1",
+    "article": "And let us not forget the lord's privilege with a new bride. Ahhhh......the good old days.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5905:validation:2",
+    "article": "And let us not forget the lord's privilege with a new bride. Ahhhh......the good old days.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5905:validation:6",
+    "article": "And let us not forget the lord's privilege with a new bride. Ahhhh......the good old days.\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:21769:validation:1",
+    "article": "asking for a source is good lol\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:21769:validation:2",
+    "article": "asking for a source is good lol\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5121:validation:0",
+    "article": "Drink. Watch hockey. Eat. That's what I do.\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5121:validation:4",
+    "article": "Drink. Watch hockey. Eat. That's what I do.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:35624:validation:1",
+    "article": "I love your honesty. What you wrote expresses fears and questions similar to mine. Thank you so much.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:35624:validation:4",
+    "article": "I love your honesty. What you wrote expresses fears and questions similar to mine. Thank you so much.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:35624:validation:5",
+    "article": "I love your honesty. What you wrote expresses fears and questions similar to mine. Thank you so much.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:35624:validation:7",
+    "article": "I love your honesty. What you wrote expresses fears and questions similar to mine. Thank you so much.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4462:validation:6",
+    "article": "Oh yeah. I love stepping out of the tub and putting my wet foot on COLD TILE. More like thanks I love this\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4462:validation:7",
+    "article": "Oh yeah. I love stepping out of the tub and putting my wet foot on COLD TILE. More like thanks I love this\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23404:validation:4",
+    "article": "**LOVE TO HEAR IT B**\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:23404:validation:7",
+    "article": "**LOVE TO HEAR IT B**\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:16727:validation:0",
+    "article": "[NAME] learned to fight smarter, not harder. I love her development so much\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:16727:validation:2",
+    "article": "[NAME] learned to fight smarter, not harder. I love her development so much\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:16727:validation:5",
+    "article": "[NAME] learned to fight smarter, not harder. I love her development so much\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:16727:validation:7",
+    "article": "[NAME] learned to fight smarter, not harder. I love her development so much\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9265:validation:3",
+    "article": "I am very thankful for that. And thankful I wasn’t totally brainwashed\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9265:validation:5",
+    "article": "I am very thankful for that. And thankful I wasn’t totally brainwashed\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:41676:validation:0",
+    "article": "I learned a lot from helping my dad work on his car, namely how to stand very still and quiet while someone loses their shit over something.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:41676:validation:1",
+    "article": "I learned a lot from helping my dad work on his car, namely how to stand very still and quiet while someone loses their shit over something.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:29323:validation:2",
+    "article": "I’m gonna love it if that happens to me\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:29323:validation:7",
+    "article": "I’m gonna love it if that happens to me\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:19082:validation:0",
+    "article": "Hedonism at it's finest\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:19082:validation:2",
+    "article": "Hedonism at it's finest\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:34118:validation:0",
+    "article": "I haven’t seen the episode yet but wow, what a reach.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:34118:validation:7",
+    "article": "I haven’t seen the episode yet but wow, what a reach.\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:17715:validation:0",
+    "article": "I’m super proud of him. Great guy!\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:17715:validation:2",
+    "article": "I’m super proud of him. Great guy!\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8387:validation:1",
+    "article": "Damn, but I’d miss my mother. Then again she’d be all happy in her heaven. The rest of us can party. \nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8387:validation:3",
+    "article": "Damn, but I’d miss my mother. Then again she’d be all happy in her heaven. The rest of us can party. \nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8387:validation:6",
+    "article": "Damn, but I’d miss my mother. Then again she’d be all happy in her heaven. The rest of us can party. \nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8387:validation:7",
+    "article": "Damn, but I’d miss my mother. Then again she’d be all happy in her heaven. The rest of us can party. \nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12262:validation:1",
+    "article": "Ahahaha I’m enjoying your troll. Seriously remember commenting on it like a year ago. Hilarious people are still trying to correct you.\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12262:validation:4",
+    "article": "Ahahaha I’m enjoying your troll. Seriously remember commenting on it like a year ago. Hilarious people are still trying to correct you.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12262:validation:6",
+    "article": "Ahahaha I’m enjoying your troll. Seriously remember commenting on it like a year ago. Hilarious people are still trying to correct you.\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12262:validation:7",
+    "article": "Ahahaha I’m enjoying your troll. Seriously remember commenting on it like a year ago. Hilarious people are still trying to correct you.\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:24105:validation:2",
+    "article": "only suckers believe this don't be a sucker\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:24105:validation:3",
+    "article": "only suckers believe this don't be a sucker\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:24105:validation:4",
+    "article": "only suckers believe this don't be a sucker\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:24105:validation:7",
+    "article": "only suckers believe this don't be a sucker\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:43348:validation:0",
+    "article": "Kirkland liquor is amazing. I can get a cheap bottle of vodka or scotch that's basically a mid tier bottle for half the price.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:43348:validation:2",
+    "article": "Kirkland liquor is amazing. I can get a cheap bottle of vodka or scotch that's basically a mid tier bottle for half the price.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9210:validation:0",
+    "article": "Arrow already did break this trend by having a mostly excellent S5, definitely much better than S3 and S4.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9210:validation:2",
+    "article": "Arrow already did break this trend by having a mostly excellent S5, definitely much better than S3 and S4.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12770:validation:0",
+    "article": "This makes perfect sense, thank you for explaining! \nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12770:validation:2",
+    "article": "This makes perfect sense, thank you for explaining! \nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12770:validation:3",
+    "article": "This makes perfect sense, thank you for explaining! \nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12770:validation:5",
+    "article": "This makes perfect sense, thank you for explaining! \nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:26619:validation:1",
+    "article": "Exactly!! I wish she would cooperate to plan appointments like this.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:26619:validation:4",
+    "article": "Exactly!! I wish she would cooperate to plan appointments like this.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:18747:validation:0",
+    "article": "It would do us ALL a great deal of good.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:18747:validation:2",
+    "article": "It would do us ALL a great deal of good.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:18747:validation:3",
+    "article": "It would do us ALL a great deal of good.\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:18747:validation:4",
+    "article": "It would do us ALL a great deal of good.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:19749:validation:3",
+    "article": "I know what I said son\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19749:validation:4",
+    "article": "I know what I said son\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4497:validation:1",
+    "article": "So did mine! And I'm now one myself. Sending a trillion hugs and props to you!\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4497:validation:2",
+    "article": "So did mine! And I'm now one myself. Sending a trillion hugs and props to you!\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4497:validation:6",
+    "article": "So did mine! And I'm now one myself. Sending a trillion hugs and props to you!\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4497:validation:7",
+    "article": "So did mine! And I'm now one myself. Sending a trillion hugs and props to you!\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:24262:validation:6",
+    "article": "Glad it's not just me!\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:24262:validation:7",
+    "article": "Glad it's not just me!\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:26188:validation:3",
+    "article": "I love this kid.\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:26188:validation:7",
+    "article": "I love this kid.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4289:validation:0",
+    "article": "That must have bean awesome to find those\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4289:validation:1",
+    "article": "That must have bean awesome to find those\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4289:validation:2",
+    "article": "That must have bean awesome to find those\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4289:validation:6",
+    "article": "That must have bean awesome to find those\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:32639:validation:1",
+    "article": "You stole this\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:32639:validation:2",
+    "article": "You stole this\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:16556:validation:0",
+    "article": "I used it for a while. It made me way more sociable and generally happier, optimistic Less anxious and stuck up Until it didnt, so enjoy it while it lasts\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:16556:validation:1",
+    "article": "I used it for a while. It made me way more sociable and generally happier, optimistic Less anxious and stuck up Until it didnt, so enjoy it while it lasts\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:16556:validation:3",
+    "article": "I used it for a while. It made me way more sociable and generally happier, optimistic Less anxious and stuck up Until it didnt, so enjoy it while it lasts\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:16556:validation:4",
+    "article": "I used it for a while. It made me way more sociable and generally happier, optimistic Less anxious and stuck up Until it didnt, so enjoy it while it lasts\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:16556:validation:6",
+    "article": "I used it for a while. It made me way more sociable and generally happier, optimistic Less anxious and stuck up Until it didnt, so enjoy it while it lasts\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:16556:validation:7",
+    "article": "I used it for a while. It made me way more sociable and generally happier, optimistic Less anxious and stuck up Until it didnt, so enjoy it while it lasts\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5684:validation:1",
+    "article": "That's my plan!\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5684:validation:4",
+    "article": "That's my plan!\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:13019:validation:0",
+    "article": "I would have to agree. He acts for himself and wants revenge but also cares for and respects life so, chaotic neutral.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:13019:validation:2",
+    "article": "I would have to agree. He acts for himself and wants revenge but also cares for and respects life so, chaotic neutral.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:13019:validation:4",
+    "article": "I would have to agree. He acts for himself and wants revenge but also cares for and respects life so, chaotic neutral.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:13019:validation:5",
+    "article": "I would have to agree. He acts for himself and wants revenge but also cares for and respects life so, chaotic neutral.\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:21335:validation:0",
+    "article": "Real fact, Elephants see us as cute in the same way we see dogs and cats as cute.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:21335:validation:4",
+    "article": "Real fact, Elephants see us as cute in the same way we see dogs and cats as cute.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:21335:validation:6",
+    "article": "Real fact, Elephants see us as cute in the same way we see dogs and cats as cute.\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:21335:validation:7",
+    "article": "Real fact, Elephants see us as cute in the same way we see dogs and cats as cute.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:20796:validation:0",
+    "article": "Lol my ex loved [NAME] binged trough all seasons.\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:20796:validation:1",
+    "article": "Lol my ex loved [NAME] binged trough all seasons.\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:16414:validation:0",
+    "article": "I applaud you (in a non-sarcastic way)\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:16414:validation:3",
+    "article": "I applaud you (in a non-sarcastic way)\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:16414:validation:5",
+    "article": "I applaud you (in a non-sarcastic way)\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:16414:validation:6",
+    "article": "I applaud you (in a non-sarcastic way)\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:32612:validation:3",
+    "article": "I'm irritated by the upside down \"Anti Crease\" bit more than anything. \nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:32612:validation:5",
+    "article": "I'm irritated by the upside down \"Anti Crease\" bit more than anything. \nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:25126:validation:0",
+    "article": "Love their king onion soup! Such a gem, also they have good local wine there\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:25126:validation:3",
+    "article": "Love their king onion soup! Such a gem, also they have good local wine there\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:25126:validation:4",
+    "article": "Love their king onion soup! Such a gem, also they have good local wine there\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:25126:validation:7",
+    "article": "Love their king onion soup! Such a gem, also they have good local wine there\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:39084:validation:2",
+    "article": "Damn this was deep. Hope the best for you and you could really turn this into a short story or something of the such.\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:39084:validation:5",
+    "article": "Damn this was deep. Hope the best for you and you could really turn this into a short story or something of the such.\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:36018:validation:0",
+    "article": "This is the best creepy pasta I have **EVER** read.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:36018:validation:1",
+    "article": "This is the best creepy pasta I have **EVER** read.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:37196:validation:1",
+    "article": "I’d love to flatten [NAME] emotions.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:37196:validation:7",
+    "article": "I’d love to flatten [NAME] emotions.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:31041:validation:0",
+    "article": "Great picture! What a amazing tribute! I love Dallas\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:31041:validation:1",
+    "article": "Great picture! What a amazing tribute! I love Dallas\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:31041:validation:3",
+    "article": "Great picture! What a amazing tribute! I love Dallas\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:31041:validation:7",
+    "article": "Great picture! What a amazing tribute! I love Dallas\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5900:validation:2",
+    "article": "Yeah, I started to see that as a better option from reading these comments since I own most of the house anyway. Thanks for your advice.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5900:validation:3",
+    "article": "Yeah, I started to see that as a better option from reading these comments since I own most of the house anyway. Thanks for your advice.\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5900:validation:4",
+    "article": "Yeah, I started to see that as a better option from reading these comments since I own most of the house anyway. Thanks for your advice.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5900:validation:5",
+    "article": "Yeah, I started to see that as a better option from reading these comments since I own most of the house anyway. Thanks for your advice.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:30849:validation:0",
+    "article": "I love Simpsons alternative art because it really drives home how great these characters are and how relatable they are.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:30849:validation:1",
+    "article": "I love Simpsons alternative art because it really drives home how great these characters are and how relatable they are.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:30849:validation:2",
+    "article": "I love Simpsons alternative art because it really drives home how great these characters are and how relatable they are.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:30849:validation:7",
+    "article": "I love Simpsons alternative art because it really drives home how great these characters are and how relatable they are.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:27728:validation:1",
+    "article": "Oh, haha Gladstone is a town in North Qld Australia as well... thanks Reddit\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:27728:validation:5",
+    "article": "Oh, haha Gladstone is a town in North Qld Australia as well... thanks Reddit\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:27728:validation:6",
+    "article": "Oh, haha Gladstone is a town in North Qld Australia as well... thanks Reddit\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:27728:validation:7",
+    "article": "Oh, haha Gladstone is a town in North Qld Australia as well... thanks Reddit\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:29166:validation:0",
+    "article": "So lifelike!\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:29166:validation:4",
+    "article": "So lifelike!\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:19831:validation:3",
+    "article": "Or just shoot them. Shooting annoying people is why guns exist.\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:19831:validation:4",
+    "article": "Or just shoot them. Shooting annoying people is why guns exist.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4735:validation:0",
+    "article": "Yes its absolutely freeing! And so pure :) Aaah my heart\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4735:validation:3",
+    "article": "Yes its absolutely freeing! And so pure :) Aaah my heart\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4735:validation:4",
+    "article": "Yes its absolutely freeing! And so pure :) Aaah my heart\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4735:validation:5",
+    "article": "Yes its absolutely freeing! And so pure :) Aaah my heart\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19333:validation:1",
+    "article": "Irrational anger especially certain family members\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19333:validation:2",
+    "article": "Irrational anger especially certain family members\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:19333:validation:3",
+    "article": "Irrational anger especially certain family members\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:19333:validation:7",
+    "article": "Irrational anger especially certain family members\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12940:validation:3",
+    "article": "You know what I love abou you [NAME]? Octopussy. Man, I must have seen that movie... twice.\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12940:validation:6",
+    "article": "You know what I love abou you [NAME]? Octopussy. Man, I must have seen that movie... twice.\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5040:validation:2",
+    "article": "Was just thinking that. Great tunes\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5040:validation:5",
+    "article": "Was just thinking that. Great tunes\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:15498:validation:1",
+    "article": "Ah yes thank u, now the image is very funny\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:15498:validation:4",
+    "article": "Ah yes thank u, now the image is very funny\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:15498:validation:5",
+    "article": "Ah yes thank u, now the image is very funny\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:15498:validation:6",
+    "article": "Ah yes thank u, now the image is very funny\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:32380:validation:4",
+    "article": "Men don't tend to have bags as big, I reckon\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:32380:validation:7",
+    "article": "Men don't tend to have bags as big, I reckon\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8775:validation:0",
+    "article": "Your friend should be disowned by their family\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8775:validation:2",
+    "article": "Your friend should be disowned by their family\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8775:validation:3",
+    "article": "Your friend should be disowned by their family\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8775:validation:5",
+    "article": "Your friend should be disowned by their family\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:17035:validation:5",
+    "article": "It's already the 2nd here, but happy new years! 🎉\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:17035:validation:6",
+    "article": "It's already the 2nd here, but happy new years! 🎉\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:15876:validation:5",
+    "article": "WOW I love this photo so much! Is this recent?\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:15876:validation:6",
+    "article": "WOW I love this photo so much! Is this recent?\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:33608:validation:1",
+    "article": "Lol this ockanikin! I used to love coming here for summer camp when I was in cub/Boy Scouts!\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:33608:validation:4",
+    "article": "Lol this ockanikin! I used to love coming here for summer camp when I was in cub/Boy Scouts!\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:33608:validation:5",
+    "article": "Lol this ockanikin! I used to love coming here for summer camp when I was in cub/Boy Scouts!\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:33608:validation:7",
+    "article": "Lol this ockanikin! I used to love coming here for summer camp when I was in cub/Boy Scouts!\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6399:validation:0",
+    "article": "Nice watches, Id love to get one if they were a bit closer to my price range\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:6399:validation:1",
+    "article": "Nice watches, Id love to get one if they were a bit closer to my price range\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6399:validation:5",
+    "article": "Nice watches, Id love to get one if they were a bit closer to my price range\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:6399:validation:7",
+    "article": "Nice watches, Id love to get one if they were a bit closer to my price range\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:40854:validation:2",
+    "article": "Love it! It’s somewhat realistic. Maybe not that THAT degree, but I enjoyed it.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:40854:validation:5",
+    "article": "Love it! It’s somewhat realistic. Maybe not that THAT degree, but I enjoyed it.\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:40854:validation:6",
+    "article": "Love it! It’s somewhat realistic. Maybe not that THAT degree, but I enjoyed it.\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:40854:validation:7",
+    "article": "Love it! It’s somewhat realistic. Maybe not that THAT degree, but I enjoyed it.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:25288:validation:2",
+    "article": "Of course it was a huge hit for him. I hate people\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:25288:validation:3",
+    "article": "Of course it was a huge hit for him. I hate people\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:25288:validation:4",
+    "article": "Of course it was a huge hit for him. I hate people\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:25288:validation:6",
+    "article": "Of course it was a huge hit for him. I hate people\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:27992:validation:0",
+    "article": "Love this, and the comments are great, thanks for sharing.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:27992:validation:2",
+    "article": "Love this, and the comments are great, thanks for sharing.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:27992:validation:3",
+    "article": "Love this, and the comments are great, thanks for sharing.\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:27992:validation:5",
+    "article": "Love this, and the comments are great, thanks for sharing.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:27992:validation:6",
+    "article": "Love this, and the comments are great, thanks for sharing.\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:27992:validation:7",
+    "article": "Love this, and the comments are great, thanks for sharing.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:41664:validation:1",
+    "article": "Have a lovely day.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:41664:validation:7",
+    "article": "Have a lovely day.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:38790:validation:1",
+    "article": "YOU BLEEPING NEED ME! YOU CAN'T MAKE THIS SUB GREAT WITHOUT ME!\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:38790:validation:2",
+    "article": "YOU BLEEPING NEED ME! YOU CAN'T MAKE THIS SUB GREAT WITHOUT ME!\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:38790:validation:3",
+    "article": "YOU BLEEPING NEED ME! YOU CAN'T MAKE THIS SUB GREAT WITHOUT ME!\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:38790:validation:6",
+    "article": "YOU BLEEPING NEED ME! YOU CAN'T MAKE THIS SUB GREAT WITHOUT ME!\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:36456:validation:1",
+    "article": "Yes he said that. But it can be quicker.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:36456:validation:4",
+    "article": "Yes he said that. But it can be quicker.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:13559:validation:0",
+    "article": "Thank you. [NAME] killed it, earned his spot. Love my packers but sometimes people in this sub are ridiculous \nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:13559:validation:5",
+    "article": "Thank you. [NAME] killed it, earned his spot. Love my packers but sometimes people in this sub are ridiculous \nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:13559:validation:6",
+    "article": "Thank you. [NAME] killed it, earned his spot. Love my packers but sometimes people in this sub are ridiculous \nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:13559:validation:7",
+    "article": "Thank you. [NAME] killed it, earned his spot. Love my packers but sometimes people in this sub are ridiculous \nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23844:validation:4",
+    "article": "You are right but stick a cleanse on that bad boy and he's golden\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23844:validation:5",
+    "article": "You are right but stick a cleanse on that bad boy and he's golden\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:28226:validation:0",
+    "article": "Ayyy! Thanks for finishing it up. Glad someone did. LOL @ your username 😂😂\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:28226:validation:1",
+    "article": "Ayyy! Thanks for finishing it up. Glad someone did. LOL @ your username 😂😂\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:28226:validation:2",
+    "article": "Ayyy! Thanks for finishing it up. Glad someone did. LOL @ your username 😂😂\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:28226:validation:5",
+    "article": "Ayyy! Thanks for finishing it up. Glad someone did. LOL @ your username 😂😂\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:20192:validation:0",
+    "article": "GOAT FLAP. Thank you! I am in the middle of hormones right now.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:20192:validation:4",
+    "article": "GOAT FLAP. Thank you! I am in the middle of hormones right now.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:20192:validation:5",
+    "article": "GOAT FLAP. Thank you! I am in the middle of hormones right now.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:20192:validation:7",
+    "article": "GOAT FLAP. Thank you! I am in the middle of hormones right now.\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19317:validation:0",
+    "article": "What a nice [NAME] sentiment!\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:19317:validation:1",
+    "article": "What a nice [NAME] sentiment!\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19317:validation:4",
+    "article": "What a nice [NAME] sentiment!\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:19317:validation:5",
+    "article": "What a nice [NAME] sentiment!\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:11189:validation:2",
+    "article": "They took my favorite hair gel!! The bastards! Good thing I took a picture of it beforehand just in case\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:11189:validation:3",
+    "article": "They took my favorite hair gel!! The bastards! Good thing I took a picture of it beforehand just in case\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19103:validation:0",
+    "article": " yay!!! Congratulations! You are so pretty, make up is going to look awesome on you! Your hair is beautiful too ^_^\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:19103:validation:2",
+    "article": " yay!!! Congratulations! You are so pretty, make up is going to look awesome on you! Your hair is beautiful too ^_^\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19103:validation:3",
+    "article": " yay!!! Congratulations! You are so pretty, make up is going to look awesome on you! Your hair is beautiful too ^_^\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19103:validation:6",
+    "article": " yay!!! Congratulations! You are so pretty, make up is going to look awesome on you! Your hair is beautiful too ^_^\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9119:validation:0",
+    "article": "I do play League of legends and [NAME] is my favorite character that's why my name has Thresh in it :)\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9119:validation:1",
+    "article": "I do play League of legends and [NAME] is my favorite character that's why my name has Thresh in it :)\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9119:validation:2",
+    "article": "I do play League of legends and [NAME] is my favorite character that's why my name has Thresh in it :)\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9119:validation:4",
+    "article": "I do play League of legends and [NAME] is my favorite character that's why my name has Thresh in it :)\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:24534:validation:2",
+    "article": "I’m so happy for them. I hope he drowns in a puddle of bacon grease.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:24534:validation:6",
+    "article": "I’m so happy for them. I hope he drowns in a puddle of bacon grease.\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12341:validation:4",
+    "article": "Dutch bros made this a legit drink. It’s their cold brew steamed I believe. Edit: spelling\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12341:validation:5",
+    "article": "Dutch bros made this a legit drink. It’s their cold brew steamed I believe. Edit: spelling\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:20322:validation:1",
+    "article": "I love the burn\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:20322:validation:5",
+    "article": "I love the burn\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:20322:validation:6",
+    "article": "I love the burn\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:20322:validation:7",
+    "article": "I love the burn\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3535:validation:0",
+    "article": "Thanks for doing the job well. :)\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3535:validation:1",
+    "article": "Thanks for doing the job well. :)\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3535:validation:4",
+    "article": "Thanks for doing the job well. :)\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3535:validation:5",
+    "article": "Thanks for doing the job well. :)\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:13147:validation:0",
+    "article": "I found it really kind.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:13147:validation:5",
+    "article": "I found it really kind.\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:42420:validation:3",
+    "article": "BITCH HER PROMO EVEN DID SCREAMS LIKE A WINNER!!!!\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:42420:validation:4",
+    "article": "BITCH HER PROMO EVEN DID SCREAMS LIKE A WINNER!!!!\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19494:validation:3",
+    "article": "Being a bronco fan in NY, this podcast is the only radio I can consistently get\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19494:validation:4",
+    "article": "Being a bronco fan in NY, this podcast is the only radio I can consistently get\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:40586:validation:0",
+    "article": "This is probably a bit buried, but it’s very informative: thank you for taking the time to write it!\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:40586:validation:3",
+    "article": "This is probably a bit buried, but it’s very informative: thank you for taking the time to write it!\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:40586:validation:5",
+    "article": "This is probably a bit buried, but it’s very informative: thank you for taking the time to write it!\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:40586:validation:6",
+    "article": "This is probably a bit buried, but it’s very informative: thank you for taking the time to write it!\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3944:validation:0",
+    "article": "Thank you for the kind words, that's very sweet.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3944:validation:5",
+    "article": "Thank you for the kind words, that's very sweet.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:3944:validation:6",
+    "article": "Thank you for the kind words, that's very sweet.\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:3944:validation:7",
+    "article": "Thank you for the kind words, that's very sweet.\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:27598:validation:1",
+    "article": "Ha ha you're being down voted. Edit: Hey, you're being up voted! Congrats!\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:27598:validation:4",
+    "article": "Ha ha you're being down voted. Edit: Hey, you're being up voted! Congrats!\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:27598:validation:5",
+    "article": "Ha ha you're being down voted. Edit: Hey, you're being up voted! Congrats!\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:27598:validation:6",
+    "article": "Ha ha you're being down voted. Edit: Hey, you're being up voted! Congrats!\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:14198:validation:0",
+    "article": "I really applaud you for your patience...\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:14198:validation:4",
+    "article": "I really applaud you for your patience...\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:43007:validation:0",
+    "article": "donate! it feels sooo amazing :)\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:43007:validation:2",
+    "article": "donate! it feels sooo amazing :)\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2885:validation:0",
+    "article": "Bro he has always been a bully in the community. He is a pseudo scientist.\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2885:validation:3",
+    "article": "Bro he has always been a bully in the community. He is a pseudo scientist.\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:36070:validation:0",
+    "article": "Weird how they shoehorned s character from an ongoing tv show into Celebrity Big Brothter. Glad they got rid of him after one episode though.\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:36070:validation:6",
+    "article": "Weird how they shoehorned s character from an ongoing tv show into Celebrity Big Brothter. Glad they got rid of him after one episode though.\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:33421:validation:0",
+    "article": "Good question. Have seen him quite a bit. I love his coverage.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:33421:validation:3",
+    "article": "Good question. Have seen him quite a bit. I love his coverage.\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:33421:validation:6",
+    "article": "Good question. Have seen him quite a bit. I love his coverage.\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:33421:validation:7",
+    "article": "Good question. Have seen him quite a bit. I love his coverage.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23692:validation:3",
+    "article": "I think [NAME] has like a clothes/purse/perfume line. Don't quote me though.\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:23692:validation:4",
+    "article": "I think [NAME] has like a clothes/purse/perfume line. Don't quote me though.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5731:validation:5",
+    "article": "Ahhh thank you! This is only my second scripted video. The rest are just me babbling into the mic about art\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5731:validation:6",
+    "article": "Ahhh thank you! This is only my second scripted video. The rest are just me babbling into the mic about art\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1476:validation:3",
+    "article": "One of my 56 favourites\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1476:validation:4",
+    "article": "One of my 56 favourites\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12098:validation:1",
+    "article": "Lol for some reason this made me snort hard. Thank you.\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12098:validation:2",
+    "article": "Lol for some reason this made me snort hard. Thank you.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12098:validation:4",
+    "article": "Lol for some reason this made me snort hard. Thank you.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12098:validation:5",
+    "article": "Lol for some reason this made me snort hard. Thank you.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:32112:validation:1",
+    "article": "Dont look back at the salt pillars, trust me.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:32112:validation:4",
+    "article": "Dont look back at the salt pillars, trust me.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:29012:validation:4",
+    "article": "I want an autographed copy of this, framed and on my wall. \nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:29012:validation:5",
+    "article": "I want an autographed copy of this, framed and on my wall. \nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:17640:validation:1",
+    "article": "Haha ik I SHOULD be. But I still love em both like a red headed step child.\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:17640:validation:3",
+    "article": "Haha ik I SHOULD be. But I still love em both like a red headed step child.\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:17640:validation:4",
+    "article": "Haha ik I SHOULD be. But I still love em both like a red headed step child.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:17640:validation:7",
+    "article": "Haha ik I SHOULD be. But I still love em both like a red headed step child.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:36839:validation:3",
+    "article": "I'm new here from the U.S. This convo cleared it up for me, so thanks.\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:36839:validation:5",
+    "article": "I'm new here from the U.S. This convo cleared it up for me, so thanks.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:26021:validation:0",
+    "article": "Omg I love that. Coffee in bed. A nice omelette and then another roll in the hay.\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:26021:validation:7",
+    "article": "Omg I love that. Coffee in bed. A nice omelette and then another roll in the hay.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:11879:validation:0",
+    "article": "Thank you so much for this link, watching [NAME] was an absolute delight! \nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:11879:validation:5",
+    "article": "Thank you so much for this link, watching [NAME] was an absolute delight! \nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:11879:validation:6",
+    "article": "Thank you so much for this link, watching [NAME] was an absolute delight! \nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:11879:validation:7",
+    "article": "Thank you so much for this link, watching [NAME] was an absolute delight! \nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5430:validation:0",
+    "article": "Thanks man I’ll try, you stay strong too!\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5430:validation:3",
+    "article": "Thanks man I’ll try, you stay strong too!\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5430:validation:5",
+    "article": "Thanks man I’ll try, you stay strong too!\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5430:validation:7",
+    "article": "Thanks man I’ll try, you stay strong too!\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:26510:validation:5",
+    "article": "Welcome to the family! Don't let toxic fans, especially Twitter, get the best of you. Let's go canes!\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:26510:validation:7",
+    "article": "Welcome to the family! Don't let toxic fans, especially Twitter, get the best of you. Let's go canes!\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:42542:validation:0",
+    "article": "I would applaud, but a polite golf clap seems more appropriate. Well done. 👏 👏 \nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:42542:validation:3",
+    "article": "I would applaud, but a polite golf clap seems more appropriate. Well done. 👏 👏 \nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:42542:validation:4",
+    "article": "I would applaud, but a polite golf clap seems more appropriate. Well done. 👏 👏 \nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:42542:validation:7",
+    "article": "I would applaud, but a polite golf clap seems more appropriate. Well done. 👏 👏 \nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:650:validation:2",
+    "article": "This draft is one man deep tbh. Not getting Zion would be devastating and a waste of a whole year.\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:650:validation:3",
+    "article": "This draft is one man deep tbh. Not getting Zion would be devastating and a waste of a whole year.\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:650:validation:4",
+    "article": "This draft is one man deep tbh. Not getting Zion would be devastating and a waste of a whole year.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:650:validation:7",
+    "article": "This draft is one man deep tbh. Not getting Zion would be devastating and a waste of a whole year.\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4147:validation:0",
+    "article": "I love military films, this was good. My theater was clapping when each terrorist got killed lol\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4147:validation:1",
+    "article": "I love military films, this was good. My theater was clapping when each terrorist got killed lol\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4147:validation:6",
+    "article": "I love military films, this was good. My theater was clapping when each terrorist got killed lol\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4147:validation:7",
+    "article": "I love military films, this was good. My theater was clapping when each terrorist got killed lol\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12525:validation:0",
+    "article": "Wow! You've put my relationship in words I couldn't think of.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12525:validation:2",
+    "article": "Wow! You've put my relationship in words I couldn't think of.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8234:validation:0",
+    "article": "This is amazing. Love these edits.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:8234:validation:3",
+    "article": "This is amazing. Love these edits.\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8234:validation:5",
+    "article": "This is amazing. Love these edits.\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:8234:validation:7",
+    "article": "This is amazing. Love these edits.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:14032:validation:4",
+    "article": "An Asuka reference in fatlogic?! Love it.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:14032:validation:7",
+    "article": "An Asuka reference in fatlogic?! Love it.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:21674:validation:0",
+    "article": "Cheers brother. That’s very interesting. First time I’ve seen that article.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:21674:validation:2",
+    "article": "Cheers brother. That’s very interesting. First time I’ve seen that article.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:21674:validation:4",
+    "article": "Cheers brother. That’s very interesting. First time I’ve seen that article.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:21674:validation:6",
+    "article": "Cheers brother. That’s very interesting. First time I’ve seen that article.\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:16357:validation:1",
+    "article": "It was always kind of a consideration when I did have opening and closing blinds. None of them problems anymore.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:16357:validation:4",
+    "article": "It was always kind of a consideration when I did have opening and closing blinds. None of them problems anymore.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:25455:validation:1",
+    "article": "I may have undersold the amount of trucks. 😂\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:25455:validation:6",
+    "article": "I may have undersold the amount of trucks. 😂\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:41116:validation:2",
+    "article": "Different color for different people, please and thank you.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:41116:validation:5",
+    "article": "Different color for different people, please and thank you.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23788:validation:0",
+    "article": "Thanks I hate it.\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:23788:validation:3",
+    "article": "Thanks I hate it.\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23788:validation:5",
+    "article": "Thanks I hate it.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23788:validation:6",
+    "article": "Thanks I hate it.\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:29663:validation:0",
+    "article": "I fucking love this\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:29663:validation:4",
+    "article": "I fucking love this\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:29663:validation:5",
+    "article": "I fucking love this\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:29663:validation:7",
+    "article": "I fucking love this\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:124:validation:2",
+    "article": "[NAME] dude I see [NAME] so rarely that I forget that he's the OG \"Fuck this character fuck this stupid game\" king. \nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:124:validation:3",
+    "article": "[NAME] dude I see [NAME] so rarely that I forget that he's the OG \"Fuck this character fuck this stupid game\" king. \nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:124:validation:4",
+    "article": "[NAME] dude I see [NAME] so rarely that I forget that he's the OG \"Fuck this character fuck this stupid game\" king. \nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:124:validation:7",
+    "article": "[NAME] dude I see [NAME] so rarely that I forget that he's the OG \"Fuck this character fuck this stupid game\" king. \nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:28481:validation:2",
+    "article": "I don't care anymore.\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:28481:validation:3",
+    "article": "I don't care anymore.\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:28481:validation:4",
+    "article": "I don't care anymore.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:28481:validation:6",
+    "article": "I don't care anymore.\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:14655:validation:1",
+    "article": "Ah, I remember the first time I got scope bite, we all had a good laugh and I got glass in my eye\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:14655:validation:5",
+    "article": "Ah, I remember the first time I got scope bite, we all had a good laugh and I got glass in my eye\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:21142:validation:2",
+    "article": "Lucky I caught people reacting on twitter. For some reason I thought this game as at 6 PM.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:21142:validation:6",
+    "article": "Lucky I caught people reacting on twitter. For some reason I thought this game as at 6 PM.\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:25351:validation:1",
+    "article": "#\"\"Haha so relatable omg so me\"\"\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:25351:validation:2",
+    "article": "#\"\"Haha so relatable omg so me\"\"\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:25351:validation:3",
+    "article": "#\"\"Haha so relatable omg so me\"\"\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:25351:validation:6",
+    "article": "#\"\"Haha so relatable omg so me\"\"\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1381:validation:0",
+    "article": "Awesome! Thanks for your reply\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1381:validation:1",
+    "article": "Awesome! Thanks for your reply\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1381:validation:3",
+    "article": "Awesome! Thanks for your reply\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1381:validation:5",
+    "article": "Awesome! Thanks for your reply\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:24942:validation:2",
+    "article": "Not delusional at all imo\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:24942:validation:3",
+    "article": "Not delusional at all imo\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23719:validation:0",
+    "article": "I'm doing a lot better. It means a lot that you checked in on me. Thank you!\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:23719:validation:4",
+    "article": "I'm doing a lot better. It means a lot that you checked in on me. Thank you!\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23719:validation:5",
+    "article": "I'm doing a lot better. It means a lot that you checked in on me. Thank you!\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:23719:validation:6",
+    "article": "I'm doing a lot better. It means a lot that you checked in on me. Thank you!\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:25986:validation:4",
+    "article": "Love how he stops and embraces the pole.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:25986:validation:7",
+    "article": "Love how he stops and embraces the pole.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:33432:validation:0",
+    "article": "[NAME] damn, I love astrology despite being the dryest, most scientific person on Earth... Amber the taurus made me lol.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:33432:validation:2",
+    "article": "[NAME] damn, I love astrology despite being the dryest, most scientific person on Earth... Amber the taurus made me lol.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:33432:validation:4",
+    "article": "[NAME] damn, I love astrology despite being the dryest, most scientific person on Earth... Amber the taurus made me lol.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:33432:validation:7",
+    "article": "[NAME] damn, I love astrology despite being the dryest, most scientific person on Earth... Amber the taurus made me lol.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:20946:validation:0",
+    "article": "That’s a great idea! Thank you :)\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:20946:validation:1",
+    "article": "That’s a great idea! Thank you :)\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:20946:validation:4",
+    "article": "That’s a great idea! Thank you :)\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:20946:validation:5",
+    "article": "That’s a great idea! Thank you :)\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:14125:validation:4",
+    "article": "It's near Brooklyn. Very woodsy, couple nice little antique shops. Most definitely the middle of nowhere.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:14125:validation:6",
+    "article": "It's near Brooklyn. Very woodsy, couple nice little antique shops. Most definitely the middle of nowhere.\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:963:validation:4",
+    "article": "Now if you can teach her english, the real fun starts. \nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:963:validation:6",
+    "article": "Now if you can teach her english, the real fun starts. \nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:38758:validation:1",
+    "article": "What a stupid stretch lmao.\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:38758:validation:3",
+    "article": "What a stupid stretch lmao.\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:38758:validation:6",
+    "article": "What a stupid stretch lmao.\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:38758:validation:7",
+    "article": "What a stupid stretch lmao.\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:23285:validation:0",
+    "article": "Well glad she got out of the situation safely. I would much rather NOT have to investigate and know someone is safe.\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:23285:validation:6",
+    "article": "Well glad she got out of the situation safely. I would much rather NOT have to investigate and know someone is safe.\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:30326:validation:1",
+    "article": "Welcome to the club....\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:30326:validation:2",
+    "article": "Welcome to the club....\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:30326:validation:5",
+    "article": "Welcome to the club....\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:30326:validation:6",
+    "article": "Welcome to the club....\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12307:validation:5",
+    "article": "I'll continue to be dumb for supporting a company I like. Thanks for your input poor.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12307:validation:6",
+    "article": "I'll continue to be dumb for supporting a company I like. Thanks for your input poor.\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5536:validation:0",
+    "article": "So far she seems pretty decent but I'm side-eyeing the hell out of him. His conduct at the restaurant was so bizarre and creepy.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5536:validation:1",
+    "article": "So far she seems pretty decent but I'm side-eyeing the hell out of him. His conduct at the restaurant was so bizarre and creepy.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:5536:validation:3",
+    "article": "So far she seems pretty decent but I'm side-eyeing the hell out of him. His conduct at the restaurant was so bizarre and creepy.\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:5536:validation:4",
+    "article": "So far she seems pretty decent but I'm side-eyeing the hell out of him. His conduct at the restaurant was so bizarre and creepy.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:31230:validation:1",
+    "article": "Nobody said it would but it *does* fix one problem.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:31230:validation:4",
+    "article": "Nobody said it would but it *does* fix one problem.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2601:validation:0",
+    "article": "Thanks grandpa, it’s always good to see you around the holidays. That joke is hilarious every time!\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2601:validation:1",
+    "article": "Thanks grandpa, it’s always good to see you around the holidays. That joke is hilarious every time!\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2601:validation:3",
+    "article": "Thanks grandpa, it’s always good to see you around the holidays. That joke is hilarious every time!\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2601:validation:4",
+    "article": "Thanks grandpa, it’s always good to see you around the holidays. That joke is hilarious every time!\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2601:validation:5",
+    "article": "Thanks grandpa, it’s always good to see you around the holidays. That joke is hilarious every time!\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2601:validation:6",
+    "article": "Thanks grandpa, it’s always good to see you around the holidays. That joke is hilarious every time!\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9929:validation:2",
+    "article": "Yes, yes he did\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9929:validation:4",
+    "article": "Yes, yes he did\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:37309:validation:2",
+    "article": "Protip- just smell your damn food. Use your senses!\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:37309:validation:3",
+    "article": "Protip- just smell your damn food. Use your senses!\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:37309:validation:4",
+    "article": "Protip- just smell your damn food. Use your senses!\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:37309:validation:5",
+    "article": "Protip- just smell your damn food. Use your senses!\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:16963:validation:0",
+    "article": "Yah he is right, just find it hypocritical.\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:16963:validation:1",
+    "article": "Yah he is right, just find it hypocritical.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:16963:validation:3",
+    "article": "Yah he is right, just find it hypocritical.\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:16963:validation:4",
+    "article": "Yah he is right, just find it hypocritical.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9630:validation:1",
+    "article": "In what fucking world is this drawing not bad\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9630:validation:2",
+    "article": "In what fucking world is this drawing not bad\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9630:validation:3",
+    "article": "In what fucking world is this drawing not bad\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9630:validation:6",
+    "article": "In what fucking world is this drawing not bad\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:4270:validation:3",
+    "article": "Wow this was awful. What kind of audience do these morons have? I mean no one with the money to buy that junk would watch these fools\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:4270:validation:5",
+    "article": "Wow this was awful. What kind of audience do these morons have? I mean no one with the money to buy that junk would watch these fools\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1822:validation:0",
+    "article": "Don't call me bitch you fucking sexist. I bet you are one of those white devils. How many women and minorities have you suppressed today?\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1822:validation:1",
+    "article": "Don't call me bitch you fucking sexist. I bet you are one of those white devils. How many women and minorities have you suppressed today?\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1822:validation:2",
+    "article": "Don't call me bitch you fucking sexist. I bet you are one of those white devils. How many women and minorities have you suppressed today?\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1822:validation:3",
+    "article": "Don't call me bitch you fucking sexist. I bet you are one of those white devils. How many women and minorities have you suppressed today?\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:38325:validation:0",
+    "article": "Amazing, my friend 🙏 \nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:38325:validation:3",
+    "article": "Amazing, my friend 🙏 \nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:37855:validation:1",
+    "article": "She got me into it so not wrong lol\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:37855:validation:7",
+    "article": "She got me into it so not wrong lol\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9456:validation:1",
+    "article": "I absolutely hate the guy. Can't stand him. But we live in country with laws and he broke none. I think lynch mobs are more gross\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:9456:validation:2",
+    "article": "I absolutely hate the guy. Can't stand him. But we live in country with laws and he broke none. I think lynch mobs are more gross\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9456:validation:3",
+    "article": "I absolutely hate the guy. Can't stand him. But we live in country with laws and he broke none. I think lynch mobs are more gross\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9456:validation:4",
+    "article": "I absolutely hate the guy. Can't stand him. But we live in country with laws and he broke none. I think lynch mobs are more gross\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:43388:validation:0",
+    "article": "Fuck these trendy hipster joints. Give me my shit like normal fucking people.\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:43388:validation:2",
+    "article": "Fuck these trendy hipster joints. Give me my shit like normal fucking people.\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:43388:validation:3",
+    "article": "Fuck these trendy hipster joints. Give me my shit like normal fucking people.\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:43388:validation:5",
+    "article": "Fuck these trendy hipster joints. Give me my shit like normal fucking people.\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:20605:validation:0",
+    "article": "Welcome home, sister (assuming from your username)! May [NAME] love always burn in your heart!\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:20605:validation:3",
+    "article": "Welcome home, sister (assuming from your username)! May [NAME] love always burn in your heart!\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:20605:validation:5",
+    "article": "Welcome home, sister (assuming from your username)! May [NAME] love always burn in your heart!\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:20605:validation:7",
+    "article": "Welcome home, sister (assuming from your username)! May [NAME] love always burn in your heart!\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:16168:validation:0",
+    "article": "True , when this song started playing, I got my first “ Gone Fishing” signature. Loved that game. Thanks for sharing.\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:16168:validation:5",
+    "article": "True , when this song started playing, I got my first “ Gone Fishing” signature. Loved that game. Thanks for sharing.\nCandidate emotion: gratitude",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:16168:validation:6",
+    "article": "True , when this song started playing, I got my first “ Gone Fishing” signature. Loved that game. Thanks for sharing.\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:16168:validation:7",
+    "article": "True , when this song started playing, I got my first “ Gone Fishing” signature. Loved that game. Thanks for sharing.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:33352:validation:0",
+    "article": "Same philosophy makes women stay with men who beat them daily\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:33352:validation:3",
+    "article": "Same philosophy makes women stay with men who beat them daily\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:30513:validation:2",
+    "article": "[NAME] a bastard man\nCandidate emotion: anger",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:30513:validation:4",
+    "article": "[NAME] a bastard man\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19175:validation:0",
+    "article": "VP pick guaranteed - and the pivot will be hilarious\nCandidate emotion: admiration",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19175:validation:1",
+    "article": "VP pick guaranteed - and the pivot will be hilarious\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:19175:validation:4",
+    "article": "VP pick guaranteed - and the pivot will be hilarious\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19175:validation:6",
+    "article": "VP pick guaranteed - and the pivot will be hilarious\nCandidate emotion: joy",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:20518:validation:1",
+    "article": "Hey we have feelings too nerd\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:20518:validation:3",
+    "article": "Hey we have feelings too nerd\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:20518:validation:4",
+    "article": "Hey we have feelings too nerd\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:20518:validation:7",
+    "article": "Hey we have feelings too nerd\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:305:validation:2",
+    "article": "Every day it gets harder to tell the difference between a legit mental health issue and someone just using it as an excuse to be an arsehole.\nCandidate emotion: anger",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:305:validation:3",
+    "article": "Every day it gets harder to tell the difference between a legit mental health issue and someone just using it as an excuse to be an arsehole.\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:32030:validation:4",
+    "article": "Women should have all the same rights as men. That does not include ending another human’s life.\nCandidate emotion: approval",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:32030:validation:7",
+    "article": "Women should have all the same rights as men. That does not include ending another human’s life.\nCandidate emotion: love",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:23947:validation:1",
+    "article": "I love the way you phrased that. I do believe she is terribly afraid to look inward at herself.\nCandidate emotion: amusement",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:23947:validation:7",
+    "article": "I love the way you phrased that. I do believe she is terribly afraid to look inward at herself.\nCandidate emotion: love",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:39394:validation:0",
+    "article": "I appreciate that you care about me. I've been thinking about you as well.\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:39394:validation:6",
+    "article": "I appreciate that you care about me. I've been thinking about you as well.\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:19414:validation:3",
+    "article": "I've come here to chew bubblegum and to kick ass.\nCandidate emotion: annoyance",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:19414:validation:4",
+    "article": "I've come here to chew bubblegum and to kick ass.\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12002:validation:0",
+    "article": "Pretty good, yourself? Edited - Saw the link, hahaha... How you doin? ;)\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12002:validation:1",
+    "article": "Pretty good, yourself? Edited - Saw the link, hahaha... How you doin? ;)\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:12002:validation:3",
+    "article": "Pretty good, yourself? Edited - Saw the link, hahaha... How you doin? ;)\nCandidate emotion: annoyance",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:12002:validation:4",
+    "article": "Pretty good, yourself? Edited - Saw the link, hahaha... How you doin? ;)\nCandidate emotion: approval",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:36084:validation:1",
+    "article": "lol my mom once told me that alcohol can't be a drug because it's legal\nCandidate emotion: amusement",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:36084:validation:6",
+    "article": "lol my mom once told me that alcohol can't be a drug because it's legal\nCandidate emotion: joy",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:7243:validation:0",
+    "article": "I hear lobsters are great\nCandidate emotion: admiration",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:7243:validation:5",
+    "article": "I hear lobsters are great\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:38966:validation:5",
+    "article": "That was fun\nCandidate emotion: gratitude",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:38966:validation:6",
+    "article": "That was fun\nCandidate emotion: joy",
+    "gold_label": "A"
+  }
+]

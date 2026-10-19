@@ -20,7 +20,7 @@ from pathlib import Path
 from typing import Any
 
 from .config import PilotConfig
-from .data import CLASS_ID_TO_LABEL, NewsExample, format_input, load_examples_json
+from .data import CLASS_ID_TO_LABEL, NewsExample, format_input, load_examples_json, multilabel_pairs, text_index
 
 TASKS = {
     "agnews": ("configs/pilot.yaml", "artifacts/data"),
@@ -28,6 +28,8 @@ TASKS = {
     "yahoo": ("configs/yahoo.yaml", "artifacts/data_yahoo"),
     "sst5": ("configs/sst5.yaml", "artifacts/data_sst5"),
     "dbpedia": ("configs/dbpedia.yaml", "artifacts/data_dbpedia"),
+    "goemotions": ("configs/goemotions.yaml", "artifacts/data_goemotions"),
+    "rte": ("configs/rte.yaml", "artifacts/data_rte"),
 }
 
 
@@ -44,15 +46,29 @@ def prepare(task: str, per_class: int, seed: int) -> Path:
     dataset = load_dataset(config.data.dataset_name, config.task.dataset_config, split="train")
     labels = list(dataset[config.task.label_field])
     rng = random.Random(seed)
-    chosen: list[int] = []
-    for class_id in range(len(config.prompt.label_names)):
+    if config.task.multi_label:  # per_class = number of texts; every text is paired with every class
+        used_texts = used  # text indices of train.json and validation.json
+        wanted = set(config.task.class_ids)
+        multi = [i for i, l in enumerate(labels) if len(set(l) & wanted) >= 2 and i not in used_texts]
+        single = [i for i, l in enumerate(labels) if len(set(l) & wanted) == 1 and i not in used_texts]
+        rng.shuffle(multi)
+        rng.shuffle(single)
+        n_multi = round(per_class * config.task.multi_label_share)
+        texts = multi[:n_multi] + single[: per_class - n_multi]
+        rng.shuffle(texts)
+        examples = [pair for i in texts for pair in multilabel_pairs(
+            dataset[i], i, "report", config.task, range(len(config.task.class_ids)))]
+        chosen = []
+    else:
+        chosen = []
+    for class_id in range(0 if config.task.multi_label else len(config.prompt.label_names)):
         pool = [i for i, label in enumerate(labels) if int(label) == class_id and i not in used]
         rng.shuffle(pool)
         if len(pool) < per_class:
             raise ValueError(f"{task}: class {class_id} has only {len(pool)} unused examples.")
         chosen.extend(pool[:per_class])
     rng.shuffle(chosen)
-    examples = [
+    examples = examples if config.task.multi_label else [
         NewsExample(
             example_id=f"official-train:{index}:report",
             article=format_input(dataset[index], config.task.text_field, config.task.field_headings),
@@ -72,6 +88,29 @@ def prepare(task: str, per_class: int, seed: int) -> Path:
     (Path(data_dir) / "report_manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     print(f"WROTE {out} ({len(rows)} examples)")
     return out
+
+
+def multilabel_metrics(correct_by_id: dict[str, bool], gold_by_id: dict[str, str]) -> dict[str, float]:
+    """Example-level, micro and macro F1 from binary-relevance pairs (gold A = class applies)."""
+    predicted = {i: (gold_by_id[i] == "A") == ok for i, ok in correct_by_id.items()}  # predicted "applies"
+    texts: dict[int, tuple[set[int], set[int]]] = {}
+    classes: dict[int, list[int]] = {}
+    for i, applies in predicted.items():
+        text, position = text_index(i), int(i.split(":")[3])
+        pred, gold = texts.setdefault(text, (set(), set()))
+        if applies:
+            pred.add(position)
+        if gold_by_id[i] == "A":
+            gold.add(position)
+        counts = classes.setdefault(position, [0, 0, 0])  # tp, fp, fn
+        counts[0] += applies and gold_by_id[i] == "A"
+        counts[1] += applies and gold_by_id[i] != "A"
+        counts[2] += (not applies) and gold_by_id[i] == "A"
+    f1 = lambda tp, fp, fn: 2 * tp / (2 * tp + fp + fn) if tp + fp + fn else 1.0  # noqa: E731
+    example = sum(f1(len(p & g), len(p - g), len(g - p)) for p, g in texts.values()) / len(texts)
+    totals = [sum(c[k] for c in classes.values()) for k in range(3)]
+    return {"example_f1": example, "micro_f1": f1(*totals),
+            "macro_f1": sum(f1(*c) for c in classes.values()) / len(classes)}
 
 
 def rescore(task: str, summary_path: str, output: str, batch_size: int, extra_runs: list[str]) -> None:
@@ -127,6 +166,10 @@ def rescore(task: str, summary_path: str, output: str, batch_size: int, extra_ru
             print(f"SCORED {index}/{len(prompts)} acc={summary_.accuracy:.4f}")
             if index % 10 == 0:
                 out_path.write_text(json.dumps({"by_prompt": cache}), encoding="utf-8")
+    if config.task.multi_label:
+        gold_by_id = {example.example_id: example.gold_label for example in report}
+        for prompt, entry in cache.items():
+            entry["multilabel"] = multilabel_metrics(entry["correct_by_id"], gold_by_id)
     result = {
         "task": task,
         "report_size": len(report),
@@ -134,6 +177,9 @@ def rescore(task: str, summary_path: str, output: str, batch_size: int, extra_ru
         "by_run": {**earlier_runs, **{run: cache[prompt]["accuracy"] for run, prompt in runs.items()}},
         "by_prompt": cache,
     }
+    if config.task.multi_label:
+        result["f1_by_run"] = {run: cache[prompt]["multilabel"] for run, prompt in runs.items()}
+        result["seed_f1"] = cache[config.prompt.seed_instruction]["multilabel"]
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(result), encoding="utf-8")
     print(f"WROTE {out_path}")

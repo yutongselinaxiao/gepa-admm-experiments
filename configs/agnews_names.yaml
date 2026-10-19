@@ -1,0 +1,32 @@
+model:
+  name_or_path: Qwen/Qwen3-1.7B
+  revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  local_files_only: true
+  local_snapshot_path: /home/xiaoyuto/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  dtype: bfloat16
+  device: cuda:0
+
+prompt:
+  system_prompt: >-
+    You are a careful news topic classifier. Follow the supplied label mapping
+    and response format exactly.
+  seed_instruction: >-
+    Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding label name.
+  label_names:
+    A: World
+    B: Sports
+    C: Business
+    D: Sci/Tech
+  enable_thinking: false
+  answer_style: name
+
+data:
+  dataset_name: fancyzhx/ag_news
+  seed: 20261002
+  train_size: 256
+  validation_size: 512
+
+manual_instructions:
+  - Determine the article's central subject, map it to the listed categories, and answer with only A, B, C, or D.
+  - Focus on the primary event rather than incidental names or organizations. Return exactly one label letter.
+  - Decide whether the article is mainly about world affairs, sports, business, or science and technology, then output its mapped letter only.

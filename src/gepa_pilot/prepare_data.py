@@ -13,7 +13,7 @@ from typing import Any, Sequence
 import datasets
 
 from .config import PilotConfig
-from .data import NewsExample, load_ag_news_development_splits
+from .data import NewsExample, load_ag_news_development_splits, load_multilabel_splits
 
 
 def _canonical_json_bytes(value: Any) -> bytes:
@@ -60,17 +60,23 @@ def main() -> None:
     validation_path = output_dir / "validation.json"
     manifest_path = output_dir / "data_manifest.json"
 
-    train, validation = load_ag_news_development_splits(
-        dataset_name=config.data.dataset_name,
-        train_size=config.data.train_size,
-        validation_size=config.data.validation_size,
-        seed=config.data.seed,
-        num_classes=len(config.prompt.label_names),
-        dataset_config=config.task.dataset_config,
-        text_field=config.task.text_field,
-        label_field=config.task.label_field,
-        field_headings=config.task.field_headings,
-    )
+    if config.task.multi_label:  # train_size / validation_size count texts; each becomes several pairs
+        train, validation = load_multilabel_splits(
+            config.data.dataset_name, config.task.dataset_config, config.task,
+            config.data.train_size, config.data.validation_size, config.data.seed,
+        )
+    else:
+        train, validation = load_ag_news_development_splits(
+            dataset_name=config.data.dataset_name,
+            train_size=config.data.train_size,
+            validation_size=config.data.validation_size,
+            seed=config.data.seed,
+            num_classes=len(config.prompt.label_names),
+            dataset_config=config.task.dataset_config,
+            text_field=config.task.text_field,
+            label_field=config.task.label_field,
+            field_headings=config.task.field_headings,
+        )
     if set(item.example_id for item in train) & set(item.example_id for item in validation):
         raise AssertionError("Training and validation IDs overlap.")
 

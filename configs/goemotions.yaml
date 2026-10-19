@@ -1,0 +1,45 @@
+# Multi-label task: google-research-datasets/go_emotions (Reddit comments; several emotions can apply).
+# Reduced to binary relevance: each (comment, candidate emotion) pair asks whether that emotion is
+# expressed (A) or not (B). 8 frequent emotions. train_size / validation_size count comments; optimization
+# pairs each comment with its true emotions plus as many false ones, the report set with all 8.
+model:
+  name_or_path: Qwen/Qwen3-1.7B
+  revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  local_files_only: true
+  local_snapshot_path: /home/xiaoyuto/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  dtype: bfloat16
+  device: cuda:0
+
+task:
+  name: "GoEmotions"
+  dataset_config: "simplified"
+  text_field: "text"
+  label_field: "labels"
+  input_heading: "Comment"
+  input_noun: "Reddit comment with one candidate emotion"
+  input_short: "comment"
+  focus: "whether the candidate emotion is expressed in the comment"
+  multi_label: true
+  class_ids: [0, 1, 2, 3, 4, 15, 17, 18]
+  class_names: ["admiration", "amusement", "anger", "annoyance", "approval", "gratitude", "joy", "love"]
+  candidate_heading: "Candidate emotion"
+  multi_label_share: 0.5
+
+prompt:
+  system_prompt: "You are a careful emotion annotator. Follow the supplied label mapping and response format exactly."
+  seed_instruction: "Carefully decide whether the comment expresses the candidate emotion from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  label_names:
+    A: "The candidate emotion is expressed"
+    B: "The candidate emotion is not expressed"
+  enable_thinking: false
+
+data:
+  dataset_name: google-research-datasets/go_emotions
+  seed: 20261002
+  train_size: 96
+  validation_size: 192
+
+manual_instructions:
+  - "Read the comment and judge whether the writer expresses the candidate emotion; answer with only one label letter."
+  - "Focus on the writer's own expressed feeling, not emotions of people mentioned. Return exactly one label letter."
+  - "Answer A if the candidate emotion is clearly present in the comment, otherwise B. Output the letter only."

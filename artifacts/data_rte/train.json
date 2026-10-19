@@ -1,0 +1,642 @@
+[
+  {
+    "example_id": "official-train:2353:train",
+    "article": "Premise: There are suppositions that the US Democratic Congress may re-establish the luxury taxes, which were already once introduced in the 1990s. The suppositions resulted in the National Association of Watch and Clock Collectors commissioning a report on various tax issues. Material goods such as jewelry, watches, expensive furs, jet planes, boats, yachts, and luxury cars had already been subjected to additional taxes back in 1990. After 3 years these taxes were repealed, though the luxury automobiles tax was still active for the next 13 years.\nHypothesis: The US Congress may re-establish luxury taxes.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2278:train",
+    "article": "Premise: Japanese drug makers are now trying to build comprehensive independent operations in research and development, production and marketing.\nHypothesis: There are companies that have split the management of their Research and Development processes.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:39:train",
+    "article": "Premise: Edward VIII became King in January of 1936 and abdicated in December.\nHypothesis: King Edward VIII abdicated in December 1936.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:376:train",
+    "article": "Premise: The directive for the Border Patrol to stop arresting illegal aliens, as described in a previous post, has been rescinded by Robert C. Bonner, commissioner of the new Bureau of Customs and Border Protection.\nHypothesis: Steps are being taken to stop the smuggling of aliens.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1013:train",
+    "article": "Premise: Witnesses of genocide attacks on minority Tutsis in Rwanda are being singled out for execution by extremist Hutus in refugee camps in southwest Rwanda, a U.N. spokesman said in Kigali, the capital.\nHypothesis: The Hutu and Tutsi groups fought in Rwanda.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1586:train",
+    "article": "Premise: A juvenile hacker who crippled an airport tower for six hours, damaged atown's phone system, and broke into pharmacy records has been charged in afirst-ever federal prosecution, the U.S. Attorney's office announcedtoday.\nHypothesis: Non-authorized personnel illegally entered into computer networks.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2473:train",
+    "article": "Premise: Yount, who was living in Coeur under the alias James Marvin Forsgren, was sentenced to life in prison for his conviction on first-degree murder and rape charges in the 1966 slaying of Pamela Sue Rimer, a student in his high school mathematics class in Luthersberg, Pa.\nHypothesis: James Marvin Forsgren killed Pamela Sue Rimer.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:444:train",
+    "article": "Premise: Seeking common ground amid sensitive differences on democracy, Bush and Putin agreed Thursday, on new efforts to keep nuclear arms away from terrorists as well as from sovereign nations like Iran and North Korea.\nHypothesis: Putin and Bush, on Thursday, agreed that Iran, along with North Korea, must not become a nuclear threat.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1881:train",
+    "article": "Premise: Voting for a new European Parliament was clouded by concerns over apathy.\nHypothesis: Voting for a new European Parliament has been clouded by apathy .",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:155:train",
+    "article": "Premise: Political parties in PNG lack ideological conviction and rely almost exclusively on patronage politics, personalism, and regional bases. Several parties have emerged in Papua New Guinean politics. In the House of Assembly elected in 1973, the Pangu Pati, headed by Michael Somare, formed a coalition government with the People's Progress Party, and Somare became prime minister.\nHypothesis: Several new political parties emerged.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:184:train",
+    "article": "Premise: The source added that the investigation proved that the bases of the genocide crime \"were completed with a series of illegal arrests followed in some cases with assassinations or cases of disappearances and were preceded, according to information attached to the file, by cases of torture.\"\nHypothesis: Investigators discovered that a series of illicit arrests of were often followed by disappearances or murders and were preceded by torture.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:523:train",
+    "article": "Premise: An attempted carjacking Thursday evening in Johannesburg has left famous South African reggae star Lucky Dube dead. He was dropping his children off in the suburb of Rosettenville when he was attacked. Police said that three gunshots were fired through the car window, injuring Dube. His children were out of the car at the time. An injured Dube then attempted to drive his car away from the area, but hit a tree soon after. He died at the scene. The police suspect that three people were responsible for the attack.\nHypothesis: Lucky Dube was a reggae star.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:383:train",
+    "article": "Premise: In-form Rooney's hot goalscoring streak of seven goals in his last four internationals saw him win the vote to be crowned England's Player of the Year for 2008. Manchester United striker Rooney, 23, is set for his 50th cap against Ukraine at Wembley tomorrow and is enjoying the best form of his England career after a heart-to-heart with Capello. England boss Capello ordered Rooney to work hard on his finishing, stop shooting from long range and start scoring tap-ins to help transform him into a prolific marksman.\nHypothesis: Fabio Capello is the coach of the English team.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1182:train",
+    "article": "Premise: U.S. consumer spending dived in June.\nHypothesis: The cost of the consumer of the United States fell in June.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2131:train",
+    "article": "Premise: Chancellor Schroeder has presided over three years of almost zero growth in the economy and an unemployment rate that has remained stubbornly above four million people.\nHypothesis: More than four million people have remained stubbornly unemployed in the last three years.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1981:train",
+    "article": "Premise: British actor, Hugh Laurie, had been favourite to win best drama actor for \"House\", but lost out to \"Boston Legal\"'s James Spader.\nHypothesis: James Spader won best actor for \"Boston Legal.\"",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2283:train",
+    "article": "Premise: Australian Broadcasting Company (ABC) television head, Sandra Levy, has quit to become the director of development for \"Channel Nine.\" Her new role is expected to focus on drama. ABC managing director Russell Balding said that Ms Levy had lifted audiences to \"historically unprecedented\" levels. However, Ms Levy came under fire during her ABC tenure for an overly conservative programming approach to major news stories - notably a sluggish response to coverage of the December 2004 South Asian Tsunami. She was criticised for refusing to interrupt regular programming to go to breaking news reports.\nHypothesis: Sandra Levy works for Channel Nine.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1481:train",
+    "article": "Premise: Justice Sandra Day O'Connor announced her retirement in order to spend time with her ill husband.\nHypothesis: Justice Sandra Day O'Connor announced her retirement.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2011:train",
+    "article": "Premise: Southwest Airlines on Thursday said rebuilding service at New Orleans was its number one priority as it unveiled its 58th consecutive quarterly profit and enhanced fuel hedges to extend its competitive advantage over rivals.\nHypothesis: Southwest Airlines operates in New Orleans.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:78:train",
+    "article": "Premise: The Norwegian Nobel Committee is responsible for the selection of the candidates and the choice of Prize Winners for the Peace Prize. The Committee is composed of five members appointed by the Storting (Norwegian parliament). The Peace Prize is awarded in Oslo, Norway and not in Stockholm, Sweden like the other Nobel Prizes.\nHypothesis: Nobel Peace Prize candidates have been chosen.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1137:train",
+    "article": "Premise: An Afghan interpreter, employed by the United States, was also wounded.\nHypothesis: An interpreter worked for Afghanistan.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:70:train",
+    "article": "Premise: In October, however, amid rising tensions between the government and opposition groups, a car bomb seriously injured an opposition politician and killed his driver, in Beirut.\nHypothesis: A member of the opposition was injured in a car bomb attack in Beirut.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1574:train",
+    "article": "Premise: On 12 August, the San Carlos Battalion came across mines placed in their path and one soldier was killed while two were seriously injured. Meanwhile on 10 August, urban commandos took a patrol car by surprise and dropped a grenade inside the car, injuring four and partially destroying the vehicle.\nHypothesis: Four people were injured by a grenade.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:398:train",
+    "article": "Premise: Io is 2,236 miles (3,598 kilometers) in diameter, slightly larger than the Earth's moon.\nHypothesis: The terrestrial moon has a diameter of 3746 kilometers.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2207:train",
+    "article": "Premise: Between 1978 and 1982, 32 states acknowledged the medical benefits and attempted to make cannabis available, but possession remains a federal offence. Among the states where marijuana is legally used for medical purposes are California, Oregon, Washington, Alaska, Arizona, and Nevada.\nHypothesis: In the Netherlands, people can legally have 32 grams of cannabis in their possession.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2023:train",
+    "article": "Premise: Slavkov, accused in the Salt Lake scandal but later cleared, said he had been approached by Takatch.\nHypothesis: Slavkov, defendant in the scandal of Salt Lake but that later was exculpated, in fact said that Takatch.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2142:train",
+    "article": "Premise: As his jubilant nation cheered, Yunus told reporters in the capital of Dhaka that he wants \"to work to create some more new things in the world\" and would use the award money to start a company to produce inexpensive yet nutritious food for poor people and set up an eye hospital to treat impoverished patients.\nHypothesis: Yunus wants to start a company.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1540:train",
+    "article": "Premise: \"With oil prices at $90 a barrel and fear of recession in the UK and many other European economies, the current outlook for the coming fiscal year is poor. While it is impossible to accurately forecast full year fuel prices and yields this far in advance, there is now a significant chance that profits may decline next year,\" Ryanair CEO Michael O'Leary cautioned. Ryanair said that it is not hedged against oil price increases for the next fiscal year. However, Ryanair is not the only airline to suffer from the economic downturn. Aer Lingus shares are down 3% to €1722.30. Easyjet has declined 11%. However shrewd, Mr. O'Leary has plans to spend up to 200 million purchasing back shares in the company, which equates to 3% of the company share capital.\nHypothesis: Ryanair shares suffered a 3% decrease.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1321:train",
+    "article": "Premise: The previous town hall meeting was held to address concerns of the community about a steel plating manufacturing plant that applied to the AQMD for a  permit to expand its facilities to increase pollution emissions. Parents and teachers were concerned over the facts that the plant was located directly adjacent to Kennedy Elementary School, and that their children were experiencing high levels of lead, respiratory problems, excessive nose-bleeding, and leukemia.\nHypothesis: There is an outbreak of leukemia among children in California.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:349:train",
+    "article": "Premise: Like Jews and Christians, Muslims believe there is only one God.\nHypothesis: Muslims are monotheistic.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1885:train",
+    "article": "Premise: \"This is a major milestone on our road to recovery, and I want to thank the members of Congress who came together in common purpose to make it happen,\" Obama said in his weekly address. \"I will sign this legislation into law shortly, and we'll begin making the immediate investments necessary to put people back to work doing the work America needs done. This historic step won't be the end of what we do to turn our economy around, but the beginning.\"\nHypothesis: The Congress wants to boost the economy.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2259:train",
+    "article": "Premise: Tens of thousands of Colombians and Venezuelans attended a free concert Sunday, held on a bridge linking the two countries. It was organized by Grammy-winning rock artist Juanes to celebrate the end of the diplomatic crisis between Colombia, Venezuela, and Ecuador, and to further improve peaceful relations within the region. The \"Peace Without Borders\" concert was staged atop the Simón Bolívar bridge, which connects the Colombian town of Cúcuta with the Venezuelan town of San Antonio del Táchira. \"It would have been much more practical and simple to do it in a city,\" Juanes told the Miami Herald, \"but the border is a symbol of peace between all countries. And this message is for everyone, all the countries in Latin America and the U.S. as well.\"\nHypothesis: Ecuador is now allies with Colombia and Venezuela.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2422:train",
+    "article": "Premise: Lebanon is in a period of mourning after a massive car bomb killed the former Prime Minister, Rafik Hariri, on Tuesday.\nHypothesis: Mr. Hariri was killed in a bomb explosion.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:372:train",
+    "article": "Premise: In Jerusalem, the faithful celebrated Mass at the Church of the Holy Sepulcher, traditionally believed to mark the site where Jesus was crucified, buried and then resurrected. Brown-robed friars marched into the church to the sound of bagpipes, followed by clergymen in purple capes and others bearing crosses. And in the earthquake-ravaged central Italian city of L'Aquila, survivors gathered in makeshift chapels set up in tent cities that are housing some of the 55,000 people driven from their homes by Monday's 6.3-magnitude temblor.\nHypothesis: A 6.3-magnitude earthquake struck the center of Italy.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2368:train",
+    "article": "Premise: C&D Technologies announced that it has closed the acquisition of Datel, Inc.\nHypothesis: C&D Technologies acquired Datel Inc.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:829:train",
+    "article": "Premise: G & H Restaurant Specialties has not released a statement regarding the violations, but the corporate offices in Louisville, Kentucky for KFC said, \"our franchisee has finalized a plan for some structural repairs... The units will be temporarily closed while these building maintenance issues are addressed. [They will be] re-opened as soon as the repairs are complete.\" The health department also gave violations out to the East Delevan store for failing to maintain a clean floor throughout the restaurant and for not stopping food from becoming contaminated. Several rat traps were also found inside the storage cooler and around the kitchen area, but the establishment was \"not free of rodents,\" said Commissioner of the Erie County Health Department, Dr. Anthony Billittier.\nHypothesis: Louisville is in Kentucky.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2440:train",
+    "article": "Premise: Although the birth rate is the highest it has been for five years, there were still more deaths in Scotland than births last year.\nHypothesis: Scotland is the European country with the highest birth rate.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2381:train",
+    "article": "Premise: This explanation was rejected by the Government of Chile, who insist that Pinochet enjoys diplomatic immunity in his capacity as \"an elected member in the Senate for life\" since leaving the command of the armed forces last March.\nHypothesis: The Chilean government affirming that as a member of the Senate, Pinochet has diplomatic immunity.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:96:train",
+    "article": "Premise: Successful plaintiffs recovered punitive damages in Texas discrimination cases 53% of the time.\nHypothesis: Legal costs to recover punitive damages are a deductible business expense.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:146:train",
+    "article": "Premise: The 26-member International Energy Agency said, Friday, that member countries would release oil to help relieve the U.S. fuel crisis caused by Hurricane Katrina.\nHypothesis: Responding to a plea from the International Energy Agency for member countries to release reserves, Canada is prepared to help.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1062:train",
+    "article": "Premise: To break the grinding cycle of debt and poverty, Yunus loaned $27 to Begum and more than 40 of her neighbours in the village of Joba. He allowed them to pay him back over the next year as their businesses started to produce stable profits.\nHypothesis: Some people in the village of Joba received loans from Yunus.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2244:train",
+    "article": "Premise: A recently created Danish clothing company is selling on the internet T-shirts in order to support the clandestine radio station of the Colombian guerrilla group Revolutionary Armed Forces of Colombia (FARC) and the graphical workshop of the Popular Front for the Liberation of Palestine (PFLP). In fact the money will be used by these groups to carry on their terrorist activities. FARC activities include kidnappings, masacres, bombs, extortions and the drug trade. Fighters and Lovers is selling the T-shirts at 170 DKK (US$27.6), from which 35 DKK (US$5.7) are to be destinated to support both armed groups.\nHypothesis: Revolutionary Armed Forces of Colombia teamed up with Fighters and Lovers.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1175:train",
+    "article": "Premise: Former tennis star Vitas Gerulaitis died in such fashion in September, from a lethal carbon monoxide buildup related to the faulty installation of a propane heater.\nHypothesis: Vitas Gerulaitis died of carbon monoxide poisoning.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1511:train",
+    "article": "Premise: Lawyer David Gibbs pleaded with the appeals court to order Schiavo's feeding tube reinserted to give her parents a chance to make a complete argument before a federal court that her rights are being violated.\nHypothesis: The appeals court was their last best chance to get that feeding tube reinserted into their daughter.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2432:train",
+    "article": "Premise: The lawsuit did not initially mention the site's operator, Edward Webber; instead, the suit was filed against a set of people named \"John Doe\" to be identified at a later point. Loki Torrent's popularity had increased dramatically in recent days after the prominent BitTorrent site SuprNova.org shut down in a preemptive move to avoid a lawsuit.\nHypothesis: Loki Torrent was sued for manslaughter.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2187:train",
+    "article": "Premise: Born in 1946, into a family many of whose members belonged to liberal professions, Radwa Ashour studied English Literature at Cairo University. She is now Professor of English Literature at Ain Shams University, a novelist, the wife of Palestinian poet Mourid Al-Barghouti and Umm Tamim.\nHypothesis: Rwada Ashour is a Palestinian poet.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2482:train",
+    "article": "Premise: Cyrus captured Babylon without a battle, and remedied the evils done by previous Assyrian and Babylonian rulers by sending prisoners in Babylonia back to their original homelands and aiding in the restoration of temples of the gods of various nations.\nHypothesis: Babylon surrendered to Cyrus without going to battle.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:368:train",
+    "article": "Premise: A few growers place charcoal in the bottom of containers to absorb excess salts and maintain sweet soil, if plants are grown more than a few months.\nHypothesis: Plants are grown in water or in substances other than soil.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1459:train",
+    "article": "Premise: Tropical Storm Debby is blamed for several deaths across the Caribbean.\nHypothesis: A tropical storm has caused loss of life.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1599:train",
+    "article": "Premise: Long-distance telephone company MCI Inc., on Friday, touted its $6.75 billion deal to be bought by Verizon Communications Inc., but said it would thoroughly analyze a revised $8 billion bid by Qwest Communications International Inc.\nHypothesis: MCI made no mention of its planned $6.7 billion agreement to be acquired by Verizon Communications in its release, Friday.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1759:train",
+    "article": "Premise: Speaking about the papal visit, Castro also said the government had agreed to make available half of its transport to ensure people can attend masses the pope will celebrate in the cities of Havana, Santa Clara, Camaguey and Santiago de Cuba. Cuban church authorities have been concerned there will not be enough transport.\nHypothesis: Papal travel is affected by political concerns.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:469:train",
+    "article": "Premise: Harrington, of Fitchburg, Massachusetts, was taken to an area hospital and is listed in critical condition. No other vehicles were struck during the crash. Authorities said others at the scene also assisted, including a turnpike employee and two motorists who carried Harrington out of the truck as police arrived. Fitzgerald said he had never used the defibrillator before Tuesday. \"As a trooper, you see more negative than positive out there,\" Fitzgerald said. \"It feels good when you can help someone and it feels good knowing that all those people had stopped to help before I got there.\"\nHypothesis: Harrington is a resident of Massachusetts.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:697:train",
+    "article": "Premise: A collection of real-life testimonies by Klaus Pohl, one of Germany's most performed dramatists, its power resides less in the conventional meaning of the word drama than in what it reveals - a country still deeply at odds with itself, a kaleidoscope of events that flatters neither side, neither Western capitalism nor the former communist regime.\nHypothesis: Klaus Pohl is a German dramatist.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2476:train",
+    "article": "Premise: In the United States Senate on Tuesday, Senators Byron Dorgan, a Democrat from North Dakota, and Mike Enzi, a Republican from Wyoming, introduced the \"Freedom to Travel to Cuba Act\" (S.428), a bill that would lift the travel restrictions that have prevented U.S. citizens from visiting Cuba since the early 1960s. The bill is co-sponsored by 20 senators, and the House of Representatives is considering a companion measure, H.R. 874, introduced by Representatives Bill Delahunt and Jeff Flake. The house measure has 121 cosponsors.\nHypothesis: Byron Dorgan was born in Wyoming.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1065:train",
+    "article": "Premise: Gibbs also said that Obama planned to meet with Iraqi Prime Minister Nouri al-Maliki, but poor weather in Baghdad means that Obama will likely talk to the prime minister and Iraqi President Jalal Talibani by telephone. American troops are slated to leave Iraq by August 2010, with The New York Times reporting that troop levels will continue to be high until Iraq's federal elections in December. Obama told a group of university students in Turkey that despite his original opposition to the war in 2003, he realized that the troop withdrawal must be done carefully.\nHypothesis: Jalal Talibani is friends with Obama.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1947:train",
+    "article": "Premise: Gladys Lauture, a close Aristide friend and longtime supporter, said she and a team of carpenters, plumbers and decorators spent 18 days making Aristide's Port-au-Prince home livable again.\nHypothesis: Aristide is due to live at Port-au-Prince again.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:427:train",
+    "article": "Premise: The 38-year-old actress recently appeared in a court case against Jack Jordan, a man who was found guilty of stalking her. The friend added: \"Everyone is so happy for Uma after what she went through with that stalker. Arki is a guy who can take care of her. \"Uma is hoping this time, it's really love. Everyone wants the best for her. And Arki is a really sweet guy.\" Uma was previously married to actor Gary Oldman, while Arpad has two children with Australian supermodel Elle Macpherson.\nHypothesis: Uma Thurman is engaged to Arpad Busson.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2046:train",
+    "article": "Premise: CNET reporter James Kim has been found dead in the southwestern Oregon wilderness after getting lost with his family on November 25. Kim, 35, was found at 12:00 noon Wednesday, half a mile away from the Rogue River. His wife Kati Kim, 30-years-old, and her two young children were found alive on December 4 after they waved an umbrella to a private helicopter. Kati and her two children were airlifted out of the area and transferred by ambulance to Three Rivers Community Hospital in Grants Pass. Kati suffered frostbite on two toes, but it is expected that she will be in good condition.\nHypothesis: James Kim worked for CNET.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1379:train",
+    "article": "Premise: On Friday, Michael Mukasey was confirmed by the United States Senate as the next Attorney General, succeeding Alberto Gonzales. Mukasey took the oath of office with his family attending in a private ceremony that was administered by Assistant Attorney General Lee Lofthus. The nomination of Mukasey, by President George W. Bush, hit a rough spot over the issue of interrogations, in particular about waterboarding. \"This man has been a judge for 18 years,\" said Senator Dianne Feinstein, who along with Senator Chuck Schumer provided the essential votes to pass Mukasey through the Senate Judiciary Committee. \"Maybe he likes to consider the facts before he makes a decision.\"\nHypothesis: Michael Mukasey is the U.S. Attorney General.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1963:train",
+    "article": "Premise: They, too, have not produced a practical, commercially acceptable maglev.\nHypothesis: Maglev is commercially used.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1790:train",
+    "article": "Premise: A rocket attack killed two Israelis, including a 3-year-old boy.\nHypothesis: A three-year-old was killed in a rocket attack.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1530:train",
+    "article": "Premise: Oil prices eased back from record high levels after Russia's justice ministry said embattled oil giant Yukos can continue oil production and sales.\nHypothesis: Oil prices rise.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2402:train",
+    "article": "Premise: Greenspan's stance has underpinned predictions the Fed will raise rates steadily this year.\nHypothesis: The position of Greenspan has propped up the predictions that the Fed will gradually elevate the east interest rates year.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1074:train",
+    "article": "Premise: The first Windows DNA lab outside Microsoft was established in suburban Philadelphia in June 1998.\nHypothesis: Microsoft was established in June 1998.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2235:train",
+    "article": "Premise: Passions surrounding Germany's final match at the Euro 2004 soccer championships turned violent when a woman stabbed her partner in the head because she didn't want to watch the game on television.\nHypothesis: A man was stabbed because of a soccer game.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:9:train",
+    "article": "Premise: Only a week after it had no comment on upping the storage capacity of its Hotmail e-mail service, Microsoft early Thursday announced it was boosting the allowance to 250MB to follow similar moves by rivals such as Google, Yahoo, and Lycos.\nHypothesis: Microsoft's Hotmail has raised its storage capacity to 250MB.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2175:train",
+    "article": "Premise: By buying local companies, Philip Morris and its subsidiary inherit informal trade contacts cultivated under Soviet rule that may help to smooth any future moves east.\nHypothesis: American tobacco companies used state tobacco monopoly liberalization.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:781:train",
+    "article": "Premise: Oracle had fought to keep the forms from being released\nHypothesis: Oracle released a confidential document",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:412:train",
+    "article": "Premise: Protest votes as citizens of the 25 EU nations punished their governments for everything from high unemployment to involvement in Iraq.\nHypothesis: EU nations' citizens protest against punishment for unemployment.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1964:train",
+    "article": "Premise: The state Division of Occupational Safety and Health said that the plant was inspected in October, and cited for 15 safety violations, seven of which were considered serious.\nHypothesis: The plant was inspected in October and cited for numerous safety violations.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2354:train",
+    "article": "Premise: The brother-in-law of Mohammad Oreibi al-Khalifa, the new chief judge in the genocide trial of Saddam Hussein, has been shot dead, police sources say.\nHypothesis: Mohammad Khalifa's father-in-law is Osama Bin Laden.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:803:train",
+    "article": "Premise: He had been hand-picked by John Sculley to take over Steve Jobs' position as head of the Macintosh group.\nHypothesis: John Sculley was an executive of the Macintosh group.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1299:train",
+    "article": "Premise: Operation FALCON was conducted during a one week period, April 4-10, 2005, chosen to coincide with National Crime Victim's Rights Week , April 10-16, the dates being chosen to \"honor the victims\" of violent crime in America. \"By taking violent fugitives off the streets and putting them behind bars where they belong,\" said Attorney General Alberto Gonzales , \"we've honored the victims and made our streets safer.\"\nHypothesis: Operation Condor was a genocide and a campaign of counter-terrorism implemented by the right-wing dictatorships that dominated the Southern Cone in Latin America from the 1950s to 1980s.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:892:train",
+    "article": "Premise: Green cards are becoming more difficult to obtain.\nHypothesis: Green card is now difficult to receive.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:698:train",
+    "article": "Premise: The Dow Jones Industrial Average (DJIA), one of the main stock indices in the United States, has broken an all-time closing record, to close at 14,000.41 points which is up 82.19 points (0.59%) from its last close. Just 59 days before, the Dow hit an all-time high when it passed 13,000. This is the first time the DJIA has ever closed above 14,000 since its debut on May 26, 1896.\nHypothesis: The Dow Jones has gained points.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1404:train",
+    "article": "Premise: The Obama administration has told Chrysler it would provide as much as $6 billion in new financing, on top of the $4 billion in loans it has already given the company, if Chrysler could complete a deal by next Thursday with a cost structure that gives it a chance of survival. The creditors have, so far, balked at the terms suggested by the Treasury Department. But the negotiations have taken a new direction. Treasury now has an agreement in principle with the UAW, whose members' pensions and retiree health care benefits would be protected in the event of a bankruptcy filing, said the people with knowledge of the discussions. Moreover, under this scenario, Fiat would complete its alliance with Chrysler while the company is under bankruptcy protection.\nHypothesis: Fiat wants to acquire some stakes in Chrysler.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:307:train",
+    "article": "Premise: The Statue of Liberty is so big it had to be built in 300 sections.\nHypothesis: The Statue of Liberty was built in the year 300.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1359:train",
+    "article": "Premise: According to an Israeli official, the murders of Galan, a high-ranking police officer, and a judge last week were probably carried out by an Israeli mercenary paid by the Medellin cartel - the world's most powerful drug-trafficking mafia - which has set up paramilitary squads accused of hundreds of individual murders and massacres against political and labor leaders, as well as peasants and patriotic union leftist militants in different parts of the country.\nHypothesis: Political and labor leaders were killed by patriotic union leftist militants.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1828:train",
+    "article": "Premise: Any taxpayer earning over £150,000 will no longer enjoy higher-rate tax relief, which is considered a substantial incentive to save for wealthy workers. From April 2011, anyone who earns £200,000 a year, for example, and pays the typical amount of 6 per cent of their salary into their company pension scheme will lose out on £200 a month or £2,400 a year.  Alistair Darling, when he announced the move in the Budget, insisted that just 1.5 per cent of taxpayers - the equivalent of about 450,000 people - would be hit, but experts argued that it would significantly damage the already beleaguered pensions industry, and cause many savers to think twice about investing in a pension.\nHypothesis: Alistair Darling is chancellor of UK.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1587:train",
+    "article": "Premise: The American House of Representatives is due to vote today, on a resolution submitted by the Chairman of the Judicial Committee, Henry Hyde, asking Congress to launch an investigation over charges brought forward by Independent Prosecutor-General Kenneth Star against President Clinton in the Monica Lewinsky affair.\nHypothesis: Voting will take place in the American House of Representatives today, on the President Clinton-Monica Lewinsky scandal.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:394:train",
+    "article": "Premise: At least 19 people have been killed in central Florida in the city of Lady Lake and Paisley after severe storms and a tornado ripped through the cities in the middle of the night. Eleven of those killed were in Paisley and three were in Lady Lake. The death toll is expected to rise as rescue crews resume tomorrow morning. Volusia, Sumter, Lake and Seminole counties have all been declared a state of an emergency as dozens of houses, mobile homes and a church were destroyed. Clothes and furniture are scattered around the wrecked houses and pieces of trees are scattered about. Cars are reported to have been turned over or thrown around in the air. \"Our priority today is search and rescue,\" said Gov. of Florida, Charlie Crist. Rescuers are still looking through the wreckage to find survivors of those who might have been killed.\nHypothesis: Gov. of Florida, Charlie Crist, has visited the cities of Lady Lake and Paisley.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1826:train",
+    "article": "Premise: A former federal health official arrested in the Virginia Fontaine Addictions Foundation scandal has been fined $107,000 for tax evasion. Patrick Nottingham, 57, was also sentenced to 18 months house arrest and ordered to complete 150 hours of community service work. The fine represents 50% of the federal income tax Nottingham did not pay on nearly $700,000 in kickbacks he received in return for approving excessive funding to the foundation in 1999 and 2000.  In November 2005, Nottingham pleaded guilty to fraud and influence peddling and received a conditional sentence of two years less a day. \"Mr. Nottingham was not only involved in fraudulent activity, he compounded that offence by not reporting that income,\" said Crown attorney Michael Foote at a sentencing hearing earlier this week. \"He effectively committed two sets of extraordinarily serious offences.\"  Nottingham's fine is the minimum allowed by law. Foote said there is little expectation Nottingham will ever pay off the fine.\nHypothesis: Patrick Nottingham is involved in the Virginia Fontaine Addictions Foundation scandal.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1512:train",
+    "article": "Premise: Reagan was seriously wounded by a bullet fired by John Hinckley Jr. in an attempted assassination on March 30, 1981.\nHypothesis: Reagan almost died on March 30, 1981, when would-be assassin John W. Hinckley Jr. shot him.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1525:train",
+    "article": "Premise: Tom Cruise has returned to The Oprah Winfrey Show and talked about his love for Katie Holmes, but this time he was denying marital problems instead of jumping on the couch to prove his passion for the young actress. \"That's laughable to me,\" Cruise said when Winfrey told him there was speculation that \"what you and Katie have is not real\". It was the first time Cruise appeared on the show since his couch-hopping stunt three years ago drew a flood of satire and ridicule. \"It was something that I just felt that way, and I feel that way about her. That's just how I felt,\" he said in the interview, which aired on Friday in the US.\nHypothesis: Tom Cruise is married to Oprah Winfrey.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1212:train",
+    "article": "Premise: Mr Tomlinson, 47, collapsed and died from a heart attack near the Bank of England after being caught up during the demonstrations on his way home last Wednesday. His son Paul, 26, said: \"Through CCTV and pictures that I've been shown he got refused access on a number of barricades that police had set up. And the missing jigsaw puzzle was what happened to him when he got into Royal Exchange Passage. I think what we've just seen has answered a lot of questions.\"\nHypothesis: Mr. Tomlinson was hit by a policeman.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1127:train",
+    "article": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was intially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawase suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.\nHypothesis: The Zambian government has ordered to plant potatoes.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2398:train",
+    "article": "Premise: On Friday evening, a car bomb exploded outside a Shiite mosque in Iskandariyah, 30 miles south of the capital, killing seven people and wounding 10, doctors said on condition of anonymity.\nHypothesis: The car bomb at the mosque in Iskandariyah exploded.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1668:train",
+    "article": "Premise: President Bill Clinton on Tuesday passed the leadership of the Democratic Party to Vice President Al Gore, describing his deputy as the right person to be the first U.S. President of the 21st century.\nHypothesis: Bill Clinton belongs to the Democratic Party.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:14:train",
+    "article": "Premise: Brian Brohm, the Louisville quarterback, threw for 368 yards and five touchdowns as the Cardinals beat visiting Oregon State 63-27.\nHypothesis: The quarterback threw for 413 yards and three touchdowns, and then ran to the end zone two more times.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2395:train",
+    "article": "Premise: There are discussions in California and Arizona to allow illegal aliens to have driver's licenses.\nHypothesis: California driver's licenses granted to illegal immigrants.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:495:train",
+    "article": "Premise: The Rolling Stones kicked off their latest tour on Sunday with a concert at Boston's Fenway Park.\nHypothesis: The Rolling Stones have begun their latest  tour with a concert in Boston.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2158:train",
+    "article": "Premise: Hunting reef sharks is now banned throughout Maldivian waters. The government decision has made the Indian Ocean archipelago the first nation in the region to outlaw the practice. Shark numbers have plummeted in the Maldives in recent years because a significant minority of fishermen target sharks for their lucrative fins, which are used in shark-fin soup, a luxury Asian dish. Once its fins have been cut off, the shark is often returned to the sea where it suffocates over many painful hours.\nHypothesis: Due to the decreasing number of sharks, Maldives have banned the hunt of reef sharks.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1415:train",
+    "article": "Premise: If you have an immediate problem with ice dams, you should remove the snow from the part of the roof directly above the ice dam. This limits the amount of water that can collect behind the dam.\nHypothesis: Dam building prevents life-threatening situations.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:684:train",
+    "article": "Premise: Although the number of the confirmed Ebola cases has risen slightly to 26 in Gabon and to 16 in Congo Brazzaville, new infections are now so low that it seems the epidemic is \"burning out\".\nHypothesis: Ebola Epidemic breaks out in Zaire.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1899:train",
+    "article": "Premise: Don Brash leader of the New Zealand National Party said that the White Crusaders of the Racial Holy War are \"a small, fascist underbelly, hell-bent on causing division and destroying New Zealand's egalitarian ethos.\"\nHypothesis: Don Brash is the leader of the New Zealand National Party.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1252:train",
+    "article": "Premise: Lao government spokesman, Yong Chantalangsy, said Rangoon has promised to announce its decision in Vientiane.\nHypothesis: Yong Chantalangsy is a representative of Laos.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:244:train",
+    "article": "Premise: Family members and friends told Fox News that the couple had been fighting over several things, including Luong's girlfriend, on Sunday evening and Monday morning. Luong later drove off with his four children, whom he reported missing to the police and claimed he had left them with his girlfriend who lives in a hotel. Police however became suspicious due to \"holes in his story\" and he later changed his story. The Associated Press say that the authorities believe that Dauphin Island Bridge is where Luong threw the four children, of which he was the biological father of three, into the water.\nHypothesis: Luong threw his children off a bridge in Louisiana.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1371:train",
+    "article": "Premise: Around 130 flights were cancelled during a strike held on 19 January, and others were cancelled in the days that followed. When the flight assistants announced a further 24-hour for 23 January, the Italian Guarantee Authority (Commissione di Garanzia) which regulates strikes in essential public services (under the terms of laws no. 194/1990 and no. 83/2000) (IT0004266F) accused the unions of breaching the legal provision that 10 days must elapse between one strike and the next.\nHypothesis: Italian flight assistants go on strike.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:696:train",
+    "article": "Premise: The organizers of the 15th International AIDS Conference, scheduled for next month in Bangkok, Thailand, on Saturday responded to press reports that a prominent hotel in Bangkok discriminated against HIV-positive visitors attending a different conference this month.\nHypothesis: HIV-positive visitors take part in the 15th International AIDS Conference.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2475:train",
+    "article": "Premise: Anne Marie David corresponded with Wikinews' Mike Halterman about her eventful career, her personal anecdotes regarding living abroad, her successes in past Eurovision contests and her grievances with the way the show is produced today. This is the second in a series of interviews with past Eurovision contestants, which will be published sporadically in the lead-up to mid-May's next contest in Moscow.\nHypothesis: Anne Marie David won the Eurovision Song Contest.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1146:train",
+    "article": "Premise: His latest release, Together Through Life, has reached the top spot 38 years and five months after his last chart-topper, New Morning, in 1970. The 67-year-old American singer-songwriter now holds the record for the longest gap between solo number one albums. It is Dylan's seventh UK number one, his 33rd studio album and his 53rd album, including compilations and soundtracks. He first reached number one with The Freewheelin' Bob Dylan released in 1964. HMV's Gennaro Castaldo said: \"It's evident that Dylan is going through one of his zeitgeist moments, as a new generation of fans join his more established followers in appreciating his musical legacy.\"\nHypothesis: Gennaro Castaldo is 67 years old.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2067:train",
+    "article": "Premise: The poll also showed that a higher percentage of Americans (65%) believe that even if the investigation proceedings actually began, Clinton ought not to be removed.\nHypothesis: According to the poll, 65% of Americans believe that Clinton should be removed from office.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:322:train",
+    "article": "Premise: Three plays later, quarterback James Pinkney was sacked by Wake's Goryal Scales on third-and-one, forcing the team to punt.\nHypothesis: James Pinkney was an employee of Goryal Scales.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1916:train",
+    "article": "Premise: The Yellowstone Park Foundation recognizes the following organizations for their generous support in helping to protect the wonders and wildlife of Yellowstone National Park.\nHypothesis: The Yellowstone Park Foundation would like to acknowledge and thank the following organizations for their generous support.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2444:train",
+    "article": "Premise: Cauhtemoc Cardenas said during a news conference on 7 June that the visit to Mexico by Salvadoran president Alfredo Cristiani is a visit by \"a repressive ruler who oppresses a large sector of his people.\"\nHypothesis: Alfredo Cristiani visits Mexico on June 7.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1403:train",
+    "article": "Premise: John Paul II  was the first non-Italian Pope in exactly 600 years, so other things being equal, his successor would presumably be Italian.\nHypothesis: John Paul II is Italian.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1594:train",
+    "article": "Premise: WINNENDEN, Germany ―A teenage gunman killed 15 people, most of them female, on Wednesday in a rampage that began at a school near Stuttgart in southern Germany and ended in a nearby town, where he then killed himself after the police wounded him. The attack left Germany, which tightened tough gun controls after a similar attack at a school seven years ago, struggling to understand the carnage that had again befallen it, a country with relatively little violent crime. In 2002, a gunman killed 16 people before killing himself at a school in Erfurt, in eastern Germany.\nHypothesis: A teenager shot 15 people in Germany.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1724:train",
+    "article": "Premise: The program, financed with a grant from the UN Agency for International Development, is aimed at reducing infant mortality in Madagascar, an island nation in the Indian Ocean off the eastern coast of Africa.\nHypothesis: The UN Agency for International Development is an organisation based in Madagascar.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:907:train",
+    "article": "Premise: US President George W. Bush has indicated he will invite Abbas to the United States for talks, something he never did with Abbas's predecessor, the late Yasser Arafat .\nHypothesis: Yasser Arafat succeeded Abbas.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:843:train",
+    "article": "Premise: Two women from two counties are dead and police have some clues as to who murdered them.\nHypothesis: Police gather clues in double assassination.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:342:train",
+    "article": "Premise: \"I guess you have to expect this in a growing community,\" said Mardelle Kean, who lives across the street from John Joseph Famalaro, charged in the death of Denise A. Huber, who was 23 when she disappeared in 1991.\nHypothesis: John J. Famalaro is accused of having killed Denise A. Huber.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1109:train",
+    "article": "Premise: Nevertheless, 58 percent of Americans expressed their satisfaction with the President's job performance. 44 percent supported Nixon at the very beginning of the investigation into Watergate.\nHypothesis: Although 58% of Americans are unsatisfied with Clinton's job performance, 44% found Nixon's work adequate at the start of the Watergate scandal.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:98:train",
+    "article": "Premise: The discovery is based on velocity measurements of a whirlpool of hot gas orbiting the black hole.\nHypothesis: Hubble discovers black holes.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2153:train",
+    "article": "Premise: In late 2006, Aneta Krawczyk accused the party's leader Andrzej Lepper of having offered her political favours for sex in 2001, and then said he had been the father of her youngest child. She said the same of Lepper's close collaborator and MP, Stanislaw Lyzwinski, and accused him of rape and sexual abuse. She also said that Popecki, who had been Lyzwinski's aide, had tried to induce a miscarriage by giving her a labour-inducing drug called oxytocin.\nHypothesis: Andrzej Lepper is no longer the Minister of Agriculture and Rural Development.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:813:train",
+    "article": "Premise: Cyanide is also used by Muru-ami fishermen in the Philippines to drive fish from the coral reefs.\nHypothesis: Philippine fishermen use cyanide in fishing.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:700:train",
+    "article": "Premise: Pratibha Patil has won the 12th Presidential Elections of the Republic of India, becoming the first woman president of the second most populous country in the world. Patil, 72, previously governor of the state of Rajasthan, had support from the governing coalition. She won approximately two thirds of the vote, almost double the number of votes of her nearest rival Bhairon Singh Shekhawat, who resigned as Vice-President after losing the poll.\nHypothesis: Chile has a female President.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:2250:train",
+    "article": "Premise: The measures currently in force include a travel ban on senior government figures, but France has invited Mr. Mugabe to a Franco-African summit in Paris next month, angering several countries.\nHypothesis: France angered a number of countries, by inviting Mr. Mugabe to attend a Franco-African summit in Paris.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1613:train",
+    "article": "Premise: Oil prices edged up today as Norwegian employers said they would respond to a strike by locking out all workers next week, threatening to shut off almost all oil and gas output.\nHypothesis: Workers strike in response to Norwegian employers' threats.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:404:train",
+    "article": "Premise: Another French daily newspaper talks about PixVillage.\nHypothesis: PixVillage is a French newspaper.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:871:train",
+    "article": "Premise: 2001 Nobel economics prize winner Joseph Stiglitz, meanwhile, said the new currency could come about quickly if it was based on an expansion of the IMF's already established system of Special Drawing Rights, units of exchange used by the IMF which already have some of the features of currency. Stiglitz argued that, as the US dollar has become the standard global reserve currency, it has inadvertently created a system which hurts the world economy. \"It's a net transfer, in a sense, to the United States of foreign aid,\" he argued, reasoning that when other countries purchase US dollars in order to use them on international markets (such as for the buying and selling of petroleum), they effectively give the US a zero-interest loan — sometimes at times when they can least afford it. Stiglitz made his comments as head of a United Nations panel of economists giving recommendations to address the global financial crisis.\nHypothesis: Joseph Stiglitz is the winner of a Nobel prize in economics.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1565:train",
+    "article": "Premise: GUS on Friday disposed of its remaining home shopping business and last non-UK retail operation with the 390m (265m) sale of the Dutch home shopping company, Wehkamp, to Industri Kapital, a private equity firm.\nHypothesis: GUS sold Wehkamp.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:2273:train",
+    "article": "Premise: The Norwegian newspaper Dagbladet printed an article about the \"intolerance page\".\nHypothesis: Dagbladet is a Norwegian newspaper.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1497:train",
+    "article": "Premise: \"From a research point of view, this is the first time we could identify what appears to be typical Parkinson's disease cases before people develop symptoms,\" says Mayo Clinic neuroscientist Matthew Farrer. \"We know if someone inherits the mutation they are going to get Parkinson's disease.\" The mutation was discovered by sequencing the LRRK2 gene in families with Parkinson's from the US, Norway, Ireland and Poland.\nHypothesis: A genetic mutation has been linked with Parkinson's disease.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:888:train",
+    "article": "Premise: The black Muslim activist said that he had relieved Muhammad of his duties \"until he demonstrates that he is willing to conform to the manner of representing Allah and the honorable Elijah Muhammad (founder of the Nation of Islam)\".\nHypothesis: Elijah Muhammad founded the Nation of Islam.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:38:train",
+    "article": "Premise: The Christian Democrats (CDU) won 35.2% of the vote, or 225 seats, against 34.3% for Chancellor Gerhard Schroeder's Social Democrats (SPD).\nHypothesis: It seems unlikely that there will be a coalition between Gerhard Schroeder's Social Democrats and Angela Merkel's Christian Democratic Union.",
+    "gold_label": "B"
+  },
+  {
+    "example_id": "official-train:1004:train",
+    "article": "Premise: On June 28, 1997, in what would become known as the bite fight, Mike Tyson bit Evander Holyfield's ear, purportedly in retaliation for Holyfield headbutting him.\nHypothesis: Mike Tyson bit Evander Holyfield's ear on June 28, 1997.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1010:train",
+    "article": "Premise: Conservationists fear that one of Namibia's most precious resources, its abundant wildlife and especially its threatened black rhinoceros, faces a major menace from poaching.\nHypothesis: In Africa, rhinos are seriously endangered by poaching.",
+    "gold_label": "A"
+  },
+  {
+    "example_id": "official-train:1854:train",
+    "article": "Premise: On August 6, 1945 the atomic bomb was dropped on the Japanese city of Hiroshima. The Enola Gay, piloted by Colonel Tibbetts, was chosen to make the mission. The mission was recorded as successful by Capt. William S. Parson at 9:20 A.M.\nHypothesis: In 1945, an atomic bomb was dropped on Hiroshima.",
+    "gold_label": "A"
+  }
+]
