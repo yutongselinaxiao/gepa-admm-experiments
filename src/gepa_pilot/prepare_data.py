@@ -69,6 +69,7 @@ def main() -> None:
         dataset_config=config.task.dataset_config,
         text_field=config.task.text_field,
         label_field=config.task.label_field,
+        field_headings=config.task.field_headings,
     )
     if set(item.example_id for item in train) & set(item.example_id for item in validation):
         raise AssertionError("Training and validation IDs overlap.")

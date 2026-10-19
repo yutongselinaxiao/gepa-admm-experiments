@@ -32,6 +32,9 @@ class PromptConfig:
     seed_instruction: str
     label_names: dict[str, str]
     enable_thinking: bool = False
+    # "letter": answer with the label letter (one token; the original setup). "name": answer with the label
+    # name itself (usually several tokens; scored by teacher-forced sequence likelihood).
+    answer_style: str = "letter"
 
 
 @dataclass(frozen=True)
@@ -40,7 +43,10 @@ class TaskConfig:
 
     name: str = "AG News"
     dataset_config: str | None = None
-    text_field: str = "text"
+    # One dataset field, or several (e.g. ["premise", "hypothesis"]); several fields are written into the
+    # input block one per line as "Heading: value", with headings from field_headings (default: field names).
+    text_field: str | tuple[str, ...] = "text"
+    field_headings: tuple[str, ...] = ()
     label_field: str = "label"
     # Heading of the input section in the classification prompt.
     input_heading: str = "Article"
@@ -77,8 +83,16 @@ class PilotConfig:
             str(key): str(value) for key, value in prompt_raw["label_names"].items()
         }
         prompt = PromptConfig(**prompt_raw)
+        if prompt.answer_style not in ("letter", "name"):
+            raise ValueError(f"prompt.answer_style must be 'letter' or 'name', got {prompt.answer_style!r}")
         data = DataConfig(**raw.get("data", {}))
-        task = TaskConfig(**raw.get("task", {}))
+        task_raw = dict(raw.get("task", {}))
+        for key in ("text_field", "field_headings"):
+            if isinstance(task_raw.get(key), list):
+                task_raw[key] = tuple(str(item) for item in task_raw[key])
+        task = TaskConfig(**task_raw)
+        if isinstance(task.text_field, tuple) and task.field_headings and len(task.field_headings) != len(task.text_field):
+            raise ValueError("task.field_headings must have one heading per text field.")
         manual = tuple(str(item) for item in raw.get("manual_instructions", ()))
 
         expected_labels = tuple(chr(ord("A") + index) for index in range(len(prompt.label_names)))

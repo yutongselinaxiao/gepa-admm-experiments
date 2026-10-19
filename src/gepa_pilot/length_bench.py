@@ -73,6 +73,7 @@ def main() -> None:
         local_files_only=config.model.local_files_only, dtype=config.model.dtype, device=config.model.device,
         system_prompt=config.prompt.system_prompt, label_names=config.prompt.label_names,
         enable_thinking=config.prompt.enable_thinking, input_heading=config.task.input_heading,
+        answer_style=config.prompt.answer_style,
     )
     train, validation = load_examples_json(train_path), load_examples_json(validation_path)
     hp = ADMMHyperparameters(rho=0.1, outer_iterations=20, projection="context_beam", top_p=0.99,

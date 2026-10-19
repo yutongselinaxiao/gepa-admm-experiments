@@ -48,12 +48,20 @@ def reflection_prompt_template(config: PilotConfig) -> str:
     labels = tuple(config.prompt.label_names)
     mapping = "\n".join(f"- {label} = {name}" for label, name in config.prompt.label_names.items())
     classes = _NUMBER_WORDS.get(len(labels), str(len(labels)))
+    by_name = config.prompt.answer_style == "name"
+    if by_name:  # the classifier answers with the label name itself
+        mapping = "\n".join(f"- {name}" for name in config.prompt.label_names.values())
+        response = f"exactly one label name: {label_list(list(config.prompt.label_names.values()))}"
+        requirement = "require a response of exactly one label name"
+    else:
+        response = f"exactly one capital letter: {label_list(labels)}"
+        requirement = "require the one-letter response"
     return f"""You are improving one editable instruction for a {classes}-class {task.name} classifier.
 
 The task interface is immutable:
 {mapping}
-- The classifier receives one {task.input_noun} and must output exactly one capital letter: {label_list(labels)}.
-- The label mapping and response format are supplied elsewhere in the fixed prompt. Do not alter, reorder, or invent labels.
+- The classifier receives one {task.input_noun} and must output {response}.
+- The label {'list' if by_name else 'mapping'} and response format are supplied elsewhere in the fixed prompt. Do not alter, reorder, or invent labels.
 
 Current editable instruction:
 ```
@@ -65,7 +73,7 @@ Observed examples, predictions, and feedback:
 <side_info>
 ```
 
-Infer a general improvement from the errors without copying {task.input_short}-specific facts. Write one complete replacement instruction of at most 90 words. It should help identify {task.focus}, preserve the immutable mapping, and require the one-letter response. Output only the replacement instruction enclosed in triple backticks, with no heading or explanation."""
+Infer a general improvement from the errors without copying {task.input_short}-specific facts. Write one complete replacement instruction of at most 90 words. It should help identify {task.focus}, preserve the immutable {'labels' if by_name else 'mapping'}, and {requirement}. Output only the replacement instruction enclosed in triple backticks, with no heading or explanation."""
 
 
 class ExampleDataLoader:
@@ -240,6 +248,7 @@ def main() -> None:
         label_names=config.prompt.label_names,
         enable_thinking=config.prompt.enable_thinking,
         input_heading=config.task.input_heading,
+        answer_style=config.prompt.answer_style,
     )
     adapter = AGNewsGEPAAdapter(
         evaluator, evaluation_batch_size=args.evaluation_batch_size, focus=config.task.focus

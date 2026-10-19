@@ -40,12 +40,23 @@ class PromptBuilder:
         *,
         enable_thinking: bool = False,
         input_heading: str = "Article",
+        answer_style: str = "letter",
     ) -> None:
         self.tokenizer = tokenizer
         self.input_heading = input_heading
         self.system_prompt = system_prompt
         self.label_names = label_names
         self.enable_thinking = enable_thinking
+        if answer_style not in ("letter", "name"):
+            raise ValueError(f"Unknown answer_style: {answer_style!r}")
+        self.answer_style = answer_style
+
+    @property
+    def answers(self) -> dict[str, str]:
+        """The text the model must output for each label: the letter itself, or the label name."""
+        if self.answer_style == "letter":
+            return {label: label for label in self.label_names}
+        return dict(self.label_names)
 
     @property
     def labels(self) -> tuple[str, ...]:
@@ -54,7 +65,7 @@ class PromptBuilder:
     def label_token_ids(self) -> dict[str, tuple[int, ...]]:
         result: dict[str, tuple[int, ...]] = {}
         for label in self.labels:
-            ids = tuple(self.tokenizer.encode(label, add_special_tokens=False))
+            ids = tuple(self.tokenizer.encode(self.answers[label], add_special_tokens=False))
             if not ids:
                 raise ValueError(f"Label {label!r} tokenized to an empty sequence.")
             result[label] = ids
@@ -62,18 +73,21 @@ class PromptBuilder:
 
     def _messages(self, article: str, instruction: str) -> list[dict[str, str]]:
         # article: the input text, whatever the task calls it (see input_heading).
-        mapping = "\n".join(
-            f"{label} = {class_name}" for label, class_name in self.label_names.items()
-        )
+        if self.answer_style == "letter":
+            mapping = "\n".join(
+                f"{label} = {class_name}" for label, class_name in self.label_names.items()
+            )
+            label_block = f"### Label mapping\n{mapping}\n\n"
+        else:
+            label_block = "### Labels\n" + "\n".join(self.label_names.values()) + "\n\n"
         user_content = (
             "### Editable instruction\n"
             f"{instruction}"
             "### End editable instruction\n\n"
-            "### Label mapping\n"
-            f"{mapping}\n\n"
+            f"{label_block}"
             f"### {self.input_heading}\n"
             f"{article}\n\n"
-            f"Respond with exactly one label: {label_list(self.labels)}."
+            f"Respond with exactly one label: {label_list(list(self.answers.values()))}."
         )
         return [
             {"role": "system", "content": self.system_prompt},

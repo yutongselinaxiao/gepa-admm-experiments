@@ -20,7 +20,7 @@ from pathlib import Path
 from typing import Any
 
 from .config import PilotConfig
-from .data import CLASS_ID_TO_LABEL, NewsExample, load_examples_json
+from .data import CLASS_ID_TO_LABEL, NewsExample, format_input, load_examples_json
 
 TASKS = {
     "agnews": ("configs/pilot.yaml", "artifacts/data"),
@@ -55,7 +55,7 @@ def prepare(task: str, per_class: int, seed: int) -> Path:
     examples = [
         NewsExample(
             example_id=f"official-train:{index}:report",
-            article=str(dataset[index][config.task.text_field]),
+            article=format_input(dataset[index], config.task.text_field, config.task.field_headings),
             gold_label=CLASS_ID_TO_LABEL[int(dataset[index][config.task.label_field])],
         )
         for index in chosen
@@ -114,6 +114,7 @@ def rescore(task: str, summary_path: str, output: str, batch_size: int, extra_ru
             label_names=config.prompt.label_names,
             enable_thinking=config.prompt.enable_thinking,
             input_heading=config.task.input_heading,
+            answer_style=config.prompt.answer_style,
         )
         for index, prompt in enumerate(prompts, start=1):
             summary_ = evaluator.evaluate(report, prompt, batch_size=batch_size)

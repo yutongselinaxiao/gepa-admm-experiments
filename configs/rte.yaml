@@ -1,0 +1,39 @@
+# Sentence-pair task (two text inputs): nyu-mll/glue rte (does the premise entail the hypothesis?).
+# Exercises task.text_field as a list. Same model and protocol as configs/pilot.yaml.
+model:
+  name_or_path: Qwen/Qwen3-1.7B
+  revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  local_files_only: true
+  local_snapshot_path: /home/xiaoyuto/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  dtype: bfloat16
+  device: cuda:0
+
+task:
+  name: "RTE"
+  dataset_config: "rte"
+  text_field: ["sentence1", "sentence2"]
+  field_headings: ["Premise", "Hypothesis"]
+  label_field: "label"
+  input_heading: "Sentence pair"
+  input_noun: "premise-hypothesis pair"
+  input_short: "pair"
+  focus: "whether the premise entails the hypothesis"
+
+prompt:
+  system_prompt: "You are a careful textual-entailment classifier. Follow the supplied label mapping and response format exactly."
+  seed_instruction: "Carefully determine whether the premise entails the hypothesis from the label mapping, ignore incidental details, and output only the corresponding capital letter."
+  label_names:
+    A: "Entailment"
+    B: "Not entailment"
+  enable_thinking: false
+
+data:
+  dataset_name: nyu-mll/glue
+  seed: 20261002
+  train_size: 128
+  validation_size: 256
+
+manual_instructions:
+  - "Decide whether the hypothesis must be true given the premise, and answer with only one label letter."
+  - "Judge only what the premise states, not outside knowledge. Return exactly one label letter."
+  - "If the premise guarantees the hypothesis, answer entailment; otherwise answer not entailment. Output its mapped letter only."

@@ -24,6 +24,14 @@ class NewsExample:
             raise ValueError("Article text must not be empty.")
 
 
+def format_input(row: Any, text_field: str | Sequence[str], field_headings: Sequence[str] = ()) -> str:
+    """The model input for one dataset row: one field as is, or several fields as "Heading: value" lines."""
+    if isinstance(text_field, str):
+        return str(row[text_field])
+    headings = list(field_headings) or list(text_field)
+    return "\n".join(f"{heading}: {row[field]}" for heading, field in zip(headings, text_field))
+
+
 def load_examples_json(path: str | Path) -> list[NewsExample]:
     with Path(path).open("r", encoding="utf-8") as handle:
         rows: list[dict[str, Any]] = json.load(handle)
@@ -65,8 +73,9 @@ def load_ag_news_development_splits(
     *,
     num_classes: int = 4,
     dataset_config: str | None = None,
-    text_field: str = "text",
+    text_field: str | Sequence[str] = "text",
     label_field: str = "label",
+    field_headings: Sequence[str] = (),
 ) -> tuple[list[NewsExample], list[NewsExample]]:
     """Load only the official training split and create disjoint stratified splits.
 
@@ -85,7 +94,7 @@ def load_ag_news_development_splits(
         return [
             NewsExample(
                 example_id=f"official-train:{index}:{split_name}",
-                article=str(dataset[index][text_field]),
+                article=format_input(dataset[index], text_field, field_headings),
                 gold_label=CLASS_ID_TO_LABEL[int(dataset[index][label_field])],
             )
             for index in indices
