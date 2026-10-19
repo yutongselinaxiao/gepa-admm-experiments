@@ -265,16 +265,16 @@ class CommonEvaluator:
         slot_embeddings: torch.Tensor,
     ) -> torch.Tensor:
         """Score a shared soft slot while preserving gradients to `slot_embeddings`."""
-        if not self._all_labels_are_single_token():
-            raise NotImplementedError(
-                "Differentiable slot scoring currently requires single-token labels."
-            )
         encodings = [
             self.prompt_builder.encode(example.article, instruction) for example in examples
         ]
         inputs_embeds, attention_mask, last_positions = self._compose_slot_embedding_batch(
             encodings, slot_embeddings
         )
+        if not self._all_labels_are_single_token():
+            key_bias = torch.where(attention_mask.bool(), 0.0, torch.finfo(torch.float32).min)
+            positions = torch.arange(inputs_embeds.shape[1], device=self.device)[None].expand(len(encodings), -1)
+            return self._label_sequence_scores(inputs_embeds, key_bias, positions, last_positions)
         return self._single_token_scores_from_embeddings(
             inputs_embeds, attention_mask, last_positions
         )
@@ -293,8 +293,6 @@ class CommonEvaluator:
         later tokens shift back by one position). Gradients reach `slot_embeddings` and, through the
         attention mask, `log_gates`. The prefix and suffix come from `reference_instruction`.
         """
-        if not self._all_labels_are_single_token():
-            raise NotImplementedError("Gated slot scoring requires single-token labels.")
         if slot_embeddings.ndim != 2 or log_gates.shape != (slot_embeddings.shape[0],):
             raise ValueError("Need slot_embeddings [n, hidden] and log_gates [n].")
         encodings = [self.prompt_builder.encode(example.article, reference_instruction) for example in examples]
@@ -309,7 +307,7 @@ class CommonEvaluator:
         lengths = [len(e.prefix_ids) + n + len(e.suffix_ids) for e in encodings]
         total = max(lengths)
         pad_embedding = embedding_layer(torch.tensor([int(self.tokenizer.pad_token_id)], device=self.device)).detach()
-        rows, positions, masks, last_positions = [], [], [], []
+        rows, positions, masks, last_positions, key_biases = [], [], [], [], []
         causal = torch.ones(total, total, dtype=torch.bool, device=self.device).tril()
         for encoding, length in zip(encodings, lengths):
             p, s = len(encoding.prefix_ids), len(encoding.suffix_ids)
@@ -332,6 +330,11 @@ class CommonEvaluator:
             positions.append(position)
             masks.append(mask)
             last_positions.append(length - 1)
+            key_biases.append(torch.where(torch.arange(total, device=self.device) < length, bias,
+                                          torch.finfo(torch.float32).min))
+        if not self._all_labels_are_single_token():
+            return self._label_sequence_scores(torch.stack(rows), torch.stack(key_biases), torch.stack(positions),
+                                               torch.tensor(last_positions, device=self.device))
         inputs_embeds = torch.stack(rows)
         attention_mask = torch.stack(masks).unsqueeze(1).to(dtype)
         label_ids = torch.tensor([self.label_token_ids[label][0] for label in self.labels], device=self.device)
@@ -353,10 +356,6 @@ class CommonEvaluator:
         """Score explicit slot token IDs without decoding and re-tokenizing them."""
         if not examples:
             raise ValueError("At least one example is required.")
-        if not self._all_labels_are_single_token():
-            raise NotImplementedError(
-                "Fixed-slot ID scoring currently requires single-token labels."
-            )
         if isinstance(slot_ids, torch.Tensor):
             discrete_ids = tuple(int(item) for item in slot_ids.detach().cpu().tolist())
         else:
@@ -379,6 +378,9 @@ class CommonEvaluator:
             encoding.prefix_ids + discrete_ids + encoding.suffix_ids
             for encoding in encodings
         ]
+        if not self._all_labels_are_single_token():
+            with torch.inference_mode():
+                return self._ids_label_sequence_scores(rows).detach().cpu()
         max_length = max(map(len, rows))
         input_ids = torch.full(
             (len(rows), max_length),
@@ -405,6 +407,76 @@ class CommonEvaluator:
 
     def _all_labels_are_single_token(self) -> bool:
         return all(len(ids) == 1 for ids in self.label_token_ids.values())
+
+    def _label_sequence_scores(
+        self,
+        inputs_embeds: torch.Tensor,
+        key_bias: torch.Tensor,
+        positions: torch.Tensor,
+        last_positions: torch.Tensor,
+    ) -> torch.Tensor:
+        """Summed teacher-forced log-likelihood of every label's token sequence, [batch, labels].
+
+        inputs_embeds: right-padded prompts [B, T, d] (gradients allowed). key_bias: [B, T] additive
+        attention bias per key (0 = attend, very negative = padding, log g for gated slots).
+        positions: [B, T] (float allowed). last_positions: [B] index of each prompt's last token.
+        The prompt runs once; its KV cache is repeated per label and only the label tokens after the
+        first are run on top, and logits are computed only at the positions that predict label tokens.
+        """
+        batch, length, _ = inputs_embeds.shape
+        device, dtype = inputs_embeds.device, inputs_embeds.dtype
+        negative = torch.finfo(torch.float32).min
+        index = torch.arange(length, device=device)
+        allowed = (index[None, :] <= index[:, None])[None] & (index[None, None, :] <= last_positions[:, None, None])
+        allowed = allowed | (index[None, :, None] == index[None, None, :])  # padded queries see themselves
+        mask = torch.where(allowed, key_bias.float()[:, None, :], negative)
+        output = self.model.model(inputs_embeds=inputs_embeds, attention_mask=mask[:, None].to(dtype),
+                                  position_ids=positions, use_cache=True)
+        rows = torch.arange(batch, device=device)
+        first_log_probs = self.model.lm_head(output.last_hidden_state[rows, last_positions]).float().log_softmax(-1)
+        label_ids = [self.label_token_ids[label] for label in self.labels]
+        scores = first_log_probs[:, [ids[0] for ids in label_ids]]
+        extra = max(len(ids) for ids in label_ids) - 1
+        if extra == 0:
+            return scores
+        labels = len(label_ids)
+        continuation = torch.full((labels, extra), int(self.tokenizer.pad_token_id), device=device)
+        for k, ids in enumerate(label_ids):
+            if len(ids) > 1:
+                continuation[k, : len(ids) - 1] = torch.tensor(ids[:-1], device=device)
+        cache = output.past_key_values
+        cache.reorder_cache(rows.repeat_interleave(labels))
+        embeds = self.model.get_input_embeddings()(continuation).to(dtype).repeat(batch, 1, 1)
+        prompt_part = torch.where(index[None, :] <= last_positions[:, None], key_bias.float(), negative)
+        prompt_part = prompt_part.repeat_interleave(labels, 0)[:, None, :].expand(-1, extra, -1)
+        causal = torch.where(torch.ones(extra, extra, dtype=torch.bool, device=device).tril(), 0.0, negative)
+        mask2 = torch.cat((prompt_part, causal[None].expand(batch * labels, -1, -1)), dim=-1)
+        start = positions[rows, last_positions].float().repeat_interleave(labels)
+        positions2 = start[:, None] + 1 + torch.arange(extra, device=device, dtype=torch.float32)[None]
+        if not torch.is_floating_point(positions):
+            positions2 = positions2.long()
+        hidden = self.model.model(inputs_embeds=embeds, attention_mask=mask2[:, None].to(dtype),
+                                  position_ids=positions2, past_key_values=cache, use_cache=False).last_hidden_state
+        log_probs = self.model.lm_head(hidden).float().log_softmax(-1).view(batch, labels, extra, -1)
+        tail = []
+        for k, ids in enumerate(label_ids):
+            term = torch.zeros(batch, device=device)
+            for j, token in enumerate(ids[1:]):
+                term = term + log_probs[:, k, j, token]
+            tail.append(term)
+        return scores + torch.stack(tail, dim=1)
+
+    def _ids_label_sequence_scores(self, rows: Sequence[Sequence[int]]) -> torch.Tensor:
+        """_label_sequence_scores for explicit token-ID prompts (no gradients needed by callers)."""
+        width = max(map(len, rows))
+        ids = torch.full((len(rows), width), int(self.tokenizer.pad_token_id), device=self.device)
+        key_bias = torch.full((len(rows), width), torch.finfo(torch.float32).min, device=self.device)
+        for r, row in enumerate(rows):
+            ids[r, : len(row)] = torch.tensor(row, device=self.device)
+            key_bias[r, : len(row)] = 0.0
+        positions = torch.arange(width, device=self.device)[None].expand(len(rows), -1)
+        last = torch.tensor([len(row) - 1 for row in rows], device=self.device)
+        return self._label_sequence_scores(self.model.get_input_embeddings()(ids), key_bias, positions, last)
 
     def _multi_token_label_scores(self, encodings: Sequence[PromptEncoding]) -> torch.Tensor:
         rows: list[tuple[int, ...]] = []
@@ -460,7 +532,7 @@ class CommonEvaluator:
                     use_embeddings=False,
                 )
             else:
-                scores = self._multi_token_label_scores(encodings)
+                scores = self._ids_label_sequence_scores([encoding.input_ids for encoding in encodings])
         return encodings, scores.detach().cpu()
 
     def evaluate(
