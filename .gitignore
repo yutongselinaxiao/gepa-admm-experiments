@@ -18,4 +18,6 @@ artifacts/phase10/*
 !artifacts/phase10/jobs.jsonl
 artifacts/phase11_yahoo/*
 !artifacts/phase11_yahoo/jobs.jsonl
+artifacts/phase12_13/*
+!artifacts/phase12_13/jobs.jsonl
 artifacts/length_bench/*.log

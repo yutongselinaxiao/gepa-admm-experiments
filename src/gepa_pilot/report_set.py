@@ -29,6 +29,7 @@ TASKS = {
     "sst5": ("configs/sst5.yaml", "artifacts/data_sst5"),
     "dbpedia": ("configs/dbpedia.yaml", "artifacts/data_dbpedia"),
     "goemotions": ("configs/goemotions.yaml", "artifacts/data_goemotions"),
+    "agnews_names": ("configs/agnews_names.yaml", "artifacts/data"),
     "rte": ("configs/rte.yaml", "artifacts/data_rte"),
 }
 
