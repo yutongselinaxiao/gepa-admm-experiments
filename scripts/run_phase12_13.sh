@@ -2,8 +2,9 @@
 # Phases 12-13, run as one batch after Phase 11 (Yahoo) finishes:
 #   12: AG News answered with label names (multi-token answers; seed instruction ~80% vs ~30% with letters)
 #   13: GoEmotions, multi-label via binary relevance (8 emotions; report metric = example / micro / macro F1)
-# Core arms, 10 seeds each: A reflective (12), B matched reflective (30, held-out judge), C fair beam ADMM,
-# G gated, F multi-length with gradient insertion. Queue on GPUs 4-7 (GPU errors retried), then 2k re-scoring.
+# All eight arms, 10 seeds each: A reflective (12), B matched reflective (30, held-out judge), C fair beam ADMM,
+# E fair reflect-then-polish, G gated, F multi-length with gradient insertion, I multi-start (3), H fixed beam
+# with 36 proposals. Queue on GPUs 4-7 (GPU errors retried), then 2k re-scoring.
 set -u
 cd "$(dirname "$0")/.."
 PY=/dataMeR2/yutong/envs/myenv/bin/python
