@@ -20,4 +20,7 @@ artifacts/phase11_yahoo/*
 !artifacts/phase11_yahoo/jobs.jsonl
 artifacts/phase12_13/*
 !artifacts/phase12_13/jobs.jsonl
+artifacts/phase14_goemotions_f1/*
+!artifacts/phase14_goemotions_f1/jobs.jsonl
+!artifacts/phase14_goemotions_f1/smoke_jobs.jsonl
 artifacts/length_bench/*.log
