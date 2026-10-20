@@ -18,7 +18,9 @@ class NewsExample:
     gold_label: str
 
     def __post_init__(self) -> None:
-        if self.gold_label not in LABEL_TO_CLASS_ID:
+        # One letter for single-label tasks; for multi-label tasks, the letters of all gold classes ("BG").
+        letters = self.gold_label
+        if not letters or any(c not in LABEL_TO_CLASS_ID for c in letters) or len(set(letters)) != len(letters):
             raise ValueError(f"Unsupported gold label: {self.gold_label!r}")
         if not self.article.strip():
             raise ValueError("Article text must not be empty.")
@@ -122,78 +124,56 @@ def load_ag_news_test_split(dataset_name: str, *, allow_test: bool = False) -> l
     ]
 
 
-def pair_id(index: int, split: str, class_position: int) -> str:
-    """Example id of one (text, candidate class) pair in a multi-label task."""
-    return f"official-train:{index}:{split}:{class_position}"
+def multilabel_example(row: Any, index: int, split: str, task: Any) -> NewsExample:
+    """One multi-label example: the text, and the letters of its gold classes among task.class_ids."""
+    gold = sorted(task.class_ids.index(c) for c in row[task.label_field] if c in task.class_ids)
+    return NewsExample(
+        example_id=f"official-train:{index}:{split}",
+        article=format_input(row, task.text_field, task.field_headings),
+        gold_label="".join(CLASS_ID_TO_LABEL[k] for k in gold),
+    )
 
 
-def text_index(example_id: str) -> int:
-    return int(example_id.split(":")[1])
-
-
-def multilabel_pairs(row: Any, index: int, split: str, task: Any, positions: Sequence[int]) -> list[NewsExample]:
-    """Binary-relevance examples for one text: one per candidate class position (A = applies, B = not)."""
-    gold = {task.class_ids.index(c) for c in row[task.label_field] if c in task.class_ids}
-    text = format_input(row, task.text_field, task.field_headings)
-    return [
-        NewsExample(
-            example_id=pair_id(index, split, k),
-            article=f"{text}\n{task.candidate_heading}: {task.class_names[k]}",
-            gold_label="A" if k in gold else "B",
-        )
-        for k in positions
-    ]
+def sample_multilabel_texts(labels: Sequence[Sequence[int]], task: Any, count: int, rng: random.Random,
+                            exclude: set[int] = frozenset()) -> list[int]:
+    """Indices of `count` texts with at least one of task.class_ids, a multi_label_share of them with two or more."""
+    wanted = set(task.class_ids)
+    multi = [i for i, l in enumerate(labels) if len(set(l) & wanted) >= 2 and i not in exclude]
+    single = [i for i, l in enumerate(labels) if len(set(l) & wanted) == 1 and i not in exclude]
+    rng.shuffle(multi)
+    rng.shuffle(single)
+    n_multi = round(count * task.multi_label_share)
+    chosen = multi[:n_multi] + single[: count - n_multi]
+    rng.shuffle(chosen)
+    return chosen
 
 
 def load_multilabel_splits(
     dataset_name: str, dataset_config: str | None, task: Any, train_texts: int, validation_texts: int, seed: int,
 ) -> tuple[list[NewsExample], list[NewsExample]]:
-    """Multi-label development splits as balanced binary-relevance pairs (see TaskConfig.multi_label).
-
-    Texts with at least one of task.class_ids are sampled (a multi_label_share of them with two or more);
-    each text gets its true classes plus an equal number of randomly drawn false ones."""
+    """Multi-label development splits: one example per text, gold_label = letters of its classes."""
     from datasets import load_dataset
 
     dataset = load_dataset(dataset_name, dataset_config, split="train")
-    wanted = set(task.class_ids)
-    counts = [len(set(labels) & wanted) for labels in dataset[task.label_field]]
-    rng = random.Random(seed)
-    multi = [i for i, n in enumerate(counts) if n >= 2]
-    single = [i for i, n in enumerate(counts) if n == 1]
-    rng.shuffle(multi)
-    rng.shuffle(single)
-    total = train_texts + validation_texts
-    n_multi = round(total * task.multi_label_share)
-    chosen = multi[:n_multi] + single[: total - n_multi]
-    rng.shuffle(chosen)
-
-    def expand(indices: Sequence[int], split: str) -> list[NewsExample]:
-        pairs: list[NewsExample] = []
-        for index in indices:
-            row = dataset[index]
-            positives = [task.class_ids.index(c) for c in row[task.label_field] if c in wanted]
-            negatives = [k for k in range(len(task.class_ids)) if k not in positives]
-            rng.shuffle(negatives)
-            pairs += multilabel_pairs(row, index, split, task, sorted(positives + negatives[: len(positives)]))
-        return pairs
-
-    return expand(chosen[:train_texts], "train"), expand(chosen[train_texts:], "validation")
+    chosen = sample_multilabel_texts(dataset[task.label_field], task, train_texts + validation_texts, random.Random(seed))
+    return ([multilabel_example(dataset[i], i, "train", task) for i in chosen[:train_texts]],
+            [multilabel_example(dataset[i], i, "validation", task) for i in chosen[train_texts:]])
 
 
 def split_selection_report(
-    examples: Sequence[NewsExample], seed: int
+    examples: Sequence[NewsExample], seed: int, *, multi_label: bool = False
 ) -> tuple[list[NewsExample], list[NewsExample]]:
     """Class-stratified half split: GEPA selects on the first half, results are reported on the second.
 
     Reporting on examples that no selection step saw removes the best-of-k optimism that
     arises when the same set both chooses the winning candidate and scores it.
     """
-    if all(example.example_id.count(":") == 3 for example in examples):  # multi-label pairs: split by text
-        texts = sorted({text_index(example.example_id) for example in examples})
-        random.Random(seed).shuffle(texts)
-        chosen = set(texts[: len(texts) // 2])
-        selection = [example for example in examples if text_index(example.example_id) in chosen]
-        return selection, [example for example in examples if text_index(example.example_id) not in chosen]
+    if multi_label:  # gold label sets are too varied to stratify: random halves
+        ids = sorted(example.example_id for example in examples)
+        random.Random(seed).shuffle(ids)
+        chosen = set(ids[: len(ids) // 2])
+        selection = [example for example in examples if example.example_id in chosen]
+        return selection, [example for example in examples if example.example_id not in chosen]
     by_label: dict[str, list[NewsExample]] = {}
     for example in sorted(examples, key=lambda item: item.example_id):
         by_label.setdefault(example.gold_label, []).append(example)

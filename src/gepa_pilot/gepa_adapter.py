@@ -54,6 +54,16 @@ class AGNewsGEPAAdapter(
         self.examples_scored = 0
 
     def _diagnostic(self, predicted: str, gold: str) -> str:
+        classes = self.evaluator.multi_label_classes
+        if classes:  # multi-label: predicted / gold are letter sets over the candidate classes
+            from .data import LABEL_TO_CLASS_ID
+
+            name = lambda letters: ", ".join(classes[LABEL_TO_CLASS_ID[c]] for c in letters) or "none"  # noqa: E731
+            missed, extra = [c for c in gold if c not in predicted], [c for c in predicted if c not in gold]
+            if not missed and not extra:
+                return f"Correctly identified all expressed classes ({name(gold)})."
+            return (f"Predicted classes: {name(predicted)}. Gold classes: {name(gold)}. Missed: {name(missed)}. "
+                    f"Wrongly added: {name(extra)}. Revise the general decision rule for {self.focus}.")
         names = self.evaluator.prompt_builder.label_names
         if predicted == gold:
             return f"Correctly classified the article as {gold} ({names[gold]})."

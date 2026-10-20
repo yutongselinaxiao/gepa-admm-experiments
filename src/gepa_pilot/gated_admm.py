@@ -26,7 +26,8 @@ from typing import Any, Sequence
 import torch
 import torch.nn.functional as F
 
-from .admm import ADMMRefiner, gold_indices
+from . import objective
+from .admm import ADMMRefiner
 from .data import NewsExample
 
 
@@ -70,8 +71,7 @@ class GatedADMMRefiner:
         """Insert spare slots before the most loss-sensitive positions (never after the final token)."""
         evaluator = self.evaluator
         e = self.embedding_weight.index_select(0, parent_ids).detach().float().clone().requires_grad_(True)
-        targets = gold_indices(batch, evaluator.labels, evaluator.device)
-        F.cross_entropy(evaluator.score_slot_embeddings(batch, parent, e).float(), targets).backward()
+        objective.task_loss(evaluator, batch, evaluator.score_slot_embeddings(batch, parent, e)).backward()
         saliency = e.grad.norm(dim=1)[:-1].cpu()
         spare_before = set(saliency.argsort(descending=True)[: self.config.spare_slots].tolist())
         ids = parent_ids.cpu().tolist()
@@ -108,7 +108,6 @@ class GatedADMMRefiner:
 
     def step(self, state: GatedState, batch: Sequence[NewsExample]) -> float:
         cfg, device = self.config, self.evaluator.device
-        targets = gold_indices(batch, self.evaluator.labels, device)
         kept = torch.tensor([t is not None for t in state.z], dtype=torch.float32, device=device)
         ez = self.embedding_weight.index_select(
             0, torch.tensor([t if t is not None else 0 for t in state.z], device=device)
@@ -119,7 +118,7 @@ class GatedADMMRefiner:
             scores = self.evaluator.score_gated_slot_embeddings(
                 batch, state.reference_instruction, state.e, F.logsigmoid(state.a)
             )
-            task = F.cross_entropy(scores.float(), targets)
+            task = objective.task_loss(self.evaluator, batch, scores)
             penalty = 0.5 * self.hp.rho * (kept[:, None] * (state.e - ez + state.u)).square().sum()
             gate_penalty = 0.5 * cfg.gate_rho * (state.a.sigmoid() - kept + state.v).square().sum()
             (task + penalty + gate_penalty).backward()

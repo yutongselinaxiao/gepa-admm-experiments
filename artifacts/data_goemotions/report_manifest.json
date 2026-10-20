@@ -4,7 +4,7 @@
   "official_test_examples_used": false,
   "excluded_indices": "all indices used by train.json and validation.json",
   "per_class": 250,
-  "size": 2000,
+  "size": 250,
   "seed": 20261015,
-  "file_sha256": "288c3d8d0e49bcf5c022b7f9c2a100a585a4932aa3d14018a09173c0b0bd5727"
+  "file_sha256": "fc6b6f9fe3ebb0ea7329c49675b5816eb8dba471065acbcb1d2cf24a32f965a4"
 }

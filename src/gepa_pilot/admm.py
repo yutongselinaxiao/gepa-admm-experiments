@@ -11,6 +11,7 @@ import torch.nn.functional as F
 
 from .data import NewsExample
 from .evaluator import CommonEvaluator
+from . import objective
 
 
 @dataclass(frozen=True)
@@ -349,7 +350,6 @@ class ADMMRefiner:
         class_weights (one per label) turns the task loss into a class-weighted mean
         cross-entropy; None keeps the plain mean exactly as before.
         """
-        targets = gold_indices(batch, self.evaluator.labels, self.evaluator.device)
         ez_current = self.embedding_weight.index_select(0, state.z).detach().float()
         last_task_loss = math.nan
         for _ in range(self.hp.e_steps):
@@ -357,12 +357,7 @@ class ADMMRefiner:
             scores = self.evaluator.score_slot_embeddings(
                 batch, state.reference_instruction, state.e
             )
-            if class_weights is None:
-                task_loss = F.cross_entropy(scores.float(), targets)
-            else:
-                weights = class_weights.to(scores.device)[targets]
-                per_example = F.cross_entropy(scores.float(), targets, reduction="none")
-                task_loss = (weights * per_example).sum() / weights.sum()
+            task_loss = objective.task_loss(self.evaluator, batch, scores, class_weights)
             penalty = 0.5 * self.hp.rho * (state.e - ez_current + state.u).square().sum()
             (task_loss + penalty).backward()
             state.optimizer.step()
@@ -494,12 +489,11 @@ class ADMMRefiner:
     def discrete_metrics(
         self, state: ADMMState, ids: torch.Tensor, examples: Sequence[NewsExample]
     ) -> tuple[float, float]:
-        """Mean label cross-entropy and accuracy of explicit slot IDs, in one forward batch."""
+        """Mean task loss and metric of explicit slot IDs, in one forward batch: cross-entropy and accuracy,
+        or (1 - soft F1) and example F1 for multi-label tasks (objective.py)."""
         scores = self.evaluator.score_fixed_slot_ids(
             examples, state.reference_instruction, ids
         ).detach().float().cpu()
         state.forward_calls += 1
-        targets = gold_indices(examples, self.evaluator.labels, torch.device("cpu"))
-        loss = float(F.cross_entropy(scores, targets))
-        accuracy = float(scores.argmax(dim=-1).eq(targets).float().mean())
-        return loss, accuracy
+        loss = float(objective.task_loss(self.evaluator, examples, scores))
+        return loss, float(objective.metric(self.evaluator, examples, scores))

@@ -30,7 +30,8 @@ import torch
 
 import torch.nn.functional as F
 
-from .admm import ADMMRefiner, decode_and_check_slot, gold_indices
+from . import objective
+from .admm import ADMMRefiner, decode_and_check_slot
 from .gated_admm import GatedADMMRefiner, GatedConfig
 from .data import NewsExample
 
@@ -423,8 +424,6 @@ class ADMMProposer:
         likely token. Restricting to likely tokens keeps the insertion fluent."""
         evaluator = self.refiner.evaluator
         weight = self.refiner.embedding_weight
-        targets = gold_indices(batch, evaluator.labels, evaluator.device)
-        check_targets = gold_indices(check, evaluator.labels, evaluator.device)
         reference = state.reference_instruction
         candidates: list[list[int]] = []
         for position in positions:
@@ -436,7 +435,7 @@ class ADMMProposer:
             e = weight.index_select(0, torch.tensor(trial, device=evaluator.device)).detach().float()
             e.requires_grad_(True)
             scores = evaluator.score_gated_slot_embeddings(batch, reference, e, torch.zeros(len(trial)))
-            F.cross_entropy(scores.float(), targets).backward()
+            objective.task_loss(evaluator, batch, scores).backward()
             state.forward_calls += 2
             state.backward_calls += 1
             with torch.no_grad():  # gradient ranking among the LM's 64 most likely allowed tokens
@@ -456,7 +455,7 @@ class ADMMProposer:
                     check, reference, weight.index_select(0, trial_ids).float(), torch.zeros(len(trial))
                 )
             state.forward_calls += 1
-            loss = float(F.cross_entropy(scores.float(), check_targets))
+            loss = float(objective.task_loss(evaluator, check, scores))
             if loss < best_loss:
                 best, best_loss = trial, loss
         return best
@@ -474,8 +473,7 @@ class ADMMProposer:
         evaluator = self.refiner.evaluator
         batch = training[: self.refiner.hp.train_batch_size]
         e = self.refiner.embedding_weight.index_select(0, parent_ids).detach().float().clone().requires_grad_(True)
-        targets = gold_indices(batch, evaluator.labels, evaluator.device)
-        loss = F.cross_entropy(evaluator.score_slot_embeddings(batch, state.reference_instruction, e).float(), targets)
+        loss = objective.task_loss(evaluator, batch, evaluator.score_slot_embeddings(batch, state.reference_instruction, e))
         loss.backward()
         state.forward_calls += 1
         state.backward_calls += 1

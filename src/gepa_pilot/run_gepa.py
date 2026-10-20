@@ -49,6 +49,10 @@ def reflection_prompt_template(config: PilotConfig) -> str:
     mapping = "\n".join(f"- {label} = {name}" for label, name in config.prompt.label_names.items())
     classes = _NUMBER_WORDS.get(len(labels), str(len(labels)))
     by_name = config.prompt.answer_style == "name"
+    multilabel_note = (  # multi-label: each text is checked against every candidate class
+        f"\n- Each {task.input_short} is checked once per candidate class ({', '.join(task.class_names)}); the score is "
+        f"the F1 between the classes answered {next(iter(config.prompt.label_names))} and the gold classes."
+        if task.multi_label else "")
     if by_name:  # the classifier answers with the label name itself
         mapping = "\n".join(f"- {name}" for name in config.prompt.label_names.values())
         response = f"exactly one label name: {label_list(list(config.prompt.label_names.values()))}"
@@ -61,7 +65,7 @@ def reflection_prompt_template(config: PilotConfig) -> str:
 The task interface is immutable:
 {mapping}
 - The classifier receives one {task.input_noun} and must output {response}.
-- The label {'list' if by_name else 'mapping'} and response format are supplied elsewhere in the fixed prompt. Do not alter, reorder, or invent labels.
+- The label {'list' if by_name else 'mapping'} and response format are supplied elsewhere in the fixed prompt. Do not alter, reorder, or invent labels.{multilabel_note}
 
 Current editable instruction:
 ```
@@ -226,7 +230,9 @@ def main() -> None:
     if args.selection_split:
         if args.skip_posthoc_audit:
             raise ValueError("--selection-split reports through the post-hoc audit; do not skip it.")
-        gepa_valset, report_set = split_selection_report(validation, seed=config.data.seed)
+        gepa_valset, report_set = split_selection_report(
+            validation, seed=config.data.seed, multi_label=config.task.multi_label
+        )
     if any(item.example_id.startswith("official-test:") for item in train + validation):
         raise AssertionError("GEPA optimization must not receive official test examples.")
 
@@ -249,6 +255,8 @@ def main() -> None:
         enable_thinking=config.prompt.enable_thinking,
         input_heading=config.task.input_heading,
         answer_style=config.prompt.answer_style,
+        multi_label_classes=config.task.class_names if config.task.multi_label else (),
+        candidate_heading=config.task.candidate_heading,
     )
     adapter = AGNewsGEPAAdapter(
         evaluator, evaluation_batch_size=args.evaluation_batch_size, focus=config.task.focus

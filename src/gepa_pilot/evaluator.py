@@ -60,6 +60,8 @@ class CommonEvaluator:
         prompt_builder: PromptBuilder,
         *,
         device: str,
+        multi_label_classes: Sequence[str] = (),
+        candidate_heading: str = "Candidate label",
     ) -> None:
         self.model = model.eval()
         self.tokenizer = tokenizer
@@ -67,6 +69,12 @@ class CommonEvaluator:
         self.device = torch.device(device)
         self.labels = prompt_builder.labels
         self.label_token_ids = prompt_builder.label_token_ids()
+        # Multi-label tasks (binary relevance): an example is a text whose gold_label holds the letters of all
+        # its classes; scoring pairs it with every class name ("<heading>: <name>") and asks the binary question.
+        self.multi_label_classes: tuple[str, ...] = tuple(multi_label_classes)
+        self.candidate_heading = candidate_heading
+        if self.multi_label_classes and len(self.labels) != 2:
+            raise ValueError("Multi-label scoring needs two binary labels (A = applies, B = does not).")
         if self.tokenizer.pad_token_id is None:
             if self.tokenizer.eos_token_id is None:
                 raise ValueError("Tokenizer defines neither a pad token nor an EOS token.")
@@ -98,6 +106,8 @@ class CommonEvaluator:
         enable_thinking: bool,
         input_heading: str = "Article",
         answer_style: str = "letter",
+        multi_label_classes: Sequence[str] = (),
+        candidate_heading: str = "Candidate label",
     ) -> "CommonEvaluator":
         from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -123,7 +133,8 @@ class CommonEvaluator:
             input_heading=input_heading,
             answer_style=answer_style,
         )
-        return cls(model, tokenizer, builder, device=device)
+        return cls(model, tokenizer, builder, device=device, multi_label_classes=multi_label_classes,
+                   candidate_heading=candidate_heading)
 
     def _batch_encodings(
         self, encodings: Sequence[PromptEncoding]
@@ -260,7 +271,7 @@ class CommonEvaluator:
             torch.tensor(last_positions, dtype=torch.long, device=self.device),
         )
 
-    def score_slot_embeddings(
+    def _score_slot_embeddings(
         self,
         examples: Sequence[NewsExample],
         instruction: str,
@@ -281,7 +292,7 @@ class CommonEvaluator:
             inputs_embeds, attention_mask, last_positions
         )
 
-    def score_gated_slot_embeddings(
+    def _score_gated_slot_embeddings(
         self,
         examples: Sequence[NewsExample],
         reference_instruction: str,
@@ -349,7 +360,7 @@ class CommonEvaluator:
         batch_indices = torch.arange(len(rows), device=self.device)
         return outputs.logits[batch_indices, position_lookup].index_select(-1, label_ids).float()
 
-    def score_fixed_slot_ids(
+    def _score_fixed_slot_ids(
         self,
         examples: Sequence[NewsExample],
         reference_instruction: str,
@@ -406,6 +417,49 @@ class CommonEvaluator:
                 use_embeddings=False,
             )
         return scores.detach().cpu()
+
+    # ----- public scoring: single-label scores [examples, labels]; multi-label log-odds [examples, classes] -----
+    def _pairs(self, examples: Sequence[NewsExample]) -> list[NewsExample]:
+        return [NewsExample(example_id=f"{e.example_id}#{k}", article=f"{e.article}\n{self.candidate_heading}: {name}",
+                            gold_label=self.labels[1])
+                for e in examples for k, name in enumerate(self.multi_label_classes)]
+
+    def _log_odds(self, pair_scores: torch.Tensor, count: int) -> torch.Tensor:
+        """Binary label scores of the pairs [count * classes, 2] -> log-odds that each class applies."""
+        return (pair_scores[:, 0] - pair_scores[:, 1]).float().reshape(count, len(self.multi_label_classes))
+
+    def score_slot_embeddings(self, examples: Sequence[NewsExample], instruction: str,
+                              slot_embeddings: torch.Tensor) -> torch.Tensor:
+        """Score a shared soft slot while preserving gradients to `slot_embeddings`."""
+        if self.multi_label_classes:
+            return self._log_odds(self._score_slot_embeddings(self._pairs(examples), instruction, slot_embeddings),
+                                  len(examples))
+        return self._score_slot_embeddings(examples, instruction, slot_embeddings)
+
+    def score_gated_slot_embeddings(self, examples: Sequence[NewsExample], reference_instruction: str,
+                                    slot_embeddings: torch.Tensor, log_gates: torch.Tensor) -> torch.Tensor:
+        """Gated soft slot (see _score_gated_slot_embeddings); gradients reach embeddings and gates."""
+        if self.multi_label_classes:
+            return self._log_odds(self._score_gated_slot_embeddings(
+                self._pairs(examples), reference_instruction, slot_embeddings, log_gates), len(examples))
+        return self._score_gated_slot_embeddings(examples, reference_instruction, slot_embeddings, log_gates)
+
+    def score_fixed_slot_ids(self, examples: Sequence[NewsExample], reference_instruction: str,
+                             slot_ids: Sequence[int] | torch.Tensor) -> torch.Tensor:
+        """Score explicit slot token IDs without decoding and re-tokenizing them."""
+        if self.multi_label_classes:
+            return self._log_odds(self._score_fixed_slot_ids(self._pairs(examples), reference_instruction, slot_ids),
+                                  len(examples))
+        return self._score_fixed_slot_ids(examples, reference_instruction, slot_ids)
+
+    def score_examples(self, examples: Sequence[NewsExample], instruction: str
+                       ) -> tuple[list[PromptEncoding], torch.Tensor]:
+        """Prompt encodings (the first pair's, for multi-label) and label scores / log-odds."""
+        if self.multi_label_classes:
+            encodings, scores = self._score_examples(self._pairs(examples), instruction)
+            k = len(self.multi_label_classes)
+            return encodings[::k], self._log_odds(scores, len(examples))
+        return self._score_examples(examples, instruction)
 
     def _all_labels_are_single_token(self) -> bool:
         return all(len(ids) == 1 for ids in self.label_token_ids.values())
@@ -516,7 +570,7 @@ class CommonEvaluator:
             scores.append(score)
         return torch.stack(scores).reshape(len(encodings), len(self.labels))
 
-    def score_examples(
+    def _score_examples(
         self, examples: Sequence[NewsExample], instruction: str
     ) -> tuple[list[PromptEncoding], torch.Tensor]:
         if not examples:
@@ -564,6 +618,8 @@ class CommonEvaluator:
                 return self._summarize_records(instruction, records)
 
         encodings, scores = self.score_examples(examples, instruction)
+        if self.multi_label_classes:
+            return self._summarize_records(instruction, self._multilabel_records(examples, encodings, scores))
         log_probabilities = scores.log_softmax(dim=-1)
         predictions = scores.argmax(dim=-1).tolist()
         records: list[EvaluationRecord] = []
@@ -607,11 +663,51 @@ class CommonEvaluator:
 
         return self._summarize_records(instruction, records)
 
+    def _multilabel_records(self, examples, encodings, log_odds) -> list[EvaluationRecord]:
+        """Multi-label records: predicted_label = letters of predicted classes; correct = the text's F1;
+        loss = 1 - soft F1 (see objective.py)."""
+        from .data import CLASS_ID_TO_LABEL, LABEL_TO_CLASS_ID
+        from .objective import hard_f1, soft_f1
+
+        records = []
+        for row, (example, encoding) in enumerate(zip(examples, encodings)):
+            predicted = {k for k in range(log_odds.shape[1]) if log_odds[row, k] > 0}
+            gold = {LABEL_TO_CLASS_ID[c] for c in example.gold_label}
+            y = torch.zeros(1, log_odds.shape[1])
+            y[0, sorted(gold)] = 1.0
+            loss = float(1 - soft_f1(log_odds[row : row + 1], y))
+            f1 = hard_f1(predicted, gold)
+            predicted_label = "".join(CLASS_ID_TO_LABEL[k] for k in sorted(predicted))
+            records.append(EvaluationRecord(
+                example_id=example.example_id, gold_label=example.gold_label, predicted_label=predicted_label,
+                label_scores={CLASS_ID_TO_LABEL[k]: float(log_odds[row, k]) for k in range(log_odds.shape[1])},
+                gold_log_probability=-loss, loss=loss, correct=f1,
+                prompt_token_count=len(encoding.input_ids), answer_position=encoding.answer_position,
+                error_tag="correct" if predicted == gold else f"{example.gold_label}->{predicted_label or '-'}",
+            ))
+        return records
+
     def _summarize_records(
         self, instruction: str, records: Sequence[EvaluationRecord]
     ) -> EvaluationSummary:
         if not records:
             raise ValueError("At least one evaluation record is required.")
+        if self.multi_label_classes:  # accuracy = mean example F1; per-class entry = that class's F1
+            from .data import CLASS_ID_TO_LABEL
+
+            per_class: dict[str, float] = {}
+            for k in range(len(self.multi_label_classes)):
+                letter = CLASS_ID_TO_LABEL[k]
+                tp = sum(letter in r.predicted_label and letter in r.gold_label for r in records)
+                fp = sum(letter in r.predicted_label and letter not in r.gold_label for r in records)
+                fn = sum(letter not in r.predicted_label and letter in r.gold_label for r in records)
+                per_class[letter] = 2 * tp / (2 * tp + fp + fn) if tp + fp + fn else 1.0
+            return EvaluationSummary(
+                instruction=instruction,
+                accuracy=sum(r.correct for r in records) / len(records),
+                mean_loss=sum(r.loss for r in records) / len(records),
+                per_class_accuracy=per_class, confusion_matrix={}, records=tuple(records),
+            )
         confusion = {
             gold: {predicted: 0 for predicted in self.labels} for gold in self.labels
         }
