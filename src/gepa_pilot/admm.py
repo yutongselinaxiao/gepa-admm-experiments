@@ -354,16 +354,15 @@ class ADMMRefiner:
         last_task_loss = math.nan
         for _ in range(self.hp.e_steps):
             state.optimizer.zero_grad(set_to_none=True)
-            scores = self.evaluator.score_slot_embeddings(
-                batch, state.reference_instruction, state.e
+            last_task_loss = objective.backward_task_loss(
+                self.evaluator, batch,
+                lambda chunk: self.evaluator.score_slot_embeddings(chunk, state.reference_instruction, state.e),
+                extra_loss=lambda: 0.5 * self.hp.rho * (state.e - ez_current + state.u).square().sum(),
+                class_weights=class_weights,
             )
-            task_loss = objective.task_loss(self.evaluator, batch, scores, class_weights)
-            penalty = 0.5 * self.hp.rho * (state.e - ez_current + state.u).square().sum()
-            (task_loss + penalty).backward()
             state.optimizer.step()
             state.forward_calls += 1
             state.backward_calls += 1
-            last_task_loss = float(task_loss.detach())
 
         previous_z = state.z.clone()
         with torch.no_grad():

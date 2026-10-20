@@ -434,8 +434,8 @@ class ADMMProposer:
             trial = ids[:position] + [placeholder] + ids[position:]
             e = weight.index_select(0, torch.tensor(trial, device=evaluator.device)).detach().float()
             e.requires_grad_(True)
-            scores = evaluator.score_gated_slot_embeddings(batch, reference, e, torch.zeros(len(trial)))
-            objective.task_loss(evaluator, batch, scores).backward()
+            objective.backward_task_loss(evaluator, batch, lambda chunk: evaluator.score_gated_slot_embeddings(
+                chunk, reference, e, torch.zeros(len(trial))))
             state.forward_calls += 2
             state.backward_calls += 1
             with torch.no_grad():  # gradient ranking among the LM's 64 most likely allowed tokens
@@ -473,8 +473,8 @@ class ADMMProposer:
         evaluator = self.refiner.evaluator
         batch = training[: self.refiner.hp.train_batch_size]
         e = self.refiner.embedding_weight.index_select(0, parent_ids).detach().float().clone().requires_grad_(True)
-        loss = objective.task_loss(evaluator, batch, evaluator.score_slot_embeddings(batch, state.reference_instruction, e))
-        loss.backward()
+        objective.backward_task_loss(
+            evaluator, batch, lambda chunk: evaluator.score_slot_embeddings(chunk, state.reference_instruction, e))
         state.forward_calls += 1
         state.backward_calls += 1
         saliency = e.grad.norm(dim=1)[:-1].cpu()  # exclude the final token

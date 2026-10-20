@@ -71,7 +71,7 @@ class GatedADMMRefiner:
         """Insert spare slots before the most loss-sensitive positions (never after the final token)."""
         evaluator = self.evaluator
         e = self.embedding_weight.index_select(0, parent_ids).detach().float().clone().requires_grad_(True)
-        objective.task_loss(evaluator, batch, evaluator.score_slot_embeddings(batch, parent, e)).backward()
+        objective.backward_task_loss(evaluator, batch, lambda chunk: evaluator.score_slot_embeddings(chunk, parent, e))
         saliency = e.grad.norm(dim=1)[:-1].cpu()
         spare_before = set(saliency.argsort(descending=True)[: self.config.spare_slots].tolist())
         ids = parent_ids.cpu().tolist()
@@ -115,17 +115,19 @@ class GatedADMMRefiner:
         last = math.nan
         for _ in range(self.hp.e_steps):
             state.optimizer.zero_grad(set_to_none=True)
-            scores = self.evaluator.score_gated_slot_embeddings(
-                batch, state.reference_instruction, state.e, F.logsigmoid(state.a)
+            task = objective.backward_task_loss(
+                self.evaluator, batch,
+                lambda chunk: self.evaluator.score_gated_slot_embeddings(
+                    chunk, state.reference_instruction, state.e, F.logsigmoid(state.a)),
+                extra_loss=(
+                    lambda: 0.5 * self.hp.rho * (kept[:, None] * (state.e - ez + state.u)).square().sum(),
+                    lambda: 0.5 * cfg.gate_rho * (state.a.sigmoid() - kept + state.v).square().sum(),
+                ),
             )
-            task = objective.task_loss(self.evaluator, batch, scores)
-            penalty = 0.5 * self.hp.rho * (kept[:, None] * (state.e - ez + state.u)).square().sum()
-            gate_penalty = 0.5 * cfg.gate_rho * (state.a.sigmoid() - kept + state.v).square().sum()
-            (task + penalty + gate_penalty).backward()
             state.optimizer.step()
             state.forward_calls += 1
             state.backward_calls += 1
-            last = float(task.detach())
+            last = task
         with torch.no_grad():
             gates = state.a.sigmoid()
             state.z = self.project(state, state.e.detach() + state.u, gates + state.v)

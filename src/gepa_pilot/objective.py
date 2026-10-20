@@ -76,3 +76,41 @@ def metric(evaluator: Any, examples: Sequence[NewsExample], scores: torch.Tensor
         ) / len(examples)
     labels = evaluator.labels
     return sum(labels[int(scores[row].argmax())] == e.gold_label for row, e in enumerate(examples)) / len(examples)
+
+
+def backward_task_loss(
+    evaluator: Any,
+    examples: Sequence[NewsExample],
+    scores_fn: Any,
+    extra_loss: Any = None,
+    class_weights: torch.Tensor | None = None,
+    max_rows: int = 32,
+) -> float:
+    """Backpropagate mean task loss (+ extra_loss) and return the task loss.
+
+    Single-label: one forward and backward, exactly (task loss + extra loss).backward() as before.
+    Multi-label: each text is scored once per class, so the batch is split into chunks of at most
+    max_rows (text, class) prompts and the gradient is accumulated chunk by chunk; the loss is a mean
+    over texts, so the result is the same gradient with a fraction of the activation memory."""
+    # extra_loss: a tensor, a callable returning one, or a sequence of them. Callables are evaluated after
+    # the forward pass, so the autograd graph (and the gradient accumulation order) is the same as before.
+    extras = [] if extra_loss is None else list(extra_loss) if isinstance(extra_loss, (list, tuple)) else [extra_loss]
+    if not is_multilabel(evaluator):
+        loss = task_loss(evaluator, examples, scores_fn(examples), class_weights)
+        extras = [extra() if callable(extra) else extra for extra in extras]
+        total = loss
+        for extra in extras:  # summed in the given order, as the callers did before
+            total = total + extra
+        total.backward()
+        return float(loss.detach())
+    extras = [extra() if callable(extra) else extra for extra in extras]
+    if extras:
+        sum(extras[1:], extras[0]).backward()
+    per = max(1, max_rows // len(evaluator.multi_label_classes))
+    total = 0.0
+    for start in range(0, len(examples), per):
+        chunk = examples[start : start + per]
+        loss = task_loss(evaluator, chunk, scores_fn(chunk), class_weights) * (len(chunk) / len(examples))
+        loss.backward()
+        total += float(loss.detach())
+    return total
