@@ -1,6 +1,7 @@
 # Results log (2026-10-15 – 2026-10-16)
 
-This log follows [`CLASSIFICATION_RESULTS.md`](CLASSIFICATION_RESULTS.md), which covers Phases 1–6.
+This log follows [`CLASSIFICATION_RESULTS.md`](CLASSIFICATION_RESULTS.md), which covers Phases 1–6. Later results (Yahoo, AG News with label-name answers, GoEmotions
+multi-label, Phases 11–14) are in [`RESULTS_10_20.md`](RESULTS_10_20.md).
 It is organized by question. Each section gives the evidence (plots and short tables), then the
 takeaway.
 
