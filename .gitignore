@@ -25,4 +25,6 @@ artifacts/phase14_goemotions_f1/*
 !artifacts/phase14_goemotions_f1/smoke_jobs.jsonl
 !artifacts/phase14_goemotions_f1/smoke2_jobs.jsonl
 !artifacts/phase14_goemotions_f1/admm_jobs.jsonl
+!artifacts/phase14_goemotions_f1/controls_jobs.jsonl
+!artifacts/phase14_goemotions_f1/smoke3_jobs.jsonl
 artifacts/length_bench/*.log
