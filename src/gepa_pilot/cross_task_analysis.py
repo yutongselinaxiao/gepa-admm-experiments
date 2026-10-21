@@ -152,7 +152,7 @@ def main() -> None:
               f"True emotions per comment: {hedging['true_per_comment']:.2f}.", "",
               "| Arm | Example F1 | Micro F1 | Macro F1 | Emotions predicted per comment | Precision | Recall |",
               "|---|---:|---:|---:|---:|---:|---:|"]
-    for arm in ["seed", "A", "B", "C", "G", "F"]:
+    for arm in ["seed", "A", "B", "E", "C", "I", "H", "G", "F"]:
         rows = hedging.get(arm)
         if rows:
             m = lambda k: statistics.mean(r[k] for r in rows)  # noqa: E731
@@ -162,10 +162,11 @@ def main() -> None:
     f_vs = {}
     for metric in ("example_f1", "micro_f1", "macro_f1"):
         f = [r[metric] for r in hedging["F"]]
-        for ref in ("B", "C"):
+        for ref in ("B", "C", "I", "H"):
             d, _, p = welch(f, [r[metric] for r in hedging[ref]])
             f_vs[f"{metric} F-{ref}"] = (d, p)
-    lines += ["", "F vs. B and C: " + "; ".join(f"{k}: {d:+.2f} (p={p:.3f})" for k, (d, p) in f_vs.items()), ""]
+    lines += ["", "F vs. B, C and the equal-compute controls I, H (Welch):", ""] + [
+        f"- {k}: {d:+.2f} (p={p:.3f})" for k, (d, p) in f_vs.items()] + [""]
     lines += label_name_ceiling()
     (out / "tables.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     (out / "summary.json").write_text(json.dumps({"settings": summary, "f_vs": f_vs}, indent=2), encoding="utf-8")
@@ -199,10 +200,11 @@ def main() -> None:
     # Figure 19: GoEmotions hedging: emotions predicted per comment vs. example F1 and micro F1, one dot per run.
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.4))
     for ax, metric, label in zip(axes, ("example_f1", "micro_f1"), ("example F1 (optimized)", "micro F1 (per-emotion pooled)")):
-        for arm in ["A", "B", "C", "G", "F"]:
+        for arm in ["A", "B", "E", "C", "I", "H", "G", "F"]:
             rows = hedging[arm]
             ax.scatter([r["per_comment"] for r in rows], [r[metric] for r in rows], s=28, color=COLOR[FAMILY[arm]],
-                       marker={"A": "o", "B": "s", "C": "D", "G": "^", "F": "v"}[arm], alpha=0.75, label=NAMES[arm])
+                       marker={"A": "o", "B": "s", "E": "P", "C": "D", "I": "X", "H": "p", "G": "^", "F": "v"}[arm],
+                       alpha=0.75, label=NAMES[arm])
         s = hedging["seed"][0]
         ax.scatter([s["per_comment"]], [s[metric]], s=110, marker="*", color=TEXT, label="seed instruction", zorder=5)
         ax.axvline(hedging["true_per_comment"], color=REFERENCE, ls="--", lw=1)
@@ -211,10 +213,10 @@ def main() -> None:
         ax.set_xlabel("emotions predicted per comment (report set)")
         ax.set_ylabel(label)
     handles, labels = axes[1].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="lower center", ncol=6, fontsize=8, frameon=False, bbox_to_anchor=(0.5, -0.06))
+    fig.legend(handles, labels, loc="lower center", ncol=5, fontsize=8, frameon=False, bbox_to_anchor=(0.5, -0.1))
     fig.suptitle("GoEmotions: predicting more emotions raises example F1 but not micro F1 (one dot per run)",
                  fontsize=11, fontweight="bold", x=0.01, ha="left")
-    fig.subplots_adjust(wspace=0.22, top=0.86, bottom=0.2)
+    fig.subplots_adjust(wspace=0.22, top=0.86, bottom=0.24)
     fig.savefig("artifacts/figures/fig19_goemotions_hedging.png", dpi=200, bbox_inches="tight")
     plt.close(fig)
     print("WROTE artifacts/figures/fig18_cross_task.png, fig19_goemotions_hedging.png")
