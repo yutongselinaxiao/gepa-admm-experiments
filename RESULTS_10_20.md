@@ -156,7 +156,8 @@ examples):
 
 def propose_G(parent, spare=4, rho=0.1, rho_g=1.0, lr_gate=0.1):
     s = saliency(parent)                           # as in D/F
-    slots = parent tokens with `spare` empty slots inserted before the most salient positions
+    slots = parent tokens with `spare` spare slots inserted before the most salient positions
+    # each spare slot's embedding starts at the LM's most likely token there; its gate starts almost off
     a = [4.0 if parent_slot else -2.0 for slot in slots]   # g ≈ 0.98 for parent tokens, ≈ 0.12 for spares
     k = [1 if parent_slot else 0 for slot in slots]        # current decision per slot: token (1) or blank (0)
     for t in range(20):
