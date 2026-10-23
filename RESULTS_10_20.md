@@ -605,6 +605,10 @@ $$
 s_k(e;c) = \mathrm{score}_A - \mathrm{score}_B, \qquad p_k(e;c) = \sigma\big(s_k(e;c)\big), \qquad y_k(c)\in\{0,1\}\ \text{(gold)}
 $$
 
+- $\mathrm{score}_A$, $\mathrm{score}_B$: the model's next-token logits for the tokens "A" and "B" at the
+  answer position, after the prompt ends with "Respond with exactly one label: A or B." and the
+  assistant turn opens. This is one forward pass with no generation, the same scoring as the
+  single-label tasks. The softmax normalizer cancels, so $s_k=\log P(A)-\log P(B)$.
 - $\sigma(s)=1/(1+e^{-s})$ is the logistic sigmoid. It maps log-odds to a probability:
   $\sigma(0)=0.5$, $\sigma(\pm2)\approx 0.88/0.12$.
 - $p_k$ is the model's probability of answering A when the only choices are A and B.
