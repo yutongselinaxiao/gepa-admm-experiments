@@ -225,6 +225,11 @@ $$
 \qquad g_i=\sigma(a_i),\; z_i\in V,\; k_i\in\{0,1\},\; k_n=1
 $$
 
+- $n = L + 4$: the slot layout is fixed **before** ADMM starts (in `init_state`). It holds the
+  parent's $L$ tokens plus 4 spare slots placed before the 4 most salient parent tokens; a spare
+  slot simply starts with $k_i=0$ (blank) and $a_i=-2$. ADMM never adds or moves slots, so
+  insertions can only happen at those 4 places (at most +4 tokens per proposal), while deletions can
+  happen at any parent slot. Each GEPA proposal places its own spares on its own parent.
 - $f(e,g)$: task loss of the gated soft prompt (cross-entropy, or $1-$ soft F1 for multi-label),
   computed with attention logit to slot $i$ $+\log g_i$ and positions advancing by $g$.
 - $h(z,k) = \lambda \sum_{i:\,k_i=1} \mathrm{NLL}_{LM}(z_i \mid \text{prefix}, \text{earlier present tokens})$,
