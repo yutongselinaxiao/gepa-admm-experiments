@@ -225,6 +225,8 @@ $$
 \qquad g_i=\sigma(a_i),\; z_i\in V,\; k_i\in\{0,1\},\; k_n=1
 $$
 
+- $\sigma(a)=1/(1+e^{-a})$ (logistic sigmoid) maps the free gate logit $a_i$ to a gate in $(0,1)$:
+  $\sigma(4)\approx0.98$, $\sigma(-2)\approx0.12$.
 - $n = L + 4$: the slot layout is fixed **before** ADMM starts (in `init_state`). It holds the
   parent's $L$ tokens plus 4 spare slots placed before the 4 most salient parent tokens; a spare
   slot simply starts with $k_i=0$ (blank) and $a_i=-2$. ADMM never adds or moves slots, so
@@ -602,6 +604,11 @@ loss changes:** cross-entropy over label letters becomes $1-$ soft F1 per commen
 $$
 s_k(e;c) = \mathrm{score}_A - \mathrm{score}_B, \qquad p_k(e;c) = \sigma\big(s_k(e;c)\big), \qquad y_k(c)\in\{0,1\}\ \text{(gold)}
 $$
+
+- $\sigma(s)=1/(1+e^{-s})$ is the logistic sigmoid. It maps log-odds to a probability:
+  $\sigma(0)=0.5$, $\sigma(\pm2)\approx 0.88/0.12$.
+- $p_k$ is the model's probability of answering A when the only choices are A and B.
+- Predicting emotion $k$ ($s_k>0$) is the same as $p_k>0.5$.
 
 **Task loss of a comment** ($1-$ soft F1) **and of a batch** $B$ of comments:
 
