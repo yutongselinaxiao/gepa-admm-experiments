@@ -138,8 +138,16 @@ def insert_two_gradient(x, s):                     # F: two insertions, one at a
 | Cost vs. C | about 2.9× (three refinements) | about 3.4× (plus the insertion search) |
 | Insertion settings | LM top 1 | LM top 64 (fluency filter) → 8 per gap by gradient → exact loss; 6 gaps. **Not tuned** |
 
-**"GCG-style"** refers to Greedy Coordinate Gradient (Zou et al., 2023; building on AutoPrompt, Shin
-et al., 2020), the standard way to search over discrete tokens with gradients:
+**"GCG-style"** refers to Greedy Coordinate Gradient, the standard way to search over discrete tokens
+with gradients:
+- GCG: Zou, Wang, Carlini, Nasr, Kolter, Fredrikson (2023), *Universal and Transferable Adversarial
+  Attacks on Aligned Language Models*,
+  [arXiv:2307.15043](https://arxiv.org/abs/2307.15043).
+- It builds on AutoPrompt: Shin, Razeghi, Logan, Wallace, Singh (2020), *AutoPrompt: Eliciting
+  Knowledge from Language Models with Automatically Generated Prompts*, EMNLP 2020,
+  [arXiv:2010.15980](https://arxiv.org/abs/2010.15980).
+
+How it works:
 - **Estimate:** one backward pass estimates, for every vocabulary token w, how much the loss would
   change if w replaced the current token: (E(w) − E(current)) · ∇.
 - **Shortlist and check:** the top-k by that estimate are scored exactly, and the best is kept; GCG
