@@ -119,13 +119,16 @@ def insert_two_lm(x, s):                           # D
 def insert_two_gradient(x, s):                     # F: two insertions, one at a time
     for _ in range(2):
         trials = []
-        for g in six_largest(s):                   # candidate gaps
-            w0   = argmax_w P_LM(w | prefix, x[:g])                   # placeholder token at the gap
+        for g in six_largest(s):                   # 6 candidate POSITIONS (gaps before the most salient tokens)
+            w0   = argmax_w P_LM(w | prefix, x[:g])                   # placeholder word at this gap
             grad = grad_{e_g} ℓ_B(E(x[:g] + [w0] + x[g:]))            # loss gradient at the inserted slot
-            W    = top_k(P_LM(. | prefix, x[:g]), 64)                 # only fluent candidates
-            W8   = smallest_8(W, key=lambda w: (E(w) - E(w0)) @ grad) # first-order loss change (GCG-style)
-            trials += [(g, w) for w in {w0} | W8]
-        g, w = min(trials, key=lambda gw: ℓ_32(x[:g] + [gw[1]] + x[g:]))  # exact loss on 32 training examples
+            W    = top_k(P_LM(. | prefix, x[:g]), 64)                 # fluency filter: the LM's 64 likeliest words
+            delta = {w: (E(w) - E(w0)) @ grad for w in W}             # predicted loss change if w replaces w0
+            W8   = 8 words of W with the most negative delta          # 8 candidate WORDS per gap: predicted to
+                                                                      # lower the loss most (GCG-style)
+            trials += [(g, w) for w in {w0} | W8]                     # up to 9 trials per gap, 54 in total
+        g, w = min(trials, key=lambda gw: ℓ_32(x[:g] + [gw[1]] + x[g:]))  # exact loss of each trial on 32
+                                                                      # training examples; insert the best pair
         x = x[:g] + [w] + x[g:]
     return x
 ```
@@ -133,6 +136,7 @@ def insert_two_gradient(x, s):                     # F: two insertions, one at a
 | | D: LM insertion | F: gradient insertion |
 |---|---|---|
 | Cost vs. C | about 2.9× (three refinements) | about 3.4× (plus the insertion search) |
+| Insertion settings | LM top 1 | LM top 64 (fluency filter) → 8 per gap by gradient → exact loss; 6 gaps. **Not tuned** |
 | Flags | `--admm-length-offsets 0 -2 2` | `--admm-length-offsets 0 -2 2 --admm-insertion gradient` |
 | Run on | AG News (letters), emotion | all five settings |
 
