@@ -380,6 +380,29 @@ diagnostics on the validation audit, which GEPA never sees:
 
 ## Summary
 
+![Scorecard](artifacts/figures/fig20_scorecard.png)
+
+*Figure 20. Every arm minus fixed-length ADMM (C) on every task setting, mean difference over 10
+seeds (accuracy pp; F1 points for GoEmotions). Bold with * = p < 0.05. Color shows the strength of
+evidence (difference ÷ 95% CI half-width): blue = better than C, orange = worse, pale = no clear
+difference. Read the GoEmotions example-F1 column with care: there, gains mostly come from listing
+more emotions (see GoEmotions below); the micro-F1 column shows recognition.*
+
+**Is the variable-length gain more than extra compute?** F and G against the two 3×-compute controls,
+multi-start (I) and 36 proposals (H). Difference, Welch p; bold = p < 0.05:
+
+| Setting | F − I | F − H | G − I | G − H |
+|---|---:|---:|---:|---:|
+| AG News (letters) | +2.11 (p = 0.056) | +1.94 (p = 0.071) | +0.47 (p = 0.70) | +0.30 (p = 0.81) |
+| Emotion | **−0.96** (p = 0.011) | −0.63 (p = 0.15) | −0.18 (p = 0.64) | +0.14 (p = 0.76) |
+| **Yahoo** | **+2.49** (p = 0.008) | **+2.00** (p = 0.010) | **+2.23** (p = 0.019) | **+1.74** (p = 0.030) |
+| AG News (label names) | −0.44 (p = 0.42) | −0.33 (p = 0.54) | −0.21 (p = 0.35) | −0.10 (p = 0.67) |
+| GoEmotions, micro F1 | **+1.29** (p = 0.028) | +1.18 (p = 0.064) | −0.06 (p = 0.81) | −0.18 (p = 0.66) |
+
+- **Clearly beyond compute:** F and G on Yahoo.
+- **Borderline:** F on AG News (letters) and on GoEmotions recognition (micro F1).
+- **No gain, or worse:** emotion; AG News with label names (no room to improve).
+
 - **Gradient-chosen insertion (F) is the most consistently helpful ADMM variant:**
   - **Yahoo:** +3.2 pp over C (p < 0.001), and +2.0–2.5 over the equal-compute controls
     (p ≤ 0.01);

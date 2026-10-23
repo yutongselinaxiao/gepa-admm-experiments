@@ -336,6 +336,67 @@ def main() -> None:
     fig.savefig("artifacts/figures/fig19_goemotions_hedging.png", dpi=200, bbox_inches="tight")
     plt.close(fig)
     print("WROTE artifacts/figures/fig18_cross_task.png, fig19_goemotions_hedging.png")
+    scorecard(data)
+
+
+SHORT = {"agnews": "AG News\n(letters)", "emotion": "Emotion", "yahoo": "Yahoo", "agnews_names": "AG News\n(label names)",
+         "goemotions_example": "GoEmotions\nexample F1", "goemotions_micro": "GoEmotions\nmicro F1"}
+
+
+def scorecard(data: dict) -> None:
+    """Figure 20 + table: every arm x setting, difference vs. C (color scaled per column, value printed,
+    bold = p < 0.05); and F / G vs. the equal-compute controls I and H."""
+    import matplotlib.colors as mcolors
+
+    rows = [a for a in ARMS if a != "C"]
+    cols = [k for k, *_ in SETTINGS]
+    fig, ax = plt.subplots(figsize=(11.5, 5.2))
+    cmap = mcolors.LinearSegmentedColormap.from_list("div", ["#c2410c", "#f7f6f2", "#1d6fa5"])
+    for j, key in enumerate(cols):
+        arms = data[key]["arms"]
+        diffs = {a: welch(arms[a], arms["C"]) for a in rows if a in arms}
+        for i, a in enumerate(rows):
+            if a not in diffs:
+                ax.add_patch(plt.Rectangle((j, i), 1, 1, color="#ebeae6"))
+                ax.text(j + 0.5, i + 0.5, "not run", ha="center", va="center", fontsize=7, color=TEXT_2)
+                continue
+            d, half, p = diffs[a]
+            strength = max(-2.5, min(2.5, d / half)) / 2.5      # evidence: difference / 95% CI half-width
+            ax.add_patch(plt.Rectangle((j, i), 1, 1, color=cmap(0.5 + 0.5 * strength)))
+            ax.text(j + 0.5, i + 0.5, f"{d:+.1f}" + ("*" if p < 0.05 else ""), ha="center", va="center",
+                    fontsize=9, color=TEXT, fontweight="bold" if p < 0.05 else "normal")
+    ax.set_xlim(0, len(cols))
+    ax.set_ylim(len(rows), 0)
+    ax.set_xticks([j + 0.5 for j in range(len(cols))],
+                  [f"{SHORT[k]}\n(C = {statistics.mean(data[k]['arms']['C']):.1f})" for k in cols], fontsize=8)
+    ax.set_yticks([i + 0.5 for i in range(len(rows))], [NAMES[a] for a in rows], fontsize=8.5)
+    ax.tick_params(length=0)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.grid(False)
+    fig.suptitle("Scorecard: each arm minus fixed-length ADMM (C) on every task setting", fontsize=11,
+                 fontweight="bold", x=0.01, ha="left")
+    fig.text(0.01, -0.03, "Cells: mean difference over 10 seeds (pp of accuracy, or F1 points for GoEmotions); "
+             "* and bold = p < 0.05 (Welch).\nColor = strength of evidence: difference / its 95% CI half-width, clipped at 2.5 "
+             "(blue = better than C, orange = worse; |ratio| ≥ 1 ⇔ p < 0.05; pale = no clear difference).",
+             fontsize=7.5, color=TEXT_2)
+    fig.savefig("artifacts/figures/fig20_scorecard.png", dpi=200, bbox_inches="tight")
+    plt.close(fig)
+    lines = ["## F and G vs. the equal-compute controls (difference, Welch p)", "",
+             "| Setting | F − I | F − H | G − I | G − H |", "|---|---:|---:|---:|---:|"]
+    for key in cols:
+        arms = data[key]["arms"]
+        if not all(a in arms for a in "FGIH"):
+            continue
+        cells = []
+        for a, b in (("F", "I"), ("F", "H"), ("G", "I"), ("G", "H")):
+            d, _, p = welch(arms[a], arms[b])
+            cells.append(f"{'**' if p < 0.05 else ''}{d:+.2f}{'**' if p < 0.05 else ''} (p={p:.3f})")
+        lines.append(f"| {data[key]['title']} | " + " | ".join(cells) + " |")
+    with open("artifacts/cross_task/tables.md", "a", encoding="utf-8") as handle:
+        handle.write("\n" + "\n".join(lines) + "\n")
+    print("\n".join(lines))
+    print("WROTE artifacts/figures/fig20_scorecard.png")
 
 
 if __name__ == "__main__":

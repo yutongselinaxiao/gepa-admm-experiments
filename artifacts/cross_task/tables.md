@@ -59,3 +59,14 @@ F vs. B, C and the equal-compute controls I, H (Welch):
 | H: fixed-length ADMM, 36 proposals | 2/10 | 19.2 |
 | I: multi-start (3 runs) | 2/10 | 6.3 |
 
+
+## F and G vs. the equal-compute controls (difference, Welch p)
+
+| Setting | F − I | F − H | G − I | G − H |
+|---|---:|---:|---:|---:|
+| AG News, letter answers | +2.11 (p=0.056) | +1.94 (p=0.071) | +0.47 (p=0.703) | +0.30 (p=0.808) |
+| Emotion | **-0.96** (p=0.011) | -0.63 (p=0.146) | -0.18 (p=0.641) | +0.14 (p=0.763) |
+| Yahoo Answers topics | **+2.49** (p=0.008) | **+2.00** (p=0.010) | **+2.23** (p=0.019) | **+1.74** (p=0.030) |
+| AG News, label-name answers | -0.44 (p=0.415) | -0.33 (p=0.539) | -0.21 (p=0.352) | -0.10 (p=0.667) |
+| GoEmotions, example F1 | **+2.88** (p=0.004) | +2.54 (p=0.065) | +1.03 (p=0.395) | +0.69 (p=0.650) |
+| GoEmotions, micro F1 | **+1.29** (p=0.028) | +1.18 (p=0.064) | -0.06 (p=0.806) | -0.18 (p=0.655) |
