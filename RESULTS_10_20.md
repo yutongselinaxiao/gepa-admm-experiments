@@ -584,6 +584,89 @@ reported: example F1 (mean per comment), micro F1 (pooled over all pairs), macro
     macro F1 rise only if the individual emotion decisions get better. We read micro and macro F1 as
     **recognition**.
 
+#### ADMM formulation on GoEmotions
+
+The ADMM problem is the same as on the single-label tasks (the shared core above). **Only the task
+loss changes:** cross-entropy over label letters becomes $1-$ soft F1 per comment.
+
+**Variables.**
+- $z=(z_1,\dots,z_L)\in V^L$: the instruction's tokens (the discrete prompt).
+- $e=(e_1,\dots,e_L)\in\mathbb{R}^{L\times d}$: their continuous copy, which gradients move.
+- $E(z)$: the model's embeddings of $z$.
+
+**Scoring a comment.**
+- For comment $c$ and emotion $k\in\{1,\dots,8\}$, the model reads
+  [prefix, instruction slots $e$, "Comment: $c$", "Candidate emotion: $k$", answer cue].
+- It scores the answers A (expressed) and B (not expressed). Then:
+
+$$
+s_k(e;c) = \mathrm{score}_A - \mathrm{score}_B, \qquad p_k(e;c) = \sigma\big(s_k(e;c)\big), \qquad y_k(c)\in\{0,1\}\ \text{(gold)}
+$$
+
+**Task loss of a comment** ($1-$ soft F1) **and of a batch** $B$ of comments:
+
+$$
+\ell_c(e) = 1 - \frac{2\sum_k p_k\,y_k}{\sum_k p_k + \sum_k y_k}, \qquad \ell_B(e) = \frac{1}{|B|}\sum_{c\in B}\ell_c(e)
+$$
+
+- At $p_k\in\{0,1\}$ this equals $1-$ the comment's F1 exactly. The probabilities replace the
+  thresholded predictions so that the loss has a gradient.
+- The single-label tasks used $\ell_c(e) = -\log \mathrm{softmax}(\text{label scores})_{\text{gold}}$.
+
+**Problem**, with $T$ the comments ADMM trains on:
+
+$$
+\min_{e,\,z}\; \ell_T(e) + h(z) \quad\text{s.t.}\quad e_i = E(z_i)\;\;\forall i,\qquad z_i\in V,
+\qquad h(z)=\lambda\sum_i \mathrm{NLL}_{LM}(z_i\mid \text{prefix}, z_{<i})
+$$
+
+- $h$ is the fluency cost from the Z-step, with $\lambda=0.3$.
+- $z_i$ is restricted to the LM's top-0.99 nucleus or the parent's own token.
+
+**Scaled augmented Lagrangian** (dual $u\in\mathbb{R}^{L\times d}$, $\rho=0.1$):
+
+$$
+\mathcal{L}(e,z,u) = \ell_B(e) + h(z) + \frac{\rho}{2}\sum_i \lVert e_i - E(z_i) + u_i\rVert^2
+$$
+
+Each of the 20 rounds:
+1. **E-step:** 3 Adam steps on $\mathcal{L}$ over $e$, on a fresh batch of 16 comments (lr 0.005).
+2. **Z-step:** beam search (width 4) for $z$ minimizing
+   $\sum_i \lVert e_i+u_i-E(z_i)\rVert^2 + \lambda\sum_i \mathrm{NLL}_{LM}(z_i\mid\cdot)$.
+3. **Dual step:** $u \leftarrow u + e - E(z)$.
+4. **Candidate:** $z$ is scored on S with real tokens: $\ell_S(z)$, with no gradients.
+
+After the rounds:
+- **Select on S:** take the candidate with the lowest $\ell_S$, if it beats the parent.
+- **Accept on S′:** lower $\ell_{S'}$ and example F1 on S′ ≥ the parent's.
+
+D, F and G use the same $\ell$. In G it is $f(e,g)$, evaluated with gated attention.
+
+**What the loss rewards.** Write $A=\sum_k p_k y_k$ (soft true positives) and
+$D=\sum_k p_k+\sum_k y_k$. Then:
+
+$$
+\frac{\partial\,\text{soft F1}}{\partial p_k} =
+\begin{cases} 2(D-A)/D^2 > 0 & k \text{ gold (push up)}\\[2pt] -2A/D^2 & k \text{ not gold (push down)}\end{cases}
+$$
+
+The push-down on a wrong emotion is proportional to $A$, so it is weak whenever the comment's true
+emotion is still unlikely.
+
+Example: gold {joy}, $p_{\text{joy}}=0.3$, each of the 7 other emotions at $p=0.1$.
+- $A=0.3$, $D=1.0+1=2.0$.
+- Raising joy gains $0.85$ per unit of probability; lowering each wrong emotion gains only $0.15$.
+- So the loss mainly says "find the right emotion", and barely "stop listing wrong ones".
+
+This is the gradient form of the hedging incentive (see the Results below). **Hypothesis:** this is
+why every ADMM arm also drifts toward more emotions per comment (2.3–2.75 vs. the seed's 2.22).
+
+**Compute.**
+- One batch of 16 comments is 16 × 8 = 128 prompts.
+- Gradients are accumulated over chunks of 4 comments (32 prompts) each. This gives the same
+  gradient, since $\ell_B$ is a mean over comments, at a third of the memory (13.4 vs. 43.6 GiB).
+- Single-label runs take the original one-pass path and are bit-identical to before.
+
 - **Why this design:**
   - The first version (Phase 13) optimized balanced yes/no pairs (50% "yes"), while the report set
     is 19% "yes". That pushed prompts toward "yes", and its results are not used.
