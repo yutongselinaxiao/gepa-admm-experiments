@@ -44,7 +44,15 @@ Every method is a **proposer** inside the same GEPA loop: GEPA picks a parent (P
 ```python
 # Notation
 #   x        parent instruction, as tokens x_1..x_L        E(w)   embedding of token w
-#   prefix   the fixed prompt text before the instruction slot
+#   prefix   the fixed prompt text before the instruction slot (system message + chat template up to
+#            the instruction)
+#   P_LM(w | prefix, x_<i)
+#            next-token probability of token w from the SAME Qwen3-1.7B that does the classification
+#            (no separate language model), given the prefix followed by the instruction tokens before
+#            position i. Only allowed tokens count: special and control tokens are excluded.
+#            It measures how natural w is at that point in the instruction.
+#   NLL_LM(w | ·) = −log P_LM(w | ·), the fluency cost in the projection
+#   top-p nucleus  the smallest set of most likely tokens under P_LM whose probabilities sum to ≥ p
 #   ℓ_B(e)   task loss of slot embeddings e on a batch B (objective.py):
 #              single-label: cross-entropy over the label scores
 #              multi-label:  1 − soft F1 per text, soft F1 = 2 Σ_k p_k y_k / (Σ_k p_k + Σ_k y_k), p_k = sigmoid(log-odds_k)
