@@ -33,161 +33,192 @@ needed:
 
 ## Method specifications: D, E, F, G
 
-All four run inside the same GEPA loop as every other arm:
-- GEPA picks a parent from its pool (Pareto rule) and samples an 8-example minibatch;
-- the proposer returns one child;
-- the child is judged on **S′**: a 32-example batch disjoint from the minibatch, S and ADMM's
-  training data. It is accepted only if its loss is lower than the parent's **and** its metric
-  (accuracy, or comment F1 for GoEmotions) is at least the parent's.
+Formulation and implementation, written as Python-style pseudocode with a comment on each step.
+The real code is in [`admm_proposer.py`](src/gepa_pilot/admm_proposer.py),
+[`gated_admm.py`](src/gepa_pilot/gated_admm.py) and [`objective.py`](src/gepa_pilot/objective.py).
+Every method is a **proposer** inside the same GEPA loop: GEPA picks a parent (Pareto rule) and an
+8-example minibatch, the proposer returns one child, and the child is accepted or rejected.
 
-**Shared ADMM settings** (identical to the fixed-length arm C):
+### Shared core: fixed-length ADMM refinement, projection and acceptance (this alone is arm C)
 
-| Setting | Value |
-|---|---|
-| ADMM rounds per proposal | 20, each with 3 Adam E-steps (learning rate 0.005) on a 16-example training batch |
-| Penalty ρ | 0.1 |
-| Projection | beam search, width 4, over the LM's top-p = 0.99 nucleus; cost = distance to the ADMM target + 0.3 × LM negative log-likelihood (fluency) |
-| Candidate selection | every new, exactly round-tripping token sequence is scored on **S** (32 training examples); the lowest-loss one is proposed only if it beats the parent on S |
-| Code | [`admm_proposer.py`](src/gepa_pilot/admm_proposer.py), [`gated_admm.py`](src/gepa_pilot/gated_admm.py) |
+```python
+# Notation
+#   x        parent instruction, as tokens x_1..x_L        E(w)   embedding of token w
+#   prefix   the fixed prompt text before the instruction slot
+#   ℓ_B(e)   task loss of slot embeddings e on a batch B (objective.py):
+#              single-label: cross-entropy over the label scores
+#              multi-label:  1 − soft F1 per text, soft F1 = 2 Σ_k p_k y_k / (Σ_k p_k + Σ_k y_k), p_k = sigmoid(log-odds_k)
+#   S, S′    two disjoint 32-example training batches: S picks the candidate, S′ judges acceptance
+#   T        the remaining training examples (ADMM's own training data, drawn 16 at a time)
 
-### E: reflect-then-polish
-- **Idea:** reflection makes the big semantic rewrite; ADMM then fine-tunes 1–3 tokens of that
-  rewrite.
-- **Steps:**
-  1. **Draft:** the reflection LM (the same Qwen3-1.7B) reads the parent and its minibatch
-     mistakes and writes a new instruction, exactly as in arm A.
-  2. **Polish:** fixed-length beam ADMM (C's proposer) refines the draft. If no candidate beats the
-     draft on S, the draft is kept unchanged.
-  3. **Judge:** the final child (polished or not) is compared with **GEPA's parent**, not the
-     draft, on S′.
-- **Cost:** about 1.3× C (one reflection call plus one ADMM refinement).
-- **Flags:** `--proposer reflect_polish --reflection-acceptance heldout --admm-acceptance-batch-size 32`.
+def admm_refine(x, rounds=20, rho=0.1, lr=0.005, e_steps=3):
+    e, z, u = E(x), x, 0                           # continuous copy e, discrete tokens z, scaled dual u
+    candidates = {}
+    for t in range(rounds):
+        B = next_batch(T, 16)                      # a different 16-example batch every round
+        for _ in range(e_steps):                   # E-step: move e to lower the task loss,
+            e -= Adam(grad_e(ℓ_B(e) + rho/2 * ||e - E(z) + u||**2), lr)   # while staying near the tokens z
+        z = beam_project(target=e + u)             # Z-step: closest fluent token sequence (below)
+        u += e - E(z)                              # dual step: accumulate the remaining gap e − E(z)
+        if z != x and round_trips(z):              # a new prompt that re-tokenizes exactly
+            candidates[z] = ℓ_S(z)                 # score it on S with the real tokens (no gradients)
+    best = min(candidates, key=candidates.get)     # best candidate seen, not the last round (RESULTS_10_16 Q4)
+    return best if ℓ_S(best) < ℓ_S(x) else x       # propose only a child that beats the parent on S
 
-**Example** (Yahoo, accepted, +34 correct answers of 1,280 vs. GEPA's parent; the median accepted
-polished child):
-- reflection draft: "Carefully analyze the question to ~~extract~~ **identify** the primary topic,
-  **focusing on the core subject matter and** ignoring any incidental details or keywords, and
-  select the corresponding capital letter from the label mapping."
-- after ADMM polish: "… and select the corresponding ~~capital letter~~ **topic label** from the
-  label mapping."
-- Typical pattern: reflection rewrites a clause; the polish changes one phrase (here the answer
-  wording).
+def beam_project(target, lam=0.3, top_p=0.99, width=4):
+    # Left to right, keeping the `width` cheapest partial sequences. At position i the allowed tokens are
+    # the LM's top-p nucleus given prefix + tokens chosen so far, plus the parent's own token x_i.
+    #   cost(w_1..w_i) = Σ_j ||target_j − E(w_j)||²   +   lam · Σ_j NLL_LM(w_j | prefix, w_<j)
+    #                    └ close to the ADMM target ┘      └ fluent text ┘
+    return cheapest full sequence
 
-### D: multi-length ADMM with LM insertion (run on AG News with letters and emotion only)
-- **Idea:** the same structure as F (each proposal also tries a 2-token-shorter and a 2-token-longer
-  prompt). The only difference is how inserted words are chosen: D takes the **language model's
-  single most likely next token**, which ignores the task.
-- **Steps (per proposal):**
-  1. **Saliency:** compute the gradient norm of the task loss for each token of the parent, on one
-     16-example training batch.
-  2. **Shorter variant:** delete the 2 least salient tokens (excluding the final token).
-  3. **Longer variant:** at the 2 most salient positions, insert the LM's top allowed token given
-     the text before that position. No gradient and no loss check.
-  4. **Refine:** run 20 ADMM rounds from the parent, the shorter variant and the longer variant,
-     each at fixed length.
-  5. **Pool and select:** pool all candidates (raw variants included) and pick the best on S;
-     judge on S′.
-- **Cost:** about 2.9× C (three refinements; the insertion itself is two forward passes).
-- **Flags:** `--admm-length-offsets 0 -2 2` (insertion rule `lm` is the default).
-- **Results** (`RESULTS_10_16.md` Q2; 2k report sets):
-  - **AG News:** +0.58 pp vs. C (p = 0.58);
-  - **emotion:** −0.88 pp (p = 0.10);
-  - below equal-compute multi-start on both;
-  - not run on Yahoo, AG News with label names or GoEmotions.
+def accept(child, parent):                         # the fair S′ judge used by every ADMM arm and by E
+    return ℓ_S2(child) < ℓ_S2(parent) and metric_S2(child) >= metric_S2(parent)
+    # metric = accuracy, or mean comment F1 for GoEmotions; S′ is disjoint from S, the minibatch and T
 
-**Examples** (AG News with letters, accepted; effect = change in correct answers out of 512
-validation examples):
+def propose_C(parent):
+    child = admm_refine(parent)                    # one fixed-length refinement
+    return child, accept(child, parent)
+```
+
+### D and F: multi-length ADMM (D = LM insertion, F = gradient-chosen insertion)
+
+```python
+def propose_multilength(parent, insert_two):       # D: insert_two = insert_two_lm;  F: insert_two_gradient
+    B = first_batch(T, 16)
+    s = [norm(grad_{e_i} ℓ_B(E(parent))) for i in range(L)]   # saliency: how strongly the loss reacts to token i
+    short = delete(parent, two_smallest(s, exclude_last=True)) # 2-token-shorter prompt
+    long_ = insert_two(parent, s)                              # 2-token-longer prompt
+    pool  = {short, long_}                         # the raw variants are candidates themselves
+    for start in (parent, short, long_):           # three refinements, each keeping its own length
+        pool |= candidates_of(admm_refine(start))
+    child = argmin_S(pool) if ℓ_S(argmin_S(pool)) < ℓ_S(parent) else parent
+    return child, accept(child, parent)
+
+def insert_two_lm(x, s):                           # D
+    for g in two_largest(s):                       # before the 2 most loss-sensitive tokens
+        w = argmax_w P_LM(w | prefix, x[:g])       # the LM's single most likely next token: no task signal
+        x = x[:g] + [w] + x[g:]
+    return x
+
+def insert_two_gradient(x, s):                     # F: two insertions, one at a time
+    for _ in range(2):
+        trials = []
+        for g in six_largest(s):                   # candidate gaps
+            w0   = argmax_w P_LM(w | prefix, x[:g])                   # placeholder token at the gap
+            grad = grad_{e_g} ℓ_B(E(x[:g] + [w0] + x[g:]))            # loss gradient at the inserted slot
+            W    = top_k(P_LM(. | prefix, x[:g]), 64)                 # only fluent candidates
+            W8   = smallest_8(W, key=lambda w: (E(w) - E(w0)) @ grad) # first-order loss change (GCG-style)
+            trials += [(g, w) for w in {w0} | W8]
+        g, w = min(trials, key=lambda gw: ℓ_32(x[:g] + [gw[1]] + x[g:]))  # exact loss on 32 training examples
+        x = x[:g] + [w] + x[g:]
+    return x
+```
+
+| | D: LM insertion | F: gradient insertion |
+|---|---|---|
+| Cost vs. C | about 2.9× (three refinements) | about 3.4× (plus the insertion search) |
+| Flags | `--admm-length-offsets 0 -2 2` | `--admm-length-offsets 0 -2 2 --admm-insertion gradient` |
+| Run on | AG News (letters), emotion | all five settings |
+
+**D examples** (AG News with letters, accepted; change in correct answers out of 512 validation
+examples):
 - **Shorter variant, +31** (D's most common winning edit):
-  - before ADMM, the two least salient tokens are just the commas: "… from the label
+  - `delete` picks the two least salient tokens, which are just the commas: "… from the label
     ~~mapping,~~ **mapping** ignore incidental ~~details,~~ **details** and output …"
-  - after ADMM, the freed space becomes a new phrase: "… from the label ~~mapping, ignore
-    incidental details,~~ **mapping and provide details** and output only the corresponding capital
-    letter."
-- **Longer variant, −10** (the median accepted one):
-  - before ADMM, the LM's top token repeats a nearby word: "… Output only the corresponding
-    **label** capital **label** letter."
-  - after ADMM: "… the corresponding **label** capital **letter** letter."
-- **What the examples show:**
-  - the deletion mostly removes punctuation, which ADMM then rewrites;
-  - the LM's top-token insertion mostly duplicates neighboring words ("main **emotion** emotion",
-    "**label** capital **label** letter);
-  - so on AG News the longer variant won only 16 of 114 proposals, against 101 of 116 for F's
-    gradient-chosen insertion.
+  - `admm_refine` then rewrites the freed span: "… from the label ~~mapping, ignore incidental
+    details,~~ **mapping and provide details** and output only the corresponding capital letter."
+- **Longer variant, −10:** `insert_two_lm` duplicates a nearby word ("… the corresponding
+  **label** capital **label** letter"), and ADMM only partly repairs it ("… **label** capital
+  **letter** letter").
+- **Result:** on AG News the longer variant won only 16 of D's 114 proposals.
 
-### F: multi-length ADMM with gradient-chosen insertion
-- **Idea:** like D, let each proposal try a shorter and a longer prompt as well as the parent's own
-  length, but with inserted words chosen for the task rather than by the LM alone. Steps 1, 2, 4 and 5
-  are identical to D; only step 3 differs.
-- **Steps (per proposal):**
-  1. **Saliency:** compute the gradient norm of the task loss for each token of the parent, on one
-     16-example training batch.
-  2. **Shorter variant:** delete the 2 least salient tokens.
-  3. **Longer variant:** insert 2 tokens, one at a time:
-     - at each of the 6 most salient gaps, take the LM's 64 most likely next tokens (to stay
-       fluent);
-     - rank them by the first-order change in task loss (gradient at the inserted slot);
-     - try the best 8 per gap exactly, on 32 training examples, and keep the (gap, token) with the
-       lowest loss.
-  4. **Refine:** run 20 ADMM rounds from the parent, the shorter variant and the longer variant,
-     each at fixed length.
-  5. **Pool and select:** pool all candidates (raw variants included) and pick the best on S.
-- **Cost:** about 3.4× C (three refinements plus the insertion search).
-- **Flags:** `--admm-length-offsets 0 -2 2 --admm-insertion gradient`.
-
-**Examples** (accepted children from the longer variant):
-- **Yahoo** (+24 correct answers of 1,280; the median one):
-  - longer variant before ADMM: "Carefully **remove** determine the question's main topic … the
-    corresponding ~~capital~~ **capital-letter** letter."
-  - accepted child after ADMM: "Carefully **remove** determine the question's main topic from the
-    label ~~mapping, ignore incidental~~ **mapping. This entails** details, and output only the
-    corresponding ~~capital~~ **capital-letter** letter."
-- **GoEmotions** (+8.4 F1 points on validation; the largest):
-  - longer variant before ADMM: "Carefully decide whether the **person** comment expresses the
-    **emotion** candidate emotion …"
-  - accepted child: "Carefully decide whether the **person** comment expresses the ~~candidate~~
-    **emotion of** emotion from the label mapping, …"
-- **What the examples show:** the inserted words are task-relevant to the model ("person",
-  "emotion of", "category") but often ungrammatical. This is F's fluency cost (`RESULTS_10_16.md`
-  Q2 bench: the highest NLL increase of all methods).
+**F examples** (accepted, from the longer variant):
+- **Yahoo, +24 correct answers of 1,280:**
+  - `insert_two_gradient` inserts "Carefully **remove** determine the question's main topic … the
+    corresponding ~~capital~~ **capital-letter** letter";
+  - `admm_refine` then edits it to "… from the label ~~mapping, ignore incidental~~ **mapping. This
+    entails** details, …".
+- **GoEmotions, +8.4 F1 points:**
+  - inserted: "Carefully decide whether the **person** comment expresses the **emotion** candidate
+    emotion …";
+  - accepted child: "… the **person** comment expresses the ~~candidate~~ **emotion of** emotion …".
+- **Result:** the inserted words carry task signal, so the longer variant won 101 of F's 116 proposals
+  on AG News. But they are often ungrammatical, which is F's fluency cost.
 
 ### G: gated variable-length ADMM
-- **Idea:** decide the length inside every ADMM round, with a continuous on/off dial per token.
-- **Setup:** the parent's tokens, plus **4 spare slots** inserted before the 4 most salient
-  positions.
-- **Gates:** each slot has an embedding and a **keep-gate** g = sigmoid(a).
-  - Parent tokens start at g ≈ 0.98; spare slots start at g ≈ 0.12.
-  - Scoring adds log g to the attention logit of that slot, and positions advance by g, so g = 0 is
-    exactly deleting the token (checked to 1e-4).
-- **Each round:**
-  - **E-step:** Adam on the embeddings and the gate logits (gate learning rate 0.1), with ADMM
-    penalties on both: ρ = 0.1 for the embeddings, ρ_g = 1 for the gates.
-  - **Z-step:** a beam search decides each slot, either blank or a token.
-    - Blank costs 10 × t².
-    - A token costs its distance to the target (relative to the closest candidate) +
-      10 × (1 − t)² + 0.3 × NLL, where t = gate + gate dual.
-    - So a slot flips between blank and token roughly when its gate crosses 0.5.
-- **Selection and acceptance:** every new token sequence is a candidate, picked on S and judged on
-  S′, as in C.
+
+```python
+# Relaxation of deletion. Each slot i has an embedding e_i and a keep-gate g_i = sigmoid(a_i):
+#   attention logit from any query to slot i   +=  log g_i
+#   position of slot i                          =   p0 + Σ_{j<i} g_j
+# g_i = 1 is the normal token; g_i → 0 is exactly the prompt without token i (checked to 1e-4).
+
+def propose_G(parent, spare=4, rho=0.1, rho_g=1.0, lr_gate=0.1):
+    s = saliency(parent)                           # as in D/F
+    slots = parent tokens with `spare` empty slots inserted before the most salient positions
+    a = [4.0 if parent_slot else -2.0 for slot in slots]   # g ≈ 0.98 for parent tokens, ≈ 0.12 for spares
+    k = [1 if parent_slot else 0 for slot in slots]        # current decision per slot: token (1) or blank (0)
+    for t in range(20):
+        B = next_batch(T, 16)
+        for _ in range(3):                         # E-step on embeddings (lr 0.005) and gate logits (lr 0.1)
+            L = (ℓ_B(e, g)                                              # task loss with gated attention
+                 + rho / 2 * Σ_i k_i * ||e_i - E(z_i) + u_i||**2        # token consensus, filled slots only
+                 + rho_g / 2 * Σ_i (g_i - k_i + v_i)**2)                # gate consensus with token/blank
+            e, a = Adam(grad(L))
+        z, k = gated_beam(target=e + u, gate_target=g + v)    # Z-step: blank or token, per slot
+        u = [k_i * (u_i + e_i - E(z_i)) for i]     # token dual; reset to 0 for blank slots
+        v = v + g - k                              # gate dual
+        add z (blanks removed) to the candidates, scored on S, as in admm_refine
+    return best on S if it beats the parent, then accept(child, parent)
+
+def gated_beam(target, gate_target, gamma=10.0, lam=0.3):
+    # Left to right, beam width 4. For slot i with gate target t_i:
+    #   blank:    cost  gamma · t_i²                                  cheap when the gate wants "off"
+    #   token w:  cost  ||target_i − E(w)||² − min_w' ||target_i − E(w')||²   distance relative to the closest candidate
+    #                 + gamma · (1 − t_i)²                            cheap when the gate wants "on"
+    #                 + lam · NLL_LM(w | prefix, chosen tokens)       fluency
+    # A slot therefore flips between blank and token roughly when t_i crosses 0.5. The final token is never blank.
+    return per-slot choices
+```
+
 - **Cost:** about 1.1× C in forward passes.
 - **Flags:** `--admm-gated` (spare slots `--admm-spare-slots 4`, gate weight `--admm-gate-weight 10`).
+- **Examples** (accepted):
+  - **Yahoo, +99 correct answers of 1,280:** one spare slot opened (gate → on) and one token swapped
+    by the Z-step: "Carefully ~~determine~~ **classify** the **following** question's intent by
+    topic from the label mapping, …"
+  - **GoEmotions, +8.1 F1 points:** one spare slot opened: "Carefully decide whether the comment
+    expresses the ~~candidate~~ **candidate's** emotion …"
+- **Result:** edits are small and mostly fluent, typically one opened spare plus a token swap.
+  Original tokens are rarely deleted, because their gates tend to rise toward 1 during the E-steps.
 
-**Examples** (accepted):
-- **Yahoo** (+99 correct answers of 1,280; the largest): one spare slot opened and one token
-  changed.
-  - "Carefully ~~determine~~ **classify** the **following** question's intent by topic from the
-    label mapping, …"
-- **GoEmotions** (+8.1 F1 points; the largest): one spare slot opened.
-  - "Carefully decide whether the comment expresses the ~~candidate~~ **candidate's** emotion …"
-- **What the examples show:** G's edits are small and mostly fluent, usually opening one spare slot
-  plus a token swap. Deletions of original tokens are rare: the gates of original tokens tend to
-  rise toward 1 (`RESULTS_10_16.md` Q2).
+### E: reflect-then-polish
 
-More examples, including the largest and median accepted child of each method (E, F, G on Yahoo and
-GoEmotions; D on AG News and emotion):
-[`artifacts/cross_task/examples.md`](artifacts/cross_task/examples.md). The effects quoted are
-diagnostics on the validation audit (GEPA never sees validation):
-- **Yahoo:** the change in the number of correct answers out of 1,280.
-- **GoEmotions:** the change in mean comment F1, in points.
+```python
+def propose_E(parent, minibatch):
+    draft = reflection_LM(parent, mistakes(parent, minibatch))  # GEPA's reflective rewrite, as in arm A
+                                                                # (the same Qwen3-1.7B writes it)
+    child = admm_refine(draft)               # C's fixed-length beam ADMM, started from the draft; it returns
+                                             # the draft unchanged if no candidate beats the draft on S
+    return child, accept(child, parent)      # judged against GEPA's parent on S′, not against the draft
+```
+
+- **Cost:** about 1.3× C (one reflection call plus one ADMM refinement).
+- **Flags:** `--proposer reflect_polish --reflection-acceptance heldout --admm-acceptance-batch-size 32`.
+- **Example** (Yahoo, accepted, +34 correct answers of 1,280 vs. GEPA's parent):
+  - `reflection_LM` writes "Carefully analyze the question to ~~extract~~ **identify** the primary
+    topic, **focusing on the core subject matter and** ignoring any incidental details or keywords,
+    and select the corresponding capital letter from the label mapping."
+  - `admm_refine` changes one phrase: "… and select the corresponding ~~capital letter~~ **topic
+    label** from the label mapping."
+
+More examples (the largest and median accepted child of each method and task):
+[`artifacts/cross_task/examples.md`](artifacts/cross_task/examples.md). The quoted effects are
+diagnostics on the validation audit, which GEPA never sees:
+- AG News: the change in correct answers out of 512;
+- Yahoo: the change in correct answers out of 1,280;
+- GoEmotions: the change in mean comment F1, in points.
 
 ---
 
