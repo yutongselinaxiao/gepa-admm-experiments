@@ -61,6 +61,14 @@ takeaway.
 - **S′:** 32 *other* training examples that decide acceptance (the "fair" rule).
 - **Minibatch rule:** GEPA's default. Accept the child if it scores strictly higher than the
   parent on 8 examples.
+- **The LM, P_LM, NLL:** there is only one model, Qwen3-1.7B. It classifies, and it is also "the
+  LM" used for fluency and for choosing inserted words.
+  - **P_LM(w | prefix, tokens so far):** its next-token probability for token w, given the fixed
+    prompt before the instruction followed by the instruction tokens chosen so far. Special and
+    control tokens are excluded.
+  - **NLL = −log P_LM:** the fluency cost in the beam projection, weighted by λ = 0.3.
+  - **The top-p nucleus:** the most likely tokens under P_LM whose probabilities sum to ≥ p.
+  - **The reflection LM** (arms A, B, E) is also this same model, used to write rewrites.
 
 All ADMM arms use beam projection (fluency weight λ = 0.3), 20 ADMM rounds, and selection on S.
 Code for arms C–I: [`admm_proposer.py`](src/gepa_pilot/admm_proposer.py),
