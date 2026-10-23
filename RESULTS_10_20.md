@@ -560,6 +560,30 @@ reflection feedback: "Predicted …, gold …, missed …, wrongly added …"
 reported: example F1 (mean per comment), micro F1 (pooled over all pairs), macro F1 (mean per emotion)
 ```
 
+- **The three F1 scores** (P_c = predicted emotions of comment c, G_c = its gold emotions; the report
+  set has 250 comments × 8 emotions = 2,000 yes/no decisions):
+  - **Example F1** (the optimized metric) scores each comment, then averages over comments:
+    F1_c = 2·|P_c ∩ G_c| / (|P_c| + |G_c|), example F1 = mean_c F1_c.
+  - **Micro F1** pools all 2,000 decisions into one count of true positives, false positives and false
+    negatives: micro F1 = 2·TP / (2·TP + FP + FN). Every wrong "yes" counts fully.
+  - **Macro F1** computes F1 per emotion k over all comments, F1_k = 2·TP_k / (2·TP_k + FP_k + FN_k),
+    then averages the 8. Rare emotions weigh as much as common ones.
+  - **Example (one comment, gold {joy}):**
+
+    | Prediction | Example F1 of this comment | Added to micro counts |
+    |---|---:|---|
+    | {anger} | 0 | 1 FP, 1 FN |
+    | {joy} | 1.0 | 1 TP |
+    | {joy, anger} | 0.67 | 1 TP, 1 FP |
+    | {joy, anger, love} | 0.5 | 1 TP, 2 FP |
+
+    Example F1 turns a complete miss (0) into partial credit when guesses are added, and costs a
+    correct comment only 1.0 → 0.67. Micro F1 charges every extra guess as a full false positive: adding
+    predictions raises it only if they are right more than micro F1 / 2 of the time (≈ 23% here).
+  - **How to read them:** example F1 can rise from hedging (listing more emotions), while micro and
+    macro F1 rise only if the individual emotion decisions get better. We read micro and macro F1 as
+    **recognition**.
+
 - **Why this design:**
   - The first version (Phase 13) optimized balanced yes/no pairs (50% "yes"), while the report set
     is 19% "yes". That pushed prompts toward "yes", and its results are not used.
