@@ -200,6 +200,37 @@ def method_examples() -> list[str]:
             lines += [f"**{tag}: {r[0]:+.1f} {unit(multi)} vs. parent** (spare slots opened: {r[3]}, original tokens "
                       f"deleted: {r[4]}, length change {r[5]:+d} tokens; {r[6]})", "",
                       f"- parent: {r[1]}", f"- accepted child: {word_diff(r[1], r[2])}", ""]
+    lines += d_examples()
+    return lines
+
+
+def d_examples() -> list[str]:
+    """D (multi-length, LM-top-token insertion) was only run on AG News (letters) and emotion (Phase 7):
+    accepted children from its shorter and longer variants, with the raw variant before ADMM."""
+    from .phase_7_10_analysis import word_diff
+
+    lines = ["## D: multi-length, LM insertion (Phase 7; AG News with letters and emotion)", ""]
+    for task in ("agnews", "emotion"):
+        for offset, label in ((-2, "2-shorter"), (2, "2-longer")):
+            rows = []
+            for run in sorted(Path("artifacts/phase7").glob(f"{task}_multilength_s*")):
+                if not run.is_dir():
+                    continue
+                audit = json.loads((run / "gepa_result.json").read_text())["audit_by_instruction"]
+                for p in map(json.loads, (run / "admm_proposals.jsonl").read_text().splitlines()):
+                    if p["outcome"] == "proposed" and p["heldout_accept"] and p["chosen"].get("start_offset", 0) == offset:
+                        raw = next((v["text"] for v in p.get("length_variants", []) if v["offset"] == offset), None)
+                        pa, ch = p["parent_instruction"], p["child_instruction"]
+                        if raw and pa in audit and ch in audit:
+                            e = sum(audit[ch]["correct_by_id"][i] - audit[pa]["correct_by_id"][i] for i in audit[pa]["correct_by_id"])
+                            rows.append((e, pa, raw, ch, p["chosen"]["iteration"], run.name))
+            rows.sort(key=lambda r: r[0])
+            name = "AG News" if task == "agnews" else "Emotion"
+            lines += [f"### {name}, {label} variant ({len(rows)} accepted)", ""]
+            for tag, r in (("largest effect", rows[-1]), ("median effect", rows[len(rows) // 2])) if rows else ():
+                lines += [f"**{tag}: {r[0]:+d} answers of 512 vs. parent** (ADMM round {r[4]}; {r[5]})", "",
+                          f"- parent: {r[1]}", f"- {label} variant (before ADMM): {word_diff(r[1], r[2])}",
+                          f"- accepted child (vs. parent): {word_diff(r[1], r[3])}", ""]
     return lines
 
 

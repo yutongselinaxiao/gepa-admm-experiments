@@ -31,9 +31,9 @@ needed:
 | **H** | C with 36 proposals (3× compute) |
 | **I** | Multi-start: 3 ADMM runs per proposal (3× compute) |
 
-## Method specifications: E, F, G
+## Method specifications: D, E, F, G
 
-All three run inside the same GEPA loop as every other arm:
+All four run inside the same GEPA loop as every other arm:
 - GEPA picks a parent from its pool (Pareto rule) and samples an 8-example minibatch;
 - the proposer returns one child;
 - the child is judged on **S′**: a 32-example batch disjoint from the minibatch, S and ADMM's
@@ -73,9 +73,51 @@ polished child):
 - Typical pattern: reflection rewrites a clause; the polish changes one phrase (here the answer
   wording).
 
+### D: multi-length ADMM with LM insertion (run on AG News with letters and emotion only)
+- **Idea:** the same structure as F (each proposal also tries a 2-token-shorter and a 2-token-longer
+  prompt). The only difference is how inserted words are chosen: D takes the **language model's
+  single most likely next token**, which ignores the task.
+- **Steps (per proposal):**
+  1. **Saliency:** compute the gradient norm of the task loss for each token of the parent, on one
+     16-example training batch.
+  2. **Shorter variant:** delete the 2 least salient tokens (excluding the final token).
+  3. **Longer variant:** at the 2 most salient positions, insert the LM's top allowed token given
+     the text before that position. No gradient and no loss check.
+  4. **Refine:** run 20 ADMM rounds from the parent, the shorter variant and the longer variant,
+     each at fixed length.
+  5. **Pool and select:** pool all candidates (raw variants included) and pick the best on S;
+     judge on S′.
+- **Cost:** about 2.9× C (three refinements; the insertion itself is two forward passes).
+- **Flags:** `--admm-length-offsets 0 -2 2` (insertion rule `lm` is the default).
+- **Results** (`RESULTS_10_16.md` Q2; 2k report sets):
+  - **AG News:** +0.58 pp vs. C (p = 0.58);
+  - **emotion:** −0.88 pp (p = 0.10);
+  - below equal-compute multi-start on both;
+  - not run on Yahoo, AG News with label names or GoEmotions.
+
+**Examples** (AG News with letters, accepted; effect = change in correct answers out of 512
+validation examples):
+- **Shorter variant, +31** (D's most common winning edit):
+  - before ADMM, the two least salient tokens are just the commas: "… from the label
+    ~~mapping,~~ **mapping** ignore incidental ~~details,~~ **details** and output …"
+  - after ADMM, the freed space becomes a new phrase: "… from the label ~~mapping, ignore
+    incidental details,~~ **mapping and provide details** and output only the corresponding capital
+    letter."
+- **Longer variant, −10** (the median accepted one):
+  - before ADMM, the LM's top token repeats a nearby word: "… Output only the corresponding
+    **label** capital **label** letter."
+  - after ADMM: "… the corresponding **label** capital **letter** letter."
+- **What the examples show:**
+  - the deletion mostly removes punctuation, which ADMM then rewrites;
+  - the LM's top-token insertion mostly duplicates neighboring words ("main **emotion** emotion",
+    "**label** capital **label** letter);
+  - so on AG News the longer variant won only 16 of 114 proposals, against 101 of 116 for F's
+    gradient-chosen insertion.
+
 ### F: multi-length ADMM with gradient-chosen insertion
-- **Idea:** let each proposal try a shorter and a longer prompt as well as the parent's own length,
-  with inserted words chosen for the task rather than by the LM alone.
+- **Idea:** like D, let each proposal try a shorter and a longer prompt as well as the parent's own
+  length, but with inserted words chosen for the task rather than by the LM alone. Steps 1, 2, 4 and 5
+  are identical to D; only step 3 differs.
 - **Steps (per proposal):**
   1. **Saliency:** compute the gradient norm of the task loss for each token of the parent, on one
      16-example training batch.
@@ -140,7 +182,8 @@ polished child):
   plus a token swap. Deletions of original tokens are rare: the gates of original tokens tend to
   rise toward 1 (`RESULTS_10_16.md` Q2).
 
-More examples, including the largest and median accepted child of each method on both tasks:
+More examples, including the largest and median accepted child of each method (E, F, G on Yahoo and
+GoEmotions; D on AG News and emotion):
 [`artifacts/cross_task/examples.md`](artifacts/cross_task/examples.md). The effects quoted are
 diagnostics on the validation audit (GEPA never sees validation):
 - **Yahoo:** the change in the number of correct answers out of 1,280.

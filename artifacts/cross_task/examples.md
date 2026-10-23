@@ -84,3 +84,61 @@
 - parent: Carefully decide whether the comment expresses the candidate emotion from the label mapping, ignore incidental details, and output only the corresponding capital letter.
 - accepted child: Carefully decide whether the comment expresses ~~the~~ **a** candidate emotion from the label mapping, ignore incidental details, and output only the corresponding ~~capital~~ **emotion** letter.
 
+## D: multi-length, LM insertion (Phase 7; AG News with letters and emotion)
+
+### AG News, 2-shorter variant (47 accepted)
+
+**largest effect: +36 answers of 512 vs. parent** (ADMM round 16; agnews_multilength_s3)
+
+- parent: Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.
+- 2-shorter variant (before ADMM): Carefully determine the article's main topic from the label ~~mapping,~~ **mapping** ignore incidental ~~details,~~ **details** and output only the corresponding capital letter.
+- accepted child (vs. parent): Carefully ~~determine~~ **choose** the article's main topic from the label ~~mapping, ignore incidental details,~~ **mapping and classify it** and output only the corresponding capital letter.
+
+**median effect: +31 answers of 512 vs. parent** (ADMM round 1; agnews_multilength_s3)
+
+- parent: Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.
+- 2-shorter variant (before ADMM): Carefully determine the article's main topic from the label ~~mapping,~~ **mapping** ignore incidental ~~details,~~ **details** and output only the corresponding capital letter.
+- accepted child (vs. parent): Carefully determine the article's main topic from the label ~~mapping, ignore incidental details,~~ **mapping and provide details** and output only the corresponding capital letter.
+
+### AG News, 2-longer variant (7 accepted)
+
+**largest effect: +32 answers of 512 vs. parent** (ADMM round 15; agnews_multilength_s6)
+
+- parent: Carefully determine the article's main topic from the label mapping, ignore incidental details, and output only the corresponding label name and letter.
+- 2-longer variant (before ADMM): Carefully determine the **most** article's main topic from the label mapping, ignore incidental details, and output only the corresponding label name and **the** letter.
+- accepted child (vs. parent): ~~Carefully~~ **###fully** determine the ~~article's~~ **most likely's** main topic from the label mapping, ignore incidental details, and output only the corresponding label name and **the** letter.
+
+**median effect: -10 answers of 512 vs. parent** (ADMM round 9; agnews_multilength_s6)
+
+- parent: Carefully determine the article main topic from the label mapping for it. Output only the corresponding capital letter.
+- 2-longer variant (before ADMM): Carefully determine the article main topic from the label mapping for it. Output only the corresponding **label** capital **label** letter.
+- accepted child (vs. parent): Carefully determine the article main topic from the label mapping for it. Output only the corresponding **label** capital **letter** letter.
+
+### Emotion, 2-shorter variant (39 accepted)
+
+**largest effect: +14 answers of 512 vs. parent** (ADMM round 10; emotion_multilength_s8)
+
+- parent: Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.
+- 2-shorter variant (before ADMM): Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental ~~details,~~ and output only the corresponding capital letter.
+- accepted child (vs. parent): Carefully determine the main emotion the ~~writer~~ **user** expresses from the label mapping, ignore incidental ~~details,~~ and output only the corresponding capital letter.
+
+**median effect: -5 answers of 512 vs. parent** (ADMM round 18; emotion_multilength_s0)
+
+- parent: Carefully determine the main emotion emotion the writer expresses in the the paragraph. (Ignore incidental details, and then only the main one letter.
+- 2-shorter variant (before ADMM): Carefully determine the main emotion emotion the writer expresses in the ~~the~~ paragraph. (Ignore incidental ~~details,~~ **details** and then only the main one letter.
+- accepted child (vs. parent): Carefully determine the main emotion emotion the writer expresses in the ~~the~~ paragraph. (Ignore ~~incidental details,~~ **the details** and then only the main one letter.
+
+### Emotion, 2-longer variant (9 accepted)
+
+**largest effect: +18 answers of 512 vs. parent** (ADMM round 1; emotion_multilength_s2)
+
+- parent: Carefully determine the main emotion the writer expresses. The label mapping, ignore accidental and output only the corresponding capital letter.
+- 2-longer variant (before ADMM): Carefully determine the main **emotion** emotion the writer expresses. The label mapping, ignore accidental and output only the corresponding capital **label** letter.
+- accepted child (vs. parent): Carefully determine the main emotion **emotion** the ~~writer~~ **text** expresses. The label mapping, ignore accidental and output only the corresponding capital **label** letter.
+
+**median effect: +4 answers of 512 vs. parent** (ADMM round 7; emotion_multilength_s5)
+
+- parent: Carefully determine the main emotion the writer expresses from the label mapping provided and determine the output only the corresponding label for the emotion.
+- 2-longer variant (before ADMM): Carefully determine the main emotion **emotion** the **user** writer expresses from the label mapping provided and determine the output only the corresponding label for the emotion.
+- accepted child (vs. parent): Carefully determine the main emotion **emotion** the **user** writer expresses from the label mapping provided and determine the output ~~only~~ **with** the corresponding label for the emotion.
+
