@@ -216,6 +216,45 @@ only at the start of a proposal (as in D and F).
 `k` plays the role of `z`: the discrete decision that the continuous variable must eventually agree
 with.
 
+**ADMM problem formulation.** One ADMM over the combined per-slot variable (embedding, gate); the
+two duals correspond to the two constraints, not to two ADMM loops.
+
+$$
+\min_{e,\,a,\,z,\,k}\; f\big(e,\,g\big) + h(z,k)
+\quad\text{s.t.}\quad k_i\,\big(e_i - E(z_i)\big) = 0,\;\; g_i = k_i \;\;\forall i,
+\qquad g_i=\sigma(a_i),\; z_i\in V,\; k_i\in\{0,1\},\; k_n=1
+$$
+
+- $f(e,g)$: task loss of the gated soft prompt (cross-entropy, or $1-$ soft F1 for multi-label),
+  computed with attention logit to slot $i$ $+\log g_i$ and positions advancing by $g$.
+- $h(z,k) = \lambda \sum_{i:\,k_i=1} \mathrm{NLL}_{LM}(z_i \mid \text{prefix}, \text{earlier present tokens})$,
+  plus hard constraints: $z_i$ is in the LM's top-$p$ nucleus or equals the parent's token, and the
+  final slot is present.
+- **Constraints:** a present slot's embedding must be a real token's embedding (blank slots are
+  free), and each gate must equal its 0/1 decision.
+
+Scaled augmented Lagrangian (duals $u_i\in\mathbb{R}^d$, $v_i\in\mathbb{R}$):
+
+$$
+L = f(e,g) + h(z,k) + \frac{\rho}{2}\sum_i k_i\,\lVert e_i - E(z_i) + u_i\rVert^2 + \frac{\rho_g}{2}\sum_i \big(g_i - k_i + v_i\big)^2
+$$
+
+Each of the 20 rounds:
+1. **$(e,a)$-step:** 3 Adam steps on $L$ over $(e,a)$ with a 16-example batch ($\rho=0.1$,
+   $\rho_g=1$; learning rates 0.005 for $e$ and 0.1 for $a$).
+2. **$(z,k)$-step:** beam search (width 4) on $L$ over $(z,k)$. Per slot, with $t_i=g_i+v_i$: blank
+   costs $\propto t_i^2$, token $w$ costs $\propto (1-t_i)^2 + \lVert e_i+u_i-E(w)\rVert^2 + \lambda\,\mathrm{NLL}_{LM}(w\mid\cdot)$.
+3. **Duals:** $u_i \leftarrow k_i\,(u_i + e_i - E(z_i))$ (reset for blanks); $v_i \leftarrow v_i + g_i - k_i$.
+4. **Candidate:** the present tokens $\{z_i : k_i=1\}$ form a discrete prompt, scored on S.
+
+**Where the implementation deviates from this:**
+- **The $(z,k)$-step is reweighted.** It uses gate weight $\gamma=10$ instead of $\rho_g/2$, and
+  token distances measured relative to the closest candidate token without the $\rho/2$ factor.
+  Absolute distances drift during ADMM while a blank has no embedding to compare, so unscaled
+  distances made the beam delete almost everything in the first smoke test.
+- **It's a heuristic:** non-convex and partly discrete, with no convergence guarantee. That is why
+  the best candidate over all rounds is kept, not the last iterate.
+
 **How a gate acts on the model** (the relaxation):
 - the attention logit from every later token to slot i gets + log g_i;
 - the position index of slot i is p0 + Σ_{j<i} g_j (positions advance by the gates before it).
