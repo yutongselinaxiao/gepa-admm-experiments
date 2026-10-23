@@ -190,53 +190,120 @@ examples):
 
 ### G: gated variable-length ADMM
 
-```python
-# Relaxation of deletion. Each slot i has an embedding e_i and a keep-gate g_i = sigmoid(a_i):
-#   attention logit from any query to slot i   +=  log g_i
-#   position of slot i                          =   p0 + Σ_{j<i} g_j
-# g_i = 1 is the normal token; g_i → 0 is exactly the prompt without token i (checked to 1e-4).
+**Idea:** make "is this token present?" a continuous quantity that ADMM optimizes together with the
+token embeddings. The prompt can then lose tokens or gain new ones in any ADMM round, rather than
+only at the start of a proposal (as in D and F).
 
-def propose_G(parent, spare=4, rho=0.1, rho_g=1.0, lr_gate=0.1):
-    s = saliency(parent)                           # as in D/F
-    slots = parent tokens with `spare` spare slots inserted before the most salient positions
-    # each spare slot's embedding starts at the LM's most likely token there; its gate starts almost off
-    a = [4.0 if parent_slot else -2.0 for slot in slots]   # g ≈ 0.98 for parent tokens, ≈ 0.12 for spares
-    k = [1 if parent_slot else 0 for slot in slots]        # current decision per slot: token (1) or blank (0)
-    for t in range(20):
+**Slots.** G works on a sequence of *slots* built from the parent instruction:
+- **Parent slots:** one per token of the parent instruction. They start present, holding the
+  parent's token.
+- **Spare slots:** 4 extra slots, inserted before the 4 parent tokens with the largest saliency
+  (loss gradient norm, as in D/F). They start (almost) absent; a spare slot that turns on becomes an
+  inserted word.
+
+| Symbol | Meaning | Initial value |
+|---|---|---|
+| e_i | continuous embedding of slot i; optimized by Adam | parent slot: E(parent token). Spare slot: E(the LM's most likely token at that position) |
+| a_i | **gate logit** of slot i: an unconstrained number optimized by Adam (learning rate 0.1) | parent slot **+4**, spare slot **−2** |
+| g_i = sigmoid(a_i) | **keep-gate**: how present slot i is in the prompt, between 0 and 1 | parent ≈ 0.98, spare ≈ 0.12 |
+| k_i | **discrete decision** for slot i from the latest projection: 1 = holds a token, 0 = blank | parent 1, spare 0 |
+| z_i | the token in slot i when k_i = 1 | parent token (spares blank) |
+| u_i | ADMM dual for the embedding: accumulated gap between e_i and E(z_i) | 0 |
+| v_i | ADMM dual for the gate: accumulated gap between g_i and k_i | 0 |
+| t_i = g_i + v_i | gate target that the projection sees | |
+
+`a`/`g` play the role for presence that `e` plays for token identity: the continuous variable.
+`k` plays the role of `z`: the discrete decision that the continuous variable must eventually agree
+with.
+
+**How a gate acts on the model** (the relaxation):
+- the attention logit from every later token to slot i gets + log g_i;
+- the position index of slot i is p0 + Σ_{j<i} g_j (positions advance by the gates before it).
+- So g_i = 1 is the ordinary token; g_i → 0 is *exactly* the prompt without that token (checked to
+  1e-4 logits); values in between are "partly present".
+
+**Why +4 and −2:**
+- **+4 for parent slots** (g ≈ 0.98, log g ≈ −0.02): the starting prompt is essentially the parent
+  itself.
+- **−2 for spare slots** (g ≈ 0.12, log g ≈ −2.1) is a compromise:
+  - small enough that a spare barely changes the starting prompt;
+  - not 0, because the attention paid to a slot scales with g. A spare at g ≈ 0 would have no
+    influence on the output, so its embedding would get no gradient and it could never learn to
+    open. At g ≈ 0.12 it has a small, measurable effect, and gradients reach both its embedding and
+    its gate.
+- **These values were not tuned.**
+
+```python
+def propose_G(parent, n_spare=4, rho=0.1, rho_g=1.0):
+    s = saliency(parent)                           # loss-gradient norm per parent token (as in D/F)
+    slots = insert n_spare spare slots before the n_spare most salient parent tokens
+    e = [E(token) if parent slot else E(argmax P_LM at that position) for slot in slots]
+    a = [+4.0 if parent slot else -2.0 for slot in slots]      # gates start ≈ 0.98 (present) / ≈ 0.12 (almost absent)
+    k = [1 if parent slot else 0 for slot in slots]            # discrete decision: token (1) or blank (0)
+    z = [parent token if parent slot else None for slot in slots]
+    u, v = 0, 0                                                # duals for embeddings and gates
+    for t in range(20):                                        # ADMM rounds
         B = next_batch(T, 16)
-        for _ in range(3):                         # E-step on embeddings (lr 0.005) and gate logits (lr 0.1)
-            L = (ℓ_B(e, g)                                              # task loss with gated attention
-                 + rho / 2 * Σ_i k_i * ||e_i - E(z_i) + u_i||**2        # token consensus, filled slots only
-                 + rho_g / 2 * Σ_i (g_i - k_i + v_i)**2)                # gate consensus with token/blank
+        for _ in range(3):                                     # E-step: Adam on e (lr 0.005) and a (lr 0.1)
+            g = sigmoid(a)
+            L = (ℓ_B(e, g)                                     # task loss of the gated prompt
+                 + rho / 2 * Σ_i k_i * ||e_i - E(z_i) + u_i||**2   # filled slots: keep e near their token
+                 + rho_g / 2 * Σ_i (g_i - k_i + v_i)**2)           # every slot: keep the gate near its decision
             e, a = Adam(grad(L))
-        z, k = gated_beam(target=e + u, gate_target=g + v)    # Z-step: blank or token, per slot
-        u = [k_i * (u_i + e_i - E(z_i)) for i]     # token dual; reset to 0 for blank slots
-        v = v + g - k                              # gate dual
-        if new and round_trips(z without blanks):  # as in admm_refine
-            candidates[z without blanks] = ℓ_S(z without blanks)
-    child = select_on_S(candidates, parent)        # lowest ℓ_S among all rounds, if it beats the parent
+            # The task loss can pull a spare's gate up (if the half-present word helps) or a parent
+            # token's gate down (if removing it helps); the penalty terms pull both back toward k.
+        z, k = gated_beam(target=e + u, gate_target=sigmoid(a) + v)   # Z-step: blank or token per slot
+        u = [k_i * (u_i + e_i - E(z_i)) for i]                 # embedding dual (reset to 0 when blank)
+        v = v + sigmoid(a) - k                                 # gate dual: a gate that keeps disagreeing with
+                                                               # its decision builds up until the decision flips
+        x_t = [z_i for i if k_i == 1]                          # the discrete prompt: blanks removed
+        if x_t is new and round_trips(x_t):
+            candidates[x_t] = ℓ_S(x_t)                         # score on S with the real tokens
+    child = select_on_S(candidates, parent)                    # lowest ℓ_S over all rounds, if it beats the parent
     return child, accept(child, parent)
 
 def gated_beam(target, gate_target, gamma=10.0, lam=0.3):
-    # Left to right, beam width 4. For slot i with gate target t_i:
-    #   blank:    cost  gamma · t_i²                                  cheap when the gate wants "off"
-    #   token w:  cost  ||target_i − E(w)||² − min_w' ||target_i − E(w')||²   distance relative to the closest candidate
-    #                 + gamma · (1 − t_i)²                            cheap when the gate wants "on"
-    #                 + lam · NLL_LM(w | prefix, chosen tokens)       fluency
-    # A slot therefore flips between blank and token roughly when t_i crosses 0.5. The final token is never blank.
-    return per-slot choices
+    # Left to right, beam width 4. For slot i with gate target t_i, each beam extends with either
+    #   blank:   cost  gamma · t_i²                            low when the gate says "off"
+    #   token w: cost  gamma · (1 − t_i)²                      low when the gate says "on"
+    #                + ||target_i − E(w)||² − min_w' ||target_i − E(w')||²   closeness to the slot's embedding,
+    #                                                          relative to the closest allowed token
+    #                + lam · NLL_LM(w | prefix, tokens chosen so far)        fluency
+    #   (w ranges over the LM's top-p nucleus at that point, plus the parent's token for parent slots)
+    # With gamma = 10, a slot switches between blank and token roughly when t_i crosses 0.5.
+    # The final slot (the token carrying the trailing newline) is never blank.
+    return the cheapest sequence of choices
 ```
 
-- **Cost:** about 1.1× C in forward passes.
-- **Flags:** `--admm-gated` (spare slots `--admm-spare-slots 4`, gate weight `--admm-gate-weight 10`).
-- **Examples** (accepted):
-  - **Yahoo, +99 correct answers of 1,280:** one spare slot opened (gate → on) and one token swapped
-    by the Z-step: "Carefully ~~determine~~ **classify** the **following** question's intent by
-    topic from the label mapping, …"
-  - **GoEmotions, +8.1 F1 points:** one spare slot opened: "Carefully decide whether the comment
-    expresses the ~~candidate~~ **candidate's** emotion …"
+**Worked example** (parent "…output only the corresponding capital letter.", with a spare slot
+before "capital"):
+1. **Start:** the spare holds the embedding of the LM's likeliest word there, say "label", at
+   g ≈ 0.12. The model sees "…corresponding *(faint label)* capital letter."
+2. **E-steps:** if the faint "label" lowers the task loss, the gradient raises its gate logit, and the
+   embedding moves toward whatever helps most.
+3. **Projection:** while t = g + v stays below about 0.5, blank is cheaper and the spare stays empty;
+   the dual v slowly builds up. Once t passes about 0.5, a token is cheaper, and the beam picks a
+   fluent token near the spare's embedding, here "label".
+4. **Candidate:** the new discrete prompt "…output only the corresponding **label** capital
+   letter." is scored on S. After 20 rounds, the best candidate on S is proposed and judged on S′.
+5. **Deletions** work the same way in reverse: a parent token whose gate the task loss pushes down
+   eventually becomes blank. In practice this is rare; parent gates tend to rise toward 1.
+
+**Cost:** about 1.1× C in forward passes. It has one refinement, like C, and no separate insertion
+search. It still uses the LM in every round, as all ADMM arms do: the task loss in the E-steps, and
+the nucleus plus fluency term in the projection. Its projection recomputes the prefix without a
+cache, so each pass is longer than C's.
+
+**Flags:** `--admm-gated` (spare slots `--admm-spare-slots 4`, gate weight `--admm-gate-weight 10`).
+
+**Examples** (accepted):
+- **Yahoo, +99 correct answers of 1,280:** one spare slot opened and one parent token swapped by the
+  Z-step: "Carefully ~~determine~~ **classify** the **following** question's intent by topic from the
+  label mapping, …"
+- **GoEmotions, +8.1 F1 points:** one spare slot opened: "Carefully decide whether the comment
+  expresses the ~~candidate~~ **candidate's** emotion …"
 - **Result:** edits are small and mostly fluent, typically one opened spare plus a token swap.
-  Original tokens are rarely deleted, because their gates tend to rise toward 1 during the E-steps.
+  Parent tokens are rarely deleted.
 
 ### E: reflect-then-polish
 
