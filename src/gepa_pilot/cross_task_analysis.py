@@ -119,6 +119,90 @@ def label_name_ceiling() -> list[str]:
     return lines + [""]
 
 
+def method_examples() -> list[str]:
+    """Real accepted proposals of E (polish), F (gradient insertion) and G (gated) on Yahoo and GoEmotions.
+
+    Effect on validation (diagnostic only): Yahoo = change in the number of correct answers (of 1,280);
+    GoEmotions = change in mean comment F1, in points (192 comments)."""
+    from .phase_7_10_analysis import word_diff
+
+    tasks = [("Yahoo", "artifacts/phase11_yahoo/yahoo_{arm}_s*", False),
+             ("GoEmotions", "artifacts/phase14_goemotions_f1/goemotions_{arm}_s*", True)]
+
+    def effect(audit: dict, parent: str, child: str, multi: bool) -> float | None:
+        if parent not in audit or child not in audit:
+            return None
+        p, c = audit[parent]["correct_by_id"], audit[child]["correct_by_id"]
+        delta = sum(c[i] - p[i] for i in p)
+        return 100 * delta / len(p) if multi else delta
+
+    def unit(multi: bool) -> str:
+        return "F1 points" if multi else "answers"
+
+    lines = ["# Example proposals of E, F and G (accepted children; bold = inserted, strikethrough = deleted)", ""]
+    for task, pattern, multi in tasks:
+        lines += [f"## {task}", ""]
+        # E: GEPA parent -> reflection draft -> ADMM polish (judged against the GEPA parent on S')
+        rows = []
+        for run in sorted(Path().glob(pattern.format(arm="E_polish_fair"))):
+            if not run.is_dir():
+                continue
+            audit = json.loads((run / "gepa_result.json").read_text())["audit_by_instruction"]
+            judged = {j["call_index"]: j for j in map(json.loads, (run / "heldout_judgements.jsonl").read_text().splitlines())}
+            for p in map(json.loads, (run / "admm_proposals.jsonl").read_text().splitlines()):
+                j = judged.get(p["call_index"])
+                if p["outcome"] == "proposed" and j and j["heldout_accept"] and j["child_instruction"] == p["child_instruction"]:
+                    e = effect(audit, j["parent_instruction"], p["child_instruction"], multi)
+                    e_draft = effect(audit, j["parent_instruction"], p["parent_instruction"], multi)
+                    if e is not None:
+                        rows.append((e, e_draft, j["parent_instruction"], p["parent_instruction"], p["child_instruction"], run.name))
+        rows.sort(key=lambda r: r[0])
+        lines += [f"### E: reflect-then-polish ({len(rows)} accepted children where the polish changed the draft)", ""]
+        for tag, r in (("largest effect", rows[-1]), ("median effect", rows[len(rows) // 2])) if rows else ():
+            draft_effect = "n/a" if r[1] is None else f"{r[1]:+.1f}"
+            lines += [f"**{tag}: {r[0]:+.1f} {unit(multi)} vs. GEPA's parent** (draft alone: {draft_effect}; {r[5]})", "",
+                      f"- GEPA parent: {r[2]}", f"- reflection draft: {word_diff(r[2], r[3])}",
+                      f"- after ADMM polish (vs. draft): {word_diff(r[3], r[4])}", ""]
+        # F: raw +2 variant (gradient-chosen insertions) and the refined child that won
+        rows = []
+        for run in sorted(Path().glob(pattern.format(arm="F_mlgrad"))):
+            if not run.is_dir():
+                continue
+            audit = json.loads((run / "gepa_result.json").read_text())["audit_by_instruction"]
+            for p in map(json.loads, (run / "admm_proposals.jsonl").read_text().splitlines()):
+                if p["outcome"] == "proposed" and p["heldout_accept"] and p["chosen"].get("start_offset", 0) > 0:
+                    raw = next((v["text"] for v in p.get("length_variants", []) if v["offset"] > 0), None)
+                    e = effect(audit, p["parent_instruction"], p["child_instruction"], multi)
+                    if e is not None and raw:
+                        rows.append((e, p["parent_instruction"], raw, p["child_instruction"], p["chosen"]["iteration"], run.name))
+        rows.sort(key=lambda r: r[0])
+        lines += [f"### F: gradient insertion ({len(rows)} accepted children from the 2-longer variant)", ""]
+        for tag, r in (("largest effect", rows[-1]), ("median effect", rows[len(rows) // 2])) if rows else ():
+            lines += [f"**{tag}: {r[0]:+.1f} {unit(multi)} vs. parent** (refined child from ADMM round {r[4]}; {r[5]})", "",
+                      f"- parent: {r[1]}", f"- 2-longer variant (2 gradient-chosen insertions, before ADMM): {word_diff(r[1], r[2])}",
+                      f"- accepted child (vs. parent): {word_diff(r[1], r[3])}", ""]
+        # G: gated, with what the gates did at the chosen round
+        rows = []
+        for run in sorted(Path().glob(pattern.format(arm="G_gated"))):
+            if not run.is_dir():
+                continue
+            audit = json.loads((run / "gepa_result.json").read_text())["audit_by_instruction"]
+            for p in map(json.loads, (run / "admm_proposals.jsonl").read_text().splitlines()):
+                if p["outcome"] == "proposed" and p["heldout_accept"]:
+                    it = next((r for r in p["iterations"] if r["iteration"] == p["chosen"]["iteration"]), None)
+                    e = effect(audit, p["parent_instruction"], p["child_instruction"], multi)
+                    if e is not None and it:
+                        rows.append((e, p["parent_instruction"], p["child_instruction"], it["filled_spare"], it["deleted_original"],
+                                     p["chosen"]["start_offset"], run.name))
+        rows.sort(key=lambda r: r[0])
+        lines += [f"### G: gated ({len(rows)} accepted children)", ""]
+        for tag, r in (("largest effect", rows[-1]), ("median effect", rows[len(rows) // 2])) if rows else ():
+            lines += [f"**{tag}: {r[0]:+.1f} {unit(multi)} vs. parent** (spare slots opened: {r[3]}, original tokens "
+                      f"deleted: {r[4]}, length change {r[5]:+d} tokens; {r[6]})", "",
+                      f"- parent: {r[1]}", f"- accepted child: {word_diff(r[1], r[2])}", ""]
+    return lines
+
+
 def main() -> None:
     out = Path("artifacts/cross_task")
     out.mkdir(parents=True, exist_ok=True)
@@ -170,6 +254,7 @@ def main() -> None:
     lines += label_name_ceiling()
     (out / "tables.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     (out / "summary.json").write_text(json.dumps({"settings": summary, "f_vs": f_vs}, indent=2), encoding="utf-8")
+    (out / "examples.md").write_text("\n".join(method_examples()) + "\n", encoding="utf-8")
     print("\n".join(lines))
 
     # Figure 18: every arm minus C, with 95% CI, per task setting.
