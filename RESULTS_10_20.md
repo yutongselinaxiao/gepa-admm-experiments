@@ -127,8 +127,10 @@ def insert_two_gradient(x, s):                     # F: two insertions, one at a
             W8   = 8 words of W with the most negative delta          # 8 candidate WORDS per gap: predicted to
                                                                       # lower the loss most (GCG-style)
             trials += [(g, w) for w in {w0} | W8]                     # up to 9 trials per gap, 54 in total
-        g, w = min(trials, key=lambda gw: ℓ_32(x[:g] + [gw[1]] + x[g:]))  # exact loss of each trial on 32
-                                                                      # training examples; insert the best pair
+        # Check step: build each trial's instruction (its own word at its own gap), score it with the REAL
+        # tokens on 32 training examples (the first 32 of ADMM's pool T; on GoEmotions T has only 24), and
+        # keep the pair with the lowest loss. Trials that do not re-tokenize exactly are skipped.
+        g, w = min(trials, key=lambda gw: ℓ_32(x[:gw[0]] + [gw[1]] + x[gw[0]:]))
         x = x[:g] + [w] + x[g:]
     return x
 ```
