@@ -137,6 +137,19 @@ def insert_two_gradient(x, s):                     # F: two insertions, one at a
 |---|---|---|
 | Cost vs. C | about 2.9× (three refinements) | about 3.4× (plus the insertion search) |
 | Insertion settings | LM top 1 | LM top 64 (fluency filter) → 8 per gap by gradient → exact loss; 6 gaps. **Not tuned** |
+
+**"GCG-style"** refers to Greedy Coordinate Gradient (Zou et al., 2023; building on AutoPrompt, Shin
+et al., 2020), the standard way to search over discrete tokens with gradients:
+- **Estimate:** one backward pass estimates, for every vocabulary token w, how much the loss would
+  change if w replaced the current token: (E(w) − E(current)) · ∇.
+- **Shortlist and check:** the top-k by that estimate are scored exactly, and the best is kept; GCG
+  repeats this for many rounds.
+- **F's insertion uses the same estimate-then-check trick,** with three differences:
+  - it inserts at a gap rather than swapping a token;
+  - candidates are restricted to the LM's 64 likeliest words;
+  - it runs once per inserted token, after which ADMM takes over.
+- **Why the filter:** unconstrained GCG is known to produce gibberish that still lowers the loss.
+  F's first, unfiltered version did the same ("correspondingetine").
 | Flags | `--admm-length-offsets 0 -2 2` | `--admm-length-offsets 0 -2 2 --admm-insertion gradient` |
 | Run on | AG News (letters), emotion | all five settings |
 
