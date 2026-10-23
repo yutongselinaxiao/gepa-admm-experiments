@@ -49,6 +49,9 @@ Every method is a **proposer** inside the same GEPA loop: GEPA picks a parent (P
 #              single-label: cross-entropy over the label scores
 #              multi-label:  1 − soft F1 per text, soft F1 = 2 Σ_k p_k y_k / (Σ_k p_k + Σ_k y_k), p_k = sigmoid(log-odds_k)
 #   S, S′    two disjoint 32-example training batches: S picks the candidate, S′ judges acceptance
+#   ℓ_S(x)   loss of a discrete prompt x on S (real tokens, no gradients); ℓ_S2(x) the same on S′
+#   select_on_S(pool, parent): the candidate with the LOWEST ℓ_S in the pool, if that loss is below
+#            the parent's ℓ_S; otherwise the parent itself (= "nothing better found")
 #   T        the remaining training examples (ADMM's own training data, drawn 16 at a time)
 
 def admm_refine(x, rounds=20, rho=0.1, lr=0.005, e_steps=3):
@@ -62,8 +65,12 @@ def admm_refine(x, rounds=20, rho=0.1, lr=0.005, e_steps=3):
         u += e - E(z)                              # dual step: accumulate the remaining gap e − E(z)
         if z != x and round_trips(z):              # a new prompt that re-tokenizes exactly
             candidates[z] = ℓ_S(z)                 # score it on S with the real tokens (no gradients)
-    best = min(candidates, key=candidates.get)     # best candidate seen, not the last round (RESULTS_10_16 Q4)
-    return best if ℓ_S(best) < ℓ_S(x) else x       # propose only a child that beats the parent on S
+    return select_on_S(candidates, parent=x)       # lowest ℓ_S among all rounds (not the last round,
+                                                   # RESULTS_10_16 Q4), and only if it beats the parent on S
+
+def select_on_S(pool, parent):
+    best = min(pool, key=ℓ_S)                      # the candidate with the lowest loss on S
+    return best if ℓ_S(best) < ℓ_S(parent) else parent   # no candidate beats the parent: return the parent
 
 def beam_project(target, lam=0.3, top_p=0.99, width=4):
     # Left to right, keeping the `width` cheapest partial sequences. At position i the allowed tokens are
@@ -92,7 +99,7 @@ def propose_multilength(parent, insert_two):       # D: insert_two = insert_two_
     pool  = {short, long_}                         # the raw variants are candidates themselves
     for start in (parent, short, long_):           # three refinements, each keeping its own length
         pool |= candidates_of(admm_refine(start))
-    child = argmin_S(pool) if ℓ_S(argmin_S(pool)) < ℓ_S(parent) else parent
+    child = select_on_S(pool, parent)              # lowest ℓ_S over all three lengths, if it beats the parent
     return child, accept(child, parent)
 
 def insert_two_lm(x, s):                           # D
@@ -170,8 +177,10 @@ def propose_G(parent, spare=4, rho=0.1, rho_g=1.0, lr_gate=0.1):
         z, k = gated_beam(target=e + u, gate_target=g + v)    # Z-step: blank or token, per slot
         u = [k_i * (u_i + e_i - E(z_i)) for i]     # token dual; reset to 0 for blank slots
         v = v + g - k                              # gate dual
-        add z (blanks removed) to the candidates, scored on S, as in admm_refine
-    return best on S if it beats the parent, then accept(child, parent)
+        if new and round_trips(z without blanks):  # as in admm_refine
+            candidates[z without blanks] = ℓ_S(z without blanks)
+    child = select_on_S(candidates, parent)        # lowest ℓ_S among all rounds, if it beats the parent
+    return child, accept(child, parent)
 
 def gated_beam(target, gate_target, gamma=10.0, lam=0.3):
     # Left to right, beam width 4. For slot i with gate target t_i:
