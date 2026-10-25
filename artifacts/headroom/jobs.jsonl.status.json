@@ -1,0 +1,27 @@
+{
+  "pending": [],
+  "running": {},
+  "results": {
+    "headroom_emotion_names": "done",
+    "headroom_yahoo_names": "done",
+    "headroom_agnews_names": "done",
+    "headroom_dbpedia_names": "done",
+    "headroom_agnews_letters": "done",
+    "headroom_emotion_letters": "done",
+    "headroom_sst5_letters": "done",
+    "headroom_yahoo_letters": "done",
+    "headroom_dbpedia_letters": "done"
+  },
+  "attempts": {
+    "headroom_agnews_names": 1,
+    "headroom_emotion_names": 1,
+    "headroom_yahoo_names": 1,
+    "headroom_dbpedia_names": 1,
+    "headroom_agnews_letters": 1,
+    "headroom_emotion_letters": 1,
+    "headroom_yahoo_letters": 1,
+    "headroom_sst5_letters": 1,
+    "headroom_dbpedia_letters": 1
+  },
+  "updated": "2026-10-25 05:04:26"
+}

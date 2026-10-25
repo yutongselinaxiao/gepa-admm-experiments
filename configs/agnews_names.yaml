@@ -27,6 +27,6 @@ data:
   validation_size: 512
 
 manual_instructions:
-  - Determine the article's central subject, map it to the listed categories, and answer with only A, B, C, or D.
-  - Focus on the primary event rather than incidental names or organizations. Return exactly one label letter.
-  - Decide whether the article is mainly about world affairs, sports, business, or science and technology, then output its mapped letter only.
+  - Determine the article's central subject, map it to the listed categories, and answer with only one label name.
+  - Focus on the primary event rather than incidental names or organizations. Return exactly one label name.
+  - Decide whether the article is mainly about world affairs, sports, business, or science and technology, then output its label name only.

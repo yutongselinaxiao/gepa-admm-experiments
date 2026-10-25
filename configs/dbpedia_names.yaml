@@ -1,0 +1,52 @@
+# Label-name variant of dbpedia.yaml: the model answers with the label name (multi-token, scored by
+# teacher-forced sequence log-likelihood) instead of a mapped letter.
+# Candidate task: fancyzhx/dbpedia_14 (Wikipedia abstracts, 14 entity types). Same model and protocol as configs/pilot.yaml;
+# per-class sizes match the other tasks (64 train and 128 validation examples per class).
+model:
+  name_or_path: Qwen/Qwen3-1.7B
+  revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  local_files_only: true
+  local_snapshot_path: /home/xiaoyuto/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  dtype: bfloat16
+  device: cuda:0
+
+task:
+  name: "dbpedia"
+  text_field: "content"
+  label_field: "label"
+  input_heading: "Abstract"
+  input_noun: "encyclopedia abstract"
+  input_short: "abstract"
+  focus: "the type of entity the abstract describes"
+
+prompt:
+  system_prompt: "You are a careful entity-type classifier. Follow the supplied label mapping and response format exactly."
+  seed_instruction: "Carefully determine what kind of entity the abstract describes from the label mapping, ignore incidental details, and output only the corresponding label name."
+  label_names:
+    A: "Company"
+    B: "Educational institution"
+    C: "Artist"
+    D: "Athlete"
+    E: "Office holder"
+    F: "Means of transportation"
+    G: "Building"
+    H: "Natural place"
+    I: "Village"
+    J: "Animal"
+    K: "Plant"
+    L: "Album"
+    M: "Film"
+    N: "Written work"
+  enable_thinking: false
+  answer_style: name
+
+data:
+  dataset_name: fancyzhx/dbpedia_14
+  seed: 20261002
+  train_size: 896
+  validation_size: 1792
+
+manual_instructions:
+  - "Identify what kind of thing the abstract is about, map it to the listed entity types, and answer with only one label name."
+  - "Focus on the main subject of the abstract rather than places or people it mentions. Return exactly one label name."
+  - "Decide which of the fourteen listed entity types fits the abstract's subject, then output its label name only."

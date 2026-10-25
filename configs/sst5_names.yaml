@@ -1,0 +1,43 @@
+# Label-name variant of sst5.yaml: the model answers with the label name (multi-token, scored by
+# teacher-forced sequence log-likelihood) instead of a mapped letter.
+# Candidate task: SetFit/sst5 (movie-review sentences, 5 sentiment levels). Same model and protocol as configs/pilot.yaml;
+# per-class sizes match the other tasks (64 train and 128 validation examples per class).
+model:
+  name_or_path: Qwen/Qwen3-1.7B
+  revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  local_files_only: true
+  local_snapshot_path: /home/xiaoyuto/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  dtype: bfloat16
+  device: cuda:0
+
+task:
+  name: "sst5"
+  text_field: "text"
+  label_field: "label"
+  input_heading: "Review"
+  input_noun: "movie-review sentence"
+  input_short: "sentence"
+  focus: "the overall sentiment the reviewer expresses"
+
+prompt:
+  system_prompt: "You are a careful sentiment classifier. Follow the supplied label mapping and response format exactly."
+  seed_instruction: "Carefully determine the overall sentiment of the review from the label mapping, ignore incidental details, and output only the corresponding label name."
+  label_names:
+    A: "Very negative"
+    B: "Negative"
+    C: "Neutral"
+    D: "Positive"
+    E: "Very positive"
+  enable_thinking: false
+  answer_style: name
+
+data:
+  dataset_name: SetFit/sst5
+  seed: 20261002
+  train_size: 320
+  validation_size: 640
+
+manual_instructions:
+  - "Judge how positive or negative the reviewer is overall, map it to the five listed levels, and answer with only one label name."
+  - "Focus on the reviewer's overall verdict rather than individual words. Return exactly one label name."
+  - "Decide whether the sentence is very negative, negative, neutral, positive, or very positive, then output its label name only."

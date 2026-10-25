@@ -65,6 +65,7 @@ def main() -> None:
         label_names=config.prompt.label_names,
         enable_thinking=config.prompt.enable_thinking,
         input_heading=config.task.input_heading,
+        answer_style=config.prompt.answer_style,
     )
 
     deterministic_probe = examples[:8]
