@@ -1,0 +1,12 @@
+[
+  "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding capital letter.",
+  "Identify the feeling the writer is mainly expressing, map it to the listed emotions, and answer with only one label letter.",
+  "Focus on the writer's own emotional state rather than events or people mentioned. Return exactly one label letter.",
+  "Decide whether the post mainly expresses sadness, joy, love, anger, fear, or surprise, then output its mapped letter only.",
+  "Carefully analyze the text to identify the primary emotion expressed, considering the context and dominant sentiment, and output the corresponding capital letter from the label mapping.",
+  "Carefully analyze the text to identify the primary emotion expressed, considering both dominant and incidental elements, and output the corresponding capital letter from the label mapping.",
+  "Carefully analyze the text to identify the primary emotion conveyed, considering the context and dominant sentiment, and output the corresponding capital letter from the label mapping.",
+  "Carefully identify the dominant emotion expressed by the writer, considering the context and primary sentiment, and output the corresponding capital letter from the label mapping.",
+  "Carefully analyze the text to identify the primary emotion expressed, focusing on the dominant sentiment and context, and output the corresponding capital letter from the label mapping.",
+  "Carefully analyze the text for the primary emotion conveyed, prioritizing the dominant sentiment over incidental details, and select the corresponding capital letter from the label mapping."
+]

@@ -1,0 +1,12 @@
+[
+  "Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding label name.",
+  "Identify the feeling the writer is mainly expressing, map it to the listed emotions, and answer with only one label name.",
+  "Focus on the writer's own emotional state rather than events or people mentioned. Return exactly one label name.",
+  "Decide whether the post mainly expresses sadness, joy, love, anger, fear, or surprise, then output its label name only.",
+  "Carefully analyze the text for the primary emotion conveyed, considering the context and dominant sentiment, and select the most appropriate label from the provided mapping.",
+  "Carefully analyze the text for the primary emotion conveyed, considering both explicit and implicit expressions, and select the most dominant label from the given options.",
+  "Carefully analyze the text to identify the primary emotion expressed, considering the context and dominant sentiment, and select the most appropriate label from Sadness, Joy, Love, Anger, Fear, or Surprise.",
+  "Carefully analyze the text for the primary emotion conveyed, focusing on the dominant sentiment, and select the corresponding label from the provided mapping, ignoring any incidental details or keywords.",
+  "Carefully analyze the text to identify the primary emotion the writer expresses, focusing on the dominant sentiment, and select the corresponding label from the given options.",
+  "Carefully analyze the primary emotion conveyed by the writer, prioritizing the dominant sentiment over incidental details, and select the most accurate label from the provided mapping."
+]

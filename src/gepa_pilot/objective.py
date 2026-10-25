@@ -95,6 +95,22 @@ def backward_task_loss(
     # extra_loss: a tensor, a callable returning one, or a sequence of them. Callables are evaluated after
     # the forward pass, so the autograd graph (and the gradient accumulation order) is the same as before.
     extras = [] if extra_loss is None else list(extra_loss) if isinstance(extra_loss, (list, tuple)) else [extra_loss]
+    # Multi-token label names repeat each prompt's KV cache once per label, so a batch can need more memory
+    # than one pass allows: split it into chunks of 2 * max_rows (text, label) rows. Only when the batch
+    # does not fit in one chunk, and not for class-weighted losses (their normalizer spans the whole batch).
+    multi_token = not is_multilabel(evaluator) and not evaluator._all_labels_are_single_token()
+    per_text = max(1, 2 * max_rows // len(evaluator.labels))
+    if multi_token and class_weights is None and per_text < len(examples):
+        extras = [extra() if callable(extra) else extra for extra in extras]
+        if extras:
+            sum(extras[1:], extras[0]).backward()
+        total = 0.0
+        for start in range(0, len(examples), per_text):
+            chunk = examples[start : start + per_text]
+            loss = task_loss(evaluator, chunk, scores_fn(chunk)) * (len(chunk) / len(examples))
+            loss.backward()
+            total += float(loss.detach())
+        return total
     if not is_multilabel(evaluator):
         loss = task_loss(evaluator, examples, scores_fn(examples), class_weights)
         extras = [extra() if callable(extra) else extra for extra in extras]

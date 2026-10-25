@@ -1,0 +1,12 @@
+[
+  "Carefully determine the question's main topic from the label mapping, ignore incidental details, and output only the corresponding label name.",
+  "Identify what the question is mainly about, map it to the listed topics, and answer with only one label name.",
+  "Focus on the subject of the question rather than incidental words. Return exactly one label name.",
+  "Decide which of the ten listed topics best fits the question, then output its label name only.",
+  "Carefully analyze the question to identify the primary topic, ignoring any incidental details or keywords, and select the most appropriate label from the provided list.",
+  "Carefully analyze the question's core focus, prioritize the main subject over incidental details, and select the most appropriate label from the provided list.",
+  "Carefully analyze the question's core intent, focus on the primary topic, and disregard any incidental information or keywords to determine the most appropriate label.",
+  "Carefully analyze the question's core topic, focusing on the primary subject matter, and select the most appropriate label from the provided list, ignoring any incidental details or irrelevant keywords.",
+  "Carefully analyze the question to identify the primary topic, ignoring any incidental details or unrelated information, and select the most appropriate label from the provided list.",
+  "Carefully analyze the question's core intent, prioritize the primary topic over incidental details, and select the most relevant label from the provided list."
+]
