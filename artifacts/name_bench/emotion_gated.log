@@ -1,0 +1,46 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 7533.73it/s]
+ADMM proposal 0: proposed, changed_tokens=3, 91.5s
+[emotion parent 0 r0 gated] proposed len+0 S +9.4pp accept=False val net +22 | Carefully determine the main emotion that writer expresses from the label mapping, ignore incidental details, and output only the corresponding label letter.
+
+ADMM proposal 0: proposed, changed_tokens=20, 69.4s
+[emotion parent 0 r1 gated] proposed len+3 S +3.1pp accept=False val net +44 | Carefully determine the main emotion emotion and write the from the label mapping, ignore incidental details, and output only the corresponding label from the mapping.
+ADMM proposal 0: proposed, changed_tokens=3, 72.0s
+[emotion parent 1 r0 gated] proposed len-1 S +6.2pp accept=True val net +142 | Identify the feeling the user is mainly expressing, map it to the listed emotions, and answer with only one emotion.
+ADMM proposal 0: proposed, changed_tokens=4, 65.0s
+[emotion parent 1 r1 gated] proposed len+1 S +6.2pp accept=False val net +42 | Identify the feeling the writer is mainly expressing, map it to the listed emotions, and answer with only the emotion label letter.
+ADMM proposal 0: proposed, changed_tokens=18, 60.5s
+[emotion parent 2 r0 gated] proposed len+1 S +0.0pp accept=True val net +8 | Focus on the **writer's own emotional state rather than events or people mentioned. Return exactly one label letter.
+ADMM proposal 0: proposed, changed_tokens=18, 55.8s
+[emotion parent 2 r1 gated] proposed len+1 S +12.5pp accept=True val net +44 | Focus on the **201 emotional state rather than events or people mentioned. Return exactly the label letter.
+ADMM proposal 0: proposed, changed_tokens=12, 69.0s
+[emotion parent 3 r0 gated] proposed len+1 S +12.5pp accept=True val net -9 | Decide whether the post mainly expresses sorrow, joy, love, anger, fear fear, or surprise, then output its mapped letter only.
+ADMM proposal 0: proposed, changed_tokens=2, 66.1s
+[emotion parent 3 r1 gated] proposed len+0 S +9.4pp accept=False val net -2 | Decide whether the post is expressing sadness, joy, love, anger, fear, or surprise, then output its mapped letter only.
+ADMM proposal 0: proposed, changed_tokens=6, 75.9s
+[emotion parent 4 r0 gated] proposed len-1 S +0.0pp accept=True val net -2 | Carefully analyze the text to identify the primary emotion expressed, considering the context and dominant sentiment, and output the corresponding letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=7, 73.3s
+[emotion parent 4 r1 gated] proposed len+2 S +0.0pp accept=False val net -31 | Carefully analyze the text to identify the primary emotion expressed, considering the context and dominant sentiment, and output the corresponding label capital letter letter from the label mapping.
+
+ADMM proposal 0: proposed, changed_tokens=5, 73.3s
+[emotion parent 5 r0 gated] proposed len+0 S +3.1pp accept=False val net +9 | Carefully analyze the text to identify the primary emotion expressed, considering both dominant and subtle elements, and output the corresponding label from the provided label mapping.
+ADMM proposal 0: proposed, changed_tokens=20, 73.2s
+[emotion parent 5 r1 gated] proposed len+1 S +0.0pp accept=True val net +47 | Carefully analyze the text to identify the primary emotion emotion expressed, considering both dominant and nuanced elements, and output the corresponding capital letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=7, 71.7s
+[emotion parent 6 r0 gated] proposed len+1 S +3.1pp accept=True val net -15 | Carefully analyze the text to identify the primary emotion conveyed, considering the context and dominant sentiment, and output the corresponding label capital letter from the label mapping.
+
+ADMM proposal 0: proposed, changed_tokens=7, 72.7s
+[emotion parent 6 r1 gated] proposed len+1 S -6.2pp accept=True val net -13 | Carefully analyze the text to identify the primary emotion conveyed, considering the context and dominant sentiment, and output the corresponding label with the from the label mapping.
+
+ADMM proposal 0: proposed, changed_tokens=24, 70.3s
+[emotion parent 7 r0 gated] proposed len+1 S +0.0pp accept=True val net -8 | Carefully identify the dominant emotional emotion expressed by the writer, considering the context and primary sentiment, and output the corresponding capital letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=5, 70.5s
+[emotion parent 7 r1 gated] proposed len+1 S +0.0pp accept=True val net +5 | Carefully identify the dominant emotion expressed by the writer, considering the context and primary sentiment, and output the corresponding capital letter letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=1, 73.9s
+[emotion parent 8 r0 gated] proposed len+0 S +3.1pp accept=False val net -10 | Carefully analyze the text to identify the primary emotion expressed, focusing on the dominant sentiment and context, and output the corresponding label letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=15, 73.9s
+[emotion parent 8 r1 gated] proposed len+2 S +0.0pp accept=False val net -30 | Carefully analyze the text to identify the primary emotion expressed, focusing on the dominant emotion, and context, and output the corresponding label capital letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=1, 73.6s
+[emotion parent 9 r0 gated] proposed len+0 S +0.0pp accept=True val net +12 | Carefully analyze the text for the primary emotion conveyed, prioritizing the dominant sentiment over incidental details, and select the corresponding emotion letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=7, 72.1s
+[emotion parent 9 r1 gated] proposed len+2 S +0.0pp accept=True val net +2 | Carefully analyze the text for the primary emotion conveyed, prioritizing the dominant sentiment over incidental details, and select the corresponding label from the list from the label mapping.
+DONE

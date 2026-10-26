@@ -1,0 +1,47 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 8206.38it/s]
+ADMM proposal 0: proposed, changed_tokens=2, 274.0s
+[emotion_names parent 0 r0 multistart] proposed len+0 S -6.2pp accept=False val net -1 | Carefully determine the main emotion the sentence expresses from the label map, ignore incidental details, and output only the corresponding label name.
+ADMM proposal 0: proposed, changed_tokens=1, 185.3s
+[emotion_names parent 0 r1 multistart] proposed len+0 S -3.1pp accept=False val net +3 | Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding label name.
+
+ADMM proposal 0: proposed, changed_tokens=1, 168.1s
+[emotion_names parent 1 r0 multistart] proposed len+0 S +0.0pp accept=False val net -14 | Identify the feeling the writer is mainly expressing, map it to the listed emotions, and answer with only the label name.
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 157.5s
+[emotion_names parent 1 r1 multistart] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Identify the feeling the writer is mainly expressing, map it to the listed emotions, and answer with only one label name.
+ADMM proposal 0: proposed, changed_tokens=4, 156.6s
+[emotion_names parent 2 r0 multistart] proposed len+0 S +0.0pp accept=True val net +58 | Focus on one of the own emotion state rather than events or people mentioned. Return exactly one label name.
+ADMM proposal 0: proposed, changed_tokens=4, 135.4s
+[emotion_names parent 2 r1 multistart] proposed len+0 S -3.1pp accept=True val net +21 | Select on the writer's own emotional state rather than judging or diagnosing. Return exactly one label name.
+ADMM proposal 0: proposed, changed_tokens=6, 175.4s
+[emotion_names parent 3 r0 multistart] proposed len+0 S +3.1pp accept=True val net -13 | Decide whether the post contains emotional sadness, and the emotion involves anger, fear, or surprise, then output its label name only.
+ADMM proposal 0: proposed, changed_tokens=1, 153.6s
+[emotion_names parent 3 r1 multistart] proposed len+0 S +3.1pp accept=True val net +21 | Decide whether the post mainly expresses sadness, joy, love, anger, fear, or surprise, then output its label name only.
+
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 166.4s
+[emotion_names parent 4 r0 multistart] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Carefully analyze the text for the primary emotion conveyed, considering the context and dominant sentiment, and select the most appropriate label from the provided mapping.
+ADMM proposal 0: proposed, changed_tokens=1, 155.5s
+[emotion_names parent 4 r1 multistart] proposed len+0 S -3.1pp accept=False val net +12 | Carefully analyze the text for the primary emotion conveyed, considering the context and dominant sentiment, and select the most appropriate label from the provided map.
+ADMM proposal 0: proposed, changed_tokens=1, 157.3s
+[emotion_names parent 5 r0 multistart] proposed len+0 S +0.0pp accept=True val net +9 | Carefully analyze the text for the primary emotion conveyed, considering both explicit and implicit expressions, and select the most appropriate label from the given options.
+ADMM proposal 0: proposed, changed_tokens=1, 157.3s
+[emotion_names parent 5 r1 multistart] proposed len+0 S +0.0pp accept=True val net +24 | Carefully analyze the text for the primary emotion conveyed, considering both explicit and implicit expressions, and select the most accurate label from the given options.
+ADMM proposal 0: proposed, changed_tokens=1, 219.0s
+[emotion_names parent 6 r0 multistart] proposed len+0 S +3.1pp accept=True val net +0 | Carefully analyze the text to identify the primary emotion expressed, considering the context and dominant sentiment, and select the most appropriate label from Sadness, Joy, Love, Anger, Fear, or Surprise.
+
+ADMM proposal 0: proposed, changed_tokens=4, 191.3s
+[emotion_names parent 6 r1 multistart] proposed len+0 S +25.0pp accept=True val net +24 | Carefully analyze the text to identify the primary emotion expressed, considering the context and dominant sentiment, and select the most appropriate label from the list, which is Love, Anger, Fear, or Surprise.
+ADMM proposal 0: proposed, changed_tokens=2, 179.6s
+[emotion_names parent 7 r0 multistart] proposed len+0 S +0.0pp accept=True val net -28 | Carefully analyze the text for the primary emotion conveyed, focusing on the dominant sentiment in and around the corresponding label from the provided mapping, ignoring any incidental details or keywords.
+ADMM proposal 0: proposed, changed_tokens=2, 172.9s
+[emotion_names parent 7 r1 multistart] proposed len+0 S -3.1pp accept=True val net +12 | Carefully analyze the text for the primary emotion conveyed, focusing on the dominant sentiment, and select the corresponding label from the provided mapping. Ignore any incidental details or keywords.
+ADMM proposal 0: proposed, changed_tokens=5, 160.6s
+[emotion_names parent 8 r0 multistart] proposed len+0 S +0.0pp accept=False val net +46 | Carefully analyze the text to identify the primary emotion.
+
+The text discusses focusing on the dominant sentiment, and selecting the corresponding label from the given options.
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 159.3s
+[emotion_names parent 8 r1 multistart] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Carefully analyze the text to identify the primary emotion the writer expresses, focusing on the dominant sentiment, and select the corresponding label from the given options.
+ADMM proposal 0: proposed, changed_tokens=1, 163.3s
+[emotion_names parent 9 r0 multistart] proposed len+0 S +0.0pp accept=True val net -2 | Carefully analyze the primary emotion conveyed by the image, prioritizing the dominant sentiment over incidental details, and select the most accurate label from the provided mapping.
+ADMM proposal 0: proposed, changed_tokens=1, 161.9s
+[emotion_names parent 9 r1 multistart] proposed len+0 S +3.1pp accept=True val net +27 | Carefully analyze the primary emotion conveyed by the writer, prioritizing the dominant emotion over incidental details, and select the most accurate label from the provided mapping.
+DONE

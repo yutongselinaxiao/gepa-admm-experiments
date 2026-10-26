@@ -1,0 +1,43 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 9124.17it/s]
+ADMM proposal 0: proposed, changed_tokens=1, 165.1s
+[yahoo_names parent 0 r0 fixed] proposed len+0 S +0.0pp accept=False val net +2 | Carefully determine the question's main topic from the label mapping, ignore the details, and output only the corresponding label name.
+ADMM proposal 0: proposed, changed_tokens=3, 83.5s
+[yahoo_names parent 0 r1 fixed] proposed len+0 S +0.0pp accept=False val net +12 | Carefully determine the answer's main topics from the given mapping, ignore incidental details, and output only the corresponding label name.
+ADMM proposal 0: proposed, changed_tokens=1, 74.5s
+[yahoo_names parent 1 r0 fixed] proposed len+0 S +0.0pp accept=False val net -14 | Identify what the question is mainly about, map it to the listed topics, and answer with the one label name.
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 70.5s
+[yahoo_names parent 1 r1 fixed] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Identify what the question is mainly about, map it to the listed topics, and answer with only one label name.
+ADMM proposal 0: proposed, changed_tokens=1, 75.4s
+[yahoo_names parent 2 r0 fixed] proposed len+0 S +3.1pp accept=True val net -4 | Focus on the subject of the question rather than incidental words. Return exactly the label name.
+ADMM proposal 0: proposed, changed_tokens=3, 75.4s
+[yahoo_names parent 2 r1 fixed] proposed len+0 S +0.0pp accept=True val net -22 | Focus on the subject of the question rather than the verb. Return exactly the label name.
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 59.2s
+[yahoo_names parent 3 r0 fixed] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Decide which of the ten listed topics best fits the question, then output its label name only.
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 64.7s
+[yahoo_names parent 3 r1 fixed] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Decide which of the ten listed topics best fits the question, then output its label name only.
+ADMM proposal 0: no_token_change, changed_tokens=0, 73.9s
+[yahoo_names parent 4 r0 fixed] no_token_change len+0 S +0.0pp accept=None val net +0 | Carefully analyze the question to identify the primary topic, ignoring any incidental details or keywords, and select the most appropriate label from the provided list.
+ADMM proposal 0: proposed, changed_tokens=1, 71.5s
+[yahoo_names parent 4 r1 fixed] proposed len+0 S +0.0pp accept=True val net -1 | -fully analyze the question to identify the primary topic, ignoring any incidental details or keywords, and select the most appropriate label from the provided list.
+ADMM proposal 0: proposed, changed_tokens=1, 74.0s
+[yahoo_names parent 5 r0 fixed] proposed len+0 S +0.0pp accept=False val net -12 | Carefully analyze the question's core focus, prioritize the main subject over incidental details, and select the most appropriate label from the given list.
+ADMM proposal 0: no_token_change, changed_tokens=0, 66.1s
+[yahoo_names parent 5 r1 fixed] no_token_change len+0 S +0.0pp accept=None val net +0 | Carefully analyze the question's core focus, prioritize the main subject over incidental details, and select the most appropriate label from the provided list.
+ADMM proposal 0: no_exact_roundtrip, changed_tokens=0, 72.4s
+[yahoo_names parent 6 r0 fixed] no_exact_roundtrip len+0 S +0.0pp accept=None val net +0 | Carefully analyze the question's core intent, focus on the primary topic, and disregard any incidental information or keywords to determine the most appropriate label.
+ADMM proposal 0: proposed, changed_tokens=3, 69.0s
+[yahoo_names parent 6 r1 fixed] proposed len+0 S +0.0pp accept=True val net -4 | Carefully analyze the question's core intent, focus on the primary topic, and identify the appropriate information or keywords to determine the most appropriate label.
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 91.9s
+[yahoo_names parent 7 r0 fixed] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Carefully analyze the question's core topic, focusing on the primary subject matter, and select the most appropriate label from the provided list, ignoring any incidental details or irrelevant keywords.
+ADMM proposal 0: proposed, changed_tokens=1, 79.9s
+[yahoo_names parent 7 r1 fixed] proposed len+0 S +3.1pp accept=False val net +7 | Pleasefully analyze the question's core topic, focusing on the primary subject matter, and select the most appropriate label from the provided list, ignoring any incidental details or irrelevant keywords.
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 69.4s
+[yahoo_names parent 8 r0 fixed] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Carefully analyze the question to identify the primary topic, ignoring any incidental details or unrelated information, and select the most appropriate label from the provided list.
+ADMM proposal 0: proposed, changed_tokens=3, 70.5s
+[yahoo_names parent 8 r1 fixed] proposed len+0 S +0.0pp accept=True val net -16 | Carefully analyze the description to identify the primary
+  ignoring any incidental details or unrelated information, and select the most appropriate label from the provided list.
+ADMM proposal 0: no_token_change, changed_tokens=0, 66.3s
+[yahoo_names parent 9 r0 fixed] no_token_change len+0 S +0.0pp accept=None val net +0 | Carefully analyze the question's core intent, prioritize the primary topic over incidental details, and select the most relevant label from the provided list.
+ADMM proposal 0: proposed, changed_tokens=2, 67.4s
+[yahoo_names parent 9 r1 fixed] proposed len+0 S +0.0pp accept=True val net +19 | Carefully analyze the question, and intent, prioritize the primary topic over incidental details, and select the most relevant label from the provided list.
+DONE

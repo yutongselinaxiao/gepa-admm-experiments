@@ -1,0 +1,45 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 8827.07it/s]
+ADMM proposal 0: proposed, changed_tokens=1, 115.7s
+[emotion_names parent 0 r0 gated] proposed len+0 S -3.1pp accept=False val net +3 | Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding label name.
+
+ADMM proposal 0: proposed, changed_tokens=2, 83.8s
+[emotion_names parent 0 r1 gated] proposed len+0 S -3.1pp accept=False val net +5 | Carefully determine the main emotion the writer expresses in the label map, ignore incidental details, and output only the corresponding label name.
+ADMM proposal 0: proposed, changed_tokens=22, 82.5s
+[emotion_names parent 1 r0 gated] proposed len+1 S +3.1pp accept=False val net +11 | Identify the emotion feeling the writer is mainly expressing, map it to the listed emotions, and answer with only one label name.
+ADMM proposal 0: proposed, changed_tokens=22, 82.6s
+[emotion_names parent 1 r1 gated] proposed len+2 S -3.1pp accept=False val net +3 | Identify the emotion feeling the writer is mainly expressing, and it is the listed emotion, and answer with only one emotion label name.
+ADMM proposal 0: proposed, changed_tokens=1, 75.3s
+[emotion_names parent 2 r0 gated] proposed len+0 S +0.0pp accept=True val net +30 | Focus on the writer's own emotional state rather than events or people mentioned. Return exactly the label name.
+ADMM proposal 0: proposed, changed_tokens=1, 69.8s
+[emotion_names parent 2 r1 gated] proposed len+0 S -6.2pp accept=True val net +30 | Focus on the writer's own emotional state rather than events or people mentioned. Return exactly the label name.
+ADMM proposal 0: proposed, changed_tokens=1, 86.0s
+[emotion_names parent 3 r0 gated] proposed len+0 S +3.1pp accept=True val net +48 | Decide whether the post mainly expresses nostalgia, joy, love, anger, fear, or surprise, then output its label name only.
+ADMM proposal 0: proposed, changed_tokens=3, 81.4s
+[emotion_names parent 3 r1 gated] proposed len+0 S +3.1pp accept=True val net +4 | Decide whether the text mainly expresses sadness, joy, love, fear, anger, or surprise, then output its label name only.
+ADMM proposal 0: proposed, changed_tokens=25, 90.0s
+[emotion_names parent 4 r0 gated] proposed len+1 S +0.0pp accept=True val net +15 | Carefully analyze the following text for the primary emotion conveyed, considering the context and dominant sentiment, and select the most appropriate label from the provided mapping.
+ADMM proposal 0: proposed, changed_tokens=2, 82.6s
+[emotion_names parent 4 r1 gated] proposed len+0 S +0.0pp accept=True val net +0 | Carefully analyze the text for the primary emotion conveyed, considering the context and dominant sentiment, and select the most appropriate label from the given labels.
+ADMM proposal 0: proposed, changed_tokens=1, 83.6s
+[emotion_names parent 5 r0 gated] proposed len+0 S +0.0pp accept=True val net +9 | Carefully analyze the text for the primary emotion conveyed, considering both explicit and implicit expressions, and select the most appropriate label from the given options.
+ADMM proposal 0: proposed, changed_tokens=1, 84.2s
+[emotion_names parent 5 r1 gated] proposed len+0 S +0.0pp accept=True val net +9 | Carefully analyze the text for the primary emotion conveyed, considering both explicit and implicit expressions, and select the most appropriate label from the given options.
+ADMM proposal 0: proposed, changed_tokens=15, 119.1s
+[emotion_names parent 6 r0 gated] proposed len+1 S +9.4pp accept=False val net +14 | Carefully analyze the text to identify the primary emotion expressed, considering the context and dominant sentiment, and select the most appropriate label from the followingness, Joy, Love, Anger, Fear, or Surprise.
+ADMM proposal 0: proposed, changed_tokens=3, 105.7s
+[emotion_names parent 6 r1 gated] proposed len+0 S +12.5pp accept=True val net -9 | Carefully analyze the text to identify the primary emotion expressed, considering the context and dominant sentiment, and select the most appropriate label from the list: Joy, Love, Anger, Fear, or Surprise.
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 93.4s
+[emotion_names parent 7 r0 gated] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Carefully analyze the text for the primary emotion conveyed, focusing on the dominant sentiment, and select the corresponding label from the provided mapping, ignoring any incidental details or keywords.
+ADMM proposal 0: proposed, changed_tokens=3, 93.7s
+[emotion_names parent 7 r1 gated] proposed len+0 S -3.1pp accept=True val net +20 | Carefully analyze the text for the primary emotion conveyed, focusing on the main sentiment, and select the corresponding label from the provided mapping. Ignore any incidental details or keywords.
+ADMM proposal 0: proposed, changed_tokens=1, 88.7s
+[emotion_names parent 8 r0 gated] proposed len+0 S +3.1pp accept=False val net -3 | Carefully analyze the text to identify the primary emotion the speaker expresses, focusing on the dominant sentiment, and select the corresponding label from the given options.
+ADMM proposal 0: proposed, changed_tokens=21, 83.8s
+[emotion_names parent 8 r1 gated] proposed len+2 S +0.0pp accept=True val net +3 | Carefully analyze the text to identify the primary emotional emotion the writer expresses, focusing on the dominant emotional sentiment, and select the corresponding label from the given options.
+ADMM proposal 0: proposed, changed_tokens=1, 90.0s
+[emotion_names parent 9 r0 gated] proposed len+0 S +0.0pp accept=True val net +7 | Carefully analyze the primary emotion conveyed by the writer, prioritizing the dominant sentiment over incidental details, and select the most accurate label from the provided mapping.
+
+ADMM proposal 0: proposed, changed_tokens=4, 87.8s
+[emotion_names parent 9 r1 gated] proposed len+0 S +0.0pp accept=True val net -9 | ### Labeling the primary emotion conveyed by the writer, prioritizing the dominant sentiment over incidental details, and select the most accurate label from the provided mapping.
+
+DONE

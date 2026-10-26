@@ -1,0 +1,48 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 7759.47it/s]
+ADMM proposal 0: proposed, changed_tokens=23, 396.1s
+[yahoo_names parent 0 r0 ml_grad] proposed len+2 S +3.1pp accept=True val net +11 | Carefully follow determine the question's core main topic from the label mapping, ignore the details, and output only the corresponding label name.
+ADMM proposal 0: proposed, changed_tokens=18, 273.9s
+[yahoo_names parent 0 r1 ml_grad] proposed len+2 S -3.1pp accept=True val net +6 | Carefully determine the question's main class ( topic from the label mapping), ignore incidental details, and output only the corresponding label name.
+ADMM proposal 0: proposed, changed_tokens=1, 262.8s
+[yahoo_names parent 1 r0 ml_grad] proposed len+0 S +0.0pp accept=True val net -23 | Identify what the question is mainly about, map it to the listed topics, and answer with only the label name.
+ADMM proposal 0: proposed, changed_tokens=17, 259.6s
+[yahoo_names parent 1 r1 ml_grad] proposed len+2 S +0.0pp accept=True val net -4 | Identify what the question is mainly and about, map it to the listed topics, and answer with only one summary label name.
+ADMM proposal 0: proposed, changed_tokens=6, 255.6s
+[yahoo_names parent 2 r0 ml_grad] proposed len+2 S +0.0pp accept=True val net -4 | Focus on the subject of the question rather than incidental words. What is exactly whatever one thinks name.
+ADMM proposal 0: proposed, changed_tokens=4, 256.2s
+[yahoo_names parent 2 r1 ml_grad] proposed len+2 S +6.2pp accept=True val net -25 | Focus on the subject of the question rather than incidental words. Return exactly which one?
+The network.
+ADMM proposal 0: proposed, changed_tokens=5, 243.7s
+[yahoo_names parent 3 r0 ml_grad] proposed len+2 S -3.1pp accept=True val net -58 | Decide which of the ten listed topics best fits the question.
+ then output its " label name: only.
+ADMM proposal 0: proposed, changed_tokens=7, 242.6s
+[yahoo_names parent 3 r1 ml_grad] proposed len-2 S -3.1pp accept=False val net -10 | Decide which of the ten listed topics best fit the question output its label name only.
+ADMM proposal 0: proposed, changed_tokens=25, 272.8s
+[yahoo_names parent 4 r0 ml_grad] proposed len+2 S +6.2pp accept=True val net +7 | Carefully analyze the responses, question to identify the primary topic, ignoring any incidental details or keywords, and select the most appropriate label from the provided list.
+ADMM proposal 0: proposed, changed_tokens=9, 271.8s
+[yahoo_names parent 4 r1 ml_grad] proposed len+0 S +9.4pp accept=False val net -37 | Carefully provide a solution to identify the type of, ignoring any incidental details or keywords, and 
+  providing the label from the provided list.
+ADMM proposal 0: proposed, changed_tokens=19, 275.3s
+[yahoo_names parent 5 r0 ml_grad] proposed len-2 S -3.1pp accept=True val net +6 | Carefully analyze the question's core and prioritize the main subject over incidental details. Select the most appropriate label from the provided list.
+ADMM proposal 0: proposed, changed_tokens=13, 261.0s
+[yahoo_names parent 5 r1 ml_grad] proposed len-2 S +0.0pp accept=True val net -1 | Carefully analyze the question's context, and prioritize the main subject over incidental details and select the appropriate label from the provided list.
+ADMM proposal 0: proposed, changed_tokens=22, 274.2s
+[yahoo_names parent 6 r0 ml_grad] proposed len+2 S +3.1pp accept=True val net +3 | Carefully analyze the question's core topics intent, focus on the first primary topic, and disregard any incidental information or keywords to determine the most appropriate label.
+ADMM proposal 0: proposed, changed_tokens=15, 269.8s
+[yahoo_names parent 6 r1 ml_grad] proposed len-2 S +3.1pp accept=False val net -13 | Carefully analyze the narrative's core intent to focus on the primary topic and disregard incidental information or keywords to determine the most appropriate label.
+ADMM proposal 0: proposed, changed_tokens=5, 303.9s
+[yahoo_names parent 7 r0 ml_grad] proposed len+0 S +0.0pp accept=False val net -2 | ### Input data
+The's core topic, focusing on the primary subject matter, and select the most appropriate label from the provided list, ignoring any incidental details or irrelevant keywords.
+ADMM proposal 0: proposed, changed_tokens=33, 294.4s
+[yahoo_names parent 7 r1 ml_grad] proposed len+2 S +6.2pp accept=False val net +8 | Carefully use analyze the question's core topic, focusing on the primary subject matter, and select the most appropriate subject label from the given list, ignoring any incidental details or irrelevant keywords.
+ADMM proposal 0: proposed, changed_tokens=25, 271.7s
+[yahoo_names parent 8 r0 ml_grad] proposed len-2 S +3.1pp accept=True val net -22 | Please
+### Input question to classify
+"1, making incidental details or unrelated, and select the most appropriate label from the provided list.
+ADMM proposal 0: proposed, changed_tokens=1, 272.9s
+[yahoo_names parent 8 r1 ml_grad] proposed len+0 S +0.0pp accept=True val net +8 | Carefully analyze the content to identify the primary topic, ignoring any incidental details or unrelated information, and select the most appropriate label from the provided list.
+ADMM proposal 0: proposed, changed_tokens=24, 265.1s
+[yahoo_names parent 9 r0 ml_grad] proposed len+2 S +3.1pp accept=False val net +36 | Carefully analyze the below input question's core intent and prioritize each primary topic over incidental details, and select the most relevant label from the provided list.
+ADMM proposal 0: proposed, changed_tokens=24, 266.2s
+[yahoo_names parent 9 r1 ml_grad] proposed len+2 S -3.1pp accept=True val net +17 | Carefully analyze the answer question's core intent, identify the primary topic sentence and details, and select the most relevant concept label from the provided list.
+DONE

@@ -1,0 +1,45 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 6294.20it/s]
+ADMM proposal 0: proposed, changed_tokens=2, 69.9s
+[emotion parent 0 r0 fixed] proposed len+0 S +6.2pp accept=True val net +19 | Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding emotion letter.
+
+ADMM proposal 0: proposed, changed_tokens=3, 50.4s
+[emotion parent 0 r1 fixed] proposed len+0 S +3.1pp accept=True val net +0 | Carefully determine the main emotion the writer expresses in the label mapping. Ignore incidental details, and output only the corresponding capital letter.
+ADMM proposal 0: proposed, changed_tokens=1, 49.1s
+[emotion parent 1 r0 fixed] proposed len+0 S -3.1pp accept=True val net +37 | Identify the feeling the writer is mainly expressing, map it to the listed emotions, and answer with only the label letter.
+ADMM proposal 0: proposed, changed_tokens=1, 41.3s
+[emotion parent 1 r1 fixed] proposed len+0 S +15.6pp accept=False val net +47 | Identify the feeling the emotion is mainly expressing, map it to the listed emotions, and answer with only one label letter.
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 39.5s
+[emotion parent 2 r0 fixed] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Focus on the writer's own emotional state rather than events or people mentioned. Return exactly one label letter.
+ADMM proposal 0: proposed, changed_tokens=1, 37.0s
+[emotion parent 2 r1 fixed] proposed len+0 S -3.1pp accept=False val net +16 | Focus on the writer's own emotional state rather than events or people mentioned. Return exactly the label letter.
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 48.7s
+[emotion parent 3 r0 fixed] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Decide whether the post mainly expresses sadness, joy, love, anger, fear, or surprise, then output its mapped letter only.
+ADMM proposal 0: proposed, changed_tokens=5, 41.5s
+[emotion parent 3 r1 fixed] proposed len+0 S +0.0pp accept=False val net -42 | Decide whether the post is expressing sorrow, joy, love, anger, fear, or surprise. Then output its mapped letter only.
+ADMM proposal 0: proposed, changed_tokens=1, 48.2s
+[emotion parent 4 r0 fixed] proposed len+0 S -3.1pp accept=False val net -7 | Carefully analyze the text to identify the primary emotion expressed, considering the context and dominant sentiment, and output the corresponding label letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=2, 45.2s
+[emotion parent 4 r1 fixed] proposed len+0 S -12.5pp accept=False val net -12 | Carefully analyze the text to identify the primary emotion expressed, considering the context and dominant sentiment, and output the corresponding label using from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=2, 45.4s
+[emotion parent 5 r0 fixed] proposed len+0 S -6.2pp accept=True val net +27 | Carefully analyze the text to identify the primary emotion expressed, considering both dominant and subtle elements, and output the corresponding emotion letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=1, 45.8s
+[emotion parent 5 r1 fixed] proposed len+0 S +0.0pp accept=True val net +22 | Carefully analyze the text to identify the primary emotion expressed, considering both dominant and subtle elements, and output the corresponding capital letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=1, 44.3s
+[emotion parent 6 r0 fixed] proposed len+0 S +3.1pp accept=False val net +5 | Carefully analyze the text to identify the primary emotion conveyed, considering the context and dominant sentiment, and output the corresponding capital letter from the label mapping.
+
+ADMM proposal 0: proposed, changed_tokens=1, 46.4s
+[emotion parent 6 r1 fixed] proposed len+0 S -6.2pp accept=True val net -9 | Carefully analyze the text to identify the primary emotion conveyed, considering the context and dominant sentiment, and output the corresponding label letter from the label mapping.
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 44.0s
+[emotion parent 7 r0 fixed] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Carefully identify the dominant emotion expressed by the writer, considering the context and primary sentiment, and output the corresponding capital letter from the label mapping.
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 41.9s
+[emotion parent 7 r1 fixed] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Carefully identify the dominant emotion expressed by the writer, considering the context and primary sentiment, and output the corresponding capital letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=1, 49.0s
+[emotion parent 8 r0 fixed] proposed len+0 S +3.1pp accept=True val net -1 | Carefully analyze the text to identify the primary emotion expressed, focusing on the dominant sentiment and context, and output the corresponding capital letter from the label mapping.
+
+ADMM proposal 0: proposed, changed_tokens=1, 46.0s
+[emotion parent 8 r1 fixed] proposed len+0 S +0.0pp accept=True val net +1 | Carefully analyze the text to identify the primary emotion expressed, focusing on the dominant sentiment and context, and output the corresponding emotion letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=1, 44.7s
+[emotion parent 9 r0 fixed] proposed len+0 S +0.0pp accept=True val net +12 | Carefully analyze the text for the primary emotion conveyed, prioritizing the dominant sentiment over incidental details, and select the corresponding emotion letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=2, 44.7s
+[emotion parent 9 r1 fixed] proposed len+0 S +0.0pp accept=True val net +32 | Carefully analyze the text for the primary emotion conveyed, prioritizing the dominant sentiment over incidental details, and select the corresponding emotion label from the label mapping.
+DONE

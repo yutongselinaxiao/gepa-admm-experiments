@@ -1,0 +1,45 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 7755.91it/s]
+ADMM proposal 0: proposed, changed_tokens=19, 203.7s
+[yahoo parent 0 r0 ml_grad] proposed len+2 S -9.4pp accept=False val net +87 | Pleasefully determine the question's main verb topic from the label mapping, ignore incidental details, and output only the subject corresponding capital letter.
+ADMM proposal 0: proposed, changed_tokens=18, 158.9s
+[yahoo parent 0 r1 ml_grad] proposed len+2 S -3.1pp accept=True val net +56 | Carefully determine the question's main verb topic from the label mapping, ignore incidental details, and output only the noun corresponding to letter.
+ADMM proposal 0: proposed, changed_tokens=22, 160.5s
+[yahoo parent 1 r0 ml_grad] proposed len+2 S +3.1pp accept=True val net +8 | Identify the what the question is mainly about, map it to the listed topics, and answer with only one option label letter.
+
+ADMM proposal 0: proposed, changed_tokens=22, 157.4s
+[yahoo parent 1 r1 ml_grad] proposed len+2 S -3.1pp accept=True val net +21 | Identify the what the question is mainly about, map it to the designated topics, and answer with only one option label letter.
+ADMM proposal 0: proposed, changed_tokens=15, 144.8s
+[yahoo parent 2 r0 ml_grad] proposed len+2 S +12.5pp accept=False val net +62 | Focus on the most subject of the question rather than incidental words. Return no information, label letter.
+ADMM proposal 0: proposed, changed_tokens=15, 139.8s
+[yahoo parent 2 r1 ml_grad] proposed len+2 S -12.5pp accept=False val net -23 | Focus on the first subject of the question rather than incidental words. Return no exactly the label letter.
+ADMM proposal 0: proposed, changed_tokens=13, 145.0s
+[yahoo parent 3 r0 ml_grad] proposed len+2 S +15.6pp accept=True val net +96 | Decide which of the ten listed phrases topics best fits the question, then output its key mapped letter only.
+ADMM proposal 0: proposed, changed_tokens=14, 147.9s
+[yahoo parent 3 r1 ml_grad] proposed len+2 S -3.1pp accept=False val net +68 | Decide which of the ten sentences listed topics best fits the question, then output its two mapped letter only.
+ADMM proposal 0: proposed, changed_tokens=25, 176.7s
+[yahoo parent 4 r0 ml_grad] proposed len+2 S -3.1pp accept=True val net +113 | Carefully analyze the label question to identify the primary topic, ignoring any incidental details or keywords, and select the corresponding option capital letter from the label mapping.
+
+ADMM proposal 0: proposed, changed_tokens=20, 172.3s
+[yahoo parent 4 r1 ml_grad] proposed len+2 S -9.4pp accept=True val net -20 | Carefully analyze the question to identify the primary noun: topic, verb, adjective, or other, and select the corresponding capital letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=31, 200.9s
+[yahoo parent 5 r0 ml_grad] proposed len+2 S -6.2pp accept=False val net +27 | Carefully examine the concept definition question's core topic, prioritize the main subject over incidental details, and select the most appropriate label from the mapping, ensuring consistency and accuracy in classification.
+ADMM proposal 0: proposed, changed_tokens=30, 185.8s
+[yahoo parent 5 r1 ml_grad] proposed len+2 S -12.5pp accept=True val net +87 | Carefully analyze the scenario question's core concepts topic, prioritize the main subject over incidental details, and select the most appropriate label from the mapping, ensuring consistency and accuracy in classification.
+
+ADMM proposal 0: proposed, changed_tokens=6, 219.3s
+[yahoo parent 6 r0 ml_grad] proposed len+2 S -3.1pp accept=True val net -19 | Carefully analyze the question's core topic, focusing on the main subject matter, and ignore any secondary details or keywords. Identify the most relevant label from the given and output only the final corresponding capital ( letter.
+ADMM proposal 0: proposed, changed_tokens=17, 208.2s
+[yahoo parent 6 r1 ml_grad] proposed len+2 S +3.1pp accept=False val net -224 | Carefully analyze the question's core topic, focusing on the main subject matter, and classify it into one of the 10 most relevant labels from the mapping. output JSON only the corresponding capital column letter.
+ADMM proposal 0: proposed, changed_tokens=21, 175.7s
+[yahoo parent 7 r0 ml_grad] proposed len+2 S +0.0pp accept=False val net +97 | Carefully analyze the question to identify the primary noun topic, ignoring any incidental details or entities, and output the corresponding sentiment label letter based on the label mapping.
+ADMM proposal 0: proposed, changed_tokens=21, 174.2s
+[yahoo parent 7 r1 ml_grad] proposed len+2 S +18.8pp accept=True val net +112 | Carefully analyze the question to identify the primary noun topic, ignoring any incidental details or entities, and output the corresponding sentiment classification letter based on the label mapping.
+ADMM proposal 0: proposed, changed_tokens=26, 175.2s
+[yahoo parent 8 r0 ml_grad] proposed len+2 S +0.0pp accept=True val net +28 | Carefully analyze the scenario question to identify the primary noun topic, ignoring any unrelated details or the keywords, and select the corresponding capital letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=26, 174.2s
+[yahoo parent 8 r1 ml_grad] proposed len+2 S +9.4pp accept=True val net +28 | Carefully analyze the sentence question to identify the primary topic, ignoring any incidental details or unrelated keywords, and select the corresponding QA capital letter from the label map.
+ADMM proposal 0: proposed, changed_tokens=4, 194.7s
+[yahoo parent 9 r0 ml_grad] proposed len+2 S +0.0pp accept=False val net -48 | Carefully analyze the question's core intent, prioritize the main topic over incidental details, and select the most relevant label from the mapping, ensuring the response is a list labeled single capital letter.
+ADMM proposal 0: proposed, changed_tokens=32, 193.9s
+[yahoo parent 9 r1 ml_grad] proposed len+2 S -3.1pp accept=True val net +55 | Carefully analyze the document question's core intent, prioritize the main topic over incidental details, and select the most relevant label from the mapping, ensuring the response is a list of capital letters.
+DONE

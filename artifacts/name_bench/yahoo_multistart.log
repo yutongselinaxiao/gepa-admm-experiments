@@ -1,0 +1,43 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 7990.62it/s]
+ADMM proposal 0: proposed, changed_tokens=3, 149.6s
+[yahoo parent 0 r0 multistart] proposed len+0 S +6.2pp accept=True val net +54 | You are determine the question's main topic from the label mapping, ignoring incidental details, and output only the corresponding capital letter.
+ADMM proposal 0: proposed, changed_tokens=2, 120.0s
+[yahoo parent 0 r1 multistart] proposed len+0 S -3.1pp accept=True val net +86 | Train your determine the question's main topic from the label mapping, ignore incidental details, and output only the corresponding capital letter.
+ADMM proposal 0: proposed, changed_tokens=4, 122.2s
+[yahoo parent 1 r0 multistart] proposed len+0 S +6.2pp accept=True val net +97 | Identify in the question: factual information, map it to the listed topics, and answer with only one label letter.
+ADMM proposal 0: proposed, changed_tokens=6, 119.5s
+[yahoo parent 1 r1 multistart] proposed len+0 S +9.4pp accept=True val net +121 | Identify what part of the environment will, map it to the listed topics, and yield with only one label letter.
+ADMM proposal 0: proposed, changed_tokens=1, 102.8s
+[yahoo parent 2 r0 multistart] proposed len+0 S +9.4pp accept=False val net +43 | Click on the subject of the question rather than incidental words. Return exactly one label letter.
+ADMM proposal 0: proposed, changed_tokens=1, 102.4s
+[yahoo parent 2 r1 multistart] proposed len+0 S -3.1pp accept=False val net +46 | Focus on the subject of the sentence rather than incidental words. Return exactly one label letter.
+ADMM proposal 0: proposed, changed_tokens=3, 106.6s
+[yahoo parent 3 r0 multistart] proposed len+0 S +12.5pp accept=True val net +68 | (Use each of the ten listed topics best fits the question, then output its mapped letter only.
+ADMM proposal 0: proposed, changed_tokens=1, 105.3s
+[yahoo parent 3 r1 multistart] proposed len+0 S +0.0pp accept=False val net +39 | Decide which of the ten listed topics best fits the statement, then output its mapped letter only.
+ADMM proposal 0: proposed, changed_tokens=1, 137.5s
+[yahoo parent 4 r0 multistart] proposed len+0 S -6.2pp accept=False val net +15 | Carefully analyze the question to identify the primary topic, ignoring any incidental details or keywords, and select the corresponding class letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=2, 132.3s
+[yahoo parent 4 r1 multistart] proposed len+0 S +6.2pp accept=True val net +36 | Carefully analyze the question to identify the primary topic, ignoring any incidental details or keywords, and select the corresponding topic label from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=1, 154.6s
+[yahoo parent 5 r0 multistart] proposed len+0 S -6.2pp accept=False val net +21 | Carefully analyze each question's core topic, prioritize the main subject over incidental details, and select the most appropriate label from the mapping, ensuring consistency and accuracy in classification.
+ADMM proposal 0: proposed, changed_tokens=1, 143.6s
+[yahoo parent 5 r1 multistart] proposed len+0 S +0.0pp accept=False val net +55 | Carefully classify the question's core topic, prioritize the main subject over incidental details, and select the most appropriate label from the mapping, ensuring consistency and accuracy in classification.
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 169.4s
+[yahoo parent 6 r0 multistart] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Carefully analyze the question's core topic, focusing on the main subject matter, and ignore any incidental details or keywords. Identify the most relevant label from the mapping and output only the corresponding capital letter.
+ADMM proposal 0: proposed, changed_tokens=1, 163.3s
+[yahoo parent 6 r1 multistart] proposed len+0 S +3.1pp accept=False val net +48 | Carefully analyze each question's core topic, focusing on the main subject matter, and ignore any incidental details or keywords. Identify the most relevant label from the mapping and output only the corresponding capital letter.
+ADMM proposal 0: proposed, changed_tokens=2, 135.1s
+[yahoo parent 7 r0 multistart] proposed len+0 S -3.1pp accept=False val net +48 | "fully analyze the question to identify the primary topic, ignoring any incidental details or entities, and output the corresponding major letter based on the label mapping.
+ADMM proposal 0: proposed, changed_tokens=2, 134.5s
+[yahoo parent 7 r1 multistart] proposed len+0 S +6.2pp accept=True val net +74 | Carefully analyze the question to identify the primary topic, ignoring any incidental details or entities, and output the corresponding classification label based on the label mapping.
+ADMM proposal 0: proposed, changed_tokens=10, 134.5s
+[yahoo parent 8 r0 multistart] proposed len+0 S +0.0pp accept=False val net -69 | Create a list of questions to identify the primary topic (topic A), details or related keywords, and select the corresponding capital letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=5, 135.1s
+[yahoo parent 8 r1 multistart] proposed len+0 S -9.4pp accept=False val net -156 | Constructfully analyze the question formulation identify the primary topic, focusing any incidental details or unrelated keywords, and collect the corresponding capital letters from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=1, 150.2s
+[yahoo parent 9 r0 multistart] proposed len+0 S -3.1pp accept=False val net +8 | Carefully analyze the question's core intent, prioritize the main topic over incidental details, and select the most relevant label from the mapping, ensuring the response is a single capital letter.
+
+ADMM proposal 0: proposed, changed_tokens=1, 149.5s
+[yahoo parent 9 r1 multistart] proposed len+0 S +3.1pp accept=True val net +53 | Carefully analyze the question's core intent, prioritize the main topic over incidental details, and select the most relevant label from the mapping, ensuring the response is a single label letter.
+DONE

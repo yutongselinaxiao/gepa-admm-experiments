@@ -1,0 +1,9 @@
+[05:16:16] START parents_yahoo_s0 on GPU 4 (free 19465 MB, ours 1)
+[05:16:16] START parents_yahoo_s1 on GPU 5 (free 18697 MB, ours 1)
+[05:16:16] START parents_emotion_s0 on GPU 7 (free 17393 MB, ours 1)
+[05:16:17] START parents_emotion_s1 on GPU 6 (free 17251 MB, ours 1)
+[05:19:17] DONE parents_emotion_s0 (GPU 7)
+[05:19:32] DONE parents_emotion_s1 (GPU 6)
+[05:20:17] DONE parents_yahoo_s0 (GPU 4)
+[05:20:32] DONE parents_yahoo_s1 (GPU 5)
+ALL DONE: 4/4 succeeded

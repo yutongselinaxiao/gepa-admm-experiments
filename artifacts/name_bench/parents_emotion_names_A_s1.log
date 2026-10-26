@@ -1,0 +1,29 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 8946.15it/s]
+Iteration 0: Base program full valset score: 0.4010416666666667 over 384 / 384 examples
+Iteration 1: Selected program 0 score: 0.4010416666666667
+Iteration 1: Proposed new text for instruction: Carefully analyze the text for the primary emotion conveyed, considering both explicit and implicit expressions, and select the most dominant label from the given options.
+Iteration 1: New subsample score 1.0 is not better than old score 3.0, skipping
+Iteration 2: Selected program 0 score: 0.4010416666666667
+Iteration 2: Proposed new text for instruction: Carefully analyze the text for the primary emotion conveyed, focusing on the dominant sentiment, and select the corresponding label from the provided mapping, ignoring any incidental details or keywords.
+Iteration 2: New subsample score 3.0 is not better than old score 4.0, skipping
+Iteration 3: Selected program 0 score: 0.4010416666666667
+Iteration 3: Proposed new text for instruction: Carefully analyze the primary emotion conveyed by the writer, prioritizing the dominant sentiment over incidental details, and select the most accurate label from the provided mapping.
+Iteration 3: New subsample score 2.0 is not better than old score 3.0, skipping
+Iteration 4: Selected program 0 score: 0.4010416666666667
+Iteration 4: Proposed new text for instruction: Carefully analyze the primary emotional tone of the text, prioritizing the dominant sentiment over incidental details, and select the most appropriate label from the given options.
+Iteration 4: New subsample score 3.0 is not better than old score 3.0, skipping
+Iteration 5: Selected program 0 score: 0.4010416666666667
+Iteration 5: Proposed new text for instruction: Carefully analyze the writer's primary emotional tone, prioritizing the dominant emotion over incidental details, and select the most accurate label from the provided mapping.
+Iteration 5: New subsample score 1.0 is not better than old score 1.0, skipping
+Iteration 6: Selected program 0 score: 0.4010416666666667
+Iteration 6: Proposed new text for instruction: Carefully analyze the text for the primary emotion expressed, considering context and tone, and select the most appropriate label from Sadness, Joy, Love, Anger, Fear, or Surprise.
+Iteration 6: New subsample score 3.0 is not better than old score 4.0, skipping
+AUDIT 1/7
+AUDIT 2/7
+AUDIT 3/7
+AUDIT 4/7
+AUDIT 5/7
+AUDIT 6/7
+AUDIT 7/7
+DONE proposals=6, accepted=0, best_val_accuracy=0.4010, report_half_accuracy=0.4479
+WROTE artifacts/name_bench/parents_emotion_names_A_s1/gepa_result.json

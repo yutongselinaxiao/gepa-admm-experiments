@@ -1,0 +1,46 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 7905.77it/s]
+ADMM proposal 0: proposed, changed_tokens=2, 153.9s
+[emotion parent 0 r0 multistart] proposed len+0 S +6.2pp accept=True val net +19 | Carefully determine the main emotion the writer expresses from the label mapping, ignore incidental details, and output only the corresponding emotion letter.
+
+ADMM proposal 0: proposed, changed_tokens=2, 131.3s
+[emotion parent 0 r1 multistart] proposed len+0 S +0.0pp accept=True val net +1 | Carefully determine the main emotion the writer expresses from the label mapping, ignore the details, and output only the corresponding capital letter.
+
+ADMM proposal 0: proposed, changed_tokens=1, 125.0s
+[emotion parent 1 r0 multistart] proposed len+0 S -3.1pp accept=True val net +37 | Identify the feeling the writer is mainly expressing, map it to the listed emotions, and answer with only the label letter.
+ADMM proposal 0: proposed, changed_tokens=1, 117.3s
+[emotion parent 1 r1 multistart] proposed len+0 S +15.6pp accept=False val net +47 | Identify the feeling the emotion is mainly expressing, map it to the listed emotions, and answer with only one label letter.
+ADMM proposal 0: no_selection_improvement, changed_tokens=0, 110.3s
+[emotion parent 2 r0 multistart] no_selection_improvement len+0 S +0.0pp accept=None val net +0 | Focus on the writer's own emotional state rather than events or people mentioned. Return exactly one label letter.
+ADMM proposal 0: proposed, changed_tokens=1, 107.0s
+[emotion parent 2 r1 multistart] proposed len+0 S +3.1pp accept=True val net +9 | Focus on the writer's own emotional state rather than events or people mentioned. Think exactly one label letter.
+ADMM proposal 0: proposed, changed_tokens=6, 130.6s
+[emotion parent 3 r0 multistart] proposed len+0 S +15.6pp accept=True val net +66 | How to separate the two mainly express sadness and joy, love, anger, fear, or surprise, then output its mapped letter only.
+ADMM proposal 0: proposed, changed_tokens=5, 122.1s
+[emotion parent 3 r1 multistart] proposed len+0 S +0.0pp accept=False val net -42 | Decide whether the post is expressing sorrow, joy, love, anger, fear, or surprise. Then output its mapped letter only.
+ADMM proposal 0: proposed, changed_tokens=1, 136.5s
+[emotion parent 4 r0 multistart] proposed len+0 S -3.1pp accept=False val net -7 | Carefully analyze the text to identify the primary emotion expressed, considering the context and dominant sentiment, and output the corresponding label letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=1, 133.0s
+[emotion parent 4 r1 multistart] proposed len+0 S -3.1pp accept=False val net -7 | Carefully analyze the text to identify the primary emotion expressed, considering the context and dominant sentiment, and output the corresponding label letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=2, 132.9s
+[emotion parent 5 r0 multistart] proposed len+0 S -6.2pp accept=True val net +27 | Carefully analyze the text to identify the primary emotion expressed, considering both dominant and subtle elements, and output the corresponding emotion letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=3, 134.1s
+[emotion parent 5 r1 multistart] proposed len+0 S +3.1pp accept=False val net +24 | Carefully analyze the text to identify the primary emotion expressed, considering both dominant and incidental emotions, and output the corresponding emotion word from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=4, 132.9s
+[emotion parent 6 r0 multistart] proposed len+0 S +3.1pp accept=False val net -3 | Carefully analyze the text to identify the primary emotion conveyed, considering the context, dominant sentiment, and any  corresponding letter letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=1, 131.6s
+[emotion parent 6 r1 multistart] proposed len+0 S -6.2pp accept=True val net -9 | Carefully analyze the text to identify the primary emotion conveyed, considering the context and dominant sentiment, and output the corresponding label letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=2, 128.8s
+[emotion parent 7 r0 multistart] proposed len+0 S +0.0pp accept=True val net -18 | Carefully identify the dominant emotion expressed by the writer, considering the context and primary sentiment, and output the corresponding emotion label from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=4, 127.8s
+[emotion parent 7 r1 multistart] proposed len+0 S -3.1pp accept=True val net -19 | Carefully identify the dominant emotion expressed by the text, considering the context and primary sentiment, and output the corresponding emotion tag from the label mapping.
+
+ADMM proposal 0: proposed, changed_tokens=1, 136.7s
+[emotion parent 8 r0 multistart] proposed len+0 S +3.1pp accept=True val net -1 | Carefully analyze the text to identify the primary emotion expressed, focusing on the dominant sentiment and context, and output the corresponding capital letter from the label mapping.
+
+ADMM proposal 0: proposed, changed_tokens=1, 134.3s
+[emotion parent 8 r1 multistart] proposed len+0 S +0.0pp accept=True val net +1 | Carefully analyze the text to identify the primary emotion expressed, focusing on the dominant sentiment and context, and output the corresponding emotion letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=1, 133.8s
+[emotion parent 9 r0 multistart] proposed len+0 S +0.0pp accept=False val net -14 | Carefully analyze the text for the primary emotion conveyed, prioritizing the dominant sentiment over incidental details, and select the corresponding label letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=1, 133.3s
+[emotion parent 9 r1 multistart] proposed len+0 S +0.0pp accept=False val net +12 | Carefully analyze the text for the primary emotion conveyed, prioritizing the dominant sentiment over incidental details, and select the corresponding emotion letter from the label mapping.
+DONE

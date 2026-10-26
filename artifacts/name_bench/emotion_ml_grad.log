@@ -1,0 +1,48 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 6216.30it/s]
+ADMM proposal 0: proposed, changed_tokens=21, 213.4s
+[emotion parent 0 r0 ml_grad] proposed len+2 S +0.0pp accept=True val net -57 | Carefully determine the main clause of the sentence and from the label mapping, ignore incidental details, and output only the corresponding capital Greek letter.
+ADMM proposal 0: proposed, changed_tokens=11, 174.4s
+[emotion parent 0 r1 ml_grad] proposed len-2 S -3.1pp accept=False val net -51 | Carefully determine the main emotion the writer expresses from the label mapping and provide details and sources from the text capital letters.
+ADMM proposal 0: proposed, changed_tokens=22, 163.0s
+[emotion parent 1 r0 ml_grad] proposed len+2 S -3.1pp accept=True val net +67 | Identify the actor that the writer is mainly expressing, map it to the listed emotions, and answer with only one label — letter.
+ADMM proposal 0: proposed, changed_tokens=2, 154.1s
+[emotion parent 1 r1 ml_grad] proposed len+2 S +0.0pp accept=True val net +60 | Identify the feeling the writer is mainly expressing, map it to the listed emotions, and answer with only one label between ### \.
+ADMM proposal 0: proposed, changed_tokens=4, 146.7s
+[emotion parent 2 r0 ml_grad] proposed len+2 S -3.1pp accept=False val net -57 | Focus on the writer's own emotional state rather than events or people mentioned. Return exactly each the label and letter.
+ADMM proposal 0: proposed, changed_tokens=15, 143.9s
+[emotion parent 2 r1 ml_grad] proposed len+2 S +0.0pp accept=False val net +19 | Focus on the writer's own position emotional state rather than events or people mentioned. Return not exactly the label letter.
+ADMM proposal 0: proposed, changed_tokens=4, 154.6s
+[emotion parent 3 r0 ml_grad] proposed len+2 S -6.2pp accept=False val net -300 | Decide whether the post mainly expresses sadness, joy, love, anger, fear, or surprise, then output its JSON version mapped letter.
+
+.
+ADMM proposal 0: proposed, changed_tokens=21, 160.9s
+[emotion parent 3 r1 ml_grad] proposed len+2 S +12.5pp accept=False val net +56 | Decide whether the post mainly convey * sadness, joy, love, anger, fear, or surprise, then output its mapped score letter only.
+ADMM proposal 0: proposed, changed_tokens=26, 173.3s
+[emotion parent 4 r0 ml_grad] proposed len+2 S -3.1pp accept=False val net -97 | Createfully analyze the text text to identify the primary emotion expressed, considering the context and dominant sentiment, and output the letter corresponding capital letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=21, 171.2s
+[emotion parent 4 r1 ml_grad] proposed len+2 S -6.2pp accept=False val net -33 | Carefully analyze the text to identify the primary character emotion expressed, considering the context and dominant sentiment, and output the corresponding capital label letter from the label mapping.
+
+ADMM proposal 0: proposed, changed_tokens=12, 172.1s
+[emotion parent 5 r0 ml_grad] proposed len+2 S -6.2pp accept=False val net +19 | Carefully analyze the text to identify the primary emotion expressed, considering both dominant and subtle emotions, and avoid output the corresponding capital lab letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=21, 171.9s
+[emotion parent 5 r1 ml_grad] proposed len+2 S +0.0pp accept=True val net +4 | Carefully analyze the text to identify the primary character emotion expressed, considering both dominant and subtle elements, and output the corresponding capital Roman letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=26, 169.2s
+[emotion parent 6 r0 ml_grad] proposed len+2 S +3.1pp accept=True val net -41 | Carefully analyze the speech text to identify the primary emotion conveyed, considering the context and dominant sentiment, and output the corresponding emotion_label letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=21, 168.8s
+[emotion parent 6 r1 ml_grad] proposed len+2 S -12.5pp accept=True val net -74 | Carefully analyze the text to identify the primary noun emotion conveyed, considering the context and dominant sentiment, and output the corresponding noun capital letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=24, 167.1s
+[emotion parent 7 r0 ml_grad] proposed len+2 S -15.6pp accept=True val net +4 | Carefully identify the dominant expressed emotion expressed by the writer, considering the context and primary sentiment, and output the corresponding symbol in letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=25, 165.9s
+[emotion parent 7 r1 ml_grad] proposed len+2 S -3.1pp accept=True val net -9 | Carefully identify the following: emotion expressed by the writer, considering the context and primary sentiment, and output the corresponding mapping capital letter from the label mapping.
+
+ADMM proposal 0: proposed, changed_tokens=22, 172.7s
+[emotion parent 8 r0 ml_grad] proposed len+2 S -3.1pp accept=False val net -49 | Carefully analyze the text to identify the primary character emotion expressed, focusing on the dominant sentiment and context, and output the corresponding Chinese capital letter from the label mapping.
+
+ADMM proposal 0: proposed, changed_tokens=6, 171.2s
+[emotion parent 8 r1 ml_grad] proposed len+2 S +12.5pp accept=False val net -80 | Carefully analyze the text to identify the primary emotion expressed, focusing on the dominant sentiment and context, and output the corresponding capital tag and letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=18, 172.5s
+[emotion parent 9 r0 ml_grad] proposed len-2 S +0.0pp accept=True val net -16 | Carefully analyze the text for the primary emotion conveyed, identify the dominant sentiment over time, and select the corresponding capital letter from the label mapping.
+ADMM proposal 0: proposed, changed_tokens=7, 171.8s
+[emotion parent 9 r1 ml_grad] proposed len+2 S -3.1pp accept=True val net -12 | Carefully analyze the text for the primary emotion conveyed, prioritizing the dominant sentiment over incidental details, and select the corresponding word capital pair letter from the label mapping.
+
+DONE
